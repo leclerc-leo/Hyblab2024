@@ -1,73 +1,74 @@
 "use strict";
 
-// Init of the (touch friendly) Swiper slider
 const swiper = new Swiper("#mySwiper", {
-  direction: "horizontal",
-  mousewheel: true,
-  navigation:{
-    enabled: true,
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  initialSlide: 1,
+    direction: "horizontal",
+    mousewheel: true,
+    navigation:{
+        enabled: true,
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    initialSlide: 1,
+    delay: 200,
 });
 
 swiper.on("slideChange", function () {
-  switch( swiper.activeIndex ) {
-    case 1:
-      init_accueil();
-      break;
-    case 0:
-      init_past();
-      break;
-    case 2:
-      init_futur();
-      break;
-  }
+    switch( swiper.activeIndex ) {
+        case 1:
+            init_accueil(swiper);
+            break;
+        case 0:
+            init_past(swiper);
+            break;
+        case 2:
+            init_futur(swiper);
+            break;
+    }
 });
 
-init_accueil();
+init_accueil(swiper);
 
-const categories_buttons = document.querySelectorAll('.category-button');
-const swiper_controls = document.querySelector('.swiper-controls');
-const page_controls = document.querySelector('.page-controls');
-
-const exit_button = document.querySelector('.exit-button');
+const categories_buttons = document.querySelectorAll('.category-button'); // les boutons permettant d'accéder aux informations
+const swiper_controls = document.querySelector('.swiper-controls'); // les boutons qui permettent de changer de slides + la pagination
+const page_controls = document.querySelector('.page-controls'); // les boutons qui permettent de revenir à l'accueil ou de quitter la page
 
 categories_buttons.forEach( button => {
-  console.log(button);
-  button.addEventListener('click', () => {
-    console.log(button);
-    const category = button.id.split('-')[0];
+    button.addEventListener('click', () => {
+        /* Les boutons sont recréés à chaque fois que l'on change de slide 
+        *  pour éviter que les listeners ne se cumulent */
+        const exit_button = page_controls.querySelector('.exit-button'); 
+        const home_button = page_controls.querySelector('.home-button');
 
-    const block = document.querySelector(`#${category}-page`);
-    block.classList.toggle('hidden');
+        const category = button.id.split('-')[0];
 
-    swiper_controls.classList.toggle('hidden');
-    page_controls.classList.toggle('hidden');
+        const block = document.querySelector(`#${category}-page`);
 
-    exit_button.id = `${category}-exit`;
+        if (block == null) {
+            console.log('Le bloc pour le bouton ' + button.id + ' n\'existe pas');
+            return;
+        }
 
-    swiper.allowSlideNext = false;
-    swiper.allowSlidePrev = false;
-  });
-});
+        swiper_controls.classList.toggle('hidden');
+        page_controls.classList.toggle('hidden');
 
-exit_button.addEventListener('click', () => {
-  const category = exit_button.id.split('-')[0];
+        block.style.visibility = 'visible';
+        block.style.width = '100%';
+        block.style.height = '100vh';
+        block.style.top = '0';
+        block.style.left = '0';
+        block.style.overflow = 'auto';
+        block.style.borderRadius = '0';
+        block.style.opacity = '1';
 
-  const block = document.querySelector(`#${category}-page`);
-  block.classList.toggle('hidden');
+        /* Nous gardons en mémoire l'id du bouton cliqué pour pouvoir
+        *  retourner le bloc à sa position initiale lors d'une sortie */
+        exit_button.id = `${category}-exit`;
+        home_button.id = `${category}-home`;
 
-  swiper_controls.classList.toggle('hidden');
-  page_controls.classList.toggle('hidden');
-
-  exit_button.id = 'exit';
-
-  swiper.allowSlideNext = true;
-  swiper.allowSlidePrev = true;
+        swiper.disable(); // pour éviter de changer de slide lors d'un scroll et d'autoriser le scroll sur la page
+    });
 });

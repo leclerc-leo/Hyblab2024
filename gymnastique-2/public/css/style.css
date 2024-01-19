@@ -15,6 +15,7 @@ body{
     color: white;
     overflow: hidden;   /* to avoid slider bugs on some browsers */
     font-family: sans-serif;
+    font-size: calc(15vh * 3 / 4);
 }
 
 /* Swiper slider. Need to fill the container */
@@ -23,20 +24,22 @@ body{
     height:100%;
     position: absolute;
 }
-.swiper-pagination-bullets {
+
+.swiper-pagination-bullets.swiper-pagination-horizontal {
     --swiper-pagination-bottom: 0px;
+    width: 50%;
+    margin: 0 25%;
 }
 
 .swiper-pagination-bullet {
-    --swiper-pagination-bullet-horizontal-gap: 10px;
-    --swiper-pagination-bullet-size: 30px;
+    --swiper-pagination-bullet-horizontal-gap: 15px;
+    --swiper-pagination-bullet-size: 40px;
 }
 
 /* white navigation bullets */
 .swiper-pagination-bullet-active {
     background-color: white !important;
-    --swiper-pagination-bullet-horizontal-gap: 15px;
-    --swiper-pagination-bullet-size: 32px;
+    --swiper-pagination-bullet-size: 45px;
 }
 
 /* the slides and the loader should fill the whole 9:16 zone */
@@ -95,18 +98,6 @@ main > section:nth-child(3n+3)::before{
     background-position: 100% 50%;
 }
 
-/* Footer of last slide is at the bottom and content is centered */
-#first-slide footer{
-    bottom: 5%;
-    position: absolute;
-    box-sizing: border-box; /* So that padding is not added to width (and width: 100% works) */
-    width: 100%; /* could also use  width: calc(100% - 2em) if not using box-sizing */
-    font-size: 20%;
-    text-align: center;
-    padding: 1em;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
 /* ---------- Important media queries for easy responsive content :-) ----------------- */
 /* Whatever the device used, the content will be displayed full width and height if      */
 /* the aspect ratio is between 3/4 and 9/16. If not it is locked to either 3/4 or 9/16  */
@@ -117,12 +108,6 @@ main > section:nth-child(3n+3)::before{
     height: 100%;   /* even on mobile devices with url or navigation bars */
     margin-left: calc((100vw - 100 * 3vh / 4) / 2); /* Add black bands on left and right */
     width: calc(100 * 3vh / 4); /* Force 3/4 aspect ratio */
-}
-
-/* We set a default font size here. It will be the base for all other font sizes */
-/* Here the font size is proportional to content width */
-body{
-    font-size: calc(15vh * 3 / 4);
 }
 
 /* Fill the whole viewport when its aspect ratio is between 9/16 and 3/4 */
@@ -168,17 +153,29 @@ body{
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 50%;
     font-size: 40px;
+    text-align: center;
 }
 
 .category-page{
     position: absolute;
-    width: 0; 
-    height: 0;
     z-index: 99;
-    height: 100%;
-    width: 100%;
     background-color: white;
     color: black;
+    font-size: 18px;
+    padding: 10px 0;
+
+    transition: width 0.3s ease-in-out, 
+        height 0.3s ease-in-out, 
+        top 0.2s ease-in,
+        left 0.2s ease-in,
+        border-radius 0.3s ease-in-out,
+        top 0.3s ease-out,
+        left 0.3s ease-out,
+        opacity 0.3s ease-in-out;
+}
+
+.category-page > p {
+    margin: 0 10px;
 }
 
 .hidden{
@@ -188,8 +185,8 @@ body{
 
 .exit-button{
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 0;
+    left: 0;
     z-index: 100;
 
     width: 30px;
@@ -212,4 +209,46 @@ body{
 
 .exit-button::after{
     transform: translate(0, 13px) rotate(-45deg);
+}
+
+.home-button{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    color: black;
+    font-size: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 30px;
+    height: 30px;
+    padding: 20px;
+
+    cursor: pointer;
+
+    background: radial-gradient(circle, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0) 60%, rgba(255,255,255,0) 100%);
+}
+
+.credits-button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 60px;
+    text-shadow: 0 0 10px black;
+}
+
+.swiper-wrapper .credits{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+
+    transition: height 0.5s ease-in-out,
+        opacity 0.3s ease-in,
+        opacity 0.3s ease-out 0.2s;
+    color: black;
+    background-color: rgba(255, 255, 255, 1);
 }

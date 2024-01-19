@@ -16,6 +16,7 @@
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
             
 
+  <script src="js/util.js" defer></script>
   <script src="js/slides/accueil.js" defer></script>
   <script src="js/slides/futur.js" defer></script>
   <script src="js/slides/past.js" defer></script>
@@ -33,34 +34,42 @@
       <div id="mySwiper" class="swiper">
         <!-- le main est aussi le conteneur des différents slides (contenus à chaque fois dans des sections-->
         <main class = "swiper-wrapper">
-          <section id="second-slide" class="swiper-slide">
+          <section class="swiper-slide">
 
                 <a class="category-button" id="histoire-button" style="top: 25%; left: 25%;">
-                  Histoire</a>
-                <div id="histoire-page" class="category-page swiper hidden">
-                  <p>Hello World nouveaux !</p>
+                  Histoire + Blessure</a>
+                <div id="histoire-page" class="category-page swiper" style="top: 25%; left: 25%; width: 0; height: 0; border-radius: 50%; overflow: hidden; opacity: 0;">
+                  <p>Hello World nouveaux !
+                    <br><br><br> test <br><br><br> test <br><br><br> test <br><br><br> test <br><br><br> test <br><br><br> test <br><br><br> test <br><br><br> test <br><br><br> test <br><br><br> test <br><br><br> test <br><br><br> test <br><br><br> test <br><br><br> test <br><br><br> test <br><br><br> test <br><br><br> test presque <br><br><br> test <br><br><br> test <br><br><br> test <br><br><br> test final <br><br><br> test final 
+                  </p>
                 </div>
 
                 <a class="category-button" style="top: 50%; left: 75%;">
-                  <i class="material-icons">add</i></a>
+                  Palmares</a>
 
                 <a class="category-button" style="top: 75%; left: 25%;">
-                  <i class="material-icons">add</i></a>
+                  Qualification</a>
                   
           </section>
-          <section id="first-slide" class="swiper-slide">
+          <section class="swiper-slide">
               <header>
                   <h1 id="titre">Welcome to</h1>
               </header>
               
-              <img src="img/logos/logo_hyblab.png" id="logo-hyblab" alt="logo hyblab" style="transform :scale(1);">
-              <img src="img/logos/Hyblab.png" id="logo-hyblab" width="500" height="250" style="z-index:10000">
+              <img src="img/Kaylia.png" id="logo-hyblab" width="500" style="z-index:10">
 
-              <footer>
-                <p></p>
-              </footer>
+              <footer class="credits-button">Crédits</footer>
+              <section class="credits" style="height: 0; opacity: 0.4;">
+
+              </section>
           </section>
-          <section id="second-slide" class="swiper-slide">
+          <section class="swiper-slide">
+ 
+            <a class="category-button" style="top: 33%; left: 50%;">
+              Journée Type</a>
+
+            <a class="category-button" style="top: 66%; left: 50%;">
+              JO</a>
 
           </section>
         </main>
@@ -72,6 +81,7 @@
         </div>
         <div class="page-controls hidden">
           <div class="exit-button"></div>
+          <div class="home-button"><i class="material-icons">home</i></div>
       </div> 
   </div>
 </body>
