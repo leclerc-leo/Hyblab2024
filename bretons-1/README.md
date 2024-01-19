@@ -1,30 +1,34 @@
-# React + TypeScript + Vite
+# Descriptif du projet
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Porteur de projet : Le Télégramme
 
-Currently, two official plugins are available:
+Sujet : Bretons 1
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Nom d'équipe : Yec'hed Mat
 
-## Expanding the ESLint configuration
+## Participants : 
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- AGR : Antonin, Camille
+ 
+- EPJT : Lucas
 
-- Configure the top-level `parserOptions` property like this:
+- Polytech : Nino AURIEDE, Malo LE ROUX, Adrien LIBERT, Arthur COURTRAI, Shenhong KONG, Pierre PAULMIER
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+- SciencesPo : Anna
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+
+
+## A supprimer
+
+Ces instructions ne sont la que pour vous guider dans le développement de vos pages web. Elles seront à supprimer pour la soumission finale de votre code.
+
+Le dossier de votre projet contient un squelette de code que vous devez modifier. 
+
+- La partie `serveur.js`  ne doit a priori pas être touchée, si vous avez des entrées d'API à ajouter il faudra le faire dans le dossier `api`.
+- Le dossier `public`  contient la partie statique de votre site. Par défaut le fichier index.html charge un fichier `style.css` qui est destiné au format mobile (portrait). Si votre porteur de projet demande un site desktop, vous pouvez vous baser sur l'exemple `index-desktop.html` et le CSS associé `style-desktop.css` qui propose une page au format paysage.
+
+
+
+## Instructions de déploiement
+
+Si votre projet nécessite des instructions spécifiques pour son déploiement, merci d'ajouter des explications ici.
