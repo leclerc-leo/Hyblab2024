@@ -1,7 +1,7 @@
 "use strict";
 
 // async init function (because of the awaits on fetches)
-const initSlide1 = async function(){
+const init_accueil = async function(){
   // Get logo element
   const logo = document.querySelector('#logo-hyblab');
 

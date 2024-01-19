@@ -1,21 +1,29 @@
 # Descriptif du projet
 
-Porteur de projet :
+Porteur de projet : La Nouvelle République
 
-Sujet :
+Sujet : Gymnastique 2
 
-Nom d'équipe :
+Nom d'équipe : La MezzaGym
 
 Participants : 
 
 - AGR :
+  - Clémence Faber
+  - Mathys Benard
 
 - EPJT :
+  - Victoire Renard Dewynter
 
 - Polytech :  
+  - Laure Boudaud
+  - Léo LECLERC
+  - Guillaume Polizzi
+  - Octave Daudin
+  - Bastien Baudouin
 
 - SciencesPo : 
-
+  - Juliette Pirot-Berson
 
 
 ## A supprimer
