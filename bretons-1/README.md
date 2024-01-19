@@ -1,20 +1,20 @@
 # Descriptif du projet
 
-Porteur de projet :
+Porteur de projet : Le Télégramme
 
-Sujet :
+Sujet : Bretons 1
 
-Nom d'équipe :
+Nom d'équipe : Yec'hed Mat
 
-Participants : 
+## Participants : 
 
-- AGR :
+- AGR : Antonin, Camille
+ 
+- EPJT : Lucas
 
-- EPJT :
+- Polytech : Nino AURIEDE, Malo LE ROUX, Adrien LIBERT, Arthur COURTRAI, Shenhong KONG, Pierre PAULMIER
 
-- Polytech :  
-
-- SciencesPo : 
+- SciencesPo : Anna
 
 
 
