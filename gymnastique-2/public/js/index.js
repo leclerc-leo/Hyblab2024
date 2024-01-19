@@ -31,3 +31,35 @@ swiper.on("slideChange", function () {
 });
 
 init_accueil();
+
+const categories_buttons = document.querySelectorAll('.category-button');
+const swiper_controls = document.querySelector('.swiper-controls');
+const page_controls = document.querySelector('.page-controls');
+
+const exit_button = document.querySelector('.exit-button');
+
+categories_buttons.forEach( button => {
+  button.addEventListener('click', () => {
+    const category = button.id.split('-')[0];
+
+    const block = document.querySelector(`#${category}-page`);
+    block.classList.toggle('hidden');
+
+    swiper_controls.classList.toggle('hidden');
+    page_controls.classList.toggle('hidden');
+
+    exit_button.id = `${category}-exit`;
+  });
+});
+
+exit_button.addEventListener('click', () => {
+  const category = exit_button.id.split('-')[0];
+
+  const block = document.querySelector(`#${category}-page`);
+  block.classList.toggle('hidden');
+
+  swiper_controls.classList.toggle('hidden');
+  page_controls.classList.toggle('hidden');
+
+  exit_button.id = 'exit';
+});

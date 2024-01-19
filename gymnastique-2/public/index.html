@@ -37,8 +37,12 @@
         <main class = "swiper-wrapper">
           <section id="second-slide" class="swiper-slide">
 
-                <a class="category-button" style="top: 25%; left: 25%;">
-                  <i class="material-icons">add</i></a>
+                <a class="category-button" id="histoire-button" style="top: 25%; left: 25%;">
+                  Histoire</a>
+
+                <div id="histoire-page" class="category-page swiper hidden">
+                  <p>Hello World !</p>
+                </div>
 
                 <a class="category-button" style="top: 50%; left: 75%;">
                   <i class="material-icons">add</i></a>
@@ -69,10 +73,14 @@
               </footer>
           </section>
         </main>
-        <div class="swiper-pagination"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-    </div>
+        <div class="swiper-controls">
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+        <div class="page-controls hidden">
+          <div class="exit-button"></div>
+      </div> 
   </div>
 </body>
 </html>
