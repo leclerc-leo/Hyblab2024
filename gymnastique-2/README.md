@@ -17,7 +17,7 @@ Participants :
 
 - Polytech :  
   - Laure Boudaud
-  - Léo LECLERC
+  - Léo Leclerc
   - Guillaume Polizzi
   - Octave Daudin
   - Bastien Baudouin
