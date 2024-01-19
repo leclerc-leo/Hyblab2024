@@ -39,7 +39,9 @@ const page_controls = document.querySelector('.page-controls');
 const exit_button = document.querySelector('.exit-button');
 
 categories_buttons.forEach( button => {
+  console.log(button);
   button.addEventListener('click', () => {
+    console.log(button);
     const category = button.id.split('-')[0];
 
     const block = document.querySelector(`#${category}-page`);
@@ -49,6 +51,9 @@ categories_buttons.forEach( button => {
     page_controls.classList.toggle('hidden');
 
     exit_button.id = `${category}-exit`;
+
+    swiper.allowSlideNext = false;
+    swiper.allowSlidePrev = false;
   });
 });
 
@@ -62,4 +67,7 @@ exit_button.addEventListener('click', () => {
   page_controls.classList.toggle('hidden');
 
   exit_button.id = 'exit';
+
+  swiper.allowSlideNext = true;
+  swiper.allowSlidePrev = true;
 });
