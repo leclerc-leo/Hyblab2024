@@ -13,6 +13,7 @@
     "@remotion/cli": "^4.0.88",
     "@remotion/player": "^4.0.88",
     "react": "^18.2.0",
+    "react-card-rotate-swiper": "^0.0.14",
     "react-dom": "^18.2.0",
     "remotion": "^4.0.88"
   },

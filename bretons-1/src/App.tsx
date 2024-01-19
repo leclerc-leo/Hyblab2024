@@ -1,24 +1,24 @@
-import { Player } from "@remotion/player";
-import { MyComp } from "./remotion/MyComp";
-import './App.css'
+import { CardSwiper } from "react-card-rotate-swiper";
+
+//...
 
 function App() {
 
+  const handleSwipe = (d:void) => {
+    //fill this your callback
+  };
+  
   return (
-    <Player
-      component={MyComp}
-      inputProps={{ text: "Malo" }}
-      durationInFrames={240}
-      compositionWidth={1920}
-      compositionHeight={1080}
-      fps={30}
-      style={{
-        width: 1280,
-        height: 720,
-      }}
-      controls
-    />
+    <div className="App">
+      <CardSwiper
+        onSwipe={handleSwipe}
+        className={"swiper"}
+        contents={
+          //fill this your element
+            <img src={"https://www.google.com/images/branding/googlelogo/2x/googlelogo_light_color_92x30dp.png"} alt="img"></img>
+        }
+      />
+    </div>
   );
 }
-
-export default App
+export default App;
