@@ -77,7 +77,7 @@ header{
 }
 
 main > section::before{
-    background-image: url('../img/gymnase.jpg');
+    background-image: url('../img/gymnase_2.png');
     background-size: 300%; /* background is full width and height is proportional to width */
     background-repeat: no-repeat;
     background-position: 50% 50%;
