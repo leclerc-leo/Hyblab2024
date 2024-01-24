@@ -94,6 +94,7 @@ body{
     text-transform: uppercase;
     color:black;
     text-align: center;
+    margin: 0;
 }
 
 #arrow-intro{
@@ -244,6 +245,17 @@ body{
     body{
         font-size: 15vw;
     }
+
+    p{
+        margin: 0.8em;
+        font-size: 5vw;
+        color: black;
+        text-align: justify;
+    }
+
+    i{
+        font-size: 6.5vw;
+    }
 }
 
 /* The content is displayed at 9/16 If the aspect ratio is higher that 9/16  */ 
@@ -260,6 +272,17 @@ body{
     /* Here the font size is proportional to content width */
     body{
         font-size: 15vw;
+    }
+
+    p{
+        margin: 0.8em;
+        font-size: 5vw;
+        color: black;
+        text-align: justify;
+    }
+
+    i{
+        font-size: 6.5vw;
     }
 }
 

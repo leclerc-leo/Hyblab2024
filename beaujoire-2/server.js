@@ -9,7 +9,7 @@ const path = require('path');
 // Create our application
 const app = express();
 
-let db = require('./public/data/dbinit');
+// let db = require('./public/data/dbinit');
 // Load and register our REST API
 const api = require('./api/api');
 app.use('/api', api);
