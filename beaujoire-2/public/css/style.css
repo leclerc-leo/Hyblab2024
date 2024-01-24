@@ -50,32 +50,90 @@ body{
 
 /* the slides and the loader should fill the whole 9:16 zone */
 .swiper-wrapper section, #loader{
-    background-color: dodgerblue;
+    background-color: white;
     width: 100%;
     height: 100%;
 }
 
 /* Most of the elements in this demo are absolute positioned with percentages */
-#first-slide header, #second-slide header{
-    text-align: center;
+#first-slide header{
+    text-align: left;
     width: 100%;
-    top: 10%;
+    bottom: 37%;
     position: absolute;
     font-size: 30%;
     z-index: 2;
 }
+    #titre{
+        font-size: 2em;
+        position: relative;
+        z-index: 2;
+        color:white;
+    }
+
+#second-slide header{
+    position:relative;
+    width: 100%;
+    top:5%;
+    font-size: 0.3em;
+    text-align: center;
+    color: black;
+    text-transform: uppercase;
+}
+
+#first-slide p {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width:100%;
+    position: relative;
+    font-size: small;
+    z-index: 2;
+    top:80%;
+    text-transform: uppercase;
+    color:black;
+    text-align: center;
+}
+
+#arrow-intro{
+    height: 2em;
+}
 
 #logo-hyblab{
     text-align: center;
-    width: 50%;
-    left: 50%; /* center the logo, in interaction with the negative margin-left */
-    top: 50%;
-    margin-left:-25%; /* this is half the width */
+    width: 100%;
+    max-height: 70%;
     margin-top:calc(-7.5% * 9 / 16 ); /* margins are relative to the element width... :-( */
     position: absolute;
     font-size: 50%;
-    z-index: 2;
+    z-index: 1;
     cursor: pointer;
+}
+
+
+
+#creer-equipe{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 80%;
+    height: 9%;
+    top: 73%;
+    border-radius: 30px;
+    color: white;
+    text-transform: uppercase;
+    background-color: black;
+    border: solid 1px black;
+    font-size: 0.35em;
+    margin:0 10%;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out ;
+}
+
+#creer-equipe:hover{
+    background-color: red;
 }
 
 /* Last slide image is centered */
@@ -89,7 +147,7 @@ body{
 }
 
 main > section{
-    background-image: url('../img/background.svg');
+    /*background-image: url('../img/background.svg');*/
     background-size: 100% auto; /* background is full width and height is proportional to width */
     background-position: bottom; /* background is bottom aligned */
 }
@@ -115,7 +173,7 @@ main > section{
     width:100%;
     position: absolute;
     bottom: 0;
-    background-color: white;
+    background-color: grey;
     font-size: 20%;
   }
 
