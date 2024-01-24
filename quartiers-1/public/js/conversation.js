@@ -1,65 +1,90 @@
 "use strict";
 
-const conversation = document.getElementById('conversation');
+/* --- INIT --- */
+let conversation = $("#conversation");
+let arrowDown = $("#arrow-down");
+let isTimeoutActive = false;
 
-// Add reply into the conversation
-function addSpeechBubble(content, sender) {
-    
-    let rp = document.createElement('div');
-    let rp_content = document.createElement('div');
-    let name = document.createElement('p');
-    let cont = document.createElement('div');
-    let text= document.createElement('p');
-    
-    // Content according to sender
-    if (sender === 'guide') {
-        rp.classList.add('rp_guide');
-        name.classList.add('name_guide');
-        cont.classList.add('cont_guide');
+// jQuery Queue to manage speech bubbles implementation and avoid timeouts
+let messageQueue = $({});
 
-        name.textContent = "Guide";
-    } else if (sender === 'user') {
-        rp.classList.add('rp_user');
-        name.classList.add('name_user');
-        cont.classList.add('cont_user');
+/* --- CONVERSATION FUNCTIONS --- */
+/* Users speech bubble */
+function addBubbleUser(content) {
+    let responseBubbleUser = $('<div class="rp_user"><div><p class="name_user">Vous</p><div class="cont_user"><p>' + content + '</p></div></div></div>');
+    conversation.append(responseBubbleUser);
 
-        name.textContent = "Vous";
-    }
+    messageQueue.queue(function (next) {
 
-    // Add text content
-    text.textContent = content;
+        // Scroll according to messages height
+        scrollConversation(getLastBubbleHeight());
 
-    rp_content.appendChild(name);
-    cont.appendChild(text);
-    rp_content.appendChild(cont);
-    rp.appendChild(rp_content);
-    conversation.appendChild(rp);
+        // Then show speech bubble
+        responseBubbleUser.show( function () {
+            next();
+        });
+    });
+}
+/* Guides speech bubbles */
+function addBubbleGuide(content) {
+    let responseBubbleGuide = $('<div class="rp_guide"><div><p class="name_guide">Guide</p><div class="cont_guide"><p>' + content + '</p></div></div></div>');
+    conversation.append(responseBubbleGuide);
 
-    // Fait défiler automatiquement la conversation pour afficher le nouveau message
-    conversation.scrollTop = conversation.scrollHeight;
+    messageQueue.queue(function (next) {
+
+        // Scroll according to messages height
+        scrollConversation(getLastBubbleHeight());
+
+        // Then show speech bubble
+        responseBubbleGuide.show(function () {
+            next();
+        });
+    });
 }
 
-// Test ajouts
-addSpeechBubble("Bonjour, bienvenue au quartier de XXXXXX, je peux te guider !", 'guide');
-addSpeechBubble("Salut! Merci de m'accueillir. J'aimerais en savoir plus sur le quartier.", 'user');
-addSpeechBubble("Bien sûr! Quels sont vos centres d'intérêt spécifiques?", 'guide');
-addSpeechBubble("Bonjour, bienvenue au quartier de XXXXXX, je peux te guider !", 'guide');
-addSpeechBubble("Salut! Merci de m'accueillir. J'aimerais en savoir plus sur le quartier.", 'user');
-addSpeechBubble("Bien sûr! Quels sont vos centres d'intérêt spécifiques?", 'guide');
-addSpeechBubble("Bonjour, bienvenue au quartier de XXXXXX, je peux te guider !", 'guide');
-addSpeechBubble("Salut! Merci de m'accueillir. J'aimerais en savoir plus sur le quartier.", 'user');
-addSpeechBubble("Bien sûr! Quels sont vos centres d'intérêt spécifiques?", 'guide');
-addSpeechBubble("Bonjour, bienvenue au quartier de XXXXXX, je peux te guider !", 'guide');
-addSpeechBubble("Salut! Merci de m'accueillir. J'aimerais en savoir plus sur le quartier.", 'user');
-addSpeechBubble("Bien sûr! Quels sont vos centres d'intérêt spécifiques?", 'guide');
-addSpeechBubble("Bonjour, bienvenue au quartier de XXXXXX, je peux te guider !", 'guide');
-addSpeechBubble("Salut! Merci de m'accueillir. J'aimerais en savoir plus sur le quartier.", 'user');
-addSpeechBubble("Bien sûr! Quels sont vos centres d'intérêt spécifiques?", 'guide');
-addSpeechBubble("Bonjour, bienvenue au quartier de XXXXXX, je peux te guider !", 'guide');
-addSpeechBubble("Salut! Merci de m'accueillir. J'aimerais en savoir plus sur le quartier.", 'user');
-addSpeechBubble("Bien sûr! Quels sont vos centres d'intérêt spécifiques?", 'guide');
-addSpeechBubble("Bonjour, bienvenue au quartier de XXXXXX, je peux te guider !", 'guide');
-addSpeechBubble("Salut! Merci de m'accueillir. J'aimerais en savoir plus sur le quartier.", 'user');
-addSpeechBubble("Bien sûr! Quels sont vos centres d'intérêt spécifiques?", 'guide');
+/* --- AUTOMATIC SCROLL FUNCTIONS --- */
 
+/* Change scroll value of conversation div */
+function scrollConversation(offset) {
+    conversation.animate({
+        scrollTop: '+=' + offset
+    }, 500);
+}
 
+/* get last speech bubble height */
+function getLastBubbleHeight() {
+    let lastBubble = conversation.find('.rp_user:last, .rp_guide:last');
+    return lastBubble.outerHeight(true);
+}
+
+/* --- IMPLEMENTATION --- */
+
+// Initial speech bubbles
+messageQueue.queue(function (next) {
+    addBubbleGuide("Bonjour, bienvenue au quartier de XXXXXX, je peux te guider !");
+    next();
+});
+
+messageQueue.queue(function (next) {
+    addBubbleUser("Salut! Merci de m'accueillir. J'aimerais en savoir plus sur le quartier.");
+    isTimeoutActive = false;
+    next();
+});
+
+// Add speech bubbles
+arrowDown.on("click", function () {
+    if (!isTimeoutActive) {
+        isTimeoutActive = true;
+
+        messageQueue.queue(function (next) {
+            addBubbleGuide("Et oui, il en existe plein ! Comme l’association Mosaïque par exemple, qui depuis 2003, s’est lancée dans l’aide aux devoirs. D’ailleurs, en 2023, ils ont aidé onze élèves à obtenir leur brevet des collèges. Bon je ne t’en dis pas plus, Natacha le raconte mieux que moi !");
+            next();
+        });
+
+        messageQueue.queue(function (next) {
+            addBubbleUser("Salut! Merci de m'accueillir. J'aimerais en savoir plus sur le quartier.");
+            isTimeoutActive = false;
+            next();
+        });
+    }
+});
