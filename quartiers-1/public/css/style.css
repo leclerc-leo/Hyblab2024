@@ -13,6 +13,7 @@ body{
     color: white;
     overflow: hidden;   /* to avoid slider bugs on some browsers */
     font-family: sans-serif;
+    overflow-y: scroll;
 }
 
 /* -------------- Loader --------------*/
@@ -233,12 +234,50 @@ body{
     margin: 10px;
     color: #84A2CF;
 }
-.cont_guide, .cont_user{   
+.cont_guide, .cont_user{
+    position: relative;  
     padding: 0.45em;
     margin-bottom: 5px;
-    border: solid thin black;
+    border: thin solid black;
 }
-
+.cont_guide{
+    border-radius: 10px 10px 10px 0;
+}
+.cont_user{
+    border-radius: 10px 10px 0 10px;
+}
+.cont_guide::before {
+    content: '';
+    position: absolute;
+    bottom: -0.68em;
+    left: -1px;
+    border: 0.35em solid;
+    border-color: black transparent transparent black;
+}
+.cont_guide::after {
+    content: '';
+    position: absolute;
+    bottom: -0.6em;
+    left: 0px;
+    border: 0.38em solid;
+    border-color: white transparent transparent white;
+}
+.cont_user::before {
+    content: '';
+    position: absolute;
+    bottom: -0.66em;
+    right: -1px;
+    border: 0.35em solid;
+    border-color: black black transparent transparent;
+}
+.cont_user::after {
+    content: '';
+    position: absolute;
+    bottom: -0.6em;
+    right: 0px;
+    border: 0.38em solid;
+    border-color: white white transparent transparent;
+}
 .rp_user{
     display: flex;
     flex-direction: row-reverse;
