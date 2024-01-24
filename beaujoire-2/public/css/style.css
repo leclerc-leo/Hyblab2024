@@ -81,7 +81,7 @@ body{
     text-transform: uppercase;
 }
 
-#first-slide p {
+#first-slide p, .swipe-down {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -95,6 +95,10 @@ body{
     color:black;
     text-align: center;
     margin: 0;
+}
+
+.swipe-down{
+    top: 0;
 }
 
 #arrow-intro{
