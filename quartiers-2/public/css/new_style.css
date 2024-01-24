@@ -1,0 +1,124 @@
+/* ------- Important ! Please at least keep the last part of this CSS ----------- */
+/* ------- that adapts content width and height so that aspect ratio  ----------- */
+/* ------- is kept between 9/16 a,d 3/4 (portait orientation)         ----------- */
+
+/* Normalize margin and padding to ease elements positioning */
+*{
+    padding:0;
+    margin:0;
+}
+
+body{
+    background-color: black;
+    color: white;
+    overflow: hidden;   /* to avoid slider bugs on some browsers */
+    font-family: sans-serif;
+}
+
+#bouton-decouvrir{
+    cursor: pointer;
+}
+
+/* -------------- Motion Page --------------*/
+#motion{
+    z-index: 3;
+    position:absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#motion-img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+/* -------------- End of Motion Page --------------*/
+
+
+/* Most of the elements in this demo are absolute positioned with percentages */
+#page-accueil header{
+    text-align: center;
+    width: 100%;
+    top: 10%;
+    position: absolute;
+    font-size: 30%;
+    z-index: 2;
+}
+
+#bouton-decouvrir{
+    text-align: center;
+    width: 50%;
+    left: 50%; /* center the logo, in interaction with the negative margin-left */
+    top: 50%;
+    margin-left:-25%; /* this is half the width */
+    margin-top:calc(-7.5% * 9 / 16 ); /* margins are relative to the element width... :-( */
+    position: absolute;
+    font-size: 50%;
+    z-index: 2;
+    cursor: pointer;
+    border : 1px solid white;
+    padding: 0.5em;
+    background: rgba(0, 0, 0, 0.5);
+
+}
+
+
+#page-accueil{
+    width: 100%;
+    height:100%;
+    position: absolute;
+    background-image: url('../img/background.svg');
+    background-size: 100% auto; /* background is full width and height is proportional to width */
+    background-position: bottom; /* background is bottom aligned */
+}
+
+/* ---------- Important media queries for easy responsive content :-) ----------------- */
+/* Whatever the device used, the content will be displayed full width and height if      */
+/* the aspect ratio is between 3/4 and 9/16. If not it is locked to either 3/4 or 9/16  */
+
+/* When the aspect ratio is smaller that 3/4, display a 3/4 content */
+#container{
+    position: fixed; /* To set the size of the container to 100% of the visible viewport height AND for absolute positioning of child elements*/
+    height: 100%;   /* even on mobile devices with url or navigation bars */
+    margin-left: calc((100vw - 100 * 3vh / 4) / 2); /* Add black bands on left and right */
+    width: calc(100 * 3vh / 4); /* Force 3/4 aspect ratio */
+}
+
+/* We set a default font size here. It will be the base for all other font sizes */
+/* Here the font size is proportional to content width */
+body{
+    font-size: calc(15vh * 3 / 4);
+}
+
+/* Fill the whole viewport when its aspect ratio is between 9/16 and 3/4 */
+@media screen and (max-aspect-ratio: 3/4) {
+    #container{
+        margin-left: 0; /* reset margin-left */
+        width: 100vw; /* content is full width (and full height because of the default rule for container height */
+    }
+
+    /* We set a default font size here. It will be the base for all other font sizes */
+    /* Here the font size is proportional to content width */
+    body{
+        font-size: 15vw;
+    }
+}
+
+/* The content is displayed at 9/16 If the aspect ratio is higher that 9/16  */
+@media screen and (max-aspect-ratio: 9/16) {
+    #container{
+        margin-left: 0; /* reset left margin */
+        width: 100vw;   /* content is full width */
+        margin-top: calc(-50 * 16vw / 9); /* move the content half the height to the top */
+        top:50%; /* then center it ! */
+        height: calc(100 * 16vw / 9); /* adjust height so that aspect ratio is 9/16 */
+    }
+
+    /* We set a default font size here. It will be the base for all other font sizes */
+    /* Here the font size is proportional to content width */
+    body{
+        font-size: 15vw;
+    }
+}
+
