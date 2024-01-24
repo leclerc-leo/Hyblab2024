@@ -1,6 +1,7 @@
 // Use strict mode
 'use strict';
 
+
 // Load usefull expressjs and nodejs objects / modules
 const express = require('express');
 const path = require('path');
@@ -8,6 +9,7 @@ const path = require('path');
 // Create our application
 const app = express();
 
+let db = require('./public/data/dbinit');
 // Load and register our REST API
 const api = require('./api/api');
 app.use('/api', api);

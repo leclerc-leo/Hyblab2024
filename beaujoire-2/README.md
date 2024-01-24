@@ -1,20 +1,20 @@
 # Descriptif du projet
 
-Porteur de projet :
+Porteur de projet : Héloïse LALANDE
 
-Sujet :
+Sujet : Beaujoire-2 - Création d'une page web interactive ayant pour but de voter pour les meilleurs joueurs du FC Nantes à l'occasion des 40 ans de la Beaujoire
 
-Nom d'équipe :
+Nom d'équipe : Les Canards Rient
 
 Participants : 
 
-- AGR :
+- AGR : Vincent Marinier, Maëlyse Christodoulos
 
-- EPJT :
+- EPJT : Saskia Juigner Doubinsky, Edgar Ducreux
 
-- Polytech :  
+- Polytech : Hadil Helali, Souha Loulou, Moncef Bouramoul, Séléna Le Gac, Héloïse Lalande
 
-- SciencesPo : 
+- SciencesPo : Daphné Brionne
 
 
 
