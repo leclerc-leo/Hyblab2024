@@ -2,7 +2,7 @@
 
 // Init of the (touch friendly) Swiper slider
 const swiper = new Swiper("#mySwiper", {
-  direction: "vertical",
+  direction: "horizontal",
   mousewheel: true,
   pagination: {
     el: ".swiper-pagination",
@@ -27,7 +27,7 @@ setTimeout(() => {
   // fade out the loader "slide"
   // and send it to the back (z-index = -1)
   anime({
-    delay: 1000,
+    delay: 0,
     targets: '#loader',
     opacity: '0',
     'z-index' : -1,
