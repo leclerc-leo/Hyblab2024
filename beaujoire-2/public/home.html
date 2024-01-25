@@ -5,17 +5,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
   <title>Hyblab 2023</title>
-  <link rel="stylesheet" href="css/style-desktop.css">
+  <link rel="shortcut icon" type="image/ico" href="favicon.ico"/>
+  <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/loadingio/loading.css@v2.0.0/dist/loading.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <script src="js/slide1.js" defer></script>
-  <script src="js/slide2.js" defer></script>
-  <script src="js/index.js" defer></script>
+  <script src="js/home_slide1.js" defer></script>
+  <script src="js/home_slide2.js" defer></script>
+  <script src="js/home.js" defer></script>
 </head>
 <body>
-    <!-- Le conteneur sert à vérouiller les proportions (aspect ratio) du contenu de la page (ici des slides) -->
+    <!-- Le conteneur sert à verrouiller les proportions (aspect ratio) du contenu de la page (ici des slides) -->
     <div id="container">
       <!-- Le loader-->
       <section id="loader">
@@ -27,20 +28,50 @@
         <main class = "swiper-wrapper">
             <section id="first-slide" class="swiper-slide">
                 <header>
-                    <h1 id="titre">Welcome to</h1>
+                    <h1 id="titre">Vous êtes Nantes !</h1>
+                    <h2 id="sous-titre">Composez votre XI de légende</h2>
                 </header>
                 
-                <img src="img/logo_hyblab.png" id="logo-hyblab" alt="logo hyblab"></img>
+                <img src="img/placeholder.png" id="logo-hyblab" alt="logo hyblab"></img>
+                <a id="creer-equipe"> Créer votre équipe </a>
 
-
-                <!-- le footer sera rempli à partir de données lues dans un fichier Json-->
-                <footer>
-                  <p></p>
-                </footer>
+                <p>
+                  Ou découvrez l'histoire du stade <br> de la Beaujoire en un swipe !
+                  <img src="img/down-arrow-intro.svg" id="arrow-intro" alt="Passer à la suite"></img>
+                </p>
+                
             </section>
             <section id="second-slide" class="swiper-slide">
+              <p>
+                <i>
+                  Cette année, le stade de la Beaujoire fête ses 40 ans. 
+                  Pour l’occasion, Ouest-France vous propose de former votre équipe de légende, 
+                  de (re)découvrir les joueurs qui ont marqué le stade et de partager vos souvenirs.
+                </i>
+              </p>
+              <p>
+                Le stade Marcel-Saupin avait accueilli le FC Nantes pendant 40 ans, de 1945 à 1984. 
+                Depuis, les Canaris jouent 
+                <a href="https://www.ouest-france.fr/pays-de-la-loire/nantes-44000/nantes-la-beaujoire-digne-successeur-de-marcel-saupin-5614271">stade de La Beaujoire</a>, 
+                situé au Nord-Est de la ville. 
+                Le stade de 52 000 places devient à son tour quadragénaire et s’apprête à accueillir les Jeux olympiques, cet été.
+              </p>
+              <p>
+                L’objectif du projet était ambitieux : faire de Nantes une place forte du football en Europe. 
+                L’architecte Berdje Agopyan, réalisateur du Parc des princes, est chargé de donner vie au projet. 
+                Inauguré le 8 mai 1984, le stade accueille un mois plus tard la coupe d’Europe, 
+                et voit les Bleus écraser les Diables rouges 5 à 0. 
+              </p>
+              
+              <p class="swipe-down">
+                Swiper pour plus d'infos !
+                <img src="img/down-arrow-intro.svg" id="arrow-intro" alt="Passer à la suite"></img>
+              </p>
+              
+          </section>
+            <section id="final-slide" class="swiper-slide">
                 <header>
-                  <h1>This was...</h1>
+                  <h1>Projet réalisé à l'occasion de...</h1>
                 </header>
                 <img id="img-fini" src="hyblab_2024.png">
                 <footer id="bandeau">
