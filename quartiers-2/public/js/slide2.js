@@ -1,7 +1,7 @@
 "use strict";
 
 // Just animate the logo
-const initSlide2 = function(){
+const homeStories = function(){
   // Get img element
   console.log('slide2');
 
