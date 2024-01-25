@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="css/new_style.css">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/loadingio/loading.css@v2.0.0/dist/loading.css" />
+    <link rel="stylesheet" href="css/stories.css" />
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script src="js/slide1.js" defer></script>
@@ -16,10 +18,29 @@
 </head>
 <body>
     <!-- Le conteneur sert à verrouiller les proportions (aspect ratio) du contenu de la page (ici des slides) -->
-    <div id="container">
-      <!-- Le loader-->
-      Test
-    </div>
-  </div>
+    <div id="container" style="overflow: scroll">
+        <h1 id="main-title-stories">Le quartier Thabor St-Hélier</h1>
+
+        <!-- bouton retour -->
+        <a href="index.html"><img src="img/left-arrow.svg" alt="Retour" id="back_button"></a>
+
+        <!-- portes des différentes histoires -->
+        <div id="stories">
+            <div>
+                <a href="story1.html">
+                    <img src="img/marie.png" alt="story1">
+                </a>
+            </div>
+            <div>
+                <a href="story2.html">
+                    <img src="img/marie.png" alt="story2">
+                </a>
+            </div>
+            <div>
+                <a href="story3.html">
+                    <img src="img/marie.png" alt="story3">
+                </a>
+            </div>
+        </div>
 </body>
 </html>
