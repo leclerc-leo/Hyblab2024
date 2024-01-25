@@ -245,6 +245,30 @@ body{
     }
 }
 
+/* -------------- Video player --------------*/
+.video-player {
+    margin: 15%;
+}
+
+.video-player h6 {
+    font-size: calc(15vh * 3 / 8);
+    margin-bottom: 3%;
+    
+}
+
+.video-player p {
+    font-size: calc(15vh * 3 / 16);
+
+}
+
+iframe {
+    width: 80%;
+    margin: 10%;
+
+}
+
+/* -------------- End of Video player --------------*/
+
 
 /* ---------- Important media queries for easy responsive content :-) ----------------- */
 /* Whatever the device used, the content will be displayed full width and height if      */
