@@ -1,0 +1,99 @@
+<!doctype html>
+
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <title>Hyblab 2023</title>
+  <link rel="stylesheet" href="css/quartiers.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/loadingio/loading.css@v2.0.0/dist/loading.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="js/quartiers.js" defer></script>
+  <script src="js/conversation.js" defer></script>
+</head>
+<body>
+    <!-- Le conteneur sert à vérouiller les proportions (aspect ratio) du contenu de la page (ici des slides) -->
+    <div id="container">
+        <!-- Le loader-->
+        <section id="loader">
+            <div id="loader-img" class="ld ld-ring ld-cycle"></div>
+        </section>
+
+        <div class="swiper swiper-horizontal">
+            <main class = "swiper-wrapper">
+
+                <section id="villejean" class="swiper-slide quartier">
+
+                    <div class="swiper swiper-vertical">
+                        <main class = "swiper-wrapper">
+            
+                            <section id="villejean-home" class="swiper-slide quartier-home">
+                                <div id="villejean-drawing" class="drawing">
+                                    Villejean
+                                </div>
+                                <div id="villejean-conversation" class="conversation"></div>
+                                <div id="villejean-spaceline" class="spaceline">
+                                    Spaceline
+                                </div>
+
+                                <img class="guide" src="img/guide.png" alt="Guide"/>
+                                <div class="conversation-arrow-container">
+                                    <div class="conversation-arrow-down"></div>
+                                </div>
+                                <input type="button" value="Plus d'info" class="navigation-button more-info">
+                                <input type="button" onclick="location.href='/quartiers-1';" value="Carte" class="navigation-button go-to-map">
+                            </section>
+            
+                            <section id="villejean-info" class="swiper-slide quartier-info">
+                                Plus d'info
+                                <input type="button" value="Retour" class="navigation-button back-to-home">
+                            </section>
+            
+                        </main>
+
+                    </div>
+
+                </section>
+
+                <section id="autre" class="swiper-slide quartier">
+                    
+                    <div class="swiper swiper-vertical">
+                        <main class = "swiper-wrapper">
+            
+                            <section id="autre-home" class="swiper-slide quartier-home">
+                                <div id="autre-drawing" class="drawing">
+                                    Autre quartier
+                                </div>
+                                <div id="autre-conversation" class="conversation"></div>
+                                <div id="autre-spaceline" class="spaceline">
+                                    Spaceline
+                                </div>
+
+                                <img class="guide" src="img/guide.png" alt="Guide"/>
+                                <div class="conversation-arrow-container">
+                                    <div class="conversation-arrow-down"></div>
+                                </div>
+                                <input type="button" value="Plus d'info" class="navigation-button more-info">
+                                <input type="button" value="Carte" class="navigation-button go-to-map">
+                            </section>
+            
+                            <section id="second-slide2" class="swiper-slide quartier-info">
+                                Plus d'info
+                                <input type="button" value="Retour" class="navigation-button back-to-home">
+                            </section>
+            
+                        </main>
+                        
+                    </div>
+
+                </section>
+
+            </main>
+            
+        </div>
+    </div>
+</body>
+</html>

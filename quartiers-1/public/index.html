@@ -2,77 +2,151 @@
 
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-  <title>Hyblab 2023</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/loadingio/loading.css@v2.0.0/dist/loading.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <script src="js/slide1.js" defer></script>
-  <script src="js/slide2.js" defer></script>
-  <script src="js/index.js" defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>Hyblab 2023</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/loadingio/loading.css@v2.0.0/dist/loading.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="js/index.js" defer></script>
 </head>
 <body>
     <!-- Le conteneur sert à vérouiller les proportions (aspect ratio) du contenu de la page (ici des slides) -->
     <div id="container">
-      <!-- Le loader-->
-      <section id="loader">
-        <div id="loader-img" class="ld ld-ring ld-cycle"></div>
-        <p id="loader-text">Veuillez patienter...</p>
-      </section>
-      <div id="mySwiper" class="swiper">
-        <!-- le main est aussi le conteneur des différents slides (contenus à chaque fois dans des sections-->
-        <main class = "swiper-wrapper">
-            <section id="first-slide" class="swiper-slide">
-                <header>
-                    <h1 id="titre">Welcome to</h1>
-                </header>
-                
-                <img src="img/logo_hyblab.png" id="logo-hyblab" alt="logo hyblab"></img>
 
+        <section id="loader">
+            <img src="img/logo_tvr.png"> 
+            <p id="loader-text">Trouve ton quartier</p>
+        </section>
 
-                <!-- le footer sera rempli à partir de données lues dans un fichier Json-->
-                <footer>
-                  <p></p>
-                </footer>
-            </section>
-            <section id="second-slide" class="swiper-slide">
-                <header>
-                  <h1>This was...</h1>
-                </header>
-                <img id="img-fini" src="hyblab_2024.png">
-                <footer id="bandeau">
-                        <!-- Logo Hyblab -->
-                          <a href="http://www.hyblab.fr/"><img id="hyblab" src="logo_hyblab.png" alt="Hyblab DataSport"></a>
-                      
-                          <!-- Les organisateurs -->
-                          <ul>
-                            <li><a href="http://www.agrnantes.fr"><img src="ecoles/logo_agr.png" alt="AGR école de l'image"></a></li>
-                            <li><a href="https://epjt.fr/"><img src="ecoles/logo_epjt.svg" alt="Ecole publique de journalisme de Tours"></a></li>
-                            <li><a href="http://www.polytech.univ-nantes.fr/"><img src="ecoles/logo_polytech.png" alt="Polytech Nantes"></a></li>
-                            <li><a href="https://www.sciencespo-rennes.fr/"><img src="ecoles/logo_sciencespo.svg" alt="SciencesPo"></a></li>
-                            <!-- Les autres logos -->
-                          <ul>
-                            <li><a href="http://www.ouestmedialab.fr/"><img src="logo_oml.png" alt="Ouest Médialab"></a></li>
-                            <!-- Logos CC et opensource -->
-                            <li>
-                            <ul>
-                              <li class="stacked"><img id="cc" src="logo_cc.png" alt="Creative commons"></li>
-                              <li class="stacked"><img id="opensource" src="logo_opensource.png" alt="Open source"></li>
-                            </ul>
-                            </li>
-                            <!-- Logo de votre porteur de projet -->
-                            <li><a href="http://www.mon-porteur-de-projet.org"><img src="no-logo.png" alt="Logo de mon porteur de projet"></a></li>
-                            <!-- Partenaires institutionnels -->
-                            <li><a href="http://www.nantesmetropole.fr/"><img class="institutionnel" src="institutionnels/logo_nantesmetropole.png" alt="Nantes Métropole"></a></li>
-                          </ul>
-                </footer>
-            </section>
-        </main>
-        <div class="swiper-pagination"></div>
+        <div id="map">
+            <h1>Carte</h1>
+            <svg id="rennes_map" width="104" height="98" viewBox="0 0 104 98" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path data-no_slide=0 id="map_villejean" d="M41 22.5L46.5 29.5L49.5 34L50.5 41L43 49.5L39 55L33 50.5L20 48.5L22.5 42.5H19H15.5L17 38L10 32L11 26.5L18 27.5V21V18L20 16L26 18H29.5L33 16H39L41 22.5Z" fill="#D9D9D9"/>
+                <path data-no_slide=1 id="map_st_martin" d="M52 34.5L48 29L53 27L58 28.5L57 34.5L63 37L61 42L53 46H50.5L51 42L52 34.5Z" fill="#D9D9D9"/>
+                <path data-no_slide=2 id="map_maurepas" d="M60 27L62.5 24H66L68 18.5L74 16.5L80.5 20L87.5 13.5V9L91 8L97 4L102.5 0.5L103.5 6.5L100.5 11.5L93 25V30L80.5 37L69.5 41.5H66V36L59 33L60 27Z" fill="#D9D9D9"/>
+                <path data-no_slide=3 id="map_bourg_eveque_cleunay" d="M49.5 47.5L48 46.5L44 50.5L39.5 57.5L32 51.5L17.5 49V54L10 56.5L12.5 66.5L0 77.5V91L7 94L16.5 87L21 85.5L28.5 77.5L39.5 74L43 71.5L52 68L50.5 57.5L48 54L49.5 47.5Z" fill="#D9D9D9"/>
+                <path data-no_slide=4 id="map_centre" d="M57.5 50.5L55.5 47L51.5 48L50.5 53L52.5 56L53.5 67.5L61.5 65.5L59.5 57.5V51.5L57.5 50.5Z" fill="#D9D9D9"/>
+                <path data-no_slide=5 id="map_thabor" d="M63.5 41L57.5 46L59 49L61.5 50.5V55.5L63.5 65.5L79 62.5L77 60.5L69.5 44H65L63.5 41Z" fill="#D9D9D9"/>
+                <path data-no_slide=6 id="map_jeanne_darc" d="M78.5 58.5L71.5 43.5L96 31.5L100 35.5V41.5L98 45.5L96 51.5L92.5 53L97 58.5L91.5 61.5H82L78.5 58.5Z" fill="#D9D9D9"/>
+                <path data-no_slide=7 id="map_sud_gare" d="M57.5 68.5L68.5 66.5L71 71L70 79L71 83.5L62 86.5L61 77.5L49 76.5V74L46 72L57.5 68.5Z" fill="#D9D9D9"/>
+                <path data-no_slide=8 id="map_francisco" d="M80.5 64L72 66.5L73 70.5L72 80.5L85 82.5L89 91.5L94.5 87.5L99.5 82.5L102.5 70.5L96.5 66.5L94.5 63H84L80.5 64Z" fill="#D9D9D9"/>
+                <path data-no_slide=9 id="map_brequigny" d="M59 79.5L48 78.5V86H43L38 90.5L41.5 93H46.5H53L55.5 92L60 96L59 90.5V87V79.5Z" fill="#D9D9D9"/>
+                <path data-no_slide=10 id="map_le_blosne" d="M61 93.5V89.5L72 85.5L74 83.5L83.5 85L86.5 93.5L81.5 95.5L78 93.5L71.5 90.5V97L63.5 98V93.5H61Z" fill="#D9D9D9"/>
+            </svg>
+            
+        </div>
+
+        <div id="quartiers-swiper" class="swiper">
+            <main class = "swiper-wrapper">
+
+                <section id="villejean" class="swiper-slide quartier-preview">
+                    <h2 id="quartier-nom">Villejean-Beauregard</h2>
+                    <svg width="41" height="39" viewBox="0 0 41 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <a href="/quartiers-1/quartiers">
+                            <path d="M31 6.5L36.5 13.5L39.5 18L40.5 25L33 33.5L29 39L23 34.5L10 32.5L12.5 26.5H9H5.5L7 22L0 16L1 10.5L8 11.5V5V2L10 0L16 2H19.5L23 0H29L31 6.5Z" fill="#D9D9D9"/>
+                        </a>
+                    </svg>                        
+                </section>
+
+                <section id="st_martin" class="swiper-slide quartier-preview">
+                    <h2 id="quartier-nom">Nord-St Martin</h2>
+                    <svg width="15" height="19" viewBox="0 0 15 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <a href="/quartiers-1/quartiers">
+                            <path d="M4 7.5L0 2L5 0L10 1.5L9 7.5L15 10L13 15L5 19H2.5L3 15L4 7.5Z" fill="#D9D9D9"/>
+                        </a>
+                    </svg>                        
+                </section>
+
+                <section id="maurepas" class="swiper-slide quartier-preview">
+                    <h2 id="quartier-nom">Maurepas-Patton</h2>
+                    <svg width="45" height="42" viewBox="0 0 45 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <a href="/quartiers-1/quartiers">
+                            <path d="M1 27L3.5 24H7L9 18.5L15 16.5L21.5 20L28.5 13.5V9L32 8L38 4L43.5 0.5L44.5 6.5L41.5 11.5L34 25V30L21.5 37L10.5 41.5H7V36L0 33L1 27Z" fill="#D9D9D9"/>
+                        </a>
+                    </svg>    
+                </section>
+
+                <section id="bourg_eveque_cleunay" class="swiper-slide quartier-preview">
+                    <h2 id="quartier-nom">Bourg L'Evêque-La Touche Moulin du Comte + Cleunay-Arsenal-Redon</h2>
+                    <svg width="52" height="48" viewBox="0 0 52 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <a href="/quartiers-1/quartiers">
+                            <path d="M49.5 1.5L48 0.5L44 4.5L39.5 11.5L32 5.5L17.5 3V8L10 10.5L12.5 20.5L0 31.5V45L7 48L16.5 41L21 39.5L28.5 31.5L39.5 28L43 25.5L52 22L50.5 11.5L48 8L49.5 1.5Z" fill="#D9D9D9"/>
+                        </a>
+                    </svg>                        
+                </section>
+
+                <section id="centre" class="swiper-slide quartier-preview">
+                    <h2 id="quartier-nom">Centre</h2>
+                    <svg width="12" height="21" viewBox="0 0 12 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <a href="/quartiers-1/quartiers">
+                            <path d="M7.5 3.5L5.5 0L1.5 1L0.5 6L2.5 9L3.5 20.5L11.5 18.5L9.5 10.5V4.5L7.5 3.5Z" fill="#D9D9D9"/>
+                        </a>
+                    </svg>                        
+                </section>
+
+                <section id="thabor" class="swiper-slide quartier-preview">
+                    <h2 id="quartier-nom">Thabor-St Hélier</h2>
+                    <svg width="22" height="25" viewBox="0 0 22 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <a href="/quartiers-1/quartiers">
+                            <path d="M6.5 0L0.5 5L2 8L4.5 9.5V14.5L6.5 24.5L22 21.5L20 19.5L12.5 3H8L6.5 0Z" fill="#D9D9D9"/>
+                        </a>
+                    </svg>                        
+                </section>
+
+                <section id="jeanne_darc" class="swiper-slide quartier-preview">
+                    <h2 id="quartier-nom">Jeanne d'Arc-Longs Champs-Atalante Beaulieu</h2>
+                    <svg width="29" height="31" viewBox="0 0 29 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <a href="/quartiers-1/quartiers">
+                            <path d="M7.5 27.5L0.5 12.5L25 0.5L29 4.5V10.5L27 14.5L25 20.5L21.5 22L26 27.5L20.5 30.5H11L7.5 27.5Z" fill="#D9D9D9"/>
+                        </a>
+                    </svg>                        
+                </section>
+
+                <section id="sud_gare" class="swiper-slide quartier-preview">
+                    <h2 id="quartier-nom">Sud-gare</h2>
+                    <svg width="25" height="21" viewBox="0 0 25 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <a href="/quartiers-1/quartiers">
+                            <path d="M11.5 2.5L22.5 0.5L25 5L24 13L25 17.5L16 20.5L15 11.5L3 10.5V8L0 6L11.5 2.5Z" fill="#D9D9D9"/>
+                        </a>
+                    </svg>                        
+                </section>
+
+                <section id="francisco" class="swiper-slide quartier-preview">
+                    <h2 id="quartier-nom">Francisco Ferrer-Vern-Poterie</h2>
+                    <svg width="31" height="29" viewBox="0 0 31 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <a href="/quartiers-1/quartiers">
+                            <path d="M8.5 1L0 3.5L1 7.5L0 17.5L13 19.5L17 28.5L22.5 24.5L27.5 19.5L30.5 7.5L24.5 3.5L22.5 0H12L8.5 1Z" fill="#D9D9D9"/>
+                        </a>
+                    </svg>                        
+                </section>
+
+                <section id="brequigny" class="swiper-slide quartier-preview">
+                    <h2 id="quartier-nom">Bréquigny</h2>
+                    <svg width="22" height="18" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <a href="/quartiers-1/quartiers">
+                            <path d="M21 1.5L10 0.5V8H5L0 12.5L3.5 15H8.5H15L17.5 14L22 18L21 12.5V9V1.5Z" fill="#D9D9D9"/>
+                        </a>
+                    </svg>                        
+                </section>
+
+                <section id="le_blosne" class="swiper-slide quartier-preview">
+                    <h2 id="quartier-nom">Le Blosne</h2>
+                    <svg width="26" height="15" viewBox="0 0 26 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <a href="/quartiers-1/quartiers">
+                            <path d="M0 10.5V6.5L11 2.5L13 0.5L22.5 2L25.5 10.5L20.5 12.5L17 10.5L10.5 7.5V14L2.5 15V10.5H0Z" fill="#D9D9D9"/>
+                        </a>
+                    </svg>                        
+                </section>
+            
+            </main>
+        </div>
+
+        <input type="button" value="Précédent" class="navigation-button" id="previous">
+        <input type="button" value="Suivant" class="navigation-button" id="next">
+        <p id="swipe-instruction">*Flêche*<br>Swipez !</p>
     </div>
-  </div>
 </body>
 </html>

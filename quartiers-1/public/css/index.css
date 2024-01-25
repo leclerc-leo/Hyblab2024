@@ -10,151 +10,135 @@
 
 body{
     background-color: black;
-    color: white;
+    color: black;
     overflow: hidden;   /* to avoid slider bugs on some browsers */
     font-family: sans-serif;
 }
 
 /* -------------- Loader --------------*/
 #loader{
-    z-index: 2;
     position:absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    background-color: black;
 }
 
-#loader-img{
-    top:40%;
-    left:40%;
-    position: absolute;
+#loader img{
+    width: 15%;
+    position: relative;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 #loader-text{
     text-align: center;
     font-size: 25%;
-    position: absolute;
-    top:60%;
-    width: 100%
+    position: relative;
+    top: 50%;
+    width: 100%;
+    color: white
 }
 /* -------------- End of Loader --------------*/
 
-/* Swiper slider. Need to fill the container */
-#mySwiper{
+/* -------------- Map --------------*/
+#map{
     width: 100%;
-    height:100%;
-    position: absolute;
+    height:50%;
+    background-color: whitesmoke;
 }
 
-/* white navigation bullets */
-.swiper-pagination-bullet-active {
-    background-color: white !important;
-}
-
-/* the slides and the loader should fill the whole 9:16 zone */
-.swiper-wrapper section, #loader{
-    background-color: dodgerblue;
-    width: 100%;
-    height: 100%;
-}
-
-/* Most of the elements in this demo are absolute positioned with percentages */
-#first-slide header, #second-slide header{
-    text-align: center;
+#map h1{
+    position: relative;
     width: 100%;
     top: 10%;
-    position: absolute;
-    font-size: 30%;
-    z-index: 2;
-}
-
-#logo-hyblab{
     text-align: center;
-    width: 50%;
-    left: 50%; /* center the logo, in interaction with the negative margin-left */
-    top: 50%;
-    margin-left:-25%; /* this is half the width */
-    margin-top:calc(-7.5% * 9 / 16 ); /* margins are relative to the element width... :-( */
-    position: absolute;
     font-size: 50%;
+}
+
+#map svg{
+    position: relative;
+    top: 15%;
+    height: 60%;
+    width: auto;
+    left: 50%;
+    transform: translateX(-50%);
+}
+/* -------------- End of Map --------------*/
+
+/* -------------- Quartier Preview --------------*/
+#quartiers-swiper{
+    width: 100%;
+    height:50%;
+}
+
+.quartier-preview{
+    width: 100%;
+    height: 100%;
+    background-color: whitesmoke;
+}
+
+.quartier-preview h2{
+    position: relative;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    font-size: 40%;
+    z-index: 1;
+}
+
+.quartier-preview svg{
+    position: relative;
+    height: 60%;
+    width: auto;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#bourg_eveque_cleunay svg, #jeanne_darc svg{
+    top: 0%;
+}
+
+.navigation-button{
+    position: absolute;
+    bottom: 25%;
+    transform: translateY(50%);
     z-index: 2;
-    cursor: pointer;
+}
+#previous{
+    left: 0;
+}
+#next{
+    right: 0;
 }
 
-/* Last slide image is centered */
-#img-fini{
-    width: 70%;
-    left: 50%; /* center the logo, in interaction with the negative margin-left */
-    top: 40%;
+#swipe-instruction{
     position: absolute;
-    margin-left:-35%; /* this is half the width */
-    margin-top:calc(-25% * 9 / 16 ); /* margins are relative to the element width... :-( */
-}
-
-main > section{
-    background-image: url('../img/background.svg');
-    background-size: 100% auto; /* background is full width and height is proportional to width */
-    background-position: bottom; /* background is bottom aligned */
-}
-
-/* Footer of last slide is at the bottom and content is centered */
-#first-slide footer{
     bottom: 5%;
-    position: absolute;
-    box-sizing: border-box; /* So that padding is not added to width (and width: 100% works) */
-    width: 100%; /* could also use  width: calc(100% - 2em) if not using box-sizing */
-    font-size: 20%;
+    transform: translateY(50%);
+    z-index: 2;
+    width: 100%;
     text-align: center;
-    padding: 1em;
-    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 30%;
 }
 
-
-/* ---------- Positioning of logos on the last slide -------------------- */
-/* here we have a contraint on the height of the logos (not the width)     */
-/* so we cannot use % and use em (which are proportional to the size of the */
-/* slide because of body's font size rule at the end of this CSS           */
-#bandeau {
-    width:100%;
+#index-test{
     position: absolute;
-    bottom: 0;
-    background-color: white;
-    font-size: 20%;
-  }
+    bottom: 40%;
+    transform: translateY(50%);
+    z-index: 2;
+}
+#test1{
+    position: absolute;
+    bottom: 45%;
+    transform: translateY(50%);
+    z-index: 2;
+}
+/* -------------- End of Quartier Preview --------------*/
 
-  #bandeau li{
-    list-style-type: none;
-    display: inline-block;
-    vertical-align: middle;
-    margin: 0 0.5em;
-  }
-
-  #bandeau img{
-    height: 2.5em;
-  }
-
-  #bandeau #hyblab{
-    margin: 1em auto;
-    height: 3em;
-    display: block;
-  }
-
-  #bandeau #cc, #bandeau #opensource
-  {
-    height: 1em;
-  }
-
-  #bandeau .stacked{
-    display:block;
-  }
-
-  #bandeau ul{
-    text-align: center;
-    padding: 0 0;
-    margin: 0.5em auto;
-  }
-
-  #bandeau .institutionnel
-  {
-    height: 2em;
-  }
 
 /* ---------- Important media queries for easy responsive content :-) ----------------- */
 /* Whatever the device used, the content will be displayed full width and height if      */
