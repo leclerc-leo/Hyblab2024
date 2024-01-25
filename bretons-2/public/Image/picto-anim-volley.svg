@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 28.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 500 500" style="enable-background:new 0 0 500 500;" xml:space="preserve">
+<style type="text/css">
+	.st0{display:none;}
+	.st1{display:inline;fill:#120959;}
+	.st2{display:inline;fill:#00ECB8;}
+	.st3{display:inline;fill:#FFCA41;}
+	.st4{display:inline;fill:#F00000;}
+	.st5{fill:#FFCA41;}
+	.st6{fill:#F00000;}
+	.st7{fill:#120959;}
+	.st8{fill:#00ECB8;}
+	.st9{fill:none;stroke:#F00000;stroke-width:11;stroke-miterlimit:10;}
+</style>
+<g id="Jambe_D" class="st0">
+	<polygon class="st1" points="294.4,335.7 264.2,309.01 274.42,279.12 314.58,317.29 318.76,339.1 292.24,392.9 276.72,384.41 	"/>
+</g>
+<g id="Jambe_G" class="st0">
+	<polygon class="st1" points="226.88,341.3 198.79,312.29 220.79,307.29 251.54,336.06 244.56,355.35 169.76,389.76 165.66,375.11 	
+		"/>
+</g>
+<g id="Bassin" class="st0">
+	
+		<rect x="200.77" y="262.83" transform="matrix(0.9861 0.1662 -0.1662 0.9861 50.1216 -33.9523)" class="st2" width="54.39" height="39.44"/>
+</g>
+<g id="Torse" class="st0">
+	<polygon class="st2" points="229.68,280.25 279.94,202.1 207.39,190.05 	"/>
+</g>
+<g id="Bras_D" class="st0">
+	<polygon class="st1" points="278.79,246.29 322.59,254.03 318.55,240.23 291.79,234.29 289.79,212.29 276.79,214.29 274.3,240.53 	
+		"/>
+</g>
+<g id="Bras_G" class="st0">
+	<polygon class="st1" points="234.1,241.23 224.82,202.12 203.82,208.05 218.9,250.94 228.85,259.01 282.87,264.32 278.97,249.29 	
+		"/>
+</g>
+<g id="Tête" class="st0">
+	<circle class="st3" cx="252.15" cy="147.71" r="36.89"/>
+</g>
+<g id="Balle" class="st0">
+	<circle class="st4" cx="353.52" cy="189.92" r="34.27"/>
+</g>
+<g id="Calque_9">
+	<g>
+		<circle class="st5" cx="252.86" cy="146.53" r="36.89"/>
+		<circle class="st6" cx="354.23" cy="188.74" r="34.27"/>
+		<polygon class="st7" points="295.11,334.52 264.91,307.83 275.12,277.94 315.28,316.11 319.47,337.92 292.95,391.72 
+			277.42,383.23 		"/>
+		<polygon class="st7" points="227.59,340.12 199.5,311.11 221.5,306.11 252.24,334.88 245.27,354.17 170.47,388.58 166.36,373.93 
+					"/>
+		<polygon class="st7" points="279.5,245.11 323.3,252.85 319.26,239.05 292.5,233.11 290.5,211.11 277.5,213.11 275,239.35 		"/>
+		
+			<rect x="201.47" y="261.65" transform="matrix(0.9861 0.1662 -0.1662 0.9861 49.9354 -34.0862)" class="st8" width="54.39" height="39.44"/>
+		<polygon class="st8" points="230.38,279.07 280.65,200.92 208.1,188.87 		"/>
+		<polygon class="st7" points="234.81,240.05 225.53,200.94 204.53,206.87 219.61,249.76 229.56,257.83 283.58,263.14 
+			279.67,248.11 		"/>
+		<g>
+			<line class="st9" x1="170.15" y1="248.86" x2="124.12" y2="241.36"/>
+			<line class="st9" x1="175.97" y1="275.82" x2="110.94" y2="293.17"/>
+		</g>
+	</g>
+</g>
+</svg>

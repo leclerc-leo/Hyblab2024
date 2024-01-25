@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 28.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 500 500" style="enable-background:new 0 0 500 500;" xml:space="preserve">
+<style type="text/css">
+	.st0{display:none;}
+	.st1{display:inline;fill:#120959;}
+	.st2{display:inline;fill:#00ECB8;}
+	.st3{display:inline;fill:#F00000;}
+	.st4{display:inline;}
+	.st5{fill:none;stroke:#F00000;stroke-width:11;stroke-miterlimit:10;}
+	.st6{display:inline;fill:#FFCA41;}
+	.st7{fill:#FFCA41;}
+	.st8{fill:#F00000;}
+	.st9{fill:#120959;}
+	.st10{fill:#00ECB8;}
+</style>
+<g id="Bras_G" class="st0">
+	<polygon class="st1" points="179.79,223.27 218.6,212.86 219.55,234.67 175.33,240.74 164.56,233.82 152.07,187.38 167.56,186.38 	
+		"/>
+</g>
+<g id="Bras_D" class="st0">
+	<polygon class="st1" points="362.47,244.26 340.19,283.68 326.13,280.67 343.45,243.46 293.46,244.31 304.98,229.18 351.17,228.47 
+			"/>
+</g>
+<g id="Jambe_G" class="st0">
+	<polygon class="st1" points="176.88,357.55 200.57,315.6 220.42,334.97 201.22,364.11 186.22,378.11 125.2,399.02 128.22,384.11 	
+		"/>
+</g>
+<g id="Jambe_D" class="st0">
+	<polygon class="st1" points="326.83,339.52 280.63,330.83 290.84,300.94 347,321.11 351.19,342.92 301.67,380.72 286.14,372.23 	
+		"/>
+</g>
+<g id="Bassin" class="st0">
+	
+		<rect x="217.19" y="284.65" transform="matrix(0.9861 0.1662 -0.1662 0.9861 53.976 -36.3786)" class="st2" width="54.39" height="39.44"/>
+</g>
+<g id="Torse" class="st0">
+	<polygon class="st2" points="246.1,302.07 296.37,223.93 223.81,211.87 	"/>
+</g>
+<g id="Balle" class="st0">
+	<circle class="st3" cx="153.07" cy="141.62" r="31.39"/>
+</g>
+<g id="Exclamation" class="st0">
+	<g class="st4">
+		<line class="st5" x1="336.35" y1="143.47" x2="378.45" y2="123.43"/>
+		<line class="st5" x1="316.21" y1="124.62" x2="359.79" y2="73.33"/>
+	</g>
+</g>
+<g id="Tête" class="st0">
+	<circle class="st6" cx="268.58" cy="169.53" r="36.89"/>
+</g>
+<g id="Calque_10">
+	<g>
+		<circle class="st7" cx="268.54" cy="169.62" r="36.89"/>
+		<circle class="st8" cx="153.04" cy="141.71" r="31.39"/>
+		<polygon class="st9" points="326.79,339.61 280.59,330.91 290.81,301.03 346.96,321.2 351.15,343.01 301.63,380.81 286.11,372.32 
+					"/>
+		<polygon class="st9" points="176.85,357.64 200.53,315.69 220.38,335.06 201.18,364.2 186.18,378.2 125.17,399.11 128.18,384.2 		
+			"/>
+		<polygon class="st9" points="179.76,223.36 218.56,212.95 219.51,234.76 175.3,240.83 164.52,233.91 152.03,187.47 167.52,186.46 
+					"/>
+		<polygon class="st9" points="362.43,244.35 340.16,283.77 326.1,280.75 343.41,243.55 293.43,244.4 304.94,229.26 351.13,228.56 
+					"/>
+		
+			<rect x="217.15" y="284.74" transform="matrix(0.9861 0.1662 -0.1662 0.9861 53.99 -36.3712)" class="st10" width="54.39" height="39.44"/>
+		<polygon class="st10" points="246.07,302.15 296.33,224.01 223.78,211.96 		"/>
+		<g>
+			<line class="st5" x1="336.31" y1="143.56" x2="378.41" y2="123.51"/>
+			<line class="st5" x1="316.17" y1="124.71" x2="359.75" y2="73.42"/>
+		</g>
+	</g>
+</g>
+</svg>
