@@ -1,24 +1,12 @@
-import { Player } from "@remotion/player";
-import { MyComp } from "./remotion/MyComp";
-import './App.css'
+import ControlledCarousel from './components/carousel'; // Assurez-vous d'ajuster le chemin en fonction de l'emplacement réel
 
 function App() {
-
   return (
-    <Player
-      component={MyComp}
-      inputProps={{ text: "Malo" }}
-      durationInFrames={240}
-      compositionWidth={1920}
-      compositionHeight={1080}
-      fps={30}
-      style={{
-        width: 1280,
-        height: 720,
-      }}
-      controls
-    />
+    <div className="app">
+      <h1>Mon Application</h1>
+      <ControlledCarousel />
+    </div>
   );
 }
 
-export default App
+export default App;
