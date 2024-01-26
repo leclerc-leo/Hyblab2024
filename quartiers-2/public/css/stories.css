@@ -5,15 +5,26 @@
 }
 
 #back_button{
-    position: absolute;
+    z-index: 5;
+    cursor: pointer;
+    position: sticky;
+    left : 5%;
     top: 0;
-    left: 0;
-    height: 30px;
-    width: 30px;
     margin-top: 1vh;
     margin-left: 1vh;
 }
+#back_button img{
+    height: 30px;
+    width: 30px;
+}
+main{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 
+}
 /* code propre à la page */
 #main-title-stories {
     margin-top: 4vh;
