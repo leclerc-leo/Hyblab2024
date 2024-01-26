@@ -33,7 +33,7 @@
     cursor: pointer;
 }
 
-#left-button, #right-button {
+.previous, .next {
     display: flex;
     align-items: center;
 }
