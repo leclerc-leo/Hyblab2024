@@ -4,17 +4,20 @@
 // Here we simulate a loading time of one second
 setTimeout(() => { 
     anime({
-        delay: 200,
+        delay: 100,
         targets: '#loader',
         opacity: '0',
         'z-index' : -1,
         easing: 'easeOutQuad',
     });
-}, 200);
+}, 100);
 
 // Création du swiper
 const swiper = new Swiper("#quartiers-swiper", {
     direction: "horizontal",
+    spaceBetween: 0,
+    slidesPerView: 1.5,
+    centeredSlides: true,
     loop: "true",
     speed: 1000
 });
