@@ -6,7 +6,7 @@ setTimeout(() => {
   // fade out the loader "slide"
   // and send it to the back (z-index = -1)
   anime({
-    delay: 300,
+    delay: 100,
     targets: '#motion',
     opacity: '0',
     'z-index' : -1,
@@ -14,4 +14,4 @@ setTimeout(() => {
   });
   // Init first slide
   initAccueil();
-}, 1000);
+}, 100);

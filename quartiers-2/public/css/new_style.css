@@ -19,6 +19,24 @@ body{
     cursor: pointer;
 }
 
+/* -------------- CSS Commun --------------*/
+#back_button{
+    z-index: 500;
+    cursor: pointer;
+    position: sticky;
+    left : 5%;
+    top: 0;
+    margin-top: 1vh;
+    margin-left: 1vh;
+}
+#back_button img{
+    height: 30px;
+    width: 30px;
+}
+
+
+
+
 /* -------------- Motion Page --------------*/
 #motion{
     z-index: 3;
@@ -83,6 +101,7 @@ body{
     height: 100%;   /* even on mobile devices with url or navigation bars */
     margin-left: calc((100vw - 100 * 3vh / 4) / 2); /* Add black bands on left and right */
     width: calc(100 * 3vh / 4); /* Force 3/4 aspect ratio */
+    overflow: scroll;
 }
 
 /* We set a default font size here. It will be the base for all other font sizes */

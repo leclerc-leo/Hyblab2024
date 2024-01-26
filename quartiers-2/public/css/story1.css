@@ -1,17 +1,11 @@
 /* à supprimer et mettre dans un fichier css commun à toutes les pages */
 
-#container {
+.content{
+    z-index: 500;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: #FAE6D7;
-}
-
-#back_button{
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 30px;
-    width: 30px;
-    margin-top: 1vh;
-    margin-left: 1vh;
 }
 
 /* code propre à la page */
@@ -36,6 +30,7 @@
 #nav-buttons{
     display: flex;
     justify-content: space-between;
+    cursor: pointer;
 }
 
 #left-button, #right-button {

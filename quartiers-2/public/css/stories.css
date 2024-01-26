@@ -4,19 +4,6 @@
     background-color: #FAE6D7;
 }
 
-#back_button{
-    z-index: 5;
-    cursor: pointer;
-    position: sticky;
-    left : 5%;
-    top: 0;
-    margin-top: 1vh;
-    margin-left: 1vh;
-}
-#back_button img{
-    height: 30px;
-    width: 30px;
-}
 main{
     position: absolute;
     top: 0;
@@ -40,4 +27,30 @@ main{
     flex-direction: column;
     align-items: center;
     font-size: 0.5em;
+}
+
+
+/* Swiper slider. Need to fill the container */
+#mySwiper{
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    width: 100%;
+    height:100%;
+    overflow: inherit;
+}
+.swiper-wrapper{
+    width: 100%;
+}
+
+
+/* the slides and the loader should fill the whole 9:16 zone */
+.swiper-wrapper section{
+    background-color: dodgerblue;
+    width: 100%;
+    height: 100%;
+}
+.swiper-slide{
+    width: 100%;
+
 }
