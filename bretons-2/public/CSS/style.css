@@ -17,8 +17,14 @@ body {
 }
 
 nav {
-    background-color: red;
+    background-color: #E20917;
     height: 10%;
+}
+
+nav img {
+    height: 100%;
+    width: 100%;
+    color: white;
 }
 
 #blank {
@@ -41,8 +47,13 @@ nav {
 }
 
 footer {
-    background-color: red;
+    background-color: #E209174D;
     height: 5%;
+    width: 100%;
+    font-size: xx-small;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .swiper {
