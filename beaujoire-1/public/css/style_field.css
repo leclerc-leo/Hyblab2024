@@ -244,6 +244,7 @@ body {
 .btn {
 	background-color: #1E1E28;
 	color: #FADC00;
+	padding: 2vh;
 	font-family: Bebad Neue Pro;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 	margin: 3vh auto ;
