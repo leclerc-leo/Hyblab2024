@@ -1,0 +1,70 @@
+.custom-card {
+    position: relative;
+  }
+ 
+  .image-container {
+    position: relative;
+  }
+  
+.PlayButton{
+    position: absolute;
+    width: 71px; 
+    height: 71px; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -130%);
+    z-index:2;
+}
+
+  .custom-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .overlay-image {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 40px; 
+    height: 40px; 
+    z-index: 2; 
+  }
+  
+
+  .card_title {
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8); 
+    padding: 10px;
+    text-align: center
+  }
+   
+  .image-row {
+    display: flex;
+    justify-content: space-between;  
+    align-items: center;
+    flex-shrink: 0;
+  }
+  
+  
+.LikeLogo{
+    width: 54px;
+    height: 43px;
+}
+
+.ShareLogo{
+    width: 57.015px;
+    height: 44.855px;
+}
+
+.SaveLogo{
+    width: 29.867px;
+    height: 43.733px;
+}
+
+.BicycleLogo{
+    width: 53.868px;
+    height: 54.141px;
+}

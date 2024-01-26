@@ -1,27 +1,25 @@
-/* Fichier: ControlledCarousel.css (ou le nom que vous avez choisi) */
+/* carousel.css */
 
-/* Styles pour le carousel */
-.carousel {
-    width: 80%; /* Ajustez la largeur selon vos besoins */
-    margin: 20px auto;
-  }
-  
-  /* Styles pour les captions du carousel */
-  .carousel-caption {
-    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent pour les captions */
-    padding: 10px;
-    color: #fff;
-  }
-  
-  /* Styles pour les titres des slides */
-  .carousel-caption h3 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-  }
-  
-  /* Styles pour le texte des slides */
-  .carousel-caption p {
-    font-size: 1em;
-    margin-bottom: 0;
-  }
-  
+/* Ajoutez des styles spécifiques à ControlledCarousel ici */
+
+/* Style pour la classe custom-card */
+.custom-card {
+  /* Ajoutez des styles personnalisés pour la carte si nécessaire */
+}
+
+/* Style pour la classe custom-image */
+.custom-image {
+  /* Ajoutez des styles personnalisés pour les images si nécessaire */
+  width: 100%; /* Faites en sorte que les images occupent la largeur de leur conteneur */
+  height: auto; /* Ajustez la hauteur en conséquence */
+}
+
+/* Style pour la classe image-row */
+.image-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Ajoutez d'autres styles CSS selon vos besoins */
+
