@@ -17,6 +17,14 @@
   margin-top: 20px;
 }
 
+.head{
+  text-align: center;
+}
+.head img {
+  width: 92.7px;
+  height: 49.1px;
+  flex-shrink: 0;
+}
 /* Styles pour les captions du carousel */
 .carousel-caption {
   background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent pour les captions */

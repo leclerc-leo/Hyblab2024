@@ -4,13 +4,9 @@ import ListGroup from 'react-bootstrap/ListGroup';
 function KitchenSinkExample() {
   return (
     <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
+      <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />{/* Ici une image lié à l'athlète sera mis */}
       <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
+        <Card.Title>Card Title</Card.Title> {/* Titre de a vidéo*/}
       </Card.Body>
       <ListGroup className="list-group-flush">
         <ListGroup.Item>Cras justo odio</ListGroup.Item>

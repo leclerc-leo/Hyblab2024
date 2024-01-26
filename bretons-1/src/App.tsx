@@ -1,12 +1,16 @@
 import ControlledCarousel from './components/carousel';
-import OffcanvasExample from './components/Navbar';
-import './App.css'; 
+import './App.css';
+import OffcanvasExample from './components/Navbar'
 
 function App() {
   return (
-    <div className="app">
-      <OffcanvasExample/>
-      <ControlledCarousel />
+    <div>
+      <div className="head">
+        <OffcanvasExample/>
+      </div>
+      <div className="app">
+        <ControlledCarousel />
+      </div>
     </div>
   );
 }
