@@ -1,9 +1,11 @@
-import ControlledCarousel from './components/carousel'; // Assurez-vous d'ajuster le chemin en fonction de l'emplacement réel
+import ControlledCarousel from './components/carousel';
+import OffcanvasExample from './components/Navbar';
+import './App.css'; 
 
 function App() {
   return (
     <div className="app">
-      <h1>Mon Application</h1>
+      <OffcanvasExample/>
       <ControlledCarousel />
     </div>
   );

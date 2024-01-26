@@ -1,7 +1,9 @@
-
+// Fichier: ControlledCarousel.tsx
 
 import { SetStateAction, useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
+import KitchenSinkExample from './CardCarousel.tsx'; // Import du composant KitchenSinkExample
+import './carousel.css';
 
 function ControlledCarousel() {
   const [index, setIndex] = useState(0);
@@ -16,10 +18,7 @@ function ControlledCarousel() {
     <Carousel activeIndex={index} onSelect={handleSelect}>
       {titles.map((title, i) => (
         <Carousel.Item key={i}>
-          <Carousel.Caption>
-            <h3>{title} label</h3>
-            <p>Some content related to {title}</p>
-          </Carousel.Caption>
+          <KitchenSinkExample />
         </Carousel.Item>
       ))}
     </Carousel>
@@ -27,6 +26,7 @@ function ControlledCarousel() {
 }
 
 export default ControlledCarousel;
+
 
 /*
 import { SetStateAction, useState } from 'react';

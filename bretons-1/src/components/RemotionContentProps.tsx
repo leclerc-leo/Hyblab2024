@@ -25,7 +25,7 @@ export const RemotionContent: React.FC<RemotionContentProps> = ({ title, videoSr
   );
 };
 
-const RemotionContentInner: React.FC<RemotionContentProps & { [key: string]: unknown }> = ({ title, videoSrc, content }) => {
+const RemotionContentInner: React.FC<RemotionContentProps & { [key: string]: unknown }> = ({ videoSrc}) => {
   return (
     <div
       style={{

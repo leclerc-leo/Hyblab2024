@@ -1,42 +1,35 @@
-#root {
-  max-width: 1280px;
+/* Fichier: styles.css (ou le nom que vous avez choisi) */
+
+/* Styles pour le conteneur de l'application */
+.app {
+  max-width: 800px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 20px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Styles pour le titre de l'application */
+.app h1 {
+  color: #333;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Styles pour le carousel */
+.carousel {
+  margin-top: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* Styles pour les captions du carousel */
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent pour les captions */
+  padding: 10px;
+  color: #fff;
 }
 
-.card {
-  padding: 2em;
+/* Styles pour les titres des slides */
+.carousel-caption h3 {
+  font-size: 1.5em;
 }
 
-.read-the-docs {
-  color: #888;
+/* Styles pour le texte des slides */
+.carousel-caption p {
+  font-size: 1em;
 }

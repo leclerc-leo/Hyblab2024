@@ -1,0 +1,27 @@
+/* Fichier: ControlledCarousel.css (ou le nom que vous avez choisi) */
+
+/* Styles pour le carousel */
+.carousel {
+    width: 80%; /* Ajustez la largeur selon vos besoins */
+    margin: 20px auto;
+  }
+  
+  /* Styles pour les captions du carousel */
+  .carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent pour les captions */
+    padding: 10px;
+    color: #fff;
+  }
+  
+  /* Styles pour les titres des slides */
+  .carousel-caption h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  
+  /* Styles pour le texte des slides */
+  .carousel-caption p {
+    font-size: 1em;
+    margin-bottom: 0;
+  }
+  
