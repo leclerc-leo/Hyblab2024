@@ -16,7 +16,7 @@ function ControlledCarousel() {
 
   return (
     <Carousel activeIndex={index} onSelect={handleSelect}>
-      {titles.map((title, i) => (
+      {titles.map((_, i) => (
         <Carousel.Item key={i}>
           <KitchenSinkExample />
         </Carousel.Item>

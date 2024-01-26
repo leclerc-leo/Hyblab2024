@@ -9,7 +9,7 @@ const path = require('path');
 const app = express();
 
 // Minimum routing: serve static content from the html directory
-app.use(express.static(path.join(__dirname, 'dist')));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, '../__common-logos__')));
 
 // You can then add whatever routing code you need
