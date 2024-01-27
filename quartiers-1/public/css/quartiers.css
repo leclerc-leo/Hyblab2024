@@ -92,7 +92,7 @@ body{
 .conversation-arrow-container {
     position: absolute;
     width: 100%;
-    top: 90%;
+    top: 93%;
 }
 .conversation-arrow-down {
     color: #333;
@@ -135,13 +135,12 @@ body{
     flex-direction: column;
     color: black;
     background-color: white;
-
-    -webkit-overflow-scrolling: touch;
-
+    padding-bottom: 4%;
 }
 
 .rp_guide{
     display: flex;
+    flex-direction: column;
     animation: slideInLeft 1s;
     margin: 10px 10% 10px 10px;
 }
@@ -196,7 +195,8 @@ body{
 }
 .rp_user{
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: column;
+    align-items: flex-end;
     animation: slideInRight 1s;
     margin: 10px 10px 10px 10%;
 }
@@ -225,7 +225,31 @@ body{
         transform: translateX(0);
     }
 }
-/* -------------- End of Conversation --------------*/
+
+/* --- Choice bubbles--- */
+
+.choices{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.choice-bubbles{
+    padding: 0.45em;
+    margin: 4px 10px 4px 0px;
+    background-color: white;
+    border: thin solid black;
+    border-radius: 10px;
+    font-size: 1em;
+    animation: slideInRight 1s;
+}
+
+/* ---- Videos ---- */
+.videos{
+    width: 100%;
+    height: 343px;
+    margin: 10px;
+    border-radius: 10px;
+}
 
 @keyframes jumpInfinite {
     0% {
@@ -244,6 +268,9 @@ body{
         bottom: 10px;
     }
 }
+/* -------------- End of Conversation --------------*/
+
+
 
 /* -------------- Video player --------------*/
 .video-player {
