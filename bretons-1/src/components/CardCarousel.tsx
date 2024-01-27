@@ -5,6 +5,7 @@ import LikeLogo from '../assets/Like_logo.svg';
 import ShareLogo from '../assets/Share_logo.svg'
 import GoldMedal from '../assets/GoldMedal.png';
 import PlayButton from '../assets/Play_button.svg';
+import Placeholder from 'react-bootstrap/Placeholder';
 import { FavoriteButton } from './Fav_nav';
 import { useState } from 'react';
 
@@ -28,8 +29,12 @@ function KitchenSinkExample() {
       <div className="image-container">
         <Card.Img className="custom-image" variant="top" src={ImageGenerique} />
         <div className='card_text'>
-          <h5>David Gaudu en argent ! </h5>
-          <h6>Cyclisme sur route</h6>
+          <h4 aria-hidden="true">
+            <Placeholder xs={9} bg="light" />
+          </h4>
+          <p aria-hidden="true">
+            <Placeholder xs={6} bg="light"/>
+          </p>
         </div>
       </div>
       <img
