@@ -1,6 +1,5 @@
 "use strict";
 
-// Just animate the logo
 const homeStories = function () {
     // on cache le slider au chargement de la page
     document.querySelector('#mySwiper').style.display = 'none';
@@ -17,6 +16,7 @@ const homeStories = function () {
       loop: true // pour swiper en boucle
     });
 
+    /* Fonction executée à chaque slide qui permet de changer le contenu de la slide */
     swiper.on("slideChange", function () {
       // on récupère les boutons previous et next
       let next = document.querySelectorAll('.next');
@@ -34,6 +34,7 @@ const homeStories = function () {
           document.querySelector('.content').scrollIntoView();
         });
       })
+
       switch (swiper.realIndex) {
         case 0:
           console.log('slide 1');
@@ -47,7 +48,6 @@ const homeStories = function () {
       }
     });
 
-    // Get img element
     let stories = document.querySelectorAll(".story");
     let swiper_slides = document.querySelectorAll(".swiper-slide");
 
@@ -76,7 +76,6 @@ const homeStories = function () {
           story.style.display = 'none';
         });
 
-
         // on affiche le swiper
         document.querySelector('#mySwiper').style.display = 'block';
         document.querySelector('.content').scrollIntoView();
@@ -86,6 +85,8 @@ const homeStories = function () {
 
     // on récupère la fleche de retour
     let retour = document.querySelector('#back_button');
+
+    // La fleche retour a deux comportements différents selon si le swiper est affiché ou non
     retour.addEventListener('click', () => {
       // si le swiper n'est pas affiché alors on retourne à l'accueil
       if (document.querySelector('#mySwiper').style.display === 'none') {
