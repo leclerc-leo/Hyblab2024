@@ -28,6 +28,9 @@ main{
     align-items: center;
     font-size: 0.5em;
 }
+#stories img{
+    width: 32%;
+}
 
 
 /* Swiper slider. Need to fill the container */
