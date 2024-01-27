@@ -69,7 +69,8 @@ const homeStories = function () {
       // On ajoute les event listeners sur les stories pour afficher le slider
       story.addEventListener('click', () => {
         // on met la bonne slide active
-        swiper.slideTo(swiper.realIndex, 0);
+        swiper.slideToLoop(slideIndex, 0, true);
+        console.log("slideIndex of " + slideIndex + " is active for story " + i);
 
         // on cache les stories
         stories.forEach(story => {
