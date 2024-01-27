@@ -8,10 +8,6 @@ body {
 
 /* Styles pour la racine de l'application */
 #root {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
   background-color: #f4f4f4;
 }
 
@@ -19,9 +15,47 @@ body {
 .app {
   max-width: 800px;
   width: 100%;
+  margin: 0 auto; /* Centre l'app dans la vue */
   padding: 20px;
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles pour l'en-tête */
+.header {
+  background-color: #7c4dff;
+  color: white;
+  text-align: center;
+  padding: 1em;
+}
+
+/* Styles pour les cartes d'articles */
+.article-card {
+  background-color: white;
+  margin-bottom: 1em;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Styles pour les images d'articles */
+.article-image img {
+  width: 100%;
+  display: block;
+  border-top-left-radius: 10px; /* Ajoute un arrondi sur le coin supérieur gauche */
+  border-top-right-radius: 10px; /* Ajoute un arrondi sur le coin supérieur droit */
+}
+
+/* Styles pour les descriptions d'articles */
+.article-description {
+  padding: 0.5em;
+}
+
+/* Styles pour le pied de page */
+.footer {
+  background-color: #eeeeee;
+  text-align: center;
+  padding: 1em;
 }
 
 /* Styles pour le titre de l'application */

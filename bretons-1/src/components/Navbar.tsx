@@ -5,7 +5,8 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import logoImage from '../assets/Logo_Treact.png';
+import logoImage from '../assets/Logo_telegramme.png';
+import './navbar.css';
 
 function OffcanvasExample() {
     return (
@@ -44,11 +45,11 @@ function OffcanvasExample() {
                                 <Form className="d-flex">
                                     <Form.Control
                                         type="search"
-                                        placeholder="Search"
+                                        placeholder="Rechercher"
                                         className="me-2"
                                         aria-label="Search"
                                     />
-                                    <Button variant="outline-success">Search</Button>
+                                    <Button variant="outline-success">🔎</Button>
                                 </Form>
                             </Offcanvas.Body>
                         </Navbar.Offcanvas>
