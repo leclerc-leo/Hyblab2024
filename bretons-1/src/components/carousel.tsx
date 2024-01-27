@@ -15,7 +15,7 @@ function ControlledCarousel() {
   const titles = ['First slide', 'Second slide', 'Third slide'];
 
   return (
-    <Carousel style={{ width: '15rem' }} indicators={false} controls={false} activeIndex={index} onSelect={handleSelect}>
+    <Carousel className="carousel_main" style={{ width: '15rem' }} indicators={true} controls={false} activeIndex={index} onSelect={handleSelect}>
       {titles.map((_, i) => (
         <Carousel.Item key={i}>
           <div style={{ maxHeight: '600px' }}> {/* Ajustez la hauteur maximale selon vos besoins */}
