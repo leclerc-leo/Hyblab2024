@@ -1,25 +1,13 @@
-/* carousel.css */
-
-/* Ajoutez des styles spécifiques à ControlledCarousel ici */
-
-/* Style pour la classe custom-card */
-.custom-card {
-  /* Ajoutez des styles personnalisés pour la carte si nécessaire */
-}
-
-/* Style pour la classe custom-image */
 .custom-image {
-  /* Ajoutez des styles personnalisés pour les images si nécessaire */
-  width: 100%; /* Faites en sorte que les images occupent la largeur de leur conteneur */
-  height: auto; /* Ajustez la hauteur en conséquence */
+  width: 100%; 
+  height: auto; 
 }
 
-/* Style pour la classe image-row */
+
 .image-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-/* Ajoutez d'autres styles CSS selon vos besoins */
 
