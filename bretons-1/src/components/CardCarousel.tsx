@@ -2,19 +2,25 @@ import Card from 'react-bootstrap/Card';
 import ImageGenerique from '../assets/sportif_velo.jpeg';
 import BicycleLogo from '../assets/Bicycle_logo.svg';
 import SaveLogo from '../assets/Save_logo.svg';
-import ShareLogo from '../assets/Share_logo.svg';
 import LikeLogo from '../assets/Like_logo.svg';
 import GoldMedal from '../assets/GoldMedal.png';
-import PlayButton from '../assets/Play_button.svg'
+import PlayButton from '../assets/Play_button.svg';
+import { FavoriteButton } from './Fav_nav';
+import { useState } from 'react';
 
 import './CardCarousel.css';
 
 function KitchenSinkExample() {
+  const [isFavorited, setIsFavorited] = useState(false);
   const handleImageClick = (imageName: string) => {
     console.log(`Image "${imageName}" cliquée !`);
   };
   const handlePlayClick = (imageName: string) => {
     console.log(`Image "${imageName}" cliquée !`);
+  };
+  const handleFavoriteClick = () => {
+    setIsFavorited(!isFavorited);
+    console.log(`Favoris "${isFavorited ? 'retiré' : 'ajouté'}" !`);
   };
 
   return (
@@ -44,11 +50,9 @@ function KitchenSinkExample() {
             alt="Save"
             onClick={() => handleImageClick('SaveLogo')}
           />
-          <img
-            className="ShareLogo"
-            src={ShareLogo}
-            alt="Share"
-            onClick={() => handleImageClick('ShareLogo')}
+          <FavoriteButton
+            isFavorited={isFavorited}
+            onClick={handleFavoriteClick}
           />
           <img
             className="LikeLogo"
