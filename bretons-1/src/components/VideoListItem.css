@@ -1,0 +1,29 @@
+/* VideoListItem.css */
+.video-list-item {
+    background: #fff; /* Background color for the video item */
+    border-radius: 10px; /* Rounded corners for the border */
+    margin-bottom: 16px; /* Space between each item */
+    padding: 16px; /* Padding inside the video item */
+    /* Additional styles can go here */
+  }
+  
+  .video-list-item img {
+    width: 128px; /* Full width of the image */
+    border-radius: 8px; /* Rounded corners for the image */
+    /* Additional styles can go here */
+  }
+  
+  .video-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Additional styles can go here */
+  }
+  
+  .video-info h4 {
+    margin: 0;
+    color: #545454; /* color of title */
+    font-size: 16px; /* size of title */
+    /* Styles for the video title */
+  }
+  

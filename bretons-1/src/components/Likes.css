@@ -1,0 +1,22 @@
+/* LikeButton.css */
+.like-button {
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  display: inline-block; 
+}
+
+.heart-icon {
+    width: 22px; 
+    height: 17px;
+    background-image: url('../assets/Like_logo.svg'); /* heart gray */
+    background-size: contain;
+    cursor: pointer;
+  }
+  
+  .heart-icon.liked {
+    background-image: url('../assets/Like_red_logo.svg'); /* heart red */
+    background-size: contain;
+    cursor: pointer;
+  }
