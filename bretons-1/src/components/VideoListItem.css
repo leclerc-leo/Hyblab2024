@@ -1,29 +1,60 @@
 /* VideoListItem.css */
 .video-list-item {
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     background: #fff; /* Background color for the video item */
     border-radius: 10px; /* Rounded corners for the border */
     margin-bottom: 16px; /* Space between each item */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: row;
     padding: 16px; /* Padding inside the video item */
+    overflow: hidden;
     /* Additional styles can go here */
   }
   
   .video-list-item img {
     width: 128px; /* Full width of the image */
+    max-width: 40%;
+    object-fit: cover; /* Cover the full area of the image box without stretching */
     border-radius: 8px; /* Rounded corners for the image */
+    border-top-left-radius: 10px; /* Rounded corners for the image */
+    border-top-right-radius: 10px;
     /* Additional styles can go here */
   }
-  
-  .video-info {
+  .video-content {
+    padding: 16px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /* Additional styles can go here */
+    flex-direction: column; /* Stack content vertically */
+    justify-content: space-between; /* Center content vertically */
+    flex: 1; /* Take up remaining space */
   }
-  
+
   .video-info h4 {
     margin: 0;
-    color: #545454; /* color of title */
-    font-size: 16px; /* size of title */
-    /* Styles for the video title */
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .video-info h5 {
+    color: #757575;
+    font-size: 11px;
+    margin-top: 4px;
   }
   
+  .video-info p {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .video-info .metadata {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .like-button {
+    position: absolute; 
+    bottom: 16px; 
+    right: 16px; 
+  }

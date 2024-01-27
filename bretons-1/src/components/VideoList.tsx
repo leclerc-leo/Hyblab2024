@@ -6,12 +6,14 @@ const videosData = [
     {
         id: '1',
         title: 'Sounkamba Sylla, médaillée d\'or !',
+        subtitle: 'Athlétisme : 400m', 
         thumbnail: runningWomenThumbnail,
         description: 'En tête tout du long de la course, Sounkamba termine avec plus d\'1 seconde d\'avance sur ses adversaires.'
       },
       {
         id: '2',
         title: 'Maria Sharapova, médaillée de bronze !',
+        subtitle: 'Tennis', 
         thumbnail: tennisThumbnail,
         description: 'En tête tout du long de la course, Sounkamba termine avec plus d\'1 seconde d\'avance sur ses adversaires.'
       }

@@ -1,16 +1,15 @@
 import { useState } from 'react';
-import {LikeButton} from './Likes'; // 引入喜欢按钮组件
-import './VideoListItem.css'; // 引入视频列表项的样式
+import {LikeButton} from './Likes';
+import './VideoListItem.css'; 
 
-// 定义Video类型
 type Video = {
   id: string;
   title: string;
+  subtitle: string;
   thumbnail: string;
   description: string;
 };
 
-// 定义VideoListItemProps类型
 type VideoListItemProps = {
   video: Video;
 };
@@ -25,9 +24,13 @@ function VideoListItem({ video }: VideoListItemProps) {
   return (
     <div className="video-list-item">
       <img src={video.thumbnail} alt={video.title} />
-      <div className="video-info">
-        <h4>{video.title}</h4>
-        <LikeButton isLiked={isLiked} onClick={toggleLike} />
+      <div className="video-content">
+        <div className="video-info">
+          <h4>{video.title}</h4>
+          <h5>{video.subtitle}</h5>
+          <p>{video.description}</p>
+          <LikeButton isLiked={isLiked} onClick={toggleLike} />
+        </div>
       </div>
     </div>
   );
