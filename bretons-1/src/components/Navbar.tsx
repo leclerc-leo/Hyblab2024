@@ -11,7 +11,7 @@ import './navbar.css';
 function OffcanvasExample() {
     return (
         <>
-            {['sm'].map((expand, index) => (
+            {['xxxl'].map((expand, index) => (
                 <Navbar key={index.toString()} expand={expand} className="bg-body-tertiary mb-3">
                     <Container fluid>
                         <Navbar.Brand><img src={LogoTreact} alt='Logo' /></Navbar.Brand>
