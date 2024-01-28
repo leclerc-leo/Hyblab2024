@@ -39,7 +39,7 @@ body {
 .choose {
 	position: absolute;
 	font-size: 110px;
-	font-weight: lighter;
+	font-weight: semi-bold;
 	top: 50%;
 	left: 50%;
 	width: 115px;
