@@ -1,0 +1,28 @@
+.headerPlayer {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    text-align: center;
+    top: 2vh;
+}
+#root > div > div:nth-child(7) > div:nth-child(1) {
+    top: 0% !important;
+    height: 100% !important;
+}
+
+.__remotion-player {
+    transform: scale(0.6) !important;
+}
+
+.boutonRetour {
+    background: rgba(255, 255, 255, 0.50);
+    box-shadow: 0px 0px 4px -1px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    position: absolute;
+    bottom: 10vh;
+    left: 3vw;
+}
+
+.boutonRetour > span {
+    margin: 30px;
+}
