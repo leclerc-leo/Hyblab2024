@@ -6,7 +6,7 @@ import Ratio from 'react-bootstrap/Ratio';
 
 function App() {
   return (
-    <div style={{ width: 320, height: 'auto', margin: '0 auto', textAlign: 'center'}}>
+    <div style={{ width: 480, height: 'auto', margin: '0 auto'}}>     
       <Ratio aspectRatio = "9x16">
       <div className="container">
         <div className="head">
