@@ -5,16 +5,16 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import logoImage from '../assets/Logo_telegramme.png';
+import LogoTreact from '../assets/Logo_Treact.png';
 import './navbar.css';
 
 function OffcanvasExample() {
     return (
         <>
-            {['sm'].map((expand, index) => (
+            {['xxxl'].map((expand, index) => (
                 <Navbar key={index.toString()} expand={expand} className="bg-body-tertiary mb-3">
                     <Container fluid>
-                        <Navbar.Brand><img src={logoImage} alt='Logo' /></Navbar.Brand>
+                        <Navbar.Brand><img src={LogoTreact} alt='Logo' /></Navbar.Brand>
                         <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
                         <Navbar.Offcanvas
                             id={`offcanvasNavbar-expand-${expand}`}
