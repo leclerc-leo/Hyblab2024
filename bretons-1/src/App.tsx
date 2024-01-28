@@ -4,17 +4,22 @@ import OffcanvasExample from './components/Navbar'
 import VideoList from './components/VideoList'
 function App() {
   return (
-    <div>
+    <div className="container">
       <div className="head">
-        <OffcanvasExample/>
+        <OffcanvasExample />
       </div>
-      <div className="app">
-        <ControlledCarousel />
+      <div className='main_app'>
+        <div className="app">
+          <div className="Carousel">
+            <ControlledCarousel />
+          </div>
+        </div>
       </div>
-      <div className="app">
-        <VideoList/>
+      <div className="main_video">
+        <VideoList />
       </div>
     </div>
+
   );
 }
 

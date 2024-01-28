@@ -1,10 +1,9 @@
 /* Fichier: styles.css (ou le nom que vous avez choisi) */
 
 /* Styles pour le conteneur de l'application */
-.app {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
+.main_app .app {
+  max-width: 320px;
+  width: auto;
 }
 
 /* Styles pour le titre de l'application */
@@ -12,11 +11,17 @@
   color: #333;
 }
 
-/* Styles pour le carousel */
-.carousel {
-  margin-top: 20px;
+.container {
+  display: flex;
+  flex-direction: column;
 }
 
+.main_app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
 .head{
   text-align: center;
 }
