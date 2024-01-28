@@ -8,6 +8,14 @@
     margin:0;
 }
 
+/* Defining the colors used through the app here as variables */
+/* use : color : var(--bg-green) */
+:root {
+    --bg-green :#17853C ;
+    --yellow: #F7EF24 ;
+    --green : #17853C ; 
+}
+
 body{
     background-color: black;
     color: white;
@@ -289,4 +297,5 @@ body{
         font-size: 6.5vw;
     }
 }
+
 
