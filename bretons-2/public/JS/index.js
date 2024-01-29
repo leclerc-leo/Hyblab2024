@@ -49,12 +49,23 @@ function page_sport(){
 	const blank = document.querySelector("#blank");
 	blank.innerHTML = ""; // clear
 
+	const retour = document.createElement("img");
+	retour.src = "./Image/retour.svg";
+	retour.alt = "retour";
+	retour.id = "retour";
+	retour.onclick = () => {
+		console.log("retour");
+		page_accueil();
+	}
+
+	blank.appendChild(retour);
+
 	const divTitle = document.createElement("div");
 	divTitle.id = "divTitle";
 
 	const title = document.createElement("h1");
 	title.id = "titleSport";
-	title.innerHTML = "Choisissez votre <span style='color:red'>sport !<span>";
+	title.innerHTML = "CHOISISSEZ<span style='color:red'>\nVOTRE SPORT<span>";
 	title.style.fontWeight = "bold";
 
 	divTitle.appendChild(title);
@@ -91,10 +102,7 @@ function page_sport(){
 		const iframe = document.createElement("iframe");
 		
 		iframe.setAttribute("frameborder", "0");
-		iframe.setAttribute("width", "100%");
-		iframe.setAttribute("height", "80%");
 		iframe.setAttribute("allowfullscreen", "");
-		iframe.style.zIndex = "-1";
 
 		switch (sport) {
 			case "Football":
@@ -151,21 +159,18 @@ function page_athlete(athlete) {
     const blank = document.querySelector("#blank");
 	blank.innerHTML = ""; // clear
 
-	const button = document.createElement("button");
-	button.innerHTML = "<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-arrow-left' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8'/></svg> Retour";
-	button.classList.add("btn");
-	button.classList.add("btn-outline-dark");
-	button.onclick = async () => {
-		page_sport(data,page_athlete);
-	}
-	button.style.position = "relative";
-	button.style.top = "10px";
-	button.style.left = "10px";
-
-	blank.appendChild(button);
-
 	const div = document.createElement("div");
 	div.style.height = "100%";
+
+	const retour = document.createElement("img");
+	retour.src = "./Image/retour.svg";
+	retour.alt = "retour";
+	retour.id = "retour";
+	retour.onclick = () => {
+		page_sport(data,page_athlete);
+	}
+
+	div.appendChild(retour);
 
 	const section = document.createElement("section");
 	section.classList.add("splide");
@@ -209,3 +214,4 @@ function page_accueil() {
 }
 
 page_sport();
+// page_athlete(data["Handball"])
