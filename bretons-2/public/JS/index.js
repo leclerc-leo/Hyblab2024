@@ -205,7 +205,28 @@ function page_athlete(athlete) {
 }
 
 function page_accueil() {
-	
+	const blank = document.querySelector("#blank");
+	blank.innerHTML = ""; // clear
+
+	const divTitle = document.createElement("div");
+	divTitle.id = "divTitle";
+
+	const title = document.createElement("h1");
+	title.id = "titleHome";
+	title.innerHTML = "<span style= 'text-transform:uppercase'><span style='font-size : 150%'>Découvrez</span> <br><span style='font-size : 95%'>notre questionnaire<br>pour suivre <br>ceux que vous aimez</span></span>";
+
+	divTitle.appendChild(title);
+	blank.appendChild(divTitle);
+
+	const divParagraphe = document.createElement("div");
+	div.id = "divParagraphe";
+
+	const paragraphe = document.createElement("p");
+	paragraphe.id = "paragrapheHome";
+	paragraphe.innerHTML = "Découvrez et suivez vos sportifs bretons favoris dans leur parcours dans les Jeux Olympiques Paris 2024 !";
+
+	divParagraphe.appendChild(paragraphe);
+	blank.appendChild(divParagraphe);
 }
 
-page_sport();
+page_accueil();
