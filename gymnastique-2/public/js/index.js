@@ -13,7 +13,9 @@ const swiper = new Swiper("#mySwiper", {
         clickable: true,
     },
     initialSlide: 1,
-    delay: 200,
+    delay: 600,
+    speed: 300,
+    shortSwipes: false,
 });
 
 swiper.on("slideChange", function () {

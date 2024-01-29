@@ -50,3 +50,9 @@ const remove_listeners = id => {
             elClone = el.cloneNode(true);
     el.parentNode.replaceChild(elClone, el);
 }
+
+const move_background = (x) => {
+    const background = document.querySelector('.background');
+
+    background.style.backgroundPosition = `${x}% 50%`;
+}

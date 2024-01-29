@@ -3,6 +3,8 @@
 // Just animate the logo
 const init_past = async swiper => {
 
+    move_background(-20);
+
     remove_listeners('.exit-button');
     remove_listeners('.home-button');
   
