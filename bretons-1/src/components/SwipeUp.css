@@ -1,0 +1,25 @@
+.swipe-up-container {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .swipe-up-message {
+    position: fixed;
+    bottom: 5vh;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    color: #FFF;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 17px; /* 94.444% */
+    transition: bottom 0.5s ease-in-out;
+    text-align: center;
+  }
+  
+  .swipe-up-message.visible {
+    bottom: 30vh;
+  }
+  
