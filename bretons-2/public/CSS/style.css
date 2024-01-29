@@ -23,6 +23,14 @@ nav {
     height: 10%;
 }
 
+#menu-modal{
+    position: absolute;
+    width: 4rem;
+    height: 10%;
+    padding-left: 2rem;
+    cursor: pointer;
+}
+
 nav img {
     height: 100%;
     width: 100%;
@@ -38,6 +46,8 @@ nav img {
     position: absolute;
     left: 5%;
     z-index: 3;
+    width: 3.5rem;
+    cursor: pointer;
 }
 
 #divTitle {
@@ -81,4 +91,51 @@ footer {
     margin-left: auto;
     margin-right: auto;
     width: auto;
+}
+
+.modal{
+    position: fixed;
+    height: 100%;
+    margin-left: calc((100vw - 100 * 3vh / 5) / 2);
+    width: calc(100 * 3vh / 5)!important;
+}
+
+.modal-dialog{
+    margin:0!important;
+    width: 75%!important;
+    height: 50%;
+}
+
+.modal-content{
+    height: 100%;
+}
+
+.modal-body{
+    background-color: #FFCE42;
+    padding: 0!important;  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly; 
+}
+
+#modal-header{
+    padding-top: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+#retour-modal{
+    cursor: pointer;
+}
+
+.modal-activite{
+    padding-top : 1rem;
+    padding-left : 1rem;
+    padding-bottom : 1rem;
+    margin-bottom:2rem;
+    background-color: white;
 }

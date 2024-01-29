@@ -65,7 +65,7 @@ function page_sport(){
 	blank.innerHTML = ""; // clear
 
 	const retour = document.createElement("img");
-	retour.src = "./Image/retour.svg";
+	retour.src = "./Image/bouton-back.svg";
 	retour.alt = "retour";
 	retour.id = "retour";
 	retour.onclick = () => {
@@ -188,7 +188,7 @@ function page_athlete(sport) {
 		blank.innerHTML = ""; // clear
 
 		const retour = document.createElement("img");
-		retour.src = "./Image/retour.svg";
+		retour.src = "./Image/bouton-back.svg";
 		retour.alt = "retour";
 		retour.id = "retour";
 		retour.onclick = () => {
@@ -268,6 +268,15 @@ function page_athlete(sport) {
 
 		// splide.mount();
 	});
+}
+
+const myModal = new bootstrap.Modal('#modal')
+document.getElementById("menu-modal").onclick = () =>{
+	myModal.show();
+}
+
+document.getElementById("retour-modal").onclick = () =>{
+	myModal.hide();
 }
 
 page_accueil();
