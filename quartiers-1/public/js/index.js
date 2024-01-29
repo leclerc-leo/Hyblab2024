@@ -12,6 +12,16 @@ setTimeout(() => {
     });
 }, 100);
 
+// Fermer le tuto
+document.querySelector("#tuto").addEventListener("click", function(event) {
+    document.querySelector("#tuto").style.visibility = "hidden";
+});
+
+// Ouvrir le tuto
+document.querySelector("#tuto-open").addEventListener("click", function() {
+    document.querySelector("#tuto").style.visibility = "visible";
+});
+
 // Création du swiper
 const swiper = new Swiper("#quartiers-swiper", {
     direction: "horizontal",
@@ -29,6 +39,13 @@ function resetMapColor() {
     });
 }
 
+// On actualise la couleur du quartier sélectionné
+swiper.on("slideChange", function () {
+    resetMapColor();
+    document.querySelector('path[data-no_slide="' + swiper.realIndex + '"]').style.fill = "#E35D5D";
+});
+
+
 // Ajout des events listener sur les quartiers pour atteindre un quartier
 document.querySelectorAll("#rennes_map path").forEach(function(path) {
     path.addEventListener("click", function(event) {
@@ -37,16 +54,16 @@ document.querySelectorAll("#rennes_map path").forEach(function(path) {
     });
 });
 
-// Ajout des events listener sur les boutons de navigation
+// Ajout des events listener sur les boutons de swipe
 document.querySelector("#previous").addEventListener("click", function() {
     swiper.slidePrev();
 });
-
 document.querySelector("#next").addEventListener("click", function() {
     swiper.slideNext();
 });
 
-swiper.on("slideChange", function () {
-    resetMapColor();
-    document.querySelector('path[data-no_slide="' + swiper.realIndex + '"]').style.fill = "#E35D5D";
+// Bouton voir le quartier
+document.querySelector("#see-quartier").addEventListener("click", function() {
+    console.log("Go to" + swiper.realIndex);
+    window.location.href = "/quartiers-1/quartiers";
 });
