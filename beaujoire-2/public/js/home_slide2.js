@@ -3,7 +3,7 @@
 // Just animate the logo
 const initSlide2 = function(){
   // Get img element
-  const img = document.querySelector('#img-fini');
+  /*const img = document.querySelector('#img-fini');
 
   // (Re)set initial position of img
   img.setAttribute('style', 'transform : translateY(-50vh);');
@@ -13,5 +13,5 @@ const initSlide2 = function(){
     targets: '#img-fini',
     translateY: 0,
     easing: 'easeOutBounce'
-  });
+  });*/
 };
