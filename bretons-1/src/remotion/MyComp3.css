@@ -1,0 +1,18 @@
+.frameContainer {
+    font-family: "Golos Text", sans-serif;
+    color: #000;
+    width: 100%; 
+    margin: auto; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+}
+
+.header {
+    font-size: 60px; 
+    font-weight: 500;
+    line-height: 1; 
+    width: auto; 
+    padding: 10px 20px; 
+    margin-top: 20px; /
+}
