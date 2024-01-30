@@ -6,6 +6,8 @@ import {
 	useCurrentFrame,
 	useVideoConfig,
 } from 'remotion';
+import"./style.css";
+import "./font.css";
 
 export const Video = () => {
 	const frame = useCurrentFrame();
@@ -14,7 +16,13 @@ export const Video = () => {
 	// A <AbsoluteFill> is just a absolutely positioned <div>!
 	return (
 		<AbsoluteFill style={{backgroundColor: 'black'}}>
-			<div style={{backgroundColor:'white', width:"100%",height:"10%"}}></div>
+			<div id='background' style={{ }}>
+			<div id='main'></div>
+			<div id="footer" >
+				<p>letelegramme-des-scores.fr</p>
+			</div>
+			</div>
+			
 		</AbsoluteFill>
 	);
 };
