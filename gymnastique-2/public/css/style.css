@@ -84,10 +84,11 @@ header{
 .background {
     z-index: -2;
     height: auto;
-    width: 115%;
+    width: 250%;
     position: absolute;
     transition: left 0.3s ease-in-out;
-    bottom: -5%;
+    bottom: 0;
+    min-height: 100%;
 }
 
 /* ---------- Important media queries for easy responsive content :-) ----------------- */

@@ -26,14 +26,30 @@
      - Swiper API : https://swiperjs.com/ 
      - Anime.js : https://animejs.com/
   -->
+
+  <link rel="preload" as="image" href="img/background.jpg">
 </head>
 <body>
 
-    <div class="background" style="left: 0%">
-      <img src="img/background.jpg" alt="background" width="100%" style="position: absolute; bottom: 0;">
-    </div>
     <!-- Le conteneur sert à vérouiller les proportions (aspect ratio) du contenu de la page (ici des slides) -->
     <div id="container">
+      <div class="background" style="left: 0%">
+        <img src="img/background.jpg" alt="background" width="100%" style="position: absolute; bottom: 0; z-index: -999;">
+        
+        <img src="img/background/fond vrai.svg" alt="background" width="100%" style="position: absolute; bottom: 0; z-index: -99;">
+  
+        <img src="img/background/arriere plan barre.svg" alt="background" width="100%" style="position: absolute; bottom: 0; z-index: -9;">
+        <img src="img/background/barres à remplacer par gif.svg" alt="background" width="100%" style="position: absolute; bottom: 0; z-index: -9;">
+        <img src="img/background/coupe.svg" alt="background" width="100%" style="position: absolute; bottom: 0; z-index: -9;">
+        <img src="img/background/estrade.svg" alt="background" width="100%" style="position: absolute; bottom: 0; z-index: -9;">
+        <img src="img/background/échelle.svg" alt="background" width="100%" style="position: absolute; bottom: 0; z-index: -9;">
+        <img src="img/background/histoire.svg" alt="background" width="100%" style="position: absolute; bottom: 0; z-index: -9;">
+        <img src="img/background/journée type.svg" alt="background" width="100%" style="position: absolute; bottom: 0; z-index: -9;">
+        <img src="img/background/matelas milieu barre.svg" alt="background" width="100%" style="position: absolute; bottom: 0; z-index: -9;">
+        <img src="img/background/matelas mur du fond .svg" alt="background" width="100%" style="position: absolute; bottom: 0; z-index: -9;">
+        <img src="img/background/premier plan barre.svg" alt="background" width="100%" style="position: absolute; bottom: 0; z-index: -9;">
+  
+      </div>
       
       <div id="mySwiper" class="swiper">
         <!-- le main est aussi le conteneur des différents slides (contenus à chaque fois dans des sections-->
