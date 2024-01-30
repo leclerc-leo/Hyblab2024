@@ -8,7 +8,7 @@ export const MyVideo = () => {
   return (
     <>
       <Sequence from={0} durationInFrames={120}>
-        <Frame1 text="t"></Frame1>
+        <Frame1 text="Julie Bresset" titre="Médaillée d'or" sous_titre="VTT cross country"></Frame1>
       </Sequence>
       <Sequence from={120} durationInFrames={120}>
         <Frame2></Frame2>
