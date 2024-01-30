@@ -1,7 +1,7 @@
 import React from 'react';
-import './MyComp3.css';
+import './Frame2.css';
 
-export const MyComp3: React.FC = () => {
+export const Frame2: React.FC = () => {
     return (
         <div className="frameContainer">
             <div className="header">Tableau des temps</div>
