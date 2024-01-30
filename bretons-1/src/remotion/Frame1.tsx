@@ -1,4 +1,4 @@
-import background from '../assets/video_cover/running.png';
+import background from '/bretons-1/img/athlete/JDE2.jpg';
 
 export const Frame1: React.FC<{ text: string, titre: string, sous_titre: string }> = ({ text, titre, sous_titre }) => {
     return (
