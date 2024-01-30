@@ -35,9 +35,9 @@ function CardCarousel({ video }: VideoListItemProps) {
     console.log(`Image "${imageName}" cliquée !`);
   };
 
-  const handlePlayClick = (imageName: string) => {
-    console.log(`Image "${imageName}" cliquée !`);
-    navigate('VideoPlayer', { state: { id: imageName } })
+  const handlePlayClick = (id: string) => {
+    console.log(`Image "${id}" cliquée !`);
+    navigate('VideoPlayer', { state: { id: id } })
   };
 
   const handleFavoriteClick = () => {
@@ -63,7 +63,7 @@ function CardCarousel({ video }: VideoListItemProps) {
         className="PlayButton"
         src="/bretons-1/img/Play_button.svg"
         alt="PlayButton"
-        onClick={() => handlePlayClick('PlayButton')}
+        onClick={() => handlePlayClick(video.id)}
       />
       <img className={`overlay-image ${isFavorited ? 'saveyellow' : ''}`} src="/bretons-1/img/GoldMedal.png" alt="Overlay" />
       <Card.Body>
