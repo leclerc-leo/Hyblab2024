@@ -48,6 +48,7 @@ nav img {
     z-index: 3;
     width: 3.5rem;
     cursor: pointer;
+    top:12.5%;
 }
 
 #divTitle {
@@ -91,6 +92,9 @@ footer {
     margin-left: auto;
     margin-right: auto;
     width: auto;
+}
+
+#modal{
 }
 
 .modal{
