@@ -58,6 +58,11 @@ main{
 
 }
 
+#recap_button{
+    width: 20%;
+    cursor: pointer;
+}
+
 
 #bandeau {
     margin-top: 5%;

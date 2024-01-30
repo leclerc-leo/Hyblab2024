@@ -1,5 +1,4 @@
 
-
 #page-accueil header{
     text-align: center;
     width: 100%;
@@ -20,8 +19,10 @@
     position: absolute;
     z-index: 2;
     color: #000000;
+    padding: 1px;
     font-size: 25%;
-    bottom : 15%;
+    bottom : max(15%, 6.2em);
+    background-color: #FCF3ECB7;
 }
 
 
@@ -29,8 +30,8 @@
     cursor: pointer;
     position : absolute;
     width: 40%;
-    left : 30%;
     bottom: 0;
+    left: 30%;
 }
 
 #bouton-decouvrir img{
