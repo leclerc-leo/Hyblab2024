@@ -65,4 +65,5 @@
     background-size: 120%;
     position : absolute;
     background-position: top 17% center;
+    overflow: hidden;
 }

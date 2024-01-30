@@ -38,13 +38,12 @@ body{
     z-index: 3;
     position:absolute;
     width: 100%;
-    height: auto;
-    
+    height: 100%;
 }
 
 #motion-img{
     width: 100%;
-    height: auto;
+    height: 100%;
     position: absolute;
 }
 
