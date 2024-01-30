@@ -57,3 +57,45 @@ main{
     width: 100%;
 
 }
+
+
+#bandeau {
+    width:100%;
+    background-color: #FCF3EC;
+    font-size: 20%;
+    border-top: 2px solid black;
+}
+
+#bandeau a{
+    text-decoration: none;
+    color: black;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+#bandeau p{
+    color: black;
+    display: flex;
+    justify-content: center;
+}
+
+#bandeau p:first-child{
+    color: black;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    font-weight: bold;
+}
+#bandeau p:first-child:hover{
+    cursor: pointer;
+}
+
+#bandeau p:last-child{
+    color: black;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    padding-bottom: 15px;
+}
