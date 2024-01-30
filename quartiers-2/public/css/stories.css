@@ -65,16 +65,9 @@ main{
     background-color: #FCF3EC;
     font-size: 20%;
     border-top: 2px solid black;
+    cursor: pointer;
 }
 
-#bandeau a{
-    text-decoration: none;
-    color: black;
-    display: flex;
-    justify-content: center;
-    font-weight: bold;
-    margin-top: 15px;
-}
 
 #bandeau p{
     color: black;
@@ -88,9 +81,6 @@ main{
     justify-content: center;
     margin-top: 10px;
     font-weight: bold;
-}
-#bandeau p:first-child:hover{
-    cursor: pointer;
 }
 
 #bandeau p:last-child{
