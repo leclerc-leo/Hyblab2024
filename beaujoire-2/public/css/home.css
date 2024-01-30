@@ -13,15 +13,16 @@
 /* use : color : var(--bg-green) */
 :root {
     --bg-green :#009E49 ;
-    --yellow: #FADD4B ;
+    --yellow: #F7EF24 ;
     --green : #17853C ; 
+    --field-green : #64BF7C ; 
 }
 /** colors **/
 
 /** fonts **/
 @font-face {
     font-family: 'Abolition';
-    src: url('../fonts/Abolition-W00-Soft.ttf') format('truetype');
+    src: url('../fonts/Abolition-W00-Regular.ttf') format('truetype');
   }
 @font-face {
     font-family: 'Neue Haas Unica';

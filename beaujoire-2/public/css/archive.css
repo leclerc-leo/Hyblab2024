@@ -1,0 +1,24 @@
+.swiper-wrapper {
+    background-color: white;
+}
+
+.header {
+    padding: 20px;
+    display: flex;
+    justify-content: center; /* Use space-between to move items to the edges */
+    align-items: center;
+}
+
+.return-button {
+    width: 50px;
+    position: absolute;
+    top: 5%; 
+    left: 20px; 
+    width: 50px;
+    z-index: 2;
+}
+
+.title {
+    padding: 10px;
+    width: 200px;
+}
