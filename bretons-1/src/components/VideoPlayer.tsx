@@ -17,7 +17,7 @@ function VideoPlayer(video: Video) {
         <Player
             component={MyVideo}
             inputProps={{ text: "Malo" }}
-            durationInFrames={360}
+            durationInFrames={600}
             compositionWidth={1080}
             compositionHeight={1920}
             fps={60}
