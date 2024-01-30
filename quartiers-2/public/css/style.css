@@ -15,10 +15,6 @@ body{
     font-family: sans-serif;
 }
 
-#bouton-decouvrir{
-    cursor: pointer;
-}
-
 /* -------------- CSS Commun --------------*/
 #back_button{
     z-index: 500;
@@ -54,42 +50,6 @@ body{
 /* -------------- End of Motion Page --------------*/
 
 
-/* Most of the elements in this demo are absolute positioned with percentages */
-#page-accueil header{
-    text-align: center;
-    width: 100%;
-    top: 10%;
-    position: absolute;
-    font-size: 30%;
-    z-index: 2;
-}
-
-#bouton-decouvrir{
-    text-align: center;
-    width: 50%;
-    left: 50%; /* center the logo, in interaction with the negative margin-left */
-    top: 50%;
-    margin-left:-25%; /* this is half the width */
-    margin-top:calc(-7.5% * 9 / 16 ); /* margins are relative to the element width... :-( */
-    position: absolute;
-    font-size: 50%;
-    z-index: 2;
-    cursor: pointer;
-    border : 1px solid white;
-    padding: 0.5em;
-    background: rgba(0, 0, 0, 0.5);
-
-}
-
-
-#page-accueil{
-    width: 100%;
-    height:100%;
-    position: absolute;
-    background-image: url('../img/background.svg');
-    background-size: 100% auto; /* background is full width and height is proportional to width */
-    background-position: bottom; /* background is bottom aligned */
-}
 
 /* ---------- Important media queries for easy responsive content :-) ----------------- */
 /* Whatever the device used, the content will be displayed full width and height if      */
