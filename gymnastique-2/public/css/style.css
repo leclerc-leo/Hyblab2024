@@ -151,7 +151,7 @@ header{
 .category-page{
     position: absolute;
     z-index: 99;
-    background-color: white;
+    background-color: #FFD8B3;
     color: black;
     font-size: 18px;
     padding: 10px 0;
@@ -243,4 +243,25 @@ header{
         opacity 0.3s ease-out 0.2s;
     color: black;
     background-color: rgba(255, 255, 255, 1);
+}
+
+/* Format des titres */
+h1{
+    color: #482E49;
+    font-family: "Krona One", sans-serif;
+    font-size: 20px;
+}
+
+h2{
+    color: #482E49;
+    font-family: "Krona One", sans-serif;
+    font-size: 18px;
+}
+
+/* Format des paragraphes */
+p{
+    color: #E47754;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 13px;
+    padding: 10px 50px;
 }
