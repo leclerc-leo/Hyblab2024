@@ -17,18 +17,6 @@
 body{
     font-size: calc(15vh * 3 / 4);
 }
-
-/*le bouton retour*/
-#back_button{
-    position: absolute;
-    top: 2vh;
-    left: 2vh;
-    height: 30px;
-    width: 30px;
-    margin-top: 1vh;
-    margin-left: 1vh;
-}
-
 /*le titre*/
 #titre{
     margin-top: 30px;
@@ -219,7 +207,6 @@ body{
 }
 
 body{
-    background-color: white;
     color: black;
     overflow: hidden;   /* to avoid slider bugs on some browsers */
     font-family: sans-serif;

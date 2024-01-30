@@ -8,10 +8,10 @@ function changeState(imageId, yesButtons, noButtons) {
         // on a cliqué sur le bouton non
         if (buttonToChange === 'yes') {
             let yesImage = yesButtons[imageId.slice(-1) - 1];
-            yesImage.src = "./img/bouton_oui_gris.svg";
+            yesImage.src = "./img/boutons/bouton_oui_gris.svg";
             // on met le bouton non en rose
             let noImage = noButtons[imageId.slice(-1) - 1];
-            noImage.src = "./img/bouton_non_rose.svg";
+            noImage.src = "./img/boutons/bouton_non_rose.svg";
 
             // on enlève dans le localStorage le bouton oui
             localStorage.removeItem('yes' + imageId.slice(-1));
@@ -19,10 +19,10 @@ function changeState(imageId, yesButtons, noButtons) {
         // on a cliqué sur le bouton oui
         else {
             let noImage = noButtons[imageId.slice(-1) - 1];
-            noImage.src = "./img/bouton_non_gris.svg";
+            noImage.src = "./img/boutons/bouton_non_gris.svg";
             // on met le bouton oui en vert
             let yesImage = yesButtons[imageId.slice(-1) - 1];
-            yesImage.src = "./img/bouton_oui_vert.svg";
+            yesImage.src = "./img/boutons/bouton_oui_vert.svg";
 
             // on enlève dans le localStorage le bouton non
             localStorage.removeItem('no' + imageId.slice(-1));
@@ -89,9 +89,30 @@ const homeStories = function () {
         .then(res => res.text())
         .then(html => {
           document.querySelector('body').innerHTML = html;
-          console.log(html)
         });
     });
+
+    /* a factoriser */
+    let credits = document.querySelector('#bandeau');
+    credits.addEventListener('click', () => {
+      fetch('/quartiers-2/credits.html')
+        .then(res => res.text())
+        .then(html => {
+          document.querySelector('body').innerHTML = html;
+          let retour = document.querySelector('#back_button');
+          retour.addEventListener('click', () => {
+            fetch('/quartiers-2/stories.html')
+              .then(res => res.text())
+              .then(html => {
+                document.querySelector('body').innerHTML = html;
+                // on init l'accueil
+                homeStories();
+              });
+          });
+        });
+    });
+
+
 
     let stories = document.querySelectorAll(".story");
     let swiper_slides = document.querySelectorAll(".swiper-slide");
@@ -113,6 +134,9 @@ const homeStories = function () {
 
       // On ajoute les event listeners sur les stories pour afficher le slider
       story.addEventListener('click', () => {
+        // on enleve le bouton recap
+        recap.style.display = 'none';
+
         // on met la bonne slide active
         swiper.slideToLoop(slideIndex, 0, true);
         console.log("slideIndex of " + slideIndex + " is active for story " + i);
@@ -162,6 +186,8 @@ const homeStories = function () {
             initAccueil();
           });
       }
+      // on réaffiche le bouton recap
+      recap.style.display = 'block';
       // on reaffiche les stories
       stories.forEach(story => {
         story.style.display = 'block';

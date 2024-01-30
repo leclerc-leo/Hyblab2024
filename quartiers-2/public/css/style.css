@@ -17,7 +17,7 @@ body{
 
 /* -------------- CSS Commun --------------*/
 #back_button{
-    z-index: 500;
+    z-index: 5000;
     cursor: pointer;
     position: sticky;
     left : 5%;

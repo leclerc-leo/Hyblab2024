@@ -61,6 +61,8 @@ main{
 #recap_button{
     width: 20%;
     cursor: pointer;
+    position: absolute;
+    z-index: 500;
 }
 
 
