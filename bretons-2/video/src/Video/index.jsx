@@ -6,8 +6,8 @@ import {
 	useCurrentFrame,
 	useVideoConfig,
 } from 'remotion';
-import"./style.css";
-import "./font.css";
+import"./css/style.css";
+import "./css/font.css";
 
 export const Video = () => {
 	const frame = useCurrentFrame();
