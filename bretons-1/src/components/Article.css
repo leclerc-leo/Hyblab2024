@@ -1,0 +1,31 @@
+.article-container {
+    font-family: 'Arial', sans-serif;
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff; /* Adjust the background color as needed */
+    border-radius: 10px; /* Rounded corners for the article */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Simple shadow for depth */
+  }
+  
+  .article-title {
+    color: #333; /* Dark text for the title */
+    margin-bottom: 10px;
+  }
+  
+  .article-subtitle {
+    color: #777; /* Slightly lighter text for the subtitle */
+    margin-bottom: 20px;
+  }
+  
+  .article-content {
+    color: #666; /* Even lighter text for the content */
+    line-height: 1.6; /* More readable line spacing */
+  }
+  
+  .article-image {
+    width: 50%; /* Responsive image width */
+    height: auto; /* Maintain aspect ratio */
+    margin-top: 20px; /* Space between text and image */
+    border-radius: 10px; /* Rounded corners for the image */
+  }
+  

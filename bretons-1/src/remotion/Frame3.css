@@ -1,0 +1,9 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* ou une valeur fixe si vous préférez */
+    margin: auto; /* pour centrer le conteneur lui-même */
+    position: relative;
+  }
+  
