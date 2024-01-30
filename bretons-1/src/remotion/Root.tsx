@@ -1,21 +1,20 @@
-import { Composition, AbsoluteFill } from "remotion";
-import { MyComp } from "./MyComp";
- 
+import { Composition, AbsoluteFill, Sequence } from "remotion";
+import { Frame1 } from "./Frame1";
+import { Frame2 } from "./Frame2";
+import { Frame3 } from "./Frame3";
+
 export const MyVideo = () => {
   return (
     <>
-        <AbsoluteFill>
-
-      <Composition
-        component={MyComp}
-        durationInFrames={120}
-        width={1920}
-        height={1080}
-        fps={30}
-        id="my-comp"
-        defaultProps={{ text: "World" }}
-      />
-      </AbsoluteFill>
+      <Sequence from={0} durationInFrames={120}>
+        <Frame1 text="t"></Frame1>
+      </Sequence>
+      <Sequence from={120} durationInFrames={120}>
+        <Frame2></Frame2>
+      </Sequence>
+      <Sequence from={240} durationInFrames={120}>
+        <Frame3 text="t"></Frame3>
+      </Sequence>
     </>
   );
 };

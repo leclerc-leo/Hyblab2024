@@ -1,6 +1,6 @@
-import background from '../assets/video_cover/running_women_full.png';
+import background from '../assets/video_cover/tennis.jpg';
 
-export const MyComp: React.FC<{ text: string }> = ({ text }) => {
+export const Frame3: React.FC<{ text: string }> = ({ text }) => {
     return (
       <div>
           <h1 style={{ position: "absolute", color: "while"}}>{text}</h1>
