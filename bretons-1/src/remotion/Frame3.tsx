@@ -23,7 +23,7 @@ export const Frame3: React.FC<{ text: string }> = ({ text }) => {
         color: 'white',
         width: '100%',
         zIndex: 10}}>
-        {text = 'Hello World'}</h1>
+        {text}</h1>
       </div>
     );
 };

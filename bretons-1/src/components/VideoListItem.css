@@ -42,8 +42,8 @@
     flex-direction: row;
     padding: 16px; /* Padding inside the video item */
     overflow: hidden;
-    width: 15em;
-    height: 5em;
+    width: 17em;
+    height: 8em;
   }
   
   .video-list-item img {

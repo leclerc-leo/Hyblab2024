@@ -14,7 +14,7 @@ export const MyVideo = () => {
         <Frame2></Frame2>
       </Sequence>
       <Sequence from={240} durationInFrames={120}>
-        <Frame3 text="t"></Frame3>
+        <Frame3 text="Hello world"></Frame3>
       </Sequence>
       <Sequence from={360}>
         <Frame4 text="t"></Frame4>
