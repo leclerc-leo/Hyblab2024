@@ -1,7 +1,7 @@
 /* à supprimer et mettre dans un fichier css commun à toutes les pages */
 
 #container {
-    background-color: #FAE6D7;
+    background-color: #FCF3EC;
 }
 
 main{
@@ -60,6 +60,7 @@ main{
 
 
 #bandeau {
+    margin-top: 5%;
     width:100%;
     background-color: #FCF3EC;
     font-size: 20%;
