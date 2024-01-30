@@ -1,109 +1,106 @@
 <!doctype html>
 
 <html lang="fr">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
   <title>Hyblab 2023</title>
-  <link rel="shortcut icon" type="image/ico" href="favicon.ico"/>
+  <link rel="shortcut icon" type="image/ico" href="favicon.ico" />
   <link rel="stylesheet" href="css/home.css">
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/loadingio/loading.css@v2.0.0/dist/loading.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <script src="js/home_slide1.js" defer></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="js/home_slide1.js"></script>
   <script src="js/home_slide2.js" defer></script>
   <script src="js/home.js" defer></script>
 </head>
-<body>
-    <!-- Le conteneur sert à verrouiller les proportions (aspect ratio) du contenu de la page (ici des slides) -->
-    <div id="container">
-      <!-- Le loader-->
-      <section id="loader">
-        <div id="loader-img" class="ld ld-ring ld-cycle"></div>
-        <p id="loader-text">Veuillez patienter...</p>
-      </section>
-      <div id="mySwiper" class="swiper">
-        <!-- le main est aussi le conteneur des différents slides (contenus à chaque fois dans des sections-->
-        <main class = "swiper-wrapper">
-            <section id="first-slide" class="swiper-slide">
-                <header>
-                    <h1 id="titre">Vous êtes Nantes !</h1>
-                    <h2 id="sous-titre">Composez votre XI de légende</h2>
-                </header>
-                
-                <img src="img/placeholder.png" id="logo-hyblab" alt="logo hyblab"></img>
-                <a id="creer-equipe"> Créer votre équipe </a>
 
-                <p>
-                  Ou découvrez l'histoire du stade <br> de la Beaujoire en un swipe !
-                  <img src="img/down-arrow-intro.svg" id="arrow-intro" alt="Passer à la suite"></img>
-                </p>
-                
-            </section>
-            <section id="second-slide" class="swiper-slide">
-              <p>
-                <i>
-                  Cette année, le stade de la Beaujoire fête ses 40 ans. 
-                  Pour l’occasion, Ouest-France vous propose de former votre équipe de légende, 
-                  de (re)découvrir les joueurs qui ont marqué le stade et de partager vos souvenirs.
-                </i>
-              </p>
-              <p>
-                Le stade Marcel-Saupin avait accueilli le FC Nantes pendant 40 ans, de 1945 à 1984. 
-                Depuis, les Canaris jouent 
-                <a href="https://www.ouest-france.fr/pays-de-la-loire/nantes-44000/nantes-la-beaujoire-digne-successeur-de-marcel-saupin-5614271">stade de La Beaujoire</a>, 
-                situé au Nord-Est de la ville. 
-                Le stade de 52 000 places devient à son tour quadragénaire et s’apprête à accueillir les Jeux olympiques, cet été.
-              </p>
-              <p>
-                L’objectif du projet était ambitieux : faire de Nantes une place forte du football en Europe. 
-                L’architecte Berdje Agopyan, réalisateur du Parc des princes, est chargé de donner vie au projet. 
-                Inauguré le 8 mai 1984, le stade accueille un mois plus tard la coupe d’Europe, 
-                et voit les Bleus écraser les Diables rouges 5 à 0. 
-              </p>
-              
-              <p class="swipe-down">
-                Swiper pour plus d'infos !
-                <img src="img/down-arrow-intro.svg" id="arrow-intro" alt="Passer à la suite"></img>
-              </p>
-              
-          </section>
-            <section id="final-slide" class="swiper-slide">
-                <header>
-                  <h1>Projet réalisé à l'occasion de...</h1>
-                </header>
-                <img id="img-fini" src="hyblab_2024.png">
-                <footer id="bandeau">
-                        <!-- Logo Hyblab -->
-                          <a href="http://www.hyblab.fr/"><img id="hyblab" src="logo_hyblab.png" alt="Hyblab DataSport"></a>
-                      
-                          <!-- Les organisateurs -->
-                          <ul>
-                            <li><a href="http://www.agrnantes.fr"><img src="ecoles/logo_agr.png" alt="AGR école de l'image"></a></li>
-                            <li><a href="https://epjt.fr/"><img src="ecoles/logo_epjt.svg" alt="Ecole publique de journalisme de Tours"></a></li>
-                            <li><a href="http://www.polytech.univ-nantes.fr/"><img src="ecoles/logo_polytech.png" alt="Polytech Nantes"></a></li>
-                            <li><a href="https://www.sciencespo-rennes.fr/"><img src="ecoles/logo_sciencespo.svg" alt="SciencesPo"></a></li>
-                            <!-- Les autres logos -->
-                          <ul>
-                            <li><a href="http://www.ouestmedialab.fr/"><img src="logo_oml.png" alt="Ouest Médialab"></a></li>
-                            <!-- Logos CC et opensource -->
-                            <li>
-                            <ul>
-                              <li class="stacked"><img id="cc" src="logo_cc.png" alt="Creative commons"></li>
-                              <li class="stacked"><img id="opensource" src="logo_opensource.png" alt="Open source"></li>
-                            </ul>
-                            </li>
-                            <!-- Logo de votre porteur de projet -->
-                            <li><a href="http://www.mon-porteur-de-projet.org"><img src="no-logo.png" alt="Logo de mon porteur de projet"></a></li>
-                            <!-- Partenaires institutionnels -->
-                            <li><a href="http://www.nantesmetropole.fr/"><img class="institutionnel" src="institutionnels/logo_nantesmetropole.png" alt="Nantes Métropole"></a></li>
-                          </ul>
-                </footer>
-            </section>
-        </main>
-        <div class="swiper-pagination"></div>
+<body>
+  <!-- Le conteneur sert à verrouiller les proportions (aspect ratio) du contenu de la page (ici des slides) -->
+  <div id="container">
+    <!-- Le loader-->
+    <section id="loader">
+      <div id="loader-img" class="ld ld-ring ld-cycle"></div>
+      <p id="loader-text">Veuillez patienter...</p>
+    </section>
+    <div id="mySwiper" class="swiper">
+      <!-- le main est aussi le conteneur des différents slides (contenus à chaque fois dans des sections-->
+      <main class="swiper-wrapper">
+        <section id="first-slide" class="swiper-slide">
+          <header>
+            <h1 id="titre">Vous êtes</h1>
+            <h1 id="sous-titre">
+              <img src="img/accueil/FCNANTES-2019.svg" id="ecu" alt="Ecusson FC Nantes"></img>
+              Nantes
+            </h1>
+
+            <img src="img/accueil/TRAIT_FCN.svg" id="separateur" alt="separateur"></img>
+
+            <h2 id="accroche">La Beaujoire fête ses 40 ans
+              <img id="anim-40" src="img/accueil/40ANS.gif">
+              <img id="img-40"  src="img/accueil/40ANS.svg">
+              <br>Composez votre XI de légende</h2>
+          </header>
+
+          <img src="img/accueil/bojoir_accueil_crop.png" id="logo-principal" alt="logo principal"></img>
+          <img src="img/accueil/Footer_accueil_papier.svg" id="acceuil_papier" alt="Acceuil papier"></img>
+          <img src="img/LOGO_APPLI.svg" id="accueil_logo" alt="Acceuil Logo"></img>
+
+          <p id="chapo">
+            Cette année, le stade de la Beaujoire fête ses 40 ans. Pour l'occasion,
+            Ouest France vous propose de former votre équipe de légende, de (re)découvrir
+            les joueurs qui ont marqué le stade et de partager vos souvenirs.
+          </p>
+
+          <a id="creer-equipe"> Créez votre équipe </a>
+
+        </section>
+
+        </section>
+        <section id="final-slide" class="swiper-slide">
+          <footer id="bandeau">
+            <!-- Logo Hyblab -->
+            <a href="http://www.hyblab.fr/"><img id="hyblab" src="logo_hyblab.png" alt="Hyblab DataSport"></a>
+            <div class="logo-row">
+              <!-- Les autres logos -->
+              <a href="http://www.ouestmedialab.fr/"><img class="logo" src="logo_oml.png" alt="Ouest Médialab"></a>
+              <!-- Logo de votre porteur de projet -->
+              <a href="https://www.ouest-france.fr/" id="ouest-france-logo"><img class="logo-half"
+                  src="img/accueil/Logo-OUEST-FRANCE.jpg" alt="Logo Ouest France"></a>
+            </div>
+            <!-- Les organisateurs -->
+            <div class="logo-row">
+              <a href="http://www.agrnantes.fr"><img class="logo" id="agr" src="ecoles/logo_agr.png"
+                  alt="AGR école de l'image"></a>
+              <a href="https://epjt.fr/"><img class="logo" src="ecoles/logo_epjt.svg"
+                  alt="Ecole publique de journalisme de Tours"></a>
+            </div>
+            <div class="logo-row">
+              <a href="http://www.polytech.univ-nantes.fr/"><img class="logo" src="ecoles/logo_polytech.png"
+                  alt="Polytech Nantes"></a>
+              <a href="https://www.sciencespo-rennes.fr/"><img class="logo" src="ecoles/logo_sciencespo.svg"
+                  alt="SciencesPo"></a>
+            </div>
+
+            <!-- Logos CC et opensource -->
+            <div class="logo-row">
+
+              <img class="logo-half" id="cc" src="logo_cc.png" alt="Creative commons">
+              <img class="logo-half" id="opensource" src="logo_opensource.png" alt="Open source">
+              <!-- Partenaires institutionnels -->
+              <a href="http://www.nantesmetropole.fr/"><img class="logo" class="institutionnel"
+                  src="institutionnels/logo_nantesmetropole.png" alt="Nantes Métropole"></a>
+            </div>
+
+          </footer>
+        </section>
+      </main>
+      <div class="swiper-pagination"></div>
     </div>
   </div>
 </body>
+
 </html>
