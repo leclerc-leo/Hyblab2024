@@ -7,6 +7,7 @@ const initSlideIntro = async function () {
   const down_arrow = document.querySelector("#down-arrow");
   const bag = document.querySelector("#bag");
 
+
   // get the data from our data/first-slide.json file
   let response = await fetch("data/first-slide.json");
   const data = await response.json();
@@ -18,7 +19,7 @@ const initSlideIntro = async function () {
   texte1.innerHTML = data.texte1;
 
   anime({
-    targets: "#down-arrow",
+    targets: down_arrow,
     translateY: 20,
     direction: "alternate",
     loop: true,
@@ -27,6 +28,7 @@ const initSlideIntro = async function () {
   anime({
     targets: bag,
     width: "75%",
+    bottom: "-50%",
     easing: "easeInOutQuad",
     duration: 300,
   });

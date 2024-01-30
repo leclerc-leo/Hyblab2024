@@ -25,7 +25,7 @@ body {
   top: 40%;
   left: 40%;
   position: absolute;
-  color : black;
+  color: black;
 }
 
 #loader-text {
@@ -34,7 +34,7 @@ body {
   position: absolute;
   top: 60%;
   width: 100%;
-  color : black;
+  color: black;
 }
 /* -------------- End of Loader --------------*/
 
@@ -64,14 +64,13 @@ body {
   background-color: white;
 }
 
-
 #first-slide header {
   text-align: center;
   width: 70%;
   position: absolute;
   font-size: 30%;
   z-index: 2;
-  color : black;
+  color: black;
   background-color: #f2f2f2;
   border-radius: 10px;
   padding: 20px;
@@ -82,23 +81,23 @@ body {
 
 #first-slide p {
   text-align: center;
-  width: 60%;
+  width: 65%;
   position: absolute;
-  font-size: 30%;
+  font-size: 35%;
   z-index: 2;
-  color : black;
-  background-color: #f2f2f2; 
-  border-radius: 10px; 
+  color: black;
+  background-color: #f2f2f2;
+  border-radius: 10px;
   padding: 20px;
   top: 40%;
   left: 50%;
-  transform: translate(-50%, -50%); 
+  transform: translate(-50%, -50%);
 }
 
 #first-slide .arrow {
-  position :absolute;
-  bottom: 0%;
-  left : 0%;
+  position: absolute;
+  bottom: -2%;
+  left: -4%;
   margin: 20px;
 }
 
@@ -110,14 +109,21 @@ body {
 
 #first-slide .bag {
   position: absolute;
-  width:75%;
   height: auto;
-  bottom: -75%; /* Adjust this to move the bag up so only half is visible */
   left: 50%;
-  transform: translateX(-50%); /* Only translate in the X direction */
+  transform: translateX(-50%);
 }
 
-
+#first-slide .tete {
+  position: absolute;
+  height: auto;
+  width: 17%;
+  top: 20.5%;
+  left: 13%;
+  transform: translateX(-50%); 
+  z-index: 2;
+  rotate: -10deg;
+}
 
 /* Most of the elements in this demo are absolute positioned with percentages */
 #second-slide header,

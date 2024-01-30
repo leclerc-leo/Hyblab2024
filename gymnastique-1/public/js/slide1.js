@@ -12,9 +12,10 @@ const initSlide2 = async function () {
   function animateBag() {
     anime({
       targets: bag,
-      width: "180%",
+      width: "130%",
+      bottom: "-70%",
       easing: "easeInOutQuad",
-      duration: 1000,
+      duration: 100,
     });
   }
 
