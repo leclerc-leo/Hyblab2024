@@ -110,6 +110,11 @@ body{
     font-size: calc(15vh * 3 / 4);
 }
 
+p{
+    font-family: "Roboto", sans-serif;
+}
+
+
 /* Fill the whole viewport when its aspect ratio is between 9/16 and 3/4 */
 @media screen and (max-aspect-ratio: 3/4) {
     #container{
@@ -139,5 +144,12 @@ body{
     body{
         font-size: 15vw;
     }
+}
+
+@font-face {
+    font-family: 'AlwaysInMyHeart';
+    src: url('../font/AlwaysInMyHeart.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 

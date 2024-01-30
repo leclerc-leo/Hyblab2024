@@ -9,40 +9,127 @@
 }
 
 /* code propre à la page */
-#name-initiative {
-    margin-top: 4vh;
-    font-size: 0.3em;
+.name-initiative {
+    margin-top: 3%;
+    margin-bottom: 3%;
+    font-size: 0.75em;
     font-weight: bold;
     text-align: center;
-    margin-bottom: 2.5vh;
     color: black;
+    font-family: 'AlwaysInMyHeart','Montserrat', sans-serif;
 }
 
-#text-initiative{
+/* header */
+.header{
+    position: relative;
+    width: 100%;
+    margin-top: 2%;
+}
+
+.illu-personne{
+    position: absolute;
+    width: 30%;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.header-devanture{
+    width: 100%;
+}
+
+/* audio */
+.audio-div{
+    margin: 5%;
+    width: 80%;
+    height: auto;
+}
+
+.illu-initiative{
+    width: 100%;
+}
+
+.text-initiative{
     color: black;
     font-size: 0.3em;
+    margin: 8.5%;
 }
 
-#question{
+.question{
     color: black;
     font-size: 0.2em;
+    display: flex;
+    flex-direction: column;
+    margin: 8.5%;
 }
-#nav-buttons{
+
+.question p{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.question-buttons{
     display: flex;
     justify-content: space-between;
+    margin-top: 5%;
+
+}
+
+.question-buttons img{
+    width: 40%;
+    height: auto;
+}
+
+/* map motion */
+.map-motion{
+    width: 70%;
+    height: auto;
+    margin-top: 5%;
+    border: 1px solid black;
+}
+
+.nav-buttons{
+    display: flex;
     cursor: pointer;
+    flex-direction: row;
+    width: 100%;
+}
+
+.nav-buttons img {
+    height: auto;
+    width: 30%;
 }
 
 .previous, .next {
     display: flex;
-    align-items: center;
-}
-
-#nav-buttons img {
-    height: 100%;
+    flex-direction: row;
+    position: relative;
     width: 100%;
+    height: auto;
 }
 
-#right-arrow {
+.previous{
+    justify-content: start;
+}
+
+.next{
+    justify-content: end;
+}
+
+.next img{
+    right: 0.25em;
+    bottom: 0;
+    width: 25%;
+    margin: 2%;
+}
+
+.previous img{
+    left: 0.25em;
+    bottom: 0;
+    width: 25%;
+    margin: 2%;
+}
+
+.right-arrow {
     transform: rotate(180deg);
 }

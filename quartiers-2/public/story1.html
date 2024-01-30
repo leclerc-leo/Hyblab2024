@@ -6,47 +6,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
   <title>Hyblab 2023</title>
   <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/story.css" />
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/loadingio/loading.css@v2.0.0/dist/loading.css" />
-    <link rel="stylesheet" href="css/story.css" />
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </head>
 <body>
     <!-- Le conteneur sert à verrouiller les proportions (aspect ratio) du contenu de la page (ici des slides) -->
-      <div class="content">
-          <!-- image header deventure -->
-          <img src="img/devanture.png" id="header-deventure">
+      <div class="content"> <!-- à supprimer -->
 
-          <!-- image de la personne -->
-          <img src="img/jean-bonbeur.png" id="illu-personne">
-          <h1 id="name-initiative">Story 1</h1>
+          <!-- header -->
+          <div class="header">
+              <!-- image header devanture -->
+              <img src="img/devanture.svg" class="header-devanture">
+              <img src="img/claude.svg" class="illu-personne">
+              <h1 class="name-initiative">Story 1</h1>
+          </div>
+
+          <!-- bouton retour -->
 
           <!-- audio file -->
-          <audio controls>
+          <audio controls class="audio-div">
               <source src="audio/jean-bonbeur.mp3" type="audio/mpeg">
               Your browser does not support the audio element.
           </audio>
 
           <!-- image d'illustration -->
-          <img src="img/illustration.png" id="illu-initiative">
+          <img src="img/moulins.png" class="illu-initiative">
 
           <!-- texte Lorem -->
-          <p id="text-initiative">
+          <p class="text-initiative">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl vitae nisl. Sed euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl vitae nisl. Sed euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl vitae nisl. Sed euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl vitae nisl. Sed euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl vitae nisl. Sed euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl vitae nisl.
           </p>
 
           <!-- question finale -->
-          <div id="question">
+          <div class="question">
               <p>Connaissais-tu ce lieu / personne ?</p>
-              <p><button type="submit">Oui</button></p>
-              <p><button type="submit">Non</button></p>
+              <div class="question-buttons">
+                  <img src="img/boutons/bouton_non.svg" alt="">
+                  <img src="img/boutons/bouton_oui.svg" alt="">
+              </div>
           </div>
 
           <!-- motion vidéo qui tourne en boucle -->
-          <video autoplay muted loop id="myVideo">
-              <source src="img/loop.mp4" type="video/mp4">
+          <video autoplay muted loop class="map-motion">
+              <source src="img/zoom_map_librairie_la_commune.mp4" type="video/mp4">
           </video>
 
           <!-- bouton lien vers google maps -->
@@ -56,10 +62,14 @@
           <button type="submit">Voir le site web</button>
 
           <!-- boutons swipe -->
-          <div id="nav-buttons">
+          <div class="nav-buttons">
+              <div class="previous">
+                  <img src="img/arrow.svg" alt="right button" class="left-arrow">
+                  <img src="img/marie.svg" alt="Marie">
+              </div>
               <div class="next">
                   <img src="img/marie.svg" alt="Marie">
-                  <img src="img/arrow.svg" alt="right button" id="right-arrow">
+                  <img src="img/arrow.svg" alt="right button" class="right-arrow">
               </div>
           </div>
       </div>
