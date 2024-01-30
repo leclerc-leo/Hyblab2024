@@ -16,7 +16,7 @@ export const Video = () => {
 	// A <AbsoluteFill> is just a absolutely positioned <div>!
 	return (
 		<AbsoluteFill style={{backgroundColor: 'black'}}>
-			<div id='background' style={{ }}>
+			<div id='background'>
 			<div id='main'></div>
 			<div id="footer" >
 				<p>letelegramme-des-scores.fr</p>
