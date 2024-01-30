@@ -33,9 +33,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const saveVotesButton = document.getElementById('saveVotesButton');
     saveVotesButton.addEventListener('click', function() {
-      // Add functionality to save votes
+      // fonction vote 
       alert('Votes saved!');
     });
+ 
+    const archiveButton = document.getElementById('archiveButton');
+    archiveButton.addEventListener('click', function() {
+      alert('lets dive into memories!');
+    });
+
     
     function toggleHeart(button) {    
         if (button.dataset.type === 'heart') {
@@ -52,9 +58,6 @@ document.addEventListener('DOMContentLoaded', function() {
         window.location.href = './field.html';
       });
     
-    document.getElementById('rightArrow').addEventListener('click', function() {
-        //swiper.slideNext();
-        window.location.href = './list.html';});
   
     updatePlayerList('playerList', playersPage);
   });

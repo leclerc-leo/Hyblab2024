@@ -1,18 +1,16 @@
 /* styles.css */
 
 /* Reset some default styles */
-
-
-
 body{
-    padding:0;
-    margin:0;
+  padding: 0;
+  margin:0;
 }
   /* Container for the entire content */
 #container {
     position: fixed;
     height: 100%;
-    background-color: #009E49;
+    padding: -10px;
+    background-color: var(--bg-green);
     margin-left: calc((100vw - 100 * 3vh / 4) / 2);
     width: calc(100 * 3vh / 4);
   }
@@ -34,7 +32,7 @@ body{
   }
   
   .player-box {
-    border: 3px solid #F7EF24; /* Border styling */
+    border: 3px solid var(--yellow); /* Border styling */
     border-radius: 20px; /* Rounded corners */
     overflow: hidden; /* Ensure content doesn't overflow */
     margin: 6px;
@@ -57,12 +55,11 @@ body{
   
   .player-box p {
     flex: 1; /* Take remaining space */
-    padding: 10px;
+    padding: 23px;
     text-align: center; /* Center the name */
     color: white;
-    font-family: 'abolition'; /* Name your font */
-    font-weight: 700; /* Specify the font weight */
-    font-style: normal;
+    font-family: "Abolition"; 
+    font-size: 20px;
   }
   
   .heart-button {
@@ -94,77 +91,21 @@ body{
   
   /* Styling for the footer */
   footer {
-    padding: 10px;
+    padding: 0px;
     text-align: center;
     border: 3px solid; 
-    border-image: url('../img/paper-effect.png') 10 repeat;
+    border-image: url('../img/Footer_papier.svg') 15 repeat;
   }
   
   /* Styling for the "Sauvegarder les votes" button */
   #saveVotesButton {
-    background-color: #009E49;
+    background-color: var(--bg-green);
     padding: 10px 20px;
-    border: 3px solid #F7EF24;
+    border: 3px solid var(--yellow);
     cursor: pointer;
     border-radius: 5px;
-    color: #F7EF24;
-    font-family: 'abolition'; 
-    font-weight: 700; 
-    font-style: normal;
+    color: var(--yellow);
+    font-family: "Abolition"; 
+    font-size: 20px;
     border-radius: 20px;
   }
-
-
-  
-
-  /* Important media queries for easy responsive content :-) */
-  
-  /* When the aspect ratio is smaller than 3/4, display a 3/4 content */
-  @media screen and (max-aspect-ratio: 3/4) {
-    #container {
-      margin-left: 0;
-      width: 100vw;
-    }
-  
-    body {
-      font-size: 15vw;
-    }
-  
-    p {
-      margin: 0.8em;
-      font-size: 5vw;
-      color:  black;
-      text-align: justify;
-    }
-  
-    i {
-      font-size: 6.5vw;
-    }
-  }
-  
-  /* The content is displayed at 9/16 if the aspect ratio is higher than 9/16 */
-  @media screen and (max-aspect-ratio: 9/16) {
-    #container {
-      margin-left: 0;
-      width: 100vw;
-      margin-top: calc(-50 * 16vw / 9);
-      top: 50%;
-      height: calc(100 * 16vw / 9);
-    }
-  
-    body {
-      font-size: 15vw;
-    }
-  
-    p {
-      margin: 0.8em;
-      font-size: 5vw;
-      color: black;
-      text-align: justify;
-    }
-  
-    i {
-      font-size: 6.5vw;
-    }
-  }
-  
