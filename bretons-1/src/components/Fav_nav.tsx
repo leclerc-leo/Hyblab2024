@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import SaveLogo from '../assets/Save_logo.svg';
 import SaveYellow from '../assets/Save_Yellow.svg';
 
@@ -8,8 +8,12 @@ type FavoriteButtonProps = {
   buttonId: string;
 };
 
-const FavoriteButton: React.FC<FavoriteButtonProps> = ({ onClick}) => {
+const FavoriteButton: React.FC<FavoriteButtonProps> = ({ isFavorited, onClick}) => {
   const [buttonClicked, setButtonClicked] = useState(false);
+
+  useEffect(() => {
+    setButtonClicked(isFavorited);
+  }, [isFavorited]);
 
   const handleButtonClick = () => {
     setButtonClicked(!buttonClicked);
@@ -19,23 +23,24 @@ const FavoriteButton: React.FC<FavoriteButtonProps> = ({ onClick}) => {
   const buttonStyle = {
     border: 'none',
     padding: 0,
-    background:'none',
+    background: 'none',
     cursor: 'pointer',
   };
   const imgStyle = {
-    width: '24.867px', 
-    height: '38.733px', 
+    width: '24.867px',
+    height: '38.733px',
   };
   return (
     <button onClick={handleButtonClick} style={buttonStyle}>
-      <img 
-        src={buttonClicked ? SaveYellow : SaveLogo} 
+      <img
+        src={buttonClicked ? SaveYellow : SaveLogo}
         alt="Save"
         style={imgStyle}
       />
     </button>
   );
 };
+
 
 type FavoriteArticlesManagerProps = {
   articleId: string;

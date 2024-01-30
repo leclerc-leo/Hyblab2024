@@ -4,21 +4,37 @@ import BicycleLogo from '../assets/Bicycle_logo.svg';
 import ShareLogo from '../assets/Share_logo.svg'
 import GoldMedal from '../assets/GoldMedal.png';
 import PlayButton from '../assets/Play_button.svg';
-import Placeholder from 'react-bootstrap/Placeholder';
 import { FavoriteButton } from './Fav_nav';
-// import {LikeButton} from './Like_nav';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-
 import './CardCarousel.css';
+import athleteData from '../data/Athlete.json';
+import { Carousel } from 'react-bootstrap';
+import { Athlete, VideoListItemProps } from './type';
 
-function KitchenSinkExample() {
+
+const allAthletesData = athleteData.Athlete.reduce((allAthletes: Athlete[], athletesArray: Athlete[]) => {
+  return allAthletes.concat(athletesArray);
+}, []);
+
+const athleteVideosData = allAthletesData.map((athlete: Athlete) => ({
+  id: athlete.Athlete,
+  title: athlete.Athlete,
+  subtitle: athlete.Epreuve,
+  srcPhoto: athlete.Photo,
+  description: athlete.Performance,
+}));
+
+
+function CardCarousel({ video }: VideoListItemProps) {
   const [isFavorited, setIsFavorited] = useState(false);
-  const [favoriteButtonId] = useState('uniqueId');
+  const [favoriteButtonId] = useState(video.id);
   const navigate = useNavigate();
 
-  // const [isLiked, setIsLiked] = useState(false);
-  // const [likeButtonId] = useState('uniqueId');
+  useEffect(() => {
+    const favoritesFromStorage = JSON.parse(localStorage.getItem('favorites') || '[]');
+    setIsFavorited(favoritesFromStorage.includes(video.id));
+  }, [video.id]);
 
   const handleImageClick = (imageName: string) => {
     console.log(`Image "${imageName}" cliquée !`);
@@ -26,30 +42,26 @@ function KitchenSinkExample() {
 
   const handlePlayClick = (imageName: string) => {
     console.log(`Image "${imageName}" cliquée !`);
-    navigate('VideoPlayer', {state: {id: imageName}})
+    navigate('VideoPlayer', { state: { id: imageName } })
   };
 
   const handleFavoriteClick = () => {
-    setIsFavorited(!isFavorited);
-    console.log(`Favoris "${isFavorited ? 'retiré' : 'ajouté'}" !`);
+    const updatedIsFavorited = !isFavorited;
+    setIsFavorited(updatedIsFavorited);
+    const favoritesFromStorage = JSON.parse(localStorage.getItem('favorites') || '[]');
+    const updatedFavorites = updatedIsFavorited
+      ? [...favoritesFromStorage, video.id]
+      : favoritesFromStorage.filter((fav: string) => fav !== video.id);
+    localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
   };
-
-  // const handleLikeClick = () => {
-  //   setIsLiked(!isLiked);
-  //   console.log(`Favoris "${isLiked ? 'retiré' : 'ajouté'}" !`);
-  // };
 
   return (
     <Card className="custom-card" style={{ width: '15rem' }}>
       <div className="image-container">
         <Card.Img className="custom-image" variant="top" src={ImageGenerique} />
         <div className='card_text'>
-          <h4 aria-hidden="true">
-            <Placeholder xs={9} bg="light" />
-          </h4>
-          <p aria-hidden="true">
-            <Placeholder xs={6} bg="light"/>
-          </p>
+            <h4>{video.title}</h4>
+            <p>{video.subtitle}</p>
         </div>
       </div>
       <img
@@ -58,7 +70,7 @@ function KitchenSinkExample() {
         alt="PlayButton"
         onClick={() => handlePlayClick('PlayButton')}
       />
-      <img className="overlay-image" src={GoldMedal} alt="Overlay" />
+      <img className={`overlay-image ${isFavorited ? 'saveyellow' : ''}`} src={GoldMedal} alt="Overlay" />
       <Card.Body>
         <div className="image-row">
           <img
@@ -72,11 +84,6 @@ function KitchenSinkExample() {
             onClick={handleFavoriteClick}
             buttonId={favoriteButtonId}
           />
-          {/* <LikeButton
-            isLiked={isLiked}
-            onClick={handleLikeClick}
-            buttonId={likeButtonId}
-          /> */}
           <img
             className="ShareLogo"
             src={ShareLogo}
@@ -84,10 +91,24 @@ function KitchenSinkExample() {
             onClick={() => handleImageClick('ShareLogo')}
           />
         </div>
-        {/* Titre de la vidéo */}
       </Card.Body>
     </Card>
   );
 }
 
-export default KitchenSinkExample;
+
+function ControlledCarousel() {
+  const [videosData] = useState(athleteVideosData);
+
+  return (
+    <Carousel className="carousel_main" style={{ width: '15rem' }} indicators={true} controls={false}>
+      {videosData.map(video => (
+        <Carousel.Item key={video.id}>
+          <CardCarousel key={video.id} video={video} />
+        </Carousel.Item>
+      ))}
+    </Carousel>
+  );
+}
+
+export default ControlledCarousel;
