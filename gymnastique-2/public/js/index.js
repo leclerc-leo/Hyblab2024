@@ -18,7 +18,11 @@ const swiper = new Swiper("#mySwiper", {
     shortSwipes: true,
 });
 
-swiper.on('progress', () => move_background(Math.round(100 * swiper.progress)) );
+swiper.on('progress', () => {
+    const blacklisted = [0, 50, 100]
+    if (blacklisted.includes(Math.round(100 * swiper.progress))) return;
+    move_background(Math.round(100 * swiper.progress)) 
+});
 
 swiper.on("slideChange", function () {
     switch( swiper.activeIndex ) {
