@@ -278,13 +278,14 @@ p{
     color: #E47754;
     font-family: 'Helvetica Neue', sans-serif;
     font-size: 13px;
-    padding: 10px 50px;
+    padding: 10px 30px;
 }
 
 /* Format de la page Histoire */
 #histoire-page{
     text-align: center;
     padding: 0;
+    margin-bottom: 50px;
 }
 
 #histoire-page > h1{
@@ -302,12 +303,30 @@ p{
     max-width: 40%;
 }
 
+svg.image-histoire{
+    width: 100%;
+    max-width: 70%;
+}
+
+
 #chemin1{
-    margin-right: 20%;
+    margin-right: 15%;
+    width: 30%;
+    height: auto;
+}
+
+#chemin2{
+    width: 60%;
+    height: auto;
 }
 
 #histoire-header{
     position:sticky;
     top: 0;
-    background-color: rgba(255, 216, 179, 0.8);
+    background-color: rgba(255, 216, 179, 0.9);
+    margin-bottom: 20px;
+}
+
+#histoire-header > img{
+    padding: 10px;
 }
