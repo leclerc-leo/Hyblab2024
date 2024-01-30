@@ -18,7 +18,7 @@ function VideoListItem({ video }: VideoListItemProps) {
   const [isLiked, setIsLiked] = useState(false);
 
   const toggleLike = () => {
-    setIsLiked(!isLiked); // 切换喜欢状态
+    setIsLiked(!isLiked);
   };
 
   return (
@@ -29,7 +29,11 @@ function VideoListItem({ video }: VideoListItemProps) {
           <h4>{video.title}</h4>
           <h5>{video.subtitle}</h5>
           <p>{video.description}</p>
-          <LikeButton isLiked={isLiked} onClick={toggleLike} />
+          <LikeButton 
+          isLiked={isLiked} 
+          onClick={toggleLike} 
+          buttonId={video.id}
+          />
         </div>
       </div>
     </div>

@@ -22,12 +22,16 @@ const FavoriteButton: React.FC<FavoriteButtonProps> = ({ onClick}) => {
     background:'none',
     cursor: 'pointer',
   };
-
+  const imgStyle = {
+    width: '24.867px', 
+    height: '38.733px', 
+  };
   return (
     <button onClick={handleButtonClick} style={buttonStyle}>
       <img 
         src={buttonClicked ? SaveYellow : SaveLogo} 
         alt="Save"
+        style={imgStyle}
       />
     </button>
   );
