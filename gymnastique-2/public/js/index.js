@@ -18,6 +18,8 @@ const swiper = new Swiper("#mySwiper", {
     shortSwipes: true,
 });
 
+swiper.on('progress', () => move_background(Math.round(100 * swiper.progress)) );
+
 swiper.on("slideChange", function () {
     switch( swiper.activeIndex ) {
         case 1:
