@@ -1,0 +1,21 @@
+/** colors **/
+/* Defining the colors used through the app here as variables */
+/* use : color : var(--bg-green) */
+:root {
+    --bg-green :#009E49 ;
+    --yellow: #F7EF24 ;
+    --green : #17853C ; 
+    --field-green : #64BF7C ; 
+}
+/** colors **/
+
+/** fonts **/
+@font-face {
+    font-family: 'Abolition';
+    src: url('../fonts/Abolition-W00-Regular.ttf') format('truetype');
+  }
+@font-face {
+    font-family: 'Neue Haas Unica';
+    src: url('../fonts/NeueHaasUnicaPro-Regular.ttf') format('truetype');
+  }
+/** fonts **/

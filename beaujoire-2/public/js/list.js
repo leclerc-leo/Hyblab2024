@@ -31,18 +31,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     }
 
-    const saveVotesButton = document.getElementById('saveVotesButton');
-    saveVotesButton.addEventListener('click', function() {
+    const retour = document.getElementById('retour');
+    retour.addEventListener('click', function() {
       // fonction vote 
       alert('Votes saved!');
     });
- 
-    const archiveButton = document.getElementById('archiveButton');
-    archiveButton.addEventListener('click', function() {
-      alert('lets dive into memories!');
-    });
 
-    
+
+
     function toggleHeart(button) {    
         if (button.dataset.type === 'heart') {
         button.classList.toggle('pressed');
