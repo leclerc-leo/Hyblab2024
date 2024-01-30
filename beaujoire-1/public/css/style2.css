@@ -83,7 +83,7 @@ body {
 
 .player {
   position: absolute;
-  background-image: url(./img/card.svg);
+  background-image: url("../img/card.svg");
   background-repeat: no-repeat;
   background-size: contain;
   transform: translate(-50%, -50%);
