@@ -56,18 +56,11 @@ body {
   height: 100%;
 }
 
-/* Most of the elements in this demo are absolute positioned with percentages */
-#second-slide header,
-#second-slide header {
-  text-align: center;
-  width: 100%;
-  top: 10%;
-  position: absolute;
-  font-size: 30%;
-  z-index: 2;
-}
+
+
 
 #logo-hyblab {
+  display: none;
   text-align: center;
   width: 50%;
   left: 50%; /* center the logo, in interaction with the negative margin-left */
@@ -89,22 +82,20 @@ body {
   top: 40%;
   position: absolute;
   margin-left: -35%; /* this is half the width */
-  margin-top: calc(
-    -25% * 9 / 16
-  ); /* margins are relative to the element width... :-( */
+  margin-top: calc(   -25% * 9 / 16 ); /* margins are relative to the element width... :-( */
 }
 
-main > section {
-  background-color: white;
-  background-size: 100% auto; /* background is full width and height is proportional to width */
-  background-position: bottom; /* background is bottom aligned */
+#second-slide {
+  background-color: rgb(53, 49, 49);
 }
+
+
 
 /* popup div on the second slide class popup */
 #second-slide .popup {
   display: none;
   position: absolute;
-  width: 80%;
+  width: 80%; /* 80% of the slide width */      
   height: 80%;
   top: 10%;
   left: 10%;
@@ -157,6 +148,118 @@ main > section {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+.swiper-slide {
+    overflow: hidden;
+}
+
+
+#gourde {
+    display: flex;
+    position: absolute;
+    width: 50%;
+    top: 67%;
+    left: 40%;
+}
+#gourde .cls-1:hover{
+    fill: red;
+}
+#gourde .cls-2:hover{
+    fill: red;
+}
+#gourde .cls-3:hover{
+    fill: red;
+}
+
+#medaille {
+    display: flex;
+    position: absolute;
+    width: 50%;
+    top: 47%;
+    left: 40%;
+}
+
+#manique {
+    display: flex;
+    position: absolute;
+    width: 50%;
+    top: 27%;
+    left: 40%;
+}
+
+#tel {
+    display: flex;
+    position: absolute;
+    width: 50%;
+    top: 7%;
+    left: 40%;
+}
+
+#algerie {
+    display: flex;
+    position: absolute;
+    width: 50%;
+    top: 47%;
+    left: 20%;
+}
+
+#coupe {
+    display: flex;
+    position: absolute;
+    width: 70%;
+    top: -3%;
+    left: 1%;
+}
+
+#cupcake {
+    display: flex;
+    position: absolute;
+    width: 70%;
+    top: 11%;
+    left: 33%;
+}
+
+#photo {
+    display: flex;
+    position: absolute;
+    width: 60%;
+    top: -7%;
+    left: 50%;
+}
+
+#Sac :hover {
+    fill: red;
+}
+
+#photo :hover {
+    fill: yellow;
+}
+#algerie :hover {
+    fill: blue;
+}
+
+#medaille :hover {
+    fill: green;
+}
+#coupe :hover {
+    fill: red;
+}
+
+#cupcake :hover {
+    fill: pink;
+}
+
+#manique :hover {
+    fill: purple;
+}
+
+#gourde :hover {
+    fill: orange;
+}
+
+#tel :hover {
+    fill: greenyellow;
 }
 
 /* ---------- Positioning of logos on the last slide -------------------- */
