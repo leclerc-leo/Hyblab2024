@@ -1,4 +1,4 @@
-
+/*
 .swiper-wrapper {
     background-color: var(--bg-green);
 }
@@ -16,20 +16,16 @@
   border: 3px solid var(--yellow);
   border-radius: 8px;
   
-  /* Background and text color */
   background-color : transparent ; 
   color: white;
-  
-  /* Text alignment and font styles */
+
   text-align: left;
   font-family: 'Arial', sans-serif;
 
-  /* positioning */
   position: absolute;
   top : 15% ;
   left : 10% ; 
 
-  /* Centering */
   overflow: hidden;
   text-align: center;
 
@@ -89,6 +85,7 @@
       z-index: 2;
 }
 
+
 .bio-player .icons {
   flex: 1;
   display: flex;
@@ -118,6 +115,7 @@
   height: 150px;
 }
 
+
 .infos {
   height:inherit;
   width: 90px;
@@ -126,6 +124,7 @@
   justify-content: center; 
   align-items: center;
 }
+
 
 .infos .flags {
   display:flex;
@@ -139,6 +138,7 @@
   padding-bottom: 10%;
 }
 
+
 .infos > img{
   display: block;
   padding-left: 20%;
@@ -146,10 +146,12 @@
   height: 30px;
 }
 
+
 .infos p{
   font-family: "Abolition";
   font-size: 20px;
 }
+
 
 .bio-player .icons-text {
   padding: 15px;
@@ -157,3 +159,246 @@
   font-size: 20px;
   font-family: "Neue Haas Unica";
 }
+*/
+
+/* Fill the whole viewport when its aspect ratio is between 9/16 and 3/4 */
+@media screen and (max-aspect-ratio: 3/4) {
+  #container{
+      margin-left: 0; /* reset margin-left */
+      width: 100vw; /* content is full width (and full height because of the default rule for container height */
+  }
+
+  /* We set a default font size here. It will be the base for all other font sizes */
+  /* Here the font size is proportional to content width */
+  body{
+      font-size: 15vw;
+  }
+
+  .swiper-wrapper{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+
+    background-color: var(--bg-green);
+  }
+
+  .bio-player{
+    width: 6em;
+    margin: 0.28em;
+    border: 3px solid var(--yellow);
+    border-radius: 8px;
+    text-align: center;
+    overflow-x: clip;
+    overflow-y: scroll;
+  }
+
+  .background-text{
+    font-family: "Abolition";
+    color: var(--green);
+    font-size: 2.1em;
+    line-height: 0.9em;
+    position: relative;
+    z-index: -1;
+    height: 0;
+  }
+
+  .avatar{
+    width: 4.4em;
+    object-fit: contain;
+    margin-top: 0.36em;
+  }
+  
+  .fullname {
+    color: #fff;
+    font-family: "Abolition"; 
+  }
+
+  .overlay-firstname{
+    position: relative;
+    bottom: 1.15em;
+    font-size: 1.3em;
+    height: 0;
+  }
+
+  .lastname{
+    font-size: 1.1em;
+    position: relative;
+    bottom: 0.25em;
+  }
+
+  .display-bio{
+    position: relative;
+    left: 2.6em;
+    z-index: 2;
+    bottom: 2.4em;
+    height: 0;
+  }
+
+  .display-bio img{
+    width: 0.6em;
+  }
+
+  .icons{
+    background-color: var(--green);
+  }
+
+  .icons > * {
+    display: inline-block;
+    width: 20%;
+  }
+
+  .infos img{
+    height: 0.5em;
+    object-fit: contain;
+  }
+
+  .infos p{
+    font-family: "Abolition";
+    font-size: 0.33em;
+
+    margin: inherit;
+    color: inherit;
+    text-align: inherit;
+  }
+
+  .flags > img{
+    display: block;
+    margin: 0 auto;
+    width: 0.5em;
+    height: inherit;
+  }
+
+  .like > img{
+    width: 1.35em;
+  }
+
+  .icons-text{
+    padding: 0.6rem;
+    text-align: left;
+    font-size: 0.9rem;
+    font-family: "Neue Haas Unica";
+  }
+}
+
+/* The content is displayed at 9/16 If the aspect ratio is higher that 9/16  */ 
+@media screen and (max-aspect-ratio: 9/16) {
+  #container{
+      margin-left: 0; /* reset left margin */
+      width: 100vw;   /* content is full width */
+      margin-top: calc(-50 * 16vw / 9); /* move the content half the height to the top */
+      top:50%; /* then center it ! */
+      height: calc(100 * 16vw / 9); /* adjust height so that aspect ratio is 9/16 */
+  }
+
+  /* We set a default font size here. It will be the base for all other font sizes */
+  /* Here the font size is proportional to content width */
+  body{
+      font-size: 15vw;
+  }
+
+  .swiper-wrapper{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+
+    background-color: var(--bg-green);
+  }
+
+  .bio-player{
+    width: 6em;
+    margin: 0.28em;
+    border: 3px solid var(--yellow);
+    border-radius: 8px;
+    text-align: center;
+    overflow-x: clip;
+    overflow-y: scroll;
+  }
+
+  .background-text{
+    font-family: "Abolition";
+    color: var(--green);
+    font-size: 2.1em;
+    line-height: 0.9em;
+    position: relative;
+    z-index: -1;
+    height: 0;
+  }
+
+  .avatar{
+    width: 4.4em;
+    object-fit: contain;
+    margin-top: 0.36em;
+  }
+  
+  .fullname {
+    color: #fff;
+    font-family: "Abolition"; 
+  }
+
+  .overlay-firstname{
+    position: relative;
+    bottom: 1.15em;
+    font-size: 1.3em;
+    height: 0;
+  }
+
+  .lastname{
+    font-size: 1.1em;
+    position: relative;
+    bottom: 0.25em;
+  }
+
+  .display-bio{
+    position: relative;
+    left: 2.6em;
+    z-index: 2;
+    bottom: 2.4em;
+    height: 0;
+  }
+
+  .display-bio img{
+    width: 0.6em;
+  }
+
+  .icons{
+    background-color: var(--green);
+  }
+
+  .icons > * {
+    display: inline-block;
+    width: 20%;
+  }
+
+  .infos img{
+    height: 0.5em;
+    object-fit: contain;
+  }
+
+  .infos p{
+    font-family: "Abolition";
+    font-size: 0.36em;
+
+    margin: inherit;
+    color: inherit;
+    text-align: inherit;
+  }
+
+  .flags > img{
+    display: block;
+    margin: 0 auto;
+    width: 0.5em;
+    height: inherit;
+  }
+
+  .like > img{
+    width: 1.35em;
+  }
+
+  .icons-text{
+    padding: 0.6rem;
+    text-align: left;
+    font-size: 0.9rem;
+    font-family: "Neue Haas Unica";
+  }
+}
+
