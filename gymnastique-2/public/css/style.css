@@ -259,13 +259,40 @@ header{
     color: black;
     background-color: rgba(255, 255, 255, 1);
 }
+
+
 #palmares-page {
+    text-align: center;
     background-color: #FFD8B3;
     font-family: "Krona_One variant0", Tofu;
 }
-#titre-palmares {
+#palmares-page #titre-palmares {
     color: #482E49;
+    font-size: 20px;
 }
-#palmares-page button {
+#palmares-page button{
+    border-color: #F08461;
+}
+#palmares-page .palmares-desactive{
     background-color: #F08461;
+}
+#palmares-page .palmares-active{
+    background-color: transparent;
+}
+
+.palmares-desactive .button-palmares-titre{
+    color : #FFF9F9;
+    font-size: 18px;
+    font-weight: normal;
+}
+.palmares-desactive .palmares-button-texte{
+    display: none;
+}
+.palmares-active .button-palmares-titre{
+    color : #F08461;
+    font-size: 16px;
+    font-style: unset;
+}
+.palmares-active .palmares-button-texte{
+    display: block;
 }

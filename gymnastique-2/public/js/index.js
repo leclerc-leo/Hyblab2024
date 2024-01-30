@@ -74,3 +74,9 @@ categories_buttons.forEach( button => {
         swiper.disable(); // pour éviter de changer de slide lors d'un scroll et d'autoriser le scroll sur la page
     });
 });
+
+document.querySelectorAll('.button-palmares').forEach(bouton =>{
+    bouton.addEventListener("click",()=>{
+        bouton.classList.replace("palmares-desactive","palmares-active") ? {} : bouton.classList.replace("palmares-active","palmares-desactive");
+    });
+})
