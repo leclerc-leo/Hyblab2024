@@ -65,7 +65,6 @@ categories_buttons.forEach( button => {
         block.style.overflow = 'auto';
         block.style.borderRadius = '0';
         block.style.opacity = '1';
-
         /* Nous gardons en mémoire l'id du bouton cliqué pour pouvoir
         *  retourner le bloc à sa position initiale lors d'une sortie */
         exit_button.id = `${category}-exit`;
@@ -75,8 +74,9 @@ categories_buttons.forEach( button => {
     });
 });
 
-document.querySelectorAll('.button-palmares').forEach(bouton =>{
-    bouton.addEventListener("click",()=>{
-        bouton.classList.replace("palmares-desactive","palmares-active") ? {} : bouton.classList.replace("palmares-active","palmares-desactive");
+document.querySelectorAll('.card-container').forEach(card_container =>{
+    card_container.addEventListener("click",()=>{
+        card_container.children[0].classList.toggle("flipcard");
     });
+
 })

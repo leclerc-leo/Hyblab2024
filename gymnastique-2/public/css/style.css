@@ -62,19 +62,6 @@ header{
     z-index: 2;
 }
 
-#logo-hyblab{
-    text-align: center;
-    width: 50%;
-    left: 50%; /* center the logo, in interaction with the negative margin-left */
-    top: 50%;
-    margin-left:-25%; /* this is half the width */
-    margin-top:calc(-7.5% * 9 / 16 ); /* margins are relative to the element width... :-( */
-    position: absolute;
-    font-size: 50%;
-    z-index: 2;
-    cursor: pointer;
-}
-
 #container::before, #container::after {
     background-color: black;
     content: '';
@@ -283,7 +270,7 @@ p{
 #palmares-page {
     text-align: center;
     background-color: #FFD8B3;
-    font-family: "Krona_One variant0", Tofu;
+    font-family: "Krona_One variant0";
 }
 #palmares-page .palmares-container {
     display: flex;
@@ -291,39 +278,81 @@ p{
     align-items: center;
     justify-content: center;
 }
+#palmares-page #palmares-logo {
+    margin-top : 20px;
+}
 #palmares-page #titre-palmares {
     color: #482E49;
-    font-size: 20px;
+    margin: 10% auto 10% auto;
+    font-size: 30px;
 }
-#palmares-page button{
-    border-color: #F08461;
-    border-bottom-left-radius: 5%;
-    border-bottom-right-radius: 5%;
-    border-top-left-radius: 5%;
-    border-top-right-radius: 5%;
-    width: 80%;
-    height: 20%;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.card-container {
+    width: 350px;
+    height: 100px;
+    max-height: 10%;
+    max-width: 80%;
+    perspective: 800px;
+    margin: 5% 10% 5% 10%;
+
 }
-#palmares-page .palmares-desactive{
-    background-color: #F08461;
+.flipcard {
+    transform: rotateY(180deg);
 }
-#palmares-page .palmares-active{
+
+.card {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    transition: transform 1500ms;
+    transform-style: preserve-3d;
+}
+
+.card-front,
+.card-back {
+    display: table;
+    height: 100%;
+    width: 100%;
+    border-radius: 2rem;
+    border-style: solid;
+    border-color: #E47754;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.card-front {
+    background-color: #E47754;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-back {
     background-color: transparent;
+    transform: rotateY(180deg);
+    align-items: center;
 }
-.palmares-desactive .button-palmares-titre{
-    color : #FFF9F9;
-    font-size: 18px;
-    font-weight: normal;
-}
-.palmares-desactive .palmares-button-texte{
-    display: none;
-}
-.palmares-active .button-palmares-titre{
-    color : #F08461;
-    font-size: 16px;
-    margin: 5px 0 5px 0;
-}
-.palmares-active .palmares-button-texte{
-    display: block;
-    margin: 5px 5px 5px 5px;
+.card-palmares-titre{
+    margin: 2% 0 2% 0;
+    color: #E47754;
 }
