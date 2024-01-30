@@ -42,8 +42,9 @@
         </section>
 
         <div id="map">
-            <img src="img/logo.svg"> 
-
+            <img id="logo-map" src="img/logo.svg"> 
+            <img src="img/nuage.svg" class="nuage" id="nuage1">
+            <img src="img/nuage.svg" class="nuage" id="nuage2">
             <svg id="rennes_map" width="333" height="315" viewBox="0 0 333 315" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path data-no_slide=0 id="map_villejean" d="M132.086 75.1667L148.247 95.8077L157.062 109.077L160 129.718L137.963 154.782L126.21 171L108.58 157.731L70.3827 151.833L77.7284 134.141H67.4444H57.1605L61.5679 120.872L41 103.179L43.9383 86.9615L64.5062 89.9103V70.7436V61.8974L70.3827 56L88.0123 61.8974H98.2963L108.58 56H126.21L132.086 75.1667Z" fill="#D74F50"/>
                 <path data-no_slide=1 id="map_st_martin" d="M168.067 110.079L155 92.4211L171.333 86L187.667 90.8158L184.4 110.079L204 118.105L197.467 134.158L171.333 147H163.167L164.8 134.158L168.067 110.079Z" fill="white"/>
@@ -62,88 +63,87 @@
 
         <div id="quartiers-swiper" class="swiper">
             <main class = "swiper-wrapper">
-
                 <section id="villejean" class="swiper-slide quartier-preview">
-                    <h1 id="quartier-nom">Villejean-Beauregard</h1>
+                    <h1 id="quartier-nom">Villejean</h1>
                     <svg width="41" height="39" viewBox="0 0 41 39" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M31 6.5L36.5 13.5L39.5 18L40.5 25L33 33.5L29 39L23 34.5L10 32.5L12.5 26.5H9H5.5L7 22L0 16L1 10.5L8 11.5V5V2L10 0L16 2H19.5L23 0H29L31 6.5Z" fill="#FFFFFF"/>
+                        <path d="M31 6.5L36.5 13.5L39.5 18L40.5 25L33 33.5L29 39L23 34.5L10 32.5L12.5 26.5H9H5.5L7 22L0 16L1 10.5L8 11.5V5V2L10 0L16 2H19.5L23 0H29L31 6.5Z" fill="#E35D5D"/>
                     </svg>                        
                 </section>
 
                 <section id="st_martin" class="swiper-slide quartier-preview">
                     <h1 id="quartier-nom">Nord-St Martin</h1>
                     <svg width="15" height="19" viewBox="0 0 15 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M4 7.5L0 2L5 0L10 1.5L9 7.5L15 10L13 15L5 19H2.5L3 15L4 7.5Z" fill="#FFFFFF"/>
+                        <path d="M4 7.5L0 2L5 0L10 1.5L9 7.5L15 10L13 15L5 19H2.5L3 15L4 7.5Z" fill="#E35D5D"/>
                     </svg>                        
                 </section>
 
                 <section id="maurepas" class="swiper-slide quartier-preview">
                     <h1 id="quartier-nom">Maurepas-Patton</h1>
                     <svg width="45" height="42" viewBox="0 0 45 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1 27L3.5 24H7L9 18.5L15 16.5L21.5 20L28.5 13.5V9L32 8L38 4L43.5 0.5L44.5 6.5L41.5 11.5L34 25V30L21.5 37L10.5 41.5H7V36L0 33L1 27Z" fill="#FFFFFF"/>
+                        <path d="M1 27L3.5 24H7L9 18.5L15 16.5L21.5 20L28.5 13.5V9L32 8L38 4L43.5 0.5L44.5 6.5L41.5 11.5L34 25V30L21.5 37L10.5 41.5H7V36L0 33L1 27Z" fill="#E35D5D"/>
                     </svg>    
                 </section>
 
                 <section id="bourg_eveque" class="swiper-slide quartier-preview">
                     <h1 id="quartier-nom">Bourg L'Evêque-La Touche Moulin du Comte</h1>
                     <svg width="132" height="75" viewBox="0 0 132 75" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M126.5 4L119 0L109.5 10L92 29.5L71.5 13.5L31 7.5L21 18L24 34L5.5 37L6.5 45.5L4 52.5L11.5 60.5L0 70L21 74.5L38 70L59.5 52.5L84.5 51L115.5 48L131.5 41.5L130.5 31.5L124 22.5L126.5 4Z" fill="white"/>
+                        <path d="M126.5 4L119 0L109.5 10L92 29.5L71.5 13.5L31 7.5L21 18L24 34L5.5 37L6.5 45.5L4 52.5L11.5 60.5L0 70L21 74.5L38 70L59.5 52.5L84.5 51L115.5 48L131.5 41.5L130.5 31.5L124 22.5L126.5 4Z" fill="#E35D5D"/>
                     </svg>                           
                 </section>
 
                 <section id="cleunay" class="swiper-slide quartier-preview">
                     <h1 id="quartier-nom">Cleunay-Arsenal-Redon</h1>
                     <svg width="168" height="108" viewBox="0 0 168 108" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M167.5 23L165.5 0L149.5 5.5L95.5 10.5L73.5 28.5L54 32.5L29 26.5L14 37L0.5 57V103H14L27 107.5L54 88.5L56 82.5L66 81.5L79.5 66.5L108.5 48.5L144.5 30L167.5 23Z" fill="white"/>
+                        <path d="M167.5 23L165.5 0L149.5 5.5L95.5 10.5L73.5 28.5L54 32.5L29 26.5L14 37L0.5 57V103H14L27 107.5L54 88.5L56 82.5L66 81.5L79.5 66.5L108.5 48.5L144.5 30L167.5 23Z" fill="#E35D5D"/>
                     </svg>                           
                 </section>
 
                 <section id="centre" class="swiper-slide quartier-preview">
                     <h1 id="quartier-nom">Centre</h1>
                     <svg width="12" height="21" viewBox="0 0 12 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M7.5 3.5L5.5 0L1.5 1L0.5 6L2.5 9L3.5 20.5L11.5 18.5L9.5 10.5V4.5L7.5 3.5Z" fill="#FFFFFF"/>
+                        <path d="M7.5 3.5L5.5 0L1.5 1L0.5 6L2.5 9L3.5 20.5L11.5 18.5L9.5 10.5V4.5L7.5 3.5Z" fill="#E35D5D"/>
                     </svg>                        
                 </section>
 
                 <section id="thabor" class="swiper-slide quartier-preview">
                     <h1 id="quartier-nom">Thabor-St Hélier</h1>
                     <svg width="22" height="25" viewBox="0 0 22 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M6.5 0L0.5 5L2 8L4.5 9.5V14.5L6.5 24.5L22 21.5L20 19.5L12.5 3H8L6.5 0Z" fill="#FFFFFF"/>
+                        <path d="M6.5 0L0.5 5L2 8L4.5 9.5V14.5L6.5 24.5L22 21.5L20 19.5L12.5 3H8L6.5 0Z" fill="#E35D5D"/>
                     </svg>                        
                 </section>
 
                 <section id="jeanne_darc" class="swiper-slide quartier-preview">
                     <h1 id="quartier-nom">Jeanne d'Arc-Longs Champs-Atalante Beaulieu</h1>
                     <svg width="29" height="31" viewBox="0 0 29 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M7.5 27.5L0.5 12.5L25 0.5L29 4.5V10.5L27 14.5L25 20.5L21.5 22L26 27.5L20.5 30.5H11L7.5 27.5Z" fill="#FFFFFF"/>
+                        <path d="M7.5 27.5L0.5 12.5L25 0.5L29 4.5V10.5L27 14.5L25 20.5L21.5 22L26 27.5L20.5 30.5H11L7.5 27.5Z" fill="#E35D5D"/>
                     </svg>                        
                 </section>
 
                 <section id="sud_gare" class="swiper-slide quartier-preview">
                     <h1 id="quartier-nom">Sud-gare</h1>
                     <svg width="25" height="21" viewBox="0 0 25 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M11.5 2.5L22.5 0.5L25 5L24 13L25 17.5L16 20.5L15 11.5L3 10.5V8L0 6L11.5 2.5Z" fill="#FFFFFF"/>
+                        <path d="M11.5 2.5L22.5 0.5L25 5L24 13L25 17.5L16 20.5L15 11.5L3 10.5V8L0 6L11.5 2.5Z" fill="#E35D5D"/>
                     </svg>                        
                 </section>
 
                 <section id="francisco" class="swiper-slide quartier-preview">
                     <h1 id="quartier-nom">Francisco Ferrer-Vern-Poterie</h1>
                     <svg width="31" height="29" viewBox="0 0 31 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M8.5 1L0 3.5L1 7.5L0 17.5L13 19.5L17 28.5L22.5 24.5L27.5 19.5L30.5 7.5L24.5 3.5L22.5 0H12L8.5 1Z" fill="#FFFFFF"/>
+                        <path d="M8.5 1L0 3.5L1 7.5L0 17.5L13 19.5L17 28.5L22.5 24.5L27.5 19.5L30.5 7.5L24.5 3.5L22.5 0H12L8.5 1Z" fill="#E35D5D"/>
                     </svg>                        
                 </section>
 
                 <section id="brequigny" class="swiper-slide quartier-preview">
                     <h1 id="quartier-nom">Bréquigny</h1>
                     <svg width="22" height="18" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M21 1.5L10 0.5V8H5L0 12.5L3.5 15H8.5H15L17.5 14L22 18L21 12.5V9V1.5Z" fill="#FFFFFF"/>
+                        <path d="M21 1.5L10 0.5V8H5L0 12.5L3.5 15H8.5H15L17.5 14L22 18L21 12.5V9V1.5Z" fill="#E35D5D"/>
                     </svg>                        
                 </section>
 
                 <section id="le_blosne" class="swiper-slide quartier-preview">
                     <h1 id="quartier-nom">Le Blosne</h1>
                     <svg width="26" height="15" viewBox="0 0 26 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0 10.5V6.5L11 2.5L13 0.5L22.5 2L25.5 10.5L20.5 12.5L17 10.5L10.5 7.5V14L2.5 15V10.5H0Z" fill="#FFFFFF"/>
+                        <path d="M0 10.5V6.5L11 2.5L13 0.5L22.5 2L25.5 10.5L20.5 12.5L17 10.5L10.5 7.5V14L2.5 15V10.5H0Z" fill="#E35D5D"/>
                     </svg>                        
                 </section>
             
