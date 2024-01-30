@@ -98,7 +98,7 @@ h1{
 /*-------- Conversation ----------*/
 .conversation{
     width: 100%;
-    height: 60%;
+    height: 75%;
     overflow-y: auto;
     overflow-x: hidden;
     font-size: 0.25em;
@@ -182,14 +182,6 @@ h1{
 }
 
 /* --- Choice bubbles--- */
-#choicesContainer{
-    height: 15%;
-    width: 100%;
-    font-size: 0.2em;
-    background-color: white;
-    color: white;
-    display: flex;
-}
 .choices{
     width: 100%;
     display: flex;
@@ -197,6 +189,7 @@ h1{
     flex-wrap: wrap;
     justify-content: center;
     background-color: #7D7DB5;
+    color: white;
     align-items: center;
 
 }
@@ -284,12 +277,12 @@ h1{
 .conversation-arrow-container {
     position: absolute;
     width: 100%;
-    top: 82%;
+    bottom: 2%;
 }
 .conversation-arrow-down {
-    color: #333;
+    color: black;
     position: absolute;
-    left: 92%;
+    left: 91%;
     width: 0.14em;
     height: 0.14em;
     border-bottom: 4px solid;

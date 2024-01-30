@@ -2,7 +2,6 @@
 
 /* --- INIT --- */
 let conversation = $(".conversation");
-let choicesContainer = $("#choicesContainer");
 let arrowDown = $(".conversation-arrow-down");
 let isTimeoutActive = false;
 var name_user = "Vous";
@@ -64,32 +63,8 @@ function addBubbleGuide(content) {
 }
 /* choice bubble. content parameter must be an array */
 function addChoiceBubble(content, typeChoices) {
-    // conversation.queue(function (next) {
-    //     // put content into html
-    //     let choiceBubblesContent = '<div class="choices">';
-    //     if(choices){
-    //         content.forEach(textContentChoice => {
-    //             choiceBubblesContent += '<button class="choice-bubbles" onclick="choiceSelected(this)">'+ textContentChoice + '</button>';
-    //         });
-    //     }
-    //     else{
-    //         choiceBubblesContent += '<label for="username_input">Bonjour, je m’appelle <input type="text" id="username_input" name="username_input" required minlength="2" maxlength="20" size="10" onkeydown="saveUsername(event)"/> ! </label>';
-    //     }
-    //     choiceBubblesContent += '</div>';
-        
-    //     let choiceBubbles = $(choiceBubblesContent);
-    //     conversation.append(choiceBubbles);// add html to conversation div
-
-    //     // Scroll according to messages height
-    //     scrollConversation(getLastBubbleHeight('.choices'));
-
-    //     // Then show speech bubble
-    //     choiceBubbles.show();
-    //     setTimeout(next, 750);
-    // });
-    // put content into html
-    // let choiceBubblesContent = '<div class="choices">';
     conversation.queue(function (next) {
+        // put content into html
         let choiceBubblesContent = '<div class="choices">';
         if(typeChoices){
             content.forEach(textContentChoice => {
@@ -100,10 +75,14 @@ function addChoiceBubble(content, typeChoices) {
             choiceBubblesContent += '<label for="username_input">Bonjour, je m’appelle <input type="text" id="username_input" name="username_input" required minlength="2" maxlength="20" size="10" onkeydown="saveUsername(event)"/> ! </label>';
         }
         choiceBubblesContent += '</div>';
-
-        let choiceBubbles = $(choiceBubblesContent);
-        choicesContainer.append(choiceBubbles);// add html to conversation div
         
+        let choiceBubbles = $(choiceBubblesContent);
+        conversation.append(choiceBubbles);// add html to conversation div
+
+        // Scroll according to messages height
+        scrollConversation(getLastBubbleHeight('.choices'));
+
+        // Then show speech bubble
         choiceBubbles.show();
         setTimeout(next, 750);
     });
