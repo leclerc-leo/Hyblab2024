@@ -14,17 +14,21 @@ setTimeout(() => {
     });
 }, 100);
 
-const test_button = document.querySelector("#portrait");
+const test_button = document.querySelector(".test");
 test_button.addEventListener("click", function() {
+    test_button.disabled = true
+
     const container = document.querySelector(".background-container");
     const old_img = document.querySelector(".background-container img");
     old_img.classList.add("out");
 
     const new_img = document.createElement("img");
-    new_img.src = "img/test_background.png";
+    new_img.src = "img/backgrounds/education.svg";
     container.appendChild(new_img);
 
     setTimeout(function() {
         old_img.remove();
+        test_button.disabled = false
     }, 2000);
+
 });

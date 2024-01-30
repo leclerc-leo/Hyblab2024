@@ -19,6 +19,7 @@ function saveUsername(event){
         addVideo(["Ceci est le choix 1","Ceci est le choix 2","Ceci est le choix 3","Ceci est le choix 4"]);
     }
 }
+
 /* --- CONVERSATION FUNCTIONS --- */
 /* Users speech bubble. content parameter must be an array*/
 function addBubbleUser(content) {
@@ -40,6 +41,7 @@ function addBubbleUser(content) {
         setTimeout(next, 750);
     });
 }
+
 /* Guides speech bubbles. content parameter must be an array*/
 function addBubbleGuide(content) {
     conversation.queue(function (next) {
@@ -61,6 +63,7 @@ function addBubbleGuide(content) {
         setTimeout(next, 750);
     });
 }
+
 /* choice bubble. content parameter must be an array */
 function addChoiceBubble(content, typeChoices) {
     conversation.queue(function (next) {
@@ -124,6 +127,7 @@ function addChoiceBubble(content, typeChoices) {
         // choiceBubblesContent.removeAttribute('firstChoice');
     });
 }
+
 /* add video in conversation  */
 function addVideo(content) {
     conversation.queue(function (next) {
@@ -140,6 +144,7 @@ function addVideo(content) {
         setTimeout(next, 750);
     });
 }
+
 /* Once choice is selected, we put a bubble user with the answer, and the following conversation  */
 function choiceSelected(btnChoiceSelected){
     let textChoice = btnChoiceSelected.textContent || bouton.innerText; // get text content of the choiceBubble selected
@@ -155,7 +160,6 @@ function choiceSelected(btnChoiceSelected){
     addBubbleGuide(["Très bien maintenant choisi un choix parmi ces choix:"]);
 
     addChoiceBubble(["Ceci est le choix 1","Ceci est le choix 2","Ceci est le choix 3","Ceci est le choix 4","Ceci est le choix 5","Ceci est le choix 6"], true);
-
 }
 
 /* --- AUTOMATIC SCROLL FUNCTIONS --- */
