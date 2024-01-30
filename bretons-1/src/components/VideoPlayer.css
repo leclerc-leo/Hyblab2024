@@ -5,7 +5,7 @@
     text-align: center;
     top: 2vh;
 }
-#root > div > div:nth-child(7) > div:nth-child(1) {
+#VideoPlayer > div:nth-child(7) > div:nth-child(1) {
     top: 0% !important;
     height: 100% !important;
 }

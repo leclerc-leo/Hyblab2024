@@ -10,7 +10,7 @@ function VideoPlayer(video: Video) {
     const handleSwipeUp = () => {
     };
   return (
-    <div>
+    <div id='VideoPlayer'>
         <div className='headerPlayer'>
             <img src={logo} alt='Logo' />
         </div>

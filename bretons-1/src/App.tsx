@@ -7,7 +7,7 @@ export default function App() {
     <div className="App">
       <Routes>
         <Route path="bretons-1" element={<Home />} />
-        <Route path="VideoPlayer" element={<VideoPlayerPage />} />
+        <Route path="bretons-1/VideoPlayer" element={<VideoPlayerPage />} />
       </Routes>
     </div>
   );
