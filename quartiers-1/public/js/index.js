@@ -26,7 +26,7 @@ document.querySelector("#tuto-open").addEventListener("click", function() {
 const swiper = new Swiper("#quartiers-swiper", {
     direction: "horizontal",
     spaceBetween: 0,
-    slidesPerView: 1.5,
+    slidesPerView: 1,
     centeredSlides: true,
     loop: "true",
     speed: 1000
@@ -35,7 +35,7 @@ const swiper = new Swiper("#quartiers-swiper", {
 // Fonction permettant de remettre tous les quartiers en gris
 function resetMapColor() {
     document.querySelectorAll("#rennes_map path").forEach(function(path) {
-        path.style.fill = "#D9D9D9";
+        path.style.fill = "#FFFFFF";
     });
 }
 
