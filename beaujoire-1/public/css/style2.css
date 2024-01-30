@@ -1,0 +1,171 @@
+* {
+  font-family: Industry, Bebas Neue Pro, sans-serif;
+  color: #ffffff;
+}
+
+body {
+  background-color: hsla(240, 14%, 14%, 0.9);
+  margin: 0;
+}
+
+.logo-container {
+  margin-top: 10%;
+  width: 100%;
+  height: 50px;
+  background-image: url("../img/logo.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-between;
+}
+
+#main {
+  text-align: center;
+  font-family: Industry;
+  font-weight: bolder;
+}
+
+.green {
+  color: #00a55a;
+}
+
+.big-title {
+  font-size: calc(max(8vh, 8vw));
+}
+
+.small-title {
+  font-size: calc(max(5vh, 5vw));
+}
+
+.choose {
+  position: absolute;
+  font-size: 110px;
+  font-weight: semi-bold;
+  top: 50%;
+  left: 50%;
+  width: 115px;
+  height: 115px;
+  border-radius: 50%;
+  color: black;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 26px;
+}
+
+.choose:hover {
+  transform-origin: left;
+  transform: scale(1.05) translate(-50%, -50%);
+  transition: transform 0.4s ease-in-out;
+}
+
+.bottom {
+  background-color: #1e1e28;
+}
+
+/* Vector */
+.field {
+  position: relative;
+  background-color: #1e1e28;
+  padding: 5% 3%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.player {
+  position: absolute;
+  background-image: url(./img/card.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform: translate(-50%, -50%);
+  width: 47px;
+  height: 63px;
+}
+
+#footer {
+  display: flex;
+  align-self: flex-end;
+  flex-flow: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding: 0 5%;
+}
+
+@media screen and (min-width: 821px) {
+  .field {
+    transform-origin: center;
+    transform: rotate(90deg) scale(1.2);
+  }
+  .player {
+    transform-origin: center;
+    transform: rotate(-90deg);
+  }
+}
+
+.gm-btn {
+  background: none;
+  border: none;
+  padding: 5px 15px;
+  font-size: 16px;
+  line-height: 24px;
+  width: 400;
+  transition: 0.3s;
+  cursor: pointer;
+  position: relative;
+  outline: none;
+}
+
+.gb-shutter::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  transition: 0.5s;
+}
+
+/* shutter */
+.gb-shutter {
+  border: 2px solid var(--gb-51);
+  box-shadow: 3px 3px 0 var(--gb-51);
+  font-size: 1.125rem;
+  font-weight: 700;
+  overflow: hidden;
+  color: var(--gb-51);
+}
+.gb-shutter::after,
+.gb-shutter::before {
+  top: 0;
+  left: 0;
+  width: 130%;
+  aspect-ratio: 1;
+  background: var(--gb-51);
+}
+.gb-shutter::after {
+  transform: translate(-100%, -80%) rotate(30deg);
+}
+.gb-shutter::before {
+  transform: translate(100%, 30%) rotate(30deg);
+}
+.gb-shutter:hover::after {
+  transform: translate(-50%, -70%) rotate(30deg);
+}
+.gb-shutter:hover::before {
+  transform: translate(30%, -70%) rotate(30deg);
+}
+.gb-shutter:hover {
+  color: #111827;
+  box-shadow: 0 0 0;
+}
+
+:root {
+  --gb-51: #fadc00;
+}
