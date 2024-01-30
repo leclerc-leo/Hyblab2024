@@ -195,10 +195,10 @@ h1{
     filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
 }
 #jeanne_darc svg{
-    top: -32%;
+    top: -22%;
 }
-#bourg_eveque_cleunay svg{
-    top: -42%;
+#bourg_eveque svg{
+    top: -20%;
 }
 
 .navigation-button{
