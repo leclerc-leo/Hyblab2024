@@ -1,11 +1,9 @@
-import background from '/bretons-1/img/athlete/JDE2.jpg';
-
 export const Frame1: React.FC<{ text: string, titre: string, sous_titre: string }> = ({ text, titre, sous_titre }) => {
     return (
         <div style={{
             height: '100%',
             width: '100%',
-            backgroundImage: `url(${background})`,
+            backgroundImage: `url(/bretons-1/img/athlete/JDE2.jpg)`,
             objectFit: 'cover',
             objectPosition: 'center center',
             backgroundPosition: 'center',
