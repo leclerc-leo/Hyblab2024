@@ -12,7 +12,8 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/loadingio/loading.css@v2.0.0/dist/loading.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <script src="js/home_slide1.js" defer></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="js/home_slide1.js"></script>
   <script src="js/home_slide2.js" defer></script>
   <script src="js/home.js" defer></script>
 </head>
@@ -31,10 +32,17 @@
         <section id="first-slide" class="swiper-slide">
           <header>
             <h1 id="titre">Vous êtes</h1>
-            <h1 id="sous-titre">Nantes</h1>
-            <img src="img/accueil/TRAIT_FCN.svg" id="separateur" alt="separateur"></img>
-            <h2 id="accroche">La Beaujoire fête ses 40 ans<br>Composez votre XI de légende</h2>
+            <h1 id="sous-titre">
+              <img src="img/accueil/FCNANTES-2019.svg" id="ecu" alt="Ecusson FC Nantes"></img>
+              Nantes
+            </h1>
 
+            <img src="img/accueil/TRAIT_FCN.svg" id="separateur" alt="separateur"></img>
+
+            <h2 id="accroche">La Beaujoire fête ses 40 ans
+              <img id="anim-40" src="img/accueil/40ANS.gif">
+              <img id="img-40"  src="img/accueil/40ANS.svg">
+              <br>Composez votre XI de légende</h2>
           </header>
 
           <img src="img/accueil/bojoir_accueil_crop.png" id="logo-principal" alt="logo principal"></img>
@@ -61,7 +69,7 @@
               <a href="http://www.ouestmedialab.fr/"><img class="logo" src="logo_oml.png" alt="Ouest Médialab"></a>
               <!-- Logo de votre porteur de projet -->
               <a href="https://www.ouest-france.fr/" id="ouest-france-logo"><img class="logo-half"
-                  src="img/Logo-OUEST-FRANCE.jpg" alt="Logo Ouest France"></a>
+                  src="img/accueil/Logo-OUEST-FRANCE.jpg" alt="Logo Ouest France"></a>
             </div>
             <!-- Les organisateurs -->
             <div class="logo-row">
