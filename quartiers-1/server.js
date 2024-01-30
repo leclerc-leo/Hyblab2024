@@ -20,6 +20,9 @@ app.use(express.static(path.join(__dirname, '../__common-logos__')));
 app.get('/quartiers', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'quartiers.html'));
 });
+app.get('/reportages', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'reportages.html'));
+});
 
 // This module is exported and served by the main server.js located
 // at the root of this set of projects. You can access it by lanching the main
