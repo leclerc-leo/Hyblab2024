@@ -3,16 +3,7 @@ import { Player } from "@remotion/player";
 import { MyComp } from "../remotion/MyComp";
 import logo from '../assets/logo_telegram_banc.svg';
 import SwipeUp from './SwipeUp';
-
-type Video = {
-  id: string;
-  title: string;
-  subtitle: string;
-  thumbnail: string;
-  description: string;
-  article: string|null;
-};
-
+import Video from '../type/Video';
 
 function VideoPlayer(video: Video) {
 
