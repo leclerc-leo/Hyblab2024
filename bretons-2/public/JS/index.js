@@ -8,17 +8,17 @@ function page_accueil() {
 	divTitle.id = "divTitle";
 	divTitle.style.flexDirection = "column";
 	divTitle.style.alignItems = "center";
-	divTitle.style.paddingTop = "4rem";
+	divTitle.style.paddingTop = "6vh";
 
 	const title = document.createElement("h1");
-	title.style.fontSize = "400%";
+	title.style.fontSize = "9vh";
 	title.innerHTML = "DÉCOUVREZ";
-	title.style.width = "20rem";
+	title.style.width = "87%";
 
 	const subtitle = document.createElement("h2");
 	subtitle.innerHTML = "NOTRE QUESTIONNAIRE POUR SUIVRE<br>CEUX QUE VOUS AIMEZ";
-	subtitle.style.fontSize = "250%";
-	subtitle.style.width = "20rem";
+	subtitle.style.fontSize = "6vh";
+	subtitle.style.width = "87%";
 	subtitle.style.marginTop = "-10px";
 
 	divTitle.appendChild(title);
@@ -29,13 +29,15 @@ function page_accueil() {
 	const divParagraphe = document.createElement("div");
 	divParagraphe.style.display = "flex";
 	divParagraphe.style.justifyContent = "center";
-	divParagraphe.style.paddingTop = "2rem";
+	divParagraphe.style.paddingTop = "4vh";
 	divParagraphe.width = "100%";
 
 	const paragraphe = document.createElement("p");
-	paragraphe.style.width = "20rem";
-	paragraphe.style.fontSize = "1rem";
+	paragraphe.style.width = "87%";
+	paragraphe.style.fontSize = "3vh";
 	paragraphe.style.fontFamily = "Arial";
+	paragraphe.style.lineHeight = "3vh";
+	//paragraphe.style.fontWeight = "bold";
 	paragraphe.innerHTML = "Découvrez et suivez vos sportifs bretons favoris dans leur parcours dans les Jeux Olympiques Paris 2024 !";
 
 	divParagraphe.appendChild(paragraphe);
@@ -44,12 +46,12 @@ function page_accueil() {
 	const divButton = document.createElement("div");
 	divButton.style.display = "flex";
 	divButton.style.justifyContent = "center";
-	divButton.style.paddingTop = "2rem";
+	divButton.style.paddingTop = "5vh";
 
 	const button = document.createElement("button");
 	button.classList.add("btn");
 	button.classList.add("btn-danger");
-	button.setAttribute("style", "--bs-btn-font-size: 1.8rem;");
+	button.setAttribute("style", "--bs-btn-font-size: 4vh; padding-left: 5vh; padding-right: 5vh; border-radius: 0px; background-color: #E20917;");
 	button.textContent = "C'EST PARTI	 !";
 	button.onclick = async () => {
 		page_sport();
@@ -79,9 +81,9 @@ function page_sport(){
 	divTitle.id = "divTitle";
 
 	const title = document.createElement("h1");
-	title.id = "titleSport";
-	title.innerHTML = "CHOISISSEZ<span style='color:red'>\nVOTRE SPORT<span>";
-	title.style.fontWeight = "bold";
+	title.classList.add("title");
+	title.innerHTML = "CHOISISSEZ<span style='color:#E20917'>\nVOTRE SPORT<span>";
+	//title.style.fontWeight = "bold";
 	title.style.zIndex = "2";
 	title.style.position = "absolute";
 
@@ -134,10 +136,10 @@ function page_sport(){
 		const button = document.createElement("button");
 		button.classList.add("btn");
 		button.classList.add("btn-dark");
-		button.setAttribute("style", "--bs-btn-font-size: 1.8rem;");
+		button.setAttribute("style", "--bs-btn-font-size: 4vh; margin-bottom: auto; padding-left: 5vh; padding-right: 5vh; border-radius: 0px; background-color: ");
 		button.textContent = sport;
 		button.onclick = () => {
-			page_athlete(sport);
+			page_historique(sport);
 		}
 
 		div.appendChild(button);
@@ -169,7 +171,7 @@ function page_sport(){
 	});
 }
 
-function page_athlete(sport) {
+function page_historique(sport) {
 	
 	const athlete = {};
 
@@ -179,6 +181,7 @@ function page_athlete(sport) {
 		for (const [a, dataAthlete] of Object.entries(data)) {
 			if (dataAthlete.discipline == sport) {
 				athlete[a] = dataAthlete;
+				console.log(dataAthlete) // pour tester
 			}
 		}
 	}).then(() => {
@@ -197,6 +200,19 @@ function page_athlete(sport) {
 
 		blank.appendChild(retour);
 
+		const divTitle = document.createElement("div");
+		divTitle.id = "divTitle";
+
+		const title = document.createElement("h1");
+		title.classList.add("title");
+		title.innerHTML = `HISTORIQUE<span style='color:red'>\n${sport.toUpperCase()}<span>`;
+		//title.style.fontWeight = "bold";
+		title.style.zIndex = "2";
+		title.style.position = "absolute";
+
+		divTitle.appendChild(title);
+		blank.appendChild(divTitle);
+
 		const divSwipper = document.createElement("div");
 		divSwipper.classList.add("swiper");
 
@@ -205,7 +221,24 @@ function page_athlete(sport) {
 
 		divSwipper.appendChild(divSwipperWrapper);
 
+		blank.appendChild(divSwipper);
+
 		for (const [a, dataAthlete] of Object.entries(athlete)) {
+
+
+			const slide = document.createElement("div");
+			slide.classList.add("swiper-slide");
+		
+			const div = document.createElement("div");
+			div.style.display = "flex";
+			div.style.flexDirection = "column";
+			div.style.justifyContent = "center";
+			div.style.alignItems = "center";
+			div.style.height = "100%";
+
+			const image = document.createElement("img");
+			//image.src = ;
+
 
 			// const swiperSlide = document.createElement("div");
 			// swiperSlide.classList.add("swiper-slide");
@@ -228,7 +261,7 @@ function page_athlete(sport) {
 			centeredSlides: true,
 		  }
 
-		new Swiper(".swiper",swiperConfig);
+		// new Swiper(".swiper",swiperConfig);
 
 
 
@@ -271,12 +304,19 @@ function page_athlete(sport) {
 }
 
 const myModal = new bootstrap.Modal('#modal')
+const phone = document.getElementById("phone");
 document.getElementById("menu-modal").onclick = () =>{
 	myModal.show();
+	phone.style.filter = "blur(4px)"
+
+	myModal._element.addEventListener('hidden.bs.modal', () => {
+        phone.style.filter = "";
+    });
 }
 
 document.getElementById("retour-modal").onclick = () =>{
 	myModal.hide();
 }
 
-page_accueil();
+//const modal = document.getElementById("modal");modal.addEventListener()
+page_sport();

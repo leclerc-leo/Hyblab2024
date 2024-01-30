@@ -25,7 +25,7 @@ nav {
 
 #menu-modal{
     position: absolute;
-    width: 4rem;
+    width: 8vh;
     height: 10%;
     padding-left: 2rem;
     cursor: pointer;
@@ -58,11 +58,12 @@ nav img {
     padding-top: 4%;
 }
 
-#titleSport {
-    width: 60%;
+.title {
+    width: 50%;
     text-align: center;
     font-family: 'Antonio', sans-serif;
-    font-size: xxx-large;
+    font-size: 6vh;
+    font-weight: 400;
 }
 
 iframe {
@@ -112,6 +113,8 @@ footer {
 
 .modal-content{
     height: 100%;
+    padding-left: 1.5vh;
+    font-weight: 600;
 }
 
 .modal-body{
@@ -123,13 +126,12 @@ footer {
 }
 
 #modal-header{
-    padding-top: 1rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    padding-bottom: 2rem;
+    padding-top: 2vh;
+    padding-left: 4vh;
+    padding-right: 4vh;
+    padding-bottom: 4vh;
     display: flex;
     justify-content: space-between;
-    
 }
 
 #retour-modal{
