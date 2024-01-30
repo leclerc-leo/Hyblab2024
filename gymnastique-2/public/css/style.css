@@ -91,6 +91,26 @@ header{
     min-height: 100%;
 }
 
+.background::before, .background::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    background-color: transparent;
+}
+
+.background::before{
+    bottom: 0;
+    height: 100%;
+    border-top: 10000px solid black;
+}
+
+.background::after{
+    bottom: -10000px;
+    padding-bottom: 10000px;
+    background-color: black;
+}
+
 /* ---------- Important media queries for easy responsive content :-) ----------------- */
 /* Whatever the device used, the content will be displayed full width and height if      */
 /* the aspect ratio is between 3/4 and 9/16. If not it is locked to either 3/4 or 9/16  */
@@ -136,9 +156,9 @@ header{
 
 .category-button{
     position: absolute; 
-    width: 300px; 
+    width: 50%; 
     height: 0; 
-    padding: 150px 0; 
+    padding: 25% 0; 
     transform: translate(-50%, 50%); 
     display: flex; 
     justify-content: center; 
@@ -226,7 +246,7 @@ header{
 
 .credits-button {
     position: absolute;
-    bottom: 10px;
+    top: 10px;
     right: 10px;
     font-size: 60px;
     text-shadow: 0 0 10px black;
