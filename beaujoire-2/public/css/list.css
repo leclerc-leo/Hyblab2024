@@ -1,0 +1,111 @@
+/* styles.css */
+
+/* Reset some default styles */
+body{
+  padding: 0;
+  margin:0;
+}
+  /* Container for the entire content */
+#container {
+    position: fixed;
+    height: 100%;
+    padding: -10px;
+    background-color: var(--bg-green);
+    margin-left: calc((100vw - 100 * 3vh / 4) / 2);
+    width: calc(100 * 3vh / 4);
+  }
+
+  .arrows-container {
+    display: flex;
+    justify-content: space-between; 
+    cursor: pointer;
+    margin-top: 10px;
+    padding: 0px 10px;
+  }
+
+
+  /* Styling for the player boxes */
+  .player-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .player-box {
+    border: 3px solid var(--yellow); /* Border styling */
+    border-radius: 20px; /* Rounded corners */
+    overflow: hidden; /* Ensure content doesn't overflow */
+    margin: 6px;
+    width: 350px; /* Adjust the width as needed */
+    max-width: 400px; /* Adjust the maximum width as needed */
+    display: flex; /* Use flexbox for layout */ 
+    height: 65px;  
+  }
+  
+  .player-box img {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 15px;
+    width: 45px; 
+    height: 45px;
+    border-radius: 10px;
+    max-width: 100%; 
+    object-fit: cover;
+  }
+  
+  .player-box p {
+    flex: 1; /* Take remaining space */
+    padding: 23px;
+    text-align: center; /* Center the name */
+    color: white;
+    font-family: "Abolition"; 
+    font-size: 20px;
+  }
+  
+  .heart-button {
+    background: url('../img/coeur-1.svg') no-repeat center center;
+    background-size: contain;
+    width: 25px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Styling for the pressed state of the heart button */
+  .heart-button.pressed{
+    background: url("../img/coeur-2.svg") no-repeat center center;
+    background-size: contain;
+    width: 25px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .down-slider {
+    background: url("../img/flèche-bas.svg") no-repeat center center;
+    background-size: contain;
+    margin-right: 10px;
+    margin-left: 10px;
+    width: 25px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Styling for the footer */
+  footer {
+    padding: 0px;
+    text-align: center;
+    border: 3px solid; 
+    border-image: url('../img/Footer_papier.svg') 15 repeat;
+  }
+  
+  /* Styling for the "Sauvegarder les votes" button */
+  #saveVotesButton {
+    background-color: var(--bg-green);
+    padding: 10px 20px;
+    border: 3px solid var(--yellow);
+    cursor: pointer;
+    border-radius: 5px;
+    color: var(--yellow);
+    font-family: "Abolition"; 
+    font-size: 20px;
+    border-radius: 20px;
+  }
