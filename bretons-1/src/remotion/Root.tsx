@@ -1,4 +1,4 @@
-import { Composition, AbsoluteFill, Sequence } from "remotion";
+import { Sequence } from "remotion";
 import { Frame1 } from "./Frame1";
 import { Frame2 } from "./Frame2";
 import { Frame3 } from "./Frame3";

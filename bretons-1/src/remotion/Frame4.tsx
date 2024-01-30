@@ -2,10 +2,11 @@ import { useEffect, useState } from 'react';
 import './Frame4.css';
 
 export const Frame4: React.FC<{ text: string }> = ({ text }) => {
-  const [isLoading, setIsLoading] = useState(true);
+  const [_, setIsLoading] = useState(true);
+  console.log(text);
   useEffect(() => {
       setIsLoading(false);
-      let delay = 40,
+      let delay = 20,
       delay_start = 0,
       contents,
       letters;

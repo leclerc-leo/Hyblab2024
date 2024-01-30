@@ -6,8 +6,9 @@ import Video from '../type/Video';
 
 function VideoPlayer(video: Video) {
 
-    const handleSwipeUp = () => {
-    };
+  const handleSwipeUp = () => {
+  };
+  
   return (
     <div id='VideoPlayer'>
         <div className='headerPlayer'>
@@ -16,7 +17,7 @@ function VideoPlayer(video: Video) {
         <Player
             component={MyVideo}
             inputProps={{ text: "Malo" }}
-            durationInFrames={600}
+            durationInFrames={1000}
             compositionWidth={1080}
             compositionHeight={1920}
             fps={60}
