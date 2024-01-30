@@ -1,23 +1,8 @@
-/* -------------- Loader --------------*/
-#loader{
-    z-index: 2;
-    position:absolute;
-}
+#container{
+    /*mettre le overflow en hidden  avec de l'importance en plus */
+    overflow: hidden !important;
 
-#loader-img{
-    top:40%;
-    left:40%;
-    position: absolute;
 }
-
-#loader-text{
-    text-align: center;
-    font-size: 25%;
-    position: absolute;
-    top:60%;
-    width: 100%
-}
-/* -------------- End of Loader --------------*/
 
 #page-accueil header{
     text-align: center;
