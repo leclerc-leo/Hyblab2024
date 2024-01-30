@@ -27,8 +27,8 @@ body{
 
 .swiper-pagination-bullets.swiper-pagination-horizontal {
     --swiper-pagination-bottom: 0px;
-    width: 50%;
-    margin: 0 25%;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .swiper-pagination-bullet {
