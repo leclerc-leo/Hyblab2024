@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import SaveLogo from '../assets/Save_logo.svg';
-import SaveYellow from '../assets/Save_Yellow.svg';
 
 type FavoriteButtonProps = {
   isFavorited: boolean;
@@ -33,7 +31,7 @@ const FavoriteButton: React.FC<FavoriteButtonProps> = ({ isFavorited, onClick}) 
   return (
     <button onClick={handleButtonClick} style={buttonStyle}>
       <img
-        src={buttonClicked ? SaveYellow : SaveLogo}
+        src={buttonClicked ? "/bretons-1/img/Save_Yellow.svg" : "/bretons-1/img/Save_logo.svg"}
         alt="Save"
         style={imgStyle}
       />

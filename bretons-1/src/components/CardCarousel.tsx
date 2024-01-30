@@ -1,9 +1,4 @@
 import Card from 'react-bootstrap/Card';
-import ImageGenerique from '../assets/sportif_velo.jpeg';
-import BicycleLogo from '../assets/Bicycle_logo.svg';
-import ShareLogo from '../assets/Share_logo.svg'
-import GoldMedal from '../assets/GoldMedal.png';
-import PlayButton from '../assets/Play_button.svg';
 import { FavoriteButton } from './Fav_nav';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -58,7 +53,7 @@ function CardCarousel({ video }: VideoListItemProps) {
   return (
     <Card className="custom-card" style={{ width: '15rem' }}>
       <div className="image-container">
-        <Card.Img className="custom-image" variant="top" src={ImageGenerique} />
+        <Card.Img className="custom-image" variant="top" src="/bretons-1/img/sportif_velo.jpeg" />
         <div className='card_text'>
             <h4>{video.title}</h4>
             <p>{video.subtitle}</p>
@@ -66,16 +61,16 @@ function CardCarousel({ video }: VideoListItemProps) {
       </div>
       <img
         className="PlayButton"
-        src={PlayButton}
+        src="/bretons-1/img/Play_button.svg"
         alt="PlayButton"
         onClick={() => handlePlayClick('PlayButton')}
       />
-      <img className={`overlay-image ${isFavorited ? 'saveyellow' : ''}`} src={GoldMedal} alt="Overlay" />
+      <img className={`overlay-image ${isFavorited ? 'saveyellow' : ''}`} src="/bretons-1/img/GoldMedal.png" alt="Overlay" />
       <Card.Body>
         <div className="image-row">
           <img
             className="BicycleLogo"
-            src={BicycleLogo}
+            src="/bretons-1/img/Bicycle_logo.svg"
             alt="Bicycle"
             onClick={() => handleImageClick('BicycleLogo')}
           />
@@ -86,7 +81,7 @@ function CardCarousel({ video }: VideoListItemProps) {
           />
           <img
             className="ShareLogo"
-            src={ShareLogo}
+            src="/bretons-1/img/Share_logo.svg"
             alt="Share"
             onClick={() => handleImageClick('ShareLogo')}
           />

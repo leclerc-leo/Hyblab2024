@@ -1,7 +1,6 @@
 import './VideoPlayer.css';
 import { Player } from "@remotion/player";
 import { MyVideo } from "../remotion/Root";
-import logo from '../assets/logo_telegram_banc.svg';
 import SwipeUp from './SwipeUp';
 import Video from '../type/Video';
 
@@ -12,7 +11,7 @@ function VideoPlayer(video: Video) {
   return (
     <div id='VideoPlayer'>
         <div className='headerPlayer'>
-            <img src={logo} alt='Logo' />
+            <img src="/bretons-1/img/logo_telegram_banc.svg" alt='Logo' />
         </div>
         <Player
             component={MyVideo}
