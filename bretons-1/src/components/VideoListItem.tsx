@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import './VideoListItem.css';
-import Carousel from 'react-bootstrap/Carousel';
 import { FavoriteButton } from './Fav_nav';
 import athleteData from '../data/Athlete.json';
 import { Athlete, Video, VideoListItemProps } from './type';
@@ -75,13 +74,11 @@ function VideoList() {
   }, []);
 
   return (
-    <Carousel className="carousel_main" indicators={true} controls={false}>
+    <ul className="video-list">
       {videosData.map(video => (
-        <Carousel.Item key={video.id}>
-          <VideoListItem key={video.id} video={video} />
-        </Carousel.Item>
+        <VideoListItem key={video.id} video={video} />
       ))}
-    </Carousel>
+    </ul>
   );
 }
 
