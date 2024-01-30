@@ -1,0 +1,203 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+* {
+  font-family: "Industry", "Bebas Neue Pro", sans-serif;
+  color: #ffffff;
+}
+
+body {
+  background-color: hsla(240, 14%, 14%, 0.9);
+  margin: 0;
+}
+
+.logo-container {
+  margin: 5%;
+  width: 100%;
+  height: 50px;
+  background-image: url("../img/logo.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-between;
+}
+
+#main {
+  text-align: center;
+  font-family: Industry;
+  font-weight: bolder;
+}
+
+.green {
+  color: #00a55a;
+}
+
+.big-title {
+  font-size: calc(max(8vh, 8vw));
+}
+
+.small-title {
+  font-size: calc(max(5vh, 5vw));
+}
+
+.choose {
+  position: absolute;
+  font-size: 110px;
+  font-weight: semi-bold;
+  top: 50%;
+  left: 50%;
+  width: 115px;
+  height: 115px;
+  border-radius: 50%;
+  color: black;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 26px;
+}
+
+.choose:hover {
+  transform-origin: left;
+  transform: scale(1.05) translate(-50%, -50%);
+  transition: transform 0.4s ease-in-out;
+}
+
+.bottom {
+  background-color: #1e1e28;
+}
+
+/* Vector */
+.field {
+  position: relative;
+  background-color: #1e1e28;
+  padding: 5% 3%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.player {
+  position: absolute;
+  background-image: url("../img/card.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform: translate(-50%, -50%);
+  width: 47px;
+  height: 63px;
+}
+
+#footer {
+  display: flex;
+  align-self: flex-end;
+  flex-flow: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding: 0 5%;
+}
+
+@media screen and (min-width: 821px) {
+  .field {
+    transform-origin: center;
+    transform: rotate(90deg) scale(1.2);
+  }
+  .player {
+    transform-origin: center;
+    transform: rotate(-90deg);
+  }
+}
+
+.gm-btn {
+  background: none;
+  border: none;
+  padding: 5px 15px;
+  font-size: 16px;
+  line-height: 24px;
+  width: 400;
+  transition: 0.3s;
+  cursor: pointer;
+  position: relative;
+  outline: none;
+}
+
+/* shutter */
+.gb-shutter {
+  border: 2px solid var(--gb-52);
+  box-shadow: 3px 3px 0 var(--gb-52);
+  font-size: 14px;
+  font-weight: 100;
+  overflow: hidden;
+  color: var(--gb-51);
+  background: var(--gb-52);
+  font-family: Bebas Neue;
+  margin: 5%;
+}
+
+.gb-shutter:active {
+  background-color: var(--gb-51);
+  color: var(--gb-52);
+}
+
+#blason,
+#maillot {
+  display: inline-block;
+  padding: 18px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: #1e1e28;
+  margin-bottom: 10px;
+  border: none;
+  box-shadow: 3px 3px 0 var(--gb-52);
+}
+
+#blason:active,
+#maillot:active {
+  background-color: var(--gb-51);
+  color: #ffffff;
+}
+
+#entraineur {
+  display: inline-block;
+  padding: 12px 35px;
+  font-size: 16px;
+  border-radius: 50px;
+  background-color: #ffffff;
+  color: var(--gb-51);
+  font-weight: 800;
+  margin-bottom: 10px;
+  border: none;
+  box-shadow: 3px 3px 0 var(--gb-52);
+}
+
+#blason {
+  margin-right: 15px;
+}
+
+#maillot {
+  margin-left: 15px;
+}
+
+#entraineur:active {
+  background-color: var(--gb-51);
+  color: #ffffff;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  margin-bottom: 2%;
+}
+
+:root {
+  --gb-51: #fadc00;
+  --gb-52: #1e1e28;
+}
