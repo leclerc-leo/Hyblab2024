@@ -1,7 +1,7 @@
 /* à supprimer et mettre dans un fichier css commun à toutes les pages */
 
 #container {
-    background-color: #FAE6D7;
+    background-color: #FCF3EC;
 }
 
 main{
@@ -56,4 +56,42 @@ main{
 .swiper-slide{
     width: 100%;
 
+}
+
+#recap_button{
+    width: 20%;
+    cursor: pointer;
+}
+
+
+#bandeau {
+    margin-top: 5%;
+    width:100%;
+    background-color: #FCF3EC;
+    font-size: 20%;
+    border-top: 2px solid black;
+    cursor: pointer;
+}
+
+
+#bandeau p{
+    color: black;
+    display: flex;
+    justify-content: center;
+}
+
+#bandeau p:first-child{
+    color: black;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#bandeau p:last-child{
+    color: black;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    padding-bottom: 15px;
 }
