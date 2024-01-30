@@ -1,16 +1,14 @@
-<<<<<<< HEAD
-=======
-#page-accueil{
+#page-accueil {
     width: 100%;
-    height:100%;
+    height: 100%;
     background-image: url("../img/home-page/quartier.svg");
     background-repeat: no-repeat;
     background-color: #FCF3EC;
     background-size: 120%;
-    position : absolute;
+    position: absolute;
     background-position: top 17% center;
+    overflow: hidden;
 }
->>>>>>> refs/remotes/origin/main
 
 #page-accueil header{
     text-align: center;
@@ -49,22 +47,8 @@
 
 #bouton-decouvrir img{
     width: 100%;
-<<<<<<< HEAD
 }
 
-#page-accueil{
-    width: 100%;
-    height:100%;
-    background-image: url("../img/home-page/quartier.svg");
-    background-repeat: no-repeat;
-    background-color: #FCF3EC;
-    background-size: 120%;
-    position : absolute;
-    background-position: top 17% center;
-    overflow: hidden;
-=======
->>>>>>> refs/remotes/origin/main
-}
 
 
 /* ------- Important ! Please at least keep the last part of this CSS ----------- */
