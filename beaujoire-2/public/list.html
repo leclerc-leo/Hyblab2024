@@ -1,0 +1,37 @@
+<!-- list.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Player List</title>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+  <link rel="stylesheet" href="css/list.css">
+
+</head>
+<body>
+  <div id="container">
+        <div id="arrowsContainer" class="arrows-container">
+            <div class="swiper-arrow" id="leftArrow" >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27 27" width="27" height="27" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <image href = "./img/fleche-g.svg"/></svg>
+            </div> 
+            <div class="swiper-arrow" id="rightArrow" >
+                <svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 27 27" width="27" height="27" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <image href="./img/fleche-d.svg" /> </svg>
+            </div>
+        </div>     
+        <div class="player-list" id="playerList">
+        <!-- Player boxes will be dynamically added here -->
+        </div>
+        <footer>
+            <button id="saveVotesButton"> SAUVEGARDEZ VOS VOTES !</button>
+        </footer>
+    </div>
+
+  <script src="js/list.js"></script>
+</body>
+</html>

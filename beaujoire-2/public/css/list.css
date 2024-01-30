@@ -1,0 +1,170 @@
+/* styles.css */
+
+/* Reset some default styles */
+
+
+
+body{
+    padding:0;
+    margin:0;
+}
+  /* Container for the entire content */
+#container {
+    position: fixed;
+    height: 100%;
+    background-color: #009E49;
+    margin-left: calc((100vw - 100 * 3vh / 4) / 2);
+    width: calc(100 * 3vh / 4);
+  }
+
+  .arrows-container {
+    display: flex;
+    justify-content: space-between; 
+    cursor: pointer;
+    margin-top: 10px;
+    padding: 0px 10px;
+  }
+
+
+  /* Styling for the player boxes */
+  .player-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .player-box {
+    border: 3px solid #F7EF24; /* Border styling */
+    border-radius: 20px; /* Rounded corners */
+    overflow: hidden; /* Ensure content doesn't overflow */
+    margin: 6px;
+    width: 350px; /* Adjust the width as needed */
+    max-width: 400px; /* Adjust the maximum width as needed */
+    display: flex; /* Use flexbox for layout */ 
+    height: 65px;  
+  }
+  
+  .player-box img {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 15px;
+    width: 45px; 
+    height: 45px;
+    border-radius: 10px;
+    max-width: 100%; 
+    object-fit: cover;
+  }
+  
+  .player-box p {
+    flex: 1; /* Take remaining space */
+    padding: 10px;
+    text-align: center; /* Center the name */
+    color: white;
+    font-family: 'abolition'; /* Name your font */
+    font-weight: 700; /* Specify the font weight */
+    font-style: normal;
+  }
+  
+  .heart-button {
+    background: url('../img/coeur-1.svg') no-repeat center center;
+    background-size: contain;
+    width: 25px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Styling for the pressed state of the heart button */
+  .heart-button.pressed{
+    background: url("../img/coeur-2.svg") no-repeat center center;
+    background-size: contain;
+    width: 25px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .down-slider {
+    background: url("../img/flèche-bas.svg") no-repeat center center;
+    background-size: contain;
+    margin-right: 10px;
+    margin-left: 10px;
+    width: 25px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Styling for the footer */
+  footer {
+    padding: 10px;
+    text-align: center;
+    border: 3px solid; 
+    border-image: url('../img/paper-effect.png') 10 repeat;
+  }
+  
+  /* Styling for the "Sauvegarder les votes" button */
+  #saveVotesButton {
+    background-color: #009E49;
+    padding: 10px 20px;
+    border: 3px solid #F7EF24;
+    cursor: pointer;
+    border-radius: 5px;
+    color: #F7EF24;
+    font-family: 'abolition'; 
+    font-weight: 700; 
+    font-style: normal;
+    border-radius: 20px;
+  }
+
+
+  
+
+  /* Important media queries for easy responsive content :-) */
+  
+  /* When the aspect ratio is smaller than 3/4, display a 3/4 content */
+  @media screen and (max-aspect-ratio: 3/4) {
+    #container {
+      margin-left: 0;
+      width: 100vw;
+    }
+  
+    body {
+      font-size: 15vw;
+    }
+  
+    p {
+      margin: 0.8em;
+      font-size: 5vw;
+      color:  black;
+      text-align: justify;
+    }
+  
+    i {
+      font-size: 6.5vw;
+    }
+  }
+  
+  /* The content is displayed at 9/16 if the aspect ratio is higher than 9/16 */
+  @media screen and (max-aspect-ratio: 9/16) {
+    #container {
+      margin-left: 0;
+      width: 100vw;
+      margin-top: calc(-50 * 16vw / 9);
+      top: 50%;
+      height: calc(100 * 16vw / 9);
+    }
+  
+    body {
+      font-size: 15vw;
+    }
+  
+    p {
+      margin: 0.8em;
+      font-size: 5vw;
+      color: black;
+      text-align: justify;
+    }
+  
+    i {
+      font-size: 6.5vw;
+    }
+  }
+  
