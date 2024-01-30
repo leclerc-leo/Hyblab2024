@@ -1,5 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
 * {
-  font-family: Industry, Bebas Neue Pro, sans-serif;
+  font-family: "Industry", "Bebas Neue Pro", sans-serif;
   color: #ffffff;
 }
 
@@ -9,7 +11,7 @@ body {
 }
 
 .logo-container {
-  margin-top: 10%;
+  margin: 5%;
   width: 100%;
   height: 50px;
   background-image: url("../img/logo.svg");
@@ -125,47 +127,77 @@ body {
   outline: none;
 }
 
-.gb-shutter::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  transition: 0.5s;
-}
-
 /* shutter */
 .gb-shutter {
-  border: 2px solid var(--gb-51);
-  box-shadow: 3px 3px 0 var(--gb-51);
-  font-size: 1.125rem;
-  font-weight: 700;
+  border: 2px solid var(--gb-52);
+  box-shadow: 3px 3px 0 var(--gb-52);
+  font-size: 14px;
+  font-weight: 100;
   overflow: hidden;
   color: var(--gb-51);
+  background: var(--gb-52);
+  font-family: Bebas Neue;
+  margin: 5%;
 }
-.gb-shutter::after,
-.gb-shutter::before {
-  top: 0;
-  left: 0;
-  width: 130%;
-  aspect-ratio: 1;
-  background: var(--gb-51);
+
+.gb-shutter:active {
+  background-color: var(--gb-51);
+  color: var(--gb-52);
 }
-.gb-shutter::after {
-  transform: translate(-100%, -80%) rotate(30deg);
+
+#blason,
+#maillot {
+  display: inline-block;
+  padding: 18px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: #1e1e28;
+  margin-bottom: 10px;
+  border: none;
+  box-shadow: 3px 3px 0 var(--gb-52);
 }
-.gb-shutter::before {
-  transform: translate(100%, 30%) rotate(30deg);
+
+#blason:active,
+#maillot:active {
+  background-color: var(--gb-51);
+  color: #ffffff;
 }
-.gb-shutter:hover::after {
-  transform: translate(-50%, -70%) rotate(30deg);
+
+#entraineur {
+  display: inline-block;
+  padding: 12px 35px;
+  font-size: 16px;
+  border-radius: 50px;
+  background-color: #ffffff;
+  color: var(--gb-51);
+  font-weight: 800;
+  margin-bottom: 10px;
+  border: none;
+  box-shadow: 3px 3px 0 var(--gb-52);
 }
-.gb-shutter:hover::before {
-  transform: translate(30%, -70%) rotate(30deg);
+
+#blason {
+  margin-right: 15px;
 }
-.gb-shutter:hover {
-  color: #111827;
-  box-shadow: 0 0 0;
+
+#maillot {
+  margin-left: 15px;
+}
+
+#entraineur:active {
+  background-color: var(--gb-51);
+  color: #ffffff;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  margin-bottom: 2%;
 }
 
 :root {
   --gb-51: #fadc00;
+  --gb-52: #1e1e28;
 }
