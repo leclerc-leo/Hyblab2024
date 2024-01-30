@@ -56,11 +56,11 @@ body{
 
 #porteur_projet .nom{
     padding-top: 6px;
-    font-size: 15px;
+    font-size: 18%;
 }
 
 #porteur_projet .photo{
-    width: 13%;
+    width: 20%;
     height: auto;
     background-color: blue;
     border-radius: 50%;
@@ -99,7 +99,7 @@ body{
 }
 
 .personne .photo{
-    width: 30%;
+    width: 45%;
     height: auto;
     background-color: blue;
     border-radius: 50%;
@@ -107,7 +107,7 @@ body{
 
 #personnes .nom{
     text-align: center;
-    font-size: 15px;
+    font-size: 15%;
     padding-top: 6px;
 }
 
