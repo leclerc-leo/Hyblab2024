@@ -8,12 +8,14 @@ import PlayButton from '../assets/Play_button.svg';
 import Placeholder from 'react-bootstrap/Placeholder';
 import { FavoriteButton } from './Fav_nav';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import './CardCarousel.css';
 
 function KitchenSinkExample() {
   const [isFavorited, setIsFavorited] = useState(false);
   const [favoriteButtonId] = useState('uniqueId');
+  const navigate = useNavigate();
 
   const handleImageClick = (imageName: string) => {
     console.log(`Image "${imageName}" cliquée !`);
@@ -21,6 +23,7 @@ function KitchenSinkExample() {
 
   const handlePlayClick = (imageName: string) => {
     console.log(`Image "${imageName}" cliquée !`);
+    navigate('VideoPlayer', {state: {id: imageName}})
   };
 
   const handleFavoriteClick = () => {
