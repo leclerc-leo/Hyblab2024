@@ -283,7 +283,7 @@ h2{
 p{
     color: #E47754;
     font-family: 'Helvetica Neue', sans-serif;
-    font-size: 13px;
+    font-size: 16px;
     padding: 10px 30px;
 }
 
@@ -291,7 +291,6 @@ p{
 #histoire-page{
     text-align: center;
     padding: 0;
-    margin-bottom: 50px;
 }
 
 #histoire-page > h1{
@@ -329,10 +328,16 @@ svg.image-histoire{
 #histoire-header{
     position:sticky;
     top: 0;
+    padding-top: 60px;
     background-color: rgba(255, 216, 179, 0.9);
     margin-bottom: 20px;
 }
 
 #histoire-header > img{
     padding: 10px;
+}
+
+#image-titre{
+    width: 85%;
+    height: auto;
 }
