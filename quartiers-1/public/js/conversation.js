@@ -14,7 +14,7 @@ function saveUsername(event){
         // remove all choices
         let choiceBubbles = $('.choices');
         choiceBubbles.remove();
-        
+                
         //exemple of the following conversation
         addVideo(["Ceci est le choix 1","Ceci est le choix 2","Ceci est le choix 3","Ceci est le choix 4"]);
     }
@@ -65,6 +65,41 @@ function addBubbleGuide(content) {
 function addChoiceBubble(content, typeChoices) {
     conversation.queue(function (next) {
         // put content into html
+        // let choiceBubblesContent = document.createElement('div');
+        // choiceBubblesContent.classList.add('choices');
+
+        // if(typeChoices){
+        //     content.forEach(textContentChoice => {
+        //         let choiceBubble = document.createElement('button');
+        //         choiceBubble.classList.add('choice-bubbles');
+        //         choiceBubble.setAttribute('onClick', 'choiceSelected(this)');
+        //         choiceBubble.textContent = textContentChoice;
+    
+        //         choiceBubblesContent.append(choiceBubble);
+        //     });
+        // }
+        // else{
+        //     choiceBubblesContent.setAttribute('id', 'firstChoice');
+
+        //     let choiceBubble = document.createElement('label');
+        //     choiceBubble.setAttribute('for', 'username_input');
+
+        //     let username_input = document.createElement('input');
+        //     username_input.setAttribute('type','text');
+        //     username_input.setAttribute('id','username_input');
+        //     username_input.setAttribute('name','username_input')
+        //     username_input.required = true;
+        //     username_input.setAttribute('minlength','2');
+        //     username_input.setAttribute('maxlength','20');
+        //     username_input.setAttribute('size','10');
+        //     username_input.setAttribute('onkeydown','saveUsername(event)');
+
+        //     choiceBubble.textContent = 'Bonjour, je m’appelle';
+
+        //     choiceBubble.append(username_input);
+
+        //     choiceBubblesContent.append(choiceBubble);
+        // }
         let choiceBubblesContent = '<div class="choices">';
         if(typeChoices){
             content.forEach(textContentChoice => {
@@ -72,12 +107,12 @@ function addChoiceBubble(content, typeChoices) {
             });
         }
         else{
-            choiceBubblesContent += '<label for="username_input">Bonjour, je m’appelle <input type="text" id="username_input" name="username_input" required minlength="2" maxlength="20" size="10" onkeydown="saveUsername(event)"/> ! </label>';
+            choiceBubblesContent = '<div class="choices" id="firstChoice"><label for="username_input">Bonjour, je m’appelle <input type="text" id="username_input" name="username_input" required minlength="2" maxlength="20" size="10" onkeydown="saveUsername(event)"/> ! </label>';
         }
         choiceBubblesContent += '</div>';
         
         let choiceBubbles = $(choiceBubblesContent);
-        conversation.append(choiceBubbles);// add html to conversation div
+        conversation.append(choiceBubblesContent);// add html to conversation div
 
         // Scroll according to messages height
         scrollConversation(getLastBubbleHeight('.choices'));
@@ -85,6 +120,8 @@ function addChoiceBubble(content, typeChoices) {
         // Then show speech bubble
         choiceBubbles.show();
         setTimeout(next, 750);
+
+        // choiceBubblesContent.removeAttribute('firstChoice');
     });
 }
 /* add video in conversation  */
