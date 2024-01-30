@@ -1,7 +1,6 @@
 import ControlledCarousel from '../components/CardCarousel';
 import './Home.css';
 import OffcanvasExample from '../components/Navbar'
-import VideoList from '../components/VideoListItem'
 import Ratio from 'react-bootstrap/Ratio';
 
 export default function Home() {
@@ -18,12 +17,6 @@ export default function Home() {
                                 <ControlledCarousel />
                             </div>
                         </div>
-                    </div>
-                    <div className="main_video">
-                        <div className='titreLike'>
-                            <p className='MySave'>Mes enregistrés</p>
-                        </div>
-                        <VideoList />
                     </div>
                 </div>
             </Ratio>

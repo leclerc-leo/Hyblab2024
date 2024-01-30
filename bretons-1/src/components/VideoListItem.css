@@ -42,12 +42,13 @@
     flex-direction: row;
     padding: 16px; /* Padding inside the video item */
     overflow: hidden;
-    /* Additional styles can go here */
+    width: 15em;
+    height: 5em;
   }
   
   .video-list-item img {
     width: 128px; /* Full width of the image */
-    max-width: 40%;
+    max-width: 70%;
     object-fit: cover; /* Cover the full area of the image box without stretching */
     border-radius: 8px; /* Rounded corners for the image */
     border-top-left-radius: 10px; /* Rounded corners for the image */
