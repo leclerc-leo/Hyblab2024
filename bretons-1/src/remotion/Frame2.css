@@ -1,18 +1,93 @@
 .frameContainer {
-    font-family: "Golos Text", sans-serif;
-    color: #000;
     width: 100%; 
-    margin: auto; 
+    margin : auto; 
+    position: relative;
     display: flex; 
     flex-direction: column; 
-    align-items: center; 
+    height: 140vh; /* Prendre toute la hauteur de la fenêtre */
+}
+.titre{
+    font-family: "Golos Text";
+    font-size: 80px; 
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal; 
+    color: #25283D; 
+    height: 400px;
+    
+    margin-left: 250px; 
+    margin-top:  100px; 
+    margin-right:  250px;
 }
 
-.header {
-    font-size: 60px; 
+.info {
+    color: #25283D;
+    font-family: "Golos Text";
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: normal; 
+    margin-left: 230px; 
+    
+}
+
+.rectangleYellow {
+    width: 100%;
+    height: 200px;
+    flex-shrink: 0;
+    background: #FACD60;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.rectangleBlue{
+    width: 70%;
+    height: 200px;
+    flex-shrink: 0; 
+    background: #5F64FA; 
+}
+
+.rectangleRed{
+    width: 60%;
+    height: 200px;
+    flex-shrink: 0; 
+    background: #FA8C5F; 
+}
+
+
+.info {
+    color: #25283D;
+    font-family: "Golos Text";
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.name {
+    font-size: 30px;
+    font-style: normal;
     font-weight: 500;
-    line-height: 1; 
-    width: auto; 
-    padding: 10px 20px; 
-    margin-top: 20px; /
+    line-height: normal;
+}
+
+.time {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+}
+
+.flag {
+    display: flex;
+    align-items: center;
+}
+
+.country {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    margin-left: 10px; /* Marge entre le texte et l'icône du drapeau */
 }
