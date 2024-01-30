@@ -57,3 +57,8 @@ main{
     width: 100%;
 
 }
+
+#recap_button{
+    width: 20%;
+    cursor: pointer;
+}
