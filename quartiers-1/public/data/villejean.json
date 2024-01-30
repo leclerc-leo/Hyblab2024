@@ -1,16 +1,17 @@
 {
-    "question": {
-        "speaker": "guide",
-        "isChoice": false,
-        "choices": [],
-        "content": "En plus, si ton fils en a besoin, des associations d’aide aux devoirs viennent compléter l’aide financière de l’État. Selon toi, il en existe combien dans le quartier ?"
-    },
     "intro": {
         "speaker": "user",
         "isChoice": true,
         "choices": ["1", "2", "5 (good answer)"],
         "content": "Please select a choice"
     },
+    "question": {
+        "speaker": "guide",
+        "isChoice": false,
+        "choices": [],
+        "content": "En plus, si ton fils en a besoin, des associations d’aide aux devoirs viennent compléter l’aide financière de l’État. Selon toi, il en existe combien dans le quartier ?"
+    },
+    
     "wrong":{
         "speaker": "guide",
         "isChoice": false,
