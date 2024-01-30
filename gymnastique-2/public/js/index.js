@@ -4,7 +4,7 @@ const swiper = new Swiper("#mySwiper", {
     direction: "horizontal",
     mousewheel: true,
     navigation:{
-        enabled: true,
+        enabled: false,
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     },

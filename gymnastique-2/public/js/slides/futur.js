@@ -3,7 +3,7 @@
 // Just animate the logo
 const init_futur = async swiper => {
 
-    move_background(120);
+    move_background(100);
 
     remove_listeners('.exit-button');
     remove_listeners('.home-button');

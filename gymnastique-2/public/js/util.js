@@ -53,6 +53,10 @@ const remove_listeners = id => {
 
 const move_background = (x) => {
     const background = document.querySelector('.background');
+    const active = document.querySelector('.swiper-slide-active');
+    const swiper = document.querySelector('#mySwiper');
 
-    background.style.backgroundPosition = `${x}% 50%`;
+    const left = - background.offsetWidth * x / 100 + active.offsetWidth * x / 100 + swiper.getBoundingClientRect().left;
+
+    background.style.left = `${left}px`;
 }
