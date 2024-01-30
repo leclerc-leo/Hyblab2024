@@ -51,11 +51,14 @@ const remove_listeners = id => {
     el.parentNode.replaceChild(elClone, el);
 }
 
-const move_background = (x) => {
+const move_background = (x, b = false) => {
     const background = document.querySelector('.background');
     const active = document.querySelector('.swiper-slide-active');
 
     const left = - background.offsetWidth * x / 100 + active.offsetWidth * x / 100;
+
+    if (b) background.style.transition = 'left 0.3s ease-in-out';
+    else background.style.transition = 'none';
 
     background.style.left = `${left}px`;
 }
