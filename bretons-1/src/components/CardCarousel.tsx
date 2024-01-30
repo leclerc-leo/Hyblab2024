@@ -1,12 +1,12 @@
 import Card from 'react-bootstrap/Card';
 import ImageGenerique from '../assets/sportif_velo.jpeg';
 import BicycleLogo from '../assets/Bicycle_logo.svg';
-import LikeLogo from '../assets/Like_logo.svg';
 import ShareLogo from '../assets/Share_logo.svg'
 import GoldMedal from '../assets/GoldMedal.png';
 import PlayButton from '../assets/Play_button.svg';
 import Placeholder from 'react-bootstrap/Placeholder';
 import { FavoriteButton } from './Fav_nav';
+// import {LikeButton} from './Like_nav';
 import { useState } from 'react';
 
 import './CardCarousel.css';
@@ -14,6 +14,9 @@ import './CardCarousel.css';
 function KitchenSinkExample() {
   const [isFavorited, setIsFavorited] = useState(false);
   const [favoriteButtonId] = useState('uniqueId');
+
+  // const [isLiked, setIsLiked] = useState(false);
+  // const [likeButtonId] = useState('uniqueId');
 
   const handleImageClick = (imageName: string) => {
     console.log(`Image "${imageName}" cliquée !`);
@@ -27,6 +30,11 @@ function KitchenSinkExample() {
     setIsFavorited(!isFavorited);
     console.log(`Favoris "${isFavorited ? 'retiré' : 'ajouté'}" !`);
   };
+
+  // const handleLikeClick = () => {
+  //   setIsLiked(!isLiked);
+  //   console.log(`Favoris "${isLiked ? 'retiré' : 'ajouté'}" !`);
+  // };
 
   return (
     <Card className="custom-card" style={{ width: '15rem' }}>
@@ -61,12 +69,11 @@ function KitchenSinkExample() {
             onClick={handleFavoriteClick}
             buttonId={favoriteButtonId}
           />
-          <img
-            className="LikeLogo"
-            src={LikeLogo}
-            alt="Like"
-            onClick={() => handleImageClick('LikeLogo')}
-          />
+          {/* <LikeButton
+            isLiked={isLiked}
+            onClick={handleLikeClick}
+            buttonId={likeButtonId}
+          /> */}
           <img
             className="ShareLogo"
             src={ShareLogo}
