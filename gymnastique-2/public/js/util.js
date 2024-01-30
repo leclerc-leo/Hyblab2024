@@ -1,7 +1,7 @@
 const hide_block = (block, button) => {
     block.style.width = '0';
     block.style.height = '0';
-    block.style.top = button.style.top;
+    block.style.bottom = button.style.bottom;
     block.style.left = button.style.left;
     block.style.overflow = 'hidden';
     block.style.borderRadius = '50%';

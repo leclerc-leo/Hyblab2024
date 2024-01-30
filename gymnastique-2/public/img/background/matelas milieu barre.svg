@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calque_1" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" width="3936.521" height="2906.402" viewBox="0 0 3936.521 2906.402">
+  <defs>
+    <style>
+      .cls-1 {
+        opacity: .05;
+      }
+
+      .cls-2 {
+        fill: #ffcaad;
+      }
+
+      .cls-3 {
+        fill: #cda38b;
+      }
+    </style>
+  </defs>
+  <polygon class="cls-1" points="1215.72 2355.268 1237.194 2367.641 1738.191 2367.641 1755.573 2375.758 2220.84 2375.758 2213.374 2364.885 2766.026 2365.513 2771.449 2355.268 2192.706 2355.268 2192.706 2359.765 2192.706 2359.765 1737.66 2359.765 1737.66 2355.268 1215.72 2355.268"/>
+  <g id="tapis_barre" data-name="tapis barre">
+    <polygon class="cls-2" points="2771.449 2334.828 2690.735 2234.556 1315.234 2234.556 1215.72 2334.828 2771.449 2334.828"/>
+    <rect class="cls-3" x="1215.72" y="2334.828" width="1555.729" height="20.44"/>
+  </g>
+</svg>
