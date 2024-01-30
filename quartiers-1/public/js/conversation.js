@@ -181,11 +181,11 @@ function getLastBubbleHeight(typeBubble) {
 
 // Initial speech bubbles
 
-addBubbleGuide(["Bonjour, bienvenue au quartier de XXXXXX, je peux te guider !","Bonjour, bienvenue au quartier de XXXXXX, je peux te guider !"]);
+addBubbleGuide(['<img src="./img/stade.jpg" alt="stade" />Bonjour, bienvenue au quartier de XXXXXX, je peux te guider !',"Bonjour, bienvenue au quartier de XXXXXX, je peux te guider !"]);
 addBubbleUser(["Salut! Merci de m'accueillir. J'aimerais en savoir plus sur le quartier."]);
 addChoiceBubble([],false);
 
-conversation.dequeue();
+// conversation.dequeue();
 // Add speech bubbles
 arrowDown.on("click", function () {
     if (!isTimeoutActive) {
@@ -195,7 +195,7 @@ arrowDown.on("click", function () {
    
         addChoiceBubble(["Ceci est le choix 1","Ceci est le choix 2","Ceci est le choix 3","Ceci est le choix 4","Ceci est le choix 5","Ceci est le choix 6"], true);
         
-        conversation.dequeue();
+        // conversation.dequeue();
         isTimeoutActive = false;
     }
 });
