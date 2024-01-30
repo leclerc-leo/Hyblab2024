@@ -307,7 +307,7 @@ p{
     max-width: 40%;
 }
 
-svg.image-histoire{
+svg.image-histoire, svg.image-jo{
     width: 100%;
     max-width: 70%;
 }
