@@ -89,19 +89,6 @@
       z-index: 2;
 }
 
-.archive {
-      position: absolute; 
-      right: 5%; 
-      top: 0; 
-      width: 100px;
-      padding: 10px;
-      z-index: 3;
-}
-
-.archive > img {
-  display: block ; 
-}
-
 .bio-player .icons {
   flex: 1;
   display: flex;
@@ -117,21 +104,18 @@
 
 
 .like {
-  background-color: var(--yellow);
-  color: var(--green);
-  height: 75px;
-  width: 75px;
-  border: none;
-  border-radius: 45px;
+  height: 150px;
+  width: 150px;
+  padding-top: 0;
   cursor: pointer;
   display:flex;
-  justify-content: center; 
-  align-items: center;
+  justify-content: center;
 }
 
-.like > img {
+.icons > img {
   display: block;
-  height: 35px;
+  margin: 0;
+  height: 150px;
 }
 
 .infos {

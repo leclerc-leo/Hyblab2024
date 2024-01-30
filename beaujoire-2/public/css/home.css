@@ -13,16 +13,18 @@
 /* use : color : var(--bg-green) */
 :root {
     --bg-green :#009E49 ;
-    --yellow: #FADD4B ;
+    --yellow: #F7EF24 ;
     --green : #17853C ; 
+    --field-green : #64BF7C ; 
 }
 /** colors **/
 
 /** fonts **/
 @font-face {
     font-family: 'Abolition';
-    src: url('../fonts/Abolition-W00-Soft.ttf') format('truetype');
+    src: url('../fonts/Abolition-W00-Regular.ttf') format('truetype');
   }
+
 @font-face {
     font-family: 'Neue Haas Unica';
     src: url('../fonts/NeueHaasUnicaPro-Regular.ttf') format('truetype');
@@ -65,33 +67,153 @@ body{
     position: absolute;
 }
 
-/* white navigation bullets */
-.swiper-pagination-bullet-active {
+/* yellow navigation bullets */
+.swiper-pagination-bullet {
     background-color: white !important;
+    border: solid 1px black;
+    height: 10px;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: var(--yellow) !important;
+    border-color: transparent;
 }
 
 /* the slides and the loader should fill the whole 9:16 zone */
 .swiper-wrapper section, #loader{
-    background-color: white;
+    background-color: var(--green);
     width: 100%;
     height: 100%;
 }
 
 /* Most of the elements in this demo are absolute positioned with percentages */
 #first-slide header{
-    text-align: left;
     width: 100%;
-    bottom: 37%;
+    bottom: 40%;
     position: absolute;
-    font-size: 30%;
     z-index: 2;
+    text-align: center;
+    text-transform: uppercase;
+    color:white;
+    font-family: 'Abolition';
 }
     #titre{
-        font-size: 2em;
+        font-size: 0.8em;
         position: relative;
         z-index: 2;
-        color:white;
+        margin-bottom: -0.2em;
     }
+
+    #ecu{
+        position: absolute;
+        top:0.8em;
+        left: 0.94em;
+        height: 0.35em;
+        -webkit-transform: rotate(-15deg);
+        -moz-transform: rotate(-15deg);
+        -ms-transform: rotate(-15deg);
+        -o-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+    }
+
+    #sous-titre{
+        font-size: 1.6em;
+        z-index: 2;
+        margin-bottom: -0.50em;
+    }
+
+    #accroche {
+        font-size: 0.5em;
+        z-index: 2;
+    }
+        #anim-40{
+            position: absolute;
+            right:1.7em;
+            top:57%;
+            height: 3em;
+        }
+        #img-40 {
+            position: absolute;
+            height : 1.5em;
+            right : 1.855em;
+            top : 67.45%;
+            display: none;
+        }
+
+    #separateur {
+        margin-bottom: 0.1em;
+        width: 70%;
+    }
+
+#logo-principal{
+    text-align: center;
+    width: 100%;
+    height: 70%;
+    margin-top:calc(-7.5% * 9 / 16 ); /* margins are relative to the element width... :-( */
+    position: absolute;
+    z-index: 1;
+    cursor: pointer;
+}
+
+#acceuil_papier{
+    position: absolute;
+    z-index: 2;
+    width:100%;
+    bottom:0;
+    height: 19%;
+    transform: scale(3);
+}
+
+#accueil_logo {
+    position: absolute;
+    z-index: 3;
+    top:60%;
+    left: 17%;
+    height: 12%;
+}
+
+
+#chapo {
+    font-family: 'Neue Haas Unica';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width:76%;
+    position: relative;
+    font-size: 0.2em;
+    z-index: 2;
+    top:71%;
+    color:white;
+    text-align: center;
+    margin: 0 12%;
+}
+
+#creer-equipe{
+    font-family: 'Abolition';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 70%;
+    height: 7%;
+    top: 75%;
+    border-radius: 30px;
+    color: var(--yellow);
+    text-transform: uppercase;
+    background-color: transparent;
+    border: solid 3px var(--yellow);
+    font-size: 0.35em;
+    margin:0 15%;
+    cursor: pointer;
+    z-index: 3;
+    transition: all 0.5s ease-in-out ;
+}
+
+#creer-equipe:hover{
+    background-color: var(--yellow);
+    color: var(--green);
+}
 
 #second-slide header{
     position:relative;
@@ -103,94 +225,11 @@ body{
     text-transform: uppercase;
 }
 
-#first-slide p, .swipe-down {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width:100%;
-    position: relative;
-    font-size: small;
-    z-index: 2;
-    top:80%;
-    text-transform: uppercase;
-    color:black;
-    text-align: center;
-    margin: 0;
-}
-
-.swipe-down{
-    top: 0;
-}
-
-#arrow-intro{
-    height: 2em;
-}
-
-#logo-hyblab{
-    text-align: center;
-    width: 100%;
-    max-height: 70%;
-    margin-top:calc(-7.5% * 9 / 16 ); /* margins are relative to the element width... :-( */
-    position: absolute;
-    font-size: 50%;
-    z-index: 1;
-    cursor: pointer;
-}
-
-
-
-#creer-equipe{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    width: 80%;
-    height: 9%;
-    top: 73%;
-    border-radius: 30px;
-    color: white;
-    text-transform: uppercase;
-    background-color: black;
-    border: solid 1px black;
-    font-size: 0.35em;
-    margin:0 10%;
-    cursor: pointer;
-    transition: all 0.5s ease-in-out ;
-}
-
-#creer-equipe:hover{
-    background-color: red;
-}
-
-/* Last slide image is centered */
-#img-fini{
-    width: 70%;
-    left: 50%; /* center the logo, in interaction with the negative margin-left */
-    top: 40%;
-    position: absolute;
-    margin-left:-35%; /* this is half the width */
-    margin-top:calc(-25% * 9 / 16 ); /* margins are relative to the element width... :-( */
-}
-
 main > section{
     /*background-image: url('../img/background.svg');*/
     background-size: 100% auto; /* background is full width and height is proportional to width */
     background-position: bottom; /* background is bottom aligned */
 }
-
-/* Footer of last slide is at the bottom and content is centered */
-#first-slide footer{
-    bottom: 5%;
-    position: absolute;
-    box-sizing: border-box; /* So that padding is not added to width (and width: 100% works) */
-    width: 100%; /* could also use  width: calc(100% - 2em) if not using box-sizing */
-    font-size: 20%;
-    text-align: center;
-    padding: 1em;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
 
 /* ---------- Positioning of logos on the last slide -------------------- */
 /* here we have a contraint on the height of the logos (not the width)     */
@@ -198,48 +237,43 @@ main > section{
 /* slide because of body's font size rule at the end of this CSS           */
 #bandeau {
     width:100%;
+    height: 100%;
+    background-color: white;
+    display: flex;
     position: absolute;
     bottom: 0;
-    background-color: grey;
-    font-size: 20%;
-  }
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:0.5em;
+}
 
-  #bandeau li{
-    list-style-type: none;
-    display: inline-block;
-    vertical-align: middle;
-    margin: 0 0.5em;
-  }
+#bandeau > *  {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+    #hyblab {
+        height: 1.3em;
+    }
 
-  #bandeau img{
-    height: 2.5em;
-  }
+.logo {
+    height: 0.7em;
+}
 
-  #bandeau #hyblab{
-    margin: 1em auto;
-    height: 3em;
-    display: block;
-  }
-
-  #bandeau #cc, #bandeau #opensource
-  {
+.logo-half {
+    max-width:3em;
     height: 1em;
-  }
+}
 
-  #bandeau .stacked{
-    display:block;
-  }
-
-  #bandeau ul{
-    text-align: center;
-    padding: 0 0;
-    margin: 0.5em auto;
-  }
-
-  #bandeau .institutionnel
-  {
-    height: 2em;
-  }
+.logo-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
 
 /* ---------- Important media queries for easy responsive content :-) ----------------- */
 /* Whatever the device used, the content will be displayed full width and height if      */
