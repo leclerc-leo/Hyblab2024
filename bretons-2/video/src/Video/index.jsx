@@ -1,4 +1,5 @@
 import {spring} from 'remotion';
+import { AbsoluteFill, Img, staticFile } from "remotion";
 import {
 	AbsoluteFill,
 	interpolate,
@@ -9,16 +10,20 @@ import {
 import"./css/style.css";
 import "./css/font.css";
 
+
 export const Video = () => {
 	const frame = useCurrentFrame();
 	const {durationInFrames, fps} = useVideoConfig();
+
 
 	// A <AbsoluteFill> is just a absolutely positioned <div>!
 	return (
 		<AbsoluteFill style={{backgroundColor: 'black'}}>
 			<div id='background'>
-			<div id='main'></div>
-			<div id="footer" >
+			<div id='main'>
+				<Img src={staticFile("Logo.svg")}/>
+			</div>
+			<div id="footer">
 				<p>letelegramme-des-scores.fr</p>
 			</div>
 			</div>
