@@ -15,7 +15,7 @@ const swiper = new Swiper("#mySwiper", {
     initialSlide: 1,
     delay: 600,
     speed: 300,
-    shortSwipes: false,
+    shortSwipes: true,
 });
 
 swiper.on("slideChange", function () {

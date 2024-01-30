@@ -156,9 +156,9 @@ header{
 
 .category-button{
     position: absolute; 
-    width: 50%; 
+    width: 60%; 
     height: 0; 
-    padding: 25% 0; 
+    padding: 30% 0; 
     transform: translate(-50%, 50%); 
     display: flex; 
     justify-content: center; 
