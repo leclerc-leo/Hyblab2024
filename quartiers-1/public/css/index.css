@@ -13,12 +13,14 @@
 
 body{
     background-color: black;
-    color: black;
+    color: #292C5E;
     overflow: hidden;   /* to avoid slider bugs on some browsers */
     font-family: 'Inter', sans-serif;
 }
 h1{
     font-family: 'Nexa', sans-serif;
+    color: #292C5E;
+    
 }
 
 /* -------------- Loader --------------*/
@@ -26,7 +28,7 @@ h1{
     position:absolute;
     width: 100%;
     height: 100%;
-    z-index: 4;
+    z-index: 5;
     background-color: #FBEFEB;
 }
 
@@ -80,6 +82,47 @@ h1{
     }
 }
 /* -------------- End of Loader --------------*/
+
+/* -------------- Accueil --------------*/
+
+#accueil{
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+    background-color: #FBEFEB;
+}
+
+#accueil_logo{
+    position: relative;
+    height: 20%;
+    width: auto;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    margin-bottom: 5%;
+}
+
+#accueil p{
+    position: relative;
+    font-weight: 700;
+    text-align :center;
+    line-height:100%;
+    font-size: 30%;
+    margin-top: 15%;
+    width: 55%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    font-family: 'Nexa', sans-serif;
+    color: #292C5E;
+}
+
+#accueil_dessin{
+    position: relative;
+    width: 100%;
+}
+
+/* -------------- End of Accueil --------------*/
 
 /* -------------- Tuto --------------*/
 #tuto{
