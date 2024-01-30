@@ -1,5 +1,35 @@
 "use strict";
 
+// ---------- Initialisation des boutons de réponse ----------
+function changeState(imageId, yesButtons, noButtons) {
+    let buttonToChange = localStorage.getItem(imageId);
+    console.log("imageId : " + imageId + " buttonToChange : " + buttonToChange);
+    if (buttonToChange) {
+        // on a cliqué sur le bouton non
+        if (buttonToChange === 'yes') {
+            let yesImage = yesButtons[imageId.slice(-1) - 1];
+            yesImage.src = "./img/bouton_oui_gris.svg";
+            // on met le bouton non en rose
+            let noImage = noButtons[imageId.slice(-1) - 1];
+            noImage.src = "./img/bouton_non_rose.svg";
+
+            // on enlève dans le localStorage le bouton oui
+            localStorage.removeItem('yes' + imageId.slice(-1));
+        }
+        // on a cliqué sur le bouton oui
+        else {
+            let noImage = noButtons[imageId.slice(-1) - 1];
+            noImage.src = "./img/bouton_non_gris.svg";
+            // on met le bouton oui en vert
+            let yesImage = yesButtons[imageId.slice(-1) - 1];
+            yesImage.src = "./img/bouton_oui_vert.svg";
+
+            // on enlève dans le localStorage le bouton non
+            localStorage.removeItem('no' + imageId.slice(-1));
+        }
+    }
+}
+
 const homeStories = function () {
     // on cache le slider au chargement de la page
     document.querySelector('#mySwiper').style.display = 'none';
@@ -48,6 +78,21 @@ const homeStories = function () {
       }
     });
 
+
+    console.log("test")
+    // get recap button
+    let recap = document.querySelector('#recap_button');
+    console.log(recap);
+    recap.addEventListener('click', () => {
+      console.log("Clicked on recap button")
+      fetch('/quartiers-2/recap.html')
+        .then(res => res.text())
+        .then(html => {
+          document.querySelector('body').innerHTML = html;
+          console.log(html)
+        });
+    });
+
     let stories = document.querySelectorAll(".story");
     let swiper_slides = document.querySelectorAll(".swiper-slide");
 
@@ -81,6 +126,22 @@ const homeStories = function () {
         document.querySelector('#mySwiper').style.display = 'block';
         document.querySelector('.content').scrollIntoView();
 
+        let yesImages = document.querySelectorAll('.yesButton');
+        let noImages = document.querySelectorAll('.noButton');
+
+        yesImages.forEach((image, index) => {
+          image.addEventListener('click', function() {
+              localStorage.setItem('yes' + (index + 1), 'yes');
+              changeState('no' + (index + 1), yesImages, noImages);
+            });
+        });
+
+        noImages.forEach((image, index) => {
+              image.addEventListener('click', function() {
+                  localStorage.setItem('no' + (index + 1), 'no');
+                  changeState('yes' + (index + 1), yesImages, noImages);
+              });
+          });
       });
     }
 
@@ -89,7 +150,7 @@ const homeStories = function () {
 
     // La fleche retour a deux comportements différents selon si le swiper est affiché ou non
     retour.addEventListener('click', () => {
-      // si le swiper n'est pas affiché alors on retourne à l'accueil
+      // si le swiper n'est pas affiché alors, on retourne à l'accueil
       if (document.querySelector('#mySwiper').style.display === 'none') {
         fetch('/quartiers-2/index.html')
           .then(res => res.text())
