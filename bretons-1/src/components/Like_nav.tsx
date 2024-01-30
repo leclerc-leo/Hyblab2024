@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import LikeLogo from '../assets/Like_logo.svg'; // grey heart
-import LikeRedLogo from '../assets/Red_heart.svg'; // red heart
 
 type LikeButtonProps = {
   isLiked: boolean;
@@ -24,7 +22,7 @@ const LikeButton: React.FC<LikeButtonProps> = ({ isLiked, onClick, buttonId }) =
   return (
     <button id={buttonId} onClick={onClick} style={buttonStyle}>
       <img 
-        src={isLiked ? LikeRedLogo : LikeLogo} 
+        src={isLiked ? "/bretons-1/img/Red_heart.svg" : "/bretons-1/img/Like_logo.svg"} 
         alt="Like"
         style={imgStyle}
       />
