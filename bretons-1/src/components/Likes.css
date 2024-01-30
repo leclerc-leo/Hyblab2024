@@ -9,14 +9,25 @@
 
 .heart-icon {
     width: 20.5px; 
-    height: 17px;
+    height: 16.5px;
     background-image: url('../assets/Like_logo.svg'); /* heart gray */
     background-size: contain;
     cursor: pointer;
   }
-  
+
+@keyframes bounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
   .heart-icon.liked {
     background-image: url('../assets/Like_red_logo.svg'); /* heart red */
     background-size: contain;
     cursor: pointer;
+    /* animation: scale 0.3s ease-in-out forwards; */
+    animation: bounce 0.3s ease-in-out forwards;
   }

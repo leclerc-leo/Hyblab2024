@@ -13,12 +13,16 @@ import './CardCarousel.css';
 
 function KitchenSinkExample() {
   const [isFavorited, setIsFavorited] = useState(false);
+  const [favoriteButtonId] = useState('uniqueId');
+
   const handleImageClick = (imageName: string) => {
     console.log(`Image "${imageName}" cliquée !`);
   };
+
   const handlePlayClick = (imageName: string) => {
     console.log(`Image "${imageName}" cliquée !`);
   };
+
   const handleFavoriteClick = () => {
     setIsFavorited(!isFavorited);
     console.log(`Favoris "${isFavorited ? 'retiré' : 'ajouté'}" !`);
@@ -55,6 +59,7 @@ function KitchenSinkExample() {
           <FavoriteButton
             isFavorited={isFavorited}
             onClick={handleFavoriteClick}
+            buttonId={favoriteButtonId}
           />
           <img
             className="LikeLogo"
