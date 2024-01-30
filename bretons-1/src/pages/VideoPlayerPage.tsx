@@ -7,7 +7,7 @@ export default function VideoPlayerPage() {
   const location = useLocation();
   console.log(location.state.id);
   return (
-    <div style={{ width: 480, height: 'auto', margin: '0 auto'}} className='main'>
+    <div style={{ maxWidth: 480, height: 'auto', margin: '0 auto'}} className='main'>
         <VideoPlayer id={''} title={''} subtitle={''} thumbnail={''} description={''} article={null}></VideoPlayer>
     </div>
   )
