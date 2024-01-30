@@ -101,13 +101,15 @@ h1{
     height: 60%;
     overflow-y: auto;
     overflow-x: hidden;
-    font-size: 0.3em;
+    font-size: 0.25em;
     display: flex;
     flex-direction: column;
     color: black;
     background-color: white;
 }
-
+.conversation ul{
+    list-style: none;
+}
 .rp_guide{
     display: flex;
     flex-direction: column;
@@ -117,51 +119,35 @@ h1{
 .name_guide{
     display: flex;
     margin: 10px;
-    color: #84A2CF;
 }
 .cont_guide, .cont_user{
-    position: relative;  
+    position: relative;
+    color: white;
     padding: 0.45em;
     margin-bottom: 5px;
-    border: thin solid black;
+    border-radius: 10px;
 }
 .cont_guide{
-    border-radius: 10px 10px 10px 0;
+    background-color: #E69973;
 }
 .cont_user{
-    border-radius: 10px 10px 0 10px;
+    background-color: #7D7DB5
 }
-.cont_guide::before {
+.cont_guide:last-child::before {
     content: '';
     position: absolute;
     bottom: -0.68em;
-    left: -1px;
-    border: 0.35em solid;
-    border-color: black transparent transparent black;
+    left: 0;
+    border: 0.65em solid;
+    border-color: #E69973 transparent transparent #E69973;
 }
-.cont_guide::after {
-    content: '';
-    position: absolute;
-    bottom: -0.6em;
-    left: 0px;
-    border: 0.38em solid;
-    border-color: white transparent transparent white;
-}
-.cont_user::before {
+.cont_user:last-child::before {
     content: '';
     position: absolute;
     bottom: -0.66em;
-    right: -1px;
-    border: 0.35em solid;
-    border-color: black black transparent transparent;
-}
-.cont_user::after {
-    content: '';
-    position: absolute;
-    bottom: -0.6em;
-    right: 0px;
-    border: 0.38em solid;
-    border-color: white white transparent transparent;
+    right: 0;
+    border: 0.65em solid;
+    border-color: #7D7DB5 #7D7DB5 transparent transparent;
 }
 .rp_user{
     display: flex;
@@ -174,7 +160,6 @@ h1{
     display: flex;
     flex-direction: row-reverse;
     margin: 10px;
-    color: #EC8670;
 }
 /* SlideIn Animations */
 /* Slide Effect from the left to the right*/
@@ -197,26 +182,47 @@ h1{
 }
 
 /* --- Choice bubbles--- */
-
-.choices{
+#choicesContainer{
+    height: 15%;
+    width: 100%;
+    font-size: 0.2em;
+    background-color: white;
+    color: white;
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+}
+.choices{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #7D7DB5;
+    align-items: center;
+
 }
 .choice-bubbles{
     padding: 0.45em;
     margin: 4px 10px 4px 0px;
-    background-color: white;
-    border: thin solid black;
+    color: white;
+    background-color: #7D7DB5;
+    border: solid thin white;
     border-radius: 10px;
     font-size: 1em;
     animation: slideInRight 1s;
 }
+#username_input{
+    margin: 0 10px 0 10px;
+    padding: 4px;
+    background-color: #7D7DB5;
+    color: white;
+    border-radius: 4px;
+    border: solid thin white;
+}
 
 /* ---- Videos ---- */
 .videos{
-    width: 100%;
-    height: 343px;
+    width: 80%;
+    height: 280px;
     margin: 10px;
     border-radius: 10px;
 }
@@ -241,14 +247,14 @@ h1{
 /* -------------- End of Conversation --------------*/
 
 /*-------- Choice ----------*/
-.choice{
-    display: grid;
+#choiceContainer{
+    /* display: grid;
     grid-template-columns: repeat(3, 1fr); /* Trois colonnes égales */
-    grid-template-rows: repeat(2, 1fr); /* Deux lignes égales */
+    /* grid-template-rows: repeat(2, 1fr); Deux lignes égales */
     width: 100%;
     height: 15%;
-    font-size: 0.2em;
-    background-color: #7D7DB5;
+    /* font-size: 0.2em;
+    background-color: #7D7DB5; */
 }
 .topic-button{
     position: relative;
@@ -277,16 +283,15 @@ h1{
 
 .conversation-arrow-container {
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 16%;
+    width: 100%;
+    top: 82%;
 }
 .conversation-arrow-down {
     color: #333;
     position: absolute;
-    left: 50%;
-    width: 14px;
-    height: 14px;
+    left: 92%;
+    width: 0.14em;
+    height: 0.14em;
     border-bottom: 4px solid;
     border-right: 4px solid;
     border-radius: 4px;
