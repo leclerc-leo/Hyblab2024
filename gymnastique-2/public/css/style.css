@@ -266,12 +266,24 @@ header{
     background-color: #FFD8B3;
     font-family: "Krona_One variant0", Tofu;
 }
+#palmares-page .palmares-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 #palmares-page #titre-palmares {
     color: #482E49;
     font-size: 20px;
 }
 #palmares-page button{
     border-color: #F08461;
+    border-bottom-left-radius: 5%;
+    border-bottom-right-radius: 5%;
+    border-top-left-radius: 5%;
+    border-top-right-radius: 5%;
+    width: 80%;
+    height: 20%;
 }
 #palmares-page .palmares-desactive{
     background-color: #F08461;
@@ -279,7 +291,6 @@ header{
 #palmares-page .palmares-active{
     background-color: transparent;
 }
-
 .palmares-desactive .button-palmares-titre{
     color : #FFF9F9;
     font-size: 18px;
@@ -291,8 +302,9 @@ header{
 .palmares-active .button-palmares-titre{
     color : #F08461;
     font-size: 16px;
-    font-style: unset;
+    margin: 5px 0 5px 0;
 }
 .palmares-active .palmares-button-texte{
     display: block;
+    margin: 5px 5px 5px 5px;
 }
