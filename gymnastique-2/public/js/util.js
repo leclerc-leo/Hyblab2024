@@ -1,7 +1,7 @@
 const hide_block = (block, button) => {
     block.style.width = '0';
     block.style.height = '0';
-    block.style.top = button.style.top;
+    block.style.bottom = button.style.bottom;
     block.style.left = button.style.left;
     block.style.overflow = 'hidden';
     block.style.borderRadius = '50%';
@@ -53,6 +53,10 @@ const remove_listeners = id => {
 
 const move_background = (x) => {
     const background = document.querySelector('.background');
+    const active = document.querySelector('.swiper-slide-active');
+    const swiper = document.querySelector('#mySwiper');
 
-    background.style.backgroundPosition = `${x}% 50%`;
+    const left = - background.offsetWidth * x / 100 + active.offsetWidth * x / 100 + swiper.getBoundingClientRect().left;
+
+    background.style.left = `${left}px`;
 }

@@ -2,30 +2,7 @@
 
 // async init function (because of the awaits on fetches)
 const init_accueil = async swiper => {
-    // Get logo element
-    const logo = document.querySelector('#logo-hyblab');
-
-    // (Re)set initial scale of logo
-    logo.setAttribute('style', 'transform :scale(1);');
-
-    // Animate hyblab logo and make shrink on click
-    anime({
-        targets: '#logo-hyblab',
-        scale: 1.2,
-        easing: 'easeInOutQuad',
-        direction: 'alternate',
-        loop: true
-    });
-
-    // Add click listener
-    logo.addEventListener('click', () => {
-        anime({
-                targets: '#logo-hyblab',
-                scale: 0
-            });
-        swiper.slideNext()
-    });
-
+    
     // Get some dummy data
     const response = await fetch('data/dummy.json');
     const data2 = await response.json();

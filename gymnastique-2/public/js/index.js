@@ -4,7 +4,7 @@ const swiper = new Swiper("#mySwiper", {
     direction: "horizontal",
     mousewheel: true,
     navigation:{
-        enabled: true,
+        enabled: false,
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     },
@@ -60,7 +60,7 @@ categories_buttons.forEach( button => {
         block.style.visibility = 'visible';
         block.style.width = '100%';
         block.style.height = '100vh';
-        block.style.top = '0';
+        block.style.bottom = '0';
         block.style.left = '0';
         block.style.overflow = 'auto';
         block.style.borderRadius = '0';
