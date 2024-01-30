@@ -4,9 +4,21 @@
 const initSlide2 = async function () {
   // Get logo element
   const logo = document.querySelector("#logo-hyblab");
+  const bag = document.querySelector("#bag");
 
   // (Re)set initial scale of logo
   logo.setAttribute("style", "transform :scale(1);");
+
+  function animateBag() {
+    anime({
+      targets: bag,
+      width: "180%",
+      easing: "easeInOutQuad",
+      duration: 1000,
+    });
+  }
+
+  animateBag();
 
   // Animate hyblab logo and make shrink on click
   anime({

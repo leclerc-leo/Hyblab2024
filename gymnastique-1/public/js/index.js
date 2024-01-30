@@ -13,7 +13,7 @@ const swiper = new Swiper("#mySwiper", {
 swiper.on("slideChange", function () {
   switch( swiper.activeIndex ) {
     case 0:
-      // initSlide1();
+      initSlideIntro();
       break;
     case 1:
       initSlide2();
@@ -37,5 +37,5 @@ setTimeout(() => {
     easing: 'easeOutQuad',
   });
   // Init first slide
-  initSlide1();
+  initSlideIntro();
 }, 1000);
