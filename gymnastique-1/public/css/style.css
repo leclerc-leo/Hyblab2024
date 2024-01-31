@@ -2,7 +2,6 @@
 /* ------- that adapts content width and height so that aspect ratio  ----------- */
 /* ------- is kept between 9/16 a,d 3/4 (portait orientation)         ----------- */
 
-
 /* Color palette */
 /* -------------- Main colors --------------*/
 /* 
@@ -92,6 +91,12 @@ body {
   transform: translate(-50%, -50%); /* Add this line */
 }
 
+#first-slide header h3 {
+  /* italic, smaller and lighter text */
+  font-style: italic;
+  font-weight: lighter;
+}
+
 #first-slide p {
   text-align: center;
   width: 65%;
@@ -102,7 +107,7 @@ body {
   background-color: #386f9c;
   border-radius: 10px;
   padding: 20px;
-  top: 40%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -131,9 +136,9 @@ body {
   position: absolute;
   height: auto;
   width: 17%;
-  top: 16.5%;
+  top: 21.5%;
   left: 13%;
-  transform: translateX(-50%); 
+  transform: translateX(-50%);
   z-index: 2;
   rotate: -10deg;
 }

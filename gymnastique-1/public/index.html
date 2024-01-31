@@ -19,9 +19,9 @@
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="js/slideintro.js" defer></script>
     <script src="js/slide1.js" defer></script>
     <script src="js/slide2.js" defer></script>
+    <script src="js/slide3.js" defer></script>
     <script src="js/index.js" defer></script>
   </head>
 
@@ -34,23 +34,27 @@
         <p id="loader-text">Veuillez patienter...</p>
       </section>
       <div id="mySwiper" class="swiper">
-        
         <!-- le main est aussi le conteneur des différents slides (contenus à chaque fois dans des sections-->
         <main class="swiper-wrapper">
-
           <!-- Le contenu du slide 1 -->
 
           <section id="first-slide" class="swiper-slide">
             <header>
               <!-- h1 sera rempli à partir de données lues dans un fichier Json-->
               <h1 id="titre"></h1>
+              <h3 id="sous-titre"></h3>
             </header>
             <p id="texte1"></p>
-            <div class="tete" id="tete"><img src="img/tete.svg" alt="tete"/></div>
-            <div class="arrow" id="down-arrow"><img src="img/down-arrow.png" alt="down-arrow"/></div>
-            <div class="bag" id="bag"><img src="img/bag.svg" alt="bag"/></div>
-            <footer>
-            </footer>
+            <div class="tete" id="tete">
+              <img src="img/slide1/tete.svg" alt="tete" />
+            </div>
+            <div class="arrow" id="down-arrow">
+              <img src="img/slide1/down-arrow.png" alt="down-arrow" />
+            </div>
+            <div class="bag" id="bag">
+              <img src="img//slide1/bag.svg" alt="bag" />
+            </div>
+            <footer></footer>
           </section>
 
           <!-- Le contenu du slide 2 -->

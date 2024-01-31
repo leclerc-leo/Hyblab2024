@@ -1,56 +1,38 @@
 "use strict";
 
 // async init function (because of the awaits on fetches)
-const initSlide2 = async function () {
-  // Get logo element
-  const logo = document.querySelector("#logo-hyblab");
+const initSlideIntro = async function () {
+  const titre = document.querySelector("#titre");
+  const sous_titre = document.querySelector("#sous-titre");
+  const texte1 = document.querySelector("#texte1");
+  const down_arrow = document.querySelector("#down-arrow");
   const bag = document.querySelector("#bag");
 
-  // (Re)set initial scale of logo
-  logo.setAttribute("style", "transform :scale(1);");
+  // get the data from our data/first-slide.json file
+  let response = await fetch("data/first-slide.json");
+  const data = await response.json();
 
-  function animateBag() {
-    anime({
-      targets: bag,
-      width: "130%",
-      top: "60%",
-      easing: "easeInOutQuad",
-      duration: 100,
-    });
-  }
+  // set the title
+  titre.innerHTML = data.title;
 
-  animateBag();
+  // set the subtitle
+  sous_titre.innerHTML = data.soustitre;
 
-  // Animate hyblab logo and make shrink on click
+  // set the text
+  texte1.innerHTML = data.texte1;
+
   anime({
-    targets: "#logo-hyblab",
-    scale: 1.2,
-    easing: "easeInOutQuad",
+    targets: down_arrow,
+    translateY: 20,
     direction: "alternate",
     loop: true,
+    easing: "easeInOutQuad",
   });
-
-  document.getElementById("logo-hyblab").addEventListener("click", function () {
-    var popup = document.getElementById("popup");
-    popup.style.display = "block";
-    setTimeout(function () {
-      popup.classList.add("show");
-    }, 20);
+  anime({
+    targets: bag,
+    width: "75%",
+    top: "70%",
+    easing: "easeInOutQuad",
+    duration: 300,
   });
-
-  document.querySelector(".close").addEventListener("click", function () {
-    var popup = document.getElementById("popup");
-    popup.classList.remove("show");
-    setTimeout(function () {
-      popup.style.display = "none";
-    }, 300);
-  });
-
-  // Retrieve the partner's topic from our API
-  let response = await fetch("api/topic");
-  const data1 = await response.json();
-
-  // Get some dummy data
-  response = await fetch("data/dummy.json");
-  const data2 = await response.json();
 };
