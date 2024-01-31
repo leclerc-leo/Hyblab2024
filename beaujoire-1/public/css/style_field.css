@@ -101,13 +101,6 @@ body {
 	aspect-ratio: 0.65;
 }
 
-@media screen and (min-width: 600px) {
-	.field {
-		transform-origin: center;
-		transform: rotate(90deg) scale(1.2);
-	}
-}
-
 /*Share sections*/
 
 .share-icons {
@@ -169,6 +162,7 @@ body {
 	bottom: 0;
 	background-color: hsla(240, 14%, 14%, 0.9);
 	border-radius: 30px;
+	max-width: 90vw;
 	width: 370px;
 	height: 130px;
 	padding: 5px 15px;
@@ -190,4 +184,20 @@ body {
 	width: 15%;
 	border-radius: 2px;
 	border: #ffffff 2px solid;
+}
+
+/* For computers */
+
+@media screen and (min-width: 600px) {
+	.field {
+		max-height: 60vw;
+		max-width: 60vh;
+		transform-origin: center;
+		transform: rotate(90deg) scale(1.2);
+	}
+
+	#mid-choose {
+		transform-origin: center;
+		transform: rotate(-90deg) translate(-50%, -50%);
+	}
 }

@@ -3,6 +3,8 @@
 * {
 	font-family: "Industry", "Bebas Neue Pro", sans-serif;
 	color: #ffffff;
+	min-width: 0;
+	min-height: 0;
 }
 
 body {
@@ -23,7 +25,7 @@ body {
 .container {
 	display: flex;
 	align-items: center;
-	height: 100vh;
+	height: 100dvh;
 	flex-direction: column;
 	align-content: center;
 	justify-content: space-between;
@@ -78,9 +80,10 @@ body {
 .field {
 	position: relative;
 	background-color: #1e1e28;
+	width: 85vw;
 	padding: 5% 3%;
 	border-radius: 20px;
-	overflow: hidden;
+	aspect-ratio: 0.65;
 }
 
 .player {
@@ -103,24 +106,13 @@ body {
 	padding: 0 5%;
 }
 
-@media screen and (min-width: 821px) {
-	.field {
-		transform-origin: center;
-		transform: rotate(90deg) scale(1.2);
-	}
-	.player {
-		transform-origin: center;
-		transform: rotate(-90deg);
-	}
-}
-
 .gm-btn {
 	background: none;
 	border: none;
 	padding: 5px 15px;
+	margin-top: 0;
 	font-size: 16px;
 	line-height: 24px;
-	width: 400;
 	transition: 0.3s;
 	cursor: pointer;
 	position: relative;
@@ -137,7 +129,7 @@ body {
 	color: var(--gb-51);
 	background: var(--gb-52);
 	font-family: Bebas Neue;
-	margin: 5%;
+	margin: 0 5%;
 }
 
 .gb-shutter:active {
@@ -284,4 +276,19 @@ body {
 	margin-bottom: 5px;
 	font-size: 18px;
 	color: #666;
+}
+
+@media screen and (min-width: 600px) {
+	.field {
+		max-height: 60vw;
+		max-width: 60vh;
+		transform-origin: center;
+		transform: rotate(-90deg) scale(1.2);
+		aspect-ratio: 0.000005;
+		padding: 5px 20px;
+	}
+	.player {
+		transform-origin: center;
+		transform: rotate(90deg) translate(-55%, 40%) scale(0.7);
+	}
 }
