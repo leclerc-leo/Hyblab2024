@@ -16,7 +16,7 @@ document.querySelector(".close").addEventListener("click", () => {
 
 function handlePlayerClick(event) {
 	event.target.classList.add("player-animation");
-	showCarousel(event.target.className);
+	showCarousel(event.target.id);
 	event.target.addEventListener("animationend", () =>
 		event.target.classList.remove("player-animation")
 	);
@@ -27,8 +27,8 @@ function handlePlayerClick(event) {
 	console.log(`Selected player: ${selectedPlayerId}`);
 }
 
-function showCarousel(className) {
-	const poste = getPositionFromClassName(className);
+function showCarousel(id) {
+	const poste = getPositionFromId(id);
 
 	fetch("./data/DataBase.json")
 		.then((response) => response.json())
@@ -55,19 +55,40 @@ function showCarousel(className) {
 	});
 }
 
-function getPositionFromClassName(className) {
-	if (className.includes("goalkeeper")) {
-		return "GARDIEN";
-	} else if (className.includes("forward")) {
-		return "ATTAQUANT";
-	} else if (className.includes("midfielder")) {
-		return "MILIEU";
-	} else if (className.includes("defender")) {
-		return "DÉFENSEUR";
-	} else if (className.includes("coach")) {
-		return "ENTRAÎNEUR";
+function getPositionFromId(id) {
+	console.log(`Getting position from id: ${id}`); // Log the input
+	const element = document.getElementById(id);
+	if (!element) {
+		console.log(`No element found with id ${id}`);
+		return "";
 	}
-	return "";
+
+	const elementId = element.id;
+	let position = "";
+	switch (true) {
+		case elementId.includes("goalkeeper"):
+			position = "GARDIEN";
+			break;
+		case elementId.includes("coach"):
+			position = "ENTRAÎNEUR";
+			break;
+		case elementId.includes("ailier-droit"):
+			position = "AILIER DROIT";
+			break;
+		case elementId.includes("ailier-gauche"):
+			position = "AILIER GAUCHE";
+			break;
+		case elementId.includes("arriere-droit"):
+			position = "ARRIÈRE DROIT";
+			break;
+		case elementId.includes("arriere-gauche"):
+			position = "ARRIÈRE GAUCHE";
+			break;
+		default:
+			position = "";
+	}
+	console.log(`Position for id ${id} is ${position}`); // Log the result
+	return position;
 }
 
 function createCarouselItem(player) {
