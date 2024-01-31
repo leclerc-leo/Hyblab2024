@@ -192,7 +192,7 @@ document
 			".carousel-item.selected"
 		);
 		const selectedPlayerName =
-			selectedPlayer.querySelector("h2").textContent;
+			selectedPlayer.querySelector("h1").textContent;
 		console.log(selectedPlayerName);
 		document.getElementById(selectedPlayerId).textContent =
 			selectedPlayerName;
