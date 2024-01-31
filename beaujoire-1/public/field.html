@@ -27,47 +27,76 @@
 				<div class="player-card">
 					<!-- Goalkeeper -->
 					<div
-						class="player goalkeeper"
+						class="player player-clickable goalkeeper"
+						id="goalkeeper"
 						style="top: 86%; left: 50%"></div>
 
 					<!-- Forward Line (3 players) -->
 					<div
-						class="player forward"
+						class="player player-clickable forward"
+						id="forward-1"
 						style="top: 21%; left: 20%"></div>
 					<div
-						class="player forward"
+						class="player player-clickable forward"
+						id="forward-2"
 						style="top: 17%; left: 50%"></div>
 					<div
-						class="player forward"
+						class="player player-clickable forward"
+						id="forward-3"
 						style="top: 21%; left: 80%"></div>
 
 					<!-- Midfield Line (3 players) -->
 					<div
-						class="player midfielder"
+						class="player player-clickable midfielder"
+						id="midfielder-1"
 						style="top: 50%; left: 25%"></div>
 					<div
-						class="player midfielder"
+						class="player player-clickable midfielder"
+						id="midfielder-2"
 						style="top: 40%; left: 50%"></div>
 					<div
-						class="player midfielder"
+						class="player player-clickable midfielder"
+						id="midfielder-3"
 						style="top: 50%; left: 75%"></div>
 
 					<!-- Defensive Line (4 players) -->
 					<div
-						class="player defender"
+						class="player player-clickable defender"
+						id="defender-1"
 						style="top: 65%; left: 15%"></div>
 					<div
-						class="player defender"
+						class="player player-clickable defender"
+						id="defender-2"
 						style="top: 72%; left: 39%"></div>
 					<div
-						class="player defender"
+						class="player player-clickable defender"
+						id="defender-3"
 						style="top: 72%; left: 61%"></div>
 					<div
-						class="player defender"
+						class="player player-clickable defender"
+						id="defender-4"
 						style="top: 65%; left: 85%"></div>
 				</div>
 			</div>
+
 			<button class="gm-btn gb-shutter">LE 11 DE LA RÉDACTION</button>
+			<div class="carousel-overlay">
+				<h1 id="poste-title"></h1>
+				<div class="carousel">
+					<div class="carousel-item">Joueur 1</div>
+					<div class="carousel-item">Joueur 2</div>
+					<div class="carousel-item">Joueur 3</div>
+					<!-- Ajoutez plus d'éléments de carrousel ici -->
+				</div>
+				<button
+					class="gm-btn gb-shutter"
+					id="validate-button"
+					style="display: none">
+					Valider
+				</button>
+				<button class="gm-btn gb-shutter close">X</button>
+			</div>
 		</div>
 	</body>
+	<script src="./js/field.js"></script>
 </html>
