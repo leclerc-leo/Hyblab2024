@@ -28,9 +28,9 @@ const initSlideIntro = async function () {
   anime({
     targets: bag,
     width: "75%",
-    bottom: "-50%",
+    top: "70%",
     easing: "easeInOutQuad",
     duration: 300,
   });
-
+  
 };

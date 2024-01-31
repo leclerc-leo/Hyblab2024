@@ -13,7 +13,7 @@ const initSlide2 = async function () {
     anime({
       targets: bag,
       width: "130%",
-      bottom: "-70%",
+      top: "60%",
       easing: "easeInOutQuad",
       duration: 100,
     });

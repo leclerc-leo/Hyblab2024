@@ -2,6 +2,19 @@
 /* ------- that adapts content width and height so that aspect ratio  ----------- */
 /* ------- is kept between 9/16 a,d 3/4 (portait orientation)         ----------- */
 
+
+/* Color palette */
+/* -------------- Main colors --------------*/
+/* 
+--noir: #212425;
+--blanc #e5dfca;
+--rouge #d85f45;
+--bleu #386f9c;
+--rose #de9b94;
+--vert #677f63;
+
+*/
+
 /* Normalize margin and padding to ease elements positioning */
 * {
   padding: 0;
@@ -47,7 +60,7 @@ body {
 
 /* white navigation bullets */
 .swiper-pagination-bullet-active {
-  background-color: lightblue !important;
+  background-color: #386f9c !important;
 }
 
 /* the slides and the loader should fill the whole 9:16 zone */
@@ -60,8 +73,8 @@ body {
 
 /* ---------- First slide -------------------- */
 #first-slide {
-  /* change background color*/
-  background-color: white;
+  /* change background color to red (defined in the color palette) */
+  background-color: #e5dfca;
 }
 
 #first-slide header {
@@ -70,8 +83,8 @@ body {
   position: absolute;
   font-size: 30%;
   z-index: 2;
-  color: black;
-  background-color: #f2f2f2;
+  color: #e5dfca;
+  background-color: #386f9c;
   border-radius: 10px;
   padding: 20px;
   top: 10%;
@@ -85,8 +98,8 @@ body {
   position: absolute;
   font-size: 35%;
   z-index: 2;
-  color: black;
-  background-color: #f2f2f2;
+  color: #e5dfca;
+  background-color: #386f9c;
   border-radius: 10px;
   padding: 20px;
   top: 40%;
@@ -118,7 +131,7 @@ body {
   position: absolute;
   height: auto;
   width: 17%;
-  top: 20.5%;
+  top: 16.5%;
   left: 13%;
   transform: translateX(-50%); 
   z-index: 2;
