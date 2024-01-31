@@ -1,0 +1,65 @@
+{
+    "Debut": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Bienvenue à ${quartier} !", "Je serai ton guide pendant tout ton séjour à Rennes. J’espère que tu t’y plairas !"],
+        "next": ["EntrerNom"]
+    },
+
+    "EntrerNom": {
+        "speaker": "user",
+        "type": "nom",
+        "choicesLabel": ["Bonjour, je m'appelle"],
+        "content": ["Bonjour, je m’appelle ${user_name} !"],
+        "next": ["Question1"]
+    },
+
+    "Question1": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Fais un choix"],
+        "next": ["Choix1"]
+    },
+
+    "Choix1": {
+        "speaker": "user",
+        "type": "choice",
+        "choicesLabel": ["Choix 1", "Choix 2", "Choix 3"],
+        "content": ["Je choisis 1", "Je choisis 2", "Je choisis 3"],
+        "next": ["ReponseChoix11", "ReponseChoix12", "ReponseChoix13"]
+    },
+
+    "ReponseChoix11": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Ok tu as pris le choix 1"],
+        "next": ["Suite1"]
+    },
+    
+    "ReponseChoix12": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Ok tu as pris le choix 2"],
+        "next": ["Suite1"]
+    },
+
+    "ReponseChoix13": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Ok tu as pris le choix 3"],
+        "next": ["Suite1"]
+    },
+
+    "Suite1": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Passons à la suite"],
+        "next": ["Fin"]
+    }
+}

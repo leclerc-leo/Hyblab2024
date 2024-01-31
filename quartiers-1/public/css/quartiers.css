@@ -156,7 +156,7 @@ h1{
     animation: slideInRight 1s;
     margin: 10px 10px 10px 10%;
 }
-.name_user{
+.user_name{
     display: flex;
     flex-direction: row-reverse;
     margin: 10px;

@@ -181,11 +181,13 @@ function getLastBubbleHeight(typeBubble) {
 
 // Initial speech bubbles
 
-addBubbleGuide(["Bonjour, bienvenue au quartier de XXXXXX, je peux te guider !","Bonjour, bienvenue au quartier de XXXXXX, je peux te guider !"]);
+
+addBubbleGuide(["Bonjour 🤑, bienvenue au quartier de XXXXXX, je peux te guider !","Bonjour, bienvenue au quartier de XXXXXX, je peux te guider !"]);
 addBubbleUser(["Salut! Merci de m'accueillir. J'aimerais en savoir plus sur le quartier."]);
 addChoiceBubble([],false);
 
-conversation.dequeue();
+
+//conversation.dequeue();
 // Add speech bubbles
 arrowDown.on("click", function () {
     if (!isTimeoutActive) {
@@ -199,3 +201,81 @@ arrowDown.on("click", function () {
         isTimeoutActive = false;
     }
 });
+
+function scrollSmoothlyToBottom() {
+    let div = $("#villejean-conversation");
+    console.log("Before Animation - scrollTop:", div.scrollTop());
+
+    div.animate({
+        scrollTop: div.prop("scrollHeight")
+    }, {
+        duration: 1000,
+        complete: function () {
+            console.log("After Animation - scrollTop:", div.scrollTop());
+        }
+    });
+ };
+
+function addBubble(bubbleJson) {
+    let bubbles;
+    let responseBubbles;
+
+    console.log(bubbleJson);
+
+    if (bubbleJson["speaker"] == "user") {
+        // put content into html
+        bubbles = '<div class="rp_user"><p class="name_user">'+ name_user +'</p><ul>';
+
+        bubbleJson["content"].forEach(content => {
+            bubbles += '<li class="cont_user">' + content + '</li>';
+        });
+        bubbles += '</ul></div>';
+
+        responseBubbles = $(bubbles);
+        conversation.append(responseBubbles);// add html to conversation div
+
+        // Scroll according to messages height
+        //scrollConversation(getLastBubbleHeight('.rp_user'));
+
+    } else {
+        // put content into html
+        bubbles = '<div class="rp_guide"><p class="name_guide">Guide</p><ul>';
+        bubbleJson["content"].forEach(content => {
+            bubbles += '<li class="cont_guide">' + content + '</li>';
+        });
+        bubbles += '</ul></div>';
+
+        responseBubbles = $(bubbles);
+        conversation.append(responseBubbles);// add html to conversation div
+
+        // Scroll according to messages height
+        //scrollConversation(getLastBubbleHeight('.rp_guide'));
+    }
+
+    setTimeout(() => { 
+        scrollSmoothlyToBottom();
+    }, 900);
+}
+
+/*
+fetch('./data/villejean.json')
+    .then((response) => response.json())
+    .then((bubbles) => {
+        console.log(bubbles);
+
+        let nextBubble = bubbles["Debut"];
+        console.log(nextBubble);
+
+        let i = 0;
+        while (i < 10) {
+            setTimeout(() => {
+                addBubble(nextBubble);
+
+            }, 1000*i);
+            i++;
+        }
+
+        //nextBubble = nextBubble["next"];
+    });
+
+*/
