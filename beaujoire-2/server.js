@@ -51,6 +51,15 @@ ui.get('/list', async (req, res) => {
     });
 });
 
+ui.get('/archives', async (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/archive.html'), {
+        locals: {
+            pageName: 'Archives'
+        }
+    });
+});
+
+
 app.use('/', ui);
 // This module is exported and served by the main server.js located
 // at the root of this set of projects. You can access it by lanching the main
