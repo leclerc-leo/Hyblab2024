@@ -4,6 +4,8 @@
 .main_app .app {
   max-width: 450px;
   width: auto;
+  border-radius: 5%;
+
 }
 
 /* Styles pour le titre de l'application */
@@ -25,9 +27,12 @@
 }
 .head{
   text-align: center;
-  width: 20em;
+  width: 100%;
 }
 
+.ratio .container{
+  --bs-gutter-x: 0;
+}
 .main .ratio {
   position: initial; 
 }
