@@ -84,6 +84,9 @@ function getPositionFromId(id) {
 		case elementId.includes("arriere-gauche"):
 			position = "ARRIÈRE GAUCHE";
 			break;
+		case elementId.includes("midfielder-lead"):
+			position = "MENEUR";
+			break;
 		default:
 			position = "";
 	}
@@ -94,13 +97,27 @@ function getPositionFromId(id) {
 function createCarouselItem(player) {
 	const carouselItem = document.createElement("div");
 	carouselItem.classList.add("carousel-item");
-	carouselItem.innerHTML = `
-                <h2>${player.NOM}</h2>
-                <p>Numéro: ${player.NUMÉRO}</p>
-                <p>Durée: ${player.DURÉE}</p>
-                <p>Matchs: ${player.MATCHS}</p>
-                <p>Buts: ${player.BUTS || "N/A"}</p>
-            `;
+	let photo = player.PHOTO;
+	if (photo !== "" && photo !== "N/A" && photo !== undefined) {
+		carouselItem.innerHTML = `
+            <img src="img/cartes/${player.PHOTO}.png" alt="Photo de ${
+			player.NOM
+		}" />
+            <h2>${player.NOM}</h2>
+            <p>Numéro: ${player.NUMÉRO}</p>
+            <p>Durée: ${player.DURÉE}</p>
+            <p>Matchs: ${player.MATCHS}</p>
+            <p>Buts: ${player.BUTS || "N/A"}</p>
+        `;
+	} else {
+		carouselItem.innerHTML = `
+            <h2>${player.NOM}</h2>
+            <p>Numéro: ${player.NUMÉRO}</p>
+            <p>Durée: ${player.DURÉE}</p>
+            <p>Matchs: ${player.MATCHS}</p>
+            <p>Buts: ${player.BUTS || "N/A"}</p>
+        `;
+	}
 
 	carouselItem.addEventListener("click", handleCarouselItemClick);
 

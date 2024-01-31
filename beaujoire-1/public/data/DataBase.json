@@ -8,7 +8,8 @@
         "BUTS": "",
         "COUPES": "Champion de FRANCE X4 Coupe de FRANCE X1",
         "TAILLE": "1.92",
-        "BIO": "Du haut de ses 1 mètre 92, il aurait pu jouer le géant « Jaws » dans James Bond. Il a plutôt choisi de garder la cage des canaris pendant 650 matchs avec de nombreux titres à la clef. Surnommé « le grand », son match vedette reste sans doute la double confrontation en C3 contre le Legia Varsovie où le portier a évité à Nantes de couler, même blessé !"
+        "BIO": "Du haut de ses 1 mètre 92, il aurait pu jouer le géant « Jaws » dans James Bond. Il a plutôt choisi de garder la cage des canaris pendant 650 matchs avec de nombreux titres à la clef. Surnommé « le grand », son match vedette reste sans doute la double confrontation en C3 contre le Legia Varsovie où le portier a évité à Nantes de couler, même blessé !",
+        "CARTE": "fcn-43"
     },
     {
         "NOM": "MARRAUD",
@@ -19,7 +20,8 @@
         "BUTS": "",
         "COUPES": "Champion de FRANCE X1 DEMI-FINALE Ligue des Champions",
         "TAILLE": "1.82",
-        "BIO": ""
+        "BIO": "",
+        "CARTE": "fcn-57"
     },
     {
         "NOM": "LANDREAU",
@@ -30,7 +32,8 @@
         "BUTS": "",
         "COUPES": "Coupe de France X2 Champion de France X1",
         "TAILLE": "1.84",
-        "BIO": "Un Rennais retiendra sa panenka ratée lors de la finale de Coupe de la Ligue contre Sochaux en 2004. Les Jaunes et verts savourent plutôt le fait d’avoir un gardien qui détient le record du nombre de matchs disputés en Ligue 1 (618). Micka est l’une des fiertés du club et a passé la moitié de sa carrière à la Beaujoire. Une muraille légendaire."
+        "BIO": "Un Rennais retiendra sa panenka ratée lors de la finale de Coupe de la Ligue contre Sochaux en 2004. Les Jaunes et verts savourent plutôt le fait d’avoir un gardien qui détient le record du nombre de matchs disputés en Ligue 1 (618). Micka est l’une des fiertés du club et a passé la moitié de sa carrière à la Beaujoire. Une muraille légendaire.",
+        "CARTE": "fcn-54"
     },
     {
         "NOM": "LAFONT",
@@ -41,7 +44,8 @@
         "BUTS": "",
         "COUPES": "Coupe de FRANCE X1",
         "TAILLE": "1.96",
-        "BIO": ""
+        "BIO": "",
+        "CARTE": "fcn-52"
     },
     {
         "NOM": "CASAGRANDE",
@@ -52,7 +56,8 @@
         "BUTS": "",
         "COUPES": "Champion de FRANCE X1 DEMI-FINALE Ligue des Champions",
         "TAILLE": "1.89",
-        "BIO": "En 1994, il arrive comme deuxième gardien. Il devient un titulaire mythique après la blessure de David Marraud lors de la même saison. Pilier du parcours historique jusqu’en demi-finale de Ligue des champions face à la Juventus, il présente un parcours atypique. Après sa carrière, Casagrande s’est mué en véritable businessman, pas mal pour négocier votre victoire."
+        "BIO": "En 1994, il arrive comme deuxième gardien. Il devient un titulaire mythique après la blessure de David Marraud lors de la même saison. Pilier du parcours historique jusqu’en demi-finale de Ligue des champions face à la Juventus, il présente un parcours atypique. Après sa carrière, Casagrande s’est mué en véritable businessman, pas mal pour négocier votre victoire.",
+        "CARTE": "fcn-"
     },
     {
         "NOM": "BOSSIS",
@@ -63,7 +68,8 @@
         "BUTS": "23",
         "COUPES": "Champion de FRANCE X3 Coupe de FRANCE X1",
         "TAILLE": "1.86",
-        "BIO": ""
+        "BIO": "",
+        "CARTE": "fcn-24"
     },
     {
         "NOM": "BIBARD",
@@ -74,7 +80,8 @@
         "BUTS": "5",
         "COUPES": "",
         "TAILLE": "1.85",
-        "BIO": ""
+        "BIO": "",
+        "CARTE": "fcn-44"
     },
     {
         "NOM": "LE DIZET",
@@ -85,7 +92,8 @@
         "BUTS": "1",
         "COUPES": "Champion de FRANCE X1 DEMI-FINALE ligue des Champions",
         "TAILLE": "1.83",
-        "BIO": ""
+        "BIO": "",
+        "CARTE": "fcn-34"
     },
     {
         "NOM": "DUBOIS",
@@ -96,7 +104,8 @@
         "BUTS": "4",
         "COUPES": "",
         "TAILLE": "1.78",
-        "BIO": ""
+        "BIO": "",
+        "CARTE": "fcn-29"
     },
     {
         "NOM": "DEROFF",
@@ -107,7 +116,8 @@
         "BUTS": "1",
         "COUPES": "Champion de FRANCE X1 Coupe de FRANCE X2",
         "TAILLE": "1.75",
-        "BIO": ""
+        "BIO": "",
+        "CARTE": "fcn-47"
     },
     {
         "NOM": "AYACHE",
@@ -118,7 +128,8 @@
         "BUTS": "2",
         "COUPES": "",
         "TAILLE": "1.76",
-        "BIO": ""
+        "BIO": "",
+        "CARTE": "fcn-"
     },
     {
         "NOM": "ARMAND",
@@ -129,7 +140,8 @@
         "BUTS": "12",
         "COUPES": "Champion de FRANCE X1 Trophée des Champions X1",
         "TAILLE": "1.82",
-        "BIO": ""
+        "BIO": "",
+        "CARTE": "fcn-42"
     },
     {
         "NOM": "PIGNOL",
@@ -140,7 +152,8 @@
         "BUTS": "4",
         "COUPES": "Champion de FRANCE X1",
         "TAILLE": "1.78",
-        "BIO": ""
+        "BIO": "",
+        "CARTE": "fcn-60"
     },
     {
         "NOM": "SAVINAUD",
@@ -151,7 +164,8 @@
         "BUTS": "20",
         "COUPES": "Champion de FRANCE X1 Trophée des Champions X1 Coupe de FRANCE X1",
         "TAILLE": "1.83",
-        "BIO": ""
+        "BIO": "",
+        "CARTE": "fcn-63"
     },
     {
         "NOM": "LIMA",
@@ -162,7 +176,8 @@
         "BUTS": "4",
         "COUPES": "",
         "TAILLE": "1.79",
-        "BIO": ""
+        "BIO": "",
+        "CARTE": "fcn-56"
     },
     {
         "NOM": "DESSAILLY",
@@ -173,7 +188,8 @@
         "BUTS": "5",
         "COUPES": "",
         "TAILLE": "1.85",
-        "BIO": ""
+        "BIO": "",
+        "CARTE": "fcn-"
     },
     {
         "NOM": "FABBRI",
@@ -184,7 +200,8 @@
         "BUTS": "12",
         "COUPES": "Champion de FRANCE X1",
         "TAILLE": "1.85",
-        "BIO": ""
+        "BIO": "",
+        "CARTE": "fcn-30"
     },
     {
         "NOM": "Y. LE ROUX",
@@ -195,7 +212,8 @@
         "BUTS": "11",
         "COUPES": "",
         "TAILLE": "1.89",
-        "BIO": ""
+        "BIO": "",
+        "CARTE": "fcn-55"
     },
     {
         "NOM": "DIEGO CARLOS",
@@ -206,7 +224,8 @@
         "BUTS": "4",
         "COUPES": "",
         "TAILLE": "1.86",
-        "BIO": ""
+        "BIO": "",
+        "CARTE": "fcn-48"
     },
     {
         "NOM": "NAYBET",
@@ -217,7 +236,8 @@
         "BUTS": "1",
         "COUPES": "",
         "TAILLE": "1.86",
-        "BIO": ""
+        "BIO": "",
+        "CARTE": "fcn-"
     },
     {
         "NOM": "YEPES",
@@ -228,7 +248,8 @@
         "BUTS": "7",
         "COUPES": "",
         "TAILLE": "1.86",
-        "BIO": ""
+        "BIO": "",
+        "CARTE": "fcn-65"
     },
     {
         "NOM": "GUYOT",
@@ -239,7 +260,8 @@
         "BUTS": "3",
         "COUPES": "Champion de FRANCE X1",
         "TAILLE": "1.86",
-        "BIO": ""
+        "BIO": "",
+        "CARTE": "fcn-50"
     },
     {
         "NOM": "PALLOIS",
@@ -250,7 +272,8 @@
         "BUTS": "6",
         "COUPES": "Coupe de FRANCE X1",
         "TAILLE": "1.90",
-        "BIO": ""
+        "BIO": "",
+        "CARTE": "fcn-37"
     },
     {
         "NOM": "GIROTTO",
@@ -261,7 +284,8 @@
         "BUTS": "12",
         "COUPES": "Coupe de FRANCE X1",
         "TAILLE": "1.86",
-        "BIO": ""
+        "BIO": "",
+        "CARTE": "fcn-49"
     },
     {
         "NOM": "RIO",
@@ -272,7 +296,8 @@
         "BUTS": "33",
         "COUPES": "Champion de FRANCE X4 Coupe de FRANCE X1",
         "TAILLE": "1.82",
-        "BIO": ""
+        "BIO": "",
+        "CARTE": "fcn-62"
     },
     {
         "NOM": "ADONKOR",
@@ -283,7 +308,8 @@
         "BUTS": "2",
         "COUPES": "Champion de FRANCE X1",
         "TAILLE": "1.82",
-        "BIO": ""
+        "BIO": "",
+        "CARTE": "fcn-"
     },
     {
         "NOM": "FERRI",
@@ -294,7 +320,8 @@
         "BUTS": "24",
         "COUPES": "Champion de FRANCE X1 DEMI-FINALE Ligue des Champions X1",
         "TAILLE": "1.85",
-        "BIO": ""
+        "BIO": "",
+        "CARTE": "fcn-31"
     },
     {
         "NOM": "DESCHAMPS",
@@ -305,7 +332,8 @@
         "BUTS": "4",
         "COUPES": "",
         "TAILLE": "1.74",
-        "BIO": ""
+        "BIO": "",
+        "CARTE": "fcn-25"
     },
     {
         "NOM": "MAKÉLÉLÉ",
@@ -316,7 +344,8 @@
         "BUTS": "12",
         "COUPES": "Champion de FRANCE X1",
         "TAILLE": "1.74",
-        "BIO": ""
+        "BIO": "",
+        "CARTE": "fcn-35"
     },
     {
         "NOM": "KAREMBEU",
@@ -327,7 +356,8 @@
         "BUTS": "6",
         "COUPES": "Champion de FRANCE X1",
         "TAILLE": "1.77",
-        "BIO": ""
+        "BIO": "",
+        "CARTE": "fcn-32"
     },
     {
         "NOM": "DA ROCHA",
@@ -338,7 +368,8 @@
         "BUTS": "56",
         "COUPES": "Champion de FRANCE X1 Coupe de FRANCE X1 Trophée des CHAMPIONS X1",
         "TAILLE": "1.77",
-        "BIO": ""
+        "BIO": "",
+        "CARTE": "fcn-28"
     },
     {
         "NOM": "MONTERRUBIO",
@@ -349,7 +380,8 @@
         "BUTS": "35",
         "COUPES": "Champion de FRANCE X1 Coupe de FRANCE X1 Trophée des CHAMPIONS X1",
         "TAILLE": "1.72",
-        "BIO": ""
+        "BIO": "",
+        "CARTE": "fcn-59"
     },
     {
         "NOM": "QUINT",
@@ -360,7 +392,8 @@
         "BUTS": "13",
         "COUPES": "Trophée des CHAMPIONS X1",
         "TAILLE": "1.72",
-        "BIO": ""
+        "BIO": "",
+        "CARTE": "fcn-"
     },
     {
         "NOM": "BLAS",
@@ -371,7 +404,8 @@
         "BUTS": "45",
         "COUPES": "Coupe de FRANCE X1",
         "TAILLE": "1.80",
-        "BIO": ""
+        "BIO": "",
+        "CARTE": "fcn-"
     },
     {
         "NOM": "C. LE ROUX",
@@ -382,7 +416,8 @@
         "BUTS": "12",
         "COUPES": "",
         "TAILLE": "1.77",
-        "BIO": ""
+        "BIO": "",
+        "CARTE": "fcn-"
     },
     {
         "NOM": "PEDROS",
@@ -393,7 +428,8 @@
         "BUTS": "34",
         "COUPES": "Champion de FRANCE X1",
         "TAILLE": "1.72",
-        "BIO": ""
+        "BIO": "",
+        "CARTE": "fcn-"
     },
     {
         "NOM": "RONGIER",
@@ -404,7 +440,8 @@
         "BUTS": "10",
         "COUPES": "",
         "TAILLE": "1.73",
-        "BIO": ""
+        "BIO": "",
+        "CARTE": "fcn-38"
     },
     {
         "NOM": "VERETOUT",
@@ -415,7 +452,8 @@
         "BUTS": "15",
         "COUPES": "",
         "TAILLE": "1.77",
-        "BIO": ""
+        "BIO": "",
+        "CARTE": "fcn-41"
     },
     {
         "NOM": "CHIRIVELLA",
@@ -426,7 +464,8 @@
         "BUTS": "4",
         "COUPES": "Coupe de FRANCE X1",
         "TAILLE": "1.78",
-        "BIO": ""
+        "BIO": "",
+        "CARTE": "fcn-"
     },
     {
         "NOM": "TOULALAN",
@@ -437,7 +476,8 @@
         "BUTS": "2",
         "COUPES": "",
         "TAILLE": "1.83",
-        "BIO": ""
+        "BIO": "",
+        "CARTE": "fcn-"
     },
     {
         "NOM": "MOLDOVAN",
@@ -448,7 +488,8 @@
         "BUTS": "50",
         "COUPES": "Champion de FRANCE X1 Trophée des Champion X1",
         "TAILLE": "1.77",
-        "BIO": ""
+        "BIO": "",
+        "CARTE": "fcn-58"
     },
     {
         "NOM": "HALIHODZIC",
@@ -459,7 +500,8 @@
         "BUTS": "111",
         "COUPES": "Champion de FRANCE X1",
         "TAILLE": "1.82",
-        "BIO": ""
+        "BIO": "",
+        "CARTE": "fcn-"
     },
     {
         "NOM": "OUEDEC",
@@ -470,7 +512,8 @@
         "BUTS": "83",
         "COUPES": "Champion de FRANCE X1",
         "TAILLE": "1.80",
-        "BIO": ""
+        "BIO": "",
+        "CARTE": "fcn-"
     },
     {
         "NOM": "KOLO MUANI",
@@ -481,7 +524,8 @@
         "BUTS": "23",
         "COUPES": "Coupe de FRANCE X1",
         "TAILLE": "1.87",
-        "BIO": ""
+        "BIO": "",
+        "CARTE": "fcn-33"
     },
     {
         "NOM": "SALA",
@@ -492,7 +536,8 @@
         "BUTS": "48",
         "COUPES": "",
         "TAILLE": "1.97",
-        "BIO": ""
+        "BIO": "",
+        "CARTE": "fcn-39"
     },
     {
         "NOM": "TOURÉ",
@@ -503,7 +548,8 @@
         "BUTS": "73",
         "COUPES": "Champion de FRANCE X2",
         "TAILLE": "1.87",
-        "BIO": ""
+        "BIO": "",
+        "CARTE": "fcn-51"
     },
     {
         "NOM": "CARRIÈRE",
@@ -514,7 +560,8 @@
         "BUTS": "18",
         "COUPES": "Champion de FRANCE X1 Coupe de FRANCE X2",
         "TAILLE": "1.73",
-        "BIO": ""
+        "BIO": "",
+        "CARTE": "fcn-27"
     },
     {
         "NOM": "BURRUCHAGA",
@@ -525,7 +572,8 @@
         "BUTS": "27",
         "COUPES": "",
         "TAILLE": "1.77",
-        "BIO": ""
+        "BIO": "",
+        "CARTE": "fcn-26"
     },
     {
         "NOM": "ZIANI",
@@ -536,7 +584,8 @@
         "BUTS": "19",
         "COUPES": "Champion de FRANCE X1 Trophée des champions X1",
         "TAILLE": "1.67",
-        "BIO": ""
+        "BIO": "",
+        "CARTE": "fcn-66"
     },
     {
         "NOM": "N'DORAM",
@@ -547,7 +596,8 @@
         "BUTS": "87",
         "COUPES": "Champion de FRANCE X1 DEMI-FINALE ligue des champions X1",
         "TAILLE": "1.82",
-        "BIO": ""
+        "BIO": "",
+        "CARTE": "fcn-36"
     },
     {
         "NOM": "AMISSE",
@@ -558,7 +608,8 @@
         "BUTS": "111",
         "COUPES": "Champion de FRANCE X3 Coupe de FRANCE X1",
         "TAILLE": "1.66",
-        "BIO": ""
+        "BIO": "",
+        "CARTE": "fcn-23"
     },
     {
         "NOM": "LOKO",
@@ -569,7 +620,8 @@
         "BUTS": "49",
         "COUPES": "Champion de FRANCE X1",
         "TAILLE": "1.78",
-        "BIO": ""
+        "BIO": "",
+        "CARTE": "fcn-22"
     },
     {
         "NOM": "VAHIRUA",
@@ -580,7 +632,8 @@
         "BUTS": "52",
         "COUPES": "Trophée des Champions X1 Coupe de FRANCE X1 Champion de FRANCE X1",
         "TAILLE": "1.72",
-        "BIO": ""
+        "BIO": "",
+        "CARTE": "fcn-40"
     },
     {
         "NOM": "SIMON",
@@ -591,7 +644,8 @@
         "BUTS": "29",
         "COUPES": "Coupe de FRANCE X1",
         "TAILLE": "1.68",
-        "BIO": ""
+        "BIO": "",
+        "CARTE": "fcn-"
     },
     {
         "NOM": "BARONCHELLI",
@@ -602,7 +656,8 @@
         "BUTS": "81",
         "COUPES": "Champion de FRANCE X3 Coupe de FRANCE X1",
         "TAILLE": "1.74",
-        "BIO": ""
+        "BIO": "",
+        "CARTE": "fcn-"
     },
     {
         "NOM": "DER ZAKARIAN",
@@ -613,7 +668,8 @@
         "BUTS": "",
         "COUPES": "",
         "TAILLE": "",
-        "BIO": ""
+        "BIO": "",
+        "CARTE": "fcn-46"
     },
     {
         "NOM": "SUAUDEAU",
@@ -623,8 +679,9 @@
         "MATCHS": "168 victoires 114 nuls 95 défaites",
         "BUTS": "",
         "COUPES": "Champion de FRANCE X2 Demi-finale Ligue des Champions",
-        "TAILLE": "Pour les 70 ans du club nantais, Jean-Claude Suaudeau avait déclaré : « Le foot m’a marqué principalement parce qu’il faut courir. Toute ta vie, pendant quarante saisons, tu cours, et il ne faut pas que les autres te rattrapent. Mais avec beaucoup d’envie de courir ensemble, je n’ai pas vu les saisons passer. » Une ode à l’amour du club pour qui il a conquis de nombreux titres.",
-        "BIO": ""
+        "TAILLE": "",
+        "BIO": "Pour les 70 ans du club nantais, Jean-Claude Suaudeau avait déclaré : « Le foot m’a marqué principalement parce qu’il faut courir. Toute ta vie, pendant quarante saisons, tu cours, et il ne faut pas que les autres te rattrapent. Mais avec beaucoup d’envie de courir ensemble, je n’ai pas vu les saisons passer. » Une ode à l’amour du club pour qui il a conquis de nombreux titres.",
+        "CARTE": "fcn-64"
     },
     {
         "NOM": "DENOUEIX",
@@ -635,7 +692,8 @@
         "BUTS": "",
         "COUPES": "Coupe de France X2 Champion de France X1",
         "TAILLE": "",
-        "BIO": ""
+        "BIO": "",
+        "CARTE": "fcn-45"
     },
     {
         "NOM": "KOMBOUARÉ",
@@ -645,14 +703,20 @@
         "MATCHS": "42 victoires 28 nuls 39 défaites",
         "BUTS": "",
         "COUPES": "Coupe de France X1",
-        "TAILLE": "Défenseur rugueux et solide du FC Nantes dans les années 80, il revient au club comme entraîneur trente ans plus tard. Il amène le club en finale de Coupe de France face à Nice et la remporte (1-0). Il réalise l’exploit d’atteindre une deuxième fois la finale un an plus tard. Un vrai leader, il contribue au beau parcours de Nantes en Europa League, toujours avec sa casquette !",
-        "BIO": ""
+        "TAILLE": "",
+        "BIO": "Défenseur rugueux et solide du FC Nantes dans les années 80, il revient au club comme entraîneur trente ans plus tard. Il amène le club en finale de Coupe de France face à Nice et la remporte (1-0). Il réalise l’exploit d’atteindre une deuxième fois la finale un an plus tard. Un vrai leader, il contribue au beau parcours de Nantes en Europa League, toujours avec sa casquette !",
+        "CARTE": "fcn-53"
     },
     {
         "NOM": "RANIERI",
         "POSTE": "entraîneur",
         "NUMÉRO": "",
         "DURÉE": "17-18",
-        "MATCHS": "14 victoires / 10 nuls / 16 défaites"
+        "MATCHS": "14 victoires / 10 nuls / 16 défaites",
+        "BUTS": "",
+        "COUPES": "",
+        "TAILLE": "",
+        "BIO": "",
+        "CARTE": "fcn-61"
     }
 ]
