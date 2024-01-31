@@ -3,30 +3,42 @@
 // ---------- Initialisation des boutons de réponse ----------
 function changeState(imageId, yesButtons, noButtons) {
     let buttonToChange = localStorage.getItem(imageId);
-    console.log("imageId : " + imageId + " buttonToChange : " + buttonToChange);
     if (buttonToChange) {
-        // on a cliqué sur le bouton non
-        if (buttonToChange === 'yes') {
-            let yesImage = yesButtons[imageId.slice(-1) - 1];
-            yesImage.src = "./img/boutons/bouton_oui_gris.svg";
-            // on met le bouton non en rose
-            let noImage = noButtons[imageId.slice(-1) - 1];
-            noImage.src = "./img/boutons/bouton_non_rose.svg";
+      // on a cliqué sur le bouton non
+      if (buttonToChange === 'yes') {
+        let yesSvg = yesButtons[imageId.slice(-1) - 1].firstChild;
+        // on change la couleur dans le style du svg de "cls-2"
+        console.log("yesSvg");
+        console.log(yesSvg);
+        let elemBgColor_svg = yesSvg.contentDocument.querySelector('#bg-color');
+        elemBgColor_svg.classList.remove("vert");
+        elemBgColor_svg.classList.add("gris");
 
-            // on enlève dans le localStorage le bouton oui
-            localStorage.removeItem('yes' + imageId.slice(-1));
-        }
-        // on a cliqué sur le bouton oui
-        else {
-            let noImage = noButtons[imageId.slice(-1) - 1];
-            noImage.src = "./img/boutons/bouton_non_gris.svg";
-            // on met le bouton oui en vert
-            let yesImage = yesButtons[imageId.slice(-1) - 1];
-            yesImage.src = "./img/boutons/bouton_oui_vert.svg";
+        // on met le bouton non en rose
+        let noImage = noButtons[imageId.slice(-1) - 1].firstChild
+        elemBgColor_svg = noImage.contentDocument.querySelector('#bg-color');
+        elemBgColor_svg.classList.remove("gris");
+        elemBgColor_svg.classList.add("rose");
 
-            // on enlève dans le localStorage le bouton non
-            localStorage.removeItem('no' + imageId.slice(-1));
-        }
+        // on enlève dans le localStorage le bouton oui
+        localStorage.removeItem('yes' + imageId.slice(-1));
+      }
+      // on a cliqué sur le bouton oui
+      else {
+        let noImage = noButtons[imageId.slice(-1) - 1].firstChild;
+        let elemBgColor_svg = noImage.contentDocument.querySelector('#bg-color');
+        elemBgColor_svg.classList.remove("rose");
+        elemBgColor_svg.classList.add("gris");
+
+        // on met le bouton oui en vert
+        let yesImage = yesButtons[imageId.slice(-1) - 1].firstChild
+        elemBgColor_svg = yesImage.contentDocument.querySelector('#bg-color');
+        elemBgColor_svg.classList.remove("gris");
+        elemBgColor_svg.classList.add("vert");
+
+        // on enlève dans le localStorage le bouton non
+        localStorage.removeItem('no' + imageId.slice(-1));
+      }
     }
 }
 
@@ -105,9 +117,7 @@ const homeStories = function () {
 
     // get recap button
     let recap = document.querySelector('#recap_button');
-    console.log(recap);
     recap.addEventListener('click', () => {
-      console.log("Clicked on recap button")
       fetch('/quartiers-2/recap.html')
         .then(res => res.text())
         .then(html => {
@@ -167,7 +177,6 @@ const homeStories = function () {
 
         // on met la bonne slide active
         swiper.slideToLoop(slideIndex, 0, true);
-        console.log("slideIndex of " + slideIndex + " is active for story " + i);
 
         // on cache les stories
         stories.forEach(story => {
@@ -181,8 +190,16 @@ const homeStories = function () {
         let yesImages = document.querySelectorAll('.yesButton');
         let noImages = document.querySelectorAll('.noButton');
 
+        console.log("yesImages");
+        console.log(yesImages);
+        console.log("noImages");
+        console.log(noImages);
+
         yesImages.forEach((image, index) => {
+          console.log("index : " + index)
+          console.log(image)
           image.addEventListener('click', function() {
+              console.log('clicked')
               localStorage.setItem('yes' + (index + 1), 'yes');
               changeState('no' + (index + 1), yesImages, noImages);
             });
