@@ -31,6 +31,30 @@ function changeState(imageId, yesButtons, noButtons) {
 }
 
 const homeStories = function () {
+    anime({
+    targets: '#swipe_invite',
+    scale: 1.1,
+    easing: 'easeInOutQuad',
+    direction: 'alternate',
+    loop: true
+  });
+
+  /* Premier slider pour choisir quel story cliquer */
+  // Init of the (touch friendly) Swiper slider
+    const swiperHomeStories = new Swiper("#swiperHomeStories", {
+      direction: "horizontal",
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      autoHeight: true,
+      allowTouchMove: true, // à mettre en false quand on aura fini de coder pour eviter de swiper
+    });
+
+    document.querySelector('#swipe_invite').addEventListener('click', () => {
+        swiperHomeStories.slideNext();
+    });
+
     // on cache le slider au chargement de la page
     document.querySelector('#mySwiper').style.display = 'none';
 
@@ -79,7 +103,6 @@ const homeStories = function () {
     });
 
 
-    console.log("test")
     // get recap button
     let recap = document.querySelector('#recap_button');
     console.log(recap);
@@ -93,7 +116,7 @@ const homeStories = function () {
     });
 
     /* a factoriser */
-    let credits = document.querySelector('#bandeau');
+    let credits = document.querySelector('footer');
     credits.addEventListener('click', () => {
       fetch('/quartiers-2/credits.html')
         .then(res => res.text())
@@ -116,6 +139,8 @@ const homeStories = function () {
 
     let stories = document.querySelectorAll(".story");
     let swiper_slides = document.querySelectorAll(".swiper-slide");
+    // on récupère la deuxième moitié des slides
+    swiper_slides = Array.prototype.slice.call(swiper_slides, swiper_slides.length - stories.length, swiper_slides.length);
 
     // Pour chaque story, on va chercher le contenu de la slide correspondante et ajouter un event listener
     for (let i = 1; i <= stories.length; i++) {
@@ -136,6 +161,9 @@ const homeStories = function () {
       story.addEventListener('click', () => {
         // on enleve le bouton recap
         recap.style.display = 'none';
+
+        // on met le z-index du footer à 0
+        document.querySelector('footer').style.zIndex = "0";
 
         // on met la bonne slide active
         swiper.slideToLoop(slideIndex, 0, true);
@@ -169,6 +197,9 @@ const homeStories = function () {
       });
     }
 
+
+
+
     // on récupère la fleche de retour
     let retour = document.querySelector('#back_button');
 
@@ -193,6 +224,8 @@ const homeStories = function () {
         story.style.display = 'block';
       });
       document.querySelector('#mySwiper').style.display = 'none';
+      // on remet le footer
+      document.querySelector('footer').style.zIndex = "6";
       // on remet l'utilisateur en haut de la page
     });
   };
