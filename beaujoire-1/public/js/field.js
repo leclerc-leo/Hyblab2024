@@ -6,12 +6,16 @@ document.querySelectorAll(".player-clickable").forEach((player) => {
 	player.addEventListener("click", handlePlayerClick);
 });
 
-document.querySelector(".close").addEventListener("click", () => {
+document.querySelector("#back-overlay").addEventListener("click", () => {
 	document.querySelectorAll(".carousel-item").forEach((item) => {
 		item.classList.remove("selected");
 	});
 	document.querySelector(".carousel-overlay").style.display = "none";
 	selectedPlayerId = null;
+});
+
+document.querySelector("#bio-btn").addEventListener("click", () => {
+	document.querySelector(".bio-overlay").style.display = "flex";
 });
 
 function handlePlayerClick(event) {
