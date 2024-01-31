@@ -56,7 +56,10 @@ body {
   height: 100%;
 }
 
-
+svg {
+  height: -webkit-fill-available;
+  width: unset;
+}
 
 
 #logo-hyblab {
@@ -86,8 +89,12 @@ body {
 }
 
 #second-slide {
-  background-color: rgb(53, 49, 49);
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 
 
 
@@ -152,80 +159,6 @@ body {
 
 .swiper-slide {
     overflow: hidden;
-}
-
-
-#gourde {
-    display: flex;
-    position: absolute;
-    width: 50%;
-    top: 67%;
-    left: 40%;
-}
-#gourde .cls-1:hover{
-    fill: red;
-}
-#gourde .cls-2:hover{
-    fill: red;
-}
-#gourde .cls-3:hover{
-    fill: red;
-}
-
-#medaille {
-    display: flex;
-    position: absolute;
-    width: 50%;
-    top: 47%;
-    left: 40%;
-}
-
-#manique {
-    display: flex;
-    position: absolute;
-    width: 50%;
-    top: 27%;
-    left: 40%;
-}
-
-#tel {
-    display: flex;
-    position: absolute;
-    width: 50%;
-    top: 7%;
-    left: 40%;
-}
-
-#algerie {
-    display: flex;
-    position: absolute;
-    width: 50%;
-    top: 47%;
-    left: 20%;
-}
-
-#coupe {
-    display: flex;
-    position: absolute;
-    width: 70%;
-    top: -3%;
-    left: 1%;
-}
-
-#cupcake {
-    display: flex;
-    position: absolute;
-    width: 70%;
-    top: 11%;
-    left: 33%;
-}
-
-#photo {
-    display: flex;
-    position: absolute;
-    width: 60%;
-    top: -7%;
-    left: 50%;
 }
 
 #Sac :hover {
