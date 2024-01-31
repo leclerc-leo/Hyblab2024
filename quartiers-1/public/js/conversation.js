@@ -58,7 +58,7 @@ function addBubble(speaker, content) {
 }
 
 function addNameBubble(bubbleJson) {
-    let choiceBubblesContent = '<div class="choices"><label for="username_input">' + bubbleJson["choicesLabel"][0] + '<input type="text" id="username_input" name="username_input" required minlength="2" maxlength="20" size="10" onkeydown="saveUsername(event)"/> ! </label></div>';
+    let choiceBubblesContent = '<div class="choices"><label for="username_input">' + bubbleJson["choicesLabel"][0] + '<input type="text" id="username_input" name="username_input" placeholder="votre nom" required minlength="2" maxlength="20" size="10" onkeydown="saveUsername(event)"/> ! </label></div>';
         
     conversation.append(choiceBubblesContent);// add html to conversation div
 }

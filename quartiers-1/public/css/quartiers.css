@@ -134,9 +134,9 @@ h1{
     display: flex;
     flex-direction: column;
     color: white;
-    padding: 0.45em;
+    padding: 0.65em;
     margin-bottom: 5px;
-    border-radius: 10px;
+    border-radius: 18px;
 }
 .cont_guide img, .cont_user img{
     width: 100%;
@@ -146,6 +146,12 @@ h1{
 }
 .cont_user{
     background-color: #7D7DB5
+}
+.cont_guide:last-child{
+    border-bottom-left-radius: 0;
+}
+.cont_user:last-child{
+    border-bottom-right-radius: 0;
 }
 .cont_guide:last-child::before {
     content: '';
@@ -204,21 +210,21 @@ h1{
 
 /* --- Choice bubbles--- */
 .choices{
+    position: absolute;
+    bottom: 0;
     width: 100%;
+    padding: 5% 0 5% 0;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     color: white;
-    background-color: #7D7DB5;
-    position: absolute;
-    bottom: 0;
-    padding: 2% 0 2% 0;
+    background-color: #7D7DB5; 
 }
 .choice-bubbles{
     padding: 0.45em;
-    margin: 4px 10px 4px 0px;
+    margin: 4px 1em 4px 1em;
     color: white;
     background-color: #7D7DB5;
     border: solid thin white;
@@ -233,7 +239,12 @@ h1{
     color: white;
     border-radius: 20px;
     border: solid thin white;
+    text-align: center;
+    letter-spacing: 1px;
 }
+#username_input::placeholder {
+    color: white;
+  }
 
 /* ---- Videos ---- */
 .videos{
