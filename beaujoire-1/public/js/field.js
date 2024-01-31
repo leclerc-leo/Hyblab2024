@@ -34,7 +34,7 @@ function showCarousel(id) {
 		.then((response) => response.json())
 		.then((players) => {
 			const filteredPlayers = players.filter(
-				(player) => player.POSTE === poste
+				(player) => player.POSTE.toLowerCase() === poste.toLowerCase()
 			);
 			console.log(
 				`Found ${filteredPlayers.length} players for position ${poste}`
