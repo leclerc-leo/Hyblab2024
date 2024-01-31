@@ -82,3 +82,4 @@ document.querySelector("#see-quartier").addEventListener("click", function() {
     console.log("Go to" + swiper.realIndex);
     window.location.href = "/quartiers-1/quartiers";
 });
+
