@@ -129,7 +129,7 @@ body {
 	color: var(--gb-51);
 	background: var(--gb-52);
 	font-family: Bebas Neue;
-	margin: 0 5%;
+	margin: 0 5% 5% 5%;
 }
 
 .gb-shutter:active {
