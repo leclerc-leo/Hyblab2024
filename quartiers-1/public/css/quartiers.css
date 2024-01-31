@@ -66,14 +66,23 @@ h1{
     text-align: center;
     font-size: 1em;
     z-index: 3;
+    animation: translateFromLeft 2s;
+}
+@keyframes translateFromLeft {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
 }
 .drawing .background-container img{
     position: absolute;
     height: 25%;
     width: 100%;
-    animation: translateAnimation 2s; /* 1s est la durée de l'animation, ajustez selon vos besoins */
+    animation: translateFromRight 2s;
 }
-@keyframes translateAnimation {
+@keyframes translateFromRight {
     from {
         transform: translateX(100%);
     }
@@ -203,6 +212,9 @@ h1{
     align-items: center;
     color: white;
     background-color: #7D7DB5;
+    position: absolute;
+    bottom: 0;
+    padding: 2% 0 2% 0;
 }
 .choice-bubbles{
     padding: 0.45em;
@@ -210,21 +222,16 @@ h1{
     color: white;
     background-color: #7D7DB5;
     border: solid thin white;
-    border-radius: 10px;
+    border-radius: 20px;
     font-size: 1em;
     animation: slideInRight 1s;
-}
-#firstChoice{
-    padding: 2% 0 2% 0;
-    position: absolute;
-    bottom: 0;
 }
 #username_input{
     margin: 0 10px 0 10px;
     padding: 4px;
     background-color: #7D7DB5;
     color: white;
-    border-radius: 4px;
+    border-radius: 20px;
     border: solid thin white;
 }
 

@@ -4,7 +4,7 @@
 // Here we simulate a loading time of one second
 setTimeout(() => { 
     anime({
-        delay: 500,
+        delay: 900,
         targets: '#loader',
         opacity: '0',
         'z-index' : -1,
