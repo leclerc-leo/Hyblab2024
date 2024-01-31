@@ -216,15 +216,21 @@ h1{
 
 #nuage1{   
     animation: animCloud1 30s linear infinite;
-    left: 0%;
     bottom: 90%;
     transform: rotate3d(0, 1, 0, 180deg);
+    scale: 0.6 0.5;
 }
 
 #nuage2{
     animation: animCloud2 35s linear infinite;
-    left: 45%;
     bottom: 85%;
+    scale: 0.7 0.7;
+}
+
+#nuage3{
+    animation: animCloud3 38s linear infinite;
+    bottom: 87%;
+    scale: 0.6 0.55;
 }
 
 
@@ -239,7 +245,7 @@ h1{
 
 @keyframes animCloud2 {
     0% {
-        left: 50%;
+        left: 40%;
         visibility: visible;
     }
 
@@ -254,7 +260,29 @@ h1{
         visibility: hidden;
     }
     100% {
-        left: 50%;
+        left: 40%;
+        visibility: visible;
+    }
+}
+
+@keyframes animCloud3 {
+    0% {
+        left: 70%;
+        visibility: visible;
+    }
+
+    24% {
+        left: 100%;
+        visibility: hidden;
+    }
+    
+
+    26%{
+        left: -20%;
+        visibility: hidden;
+    }
+    100% {
+        left: 70%;
         visibility: visible;
     }
 }
