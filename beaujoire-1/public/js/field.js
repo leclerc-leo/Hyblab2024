@@ -97,21 +97,37 @@ function getPositionFromId(id) {
 function createCarouselItem(player) {
 	const carouselItem = document.createElement("div");
 	carouselItem.classList.add("carousel-item");
-	let photo = player.PHOTO;
-	if (photo !== "" && photo !== "N/A" && photo !== undefined) {
+	let carte = player.CARTE;
+	if (carte !== "") {
 		carouselItem.innerHTML = `
-            <img src="img/cartes/${player.PHOTO}.png" alt="Photo de ${
-			player.NOM
-		}" />
-            <h2>${player.NOM}</h2>
-            <p>Numéro: ${player.NUMÉRO}</p>
-            <p>Durée: ${player.DURÉE}</p>
-            <p>Matchs: ${player.MATCHS}</p>
-            <p>Buts: ${player.BUTS || "N/A"}</p>
+            <img class= "carte-img" src="img/cartes/${
+				player.CARTE
+			}.png" alt="Photo de ${player.NOM}" />
+            <h1 style="display : none">${player.NOM}</h1>
+            <div class="carousel-grid">
+                <div class="carousel-matchs">
+                    <p class="small-title green">${player.MATCHS}</p>
+                    <p><span class="green">NOMBRE DE</span> MATCH </p>
+                </div>
+                <div class="carousel-buts">
+                    <p class="small-title green">${
+						player.BUTS || "Guardien"
+					}</p>
+                    <p><span class="green">NOMBRE DE</span> BUT </p>
+                </div>
+                <div class="carousel-coupes">
+                    <p class="small-title green">${player.COUPE}</p>
+                    <p><span class="green">NOMBRE DE</span> COUPE </p>
+                </div>
+                <div class="carousel-taille">
+                    <p class="small-title green">${player.TAILLE}</p>
+                    <p><span class="green">TAILLE EN</span> M </p>
+                </div>
+            </div>
         `;
 	} else {
 		carouselItem.innerHTML = `
-            <h2>${player.NOM}</h2>
+            <h1 style="display : none">${player.NOM}</h1>
             <p>Numéro: ${player.NUMÉRO}</p>
             <p>Durée: ${player.DURÉE}</p>
             <p>Matchs: ${player.MATCHS}</p>
@@ -132,7 +148,7 @@ function handleCarouselItemClick(event) {
 	event.currentTarget.classList.add("selected");
 	console.log(
 		"Selected class to:" +
-			event.currentTarget.querySelector("h2").textContent
+			event.currentTarget.querySelector("h1").textContent
 	);
 	document.getElementById("validate-button").style.display = "block";
 }

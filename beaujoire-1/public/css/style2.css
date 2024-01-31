@@ -242,17 +242,11 @@ body {
 
 .carousel-item {
 	flex: 0 0 auto;
-	height: 300px;
-	aspect-ratio: 0.75;
+	height: 100%;
+	width: 80%;
 	scroll-snap-align: center;
-	margin: 10px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
 	font-size: 24px;
 	z-index: 1;
-}
-.carousel-item {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -260,20 +254,30 @@ body {
 	padding: 20px;
 	margin: 10px;
 	background-color: transparent;
-	border-radius: 10px;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 
-.carousel-item h2 {
-	margin-bottom: 10px;
-	font-size: 24px;
-	color: #333;
+.carousel-item.selected > img {
+	transform: scale(1.2);
 }
 
-.carousel-item p {
-	margin-bottom: 5px;
-	font-size: 18px;
-	color: #666;
+.carte-img {
+	width: 90%;
+	object-fit: contain;
+}
+
+#poste-title {
+	margin-top: 15%;
+}
+
+.carousel-grid {
+	align-self: flex-end;
+	display: grid;
+	grid-template-columns: 1fr 1fr; /* Crée deux colonnes de largeur égale */
+	grid-template-rows: auto auto;
+	gap: 10px; /* Ajoute un espace de 10px entre les éléments de la grille */
+	font-weight: semi-bold;
+	margin: 3%;
 }
 
 @media screen and (min-width: 600px) {
