@@ -69,7 +69,7 @@ function getPositionFromId(id) {
 		case elementId.includes("goalkeeper"):
 			position = "GARDIEN";
 			break;
-		case elementId.includes("coach"):
+		case elementId.includes("entraineur"):
 			position = "ENTRAÎNEUR";
 			break;
 		case elementId.includes("ailier-droit"):
