@@ -94,34 +94,37 @@ h1{
 }
 
 #accueil_logo{
-    position: relative;
+    position: absolute;
     height: 20%;
     width: auto;
-    top: 30%;
+    top: 25%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
     margin-bottom: 5%;
 }
 
+#accueil .p_container{
+    position: absolute;
+    width: 55%;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    
+}
 #accueil p{
-    position: relative;
     font-weight: 700;
     text-align :center;
     line-height:100%;
     font-size: 30%;
     margin-top: 15%;
-    width: 55%;
-    top: 15%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
     font-family: 'Nexa', sans-serif;
     color: #292C5E;
 }
 
 #accueil_dessin{
-    position: relative;
+    position: absolute;
     width: 100%;
-    top: 15%;
+    bottom: 10%;
 }
 
 /* -------------- End of Accueil --------------*/
