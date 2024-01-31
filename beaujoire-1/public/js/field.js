@@ -15,7 +15,34 @@ document.querySelector("#back-overlay").addEventListener("click", () => {
 });
 
 document.querySelector("#bio-btn").addEventListener("click", () => {
-	document.querySelector(".bio-overlay").style.display = "flex";
+	let bio = document.querySelector(".bio-overlay");
+	const selectedPlayer = document.querySelector(".carousel-item.selected");
+	if (selectedPlayer) {
+		const selectedPlayerName =
+			selectedPlayer.querySelector("h1").textContent;
+		fetch("./data/DataBase.json")
+			.then((response) => response.json())
+			.then((players) => {
+				const player = players.find(
+					(player) => player.NOM === selectedPlayerName
+				);
+				if (player) {
+					bio.querySelector("h2").textContent = player.NOM;
+					bio.querySelector("p").textContent = player.BIO;
+					bio.style.display = "flex";
+				} else {
+					console.log(
+						`No player found with name ${selectedPlayerName}`
+					);
+				}
+			});
+	} else {
+		console.log("No player selected");
+	}
+});
+
+document.querySelector("#close-bio").addEventListener("click", () => {
+	document.querySelector(".bio-overlay").style.display = "none";
 });
 
 function handlePlayerClick(event) {
@@ -124,7 +151,7 @@ function createCarouselItem(player) {
                 <p class="stat-name"><span class="green">NOMBRE DE</span> MATCH </p>
             </div>
             <div class="carousel-buts">
-                <p class="small-title green">${player.BUTS || "Guardien"}</p>
+                <p class="small-title green">${player.BUTS || "Gardien"}</p>
                 <p class="stat-name"><span class="green">NOMBRE DE</span> BUT </p>
             </div>
             <div class="carousel-coupes">
@@ -153,7 +180,7 @@ function createCarouselItem(player) {
                 <p class="stat-name"><span class="green">NOMBRE DE</span> MATCH </p>
             </div>
             <div class="carousel-buts">
-                <p class="small-title green">${player.BUTS || "Guardien"}</p>
+                <p class="small-title green">${player.BUTS || "Gardien"}</p>
                 <p class="stat-name"><span class="green">NOMBRE DE</span> BUT </p>
             </div>
             <div class="carousel-coupes">
