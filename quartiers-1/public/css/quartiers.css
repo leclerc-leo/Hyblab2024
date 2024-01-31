@@ -116,13 +116,13 @@ h1{
     color: black;
     background-color: white;
 }
+
 .conversation ul{
     list-style: none;
 }
 .rp_guide{
     display: flex;
     flex-direction: column;
-    animation: slideInLeft 1s;
     margin: 10px 10% 10px 10px;
 }
 .name_guide{
@@ -145,7 +145,16 @@ h1{
     background-color: #E69973;
 }
 .cont_user{
-    background-color: #7D7DB5
+    background-color: #7D7DB5;
+}
+.anime_guide{
+    animation: slideInLeft 1s;
+}
+.anime_user{
+    animation: slideInRight 1s;
+}
+.anime_bottom{
+    animation: slideInBottom 1s;
 }
 .cont_guide:last-child::before {
     content: '';
@@ -167,7 +176,6 @@ h1{
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    animation: slideInRight 1s;
     margin: 10px 10px 10px 10%;
 }
 .user_name{
@@ -201,6 +209,14 @@ h1{
         transform: translateX(0);
     }
 }
+@keyframes slideInBottom {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
 
 /* --- Choice bubbles--- */
 .choices{
@@ -224,9 +240,19 @@ h1{
     border: solid thin white;
     border-radius: 20px;
     font-size: 1em;
-    animation: slideInRight 1s;
 }
-#username_input{
+.choices-placeholder{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    padding: 2% 0 2% 0;
+    visibility: hidden;
+}
+.input{
     margin: 0 10px 0 10px;
     padding: 4px;
     background-color: #7D7DB5;
@@ -333,6 +359,9 @@ h1{
 }
 .test{
     top: 10%;
+}
+.test2{
+    top: 15%;
 }
 /* -------------- End of Misc --------------*/
 

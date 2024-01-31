@@ -1,16 +1,5 @@
 "use strict";
 
-/* --- INIT --- */
-let conversation = $(".conversation");
-let arrowDown = $(".conversation-arrow-down");
-let user_name = "Vous";
-let quartier = "Villejean";
-let topic = "start";
-
-
-/* --- OTHER FUNCTIONS --- */
-
-
 function scrollSmoothlyToBottom() {
     let div = $("#villejean-conversation");
 
@@ -20,73 +9,116 @@ function scrollSmoothlyToBottom() {
 };
 
 function treatBubble(bubbleJson, i) {
+    if (lastBubble["type"] == "choice") {
+        time += 1000;
+    } else {
+        time += 1000*lastBubble["content"].length;
+    }
+
     setTimeout(() => { 
+
         if (bubbleJson["type"] == "bubble") {
-            addBubble(bubbleJson["speaker"], bubbleJson["content"]);
+                addBubble(bubbleJson["speaker"], bubbleJson["content"]);
         }
         if (bubbleJson["type"] == "nom") {
-            addNameBubble(bubbleJson);
+                addNameBubble(bubbleJson);
         }
         if (bubbleJson["type"] == "choice") {
-            addChoiceBubble(bubbleJson);
+                addChoiceBubble(bubbleJson);
         }
-    }, 1000*i + 1000);
+    }, time);
+
 
     setTimeout(() => { 
         scrollSmoothlyToBottom();
-    }, 900);
+    }, time);
 }
 
-function addBubble(speaker, content) {
-    let bubbles;
+function addBubble(speaker, contents) {
+    let container;
+    let bubble;
+    let i = 0;
 
     if (speaker == "user") {
-        bubbles = '<div class="rp_user"><p class="user_name">'+ user_name +'</p><ul>';
+        container = '<div class="rp_user"><p class="user_name">'+ user_name +'</p><ul></ul></div>';
+        conversation.append(container);
+        let list = document.querySelector(".conversation div:last-of-type ul:last-of-type");
 
-        content.forEach(content => {
-            bubbles += '<li class="cont_user">' + content.replace("${user_name}", user_name) + '</li>';
+        contents.forEach(content => {
+            setTimeout(() => { 
+                bubble = '<li class="cont_user anime_user">' + content.replace("${user_name}", user_name) + '</li>';
+                list.innerHTML += bubble;
+
+                setTimeout(() => { 
+                    var element = document.querySelector(".anime_user");
+                    element.classList.remove("anime_user");
+                }, 1000 );
+
+            }, 1000*i );
+            i++;
         });
+
     } else {
-        bubbles = '<div class="rp_guide"><p class="name_guide">Guide</p><ul>';
-        content.forEach(content => {
-            bubbles += '<li class="cont_guide">' + content.replace("${quartier}", quartier) + '</li>';
+        container = '<div class="rp_guide"><p class="name_guide">Guide</p><ul></ul></div>';
+        conversation.append(container);
+        let list = document.querySelector(".conversation div:last-of-type ul:last-of-type");
+
+        contents.forEach(content => {
+            setTimeout(() => { 
+                bubble = '<li class="cont_guide anime_guide">' + content.replace("${quartier}", quartier) + '</li>';
+                list.innerHTML += bubble;
+
+                setTimeout(() => { 
+                    var element = document.querySelector(".anime_guide");
+                    element.classList.remove("anime_guide");
+                }, 1000);
+
+            },1000*i );
+            i++;
         });
     }
-
-    bubbles += '</ul></div>';
-    conversation.append(bubbles);// add html to conversation div
 }
 
 function addNameBubble(bubbleJson) {
-    let choiceBubblesContent = '<div class="choices"><label for="username_input">' + bubbleJson["choicesLabel"][0] + '<input type="text" id="username_input" name="username_input" required minlength="2" maxlength="20" size="10" onkeydown="saveUsername(event)"/> ! </label></div>';
-        
-    conversation.append(choiceBubblesContent);// add html to conversation div
+    let choiceBubblesContent = '<div class="choices anime_bottom"><label for="username_input">' + bubbleJson["choicesLabel"][0] + '<input type="text" id="username_input" class="input" name="username_input" required minlength="2" maxlength="20" size="10" onkeydown="saveUsername(event)"/> ! </label></div>';
+    let placeholder = '<div class="choices-placeholder"><label for="placeholder_input">' + bubbleJson["choicesLabel"][0] + '<input type="text" id="placeholder_input" class="input" name="username_input" required minlength="2" maxlength="20" size="10" onkeydown="saveUsername(event)"/> ! </label></div>';
+
+    conversation.append(placeholder);
+    conversation.append(choiceBubblesContent);
 }
 
 function saveUsername(event){
     if (event.key === 'Enter') {
-        user_name = document.getElementById("username_input").value;
+        user_name = document.querySelector(".conversation #username_input").value;
 
         // remove all choices
         let choiceBubbles = $('.choices');
         choiceBubbles.remove();
+        let choicePlaceholder = $('.choices-placeholder');
+        choicePlaceholder.remove();
 
         addBubble(lastBubble["speaker"], lastBubble["content"]);
-                
-        conversation_fonction(lastBubble["next"][0]);
+        scrollSmoothlyToBottom();
+
+        setTimeout(() => { 
+            conversationUnfold(lastBubble["next"][0]);
+        }, 0);
     }
 }
 
 function addChoiceBubble(bubbleJson) {
-    let choiceBubblesContent = '<div class="choices">';
+    let choiceBubblesContent = '<div class="choices anime_bottom">';
+    let placeholder = '<div class="choices-placeholder">';
 
     bubbleJson["choicesLabel"].forEach(textContentChoice => {
         choiceBubblesContent += '<button class="choice-bubbles" onclick="choiceSelected(this)">'+ textContentChoice + '</button>';
+        placeholder += '<button class="choice-bubbles" onclick="choiceSelected(this)">'+ textContentChoice + '</button>';
     });
-
     choiceBubblesContent += '</div>';
-    
-    conversation.append(choiceBubblesContent);// add html to conversation div
+    placeholder += '</div>';
+
+    conversation.append(placeholder);
+    conversation.append(choiceBubblesContent);
 }
 
 function choiceSelected(btnChoiceSelected){
@@ -95,16 +127,20 @@ function choiceSelected(btnChoiceSelected){
     // remove all choices
     let choiceBubbles = $('.choices');
     choiceBubbles.remove();
+    let choicePlaceholder = $('.choices-placeholder');
+    choicePlaceholder.remove();
+    
+    addBubble("user", [lastBubble["content"][lastBubble["choicesLabel"].indexOf(textChoice)]]);
+    scrollSmoothlyToBottom();
 
-    addBubble("user", [lastBubble["content"][lastBubble["choicesLabel"].indexOf(textChoice)]])
-
-    conversation_fonction(lastBubble["next"][lastBubble["choicesLabel"].indexOf(textChoice)]);
+    conversationUnfold(lastBubble["next"][lastBubble["choicesLabel"].indexOf(textChoice)]);
 }
 
-async function conversation_fonction(nextID) {
+async function conversationUnfold(nextID) {
     let resp  = await fetch('./data/' + quartier.toLowerCase() + '/' + topic.toLowerCase() + '.json')
     let data = await resp.json();
 
+    time = 0;
     let i = 0;
     let loopBreak = false;
     while (!loopBreak) {
@@ -114,8 +150,8 @@ async function conversation_fonction(nextID) {
             treatBubble(data[nextID], i);
             lastBubble = data[nextID];
 
-            // Si la prochaine bulle est "Fin" on arrête
-            if (data[nextID]["type"] == "nom" || data[nextID]["type"] == "choice") { // Si la bulle qu'on vient d'ajouter est un choix ou entrer le nom, on arrête
+            // Si la bulle qu'on vient d'ajouter est un choix ou entrer le nom, on arrête
+            if (data[nextID]["type"] == "nom" || data[nextID]["type"] == "choice") { 
                 loopBreak = true;
             } else {
                 nextID = data[nextID]["next"][0];
@@ -126,5 +162,13 @@ async function conversation_fonction(nextID) {
     }
 }
 
-let lastBubble;
-conversation_fonction("Debut");
+let conversation = $(".conversation");
+let user_name = "Vous";
+let quartier = "Villejean";
+let topic = "start";
+let time;
+let lastBubble = {"content": []};
+
+setTimeout(() => {
+    conversationUnfold("Debut");
+}, 1000);
