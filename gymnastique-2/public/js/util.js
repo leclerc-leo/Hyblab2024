@@ -62,3 +62,24 @@ const move_background = (x, b = false) => {
 
     background.style.left = `${left}px`;
 }
+
+const handle_orientation = (event) => {    
+    document.querySelectorAll('.background-move-high').forEach( element => {
+        const maxY = 30;
+        const y = Math.min(event.gamma, 90) + 90;
+        const left = `${(maxY * y) / 180 - maxY}px`;
+        element.style.left = left;
+    });
+    document.querySelectorAll('.background-move-med').forEach( element => {
+        const maxY = 20;
+        const y = Math.min(event.gamma, 90) + 90;
+        const left = `${(maxY * y) / 180 - maxY}px`;
+        element.style.left = left;
+    });
+    document.querySelectorAll('.background-move-low').forEach( element => {
+        const maxY = 10;
+        const y = Math.min(event.gamma, 90) + 90;
+        const left = `${(maxY * y) / 180 - maxY}px`;
+        element.style.left = left;
+    });
+}
