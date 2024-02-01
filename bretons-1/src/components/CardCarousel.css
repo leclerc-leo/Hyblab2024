@@ -67,7 +67,7 @@
 
   .card_text {
     position: absolute;
-    bottom: -20px; /* Ajustez en fonction de vos besoins */
+    bottom: -20px;
     left: 0;
     width: 100%;
     padding: 0px 0px 15px 10px ;
@@ -84,20 +84,11 @@
   }
   
   
-/* .LikeLogo{
-    width: 54px;
-    height: 43px;
-} */
 
 .ShareLogo{
     width: 47.015px;
     height: 34.855px;
 }
-
-/* .SaveLogo{
-    width: 29.867px;
-    height: 43.733px;
-} */
 
 .BicycleLogo{
     width: 43.868px;

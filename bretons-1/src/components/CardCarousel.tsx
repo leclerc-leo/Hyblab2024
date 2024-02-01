@@ -5,21 +5,31 @@ import { useNavigate } from 'react-router-dom';
 import './CardCarousel.css';
 import athleteData from '../data/Athlete.json';
 import { Carousel } from 'react-bootstrap';
-import { Athlete, VideoListItemProps } from './type';
+import { Athlete, VideoListItemProps} from './type';
+import EventData from '../data/Event.json';
+import { EventDataItem } from './type';  
 
 
 const allAthletesData = athleteData.Athlete.reduce((allAthletes: Athlete[], athletesArray: Athlete[]) => {
   return allAthletes.concat(athletesArray);
 }, []);
 
-const athleteVideosData = allAthletesData.map((athlete: Athlete) => ({
-  id: athlete.Athlete,
-  title: athlete.Athlete,
-  subtitle: athlete.Epreuve,
-  srcPhoto: athlete.Photo,
-  description: athlete.Performance,
-}));
+const athleteVideosData = allAthletesData.map((athlete: Athlete) => {
+  const allEventsData: EventDataItem[] = (EventData.Event.flat() as EventDataItem[]);
 
+
+  const athleteEvents = allEventsData.filter((event: EventDataItem) => event.Athlete === athlete.Athlete);
+
+  const videosForAthlete = athleteEvents.map((event: EventDataItem) => ({
+    id: event.IdEvent.toString(),
+    title: event.Athlete,
+    subtitle: event.Epreuve,
+    srcPhoto: athlete.Photo,
+    description: event.Performance,
+  }));
+
+  return videosForAthlete;
+}).flat();
 
 function CardCarousel({ video }: VideoListItemProps) {
   const [isFavorited, setIsFavorited] = useState(false);
@@ -53,10 +63,10 @@ function CardCarousel({ video }: VideoListItemProps) {
   return (
     <Card className="custom-card" style={{ width: '15rem' }}>
       <div className="image-container">
-        <Card.Img className="custom-image" variant="top" src="/bretons-1/img/sportif_velo.jpeg" />
+        <Card.Img className="custom-image" variant="top" src={video.srcPhoto}  />
         <div className='card_text'>
-            <h4>{video.title}</h4>
-            <p>{video.subtitle}</p>
+          <h4>{video.title}</h4>
+          <p>{video.subtitle}</p>
         </div>
       </div>
       <img
@@ -90,7 +100,6 @@ function CardCarousel({ video }: VideoListItemProps) {
     </Card>
   );
 }
-
 
 function ControlledCarousel() {
   const [videosData] = useState(athleteVideosData);

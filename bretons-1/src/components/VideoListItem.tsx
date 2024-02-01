@@ -3,18 +3,29 @@ import './VideoListItem.css';
 import { FavoriteButton } from './Fav_nav';
 import athleteData from '../data/Athlete.json';
 import { Athlete, Video, VideoListItemProps } from './type';
+import EventData from '../data/Event.json';
+import { EventDataItem } from './type';  
 
 const allAthletesData = athleteData.Athlete.reduce((allAthletes: Athlete[], athletesArray: Athlete[]) => {
   return allAthletes.concat(athletesArray);
 }, []);
 
-const athleteVideosData = allAthletesData.map((athlete: Athlete) => ({
-  id: athlete.Athlete,
-  title: athlete.Athlete,
-  subtitle: athlete.Epreuve,
-  srcPhoto: athlete.Photo,
-  description: athlete.Performance,
-}));
+const athleteVideosData = allAthletesData.map((athlete: Athlete) => {
+  const allEventsData: EventDataItem[] = (EventData.Event.flat() as EventDataItem[]);
+
+
+  const athleteEvents = allEventsData.filter((event: EventDataItem) => event.Athlete === athlete.Athlete);
+
+  const videosForAthlete = athleteEvents.map((event: EventDataItem) => ({
+    id: event.IdEvent.toString(),
+    title: event.Athlete,
+    subtitle: event.Epreuve,
+    srcPhoto: athlete.Photo,
+    description: event.Performance,
+  }));
+
+  return videosForAthlete;
+}).flat();
 
 type FavoriteVideosManagerProps = {
   videoId: string;

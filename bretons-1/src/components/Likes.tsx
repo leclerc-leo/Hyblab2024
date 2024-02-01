@@ -10,7 +10,6 @@ type LikeButtonProps = {
 const LikeButton: React.FC<LikeButtonProps> = ({ isLiked, onClick }) => {
  return (
     <button className="like-button" onClick={onClick}>
-      {/* according the status of isLiked to change the classname */}
       <div className={`heart-icon ${isLiked ? 'liked' : ''}`}></div>
     </button>
   );
