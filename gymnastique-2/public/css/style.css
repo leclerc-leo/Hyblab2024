@@ -358,3 +358,12 @@ svg.image-histoire, svg.image-jo{
     width: 85%;
     height: auto;
 }
+
+#credits-list > li{
+    display: block;
+}
+
+#credits-list > li > img{
+    vertical-align: middle;
+    margin: 0 10px;
+}
