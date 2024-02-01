@@ -14,10 +14,7 @@ setTimeout(() => {
     });
 }, 100);
 
-const test_button = document.querySelector(".test");
-test_button.addEventListener("click", function() {
-    test_button.disabled = true
-
+function backgroundTransition() {
     const container = document.querySelector(".background-container");
     const old_img = document.querySelector(".background-container img");
     old_img.classList.add("out");
@@ -28,7 +25,16 @@ test_button.addEventListener("click", function() {
 
     setTimeout(function() {
         old_img.remove();
+    }, 2000);
+}
+
+const test_button = document.querySelector(".test");
+test_button.addEventListener("click", function() {
+    test_button.disabled = true
+
+    backgroundTransition();
+    
+    setTimeout(function() {
         test_button.disabled = false
     }, 2000);
-
 });

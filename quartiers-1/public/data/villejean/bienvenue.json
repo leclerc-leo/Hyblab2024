@@ -1,0 +1,121 @@
+{
+    "Debut": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Bienvenue à ${quartier} !", "Je serai ton guide pendant tout ton séjour à Rennes. J’espère que tu t’y plairas !"],
+        "next": ["EntrerNom"]
+    },
+
+    "EntrerNom": {
+        "speaker": "user",
+        "type": "nom",
+        "choicesLabel": ["Bonjour, je m'appelle"],
+        "content": ["Bonjour, je m’appelle ${user_name} !"],
+        "next": ["Question1"]
+    },
+
+    "Question1": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Fais un choix"],
+        "next": ["Choix1"]
+    },
+
+    "Choix1": {
+        "speaker": "user",
+        "type": "choice",
+        "choicesLabel": ["Choix 1", "Choix 2", "Choix 3"],
+        "content": ["Je choisis 1", "Je choisis 2", "Je choisis 3"],
+        "next": ["ReponseChoix11", "ReponseChoix12", "ReponseChoix13"]
+    },
+
+    "ReponseChoix11": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Ok tu as pris le choix 1"],
+        "next": ["Suite1"]
+    },
+    
+    "ReponseChoix12": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Ok tu as pris le choix 2"],
+        "next": ["Suite1"]
+    },
+
+    "ReponseChoix13": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Ok tu as pris le choix 3"],
+        "next": ["Suite1"]
+    },
+
+    "Suite1": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["De quoi veux-tu parler ?"],
+        "next": ["Question2"]
+    },
+
+    "Question2": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Refais un choix"],
+        "next": ["Choix2"]
+    },
+
+    "Choix2": {
+        "speaker": "user",
+        "type": "choice",
+        "choicesLabel": ["Choix 1", "Choix 2", "Choix 3"],
+        "content": ["Je choisis 1", "Je choisis 2", "Je choisis 3"],
+        "next": ["ReponseChoix21", "ReponseChoix22", "ReponseChoix23"]
+    },
+
+    "ReponseChoix21": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Ok tu as pris le choix 1"],
+        "next": ["Suite2"]
+    },
+    
+    "ReponseChoix22": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Ok tu as pris le choix 2"],
+        "next": ["Suite2"]
+    },
+
+    "ReponseChoix23": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Ok tu as pris le choix 3"],
+        "next": ["Suite2"]
+    },
+
+    "Suite2": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["De quoi veux-tu parler ?"],
+        "next": ["ChoixTheme"]
+    },
+
+    "ChoixTheme": {
+        "speaker": "user",
+        "type": "topic",
+        "choicesLabel": ["Portraits", "Associations", "Urbanisme", "Sports", "Education", "Commerces"],
+        "content": ["Je go Portraits", "Je go Associations", "Je go Urbanisme", "Je go Sports", "Je go Education", "Je go Commerces"],
+        "next": ["Portraits", "Associations", "Urbanisme", "Sports", "Education", "Commerces"]
+    }
+}

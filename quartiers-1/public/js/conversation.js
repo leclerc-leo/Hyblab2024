@@ -5,32 +5,30 @@ function scrollSmoothlyToBottom() {
 
     div.animate({
         scrollTop: div.prop("scrollHeight")
-    },1000);
+    }, 1000);
 };
 
 function treatBubble(bubbleJson, i) {
     if (lastBubble["type"] == "choice") {
         time += 1000;
     } else {
-        time += 1000*lastBubble["content"].length;
+        time += 1100*lastBubble["content"].length;
     }
 
     setTimeout(() => { 
 
         if (bubbleJson["type"] == "bubble") {
-                addBubble(bubbleJson["speaker"], bubbleJson["content"]);
+            addBubble(bubbleJson["speaker"], bubbleJson["content"]);
         }
         if (bubbleJson["type"] == "nom") {
-                addNameBubble(bubbleJson);
+            addNameBubble(bubbleJson);
         }
         if (bubbleJson["type"] == "choice") {
-                addChoiceBubble(bubbleJson);
+            addChoiceBubble(bubbleJson);
         }
-    }, time);
-
-
-    setTimeout(() => { 
-        scrollSmoothlyToBottom();
+        if (bubbleJson["type"] == "topic") {
+            addTopicBubble(bubbleJson);
+        }
     }, time);
 }
 
@@ -54,7 +52,8 @@ function addBubble(speaker, contents) {
                     element.classList.remove("anime_user");
                 }, 1000 );
 
-            }, 1000*i );
+                scrollSmoothlyToBottom();
+            }, 1100*i);
             i++;
         });
 
@@ -67,13 +66,14 @@ function addBubble(speaker, contents) {
             setTimeout(() => { 
                 bubble = '<li class="cont_guide anime_guide">' + content.replace("${quartier}", quartier) + '</li>';
                 list.innerHTML += bubble;
+                scrollSmoothlyToBottom();
 
                 setTimeout(() => { 
                     var element = document.querySelector(".anime_guide");
                     element.classList.remove("anime_guide");
                 }, 1000);
 
-            },1000*i );
+            }, 1100*i);
             i++;
         });
     }
@@ -100,9 +100,7 @@ function saveUsername(event){
         addBubble(lastBubble["speaker"], lastBubble["content"]);
         scrollSmoothlyToBottom();
 
-        setTimeout(() => { 
-            conversationUnfold(lastBubble["next"][0]);
-        }, 0);
+        conversationUnfold(lastBubble["next"][0]);
     }
 }
 
@@ -136,30 +134,73 @@ function choiceSelected(btnChoiceSelected){
     conversationUnfold(lastBubble["next"][lastBubble["choicesLabel"].indexOf(textChoice)]);
 }
 
-function reloadConversation() {
-    user_name = save["user_name"];
-    quartier = save["quartier"];
-    topic = save["topic"];
-    time = save["time"];
-    lastBubble = save["lastBubble"];
+function addTopicBubble(bubbleJson) {
+    let choiceBubblesContent = '<div class="choices anime_bottom">';
+    let placeholder = '<div class="choices-placeholder">';
+
+    bubbleJson["choicesLabel"].forEach(textContentChoice => {
+        choiceBubblesContent += '<button class="choice-bubbles" onclick="topicSelected(this)">'+ textContentChoice + '</button>';
+        placeholder += '<button class="choice-bubbles" onclick="topicSelected(this)">'+ textContentChoice + '</button>';
+    });
+    choiceBubblesContent += '</div>';
+    placeholder += '</div>';
+
+    conversation.append(placeholder);
+    conversation.append(choiceBubblesContent);
+}
+
+function topicSelected(btntopicSelected){
+    let textChoice = btntopicSelected.textContent;
+
+    topic = textChoice.toLowerCase();
+    time = 0;
+    lastBubble = {"content": []};
 
     conversation.empty();
-    console.log(save["conversation"])
-    conversation.append(save["conversation"]);
+    backgroundTransition();
+    setTimeout(() => { 
+        conversationUnfold("Debut");
+    }, 1000);
+
+    console.log(textChoice);
 }
 
 function saveConversation() {
-    save["user_name"] = user_name;
-    save["quartier"] = quartier;
-    save["topic"] = topic;
-    save["time"] = time;
-    save["lastBubble"] = lastBubble;
-    save["conversation"] = conversation.html();    
+    save.user_name = user_name;
+    save.quartier = quartier;
+    save.topic = topic;
+    save.time = time;
+    save.lastBubble = lastBubble;
+    save.conversation = conversation.html();
+
+    sessionStorage.setItem("save", JSON.stringify(save));
+
+    console.log("saved");
+}
+
+function reloadConversation() {
+    save = JSON.parse(sessionStorage.getItem("save"));
+
+    user_name = save.user_name;
+    quartier = save.quartier;
+    topic = save.topic;
+    time = save.time;
+    lastBubble = save.lastBubble;
+
+    conversation.empty();
+    conversation.append(save.conversation);
+
+    scrollSmoothlyToBottom();
+
+    console.log("reloaded");
 }
 
 async function conversationUnfold(nextID) {
     let resp  = await fetch('./data/' + quartier.toLowerCase() + '/' + topic.toLowerCase() + '.json')
     let data = await resp.json();
+
+    console.log(data);
+    console.log(nextID);
 
     time = 0;
     let i = 0;
@@ -172,7 +213,7 @@ async function conversationUnfold(nextID) {
             lastBubble = data[nextID];
 
             // Si la bulle qu'on vient d'ajouter est un choix ou entrer le nom, on arrête
-            if (data[nextID]["type"] == "nom" || data[nextID]["type"] == "choice") { 
+            if (data[nextID]["type"] == "nom" || data[nextID]["type"] == "choice" || data[nextID]["type"] == "topic") { 
                 loopBreak = true;
             } else {
                 nextID = data[nextID]["next"][0];
@@ -186,10 +227,10 @@ async function conversationUnfold(nextID) {
 let conversation = $(".conversation");
 let user_name = "Vous";
 let quartier = "Villejean";
-let topic = "start";
-let time;
+let topic = "bienvenue";
+let time = 0;
 let lastBubble = {"content": []};
-
+console.log(topic);
 let save = {};
 
 
@@ -197,12 +238,12 @@ setTimeout(() => {
     conversationUnfold("Debut");
 }, 1000);
 
-const reload_button = document.querySelector(".reload");
-reload_button.addEventListener("click", function() {
-    reloadConversation();
-});
-
 const save_button = document.querySelector(".save");
 save_button.addEventListener("click", function() {
     saveConversation();
+});
+
+const reload_button = document.querySelector(".reload");
+reload_button.addEventListener("click", function() {
+    reloadConversation();
 });
