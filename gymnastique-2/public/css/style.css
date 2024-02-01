@@ -284,12 +284,24 @@ h2{
     font-size: 18px;
 }
 
-/* Format des paragraphes */
+/* Format des textes */
 p{
     color: #E47754;
     font-family: 'Helvetica Neue', sans-serif;
     font-size: 16px;
     padding: 10px 30px;
+}
+
+li{
+    list-style: none;
+    color: #E47754;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    padding: 0 30px;
+}
+
+span{
+    font-weight: bold;
 }
 
 /* Format des pages */
@@ -306,7 +318,7 @@ p{
     margin: 20px 0;
 }
 
-.image-histoire, .image-jo{
+.image-histoire, .image-jo, .image-credits{
     display: block;
     margin: 0 auto;
     width: 100%;
