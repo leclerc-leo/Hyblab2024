@@ -10,6 +10,7 @@ let db = new sqlite3.Database(dbname, err => {
 });
 
 db.serialize(() => {
+    //TODO : ajouter la gestion de la BD (Moncef)
     db.exec(`
         DROP TABLE IF EXISTS Nationalités;
         CREATE TABLE Nationalités(
