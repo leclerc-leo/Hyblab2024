@@ -201,6 +201,7 @@ body{
     border-radius: 30px;
     color: var(--yellow);
     text-transform: uppercase;
+    text-decoration: none;
     background-color: transparent;
     border: solid 3px var(--yellow);
     font-size: 0.35em;

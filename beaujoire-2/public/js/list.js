@@ -31,34 +31,31 @@ document.addEventListener('DOMContentLoaded', function() {
 
     }
 
-    const saveVotesButton = document.getElementById('saveVotesButton');
-    saveVotesButton.addEventListener('click', function() {
+    const retour = document.getElementById('retour');
+    retour.addEventListener('click', function() {
       // fonction vote 
       alert('Votes saved!');
     });
- 
-    const archiveButton = document.getElementById('archiveButton');
-    archiveButton.addEventListener('click', function() {
-      alert('lets dive into memories!');
-    });
 
-    
+
+
     function toggleHeart(button) {    
         if (button.dataset.type === 'heart') {
         button.classList.toggle('pressed');
       }
     }
-
-    const swiper = new Swiper('', {
-        // Add swiper configuration options if needed
-      });  
-    
-    document.getElementById('leftArrow').addEventListener('click', function() {
-        //swiper.slidePrev(); 
-        window.location.href = './field.html';
-      });
-    
-  
     updatePlayerList('playerList', playersPage);
+  }); 
+var swiper = new Swiper('.mySwiper', {
+    loop: true,
+    spaceBetween: 10,
+    slidesPerView: 3,
+    freeMode: true,});
+
+var swiper2 = new Swiper('.mySwiper2', {
+    loop: true,
+    spaceBetween: 10,
+    thumbs: {
+        swiper: swiper,
+    },
   });
-    
