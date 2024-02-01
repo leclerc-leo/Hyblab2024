@@ -268,6 +268,7 @@ header{
         opacity 0.3s ease-out 0.2s;
     color: black;
     background-color: #FFD8B3;
+    overflow: scroll;
 }
 
 /* Format des titres */
@@ -291,17 +292,17 @@ p{
     padding: 10px 30px;
 }
 
-/* Format des pages Histoire et JO*/
-#histoire-page, #jo-page{
+/* Format des pages */
+#histoire-page, #jo-page, #credits-page{
     text-align: center;
     padding: 0;
 }
 
-#histoire-page h1, #jo-page h1{
+#histoire-page h1, #jo-page h1, #credits-page h1{
     margin: 30px 0;
 }
 
-#histoire-page h2{
+#histoire-page h2, #credits-page h2{
     margin: 20px 0;
 }
 
@@ -329,7 +330,7 @@ svg.image-histoire, svg.image-jo{
     height: auto;
 }
 
-#histoire-header, #jo-header{
+#histoire-header, #jo-header, #credits-header{
     position:sticky;
     top: 0;
     padding-top: 60px;
