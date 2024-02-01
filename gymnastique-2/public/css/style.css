@@ -27,8 +27,8 @@ body{
 
 .swiper-pagination-bullets.swiper-pagination-horizontal {
     --swiper-pagination-bottom: 0px;
-    width: 50%;
-    margin: 0 25%;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .swiper-pagination-bullet {
@@ -84,10 +84,30 @@ header{
 .background {
     z-index: -2;
     height: auto;
-    width: 115%;
+    width: 250%;
     position: absolute;
-    transition: left 0.3s ease-in-out;
-    bottom: -5%;
+    bottom: 0;
+    min-height: 100%;
+}
+
+.background::before, .background::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    background-color: transparent;
+}
+
+.background::before{
+    bottom: 0;
+    height: 100%;
+    border-top: 10000px solid black;
+}
+
+.background::after{
+    bottom: -10000px;
+    padding-bottom: 10000px;
+    background-color: black;
 }
 
 /* ---------- Important media queries for easy responsive content :-) ----------------- */
@@ -135,10 +155,10 @@ header{
 
 .category-button{
     position: absolute; 
-    width: 300px;
+    width: 60%;
     height: 0; 
-    padding: 150px 0;
-    transform: translate(-50%, 50%);
+    padding: 30% 0;
+    transform: translate(-50%, 50%); 
     display: flex; 
     justify-content: center; 
     align-items: center;
@@ -225,7 +245,7 @@ header{
 
 .credits-button {
     position: absolute;
-    bottom: 10px;
+    bottom: 10%;
     right: 10px;
     font-size: 60px;
     text-shadow: 0 0 10px black;
@@ -262,8 +282,63 @@ h2{
 p{
     color: #E47754;
     font-family: 'Helvetica Neue', sans-serif;
-    font-size: 13px;
-    padding: 10px 50px;
+    font-size: 16px;
+    padding: 10px 30px;
+}
+
+/* Format de la page Histoire et JO*/
+#histoire-page, #jo-page{
+    text-align: center;
+    padding: 0;
+}
+
+#histoire-page h1, #jo-page h1{
+    margin: 30px 0;
+}
+
+#histoire-page h2{
+    margin: 20px 0;
+}
+
+.image-histoire, .image-jo{
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 40%;
+}
+
+svg.image-histoire, svg.image-jo{
+    width: 100%;
+    max-width: 70%;
+}
+
+
+#chemin1{
+    margin-right: 15%;
+    width: 30%;
+    height: auto;
+}
+
+#chemin2{
+    width: 60%;
+    height: auto;
+}
+
+#histoire-header, #jo-header{
+    position:sticky;
+    top: 0;
+    padding-top: 60px;
+    background-color: rgba(255, 216, 179, 0.9);
+    margin-bottom: 20px;
+}
+
+#histoire-header > img, #jo-header > img{
+    padding: 10px;
+}
+
+.image-titre{
+    width: 85%;
+    height: auto;
 }
 
 

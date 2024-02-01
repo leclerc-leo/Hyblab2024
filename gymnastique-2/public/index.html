@@ -26,28 +26,85 @@
      - Swiper API : https://swiperjs.com/ 
      - Anime.js : https://animejs.com/
   -->
+
+  <link rel="preload" as="image" href="img/background.jpg">
+  <!-- Polices d'écriture -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div class="background" style="left: 0%">
-      <img src="img/background.jpg" alt="background" width="100%" style="position: absolute; bottom: 0;">
-    </div>
     <!-- Le conteneur sert à vérouiller les proportions (aspect ratio) du contenu de la page (ici des slides) -->
     <div id="container">
-      
+      <div class="background" style="left: 0%">
+        <img src="img/background.jpg" alt="background" width="100%" style="position: absolute; bottom: 0; z-index: -999;">
+
+        <img src="img/background/fond vrai.svg" alt="background" width="100%" style="position: absolute; bottom: 0; z-index: -99;">
+
+        <img src="img/background/arriere plan barre.svg" alt="background" width="100%" style="position: absolute; bottom: 0; z-index: -9;">
+        <img src="img/background/barres à remplacer par gif.svg" alt="background" width="100%" style="position: absolute; bottom: 0; z-index: -9;">
+        <img src="img/background/coupe.svg" alt="background" width="100%" style="position: absolute; bottom: 0; z-index: -9;">
+        <img src="img/background/estrade.svg" alt="background" width="100%" style="position: absolute; bottom: 0; z-index: -9;">
+        <img src="img/background/échelle.svg" alt="background" width="100%" style="position: absolute; bottom: 0; z-index: -9;">
+        <img src="img/background/histoire.svg" alt="background" width="100%" style="position: absolute; bottom: 0; z-index: -9;">
+        <img src="img/background/journée type.svg" alt="background" width="100%" style="position: absolute; bottom: 0; z-index: -9;">
+        <img src="img/background/matelas milieu barre.svg" alt="background" width="100%" style="position: absolute; bottom: 0; z-index: -9;">
+        <img src="img/background/matelas mur du fond .svg" alt="background" width="100%" style="position: absolute; bottom: 0; z-index: -9;">
+        <img src="img/background/premier plan barre.svg" alt="background" width="100%" style="position: absolute; bottom: 0; z-index: -9;">
+
+      </div>
+
       <div id="mySwiper" class="swiper">
         <!-- le main est aussi le conteneur des différents slides (contenus à chaque fois dans des sections-->
         <main class = "swiper-wrapper">
           <section class="swiper-slide">
 
-                <a class="category-button" id="histoire-button" style="bottom: 250px; left: 150px;">
+              <div style="position:absolute; bottom: 0;">
+                <img src="img/background/fond vrai.svg" alt="background" width="250%" style="opacity: 0; display: block;">
+
+                <a class="category-button" id="histoire-button" style="bottom: 20%; left: 25%;">
                   Histoire + Blessure</a>
-                <div id="histoire-page" class="category-page swiper" style="bottom: 250px; left: 150px; width: 0; height: 0; border-radius: 50%; overflow: hidden; opacity: 0;">
-                  <p>Hello World nouveaux !
-                    <br><br><br> test <br><br><br> test <br><br><br> test <br><br><br> test <br><br><br> test <br><br><br> test <br><br><br> test <br><br><br> test <br><br><br> test <br><br><br> test <br><br><br> test <br><br><br> test <br><br><br> test <br><br><br> test <br><br><br> test <br><br><br> test <br><br><br> test presque <br><br><br> test <br><br><br> test <br><br><br> test <br><br><br> test final <br><br><br> test final 
-                  </p>
+                <div id="histoire-page" class="category-page swiper" style="bottom: 20%; left: 25%; width: 0; height: 0; border-radius: 50%; overflow: hidden; opacity: 0;">
+                  <br><br><br><br>
+
+                  <!-- Contenu de la page Histoire -->
+                  <div id="histoire-header">
+                    <img src="img/logo merguez.svg" class="image-histoire image-titre">
+                    <h1>HISTOIRE</h1>
+                  </div>
+
+                  <img src="img/histoire/gym2.svg" class="image-histoire">
+                  <h2>LE CLUB</h2>
+
+                  <p>La gymnaste franco-algérienne est licenciée au club d'Avoine-Beaumont depuis son plus jeune âge.</p>
+                  <p>Aux côtés de ses coachs Marc et Gina Chirilcenco, elle se spécialise aux barres asymétriques et devient championne de France de cet agrès en 2021, à 14 ans.</p>
+
+                  <svg width="110" height="222" viewBox="0 0 110 222" fill="none" xmlns="http://www.w3.org/2000/svg" class="image-histoire" id="chemin1">
+                    <path d="M56.5 2C123 57.5 143.2 131.1 2 219.5" stroke="#F08461" stroke-width="4" stroke-dasharray="8 8"/>
+                  </svg>
+                  <img src="img/histoire/Bequille2.svg" class="image-histoire">
+
+                  <h2>LES OBSTACLES</h2>
+                  <p>La même année, la gymnaste subit une opération des deux genoux pour soigner une ostéochondrite.</p>
+                  <p>Après huit mois de rééducation, son médecin l'autorise à reprendre la gym mais le médecin de la FFGym s'y oppose, sur fond de discorde entre la Fédération et Avoine-Beaumont.</p>
+                  <p>Interdite de justaucorps bleu-blanc-rouge, Kaylia demande à concourir pour l'Algérie. Mais la FFGym refuse de la laisser partir, jusqu'au dernier moment...</p>
+
+                  <svg width="214" height="236" viewBox="0 0 214 236" fill="none" xmlns="http://www.w3.org/2000/svg" class="image-histoire" id="chemin2">
+                    <path d="M9.49998 1.5C-14 77.5 18.8 134.6 120 149C246.5 167 224 61.5 156.5 65C108.541 67.4868 47.5 128 96 235" stroke="#F08461" stroke-width="4" stroke-dasharray="8 8"/>
+                  </svg>
+                  <img src="img/histoire/SAC2.svg" class="image-histoire">
+
+                  <h2>SON ENVOL</h2>
+                  <p>La FFGym capitule à quelques jours des championnats d'Afrique. Kaylia Nemour se pare de l'or sous bannière algérienne puis devient vice-championne du monde aux barres asymétriques à Anvers en octobre 2023, où elle se qualifie pour les JO de Paris 2024.</p>
+
+                  <p></p>
+
+                  <br><br><br><br>
                 </div>
                 <a class="category-button" style="bottom: 650px; left: 150px" id="palmares-button">
+
+                <a class="category-button" style="bottom: 60%; left: 25%;">
                   Palmares</a>
                 <div id="palmares-page" class="category-page swiper" style="bottom: 250px; left: 150px; width: 0; height: 0; border-radius: 50%; overflow: hidden; opacity: 0;">
                     <div class="palmares-container">
@@ -122,9 +179,11 @@
                         </div>
                   </div>
                 </div>
-                <a class="category-button" style="bottom: 450px; left: 450px;">
+                <a class="category-button" style="bottom: 40%; left: 70%;">
                   Qualification</a>
-                  
+
+              </div>
+
           </section>
           <section class="swiper-slide">
               <header>
@@ -137,12 +196,39 @@
               </section>
           </section>
           <section class="swiper-slide">
- 
-            <a class="category-button" style="bottom: 750px; right: 350px; transform: translate(50%, 50%);">
-              JO</a>
 
-            <a class="category-button" style="bottom: 200px; right: 150px; transform: translate(50%, 50%);">
-              Journée Type</a>
+            <div style="position:absolute; bottom: 0;">
+              <img src="img/background/fond vrai.svg" alt="background" width="250%" style="opacity: 0; display: block;">
+
+              <a class="category-button" id="jo-button" style="bottom: 65%; right: 50%; transform: translate(50%, 50%);">
+                JO</a>
+
+                <div id="jo-page" class="category-page swiper" style="bottom: 20%; left: 25%; width: 0; height: 0; border-radius: 50%; overflow: hidden; opacity: 0;">
+                  <br><br><br><br>
+
+                  <div id="jo-header">
+                    <img src="img/logo merguez.svg" class="image-jo image-titre">
+                    <h1>Quatre choses à savoir sur la gymnastique aux JO</h1>
+                  </div>
+
+                  <p>
+                    <h2>Quand ?</h2>
+                    <p>Aux JO de Paris, les épreuves de gymnastique se déroulent du 27 juillet au 5 août 2024.</p>
+
+                    <h2>Où ?</h2>
+                    <p>C’est l’Accor Arena de Bercy, lieu emblématique de la culture et du sport, qui accueillera les gymnastes pendant les JO 2024.</p>
+
+                    <h2>Quels agrès pour les femmes ?</h2>
+                    <p>La gymnastique artistique féminine comprend quatre agrès : les barres asymétriques, la poutre, le sol et le saut de cheval. Différents classements sont possibles lors des compétitions. Chaque gymnaste passe sur les quatres agrès et obtient une note. L’ensemble des notes constitue un classement individuel et par équipe. Un classement individuel spécifique à chaque agrès est également établi. C’est dans ce dernier que Kaylia Nemour à des chances de remporter une médaille olympique avec les barres asymétriques.</p>
+
+                    <h2>Le saviez-vous ?</h2>
+                    <p>Alors que la gymnastique masculine est présente depuis les premiers Jeux Olympiques de l’ère moderne, à Athènes en 1896, les épreuves de gymnastique féminine n’ont été intégrées qu’à partir de 1928, aux Jeux d’Amsterdam.</p>
+                  </p>
+                </div>
+
+              <a class="category-button" style="bottom: 20%; right: 20%; transform: translate(50%, 50%);">
+                Journée Type</a>
+            </div>
 
           </section>
         </main>
