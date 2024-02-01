@@ -136,6 +136,27 @@ function choiceSelected(btnChoiceSelected){
     conversationUnfold(lastBubble["next"][lastBubble["choicesLabel"].indexOf(textChoice)]);
 }
 
+function reloadConversation() {
+    user_name = save["user_name"];
+    quartier = save["quartier"];
+    topic = save["topic"];
+    time = save["time"];
+    lastBubble = save["lastBubble"];
+
+    conversation.empty();
+    console.log(save["conversation"])
+    conversation.append(save["conversation"]);
+}
+
+function saveConversation() {
+    save["user_name"] = user_name;
+    save["quartier"] = quartier;
+    save["topic"] = topic;
+    save["time"] = time;
+    save["lastBubble"] = lastBubble;
+    save["conversation"] = conversation.html();    
+}
+
 async function conversationUnfold(nextID) {
     let resp  = await fetch('./data/' + quartier.toLowerCase() + '/' + topic.toLowerCase() + '.json')
     let data = await resp.json();
@@ -169,6 +190,19 @@ let topic = "start";
 let time;
 let lastBubble = {"content": []};
 
+let save = {};
+
+
 setTimeout(() => {
     conversationUnfold("Debut");
 }, 1000);
+
+const reload_button = document.querySelector(".reload");
+reload_button.addEventListener("click", function() {
+    reloadConversation();
+});
+
+const save_button = document.querySelector(".save");
+save_button.addEventListener("click", function() {
+    saveConversation();
+});

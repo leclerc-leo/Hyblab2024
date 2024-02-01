@@ -371,8 +371,11 @@ h1{
 .test{
     top: 10%;
 }
-.test2{
+.reload{
     top: 15%;
+}
+.save{
+    top: 20%;
 }
 /* -------------- End of Misc --------------*/
 
