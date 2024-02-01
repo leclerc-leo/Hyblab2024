@@ -13,3 +13,4 @@ setTimeout(() => {
     easing: 'easeOutQuad',
   });
 }, 1000);
+

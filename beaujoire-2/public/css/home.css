@@ -67,9 +67,16 @@ body{
     position: absolute;
 }
 
-/* white navigation bullets */
-.swiper-pagination-bullet-active {
+/* yellow navigation bullets */
+.swiper-pagination-bullet {
     background-color: white !important;
+    border: solid 1px black;
+    height: 10px;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: var(--yellow) !important;
+    border-color: transparent;
 }
 
 /* the slides and the loader should fill the whole 9:16 zone */
@@ -97,6 +104,18 @@ body{
         margin-bottom: -0.2em;
     }
 
+    #ecu{
+        position: absolute;
+        top:0.8em;
+        left: 0.94em;
+        height: 0.35em;
+        -webkit-transform: rotate(-15deg);
+        -moz-transform: rotate(-15deg);
+        -ms-transform: rotate(-15deg);
+        -o-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+    }
+
     #sous-titre{
         font-size: 1.6em;
         z-index: 2;
@@ -107,6 +126,19 @@ body{
         font-size: 0.5em;
         z-index: 2;
     }
+        #anim-40{
+            position: absolute;
+            right:1.7em;
+            top:57%;
+            height: 3em;
+        }
+        #img-40 {
+            position: absolute;
+            height : 1.5em;
+            right : 1.855em;
+            top : 67.45%;
+            display: none;
+        }
 
     #separateur {
         margin-bottom: 0.1em;
@@ -169,6 +201,7 @@ body{
     border-radius: 30px;
     color: var(--yellow);
     text-transform: uppercase;
+    text-decoration: none;
     background-color: transparent;
     border: solid 3px var(--yellow);
     font-size: 0.35em;

@@ -1,34 +1,27 @@
 /* styles.css */
 
 /* Reset some default styles */
-.body{
-  padding: 0;
-  margin:0;
+
+body{
+  overflow: hidden;
+  background-color: black;
 }
   /* Container for the entire content */
-#container-list {
-    position: fixed;
-    height: 100%;
-    padding: 0%;
-    background-color: var(--bg-green);
-    margin-left: calc((100vw - 100 * 3vh / 4) / 2);
-    width: calc(100 * 3vh / 4);
+#container {
+  position: fixed;
+  height: 100%;
+  padding: 0%;
+  background-color: var(--bg-green);
+  margin-left: calc((100vw - 100 * 3vh / 4) / 2);
+  width: calc(100 * 3vh / 4);
   }
-
-  .arrows-container {
-    display: flex;
-    justify-content: space-between; 
-    cursor: pointer;
-    margin-top: 10%;
-    padding: 0% 10%;
-  }
-
 
   /* Styling for the player boxes */
   .player-list {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
   }
   
   .player-box {
@@ -37,9 +30,8 @@
     overflow: hidden; /* Ensure content doesn't overflow */
     margin: 1%;
     width: 80%; /* Adjust the width as needed */
-    max-width: 300%; /* Adjust the maximum width as needed */
-    display: flex; /* Use flexbox for layout */ 
-    height: 15%;  
+    max-width: 100%; /* Adjust the maximum width as needed */
+    display: flex; /* Use flexbox for layout */
   }
   
   .player-box img {
@@ -90,10 +82,10 @@
   }
   
   /* Styling for the footer */
-  footer {
+  .fixed-footer{
     text-align: center;
-    border: 0.188rem solid; 
-    background-image: url('../img/Footer_papier.svg');
+    background-image: url('../img/Footer_accueil_papier_2.svg');
+    margin-top: 15%;
   }
   
   /* Styling for the "Sauvegarder les votes" button */
