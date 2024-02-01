@@ -2,14 +2,10 @@
 
 // ---------- Initialisation des boutons de réponse ----------
 function changeState(imageId, yesButtons, noButtons) {
-    let buttonToChange = localStorage.getItem(imageId);
-    if (buttonToChange) {
       // on a cliqué sur le bouton non
-      if (buttonToChange === 'yes') {
+      if (imageId.slice(0, 3) === 'yes') {
         let yesSvg = yesButtons[imageId.slice(-1) - 1].firstChild;
         // on change la couleur dans le style du svg de "cls-2"
-        console.log("yesSvg");
-        console.log(yesSvg);
         let elemBgColor_svg = yesSvg.contentDocument.querySelector('#bg-color');
         elemBgColor_svg.classList.remove("vert");
         elemBgColor_svg.classList.add("gris");
@@ -39,7 +35,6 @@ function changeState(imageId, yesButtons, noButtons) {
         // on enlève dans le localStorage le bouton non
         localStorage.removeItem('no' + imageId.slice(-1));
       }
-    }
 }
 
 const homeStories = function () {
