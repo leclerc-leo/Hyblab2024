@@ -1,33 +1,3 @@
-/* ------- Important ! Please at least keep the last part of this CSS ----------- */
-/* ------- that adapts content width and height so that aspect ratio  ----------- */
-/* ------- is kept between 9/16 and 3/4 (portait orientation)         ----------- */
-
-/* Normalize margin and padding to ease elements positioning */
-*{
-    padding:0;
-    margin:0;
-}
-
-/** colors **/
-/* Defining the colors used through the app here as variables */
-/* use : color : var(--bg-green) */
-:root {
-    --bg-green :#009E49 ;
-    --yellow: #FADD4B ;
-    --green : #17853C ; 
-}
-/** colors **/
-
-/** fonts **/
-@font-face {
-    font-family: 'Abolition';
-    src: url('../fonts/Abolition-W00-Soft.ttf') format('truetype');
-  }
-@font-face {
-    font-family: 'Neue Haas Unica';
-    src: url('../fonts/NeueHaasUnicaPro-Regular.ttf') format('truetype');
-  }
-/** fonts **/
 
 body{
     background-color: black;
@@ -36,38 +6,16 @@ body{
     font-family: sans-serif;
 }
 
-/* -------------- Loader --------------*/
-#loader {
-    z-index: 2;
-    position:absolute;
-    background-color: #009E49;
-    width: 100%;
-    height: 100%;
-}
-
-#loader-img {
-    top:40%;
-    left:40%;
-    position: absolute;
-}
-
-#loader-text {
-    text-align: center;
-    font-size: 25%;
-    position: absolute;
-    top:60%;
-    width: 100%
-}
-
-/* -------------- End of Loader --------------*/
-
-#header {
-    display: flex;
+#return {
     position: absolute;
     top: 0;
-    height: 12.5%;
-    width: 100%;
+    left: 1em;
 }
+
+#return-img {
+    width: 0.7em;
+}
+
 
 #footer {
     display: flex;
@@ -79,7 +27,7 @@ body{
     height: 12.5%;
     max-height: 5em;
     width: 100%;
-    gap: 1em;
+    gap: 0.3em;
 }
     #archives, #statistiques {
         font-family: 'Abolition';
@@ -93,18 +41,24 @@ body{
         cursor: pointer;
         z-index: 3;
         transition: all 0.5s ease-in-out ;
-        padding: 0.38em;
+        
     }
 
     #statistiques {
         text-transform: uppercase;
-        font-size: 1.4em;
+        font-size: 0.40em;
+        padding: 0.30em;
+        width:7em;
+    }
+
+    #archives {
+        width: 0.40em;
+        height: 0.40em;
+        padding: 0.15em;
     }
 
     #archives-svg {
         color: var(--yellow);
-        width:1.7em;
-        height: 1.7em;
     }
 
     #archives:hover, #statistiques:hover{
@@ -117,15 +71,6 @@ body{
         transition: all 1s ease-in-out;
     }
 
-#return {
-    position: absolute;
-    top: 0.5em;
-    left: 0.5em;
-}
-
-#return-img {
-    width: 2.5em;
-}
 
 #logo {
     position: absolute;
@@ -275,26 +220,17 @@ body{
 }
 
 /*Gestion de la police lorsque l'écran est très petit*/
-@media only screen and (max-width: 260px) {
-    #statistiques {
-        font-size: 1em;
-    }
-
-    #archives {
-        width: 1em;
-        height: 1em;
-    }
+@media only screen and (max-width: 400px) {
 
     #archives-svg {
-        width: 1.4em;
-        height: 1.4em;
+        width: 0.4em;
+        height: 0.4em;
     }
+}
 
-    #statistiques, #archives {
-        padding:0.6em;
-    }
+@media only screen and (max-width: 320px) {
 
-    #return-img {
-        width : 2em;
+    #return {
+        left:0.5em;
     }
 }
