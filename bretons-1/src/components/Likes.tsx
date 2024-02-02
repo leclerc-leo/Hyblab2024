@@ -5,9 +5,11 @@ import './Likes.css';
 type LikeButtonProps = { 
   isLiked: boolean; 
   onClick: () => void;
+  buttonId: string;
+  className?: string;//for using different style
 };
 
-const LikeButton: React.FC<LikeButtonProps> = ({ isLiked, onClick }) => {
+const LikeButton: React.FC<LikeButtonProps> = ({ isLiked, onClick, buttonId }) => {
  return (
     <button className="like-button" onClick={onClick}>
       <div className={`heart-icon ${isLiked ? 'liked' : ''}`}></div>
@@ -34,6 +36,7 @@ const LikedArticlesManager: React.FC<LikedArticlesManagerProps> = ({ articleId }
     <LikeButton
       isLiked={likedArticles.includes(articleId)} 
       onClick={handleLikeClick} 
+      buttonId={articleId}
     />
   );
 };
