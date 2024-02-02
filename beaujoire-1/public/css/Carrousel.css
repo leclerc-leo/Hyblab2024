@@ -33,18 +33,13 @@
 	max-width: 100%;
 }
 
-body {
-	margin: 0;
-	padding: 0;
-	overflow: hidden;
-}
-
 .items {
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	user-select: none;
+	-webkit-user-select: none;
 }
 
 .items .item {
@@ -180,6 +175,7 @@ body {
 	left: 50%;
 	transform: translate(-50%, -50%);
 	user-select: none;
+	-webkit-user-select: none;
 }
 
 .second-items .second-item {

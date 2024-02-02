@@ -41,7 +41,7 @@ window.addEventListener("load", function () {
 			playerElement;
 			playerElement.innerHTML = `
 			<img src="./img/jersey.svg" alt="jersey" />
-			<p>${playerName}</p>
+			<p class="player-name">${playerName}</p>
 			`;
 		} else {
 			console.log(`No element found with id ${playerId}`);
@@ -416,8 +416,10 @@ document
 		<p>${selectedPlayerName}</p>
 		`;
 		selectedPlayerName;
-		document.getElementById(selectedPlayerId).style.backgroundImage =
-			'url("../img/jersey.svg");';
+		document.getElementById(selectedPlayerId).innerHTML = `
+		<img src="./img/jersey.svg" alt="jersey" />
+		<p class="player-name">${selectedPlayerName}</p>
+		`;
 		//Hide the carousel
 		document.querySelectorAll(".carousel-item").forEach((item) => {
 			item.classList.remove("selected");
