@@ -46,18 +46,13 @@ export const Frame1: React.FC<{ text: string, titre: number, sous_titre: string 
             element.style.transform = 'translateY(400vh)';
           }
         }, 4000);
-        setTimeout(function() {
-            const element = document.querySelector('.medailleTransition') as HTMLElement;
-            if(element != undefined) {
-              element.style.transform = 'translateY(400vh)';
-            }
-          }, 3900);
     }, []);
     return (
         <>
-            <img className='medailleTransition' src={determinerImageMedaille(titre)}></img>
             <div className='animationOut'>
-                <div className="animationAgrandissement" style={{
+                <img className='medailleTransition' src={determinerImageMedaille(titre)}></img>
+            </div>    
+            <div className="animationAgrandissement" style={{
                     height: '100%',
                     width: '100%',
                     backgroundImage: `url(/bretons-1/img/athlete/JDE2.jpg)`,
@@ -75,7 +70,6 @@ export const Frame1: React.FC<{ text: string, titre: number, sous_titre: string 
                     <h1 className="golos-text-frame1 titre_frame1" style={{ fontSize: "11vh", bottom: '37vh' }}>{titreAdapte}</h1>
                     <h3 className="golos-text-frame1 sous-titre_frame1" style={{ fontSize: "5vh", bottom: '30vh' }}>{sous_titre}</h3>
                 </div>
-            </div>
         </>
     );
 };
