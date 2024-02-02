@@ -1,4 +1,5 @@
 import './VideoPlayer.css';
+import { useState, useEffect } from 'react';
 import { Player } from "@remotion/player";
 import { MyVideo } from "../remotion/Root";
 import SwipeUp from './SwipeUp';
