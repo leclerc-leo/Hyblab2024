@@ -22,7 +22,7 @@ import { Podium } from '../components/type';
             case 'État-Unis': return usSvg;
             case 'Angleterre': return AngleterreSvg;
             case 'Danemark': return DanemarkSvg;
-            case 'Pays_Bas': return Pays_BasSvg;
+            case 'Pays-Bas': return Pays_BasSvg;
             case 'Suède': return SuèdeSvg;
             // Ajoutez d'autres pays et leurs drapeaux ici
             default: return ''; // Image de drapeau par défaut ou gestion des cas non trouvés
