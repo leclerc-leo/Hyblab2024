@@ -43,8 +43,11 @@ main{
     width: 100%;
     height: 100%;
 }
-#mainSwiperHomeStories .story{
-    width: 32%;
+#mainSwiperHomeStories .devanture{
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
 }
 
 #mainSwiperHomeStories .swiper-slide{
@@ -61,7 +64,7 @@ main{
     z-index: 5;
     top: 0;
     width: 100%;
-    height:100%;
+    height: 100%;
     overflow: inherit;
 }
 .swiper-wrapper{
@@ -76,7 +79,20 @@ main{
 }
 .swiper-slide{
     width: 100%;
+}
+.swiper-slide .devanture-slide{
+    width: 100%;
+    height: auto;
+    position: relative;
+}
 
+/* personnage */
+.swiper-slide .devanture-slide .personnage{
+    height: 40%;
+    width: auto;
+    z-index: 2000;
+    position: absolute;
+    top: 9em;
 }
 
 #recap_button{
