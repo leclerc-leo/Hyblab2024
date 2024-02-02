@@ -4,7 +4,7 @@ import { Player } from "@remotion/player";
 import { MyVideo } from "../remotion/Root";
 import SwipeUp from './SwipeUp';
 import Article from './Article';
-import OffcanvasExample from '../components/Navbar'
+import NavbarT from '../components/Navbar'
 
 function VideoPlayer({ id }: { id: string }) {
 
@@ -26,7 +26,7 @@ function VideoPlayer({ id }: { id: string }) {
     return (
         <div id='VideoPlayer'>
             <div className="head">
-                <OffcanvasExample />
+                <NavbarT />
             </div>
             <Player
                 component={MyVideo}
