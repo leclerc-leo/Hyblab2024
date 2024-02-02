@@ -8,15 +8,16 @@
     z-index: 5;
     top: 0;
     left: -100%;
-    padding-top: 122px;
+    padding-top: 20%;
     background-color: #FBEFEB;
-    padding-top: 60px;
     transition: left 0.5s ease;
+    overflow-y: scroll;
 }
 
 #mySidenav p {
     color: #292C5E;
     font-size: 0.4em;
+    text-indent: 3%;
 }
 
 #mySidenav-header{
@@ -36,6 +37,7 @@
     padding: 8px 8px 8px 0px;
     text-decoration: none;
     font-size: 25px;
+    font-weight: 600;
     color: #292C5E;
     display: block;
     transition: 0.3s;
@@ -55,6 +57,16 @@
     color: #7D7DB5;
 }
 
+li::before {
+    content: "●";
+    color: #7D7DB5;
+    font-size: 16px;
+    position: absolute;
+    left: -8%;
+    top: 57%;
+    transform: translateY(-50%);
+}
+
 #mySidenav hr{
     height: 2px;
     background-color: #292C5E;
@@ -63,6 +75,11 @@
 /* Active class */
 #mySidenav.active {
     left: 0;
+}
+
+
+#mySidenavlastul li{
+    list-style-type: none;
 }
 /* Close btn */
 #closeBtn {
