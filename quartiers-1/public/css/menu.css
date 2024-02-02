@@ -34,8 +34,7 @@
 
 #mySidenav ul {
     list-style-type: none;
-    padding: 0;
-    margin: 0;
+    margin-bottom: 20%;
 }
 
 /* Active class */
@@ -54,13 +53,15 @@
 /* burger */
 .burger-icon span {
     display: block;
-    width: 35px;
-    height: 5px;
-    background-color: black;
+    width: 31px;
+    height: 4px;
+    background-color: #292C5E;
     margin: 6px 0;
 }
 
 #openBtn {
     position: absolute;
     z-index: 4;
+    left: 15px;
+    top: 15px;
 }
