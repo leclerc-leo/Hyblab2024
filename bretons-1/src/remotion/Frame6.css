@@ -20,7 +20,7 @@
 .compteurContainer_frame6 {
   font-family: 'Golos Text', sans-serif;
   position: absolute;
-  top: 155vh;
+  top: 193vh;
   color: black;
   left: 44%;
   z-index: 10;
@@ -45,7 +45,7 @@
 
 .svgCompteur {
   position: absolute;
-  top: 163vh;
+  top: 202vh;
   left: 51%;
   transform: translate(-50%, -50%);
   width: 33vh;
