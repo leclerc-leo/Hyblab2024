@@ -25,7 +25,7 @@ body {
 .container {
 	display: flex;
 	align-items: center;
-	height: 100dvh;
+	height: 90dvh;
 	flex-direction: column;
 	align-content: center;
 	justify-content: space-between;
@@ -76,45 +76,18 @@ body {
 	background-color: #1e1e28;
 }
 
-.player {
-	position: relative;
-	text-align: center;
-}
-
-.player img {
-	width: 100%;
-	height: auto;
-	z-index: 10;
-}
-
-.player::after {
-	content: attr(data-number);
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	font-size: 1em;
-	color: white;
-	z-index: 20;
-}
-
 /* Vector */
 .field {
 	position: relative;
 	background-color: #1e1e28;
+	width: 85vw;
 	padding: 5% 3%;
 	border-radius: 20px;
+	aspect-ratio: 0.65;
+    margin-top: -50px; 
 }
 
-.player {
-	position: absolute;
-	background-image: url("../img/card.svg");
-	background-repeat: no-repeat;
-	background-size: contain;
-	transform: translate(-50%, -50%);
-	width: 14%;
-	height: 13%;
-}
+
 
 #footer {
 	display: flex;
@@ -129,7 +102,6 @@ body {
 .gm-btn {
 	background: none;
 	border: none;
-	padding: 5px 15px;
 	margin-top: 0;
 	font-size: 16px;
 	line-height: 24px;
@@ -152,7 +124,7 @@ body {
 	justify-content: center;
 	align-items: center;
 }
-
+    
 #bottom-btn {
 	display: flex;
 	flex-direction: row;
@@ -179,16 +151,13 @@ body {
 	background: var(--gb-52);
 	font-family: Bebas Neue;
 	margin: 0 5% 5% 5%;
+	display: inline-block; 
+
 }
 
 .gb-shutter:active {
 	background-color: var(--gb-51);
 	color: var(--gb-52);
-}
-
-.gm-btn.gb-shutter {
-	width: auto;
-	white-space: nowrap;
 }
 
 #blason,
@@ -247,199 +216,31 @@ body {
 	--gb-51: #fadc00;
 	--gb-52: #1e1e28;
 }
-
-/*Bio Overlay*/
-.bio-overlay {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(0, 0, 0, 0.96);
-	z-index: 1000;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-}
-
-.bio-overlay > * {
-	margin: 5%;
-}
-
-/* Card Carousel */
-.carousel-overlay {
-	display: none;
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: rgba(0, 0, 0, 0.9);
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-}
-
-.carousel {
-	display: flex;
-	overflow-x: scroll;
-	overflow-y: hidden;
-	width: 100%;
-	scroll-snap-type: x mandatory;
-	padding: 0 5%;
-	scroll-padding: 50%;
-	::-webkit-scrollbar {
-		display: none;
-	}
-	scrollbar-width: none; /* Firefox */
-	-ms-overflow-style: none; /* Internet Explorer 10+ */
-}
-.carousel-item.active {
-	z-index: 2;
-	transform: scale(1.2);
-}
-
-@keyframes player-animation {
-	0% {
-		transform: translate(-100% 0) scale(1);
-	}
-	50%,
-	80% {
-		transform: scale(1.5);
-		opacity: 0.5;
-	}
-	100% {
-		opacity: 1;
-	}
-}
-
-.player-animation {
-	animation: player-animation 2s ease-out;
-	transform-origin: bottom;
-}
-
-.carousel-item {
-	flex: 0 0 auto;
-	height: 95%;
-	width: 80%;
-	scroll-snap-align: center;
-	font-size: 24px;
-	z-index: 1;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	padding: 20px;
-	margin: 10px;
-	background-color: transparent;
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-}
-
-.carousel-item.selected > img {
-	transform: scale(1.2);
-}
-
-.carte-img {
-	width: 90%;
-	height: 45%;
-	object-fit: contain;
-}
-
-#poste-title {
-	margin-top: 15%;
-}
-
-.carousel-grid {
-	height: 55%;
-	width: 100%;
-	align-self: flex-end;
-	justify-content: center;
-	margin-top: 10%;
-	font-weight: bold;
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 1fr 1fr;
-	gap: 10px;
-}
-
-.carousel-grid > * {
-	object-fit: contain;
-	height: 100%;
-}
-
-.carousel-grid > * > * {
-	margin: 0;
-}
-
-.stat-name {
-	font-size: 14px;
-	margin-top: 5px;
-}
-
-.carousel-coupes {
-	display: flex;
-	align-items: flex-start;
-	flex-direction: column;
-	justify-content: flex-end;
-}
-
-.coupes {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
-	grid-template-rows: auto;
-}
-
-.cp-col {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	align-items: center;
-	align-self: flex-end;
-	width: 100%;
-	height: 100%;
-}
-
-.cp-col > * {
-	margin: 0;
-}
-
-.bar-container {
-	position: relative;
-	width: 30%;
-	height: 100%;
-	margin-right: 4%;
-}
-
-#bar1 {
+.player {
 	position: absolute;
-	bottom: 0;
-	width: 100%;
-	height: 33%;
-	border-radius: 20px;
+	background-image: url("../img/card.svg");
+	background-repeat: no-repeat;
+	background-size: contain;
+	transform: translate(-50%, -50%);
+	width: 45px;
+	height: 63px;
 }
 
-#bar2 {
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-	height: 66%;
-	border-radius: 20px;
-}
+.player-selection {
+    color: green; /* Assuming the text is white */
+    font-family: Arial, sans-serif; /* You can change this to match the font in the image */
+    font-size: 18px; /* Adjust the size as needed */
+    padding: 5px; /* Adjust padding to match your design */
+    text-align: center; /* Centers the text inside the div */
+    border-radius: 5px; /* Optional: if you want rounded corners */
+  }
+ 
 
-#bar3 {
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-	height: 100%;
-	border-radius: 20px;
-}
 
-.flex-row {
+.buttons-container {
 	display: flex;
-	flex-direction: row;
-	justify-content: flex-start;
-	height: 60%;
+	justify-content: center; /* Centrer horizontalement */
+	align-items: center; /* Centrer verticalement, si nécessaire */
 }
 
 @media screen and (min-width: 600px) {
@@ -451,8 +252,6 @@ body {
 		aspect-ratio: 0.000005;
 		padding: 5px 20px;
 	}
-	.player {
-		transform-origin: center;
-		transform: rotate(90deg) translate(-55%, 40%) scale(0.7);
-	}
+
+	
 }
