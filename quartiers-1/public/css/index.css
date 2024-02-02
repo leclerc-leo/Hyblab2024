@@ -241,7 +241,7 @@ h1{
 
 @keyframes animCloud1 {
     from {
-        left: -20%;
+        left: -15%;
     }
     to {
         left: 100%;
@@ -261,7 +261,7 @@ h1{
     
 
     51%{
-        left: -20%;
+        left: -15%;
         visibility: hidden;
     }
     100% {
@@ -283,7 +283,7 @@ h1{
     
 
     26%{
-        left: -20%;
+        left: -15%;
         visibility: hidden;
     }
     100% {
