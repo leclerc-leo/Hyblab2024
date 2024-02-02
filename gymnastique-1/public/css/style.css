@@ -60,6 +60,7 @@ body {
 /* white navigation bullets */
 .swiper-pagination-bullet-active {
   background-color: #386f9c !important;
+  width:10%;
 }
 
 /* the slides and the loader should fill the whole 9:16 zone */
@@ -124,9 +125,9 @@ body {
 #first-slide .tete {
   position: absolute;
   height: auto;
-  width: 31%;
-  top: 10.5%;
-  left: 12.3%;
+  width: 30%;
+  top: 8.5%;
+  left: 12%;
   transform: translateX(-50%);
   z-index: 2;
   rotate: -10deg;

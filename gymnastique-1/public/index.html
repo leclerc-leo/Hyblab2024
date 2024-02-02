@@ -17,7 +17,10 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/loadingio/loading.css@v2.0.0/dist/loading.css"
     />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+    />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="js/slide1.js" defer></script>
@@ -37,16 +40,29 @@
       <div id="mySwiper" class="swiper">
         <!-- le main est aussi le conteneur des différents slides (contenus à chaque fois dans des sections-->
         <main class="swiper-wrapper">
+          
           <!-- Le contenu du slide 1 -->
 
           <section id="first-slide" class="swiper-slide">
             <header>
               <div id="logo">
                 <img src="img/slide1/logo_2.svg" alt="logo hyblab" />
+              </div>
             </header>
             <p id="texte1"></p>
             <div class="tete" id="tete">
-              <img src="img/slide1/tete.svg" alt="tete" />
+              <script
+                src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
+                type="module"
+              ></script>
+
+              <dotlottie-player
+                src="https://lottie.host/1db68894-e01c-4e8e-ad6c-9cd170bf72fb/NlAPGCacWo.json"
+                background="transparent"
+                speed="1"
+                loop
+                autoplay
+              ></dotlottie-player>
             </div>
             <div class="arrow" id="down-arrow">
               <img src="img/slide1/fleche.svg" alt="down-arrow" />
@@ -56,6 +72,7 @@
             </div>
             <div class="txt_background" id="txt_background">
               <img src="img/slide1/cadre_txt.svg" alt="txt_background" />
+            </div>
             <footer></footer>
           </section>
 
