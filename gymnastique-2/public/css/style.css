@@ -421,7 +421,7 @@ svg.image-histoire, svg.image-jo{
 .card {
     display: table;
     width: 370px;
-    height: 125px;
+    height: 110px;
     border-radius: 2rem;
     align-items: center;
     display: flex;
@@ -444,7 +444,7 @@ svg.image-histoire, svg.image-jo{
 
 .card-titre {
     position: absolute;
-    top: 35px;
+    top: 25px;
 }
 
 .card-texte {
@@ -454,7 +454,7 @@ svg.image-histoire, svg.image-jo{
 }
 
 .actif {
-    max-height: 60vh;
+    max-height: 50vh;
     height: 100%;
 }
 
