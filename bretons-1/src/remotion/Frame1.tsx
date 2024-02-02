@@ -33,7 +33,7 @@ const determinerImageMedaille = (rang: number) => {
   };
   
 
-export const Frame1: React.FC<{ text: string, titre: number, sous_titre: string }> = ({ text, titre, sous_titre }) => {
+export const Frame1: React.FC<{ text: string, titre: number, sous_titre: string, image:string }> = ({ text, titre, sous_titre,image }) => {
 
     const titreAdapte = determinerTexteTitre(titre);
     const cheminImageMedaille = determinerImageMedaille(titre);
@@ -55,13 +55,14 @@ export const Frame1: React.FC<{ text: string, titre: number, sous_titre: string 
             <div className="animationAgrandissement" style={{
                     height: '100%',
                     width: '100%',
-                    backgroundImage: `url(/bretons-1/img/athlete/JDE2.jpg)`,
+                    backgroundImage: `url(${image})`,
                     objectFit: 'cover',
                     objectPosition: 'center center',
                     backgroundPosition: 'center',
                     backgroundRepeat: 'no-repeat',
                     position: 'relative',
                     transform: 'scale(1)',
+                    backgroundSize: '1080px 1920px',
                 }}>
                     {cheminImageMedaille && (
                         <img src={cheminImageMedaille} alt="Médaille" style={{ position: 'absolute', top: '25vh', left: '17vh', width: '150px', height: '168px' }} />
