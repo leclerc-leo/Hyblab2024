@@ -145,3 +145,8 @@ footer {
     margin-bottom:2rem;
     background-color: white;
 }
+
+.fade-out {
+    transition: opacity 1s ease; 
+}
+

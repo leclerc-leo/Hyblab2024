@@ -136,7 +136,7 @@ function page_sport(){
 		const button = document.createElement("button");
 		button.classList.add("btn");
 		button.classList.add("btn-dark");
-		button.setAttribute("style", "--bs-btn-font-size: 4vh; margin-bottom: auto; padding-left: 5vh; padding-right: 5vh; border-radius: 0px; background-color: ");
+		button.setAttribute("style", "--bs-btn-font-size: 4vh; margin-bottom: auto; padding-left: 5vh; padding-right: 5vh; border-radius: 0px; background-color: #141456; text-transform: uppercase");
 		button.textContent = sport;
 		button.onclick = () => {
 			page_historique(sport);
@@ -236,23 +236,120 @@ function page_historique(sport) {
 			div.style.alignItems = "center";
 			div.style.height = "100%";
 
-			const image = document.createElement("img");
-			//image.src = ;
+			const video = document.createElement("video");
 
+			video.src = './Videos/debut_fin.mp4';
+			// video.autoplay = true;
+			video.controle = true;
+			video.controlsList = "nodownload";
+			video.style.height = "40%";
+			video.style.border = "0.5px solid black"; //à modifier ?
 
-			// const swiperSlide = document.createElement("div");
-			// swiperSlide.classList.add("swiper-slide");
-			// swiperSlide.style.width = "100%";
-			// swiperSlide.style.height = "100%";
+			const sourceMP4 = document.createElement("source");
+			sourceMP4.src = './Videos/debut_fin.mp4';
+			sourceMP4.type = 'video/mp4';
 
-			// swiperSlide.textContent = a;
+			const sourceWebM = document.createElement("source");
+			sourceWebM.src = './IVideos/debut_fin.webm';
+			sourceWebM.type = 'video/webm';
 
+			video.oncanplay = ()=>{
+				video.style.cursor = "pointer";
+				const playButton = document.createElement("button");
+				const playButtonImage = document.createElement("img");
+				playButtonImage.src = "./Image/picto-button-video/play.svg";
+				playButtonImage.alt = "Play"; 
+				playButton.appendChild(playButtonImage);
 
+				playButton.style.backgroundColor = "transparent";
+				playButton.style.border = "none";
+				playButton.style.cursor = "pointer";
 
+				playButtonImage.style.width = "30px"; 
+    			playButtonImage.style.height = "30px";
 
+				playButton.style.border = "none"; 
+				playButton.style.cursor = "pointer"; 
+				playButton.style.position = "absolute"; 
+				playButton.style.top = "50%"; 
+				playButton.style.left = "50%"; 
+				playButton.style.transform = "translate(-50%, -50%)";
 
+				let isPlaying = false;
 
-			// divSwipperWrapper.appendChild(swiperSlide);
+				playButton.addEventListener("click", function () {
+					playButton.style.opacity = 1;
+
+					if (!isPlaying) {
+						video.play();
+						playButtonImage.src = "./Image/picto-button-video/pause.svg";
+
+						isPlaying = true;
+
+						playButton.classList.add("fade-out");
+
+						setTimeout(function () {
+							playButton.style.opacity = 0; 
+						}, 1000);
+					} else {
+						playButtonImage.src = "./Image/picto-button-video/play.svg"; 
+						video.pause();
+
+						isPlaying = false;
+
+						playButton.classList.add("fade-out");
+				
+						setTimeout(function () {
+							playButton.style.opacity = 0; 
+						}, 1000);
+					}
+				});
+
+				video.addEventListener("click", function () {
+					playButton.style.opacity = 1;
+
+					if (isPlaying) {
+						playButtonImage.src = "./Image/picto-button-video/pause.svg"; 
+						video.pause();
+
+						isPlaying = false;
+
+						// playButton.classList.add("fade-out");
+				
+						// setTimeout(function () {
+						// 	playButton.style.opacity = 0; 
+						// }, 1000);
+
+						playButtonImage.src = "./Image/picto-button-video/play.svg"; 
+					}
+					else {
+						playButtonImage.src = "./Image/picto-button-video/pause.svg"; 
+						video.play();
+
+						isPlaying = true;
+
+						playButton.classList.add("fade-out");
+				
+						setTimeout(function () {
+							playButton.style.opacity = 0; 
+						}, 1000);
+					}
+				});
+
+				// playButton.addEventListener("transitionend", function () {
+				// 	playButton.style.display = "none";
+				// });
+
+				video.appendChild(sourceMP4);
+				video.appendChild(sourceWebM);
+
+				div.appendChild(video);
+				div.appendChild(playButton);
+				slide.appendChild(div);
+				divSwipperWrapper.appendChild(slide);
+
+			}
+			
 		}
 
 		blank.appendChild(divSwipper);
@@ -260,46 +357,6 @@ function page_historique(sport) {
 		const swiperConfig = {
 			centeredSlides: true,
 		  }
-
-		// new Swiper(".swiper",swiperConfig);
-
-
-
-		// const section = document.createElement("section");
-		// section.classList.add("splide");
-		// section.setAttribute("aria-label", "Splide for athletes");
-		// section.style.display = "flex";
-		// section.style.alignItems = "center";
-		// section.style.height = "100%";
-
-		// const div2 = document.createElement("div");
-		// div2.classList.add("splide__track");
-
-		// const ul = document.createElement("ul");
-		// ul.classList.add("splide__list");
-
-		// for (const [a, dataAthlete] of Object.entries(athlete)) {
-		// 	const li = document.createElement("li");
-		// 	li.classList.add("splide__slide");
-		// 	li.textContent = a;
-		// 	li.style.textAlign = "center";
-
-		// 	ul.appendChild(li);
-		// }
-		
-		// div2.appendChild(ul);
-		// section.appendChild(div2);
-		// div.appendChild(section);
-		// blank.appendChild(div);
-
-		// var splide = new Splide( '.splide', {
-		// 	type   : 'loop',
-		// 	perPage: 3,
-		// 	focus  : 'center',
-		// 	wheel  : true,
-		// });
-
-		// splide.mount();
 	});
 }
 
