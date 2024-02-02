@@ -5,6 +5,7 @@
     display: flex; 
     flex-direction: column; 
     height: 140vh; /* Prendre toute la hauteur de la fenêtre */
+    align-items: flex-start;
 }
 .titre{
     font-family: "Golos Text";
@@ -28,19 +29,24 @@
     align-items: flex-start;
     line-height: normal; 
     margin-left: 230px; 
-    
+}
+
+.leftSVG {
+    width: 76px;
+    height: 76px;
+    fill: #25283D;
 }
 
 .rectangleYellow {
     width: 100%;
-    height: 200px;
     flex-shrink: 0;
     background: #FACD60;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column; /* Changez la direction flex à "column" */
+    align-items: center; /* Centrez le contenu horizontalement */
     padding: 20px;
 }
+
 
 .rectangleBlue{
     width: 70%;
@@ -66,7 +72,7 @@
 }
 
 .name {
-    font-size: 30px;
+    font-size: 60px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
