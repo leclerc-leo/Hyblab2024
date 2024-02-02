@@ -16,7 +16,7 @@ db.serialize(() => {
         db.exec(`
             DROP TABLE IF EXISTS Nationalités;
             CREATE TABLE Nationalités(
-                id INTEGER PRIMARY KEY autoincrement,
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
                 nationalité VARCHAR(50),
                 abreviation VARCHAR(3),
                 drapeau BLOB    
@@ -24,13 +24,13 @@ db.serialize(() => {
 
             DROP TABLE IF EXISTS Postes;
             CREATE TABLE Postes(
-                id INTEGER PRIMARY KEY autoincrement,
-                poste VARCHAR(20)
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                poste VARCHAR(25)
             );
 
             DROP TABLE IF EXISTS Joueurs;
             CREATE TABLE Joueurs(
-                id INTEGER PRIMARY KEY autoincrement,
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
                 nom VARCHAR(50),
                 prenom VARCHAR(50),
                 age TINYINT,
@@ -53,14 +53,14 @@ db.serialize(() => {
 
             DROP TABLE IF EXISTS Articles;
             CREATE TABLE Articles(
-                id INTEGER PRIMARY KEY autoincrement,
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
                 article BLOB
             );
 
             DROP TABLE IF EXISTS JoueursArticles;
             CREATE TABLE JoueursArticles(
-                id_joueur INT,
-                id_article INT,
+                id_joueur INTEGER,
+                id_article INTEGER,
                 PRIMARY KEY (id_joueur, id_article),
                 FOREIGN KEY (id_joueur) REFERENCES Joueurs(id),
                 FOREIGN KEY (id_article ) REFERENCES Articles(id)
@@ -68,14 +68,14 @@ db.serialize(() => {
 
             DROP TABLE IF EXISTS Photos;
             CREATE TABLE Photos(
-                id INTEGER PRIMARY KEY autoincrement,
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
                 photo BLOB
             );
 
             DROP TABLE IF EXISTS JoueursPhotos;
             CREATE TABLE JoueursPhotos(
-                id_joueur INT,
-                id_photo INT,
+                id_joueur INTEGER,
+                id_photo INTEGER,
                 PRIMARY KEY (id_joueur, id_photo),
                 FOREIGN KEY (id_joueur) REFERENCES Joueurs(id),
                 FOREIGN KEY (id_photo) REFERENCES Photos(id)
@@ -83,14 +83,14 @@ db.serialize(() => {
 
             DROP TABLE IF EXISTS Vidéos;
             CREATE TABLE Vidéos(
-                id INTEGER PRIMARY KEY autoincrement,
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
                 vidéo BLOB
             );
 
             DROP TABLE IF EXISTS JoueursVidéos;
             CREATE TABLE JoueursVidéos(
-                id_joueur INT,
-                id_vidéo INT,
+                id_joueur INTEGER,
+                id_vidéo INTEGER,
                 PRIMARY KEY (id_joueur, id_vidéo),  
                 FOREIGN KEY (id_joueur) REFERENCES Joueurs(id),
                 FOREIGN KEY (id_vidéo) REFERENCES Vidéos(id)
@@ -110,7 +110,19 @@ db.serialize(() => {
                 poste9 TINYINT,
                 poste10 TINYINT,
                 poste11 TINYINT,
-                poste12 TINYINT
+                poste12 TINYINT,
+                FOREIGN KEY (poste1) REFERENCES Joueurs(id),
+                FOREIGN KEY (poste2) REFERENCES Joueurs(id),
+                FOREIGN KEY (poste3) REFERENCES Joueurs(id),
+                FOREIGN KEY (poste4) REFERENCES Joueurs(id),
+                FOREIGN KEY (poste5) REFERENCES Joueurs(id),
+                FOREIGN KEY (poste6) REFERENCES Joueurs(id),
+                FOREIGN KEY (poste7) REFERENCES Joueurs(id),
+                FOREIGN KEY (poste8) REFERENCES Joueurs(id),
+                FOREIGN KEY (poste9) REFERENCES Joueurs(id),
+                FOREIGN KEY (poste10) REFERENCES Joueurs(id),
+                FOREIGN KEY (poste11) REFERENCES Joueurs(id),
+                FOREIGN KEY (poste12) REFERENCES Joueurs(id)
             );
         `);
         db.run(`
@@ -128,7 +140,6 @@ db.serialize(() => {
                 ('Attaquant 2'),
                 ('Sélectionneur')
         `);
-        // Insertion des nationalités si elles n'existent pas
         db.run(`
         INSERT OR IGNORE INTO Nationalités(nationalité) VALUES 
         ('Français'),
@@ -136,7 +147,6 @@ db.serialize(() => {
         ('Camerounais');
         `);
 
-        // Insertion des joueurs avec les nationalités correctes
         db.run(`
         INSERT INTO Joueurs(nom, prenom, age, naissance, nationalité1, nationalité2, poste, AnnéeDébut, AnnéeFin, selections, buts, photo, citation, biographie)
         VALUES 
@@ -145,19 +155,11 @@ db.serialize(() => {
         ('Simon', 'Moses', 28, '1995-07-12', (SELECT id FROM Nationalités WHERE nationalité = 'Nigérian'), NULL, 7, 2019, NULL, 198, 33, NULL, 'lorem ipsum dolor sit amet', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'),
         ('Ganago', 'Ignatius', 24, '1999-02-16', (SELECT id FROM Nationalités WHERE nationalité = 'Camerounais'), NULL, 7, 2022, NULL, 48, 6, NULL, NULL, NULL);
         `);
-        /** insertion de votes et calcul de statistiques
-        db.run(`
-            INSERT INTO Votes VALUES ?`, []
-        );
-        db.all('SELECT COUNT(*)*100 / (SELECT COUNT(*) FROM Votes) AS ratio FROM Votes WHERE posteX = ?', [], (err, rows) => {});
-        */
     }
     db.all('SELECT * FROM Joueurs', (err, rows) => {
         if (err) console.error(err.message);
         else console.log('Résultat de la sélection : ', rows)
     });
 })
-
-db.close();
 
 module.exports = db;
