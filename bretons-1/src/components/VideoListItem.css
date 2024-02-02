@@ -42,8 +42,10 @@
     flex-direction: row;
     padding: 16px; /* Padding inside the video item */
     overflow: hidden;
-    width: 17em;
-    height: 8em;
+    width: 20em;
+    height: 15em;
+    left: 50%;
+    transform: translate(-50%);
   }
   
   .video-list-item img {
