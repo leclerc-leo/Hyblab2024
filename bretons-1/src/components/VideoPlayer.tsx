@@ -1,14 +1,20 @@
 import './VideoPlayer.css';
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Player } from "@remotion/player";
 import { MyVideo } from "../remotion/Root";
 import SwipeUp from './SwipeUp';
 import Article from './Article';
-import OffcanvasExample from '../components/Navbar'
+import NavbarT from '../components/Navbar'
 
 function VideoPlayer({ id }: { id: string }) {
-
+    const navigate = useNavigate();
     const [allowSwipe, setAllowSwipe] = useState(false);
+
+    const handleClick = () => {
+      // After click return button navigate to Accueil
+      navigate('/bretons-1');
+    };
 
     // set 
     useEffect(() => {
@@ -26,7 +32,7 @@ function VideoPlayer({ id }: { id: string }) {
     return (
         <div id='VideoPlayer'>
             <div className="head">
-                <OffcanvasExample />
+                <NavbarT />
             </div>
             <Player
                 component={MyVideo}
@@ -39,6 +45,13 @@ function VideoPlayer({ id }: { id: string }) {
                 controls
                 autoPlay
             />
+              <div onClick={handleClick} className='boutonRetour'>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="25" viewBox="0 0 16 25" fill="none">
+              <path d="M14 2L3 12.5L14 23" stroke="white" strokeWidth="3"/>
+              </svg>
+
+            </div>
+
             {(
           allowSwipe &&(
             <>
