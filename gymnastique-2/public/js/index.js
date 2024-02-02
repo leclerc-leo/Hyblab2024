@@ -80,17 +80,4 @@ categories_buttons.forEach( button => {
         swiper.disable(); // pour éviter de changer de slide lors d'un scroll et d'autoriser le scroll sur la page
     });
 });
-
-document.querySelectorAll('.card-container').forEach(card_container =>{
-    card_container.addEventListener("click",()=>{
-        card_container.children[1].classList.toggle("flipcard");
-        const img_gif = card_container.children[0];
-        img_gif.classList.contains("invisible") ?
-            setTimeout(()=>{img_gif.classList.toggle("invisible");},1000) : img_gif.classList.toggle("invisible");
-        
-        
-    });
-
-})
-
 window.addEventListener("deviceorientation", handle_orientation);

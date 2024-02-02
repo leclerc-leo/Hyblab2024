@@ -366,6 +366,7 @@ svg.image-histoire, svg.image-jo{
     font-family: "Krona_One variant0";
 }
 #palmares-page .palmares-container {
+    margin-top: 20%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -377,19 +378,19 @@ svg.image-histoire, svg.image-jo{
 #palmares-page #titre-palmares {
     color: #482E49;
     margin: 5% auto 0 auto;
-    font-size: 30px;
+    font-size: 3vh;
 }
 #palmares-page .image-titre{
-    margin-top: 20%;
     margin-bottom: 5%;
     max-width: 40%;
+
 }
 .card-container {
-    width: 450px;
-    height: 125px;
+    width: 80vw;
+    height: 10vh;
     max-height: 10%;
     max-width: 80%;
-    perspective: 800px;
+    perspective: 90vw;
     margin: 5% 10% 5% 10%;
 }
 .flipcard {
@@ -399,7 +400,7 @@ svg.image-histoire, svg.image-jo{
     position: absolute;
     height: 100%;
     z-index : 2;
-    left: 70%;
+    right: 0;
     top: 40%;
 }
 .card {
@@ -437,11 +438,17 @@ svg.image-histoire, svg.image-jo{
     transform: rotateY(180deg);
     align-items: center;
 }
+.card-front-palmares-titre{
+    font-size: 1.8vh;
+}
 .card-palmares-titre{
     margin: 2% 0 2% 0;
     color: #E47754;
+    font-size: 1.5vh;
 }
-
+.card-palmares-texte{
+    font-size: 1.2vh;
+}
 
 .credits-list > li{
     display: block;
@@ -458,7 +465,4 @@ svg.image-histoire, svg.image-jo{
     width: 20%;
     height: auto;
     vertical-align: middle;
-}
-.invisible{
-    display: none;
 }
