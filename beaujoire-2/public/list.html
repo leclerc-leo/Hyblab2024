@@ -8,39 +8,38 @@
   <title>Player List</title>
 
   <!--css files-->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
   <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="css/list.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 
 </head>
 <body>
   <div id="container">
-    <div class="list-swiper">
-      <div class="swiper mySwiper thumbnail-slider">
-        <div class="swiper-wrapper">
-          <h1> <!--position 1--></h1>
-          <h1><!--position 2--></h1>
-          <h1> <!--position 3--> </h1>
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <!-- Each swiper-slide will contain a list of players -->
+        <div class="swiper-slide">
+          <div class="player-list" id="playerList1">
+            <!-- Player boxes for list 1 will be dynamically added here -->
+          </div>
         </div>
-      </div>
-      <div class="swiper mySwiper2">
-        <div class="swiper-wrapper main">
-            <list class="player-list" id="playerList">
-            <!-- Player boxes will be dynamically added here -->
-            </list>
+        <div class="swiper-slide">
+          <div class="player-list" id="playerList2">
+            <!-- Player boxes for list 2 will be dynamically added here -->
+          </div>
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        <!-- Add more swiper-slide for additional lists as needed -->
       </div>
     </div>
-
 
     <div class="fixed-footer">
       <button id="retour"> Retour au terrain!</button>
     </div>
 
   </div>
-<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-<script src="js/list.js"></script>
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="js/list.js"></script>
 </body>
 </html>
