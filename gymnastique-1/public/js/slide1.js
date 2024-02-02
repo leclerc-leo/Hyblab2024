@@ -22,26 +22,38 @@ const clickOutsidePopup = (name, event) => {
   }
 };
 
-const initSlide2 = async function () {
-  document.getElementById("algerie").addEventListener("click", (evt) =>{showPopup("popup_algerie");});
+const initSlide2 = async function (popupId, objectId) {
+  document.getElementById(objectId).addEventListener("click", (evt) => { showPopup(popupId); });
 
   try {
     const response = await fetch("data/obj.json");
     const data = await response.json();
 
-    const title = document.querySelector("#title-obj");
-    const text = document.querySelector("#text-obj");
-    const img = document.querySelector("#img-obj");
+    const objData = data[objectId]; // Récupérer les données de l'objet correspondant
 
-    title.textContent = data.title || " PAS DE TITRE ";
-    text.textContent = data.text || " PAS DE TEXTE ";
+    const title = document.querySelector(`#${popupId} #title-obj`);
+    const text = document.querySelector(`#${popupId} #text-obj`);
+    const img = document.querySelector(`#${popupId} #img-obj`);
 
-    img.setAttribute("src", data.picture);
+    title.textContent = objData.title || " PAS DE TITRE ";
+    text.textContent = objData.text || " PAS DE TEXTE ";
+
+    // Si vous avez des images dans votre JSON, vous pouvez également les afficher
+    // img.setAttribute("src", objData.picture);
 
   } catch (error) {
     console.error("ERREUR JSON :", error);
   }
 
-  document.querySelector("#close").addEventListener("click", (evt) =>{closePopup("popup_algerie")});
-  document.addEventListener("click",(evt) =>{ clickOutsidePopup("popup_algerie", evt)});
-}; 
+  document.querySelector(`#${popupId} #close`).addEventListener("click", (evt) => { closePopup(popupId) });
+  document.addEventListener("click", (evt) => { clickOutsidePopup(popupId, evt) });
+};
+
+// Utilisation de la fonction initSlide2 pour chaque objet dans le JSON
+initSlide2("popup_manique", "manique");
+initSlide2("popup_cupcake", "cupcake");
+initSlide2("popup_coupe", "coupe");
+initSlide2("popup_gourde", "gourde");
+initSlide2("popup_algerie", "algerie");
+initSlide2("popup_medaille", "medaille");
+initSlide2("popup_photo", "photo");

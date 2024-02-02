@@ -106,10 +106,6 @@ main > section {
 #second-slide .popup {
   display: none;
   position: absolute;
-  background-image: url("../img/pop-48.svg");
-  background-position: 50%;
-  background-repeat: no-repeat;
-  background-size: 100%;
   width: 80%;
   height: 80%;
   top: 10%;
@@ -229,6 +225,61 @@ main > section {
   height: 2em;
 }
 
+#popup_gourde {
+  position: absolute;
+  background-image: url("../img/pop-48.svg");
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+#popup_manique {
+  position: absolute;
+  background-image: url("../img/pop-55.svg");
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+#popup_cupcake {
+  position: absolute;
+  background-image: url("../img/pop-54.svg");
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+#popup_coupe {
+  position: absolute;
+  background-image: url("../img/pop-53.svg");
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+#popup_medaille {
+  position: absolute;
+  background-image: url("../img/pop-52.svg");
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+#popup_algerie {
+  position: absolute;
+  background-image: url("../img/pop-51.svg");
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+#popup_photo {
+  position: absolute;
+  background-image: url("../img/pop-50.svg");
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
 /* ---------- Important media queries for easy responsive content :-) ----------------- */
 /* Whatever the device used, the content will be displayed full width and height if      */
 /* the aspect ratio is between 3/4 and 9/16. If not it is locked to either 3/4 or 9/16  */
