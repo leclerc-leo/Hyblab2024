@@ -11,8 +11,6 @@ import {
 import"./css/style.css";
 import "./css/font.css";
 
-
-
 export const Video = ({
 	discipline,
 	date,
