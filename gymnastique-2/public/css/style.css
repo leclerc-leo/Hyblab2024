@@ -25,10 +25,14 @@ body{
     position: absolute;
 }
 
+.swiper-pagination{
+    font-size: 0;
+}
+
 .swiper-pagination-bullets.swiper-pagination-horizontal {
     --swiper-pagination-bottom: 0px;
     width: 100%;
-    margin: 0 auto;
+    margin: 0 auto 10px auto;
 }
 
 .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet{
@@ -172,9 +176,9 @@ header{
 
 .category-button{
     position: absolute; 
-    width: 60%; 
+    width: 60%;
     height: 0; 
-    padding: 30% 0; 
+    padding: 30% 0;
     transform: translate(-50%, 50%); 
     display: flex; 
     justify-content: center; 
@@ -355,7 +359,7 @@ svg.image-histoire, svg.image-jo{
     margin-right: 20%;
     width: 30%;
     height: auto;
-    margin-bottom: -20%;
+    margin-bottom: -10%;
 }
 
 #chemin2{
@@ -377,6 +381,99 @@ svg.image-histoire, svg.image-jo{
 
 .image-titre{
     max-width: 40%;
+}
+
+#palmares-page .svg-boucle{
+    position: absolute;
+    top : 0;
+    width: 50%;
+}
+#palmares-page {
+    background-color: #FFD8B3;
+    font-family: "Krona_One variant0";
+}
+#palmares-page .palmares-container {
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+#palmares-page #titre-palmares {
+    color: #482E49;
+    margin: 2.5% auto 0 auto;
+    font-size: 4vh;
+}
+#palmares-page .image-titre{
+    margin-bottom: 5%;
+    max-width: 40%;
+
+}
+#palmares-page .card-container {
+    width: 80vw;
+    height: 15vh;
+    max-height: 10%;
+    max-width: 80%;
+    perspective: 90vw;
+    margin: 2.5% 10% 2.5% 10%;
+}
+#palmares-page .flipcard {
+    transform: rotateY(180deg);
+}
+#palmares-page .doigt-gif{
+    position: absolute;
+    height: 100%;
+    z-index : 2;
+    right: 0;
+    top: 40%;
+}
+#palmares-page .card {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    transition: transform 1500ms;
+    transform-style: preserve-3d;
+    z-index: 1;
+
+}
+
+#palmares-page .card-front,
+#palmares-page .card-back {
+    display: table;
+    width: 100%;
+    height: 100%;
+    border-style: solid;
+    border-color: #E47754;
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: 10px;
+}
+
+#palmares-page .card-front {
+    background-color: #E47754;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#palmares-page .card-back {
+    background-color: transparent;
+    transform: rotateY(180deg);
+    align-items: center;
+}
+#palmares-page .card-front-palmares-titre{
+    margin: 2% 0 2% 0;
+    font-size: 1.8vh;
+}
+#palmares-page .card-palmares-titre{
+    margin: 2% 0 2% 0;
+    color: #E47754;
+    font-size: 1.8vh;
+}
+#palmares-page .card-palmares-texte{
+    font-size: 1.5vh;
 }
 
 .credits-list > li{
@@ -426,7 +523,7 @@ svg.image-histoire, svg.image-jo{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-size: cover; 
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
