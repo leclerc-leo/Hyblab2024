@@ -498,7 +498,6 @@ svg.image-histoire, svg.image-jo{
     line-height: normal;
     color: #482e48;
     font-size: 16px;
-    font-family: Krona One;
 }
 
 
@@ -513,9 +512,25 @@ svg.image-histoire, svg.image-jo{
 
 #journee_2_svg{
     position: absolute;
+    left: -2%;
+    width: 50%;
+    height: 17%;
+}
+
+#journee_3_svg{
+    position: absolute;
+    left:69%;
+    width: 40%;
+    height: 23%;
+    top:-2%;
+}
+
+#journee_4_svg{
+    position: absolute;
     left: 60%;
     width: 40%;
     height: 21%;
+    top: -3%;
 }
 
 #Kaylia_Nemour_journee{
@@ -525,10 +540,10 @@ svg.image-histoire, svg.image-jo{
     height: 30%;
 }
 
-#journee_1_img{
+#journee_img{
     position: absolute;
-    left: 21%;
-    width: 58%;
+    left: 18%;
+    width: 65%;
     height: 32%;
     top: 33%;
     border-radius: 22px;
@@ -575,5 +590,5 @@ svg.image-histoire, svg.image-jo{
     line-height: normal;
     color: #482e48;
     font-size: 16px;
-    font-family: Krona One;
+    font-family: Inter;
 }
