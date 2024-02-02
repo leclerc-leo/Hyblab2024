@@ -277,16 +277,21 @@ const homeStories = function () {
 
         yesImages.forEach((image, index) => {
           image.firstChild.contentDocument.querySelector('#bg-color').style.transition = "all 0.2s ease-in-out";
-          image.addEventListener('mousedown', function() {
-              localStorage.setItem('yes' + (index + 1), 'yes');
+          console.log(image.firstChild.contentDocument.querySelector("svg"));
+          image.firstChild.contentDocument.querySelector("svg").addEventListener('mousedown', function() {
+            console.log("clicked")
+
+            localStorage.setItem('yes' + (index + 1), 'yes');
               changeState('no' + (index + 1), yesImages, noImages);
             });
         });
 
         noImages.forEach((image, index) => {
           image.firstChild.contentDocument.querySelector('#bg-color').style.transition = "all 0.2s ease-in-out";
-              image.addEventListener('mousedown', function() {
-                  localStorage.setItem('no' + (index + 1), 'no');
+          console.log(image.firstChild.contentDocument.querySelector("svg"));
+          image.firstChild.contentDocument.querySelector("svg").addEventListener('mousedown', function() {
+            console.log("clicked")
+            localStorage.setItem('no' + (index + 1), 'no');
                   changeState('yes' + (index + 1), yesImages, noImages);
               });
           });

@@ -6,7 +6,7 @@ setTimeout(() => {
   // fade out the loader "slide"
   // and send it to the back (z-index = -1)
   anime({
-    delay: 6400,
+    delay: 100,
     targets: '#motion',
     opacity: '0',
     'z-index' : -1,
