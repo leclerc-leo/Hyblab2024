@@ -456,6 +456,7 @@ svg.image-histoire, svg.image-jo{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    color : #FFF9F9;
 }
 
 #palmares-page .card-back {
