@@ -47,9 +47,7 @@ function VideoPlayer({ id }: { id: string }) {
                 style={{ width: "100%", height: "100%", position: "absolute", top: "0%" }}
                 controls
             />
-            {!athlete!["Etudes / Métier"] ? (
-              <div className='boutonRetour'><span>Retour</span></div>
-        ) : (
+            {(
           allowSwipe &&(
             <SwipeUp onSwipeUp={handleSwipeUp} />
           )
