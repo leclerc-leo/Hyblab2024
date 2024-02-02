@@ -14,6 +14,7 @@ body{
   background-color: var(--bg-green);
   margin-left: calc((100vw - 100 * 3vh / 4) / 2);
   width: calc(100 * 3vh / 4);
+  overflow: hidden;
   }
 
   /* Styling for the player boxes */
@@ -84,7 +85,7 @@ body{
   /* Styling for the footer */
   .fixed-footer{
     text-align: center;
-    background-image: url('../img/Footer_accueil_papier_2.svg');
+    background-image: url('../img/Footer_papier.svg');
     margin-top: 15%;
   }
   
@@ -100,3 +101,14 @@ body{
     font-size: 1.25rem;
     border-radius: 1.25rem;
   }
+  .arrow-container{
+    color: var(--yellow);
+    display: flex;
+    justify-content: space-between; 
+    cursor: pointer;
+  }
+
+#slider:hover #precedent,
+#slider:hover #suivant {
+    opacity: 1;
+}
