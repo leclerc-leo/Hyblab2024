@@ -8,15 +8,21 @@ function scrollSmoothlyToBottom() {
     }, 1000);
 };
 
-function treatBubble(bubbleJson, i) {
-    if (lastBubble["type"] == "choice") {
+function treatBubble(bubbleJson) {
+    console.log("TreatBubble");
+    console.log(lastBubble);
+    if (lastBubble["type"] == "choice" || lastBubble["type"] == "topicChoice") {
+        console.log("rapide");
+        console.log(bubbleJson);
         time += 1000;
     } else {
+        console.log("long");
+        console.log(bubbleJson);
         time += 1100*lastBubble["content"].length;
     }
 
     setTimeout(() => { 
-
+        console.log(time)
         if (bubbleJson["type"] == "bubble") {
             addBubble(bubbleJson["speaker"], bubbleJson["content"]);
         }
@@ -26,8 +32,11 @@ function treatBubble(bubbleJson, i) {
         if (bubbleJson["type"] == "choice") {
             addChoiceBubble(bubbleJson);
         }
-        if (bubbleJson["type"] == "topic") {
+        if (bubbleJson["type"] == "topicChoice") {
             addTopicBubble(bubbleJson);
+        }
+        if (bubbleJson["type"] == "quit") {
+            addQuitBubble(bubbleJson);
         }
     }, time);
 }
@@ -174,9 +183,41 @@ function addTopicBubble(bubbleJson) {
 function topicSelected(btntopicSelected){
     let textChoice = btntopicSelected.textContent;
 
-    topic = textChoice.toLowerCase();
+    nextTopic = textChoice.toLowerCase();
+
+    let choiceBubbles = $('.choices');
+    choiceBubbles.remove();
+    let choicePlaceholder = $('.choices-placeholder');
+    choicePlaceholder.remove();
+
+    addBubble("user", [lastBubble["content"][lastBubble["choicesLabel"].indexOf(textChoice)]]);
+    scrollSmoothlyToBottom();
+
+    conversationUnfold(lastBubble["next"][lastBubble["choicesLabel"].indexOf(textChoice)]);
+}
+
+
+function addQuitBubble(bubbleJson) {
+    let choiceBubblesContent = '<div class="choices anime_bottom">';
+    let placeholder = '<div class="choices-placeholder">';
+
+    bubbleJson["choicesLabel"].forEach(textContentChoice => {
+        choiceBubblesContent += '<button class="choice-bubbles" onclick="changeTopic()">'+ textContentChoice + '</button>';
+        placeholder += '<button class="choice-bubbles" onclick="changeTopic()">'+ textContentChoice + '</button>';
+    });
+    choiceBubblesContent += '</div>';
+    placeholder += '</div>';
+
+    conversation.append(placeholder);
+    conversation.append(choiceBubblesContent);
+
+    scrollSmoothlyToBottom();
+}
+
+function changeTopic() {
     time = 0;
     lastBubble = {"content": []};
+    topic = nextTopic;
 
     conversation.empty();
     backgroundTransition();
@@ -221,27 +262,23 @@ async function conversationUnfold(nextID) {
     let resp  = await fetch('./data/' + quartier.toLowerCase() + '/' + topic.toLowerCase() + '.json')
     let data = await resp.json();
 
-    console.log(data);
-    console.log(nextID);
-
     time = 0;
     let i = 0;
     let loopBreak = false;
-    while (!loopBreak) {
+    while (i < 10 && !loopBreak) {
         if (nextID == "Fin") {
             loopBreak = true;
         } else {
-            treatBubble(data[nextID], i);
+            treatBubble(data[nextID]);
             lastBubble = data[nextID];
 
             // Si la bulle qu'on vient d'ajouter est un choix ou entrer le nom, on arrête
-            if (data[nextID]["type"] == "nom" || data[nextID]["type"] == "choice" || data[nextID]["type"] == "topic") { 
+            if (data[nextID]["type"] == "nom" || data[nextID]["type"] == "choice" || data[nextID]["type"] == "topicChoice") { 
                 loopBreak = true;
             } else {
                 nextID = data[nextID]["next"][0];
             }
         }
-
         i++;
     }
 }
@@ -250,10 +287,12 @@ let conversation = $(".conversation");
 let user_name = "Vous";
 let quartier = "Villejean";
 let topic = "bienvenue";
+let nextTopic = "bienvenue";
 let time = 0;
 let lastBubble = {"content": []};
 console.log(topic);
 let save = {};
+
 
 backgroundTransition();
 

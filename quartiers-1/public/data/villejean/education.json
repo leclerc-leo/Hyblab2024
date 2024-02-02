@@ -3,119 +3,119 @@
         "speaker": "guide",
         "type": "bubble",
         "choicesLabel": [],
-        "content": ["Ici c'est l'éducation"],
-        "next": ["Question1"]
-    },
-
-    "EntrerNom": {
-        "speaker": "user",
-        "type": "nom",
-        "choicesLabel": ["Bonjour, je m'appelle"],
-        "content": ["Bonjour, je m’appelle ${user_name} !"],
-        "next": ["Question1"]
-    },
-
-    "Question1": {
-        "speaker": "guide",
-        "type": "bubble",
-        "choicesLabel": [],
-        "content": ["Fais un choix"],
+        "content": ["Nous voici devant Rosa Parks, l’unique collège du quartier.", "L’établissement accueille une section internationale britannique, une section bilingue anglais-arabe, une section sportive athlétisme ainsi que des sections ULIS et SEGPA.","Dis-moi, quelle est ta préoccupation concernant la scolarité ? As-tu des enfants ?"],
         "next": ["Choix1"]
     },
 
     "Choix1": {
         "speaker": "user",
         "type": "choice",
-        "choicesLabel": ["Choix 1", "Choix 2", "Choix 3"],
-        "content": ["Je choisis 1", "Je choisis 2", "Je choisis 3"],
-        "next": ["ReponseChoix11", "ReponseChoix12", "ReponseChoix13"]
+        "choicesLabel": ["J’ai un enfant", "Je n’ai pas d’enfant"],
+        "content": ["J’aimerais inscrire mon fils en cinquième mais j’ai un peu peur. J’ai vu que l’indice de position sociale de l’établissement était le plus faible du département… Je ne me vois pas trop inscrire mon enfant dans le collège le plus défavorisé de l’Ille et Vilaine.", "Je n’ai pas d’enfant mais si jamais j’ai envie d’en avoir un, je veux être sûr.e qu’il/elle puisse aller à l’école dans le quartier…"],
+        "next": ["ReponseChoix11", "ReponseChoix12"]
     },
 
     "ReponseChoix11": {
         "speaker": "guide",
         "type": "bubble",
         "choicesLabel": [],
-        "content": ["Ok tu as pris le choix 1"],
-        "next": ["Suite1"]
+        "content": ["Je comprends mais ne t’inquiète pas. Depuis 2022, le quartier de Villejean est passé Cité éducative.","Ce dispositif a pour objectif de participer à la prise en charge éducative des jeunes dès 3 ans et ce jusqu’à 25 ans. Et Rosa Parks en fait partie !"],
+        "next": ["Choix2"]
     },
     
     "ReponseChoix12": {
         "speaker": "guide",
         "type": "bubble",
         "choicesLabel": [],
-        "content": ["Ok tu as pris le choix 2"],
-        "next": ["Suite1"]
-    },
-
-    "ReponseChoix13": {
-        "speaker": "guide",
-        "type": "bubble",
-        "choicesLabel": [],
-        "content": ["Ok tu as pris le choix 3"],
-        "next": ["Suite1"]
-    },
-
-    "Suite1": {
-        "speaker": "guide",
-        "type": "bubble",
-        "choicesLabel": [],
-        "content": ["De quoi veux-tu parler ?"],
-        "next": ["Question2"]
-    },
-
-    "Question2": {
-        "speaker": "guide",
-        "type": "bubble",
-        "choicesLabel": [],
-        "content": ["Refais un choix"],
+        "content": ["Je comprends. Et bien pour te rassurer, le quartier de Villejean est passé en 2022 : Cité éducative.","Ce dispositif a pour objectif de participer à la prise en charge éducative des jeunes dès 3 ans et ce jusqu’à 25 ans."],
         "next": ["Choix2"]
     },
 
     "Choix2": {
         "speaker": "user",
         "type": "choice",
-        "choicesLabel": ["Choix 1", "Choix 2", "Choix 3"],
-        "content": ["Je choisis 1", "Je choisis 2", "Je choisis 3"],
-        "next": ["ReponseChoix21", "ReponseChoix22", "ReponseChoix23"]
+        "choicesLabel": ["Mais trop génial ça !","Je ne comprends pas.","Mouais"],
+        "content": ["Mais trop génial ça !","Je ne comprends pas trop. Qu’est-ce que cela veut dire ?","Mouais, il en faudra plus pour me convaincre."],
+        "next": ["Reponse2","Reponse2","Reponse2"]
     },
 
-    "ReponseChoix21": {
+    "Reponse2": {
         "speaker": "guide",
         "type": "bubble",
         "choicesLabel": [],
-        "content": ["Ok tu as pris le choix 1"],
-        "next": ["Suite2"]
-    },
-    
-    "ReponseChoix22": {
-        "speaker": "guide",
-        "type": "bubble",
-        "choicesLabel": [],
-        "content": ["Ok tu as pris le choix 2"],
-        "next": ["Suite2"]
+        "content": ["Concrètement, le label Cité éducative ouvre droit à des moyens supplémentaires, financiers et humains au quartier.","L'objectif étant, avec 400 000 euros 🤑 de dotation par an, de prendre en charge les enfants et jeunes du quartier de Villejean."],
+        "next": ["Choix3"]
     },
 
-    "ReponseChoix23": {
-        "speaker": "guide",
-        "type": "bubble",
-        "choicesLabel": [],
-        "content": ["Ok tu as pris le choix 3"],
-        "next": ["Suite2"]
+    "Choix3": {
+        "speaker": "user",
+        "type": "choice",
+        "choicesLabel": ["Mmh, je vois"],
+        "content": ["Mmh, je vois."],
+        "next": ["Reponse3"]
     },
 
-    "Suite2": {
+    "Reponse3": {
         "speaker": "guide",
         "type": "bubble",
         "choicesLabel": [],
-        "content": ["De quoi veux-tu parler ?"],
+        "content": ["En plus, si ton enfant en a besoin, des associations d’aide aux devoirs viennent compléter l’aide financière de l’État.","Selon toi, il en existe combien dans le quartier ?"],
+        "next": ["Choix4"]
+    },
+
+    "Choix4": {
+        "speaker": "user",
+        "type": "choice",
+        "choicesLabel": ["1","3","5"],
+        "content": ["1","3","5"],
+        "next": ["Reponse4","Reponse4","Reponse4"]
+    },
+
+    "Reponse4": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Et oui, il en existe plein ! Comme l’association Mosaïque par exemple, qui depuis 2003, s’est lancée dans l’aide aux devoirs.","D’ailleurs, en 2023, ils ont aidé onze élèves à obtenir leur brevet des collèges 🧑‍🎓.","Bon je ne t’en dis pas plus, Natacha le raconte mieux que moi !","${video_begin}https://www.youtube.com/embed/4wR5ubwNarE?si=bT3NZbn262FIpfp2&start=43&end=191&controls=0${video_end}"],
+        "next": ["Reponse42"]
+    },
+
+    "Reponse42": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Quand il grandira, il pourra aller au lycée Victor-et-Hélène Basch.","Ou même, si tu as un autre enfant, il existe plusieurs établissements primaires comme les groupes scolaires Andrée Chedid ou Jean Moulin, l’école Guyenne, Picardie ou encore, l’école privée Saint Jean Bosco. 🧑‍💻"],
+        "next": ["Reponse43"]
+    },
+
+    "Reponse43": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Et voilà ! Souhaites-tu découvrir une autre thématique ?"],
         "next": ["ChoixTheme"]
     },
-
+    
     "ChoixTheme": {
         "speaker": "user",
-        "type": "topic",
-        "choicesLabel": ["Portraits", "Associations", "Urbanisme", "Sports", "Education", "Commerces"],
-        "content": ["Je go Portraits", "Je go Associations", "Je go Urbanisme", "Je go Sports", "Je go Education", "Je go Commerces"],
-        "next": ["Portraits", "Associations", "Urbanisme", "Sports", "Education", "Commerces"]
+        "type": "topicChoice",
+        "choicesLabel": ["Portrait", "Association", "Habitat", "Sport", "Education", "Commerce"],
+        "content": ["Les portraits de Villejean", "Les associations à Villejean", "Je go Urbanisme", "Je go Sports", "L'éducation à Villejean", "Je go Commerces"],
+        "next": ["GoPortraits", "GoAssociations", "GoUrbanisme", "GoSports", "GoEducation", "GoCommerces"]
+    },
+
+    "GoEducation": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Parfait ! Allez viens, je t’emmène au collège Rosa Parks."],
+        "next": ["Quitter"]
+    },
+
+    "Quitter": {
+        "speaker": "user",
+        "type": "quit",
+        "choicesLabel": ["Aller à Rosa Parks"],
+        "content": [],
+        "next": ["Fin"]
     }
 }
