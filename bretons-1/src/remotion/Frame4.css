@@ -23,6 +23,7 @@
   top: 25%;
   left: 10%;
   font-size: 3em;
+  transition: transform 1s ease-in-out;
 }
 .bold {
   font-weight: bold;

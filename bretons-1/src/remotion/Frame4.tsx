@@ -33,6 +33,12 @@ export const Frame4: React.FC<{ Gentilé: string, rang:number, Epreuve: string, 
   const [_, setIsLoading] = useState(true);
   useEffect(() => {
       setIsLoading(false);
+      setTimeout(function () {
+        const element = document.querySelector('.containerText_f4') as HTMLElement;
+        if(element != undefined) {
+          element.style.transform = 'translateX(300vw)';
+        }
+      }, 4500);
       let delay = 50,
       delay_start = 0;
       let paragraphe = document.getElementsByClassName("animatedtext");
