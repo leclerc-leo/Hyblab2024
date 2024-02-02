@@ -255,17 +255,16 @@ const homeStories = function () {
         loader.style.opacity = '1';
         loader.style.zIndex = '3000';
 
-        // on rajoute a notre container le body de la page credits
         let container = document.querySelector('#container');
 
         setTimeout(() => {
           anime({
-              delay: 400,
+              delay: 1000,
               targets: '#loader',
               opacity: '0',
               'z-index' : -1,
           });
-        }, 400);
+        }, 1000);
 
 
         // on affiche le swiper
@@ -276,20 +275,24 @@ const homeStories = function () {
         let noImages = document.querySelectorAll('.noButton');
 
         yesImages.forEach((image, index) => {
-          image.firstChild.contentDocument.querySelector('#bg-color').style.transition = "all 0.2s ease-in-out";
-          image.addEventListener('mousedown', function() {
+          image.firstChild.addEventListener('load', function() {
+            image.firstChild.contentDocument.querySelector('#bg-color').style.transition = "all 0.2s ease-in-out";
+            image.firstChild.contentDocument.querySelector("svg").addEventListener('click', function() {
               localStorage.setItem('yes' + (index + 1), 'yes');
               changeState('no' + (index + 1), yesImages, noImages);
             });
+          });
         });
 
         noImages.forEach((image, index) => {
-          image.firstChild.contentDocument.querySelector('#bg-color').style.transition = "all 0.2s ease-in-out";
-              image.addEventListener('mousedown', function() {
-                  localStorage.setItem('no' + (index + 1), 'no');
-                  changeState('yes' + (index + 1), yesImages, noImages);
-              });
+          image.firstChild.addEventListener('load', function() {
+            image.firstChild.contentDocument.querySelector('#bg-color').style.transition = "all 0.2s ease-in-out";
+            image.firstChild.contentDocument.querySelector("svg").addEventListener('click', function() {
+              localStorage.setItem('no' + (index + 1), 'no');
+              changeState('yes' + (index + 1), yesImages, noImages);
+            });
           });
+        });
       });
     }
 

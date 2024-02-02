@@ -1,0 +1,38 @@
+/**
+ * @license
+ * Copyright 2019 Google LLC. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0
+ */
+/* 
+ * Always set the map height explicitly to define the size of the div element
+ * that contains the map. 
+ */
+
+/* 
+ * Optional: Makes the sample page fill the window. 
+ */
+
+
+
+ #map {
+  width: 50%; /* 设置宽度，你可以根据需要进行调整 */
+  height: 50%; /* 设置高度，你可以根据需要进行调整 */
+  border: 5px solid #f00d0d; /* 添加边框，可选 */
+}
+
+#map-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh; /* 设置高度，你可以根据需要进行调整 */
+}
+
+.popup-button {
+  padding: 5px 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  background-color: #0c0c09;
+  color: white;
+  border: none;
+  border-radius: 3px;
+}
