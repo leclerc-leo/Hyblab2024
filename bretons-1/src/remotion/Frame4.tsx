@@ -1,10 +1,37 @@
 import { useEffect, useState } from 'react';
 import './Frame4.css';
 
-export const Frame4: React.FC<{ text: string }> = ({ text }) => {
+const rangToMedaille = (rang: number) => {
+  switch(rang) {
+      case 1:
+          return "médaille d'or _Or.svg_";
+      case 2:
+          return "médaille d'argent _Argent.svg_";
+      case 3:
+          return "médaille de bronze _Bronze.svg_";
+  }
+};
+
+const getSexe = (sexe: string) => {
+  if(sexe == "F") {
+    return "feminin"
+  } else {
+    return "masculine"
+  }
+}
+
+const getImage = (sport: string) => {
+  switch(sport) {
+    case "Cyclisme":
+      return "_velo.svg_"
+    default:
+      return ""
+  }
+}
+
+export const Frame4: React.FC<{ Gentilé: string, rang:number, Epreuve: string, sexe:string, Sport:string }> = ({ Gentilé, rang, Epreuve, sexe, Sport }) => {
   const [_, setIsLoading] = useState(true);
   useEffect(() => {
-      console.log(text);
       setIsLoading(false);
       let delay = 20,
       delay_start = 0;
@@ -50,7 +77,7 @@ export const Frame4: React.FC<{ text: string }> = ({ text }) => {
       <div className='containerText_f4'>
         <p className='animatedtext bold'>Prouesses !</p>
         <br></br>
-        <p className='animatedtext bold'>La Briochine</p><p className='animatedtext'> remporte la première </p><p className='animatedtext bold'>médaille  d'or _Or.svg_</p><p className='animatedtext'> en </p><p className='animatedtext bold'>VTT féminin _velo.svg_</p>
+        <p className='animatedtext bold'>{sexe === 'F' ? 'La' : 'Le'} {Gentilé}</p><p className='animatedtext'> remporte la </p><p className='animatedtext bold'>{rangToMedaille(rang)}</p><p className='animatedtext'> en </p><p className='animatedtext bold'>{Epreuve} {getSexe(sexe)} {getImage(Sport)}</p>
       </div>
     );
 };
