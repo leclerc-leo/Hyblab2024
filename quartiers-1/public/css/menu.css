@@ -16,8 +16,8 @@
 .sidenav {
     height: 100%;
     width: 100%;
-    position: fixed;
-    z-index: 1;
+    position: absolute;
+    z-index: 4;
     top: 0;
     left: -100%;
     background-color: #FBEFEB;
