@@ -331,7 +331,7 @@ span{
 }
 
 #histoire-page h1, #jo-page h1, #credits-page h1{
-    margin: 30px 0;
+    margin: 10px 0;
 }
 
 #histoire-page h2, #credits-page h2{
@@ -412,12 +412,12 @@ svg.image-histoire, svg.image-jo{
     height: 60vh;
 }
 
-.card-container {
+.jo-card-container {
     perspective: 800px;
-    margin: 3% 10% 0% 10%;
+    margin: 0% 10% 3% 10%;
 }
 
-.card {
+.jo-card {
     display: table;
     width: 370px;
     height: 100px;
@@ -431,7 +431,7 @@ svg.image-histoire, svg.image-jo{
     background-position: center;
 }
 
-.card-titre, .card-texte {
+.jo-card-titre, .jo-card-texte {
     margin: 2% 0 2% 0;
     padding: 2%;
     color: rgba(255, 216, 179, 0.9);
@@ -441,12 +441,12 @@ svg.image-histoire, svg.image-jo{
     max-width: 80%;
 }
 
-.card-titre {
+.jo-card-titre {
     position: absolute;
     top: 20px;
 }
 
-.card-texte {
+.jo-card-texte {
     position: absolute;
     bottom: 15px;
     opacity: 90%;
@@ -457,6 +457,6 @@ svg.image-histoire, svg.image-jo{
     height: 100%;
 }
 
-.actif .card{
+.actif .jo-card{
     height: 100%;
 }
