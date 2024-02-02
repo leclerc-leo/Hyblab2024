@@ -7,7 +7,7 @@
     height: 140vh; /* Prendre toute la hauteur de la fenêtre */
     align-items: flex-start;
 }
-.titre{
+.titre_frame2{
     font-family: "Golos Text";
     font-size: 80px; 
     font-style: normal;

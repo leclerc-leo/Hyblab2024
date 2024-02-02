@@ -4,7 +4,7 @@ import './Frame2.css';
 export const Frame2: React.FC = () => {
     return (
         <div className="frameContainer">
-            <div className="titre">Julie Bresset, arrive 1ère avec 1min d’avance !</div>
+            <div className="titre_frame2">Julie Bresset, arrive 1ère avec 1min d’avance !</div>
             <div className="rectangleYellow">
                 <svg
                     width="76"
