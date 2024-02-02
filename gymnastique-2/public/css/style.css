@@ -197,7 +197,7 @@ header{
 
 .exit-button{
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
     z-index: 100;
 
@@ -225,7 +225,7 @@ header{
 
 .home-button{
     position: absolute;
-    top: 0;
+    bottom: 0;
     right: 0;
     z-index: 100;
     color: black;
@@ -358,37 +358,21 @@ svg.image-histoire, svg.image-jo{
 }
 #palmares-page #titre-palmares {
     color: #482E49;
-    margin: 10% auto 10% auto;
+    margin: 5% auto 0 auto;
     font-size: 30px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#palmares-page img{
+    margin-top: 20%;
+    margin-bottom: 5%;
+    max-width: 40%;
+}
 .card-container {
     width: 350px;
-    height: 100px;
+    height: 125px;
     max-height: 10%;
     max-width: 80%;
     perspective: 800px;
     margin: 5% 10% 5% 10%;
-
 }
 .flipcard {
     transform: rotateY(180deg);
@@ -400,6 +384,7 @@ svg.image-histoire, svg.image-jo{
     position: relative;
     transition: transform 1500ms;
     transform-style: preserve-3d;
+
 }
 
 .card-front,
@@ -431,3 +416,4 @@ svg.image-histoire, svg.image-jo{
     margin: 2% 0 2% 0;
     color: #E47754;
 }
+
