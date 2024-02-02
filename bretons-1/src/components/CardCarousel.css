@@ -62,27 +62,26 @@
     padding: 0px 0px 15px 10px ;
     color: white;
   }
-
-  
-  
   .image-row {
     display: flex;
-    justify-content: space-between;  
+    justify-content: space-between;
     align-items: center;
     flex-shrink: 0;
     z-index: 5;
-    position: relative;
-    bottom: 40px;
+    position: absolute;
+    bottom: 20px;
   }
   
+  .favbutton {
+    position: relative;
+  }
   
-
-.ShareLogo{
+  .ShareLogo {
     width: 47.015px;
     height: 34.855px;
-}
-
-.BicycleLogo{
+  }
+  
+  .BicycleLogo {
     width: 43.868px;
     height: 44.141px;
-}
+  }

@@ -1,9 +1,67 @@
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%; /* ou une valeur fixe si vous préférez */
-    margin: auto; /* pour centrer le conteneur lui-même */
-    position: relative;
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.search-image {
+  /* Assurez-vous que l'image de la barre de recherche est affichée correctement */
+  max-width: 100%; /* Pour s'assurer qu'elle ne dépasse pas la largeur de l'écran */
+  height: auto; /* Pour maintenir le ratio de l'image */
+}
+
+.text-overlay {
+  position: absolute;
+  top: 50%; /* Ajuster en fonction de l'emplacement exact de la barre de recherche dans l'image */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'SF Pro Text', 'Helvetica', 'Arial';
+  font-weight: bold;
+  font-size: 50px; /* Ajuster la taille de la police si nécessaire */
+  color: black;
+}
+
+@keyframes moveCursor {
+  0% {
+    top: 60%; /* Démarre au milieu verticalement */
+    left: 30%; /* Démarre un peu à gauche du milieu horizontalement */
+    opacity: 0; /* Commence invisible pour un effet d'entrée en fondu */
   }
-  
+  40% {
+    top: 50%;
+    left: 50%;
+    opacity: 1; /* Devient visible */
+  }
+  60% {
+    top: 55%; /* Se termine au milieu verticalement */
+    left: 70%; /* Ajustez ceci pour que cela corresponde à l'emplacement de la loupe */
+    opacity: 1; /* Fini en devenant invisible */
+  }
+  80% {
+    top: 55%; /* Se termine au milieu verticalement */
+    left: 70%; /* Ajustez ceci pour que cela corresponde à l'emplacement de la loupe */
+    opacity: 1; /* Fini en devenant invisible */
+  }
+  100% {
+    top: 50%; /* Se termine au milieu verticalement */
+    left: 80%;
+    opacity: 1;
+  }
+}
+
+.mouse-cursor {
+  position: absolute;
+  width: 64px; /* Taille du curseur */
+  height: 64px; /* Taille du curseur */
+  background-image: '/bretons-1/img/souris3.png'; /* Remplacez par le chemin de votre image de curseur */
+  background-size: contain;
+  animation: moveCursor 4s infinite; /* Joue l'animation indéfiniment */
+  animation-timing-function: ease-in-out;
+  z-index: 15;
+}
+
+#animatedtext { 
+  visibility:hidden;
+}

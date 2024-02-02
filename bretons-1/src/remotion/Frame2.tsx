@@ -1,11 +1,11 @@
 import React from 'react';
 import './Frame2.css';
-import top1Svg from '../assets/img/top1.svg';
-import frSvg from '../assets/img/fr.svg';
-import top2Svg from '../assets/img/top2.svg';
-import allemagneSvg from '../assets/img/allemagne.svg';
-import top3Svg from '../assets/img/top3.svg';
-import usSvg from '../assets/img/us.svg';
+import top1Svg from '/img/top1.svg';
+import frSvg from '/img/fr.svg';
+import top2Svg from '/img/top2.svg';
+import allemagneSvg from '/img/allemagne.svg';
+import top3Svg from '/img/top3.svg';
+import usSvg from '/img/us.svg';
 
 export const Frame2: React.FC = () => {
     return (
