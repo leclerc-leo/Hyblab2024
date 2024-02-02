@@ -29,10 +29,10 @@ const CreditPage = () => {
                             <p>COURTRAI Arthur <br></br>Polytech</p>
                             <p>KONG Shenhong <br></br>Polytech</p>
                             <p>PAULMIER Pierre <br></br>Polytech</p>
-                            <p>Nom/Prénom <br></br>AGR</p>
-                            <p>Nom/Prénom <br></br>AGR</p>
-                            <p>Nom/Prénom <br></br>SciencesPo</p>
-                            <p>Nom/Prénom <br></br>EPJT</p>
+                            <p>BUREAU Camille <br></br>AGR</p>
+                            <p>LANDREAU Antonin<br></br>AGR</p>
+                            <p>AUDEGOND Anna <br></br>SciencesPo</p>
+                            <p>GAULT Lucas <br></br>EPJT</p>
                         </div>
                 </div>
             </Ratio>

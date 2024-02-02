@@ -29,7 +29,8 @@
     padding: 20px;
     margin-top: 10px;
     max-width: 400px; 
-    font-family: 'Arial', sans-serif; 
+    font-family: 'Helvetica Neue', sans-serif; 
+    font-weight: bold;
     color: #333; 
     font-size: 14px; 
 }
@@ -39,16 +40,16 @@
     line-height: 1.4; 
 }
 
-
+/* pour small screen */
 @media (max-width: 480px) {
     .text-content {
         padding: 10px;
         font-size: 12px;
     }
     .credit-logos img {
-      width: auto; /* 可以试着让图片在小屏幕上更自然地缩放 */
-      max-width: 100px; /* 限制图片最大宽度 */
-      margin-right: 5px; /* 小屏幕上减少间隔 */
+      width: auto; 
+      max-width: 100px;
+      margin-right: 5px; 
   }
 }
 
