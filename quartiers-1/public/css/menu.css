@@ -37,12 +37,6 @@
     margin-bottom: 20%;
 }
 
-#mySidenav ul li::before{
-    margin-right: 5px;
-    content: counter(myCounter);
-  counter-increment: myCounter;
-}
-
 #mySidenav li{
     margin-left: 12%;
 }
