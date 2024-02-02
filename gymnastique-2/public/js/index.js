@@ -67,7 +67,8 @@ categories_buttons.forEach( button => {
         block.style.width = '100%';
         block.style.height = '100vh';
         block.style.bottom = '0';
-        block.style.left = '0';
+        if (block.style.left != '') block.style.left = '0';
+        if (block.style.right != '') block.style.right = '0';
         block.style.overflow = 'auto';
         block.style.borderRadius = '0';
         block.style.opacity = '1';
