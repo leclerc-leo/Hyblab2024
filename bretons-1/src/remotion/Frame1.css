@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap');
+
 .golos-text-frame1 {
     font-family: 'Golos Text', sans-serif;
     font-optical-sizing: auto;
@@ -5,8 +7,8 @@
   }
   
   .titre_frame1 {
-    font-weight: 700 !important;
-    color: white !important;
+    font-weight: 700;
+    color: white;
     position: absolute;
     width: 100%;
     text-align: center;
