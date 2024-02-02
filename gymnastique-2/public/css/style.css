@@ -327,7 +327,7 @@ span{
 /* Format des pages */
 #histoire-page, #jo-page, #credits-page{
     text-align: center;
-    padding: 0;
+    padding: 0 10px;
 }
 
 #histoire-page h1, #jo-page h1, #credits-page h1{
@@ -387,18 +387,18 @@ svg.image-histoire, svg.image-jo{
 }
 
 #credits-chemin2{
-    width: 40%;
-}
-
-#credits-chemin4{
-    width: 40%;
+    width: 18%;
 }
 
 #credits-chemin3{
     width: 10%;
+}
+
+#credits-chemin4{
+    width: 12%;
     position: absolute;
-    left: 15%;
-    margin-top: 5%;
+    right: 20%;
+    margin-top: -10%;
 }
 
 .credits-list{
@@ -431,4 +431,5 @@ svg.image-histoire, svg.image-jo{
     width: 20%;
     height: auto;
     vertical-align: middle;
+    margin-bottom: 10px;
 }
