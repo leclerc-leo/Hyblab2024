@@ -23,6 +23,6 @@
     margin: 30px;
 }
 
-.head > .navbar {
+#VideoPlayer > div.head > div > nav {
     background-color: transparent !important;
 }

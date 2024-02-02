@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap');
+
+.videoContainer_frame6 {
+  position: relative; /* Ajouté pour le positionnement absolu des enfants */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.videoPlayer_frame6 {
+  width: auto;
+  height: 100%;
+  transform: scale(1.2);
+  object-fit: cover;
+}
+
+.compteurContainer_frame6 {
+  position: absolute;
+  top: 150vh; /* Corrigé, retiré les guillemets */
+  left: 54vh; /* Corrigé, retiré les guillemets */
+  color: red;
+  font-size: 2rem;
+  z-index: 10;
+}
+
+.textContainer_frame6 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.golos-text-frame6 {
+  font-family: 'Golos Text', sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.titre_frame6 {
+  font-weight: 700;
+  color: black;
+  text-align: left;
+  line-height: normal;
+  margin-left: 95px;
+}

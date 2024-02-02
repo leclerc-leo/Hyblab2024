@@ -3,9 +3,6 @@ import { useState, useEffect } from 'react';
 import { Player } from "@remotion/player";
 import { MyVideo } from "../remotion/Root";
 import SwipeUp from './SwipeUp';
-import athleteData from '../data/Athlete.json';
-import { Athlete, EventDataItem} from './type';
-import EventData from '../data/Event.json';
 import Article from './Article';
 import OffcanvasExample from '../components/Navbar'
 
@@ -34,12 +31,13 @@ function VideoPlayer({ id }: { id: string }) {
             <Player
                 component={MyVideo}
                 inputProps={{ id: id }}
-                durationInFrames={1000}
+                durationInFrames={1140}
                 compositionWidth={1080}
                 compositionHeight={1920}
                 fps={60}
                 style={{ width: "100%", height: "100%", position: "absolute", top: "0%" }}
                 controls
+                autoPlay
             />
               <div className='boutonRetour'><span>Retour</span>
             </div>
