@@ -255,17 +255,16 @@ const homeStories = function () {
         loader.style.opacity = '1';
         loader.style.zIndex = '3000';
 
-        // on rajoute a notre container le body de la page credits
         let container = document.querySelector('#container');
 
         setTimeout(() => {
           anime({
-              delay: 400,
+              delay: 1000,
               targets: '#loader',
               opacity: '0',
               'z-index' : -1,
           });
-        }, 400);
+        }, 1000);
 
 
         // on affiche le swiper
@@ -277,9 +276,6 @@ const homeStories = function () {
 
         yesImages.forEach((image, index) => {
           image.firstChild.contentDocument.querySelector('#bg-color').style.transition = "all 0.2s ease-in-out";
-          // on change le titre de la slide
-          document.querySelector('.swiper-slide-active').querySelector('.title').innerHTML =
-            image.firstChild.contentDocument.querySelector("svg");
           image.firstChild.contentDocument.querySelector("svg").addEventListener('click', function() {
             console.log("clicked")
 
@@ -290,9 +286,6 @@ const homeStories = function () {
 
         noImages.forEach((image, index) => {
           image.firstChild.contentDocument.querySelector('#bg-color').style.transition = "all 0.2s ease-in-out";
-          // on change le titre de la slide
-          document.querySelector('.swiper-slide-active').querySelector('.title').innerHTML =
-            image.firstChild.contentDocument.querySelector("svg");
           image.firstChild.contentDocument.querySelector("svg").addEventListener('click', function() {
             console.log("clicked")
             localStorage.setItem('no' + (index + 1), 'no');
