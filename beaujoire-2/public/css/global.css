@@ -25,6 +25,27 @@
   }
 /** fonts **/
 
+/* -------------- Loader --------------*/
+#loader{
+  z-index: 2;
+  position:absolute;
+}
+
+#loader-img{
+  top:40%;
+  left:40%;
+  position: absolute;
+}
+
+#loader-text{
+  text-align: center;
+  font-size: 25%;
+  position: absolute;
+  top:60%;
+  width: 100%
+}
+/* -------------- End of Loader --------------*/
+
 
 /* ---------- Important media queries for easy responsive content :-) ----------------- */
 /* Whatever the device used, the content will be displayed full width and height if      */
