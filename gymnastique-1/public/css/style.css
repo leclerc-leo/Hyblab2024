@@ -57,7 +57,7 @@ body {
 }
 
 svg {
-  height: -webkit-fill-available;
+  height: 110avh;
   width: unset;
 }
 
