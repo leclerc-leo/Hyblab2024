@@ -43,7 +43,9 @@
     width: 40%;
     left : 30%;
     bottom: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
+
 
 #bouton-decouvrir img{
     width: 100%;
