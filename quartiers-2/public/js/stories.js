@@ -277,24 +277,28 @@ const homeStories = function () {
 
         yesImages.forEach((image, index) => {
           image.firstChild.contentDocument.querySelector('#bg-color').style.transition = "all 0.2s ease-in-out";
-          console.log(image.firstChild.contentDocument.querySelector("svg"));
+          // on change le titre de la slide
+          document.querySelector('.swiper-slide-active').querySelector('.title').innerHTML =
+            image.firstChild.contentDocument.querySelector("svg");
           image.firstChild.contentDocument.querySelector("svg").addEventListener('click', function() {
             console.log("clicked")
 
             localStorage.setItem('yes' + (index + 1), 'yes');
-              changeState('no' + (index + 1), yesImages, noImages);
-            });
+            changeState('no' + (index + 1), yesImages, noImages);
+          });
         });
 
         noImages.forEach((image, index) => {
           image.firstChild.contentDocument.querySelector('#bg-color').style.transition = "all 0.2s ease-in-out";
-          console.log(image.firstChild.contentDocument.querySelector("svg"));
+          // on change le titre de la slide
+          document.querySelector('.swiper-slide-active').querySelector('.title').innerHTML =
+            image.firstChild.contentDocument.querySelector("svg");
           image.firstChild.contentDocument.querySelector("svg").addEventListener('click', function() {
             console.log("clicked")
             localStorage.setItem('no' + (index + 1), 'no');
-                  changeState('yes' + (index + 1), yesImages, noImages);
-              });
+            changeState('yes' + (index + 1), yesImages, noImages);
           });
+        });
       });
     }
 
