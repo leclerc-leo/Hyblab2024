@@ -36,6 +36,14 @@ function addBubble(speaker, contents) {
     let container;
     let bubble;
     let i = 0;
+    let dictionary = {
+        "${user_name}": user_name,
+        "${quartier}": quartier,
+        "${video_begin}": "<iframe class=\"videos\" src=\"",
+        "${video_end}": "\" title=\"YouTube video player\" frameborder=\"0\"></iframe>",
+        "${image_begin}": "<img class=\"conversation_image\" src=\"img/images_conversation/" + quartier.toLocaleLowerCase() + "/",
+        "${image_end}": "\">"
+    }
 
     if (speaker == "user") {
         container = '<div class="rp_user"><p class="user_name">'+ user_name +'</p><ul></ul></div>';
@@ -44,7 +52,11 @@ function addBubble(speaker, contents) {
 
         contents.forEach(content => {
             setTimeout(() => { 
-                bubble = '<li class="cont_user anime_user">' + content.replace("${user_name}", user_name) + '</li>';
+                for (const [key, value] of Object.entries(dictionary)) {
+                    content = content.replace(key, value);
+                }
+
+                bubble = '<li class="cont_user anime_user">' + content + '</li>';
                 list.innerHTML += bubble;
 
                 setTimeout(() => { 
@@ -64,7 +76,11 @@ function addBubble(speaker, contents) {
 
         contents.forEach(content => {
             setTimeout(() => { 
-                bubble = '<li class="cont_guide anime_guide">' + content.replace("${quartier}", quartier) + '</li>';
+                for (const [key, value] of Object.entries(dictionary)) {
+                    content = content.replace(key, value);
+                }
+
+                bubble = '<li class="cont_guide anime_guide">' + content + '</li>';
                 list.innerHTML += bubble;
                 scrollSmoothlyToBottom();
 
@@ -85,6 +101,8 @@ function addNameBubble(bubbleJson) {
 
     conversation.append(placeholder);
     conversation.append(choiceBubblesContent);
+
+    scrollSmoothlyToBottom();
 }
 
 function saveUsername(event){
@@ -117,6 +135,8 @@ function addChoiceBubble(bubbleJson) {
 
     conversation.append(placeholder);
     conversation.append(choiceBubblesContent);
+
+    scrollSmoothlyToBottom();
 }
 
 function choiceSelected(btnChoiceSelected){
@@ -147,6 +167,8 @@ function addTopicBubble(bubbleJson) {
 
     conversation.append(placeholder);
     conversation.append(choiceBubblesContent);
+
+    scrollSmoothlyToBottom();
 }
 
 function topicSelected(btntopicSelected){
@@ -233,6 +255,7 @@ let lastBubble = {"content": []};
 console.log(topic);
 let save = {};
 
+backgroundTransition();
 
 setTimeout(() => {
     conversationUnfold("Debut");

@@ -3,7 +3,7 @@
         "speaker": "guide",
         "type": "bubble",
         "choicesLabel": [],
-        "content": ["Bienvenue à ${quartier} !", "Je serai ton guide pendant tout ton séjour à Rennes. J’espère que tu t’y plairas !"],
+        "content": ["Bienvenue à ${quartier} !", "Je serai ton guide pendant tout ton séjour à Rennes. J’espère que tu t’y plairas !","Je serai ton guide pendant tout ton séjour à Rennes. J’espère que tu t’y plairas !","Je serai ton guide pendant tout ton séjour à Rennes. J’espère que tu t’y plairas !","Je serai ton guide pendant tout ton séjour à Rennes. J’espère que tu t’y plairas !","Je serai ton guide pendant tout ton séjour à Rennes. J’espère que tu t’y plairas !","Je serai ton guide pendant tout ton séjour à Rennes. J’espère que tu t’y plairas !","Je serai ton guide pendant tout ton séjour à Rennes. J’espère que tu t’y plairas !","${video_begin}https://www.youtube.com/embed/4wR5ubwNarE?si=bT3NZbn262FIpfp2&start=193&end=294&controls=0${video_end}","${image_begin}association.jpg${image_end}"],
         "next": ["EntrerNom"]
     },
 

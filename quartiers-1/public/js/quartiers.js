@@ -20,7 +20,7 @@ function backgroundTransition() {
     old_img.classList.add("out");
 
     const new_img = document.createElement("img");
-    new_img.src = "img/backgrounds/education.svg";
+    new_img.src = "img/backgrounds/" + quartier.toLocaleLowerCase() + "/" + topic + ".svg";
     container.appendChild(new_img);
 
     setTimeout(function() {
@@ -33,7 +33,7 @@ test_button.addEventListener("click", function() {
     test_button.disabled = true
 
     backgroundTransition();
-    
+
     setTimeout(function() {
         test_button.disabled = false
     }, 2000);

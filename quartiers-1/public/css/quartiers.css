@@ -102,6 +102,9 @@ h1{
         transform: translateX(-100%);
     }
 }
+.drawing .empty{
+    visibility: hidden;
+}
 /*-------- End of Drawing ----------*/
 
 /*-------- Conversation ----------*/
@@ -137,9 +140,7 @@ h1{
     padding: 0.65em;
     margin-bottom: 5px;
     border-radius: 18px;
-}
-.cont_guide img, .cont_user img{
-    width: 100%;
+    width: fit-content;
 }
 .cont_guide{
     background-color: #E69973;
@@ -274,11 +275,26 @@ h1{
 
 /* ---- Videos ---- */
 .videos{
-    width: 80%;
-    height: 280px;
-    margin: 10px;
+    position: relative;
+    width: 90%;
+    height: auto;
+    margin: 5px;
     border-radius: 10px;
+    justify-content: center;
+    left: 48%;
+    transform: translateX(-50%);
 }
+.conversation_image{
+    position: relative;
+    width: 90%;
+    height: auto;
+    margin: 5px;
+    border-radius: 10px;
+    justify-content: center;
+    left: 48%;
+    transform: translateX(-50%);
+}
+
 
 @keyframes jumpInfinite {
     0% {

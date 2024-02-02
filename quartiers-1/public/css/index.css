@@ -217,6 +217,7 @@ h1{
     z-index: 0;
     position: absolute;
     scale: 0.75;
+    overflow: hidden;
 }
 
 #nuage1{   
