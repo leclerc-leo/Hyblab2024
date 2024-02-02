@@ -1,0 +1,37 @@
+.golos-text-frame1 {
+    font-family: 'Golos Text', sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+  }
+  
+  .titre {
+    font-weight: 700;
+    color: white;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    line-height: normal;
+  }
+  
+  .sous-titre {
+    font-weight: 700;
+    color: white;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    line-height: normal;
+  }
+    
+@keyframes agrandirBackground {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.2);
+    }
+  }
+  
+  .animationAgrandissement {
+    animation: agrandirBackground 5s infinite alternate;
+  }
+  
