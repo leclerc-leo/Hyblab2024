@@ -147,7 +147,7 @@ function createCarouselItem(player) {
 		display: flex;
 		flex-direction: column;
 		align-items: center;">
-        <img class= "carte-img" src="img/cartes/${carte}.png" alt="Photo de ${
+        <img class= "carte-img" src="img/cartes/${carte}.webp" alt="Photo de ${
 			player.NOM
 		}" />
         <h1 class="green small-title" style="background-color: hsla(240, 14%, 14%, 0.9); border-radius: 10px; padding: 10px">${
@@ -181,7 +181,7 @@ function createCarouselItem(player) {
 	carouselItem.innerHTML = `
         <img class= "carte-img" src="img/cartes/${
 			player.CARTE
-		}.png" alt="Photo de ${player.NOM}" />
+		}.webp" alt="Photo de ${player.NOM}" />
         <h1 style="display : none">${player.NOM}</h1>
         <div class="carousel-grid">
             <div class="carousel-matchs">
