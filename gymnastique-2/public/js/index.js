@@ -3,11 +3,11 @@
 const swiper = new Swiper("#mySwiper", {
     direction: "horizontal",
     mousewheel: true,
-    navigation:{
-        enabled: false,
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
+    // navigation:{
+    //     enabled: true,
+    //     nextEl: '.swiper-button-next',
+    //     prevEl: '.swiper-button-prev',
+    // },
     pagination: {
         el: ".swiper-pagination",
         clickable: true,
@@ -19,9 +19,8 @@ const swiper = new Swiper("#mySwiper", {
 });
 
 swiper.on('progress', () => {
-    const blacklisted = [0, 50, 100]
-    if (blacklisted.includes(Math.round(100 * swiper.progress))) move_background(Math.round(100 * swiper.progress), true);
-    else move_background(Math.round(100 * swiper.progress))
+    const blacklisted = [0, 50, 100] // les progress qui sont les positions des slides
+    move_background(Math.round(100 * swiper.progress), blacklisted.includes(Math.round(100 * swiper.progress)));
 });
 
 swiper.on("slideChange", function () {

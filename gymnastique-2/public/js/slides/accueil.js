@@ -27,7 +27,7 @@ const init_accueil = async swiper => {
         swiper.disable();
     });
 
-    exit_button.addEventListener('click', () => {
+    [exit_button, home_button].forEach().addEventListener('click', () => {
         swiper_controls.classList.toggle('hidden');
         page_controls.classList.toggle('hidden');
 
@@ -35,15 +35,5 @@ const init_accueil = async swiper => {
         block.style.opacity = '0.7';
 
         swiper.enable()
-    });
-
-    home_button.addEventListener('click', () => {
-        swiper_controls.classList.toggle('hidden');
-        page_controls.classList.toggle('hidden');
-
-        block.style.height = '0';
-        block.style.opacity = '0.7';
-    
-        swiper.enable();
     });
 };

@@ -37,25 +37,43 @@ body{
 
 .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet{
     margin:  0 var(--swiper-pagination-bullet-horizontal-gap,4px);
-    margin-bottom: 3px;
+    margin-bottom: 1%;
 }
 
 .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet-active{
     margin-bottom: 0;
 }
 
-.swiper-pagination-bullet {
-    --swiper-pagination-bullet-horizontal-gap: 15px;
-    --swiper-pagination-bullet-size: 20px;
+.swiper-pagination-bullet, .swiper-pagination-bullet::before {
+    --swiper-pagination-bullet-horizontal-gap: 1%;
+    --swiper-pagination-bullet-size: 10%;
+    width: var(--swiper-pagination-bullet-size);
+    padding-bottom: var(--swiper-pagination-bullet-size);
     --swiper-pagination-bullet-inactive-opacity: 1;
     --swiper-pagination-bullet-inactive-color: transparent;
+    background-color: transparent;
+}
+
+.swiper-pagination-bullet::before{
+    --swiper-pagination-bullet-size: 5%;
+    content: '';
+    position: absolute;
+    transform: translate(-50%, 5%);
     border: 2px solid white;
+    border-radius: 50%;
 }
 
 /* white navigation bullets */
-.swiper-pagination-bullet-active {
-    background-color: white !important;
-    --swiper-pagination-bullet-size: 26px;
+.swiper-pagination-bullet-active, .swiper-pagination-bullet-active::before {
+    --swiper-pagination-bullet-size: 13%;
+    width: var(--swiper-pagination-bullet-size);
+    padding-bottom: var(--swiper-pagination-bullet-size);
+}
+
+.swiper-pagination-bullet-active::before{
+    --swiper-pagination-bullet-size: 7%;
+    background-color: white;
+    transform: translate(-50%, 14%);
 }
 
 /* the slides and the loader should fill the whole 9:16 zone */
@@ -122,12 +140,12 @@ header{
 .background::before{
     bottom: 0;
     height: 100%;
-    border-top: 10000px solid black;
+    border-top: 100vh solid black;
 }
 
 .background::after{
-    bottom: -10000px;
-    padding-bottom: 10000px;
+    bottom: -100vh;
+    padding-bottom: 100vh;
     background-color: black;
 }
 

@@ -3,14 +3,12 @@
 <%= head %>
 <body>
 
-    <!-- Le conteneur sert à vérouiller les proportions (aspect ratio) du contenu de la page (ici des slides) -->
-    <div id="container">
-      <%= background %>
+  <div id="container">
+    <%= background %>
       
-      <div id="mySwiper" class="swiper">
-        <!-- le main est aussi le conteneur des différents slides (contenus à chaque fois dans des sections-->
-        <main class = "swiper-wrapper">
-          <section class="swiper-slide">
+    <div id="mySwiper" class="swiper">
+      <main class = "swiper-wrapper">
+        <section class="swiper-slide">
 
               <div style="position:absolute; bottom: 0;">
                 <img src="img/background/fond vrai.jpg" alt="background" width="250%" style="opacity: 0; display: block;">
@@ -24,6 +22,7 @@
               </div>
               <%= histoire %>
               <%= palmares %>
+
           </section>
           <section class="swiper-slide">
 
@@ -46,10 +45,10 @@
             </div>
             <%= jo %>
 
-          </section>
-        </main>
+      </section>
+    </main>
         
-        <%= controls %>
+    <%= controls %>
   </div>
 </body>
 </html>

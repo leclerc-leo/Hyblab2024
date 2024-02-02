@@ -13,24 +13,29 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"></noscript>
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap"></noscript>
-  <link rel="stylesheet" href="css/style.css">
+
+  <link rel="stylesheet" href="css/style.css"> <!-- En dernier, car plus un CSS est chargé en dernier, plus il a de priorité sur les éléments avec les mêmes classes 
+    voir https://stackoverflow.com/questions/16913131/can-one-css-file-take-priority-over-another-css-file -->
 
   <!--
     Libraries :
      - Swiper API : https://swiperjs.com/ 
-     - Anime.js : https://animejs.com/
+     - Anime.js : https://animejs.com/ (inutile car n'est pas utilisé dans le projet, mais je le garde au cas où je veuille l'utiliser plus tard)
   -->
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script> -->
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
             
 
-  <script src="js/util.js" defer></script>
+  <script src="js/util.js" defer></script> <!-- En premier pour que les autres scripts puissent l'utiliser -->
+
   <script src="js/slides/accueil.js" defer></script>
   <script src="js/slides/futur.js" defer></script>
   <script src="js/slides/past.js" defer></script>
-  <script src="js/index.js" defer></script>
+
   <script src="js/slides/jo.js" defer></script>
   <script src="js/slides/palmares.js" defer></script>
 
-  <link rel="preload" as="image" href="img/background.jpg">
+  <script src="js/index.js" defer></script> <!-- En dernier pour que les autres scripts soient chargés -->
+
+  <link rel="preload" as="image" href="img/background/fond vrai.jpg">
 </head>
