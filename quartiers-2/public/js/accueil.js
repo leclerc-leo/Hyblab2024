@@ -1,6 +1,9 @@
 "use strict";
 
 const initAccueil = function(){
+  const loader = document.querySelector('#loader');
+  loader.style.display = 'none';
+
   const decouvrir = document.querySelector('#bouton-decouvrir');
   decouvrir.setAttribute('style', 'transform :scale(1);');
 
@@ -15,7 +18,23 @@ const initAccueil = function(){
         fetch('/quartiers-2/stories.html')
           .then(res => res.text())
           .then(html => {
-            document.querySelector('body').innerHTML = html;
+            loader.style.display = 'block';
+
+            // on rajoute a notre container le body de la page credits
+            let container = document.querySelector('#container');
+
+            container.innerHTML = html;
+
+            setTimeout(() => {
+              anime({
+                  delay: 300,
+                  targets: '#loader',
+                  opacity: '0',
+                  'z-index' : -1,
+                  easing: 'easeInOutQuad',
+              });
+            }, 300);
+
             homeStories();
           });
       }

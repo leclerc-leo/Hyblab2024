@@ -57,6 +57,9 @@ const homeStories = function () {
   let swipe_invite_left = document.querySelector('#swipe_invite_left');
   swipe_invite_left.style.opacity = '0';
 
+  let loader = document.querySelector('#loader');
+  loader.style.opacity = '1';
+
   /* Premier slider pour choisir quel story cliquer */
   // Init of the (touch friendly) Swiper slider
     const swiperHomeStories = new Swiper("#swiperHomeStories", {
@@ -157,13 +160,48 @@ const homeStories = function () {
       fetch('/quartiers-2/credits.html')
         .then(res => res.text())
         .then(html => {
-          document.querySelector('body').innerHTML = html;
+          loader.style.display = 'block';
+          loader.style.opacity = '1';
+          loader.style.zIndex = '3000';
+
+          // on rajoute a notre container le body de la page credits
+          let container = document.querySelector('#container');
+
+          container.innerHTML = html;
+
+          setTimeout(() => {
+            anime({
+                delay: 800,
+                targets: '#loader',
+                opacity: '0',
+                'z-index' : -1,
+            });
+          }, 800);
+
+          // on enlève le loader
           let retour = document.querySelector('#back_button');
           retour.addEventListener('click', () => {
             fetch('/quartiers-2/stories.html')
               .then(res => res.text())
               .then(html => {
-                document.querySelector('body').innerHTML = html;
+                loader.style.opacity = '1';
+                loader.style.display = 'block';
+
+
+                // on rajoute a notre container le body de la page credits
+                let container = document.querySelector('#container');
+
+                container.innerHTML = html;
+
+                // on attend 1 seconde
+                setTimeout(() => {
+                  anime({
+                      delay: 300,
+                      targets: '#loader',
+                      opacity: '0',
+                      'z-index' : -1,
+                  });
+                }, 300);
                 // on init l'accueil
                 homeStories();
               });
@@ -212,6 +250,23 @@ const homeStories = function () {
         stories.forEach(story => {
           story.style.display = 'none';
         });
+
+        loader.style.display = 'block';
+        loader.style.opacity = '1';
+        loader.style.zIndex = '3000';
+
+        // on rajoute a notre container le body de la page credits
+        let container = document.querySelector('#container');
+
+        setTimeout(() => {
+          anime({
+              delay: 400,
+              targets: '#loader',
+              opacity: '0',
+              'z-index' : -1,
+          });
+        }, 400);
+
 
         // on affiche le swiper
         document.querySelector('#mySwiper').style.display = 'block';
