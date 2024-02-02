@@ -12,12 +12,23 @@ export const RemotionRoot = () => {
 			<Composition
 				id="Video"
 				component={Video}
-				durationInFrames={150}
+				durationInFrames={710}
 				fps={30}
 				width={720}
 				height={1280}
+				defaultProps={{
+					discipline: 'Handball',
+					date: '31/01/2024',
+					tour: 'Tour Préliminaire',
+					adversaire: 'Norvège',
+					scoreFr: 32,
+					scoreAd: 29,
+					annecdoteMatch: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim",
+					annecdoteAthl: "Ce match décisif leur permet d'accéder aux quarts de finale !",
+					annecdoteCompet: "C'est la première fois que l'équipe de France de Handball accède aux quarts de finale des JO !"
+				}}
 			/>
-			{/* <Composition
+			<Composition
 				// You can take the "id" to render a video:
 				// npx remotion render src/index.jsx <id> out/video.mp4
 				id="HelloWorld"
@@ -32,7 +43,7 @@ export const RemotionRoot = () => {
 					titleText: 'Welcome to Remotion',
 					titleColor: 'black',
 				}}
-			/> */}
+			/>
 			{/* Mount any React component to make it show up in the sidebar and work on it individually! */}
 			{/* <Composition
 				id="OnlyLogo"

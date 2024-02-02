@@ -1,17 +1,22 @@
+/* ========== BASE ========== */
+
 #background{
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
+    background-color: #181652;
 }
 
-#main{
-    background-color: #181652;
+.main{
+    /* background-color: #181652; */
     width: 100%;
     height: 93%;
     margin: 0;
-    padding: 0;
-    
+    padding: 0;   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #footer {
@@ -22,6 +27,8 @@
     padding:0;
     display:flex;
     align-items:center;
+    position: absolute;
+    bottom: 0;
 }
 
 #footer p {
@@ -30,4 +37,257 @@
     font-weight: bold;
     font-size: larger;
     color:#181652;
+}
+
+/* ========== Main Stay ========== */
+
+.main-stay{
+    position: absolute;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-stay .tds {
+    position: absolute;
+    width: 75%;
+    top : 15%;
+}
+
+.main-stay .line{
+    position:absolute;
+    width: 60%;
+    top: 400px;
+    border: 2px solid white;
+}
+
+/* ========== First page ========== */
+
+.main-first .title{
+    position: absolute;
+    top: 450px;
+    color: #eecc70;
+    text-align: center;
+    font-family: 'Antonio';
+    font-weight: bold;
+    font-size: 75px;
+    text-transform: uppercase;    
+}
+
+.main-first .date{
+    position: absolute;
+    bottom: 150px;
+    color: white;
+    font-family: 'Golos Text';
+    font-weight: bold;
+    font-size: 30px;  
+}
+
+.main-first .icone{
+    position: absolute;
+    bottom: 300px;
+}
+
+.main-first .icone img{
+    height: 150px;
+    margin: 0 30px;
+}
+
+/* ========== Second page ========== */
+
+.main-second .tour{
+    color: white;
+    font-family: 'Golos Text';
+    font-size: 30px;
+    top: 250px;
+    position: absolute;
+}
+
+.main-second .iconeEquipe{
+    position: absolute;
+    top: 325px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.main-second .iconeEquipe div{
+    width: 150px;
+    height: 150px;
+    background-color: white;
+    margin: 0 65px;
+    border-radius: 50%;
+    background-size: 60% 60%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.main-second .score{
+    position: absolute;
+    top: 525px;
+    font-family: 'Antonio';
+    font-size: 75px;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 65%;
+}
+
+.main-second .score span{
+    font-size: 150px;
+}
+
+.main-second .score span:first-of-type{
+    color: #eecc70;
+}
+
+.main-second .equipe{
+    font-size: 28px;
+    text-align: center;
+    color: white;
+    top: 500px;
+    position: absolute;
+    font-family: 'Golos Text';
+    text-transform: uppercase;
+}
+
+.main-second .equipe span{
+    margin: 0px 55px;
+}
+
+.main-second .bol{
+    width: 10%;
+    bottom: 500px;
+    position: absolute;
+}
+
+.main-second .annecdoteMatch{
+    text-align: center;
+    top: 825px;
+    color: white;
+    position: absolute;
+    font-size: 38px;
+    width: 85%;
+    font-family: Golos Text;
+}
+
+/* ========== Third page ========== */
+
+.main-third .nomAthl{
+    color: white;
+    font-family: 'Golos Text';
+    position: absolute;
+    left: 50px;
+    font-size: 65px;
+    top: 400px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-third .nomAthl span{
+    color: #eecc70;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'Antonio';
+}
+
+.main-third .icone{
+    width: 100px;
+    padding-top: 25px;
+}
+
+.main-third .imgAthl{
+    position: absolute;
+    width: 80%;
+    bottom: 0;
+    right: -154px;
+}
+
+/* ========== Fourth page ========== */
+
+.main-fourth .title{
+    left: 50px;
+    font-size: 60px;
+    color: #FBCB5D;
+    font-family: 'Antonio';
+    position: absolute;
+    top: 300px;
+    font-weight: bold;
+}
+
+.main-fourth .annecdote{
+    width: 80%;
+    font-size: 65px;
+    color: white;
+    font-family: 'Golos Text';
+    position: absolute;
+    left: 50px;
+    top: 380px;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-fourth .icone{
+    width: 100px;
+    padding-top: 25px;
+}
+
+/* ========== Fith page ========== */
+
+
+
+/* ========== Final page ========== */
+
+.main-final{
+    background-color:white!important;
+    justify-content: center;
+}
+
+.main-final .main-img2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top:100px;
+}
+
+.main-final img{
+    margin: 2.5% 0;
+}
+
+.main-final .jo{
+    width: 25%;
+}
+
+.main-final .telegramme{
+    width: 40%;
+}
+
+.main-final .tds{
+    width: 45%;
+}
+
+.main-final .line {
+    border : 1px solid black;
+    margin: 5% 0;
+}
+
+.footer-final{
+    background-color:#181652!important;
+}
+
+.footer-final p{
+    color:white!important;
+    text-align: center;
+    width: 100%;
 }
