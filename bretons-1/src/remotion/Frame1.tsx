@@ -36,7 +36,15 @@ export const Frame1: React.FC<{ text: string, titre: number, sous_titre: string 
 
     const titreAdapte = determinerTexteTitre(titre);
     const cheminImageMedaille = determinerImageMedaille(titre);
-
+    document.addEventListener("DOMContentLoaded", function() {
+        setTimeout(function() {
+          const element = document.querySelector('.animationOut') as HTMLElement;
+          if(element != undefined) {
+            element.style.transform = 'translateY(80vh)';
+          }
+        }, 10);
+      });
+      
     return (
         <div className="animationAgrandissement" style={{
             height: '100%',
@@ -49,12 +57,14 @@ export const Frame1: React.FC<{ text: string, titre: number, sous_titre: string 
             position: 'relative',
             transform: 'scale(1)',
         }}>
-            {cheminImageMedaille && (
-                <img src={cheminImageMedaille} alt="Médaille" style={{ position: 'absolute', top: '25vh', left: '17vh', width: '150px', height: '168px' }} />
-            )}
-            <h1 className="golos-text-frame1 titre_frame1" style={{ fontSize: "11vh", bottom: '50vh' }}>{text}</h1>
-            <h1 className="golos-text-frame1 titre_frame1" style={{ fontSize: "11vh", bottom: '37vh' }}>{titreAdapte}</h1>
-            <h3 className="golos-text-frame1 sous-titre_frame1" style={{ fontSize: "5vh", bottom: '30vh' }}>{sous_titre}</h3>
+            <div className='animationOut'>
+                {cheminImageMedaille && (
+                    <img src={cheminImageMedaille} alt="Médaille" style={{ position: 'absolute', top: '25vh', left: '17vh', width: '150px', height: '168px' }} />
+                    )}
+                <h1 className="golos-text-frame1 titre_frame1" style={{ fontSize: "11vh", bottom: '50vh' }}>{text}</h1>
+                <h1 className="golos-text-frame1 titre_frame1" style={{ fontSize: "11vh", bottom: '37vh' }}>{titreAdapte}</h1>
+                <h3 className="golos-text-frame1 sous-titre_frame1" style={{ fontSize: "5vh", bottom: '30vh' }}>{sous_titre}</h3>
+            </div>
         </div>
     );
 };
