@@ -5,9 +5,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
   <title>Hyblab 2023</title>
-  <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/story.css" />
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="css/story1.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/loadingio/loading.css@v2.0.0/dist/loading.css" />
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
@@ -18,17 +18,16 @@
       <div class="content">
 
           <!-- header -->
-          <div class="header">
-              <!-- image header devanture -->
-              <img src="1-la-commune/img/devanture-claude.svg" class="header-devanture">
-              <img src="1-la-commune/img/claude-head.svg" class="head-person">
-              <h1 class="name-person">Librairie La Commune</h1>
-          </div>
+          <img src="1-la-commune/img/claude.svg" class="head-person">
+          <h1 class="name-person">Librairie La Commune</h1>
 
           <!-- texte Lorem -->
-          <p class="text-initiative">
-              Un petit local sur lequel est floqué le nom « La Commune » est situé au 17 rue de Châteaudun. Un terme qui fait référence à de violentes manifestations contre le gouvernement en place, en 1870. Ces événements sont rapidement devenus les emblèmes historiques des mouvements libertaires, des mouvements révolutionnaires et de tous les mouvements favorables à une démocratie directe. Des idéaux qui ont traversé les époques et les murs de cette librairie rennaise.
-          </p>
+          <div class="first">
+              <p class="text-initiative">
+                  Un petit local sur lequel est floqué le nom « La Commune » est situé au 17 rue de Châteaudun. Un terme qui fait référence à de violentes manifestations contre le gouvernement en place, en 1870. Ces événements sont rapidement devenus les emblèmes historiques des mouvements libertaires, des mouvements révolutionnaires et de tous les mouvements favorables à une démocratie directe. Des idéaux qui ont traversé les époques et les murs de cette librairie rennaise.
+              </p>
+          </div>
+
 
           <!-- audio file -->
           <audio controls class="audio-div">
@@ -71,16 +70,16 @@
 
 
           <!-- motion vidéo qui tourne en boucle -->
-          <video autoplay muted loop class="map-motion">
-              <source src="1-la-commune/videos/zoom_map_librairie_la_commune.mp4" type="video/mp4">
+          <video playsinline loop muted autoplay class="map-motion">
+              <source src="1-la-commune/videos/zoom_map_librairie_la_commune.mp4" type="video/mp4" >
           </video>
 
           <div class="link-buttons">
               <div class="link-buttons-img">
-                  <a href="https://www.google.com/maps/place/local+libertaire+%22La+Commune%22/@48.1115294,-1.6661136,17z/data=!3m1!4b1!4m6!3m5!1s0x480edf5c8f478afd:0x4b17773367e94451!8m2!3d48.1115294!4d-1.6661136!16s%2Fg%2F11jm5lp9v7?hl=fr&entry=ttu">
-                    <img class="lienMaps" src="img/boutons/bouton_lien_google_map.svg">
+                  <a target="_blank" href="https://www.google.com/maps/place/local+libertaire+%22La+Commune%22/@48.1115294,-1.6661136,17z/data=!3m1!4b1!4m6!3m5!1s0x480edf5c8f478afd:0x4b17773367e94451!8m2!3d48.1115294!4d-1.6661136!16s%2Fg%2F11jm5lp9v7?hl=fr&entry=ttu">
+                    <img class="lienMaps"  src="img/boutons/bouton_lien_google_map.svg">
                   </a>
-                  <a href="">
+                  <a target="_blank" href="">
                       <img class="lienSite" src="img/boutons/bouton_lien_site.svg">
                   </a>
               </div>

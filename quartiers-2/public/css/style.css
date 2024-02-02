@@ -20,14 +20,39 @@ body{
     z-index: 5000;
     cursor: pointer;
     position: sticky;
-    left : 5%;
-    top: 0;
-    margin-top: 1vh;
-    margin-left: 1vh;
+    left: 5%;
+    top: 5%;
+    width: 100%;
+    display: flex;
 }
 #back_button img{
     height: 12%;
     width: 12%;
+}
+
+/* -------------- Loader --------------*/
+#loader{
+    z-index: 2000;
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    background-color: bisque;
+}
+
+#loader-img{
+    top:40%;
+    left:40%;
+    position: absolute;
+    color: black;
+}
+
+#loader-text{
+    text-align: center;
+    font-size: 25%;
+    position: absolute;
+    top:60%;
+    width: 100%;
+    color: black;
 }
 
 
@@ -56,12 +81,13 @@ body{
 /* the aspect ratio is between 3/4 and 9/16. If not it is locked to either 3/4 or 9/16  */
 
 /* When the aspect ratio is smaller that 3/4, display a 3/4 content */
-#container{
+#container, #loader{
     position: fixed; /* To set the size of the container to 100% of the visible viewport height AND for absolute positioning of child elements*/
     height: 100%;   /* even on mobile devices with url or navigation bars */
     margin-left: calc((100vw - 100 * 3vh / 4) / 2); /* Add black bands on left and right */
     width: calc(100 * 3vh / 4); /* Force 3/4 aspect ratio */
-    overflow: scroll;
+    overflow-y: auto; /* add a scrollbar if the content is too long */
+    overflow-x: hidden;
 }
 
 /* We set a default font size here. It will be the base for all other font sizes */
@@ -77,21 +103,21 @@ p{
 
 /* Fill the whole viewport when its aspect ratio is between 9/16 and 3/4 */
 @media screen and (max-aspect-ratio: 3/4) {
-    #container{
+    #container, #loader{
         margin-left: 0; /* reset margin-left */
         width: 100vw; /* content is full width (and full height because of the default rule for container height */
     }
 
     /* We set a default font size here. It will be the base for all other font sizes */
     /* Here the font size is proportional to content width */
-    body{
+    body, #loader{
         font-size: 15vw;
     }
 }
 
 /* The content is displayed at 9/16 If the aspect ratio is higher that 9/16  */
 @media screen and (max-aspect-ratio: 9/16) {
-    #container{
+    #container, #loader{
         margin-left: 0; /* reset left margin */
         width: 100vw;   /* content is full width */
         margin-top: calc(-50 * 16vw / 9); /* move the content half the height to the top */
@@ -101,7 +127,7 @@ p{
 
     /* We set a default font size here. It will be the base for all other font sizes */
     /* Here the font size is proportional to content width */
-    body{
+    body, #loader{
         font-size: 15vw;
     }
 }
