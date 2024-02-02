@@ -6,7 +6,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #FAE6D7;
+    background-color: #F8E8DB;
 }
 
 /* code propre à la page */
@@ -172,4 +172,37 @@
 
 .right-arrow {
     transform: rotate(180deg);
+}
+
+.squared-text{
+    border: 2px solid black;
+    width: 85%;
+}
+
+#first-text{
+    background-color: #4669AA;
+}
+
+#second-text{
+    background-color: #FFE178;
+}
+
+#third-text{
+    background-color:#AAC382;
+}
+
+#fourth-text{
+    background-color:#F0AAC8;
+}
+
+#fifth-text{
+    background-color:#4669AA;
+}
+
+#sixth-text{
+    background-color:#FFE178;
+}
+
+#seventh-text{
+    background-color:#AAC382;
 }
