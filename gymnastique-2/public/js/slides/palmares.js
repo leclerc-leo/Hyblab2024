@@ -9,6 +9,5 @@ document.querySelectorAll('.card-container').forEach(card_container =>{
         }else {
             card_container.children[0].classList.toggle("flipcard");
         }
-
     });
 })
