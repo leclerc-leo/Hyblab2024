@@ -394,18 +394,25 @@ svg.image-histoire, svg.image-jo{
 
 #credits-chemin2{
     width: 40%;
-    margin-top: -20%;
+}
+
+.credits-list{
+    display: flex;
+    flex-direction: row;
 }
 
 .credits-list > li{
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
     margin: 0;
     padding: 0;
 }
 
 .credits-list > li > p, .credits-list > li > img, .credits-list > li > div{
-    width: 50%;
+    width: 90%;
     margin: 0;
     padding: 10px;
-    height: 100%;
+    height: auto;
 }
