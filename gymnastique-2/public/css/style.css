@@ -350,7 +350,7 @@ svg.image-histoire, svg.image-jo{
     margin-bottom: 20px;
 }
 
-#histoire-header > img, #jo-header > img{
+#histoire-header > img {
     padding: 10px;
 }
 
@@ -374,4 +374,49 @@ svg.image-histoire, svg.image-jo{
     width: 20%;
     height: auto;
     vertical-align: middle;
+}
+
+
+#jo-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-container {
+    width: 370px;
+    height: 125px;
+    max-height: 10%;
+    max-width: 80%;
+    perspective: 800px;
+    margin: 3% 10% 0% 10%;
+}
+
+.card {
+    display: table;
+    height: 100%;
+    width: 100%;
+    border-radius: 2rem;
+    position: absolute;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-size: cover; 
+    background-repeat: no-repeat;
+}
+
+.card-titre{
+    margin: 2% 0 2% 0;
+    padding: 2%;
+    color: rgba(255, 216, 179, 0.9);
+    border: #E47754 solid 1px ;
+    background-color: #E47754;
+    border-radius: 15px;
+}
+
+.actif {
+    max-height: 50vh;
+    height: 100%;
 }
