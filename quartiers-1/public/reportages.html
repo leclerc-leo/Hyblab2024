@@ -5,7 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
     <title>Hyblab 2023</title>
-    <link rel="stylesheet" href="css/reportages.css"> 
+    <link rel="stylesheet" href="css/reportages.css">
+    <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/loadingio/loading.css@v2.0.0/dist/loading.css">
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'> <!-- Police Google -->
     <link href="https://fonts.cdnfonts.com/css/nexa-bold" rel="stylesheet"> <!-- Police Nexa -->
@@ -13,6 +14,7 @@
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="js/quartiers.js" defer></script>
     <script src="js/conversation.js" defer></script>
+    <script src="js/menu.js" defer></script>
 </head>
 <body>
     <div id="container">
@@ -22,10 +24,52 @@
             
         <section id="reportage">
             <div class="drawing">
+                <div id="mySidenav" class="sidenav">
+                    <div id="mySidenav-header">
+                        <button id="closeBtn" onclick="closeNav()"></button>
+                        <h1>Villejean</h1>
+                    </div>
+                    <p>Thématiques</p>
+                    <ul>
+                        <!-- # should be replaced by url later -->
+                        <hr />
+                        <li><a href="#">Portraits</a></li>
+                        <hr />
+                        <li><a href="#">Associations</a></li>
+                        <hr />
+                        <li><a href="#">Urbanisme</a></li>
+                        <hr />
+                        <li><a href="#">Sports</a></li>
+                        <hr />
+                        <li><a href="#">Education</a></li>
+                        <hr />
+                        <li><a href="#">Commerces</a></li>
+                        <hr />
+                    <ul>
+                    </ul>
+                        <hr />
+                        <li><a href="./reportages">Reportages</a></li>
+                        <hr />
+                        <li><a href="../quartiers-1">Carte des quartiers</a></li>
+                        <hr />
+                        <li><a href="#">Crédits</a></li>
+        
+                    </ul>
+                </div>
+        
+                <!-- create burger icon by span -->
+                <button id="openBtn" onclick="openNav()">
+                    <span class="burger-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                </button>
+                
                 <h1>Villejean</h1>
                 <div class="background-container">
                                     
-                    <div id="animation"></div> <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.8/lottie.min.js"></script> <script> var animation = lottie.loadAnimation({ container: document.getElementById('animation'), renderer: 'svg', loop: false, autoplay: true, path: 'Villejean_2.json' }); </script> 
+                    <div id="animation"></div> <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.8/lottie.min.js"></script> <script> var animation = lottie.loadAnimation({ container: document.getElementById('animation'), renderer: 'svg', loop: false, autoplay: true, path: 'Villejean_3.json' }); </script> 
 
 
                 </div>
@@ -35,19 +79,19 @@
 
 
                 <div class="video-player">
-                    <h6>Collectif Kune :</h6>
+                    <h6>Collectif Kune</h6>
                     <iframe class="videos" src="https://www.youtube.com/embed/4wR5ubwNarE?si=bT3NZbn262FIpfp2&start=43&end=191&controls=0" title="YouTube video player" frameborder="0"></iframe>
                 </div>
                 <div class="video-player">
-                    <h6>Association mosaique :</h6>
+                    <h6>Association mosaique</h6>
                     <iframe class="videos" src="https://www.youtube.com/embed/4wR5ubwNarE?si=bT3NZbn262FIpfp2&start=193&end=294&controls=0" title="YouTube video player" frameborder="0"></iframe>
                 </div>
                 <div class="video-player">
-                    <h6>centre culturel :</h6>
+                    <h6>Centre Avicenne</h6>
                     <iframe class="videos" src="https://www.youtube.com/embed/4wR5ubwNarE?si=bT3NZbn262FIpfp2&start=296&end=378&controls=0" title="YouTube video player" frameborder="0"></iframe>
                 </div>
                 <div class="video-player">
-                    <h6>Melting Potes :</h6>
+                    <h6>Melting Potes</h6>
                     <iframe class="videos" src="https://www.youtube.com/embed/4wR5ubwNarE?si=bT3NZbn262FIpfp2&start=379&end=486&controls=0" title="YouTube video player" frameborder="0"></iframe>
                 </div>
 
