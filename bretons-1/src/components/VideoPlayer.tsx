@@ -7,6 +7,7 @@ import athleteData from '../data/Athlete.json';
 import { Athlete, EventDataItem} from './type';
 import EventData from '../data/Event.json';
 import Article from './Article';
+import OffcanvasExample from '../components/Navbar'
 
 function VideoPlayer({ id }: { id: string }) {
 
@@ -34,8 +35,8 @@ function VideoPlayer({ id }: { id: string }) {
     let athlete = allAthletesData.find(a => a.Athlete == eventData?.Athlete)
     return (
         <div id='VideoPlayer'>
-            <div className='headerPlayer'>
-                <img src="/bretons-1/img/logo_telegram_banc.svg" alt='Logo' />
+            <div className="head">
+                <OffcanvasExample />
             </div>
             <Player
                 component={MyVideo}
