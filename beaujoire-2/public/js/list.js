@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     on: {
       slideChange: function () {
+        const currentpos = positions[this.activeIndex];
         const currentList = playerLists[this.activeIndex];
         updatePlayerList(`playerList${this.activeIndex + 1}`, currentList);
       },
@@ -47,8 +48,8 @@ document.addEventListener('DOMContentLoaded', function () {
       playerBox.innerHTML = `
         <img src="${player.photo}" >
         <p>${player.name}</p>
-        <button class="heart-button" data-type="heart"></button>
         <button class="down-slider"></button>
+        <button class="heart-button" data-type="heart"></button>
       `;
       playerListContainer.appendChild(playerBox);
 
