@@ -12,12 +12,12 @@ const initSlideIntro = async function () {
   let response = await fetch("data/first-slide.json");
   const data = await response.json();
 
-  // set the title
+  /* set the title
   titre.innerHTML = data.title;
 
   // set the subtitle
   sous_titre.innerHTML = data.soustitre;
-
+*/
   // set the text
   texte1.innerHTML = data.texte1;
 
@@ -30,7 +30,7 @@ const initSlideIntro = async function () {
   });
   anime({
     targets: bag,
-    width: "75%",
+    width: "95%",
     top: "70%",
     easing: "easeInOutQuad",
     duration: 300,

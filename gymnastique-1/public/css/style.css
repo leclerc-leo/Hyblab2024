@@ -24,7 +24,7 @@ body {
   background-color: black;
   color: white;
   overflow: hidden; /* to avoid slider bugs on some browsers */
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 /* -------------- Loader --------------*/
@@ -77,53 +77,42 @@ body {
 }
 
 #first-slide header {
-  text-align: center;
   width: 70%;
   position: absolute;
-  font-size: 30%;
-  z-index: 2;
-  color: #e5dfca;
-  background-color: #386f9c;
-  border-radius: 10px;
-  padding: 20px;
-  top: 10%;
-  left: 50%;
-  transform: translate(-50%, -50%); /* Add this line */
-}
+  left: 25%;
 
-#first-slide header h3 {
-  /* italic, smaller and lighter text */
-  font-style: italic;
-  font-weight: lighter;
 }
 
 #first-slide p {
   text-align: center;
-  width: 65%;
+  width: 75%;
   position: absolute;
-  font-size: 35%;
+  font-size: 45%;
   z-index: 2;
   color: #e5dfca;
-  background-color: #386f9c;
-  border-radius: 10px;
-  padding: 20px;
-  top: 45%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#first-slide .txt_background img {
+  position: absolute;
+  width: 90%;
+  height: 100%;
+  z-index: 1;
+  top:50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
 #first-slide .arrow {
   position: absolute;
-  bottom: -2%;
-  left: -4%;
-  margin: 20px;
+  top:76%;
+  z-index: 2;
+  width: 30%;
+  height: 30%;
 }
 
-#first-slide .arrow img {
-  width: 10%;
-  height: 10%;
-  margin: 20px;
-}
 
 #first-slide .bag {
   position: absolute;
@@ -135,13 +124,15 @@ body {
 #first-slide .tete {
   position: absolute;
   height: auto;
-  width: 17%;
-  top: 21.5%;
-  left: 13%;
+  width: 31%;
+  top: 10.5%;
+  left: 12.3%;
   transform: translateX(-50%);
   z-index: 2;
   rotate: -10deg;
 }
+
+
 
 /* Most of the elements in this demo are absolute positioned with percentages */
 #second-slide header,
