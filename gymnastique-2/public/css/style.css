@@ -378,7 +378,7 @@ svg.image-histoire, svg.image-jo{
 #palmares-page #titre-palmares {
     color: #482E49;
     margin: 5% auto 0 auto;
-    font-size: 3vh;
+    font-size: 4vh;
 }
 #palmares-page .image-titre{
     margin-bottom: 5%;
@@ -444,10 +444,10 @@ svg.image-histoire, svg.image-jo{
 .card-palmares-titre{
     margin: 2% 0 2% 0;
     color: #E47754;
-    font-size: 1.5vh;
+    font-size: 1.8vh;
 }
 .card-palmares-texte{
-    font-size: 1.2vh;
+    font-size: 1.5vh;
 }
 
 .credits-list > li{
