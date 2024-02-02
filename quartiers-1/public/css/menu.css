@@ -1,0 +1,71 @@
+/* Burger Menu */
+/* Sidenav menu */
+
+#titre {
+    position: absolute;
+    top:0;
+    left: 45%;
+    font-size: 22px;
+    color: #111;
+}
+
+#mySidenav p {
+    color: #818181;
+}
+
+#mySidenav {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 4;
+    top: 0;
+    left: -100%;
+    background-color: #FBEFEB;
+    padding-top: 60px;
+    transition: left 0.5s ease;
+    overflow-y: scroll;
+    display: none;
+    /* visibility: hidden; */
+}
+
+/* Sidenav menu links */
+#mySidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+#mySidenav a:hover {
+    color: #111;
+}
+
+#mySidenav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Active class */
+#mySidenav.active {
+    left: 0;
+}
+/* Close btn */
+#mySidenav .close {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    
+}
+
+/* burger */
+.burger-icon span {
+    display: block;
+    width: 35px;
+    height: 5px;
+    background-color: black;
+    margin: 6px 0;
+}
