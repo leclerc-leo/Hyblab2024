@@ -22,7 +22,7 @@ Participants :
   - Manuel BENOIST
   - Florentin ROY
   - Valentin VINCENT
-  - Jianhui YANN
+  - Jianhui YAN
 
 - SciencesPo : 
   - Adriana DAGBA
