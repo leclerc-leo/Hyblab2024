@@ -17,6 +17,10 @@
 </head>
 <body>
     <!-- Le conteneur sert à verrouiller les proportions (aspect ratio) du contenu de la page (ici des slides) -->
+    <section id="loader">
+      <div id="loader-img" class="ld ld-ring ld-cycle"></div>
+      <p id="loader-text">Veuillez patienter...</p>
+    </section>
     <div id="container" >
       <!-- bouton retour -->
       <a id="back_button"><img src="img/bouton_retour.svg" alt="Retour"></a>
@@ -24,8 +28,10 @@
         <img src="img/boutons/bouton_recap.svg" alt="Accès à la page récapitulative">
       </div>
       <main>
-        <h1 id="main-title-stories">Les habitants</h1>
+          <a id="swipe_invite_left"><img src="img/arrow.svg" alt="Swipe invite"></a>
+          <a id="swipe_invite_right"><img src="img/arrow.svg" alt="Swipe invite"></a>
           <div id="swiperHomeStories" class="swiper">
+          <h1 id="main-title-stories">Les habitants</h1>
           <!-- le main est aussi le conteneur des différents slides (contenus à chaque fois dans des sections-->
           <main id="mainSwiperHomeStories" class ="swiper-wrapper">
               <section class="swiper-slide">
@@ -33,7 +39,6 @@
                   <img src="1-la-commune/img/devanture-commune.svg" alt="story1" class="devanture">
                     <img src="1-la-commune/img/claude-personnage.svg" alt="Claude debout" class="personnage story">
                 </div>
-                <a id="swipe_invite"><img src="img/arrow.svg" alt="Swipe invite"></a>
               </section>
               <section class="swiper-slide">
                 <div class="devanture-slide">
