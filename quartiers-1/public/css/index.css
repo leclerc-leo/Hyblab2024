@@ -346,6 +346,13 @@ h1{
     transform: translateX(-50%);
     bottom: 6%;
     z-index: 2;
+    padding: 0% 7%;
+    border-radius: 20px;
+    border: none;
+    background: #D74F50;
+    color: #FFFFFF;
+    font-family: 'Nexa', sans-serif;
+    font-size: 30%;
 }
 
 #tuto-open{
