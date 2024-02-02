@@ -139,15 +139,15 @@ body {
 
 #confirm-selection {
 	position: absolute; /* Position absolue par rapport à son parent positionné */
-	bottom: -420px; /* Descendre le bouton de 50 pixels au-dessous du bas de son conteneur */
-	left: 47%; /* Centrer le bouton horizontalement */
+	bottom: -270px; /* Descendre le bouton de 50 pixels au-dessous du bas de son conteneur */
+	left: 49%; /* Centrer le bouton horizontalement */
 	transform: translateX(-50%); /* Centrer le bouton par rapport à lui-même */
 	/* Ajouter d'autres styles si nécessaire */
 }
 
 #return {
 	position: absolute;
-	bottom: 220px;
+	bottom: 150px;
 	right: 87%;
 }
 
