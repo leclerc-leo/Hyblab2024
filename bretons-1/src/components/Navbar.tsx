@@ -3,7 +3,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import BurgerMenu from './BurgerMenu';
 import './Navbar.css';
 
-function OffcanvasExample() {
+function NavbarT() {
     return (
         <>
             {['xxxl'].map((expand, index) => (
@@ -20,4 +20,4 @@ function OffcanvasExample() {
     );
 }
 
-export default OffcanvasExample;
+export default NavbarT;
