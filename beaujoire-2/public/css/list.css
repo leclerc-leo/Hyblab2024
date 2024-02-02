@@ -56,28 +56,30 @@ body{
   }
   
   .heart-button {
-    background: url('../img/coeur-1.svg') no-repeat center center;
+    background: url('../img/COEUR1.svg') no-repeat center center;
     background-size: contain;
     width: 1.563rem;
+    margin-right: 0.625rem;
+    margin-left: 1rem;
     border: none;
     cursor: pointer;
   }
   
   /* Styling for the pressed state of the heart button */
   .heart-button.pressed{
-    background: url("../img/coeur-2.svg") no-repeat center center;
+    background: url("../img/COEUR2.svg") no-repeat center center;
     background-size: contain;
-    width: 1.563rem;;
+    width: 1.563rem;
+    margin-right: 0.625rem;
+    margin-left: 1rem;
     border: none;
     cursor: pointer;
   }
 
   .down-slider {
-    background: url("../img/flèche-bas.svg") no-repeat center center;
+    background: url("../img/fleche_correction.svg") no-repeat center center;
     background-size: contain;
-    margin-right: 0.625rem;
-    margin-left: 0.625rem;
-    width: 1.563rem;;
+    width: 1rem;;
     border: none;
     cursor: pointer;
   }
@@ -107,8 +109,3 @@ body{
     justify-content: space-between; 
     cursor: pointer;
   }
-
-#slider:hover #precedent,
-#slider:hover #suivant {
-    opacity: 1;
-}
