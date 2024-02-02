@@ -10,7 +10,6 @@ const text_ou = document.querySelector('#card-ou > div:nth-child(1) > p:nth-chil
 const text_gym = document.querySelector('#card-gym > div:nth-child(1) > p:nth-child(2');
 const text_anecdote = document.querySelector('#card-anecdote > div:nth-child(1) > p:nth-child(2');
 
-
 card_quand.addEventListener('click', () => { 
     if (!card_quand.classList.contains("actif")) {
         card_ou.classList.add("hidden");
