@@ -331,7 +331,7 @@ span{
 /* Format des pages */
 #histoire-page, #jo-page, #credits-page{
     text-align: center;
-    padding: 0;
+    padding: 0 10px;
 }
 
 #histoire-page h1, #jo-page h1, #credits-page h1{
@@ -477,15 +477,51 @@ svg.image-histoire, svg.image-jo{
     font-size: 1.5vh;
 }
 
-.credits-list > li{
-    display: block;
+#credits-chemin1{
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
-.credits-list > li > .logo-partenaire{
-    vertical-align: middle;
-    width: 40%;
-    margin: 10px;
-    display: inline-block;
+#credits-chemin2{
+    width: 18%;
+}
+
+#credits-chemin3{
+    width: 10%;
+}
+
+#credits-chemin4{
+    width: 12%;
+    position: absolute;
+    right: 20%;
+    margin-top: -10%;
+}
+
+.credits-list{
+    display: flex;
+    flex-direction: row;
+    margin: 0 30px;
+}
+
+.credits-list > li{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    margin: 0;
+    padding: 0;
+}
+
+.credits-list > li > .credits-list-content{
+    width: 90%;
+    margin: 0;
+    padding: 10px;
+    height: auto;
+}
+
+.credits-list-license{
+    margin: 0 auto;
 }
 
 .logo-licence{
@@ -557,4 +593,5 @@ svg.image-histoire, svg.image-jo{
 
 .actif .jo-card{
     height: 100%;
+    margin-bottom: 10px;
 }
