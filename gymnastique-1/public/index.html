@@ -19,7 +19,11 @@
     />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
@@ -40,7 +44,6 @@
       <div id="mySwiper" class="swiper">
         <!-- le main est aussi le conteneur des différents slides (contenus à chaque fois dans des sections-->
         <main class="swiper-wrapper">
-          
           <!-- Le contenu du slide 1 -->
 
           <section id="first-slide" class="swiper-slide">
@@ -91,17 +94,39 @@
               <p></p>
             </footer>
           </section>
-          <section id="third-slide" class="swiper-slide">
-            <header>
-              <h1>This was...</h1>
-            </header>
-            <img id="img-fini" src="hyblab_2024.png" />
-            <footer id="bandeau">
-              <!-- Logo Hyblab -->
-              <a href="http://www.hyblab.fr/"
-                ><img id="hyblab" src="logo_hyblab.png" alt="Hyblab DataSport"
-              /></a>
 
+          <!-- Le contenu du slide 3 -->
+
+          <section id="third-slide" class="swiper-slide">
+            <header></header>
+            <div id="cadre-credit" class="cadre-credit">
+              <img src="img/slide3/cadres_credits.svg" alt="cadre crédit" />
+            </div>
+            <!-- Logo Hyblab -->
+            <a href="http://www.hyblab.fr/">
+              <img
+                id="hyblab"
+                class="hyblab"
+                src="logo_hyblab.png"
+                alt="Hyblab DataSport"
+            /></a>
+            <h2 id="annee">2024</h2>
+            <h3 id="porteur">PORTEUR DE PROJET</h3>
+            <p id="nom_porteur"></p>
+            <h3 id="redac">RÉDACTION</h3>
+            <p id="redac1"></p>
+            <p id="redac2"></p>
+            <h3 id="graph">GRAPHISME</h3>
+            <p id="graph1"></p>
+            <p id="graph2"></p>
+            <h3 id="prod">PRODUCTION</h3>
+            <p id="prod1"></p>
+            <p id="prod2"></p>
+            <p id="prod3"></p>
+            <p id="prod4"></p>
+            <p id="prod5"></p>
+            <p id="prod6"></p>
+            <footer id="bandeau">
               <!-- Les organisateurs -->
               <ul>
                 <li>
@@ -148,11 +173,11 @@
                       </li>
                     </ul>
                   </li>
-                  <!-- Logo de votre porteur de projet -->
+                  <!-- Logo de la Nouvelle République -->
                   <li>
-                    <a href="http://www.mon-porteur-de-projet.org"
+                    <a href="https://www.lanouvellerepublique.fr/"
                       ><img
-                        src="no-logo.png"
+                        src="institutionnels/logo_anr.png"
                         alt="Logo de mon porteur de projet"
                     /></a>
                   </li>
