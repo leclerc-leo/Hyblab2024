@@ -45,13 +45,7 @@ function VideoPlayer({ id }: { id: string }) {
                 controls
                 autoPlay
             />
-              <div onClick={handleClick} className='boutonRetour'>
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="25" viewBox="0 0 16 25" fill="none">
-              <path d="M14 2L3 12.5L14 23" stroke="white" strokeWidth="3"/>
-              </svg>
-
-            </div>
-
+            
             {(
           allowSwipe &&(
             <>
