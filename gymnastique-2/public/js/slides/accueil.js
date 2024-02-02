@@ -1,15 +1,8 @@
 "use strict";
 
-// async init function (because of the awaits on fetches)
 const init_accueil = async swiper => {
-    
-    // Get some dummy data
-    const response = await fetch('data/dummy.json');
-    const data2 = await response.json();
 
-    console.log(data2.message);
-
-    move_background(50);
+    move_background(50, true);
 
     remove_listeners('.exit-button');
     remove_listeners('.home-button');

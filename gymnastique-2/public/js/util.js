@@ -2,7 +2,8 @@ const hide_block = (block, button) => {
     block.style.width = '0';
     block.style.height = '0';
     block.style.bottom = button.style.bottom;
-    block.style.left = button.style.left;
+    if (block.style.left != '') block.style.left = button.style.left;
+    if (block.style.right != '') block.style.right = button.style.right;
     block.style.overflow = 'hidden';
     block.style.borderRadius = '50%';
     block.style.opacity = '0';
@@ -51,12 +52,29 @@ const remove_listeners = id => {
     el.parentNode.replaceChild(elClone, el);
 }
 
-const move_background = (x) => {
+const move_background = (x, b = false) => {
     const background = document.querySelector('.background');
     const active = document.querySelector('.swiper-slide-active');
-    const swiper = document.querySelector('#mySwiper');
 
-    const left = - background.offsetWidth * x / 100 + active.offsetWidth * x / 100 + swiper.getBoundingClientRect().left;
+    const left = - background.offsetWidth * x / 100 + active.offsetWidth * x / 100;
+
+    if (b) background.style.transition = 'left 0.3s ease-in-out';
+    else background.style.transition = 'none';
 
     background.style.left = `${left}px`;
+}
+
+const handle_orientation = (event) => { 
+    const y = Math.min(event.gamma, 90) + 90;
+    const maxs = {
+        'high': 30,
+        'med': 20,
+        'low': 10
+    }
+
+    for (const [key, max] of Object.entries(maxs)) {
+        document.querySelectorAll(`.background-move-${key}`).forEach( element => {
+            element.style.left = `${(max * y) / 180 - max}px`;
+        });
+    }
 }

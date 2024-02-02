@@ -1,9 +1,8 @@
 "use strict";
 
-// Just animate the logo
 const init_futur = async swiper => {
 
-    move_background(100);
+    move_background(100, true);
 
     remove_listeners('.exit-button');
     remove_listeners('.home-button');
