@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import videoPath from '/img/animation/annimation crèpe_1.mp4';
 import './Frame6.css';
+import SvgFrame6 from './SvgFrame6'; // Assurez-vous que le chemin d'importation est correct
 
 export const Frame6: React.FC = () => {
   const [compteur, setCompteur] = useState(0);
@@ -23,6 +24,7 @@ export const Frame6: React.FC = () => {
 
     requestAnimationFrame(animerCompteur);
   }, []);
+  const valeurAffichee = compteur < 1 ? "0" : "1";
 
   return (
     <>
@@ -31,13 +33,12 @@ export const Frame6: React.FC = () => {
           <source src={videoPath} type="video/mp4" />
           Votre navigateur ne supporte pas la balise vidéo.
         </video>
-        <div className="compteurContainer_frame6">
-          {compteur.toFixed(2)}
+        <div className="compteurContainer_frame6" style={{ fontSize: "10vh", bottom: '145vh' }}>
+        <SvgFrame6 />
+          {valeurAffichee}
         </div>
       </div>
-      <div className="textContainer_frame6">
-        <h1 className="golos-text-frame6 titre_frame6">Elle ramène la 1ère médaille au clan Breton</h1>
-      </div>
+      <h1 className="golos-text-frame6 titre_frame6" style={{ fontSize: "10vh", bottom: '145vh' }}>Elle ramène la 1ère médaille au clan Breton</h1>
     </>
   );
 };
