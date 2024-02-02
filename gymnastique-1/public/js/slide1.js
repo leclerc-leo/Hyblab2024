@@ -23,7 +23,7 @@ const initSlideIntro = async function () {
 
   anime({
     targets: down_arrow,
-    translateY: [0,25],
+    translateY: [0, 25],
     direction: "alternate",
     loop: true,
     easing: "easeInOutQuad",

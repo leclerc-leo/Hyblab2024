@@ -1,7 +1,7 @@
 "use strict";
 
 // Just animate the logo
-const initSlide3 = async function(){
+const initSlide3 = async function () {
   const porteur = document.querySelector("#nom_porteur");
   const redac1 = document.querySelector("#redac1");
   const redac2 = document.querySelector("#redac2");
@@ -28,5 +28,4 @@ const initSlide3 = async function(){
   prod4.innerHTML = data.prod4;
   prod5.innerHTML = data.prod5;
   prod6.innerHTML = data.prod6;
-  
 };
