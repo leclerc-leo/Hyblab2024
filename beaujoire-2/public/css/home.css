@@ -1,64 +1,9 @@
-/* ------- Important ! Please at least keep the last part of this CSS ----------- */
-/* ------- that adapts content width and height so that aspect ratio  ----------- */
-/* ------- is kept between 9/16 a,d 3/4 (portait orientation)         ----------- */
-
-/* Normalize margin and padding to ease elements positioning */
-*{
-    padding:0;
-    margin:0;
-}
-
-/** colors **/
-/* Defining the colors used through the app here as variables */
-/* use : color : var(--bg-green) */
-:root {
-    --bg-green :#009E49 ;
-    --yellow: #F7EF24 ;
-    --green : #17853C ; 
-    --field-green : #64BF7C ; 
-}
-/** colors **/
-
-/** fonts **/
-@font-face {
-    font-family: 'Abolition';
-    src: url('../fonts/Abolition-W00-Regular.ttf') format('truetype');
-  }
-
-@font-face {
-    font-family: 'Neue Haas Unica';
-    src: url('../fonts/NeueHaasUnicaPro-Regular.ttf') format('truetype');
-  }
-/** fonts **/
-
-
 body{
     background-color: black;
     color: white;
     overflow: hidden;   /* to avoid slider bugs on some browsers */
     font-family: sans-serif;
 }
-
-/* -------------- Loader --------------*/
-#loader{
-    z-index: 2;
-    position:absolute;
-}
-
-#loader-img{
-    top:40%;
-    left:40%;
-    position: absolute;
-}
-
-#loader-text{
-    text-align: center;
-    font-size: 25%;
-    position: absolute;
-    top:60%;
-    width: 100%
-}
-/* -------------- End of Loader --------------*/
 
 /* Swiper slider. Need to fill the container */
 #mySwiper{
