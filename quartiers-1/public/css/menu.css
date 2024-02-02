@@ -44,11 +44,11 @@
 /* Close btn */
 #closeBtn {
     position: absolute;
-    top: 0;
-    right: 25px;
-    width: 30px;
-    height: 30px;
-    
+    top: 15px;
+    right: 15px;
+    width: 8%;
+    height: 5%;
+    background: none;
 }
 
 /* burger */
