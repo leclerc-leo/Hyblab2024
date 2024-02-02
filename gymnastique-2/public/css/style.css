@@ -200,19 +200,18 @@ header{
     visibility: hidden;
 }
 
+/* Bouton de navigation */
 .exit-button{
     position: absolute;
     top: 0;
     left: 0;
     z-index: 100;
 
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     padding: 20px;
 
     cursor: pointer;
-
-    background: radial-gradient(circle, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0) 60%, rgba(255,255,255,0) 100%);
 }
 
 .exit-button::before, .exit-button::after{
@@ -239,13 +238,11 @@ header{
     justify-content: center;
     align-items: center;
 
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     padding: 20px;
 
     cursor: pointer;
-
-    background: radial-gradient(circle, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0) 60%, rgba(255,255,255,0) 100%);
 }
 
 .credits-button {
