@@ -5,6 +5,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     background-color: #FAE6D7;
 }
 
@@ -19,32 +20,30 @@
     font-family: 'AlwaysInMyHeart','Montserrat', sans-serif;
 }
 
-/* header */
-.header{
-    position: relative;
-    width: 100%;
-    margin-top: 2%;
-}
-
-.header-devanture{
-    width: 100%;
-}
-
 .head-person{
-    position: absolute;
-    width: 25%;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin-top: 5%;
+    width: 40%;
+    height: auto;
 }
 
-.header .name-person {
+.name-person {
     margin-top: 10%;
 }
+
+.first{
+    border: 2px solid black;
+    width: 85%;
+}
+
+.first p {
+    color: white;
+    width: 80%;
+}
+
 /* audio */
 .audio-div{
-    margin: 5%;
-    width: 70%;
+    margin-top: 5%;
+    width: 80%;
     height: auto;
 }
 
