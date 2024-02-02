@@ -25,8 +25,7 @@
         <section id="quartier">
             <div class="drawing">
                 <div id="mySidenav" class="sidenav">
-                    <a id="closeBtn" href="#" class="close">x</a>
-                    <p id="titre">Villejean</p>
+                    <button id="closeBtn" onclick="closeNav()"></button>
                     <p>Thématiques</p>
                     <ul>
                         <!-- # should be replaced by url later -->
@@ -43,7 +42,8 @@
                         <hr />
                         <li><a href="#">Commerces</a></li>
                         <hr />
-                        <br><br><br>
+                    <ul>
+                    </ul>
                         <hr />
                         <li><a href="#">Reportages</a></li>
                         <hr />
@@ -55,13 +55,13 @@
                 </div>
         
             <!-- create burger icon by span -->
-            <a href="#" id="openBtn">
+            <button id="openBtn" onclick="openNav()">
                 <span class="burger-icon">
                     <span></span>
                     <span></span>
                     <span></span>
                 </span>
-            </a>
+            </button>
                 <h1>Villejean</h1>
                 <div class="background-container">
                     <img class="empty" src="img/backgrounds/villejean/bienvenue.svg">
