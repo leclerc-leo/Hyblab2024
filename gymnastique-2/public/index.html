@@ -5,27 +5,8 @@
 
     <!-- Le conteneur sert à vérouiller les proportions (aspect ratio) du contenu de la page (ici des slides) -->
     <div id="container">
-      <div class="background" style="left: 0%">
-        <img src="img/background.jpg" alt="background" width="100%"  style="z-index: -999;">
-
-        <img src="img/background/matelas mur du fond .svg" alt="background" width="100%"  style="z-index: -11;">
-        <img src="img/background/arriere plan barre.svg" alt="background" width="100%"  style="z-index: -11;">
-        <img src="img/background/matelas milieu barre.svg" alt="background" width="100%"  style="z-index: -11;">
-        <img src="img/background/échelle.svg" alt="background" width="100%"  style="z-index: -11;">
-        <img src="img/background/estrade.svg" alt="background" width="100%"  style="z-index: -11;">
-        <img src="img/background/barres à remplacer par gif.svg" alt="background" width="100%"  style="z-index: -11;">
-
-        <img src="img/background/coupe.svg" alt="background" width="100%"  style="z-index: -9;">
-        <img src="img/background/histoire.svg" alt="background" width="100%"  style="z-index: -9;">
-        <img src="img/background/journée type.svg" alt="background" width="100%"  style="z-index: -9;">
-        <img src="img/background/premier plan barre.svg" alt="background" width="100%" style="z-index: -9;">
-
-        <img src="img/background/fond vrai.svg" alt="background" width="100%"  style="z-index: -99;"> <!-- Chargement en dernier pour charger les assets plus grands en premiers -->
-
-        <img src="img/background/Master Animation Gymnaste.gif" alt="background" width="38.5%" style="z-index: -10; left : 0; right: 0; margin: auto; transform: translate(-8.3%, -12.5%);">
-          <!-- Chargement de la gif en tout dernier pour éviter les problèmes surtout liés à sa taille -->
-      </div>
-
+      <%= background %>
+      
       <div id="mySwiper" class="swiper">
         <!-- le main est aussi le conteneur des différents slides (contenus à chaque fois dans des sections-->
         <main class = "swiper-wrapper">
@@ -34,21 +15,20 @@
               <div style="position:absolute; bottom: 0;">
                 <img src="img/background/fond vrai.svg" alt="background" width="250%" style="opacity: 0; display: block;">
 
-                <a class="category-button" id="histoire-button" style="bottom: 20%; left: 25%;">
-                  Histoire + Blessure</a>
-                <%= histoire %>
+                <a class="category-button" id="histoire-button" style="bottom: 20%; left: 25%;"></a>
 
-                <a class="category-button" id="palmares-button" style="bottom: 60%; left: 25%;">
-                  Palmares</a>
-                <%= palmares %>
-                <a class="category-button" style="bottom: 40%; left: 70%;">
-                  Qualification</a>
+                  <a class="category-button" id="palmares-button" style="bottom: 60%; left: 25%;"></a>
+
+                <a class="category-button" style="bottom: 40%; left: 70%;"></a>
+
               </div>
+              <%= histoire %>
+              <%= palmares %>
           </section>
           <section class="swiper-slide">
 
               <header>
-                  <h1 id="titre">Keylia Nemour <br> en direction de Paris 2024</h1>
+                  <h1 id="titre">Kaylia Nemour <br> Direction Paris 2024</h1>
               </header>
 
               <footer class="credits-button">Crédits</footer>
@@ -60,13 +40,11 @@
             <div style="position:absolute; bottom: 0;">
               <img src="img/background/fond vrai.svg" alt="background" width="250%" style="opacity: 0; display: block;">
 
-              <a class="category-button" id="jo-button" style="bottom: 65%; right: 50%; transform: translate(50%, 50%);">
-                JO</a>
-              <%= jo %>
+              <a class="category-button" id="jo-button" style="bottom: 65%; right: 50%; transform: translate(50%, 50%);"></a>
 
-              <a class="category-button" style="bottom: 20%; right: 20%; transform: translate(50%, 50%);">
-                Journée Type</a>
+              <a class="category-button" style="bottom: 20%; right: 20%; transform: translate(50%, 50%);"></a>
             </div>
+            <%= jo %>
 
           </section>
         </main>
