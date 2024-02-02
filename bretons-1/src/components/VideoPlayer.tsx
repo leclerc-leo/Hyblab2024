@@ -10,25 +10,13 @@ function VideoPlayer({ id }: { id: string }) {
 
     const handleSwipeUp = () => {
     };
+    const allEventsData: EventDataItem[] = (EventData.Event.flat() as EventDataItem[]);
+
+    let eventData = allEventsData.find(e => e.IdEvent == Number(id));
     const allAthletesData = athleteData.Athlete.reduce((allAthletes: Athlete[], athletesArray: Athlete[]) => {
         return allAthletes.concat(athletesArray);
       }, []);
-      
-    const athleteVideosData = allAthletesData.map((athlete: Athlete) => {
-        const allEventsData: EventDataItem[] = (EventData.Event.flat() as EventDataItem[]);
-        const athleteEvents = allEventsData.filter((event: EventDataItem) => event.Athlete === athlete.Athlete);
-        const videosForAthlete = athleteEvents.map((event: EventDataItem) => ({
-          id: event.IdEvent.toString(),
-          title: event.Athlete,
-          subtitle: event.Epreuve,
-          srcPhoto: athlete.Photo,
-          description: event.Performance,
-        }));
-        return videosForAthlete;
-      }).flat();
-    
-    let videoData = athleteVideosData.find(a => a.id == id);
-
+    let athlete = allAthletesData.find(a => a.Athlete == eventData?.Athlete)
     return (
         <div id='VideoPlayer'>
             <div className='headerPlayer'>
@@ -36,7 +24,7 @@ function VideoPlayer({ id }: { id: string }) {
             </div>
             <Player
                 component={MyVideo}
-                inputProps={{ videoData: videoData }}
+                inputProps={{ id: id }}
                 durationInFrames={1000}
                 compositionWidth={1080}
                 compositionHeight={1920}
@@ -44,7 +32,7 @@ function VideoPlayer({ id }: { id: string }) {
                 style={{ width: "100%", height: "100%", position: "absolute", top: "0%" }}
                 controls
             />
-            {!videoData!["Etudes / Métier"] ? (
+            {!athlete!["Etudes / Métier"] ? (
                 <div className='boutonRetour'><span>Retour</span></div>
             ) : (
                 <SwipeUp onSwipeUp={handleSwipeUp} />
