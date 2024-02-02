@@ -64,24 +64,12 @@ function CardCarousel({ video }: VideoListItemProps) {
   return (
     <Card className="custom-card" style={{ width: '15rem' }}>
       <div className="image-container">
-        <Card.Img className="custom-image" variant="top" src={video.srcPhoto}  />
+        <Card.Img className="custom-image" src={video.srcPhoto}  />
         <div className='card_text'>
           <h4>{video.title}</h4>
           <p>{video.subtitle}</p>
         </div>
-      </div>
-      <img
-        className="PlayButton"
-        src="/bretons-1/img/Play_button.svg"
-        alt="PlayButton"
-        onClick={() => handlePlayClick(video.id)}
-      />
-      <img
-        className={`overlay-image ${isFavorited ? 'saveyellow' : ''}`}
-        src={video.gain === "" ? "/bretons-1/img/Eliminate.svg" : `/bretons-1/img/${video.gain}.svg`}
-        alt="Overlay"
-      />
-        <div className="image-row">
+        <div className="image-row" style={{ zIndex: 5 }}>
           <img
             className="BicycleLogo"
             src="/bretons-1/img/Bicycle_logo.svg"
@@ -100,9 +88,24 @@ function CardCarousel({ video }: VideoListItemProps) {
             onClick={() => handleImageClick('ShareLogo')}
           />
         </div>
+      </div>
+      <img
+        className="PlayButton"
+        src="/bretons-1/img/Play_button.svg"
+        alt="PlayButton"
+        onClick={() => handlePlayClick(video.id)}
+      />
+      <img
+        className={`overlay-image ${isFavorited ? 'saveyellow' : ''}`}
+        src={video.gain === "" ? "/bretons-1/img/Eliminate.svg" : `/bretons-1/img/${video.gain}.svg`}
+        alt="Overlay"
+        style={{ zIndex: 2 }}
+      />
     </Card>
   );
 }
+
+
 
 function ControlledCarousel() {
   const [videosData] = useState(athleteVideosData);

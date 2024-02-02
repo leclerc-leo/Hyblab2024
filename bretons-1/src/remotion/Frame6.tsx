@@ -1,8 +1,8 @@
 import React from 'react';
 import './Frame1.css';
-import OrSVG from '../assets/img/Or.svg';
-import ArgentSVG from '../assets/img/Argent.svg';
-import BronzeSVG from '../assets/img/Bronze.svg';
+import OrSVG from '/img/Or.svg';
+import ArgentSVG from '/img/Argent.svg';
+import BronzeSVG from '/img/Bronze.svg';
 
 const determinerTexteTitre = (rang: number) => {
     switch(rang) {

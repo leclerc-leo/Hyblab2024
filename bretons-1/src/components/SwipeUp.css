@@ -2,6 +2,7 @@
     height: 100vh;
     overflow: hidden;
     position: relative;
+    pointer-events: none;
   }
   
   .swipe-up-message {
@@ -21,5 +22,18 @@
   
   .swipe-up-message.visible {
     bottom: 30vh;
+  }
+  
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  
+  .swipe-up-message.fade-out {
+    animation: fadeOut 1s forwards; /* 1s */
   }
   
