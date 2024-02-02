@@ -36,7 +36,6 @@
   }
   
   .carousel_main .carousel-indicators .active {
-   width: 30px;
    background-color: #EB5059;
    filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.25));
   }
