@@ -1,24 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap');
+
+
 .frameContainer {
     width: 100%; 
-    margin : auto; 
+    /*margin: auto; */
     position: relative;
     display: flex; 
     flex-direction: column; 
-    height: 140vh; /* Prendre toute la hauteur de la fenêtre */
-    align-items: flex-start;
+    height: auto; /* Ajuster la hauteur pour la compatibilité mobile */
 }
-.titre_frame2{
+
+.titreFrame2 {
     font-family: "Golos Text";
     font-size: 80px; 
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal; 
     color: #25283D; 
-    height: 400px;
-    
-    margin-left: 250px; 
-    margin-top:  100px; 
-    margin-right:  250px;
+    height: 600px;
+    text-align: center; /* Centrer le titre */
+    padding-top: 150px;
+    font-weight: bold;
+}
+
+.rectangleYellowFrame2 {
+    width: 100%;/* ajuster la largeur pour prendre en compte la bordure */
+    height: 300px;
+    flex-shrink: 0;
+    background: #FACD5F;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    border: 10px solid #25283D; /* s'assurer que la bordure est visible */
 }
 
 .info {
@@ -26,74 +37,122 @@
     font-family: "Golos Text";
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    line-height: normal; 
-    margin-left: 230px; 
+    align-items: center; 
+    margin: 0; /* Ajuster les marges */
+    text-align: center; /* Centrer le texte */
 }
 
-.leftSVG {
-    width: 76px;
-    height: 76px;
-    fill: #25283D;
+.numberCircleFrame2 {
+    width: 200px; /* Définissez la largeur souhaitée ici */
+    height: auto; /* Cela conservera le ratio d'aspect de l'image */
+    position: absolute;
+    left: 30px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
-.rectangleYellow {
-    width: 100%;
-    flex-shrink: 0;
-    background: #FACD60;
+.infoFrame2 {
+    color: #25283D;
+    font-family: "Golos Text";
     display: flex;
-    flex-direction: column; /* Changez la direction flex à "column" */
-    align-items: center; /* Centrez le contenu horizontalement */
-    padding: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 200px;
 }
 
+.nameFrame2 {
+    font-size: 100px;
+    font-weight: 500;
+}
 
-.rectangleBlue{
-    width: 70%;
-    height: 200px;
-    flex-shrink: 0; 
+.timeFrame2 {
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 30px;
+}
+.flagFrame2 {
+    padding-top: 10px;
+}
+.flagFrame2 img { 
+    width: 70px; 
+    height: auto;
+}
+
+.countryFrame2 {
+    position: absolute;
+    padding-top: 1px; /* Utilisez margin-top au lieu de padding-top */
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 400;
+    margin-left: 20px; /* Marge entre le texte et l'icône du drapeau */
+}
+
+.rectangleBlueFrame2{
+    width: 90%;
+    height: 300px;
     background: #5F64FA; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
 }
 
-.rectangleRed{
-    width: 60%;
-    height: 200px;
+.infoFrame2_2 {
+    color: white;
+    font-family: "Golos Text";
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 200px;
+}
+
+.rectangleRedFrame2{
+    width: 80%;
+    height: 300px;
     flex-shrink: 0; 
     background: #FA8C5F; 
 }
 
-
-.info {
-    color: #25283D;
+.infoFrame3_2 {
+    color: white;
     font-family: "Golos Text";
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    margin-left: 200px;
 }
 
-.name {
-    font-size: 60px;
-    font-style: normal;
+.name_3_Frame2 {
+    font-size: 75px;
     font-weight: 500;
-    line-height: normal;
 }
 
-.time {
-    font-size: 20px;
-    font-style: normal;
+.time_3_Frame2 {
+    font-size: 40px;
     font-weight: 400;
     line-height: 30px;
 }
-
-.flag {
-    display: flex;
-    align-items: center;
+.flag_3_Frame2 {
+    padding-top: 10px;
+}
+.flag_3_Frame2 img { 
+    width: 70px; 
+    height: auto;
 }
 
-.country {
-    font-size: 16px;
+.numberCircle_3_Frame2 {
+    width: 150px; /* Définissez la largeur souhaitée ici */
+    height: auto; /* Cela conservera le ratio d'aspect de l'image */
+    position: absolute;
+    transform: translateY(-50%);
+}
+
+.country_3_Frame2 {
+    position: absolute;
+    padding-top: 1px; /* Utilisez margin-top au lieu de padding-top */
+    font-size: 30px;
     font-style: normal;
     font-weight: 400;
-    line-height: 30px;
-    margin-left: 10px; /* Marge entre le texte et l'icône du drapeau */
+    margin-left: 20px; /* Marge entre le texte et l'icône du drapeau */
 }
+
