@@ -2,7 +2,8 @@ const hide_block = (block, button) => {
     block.style.width = '0';
     block.style.height = '0';
     block.style.bottom = button.style.bottom;
-    block.style.left = button.style.left;
+    if (block.style.left != '') block.style.left = button.style.left;
+    if (block.style.right != '') block.style.right = button.style.right;
     block.style.overflow = 'hidden';
     block.style.borderRadius = '50%';
     block.style.opacity = '0';
@@ -71,9 +72,9 @@ const handle_orientation = (event) => {
         'low': 10
     }
 
-    maxs.forEach( (max, key) => {
+    for (const [key, max] of Object.entries(maxs)) {
         document.querySelectorAll(`.background-move-${key}`).forEach( element => {
             element.style.left = `${(max * y) / 180 - max}px`;
         });
-    });
+    }
 }
