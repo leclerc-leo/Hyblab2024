@@ -71,9 +71,9 @@ const handle_orientation = (event) => {
         'low': 10
     }
 
-    maxs.forEach( (max, key) => {
+    for (const [key, max] of Object.entries(maxs)) {
         document.querySelectorAll(`.background-move-${key}`).forEach( element => {
             element.style.left = `${(max * y) / 180 - max}px`;
         });
-    });
+    }
 }
