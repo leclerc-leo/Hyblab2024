@@ -21,7 +21,7 @@ export type Event = {
   Gain: string;
   Olympiade: string;
   "Résultat (temps /points)": string;
-  "Podium (nom + résultat)": string;
+  "Podium (nom + résultat)": Podium[];
   Performance: string;
   "Nombre de médailles françaises": string;
 };
@@ -41,6 +41,12 @@ export type VideoListItemProps = {
   video: Video;
 };
 
+export type Podium = {
+  Place: string,
+  Nom: string,
+  Pays: string,
+  Score: string
+}
 export interface EventDataItem {
   IdEvent: number;
   Athlete: string;
@@ -51,7 +57,8 @@ export interface EventDataItem {
   Gain: string;
   Olympiade: string;
   "Résultat (temps /points)": string;
-  "Podium (nom + résultat)": string;
+  "Podium (nom + résultat)": Podium[];
   Performance: string;
   "Nombre de médailles françaises": string;
 };
+

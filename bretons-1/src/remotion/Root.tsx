@@ -5,7 +5,7 @@ import { Frame3 } from "./Frame3";
 import { Frame4 } from "./Frame4";
 import { Frame6 } from "./Frame6";
 import athleteData from '../data/Athlete.json';
-import { Athlete, EventDataItem} from '../components/type';
+import { Athlete, EventDataItem, Podium} from '../components/type';
 import EventData from '../data/Event.json';
 interface MyVideoProps {
   id: string;
@@ -30,7 +30,7 @@ export const MyVideo: React.FC<MyVideoProps> = ({ id }) => {
         <Frame4 Gentilé={athlete.Gentilé} rang={eventData.Rang} Epreuve={eventData.Epreuve} sexe={athlete.Sexe} Sport={eventData.Sport}></Frame4>
       </Sequence>
       <Sequence from={420} durationInFrames={240}>
-        <Frame2></Frame2>
+        <Frame2 podium={eventData["Podium (nom + résultat)"] as Podium[]} />
       </Sequence>
       <Sequence from={660} durationInFrames={240}>
         <Frame3 text={athlete.Athlete}></Frame3>
