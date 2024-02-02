@@ -1,6 +1,5 @@
 "use strict";
 
-// Just animate the logo
 const init_past = async swiper => {
 
     move_background(0, true);

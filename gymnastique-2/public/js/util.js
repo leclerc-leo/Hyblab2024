@@ -62,3 +62,18 @@ const move_background = (x, b = false) => {
 
     background.style.left = `${left}px`;
 }
+
+const handle_orientation = (event) => { 
+    const y = Math.min(event.gamma, 90) + 90;
+    const maxs = {
+        'high': 30,
+        'med': 20,
+        'low': 10
+    }
+
+    maxs.forEach( (max, key) => {
+        document.querySelectorAll(`.background-move-${key}`).forEach( element => {
+            element.style.left = `${(max * y) / 180 - max}px`;
+        });
+    });
+}

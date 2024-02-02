@@ -20,8 +20,8 @@ const swiper = new Swiper("#mySwiper", {
 
 swiper.on('progress', () => {
     const blacklisted = [0, 50, 100]
-    if (blacklisted.includes(Math.round(100 * swiper.progress))) return;
-    move_background(Math.round(100 * swiper.progress)) 
+    if (blacklisted.includes(Math.round(100 * swiper.progress))) move_background(Math.round(100 * swiper.progress), true);
+    else move_background(Math.round(100 * swiper.progress))
 });
 
 swiper.on("slideChange", function () {
@@ -71,6 +71,7 @@ categories_buttons.forEach( button => {
         block.style.overflow = 'auto';
         block.style.borderRadius = '0';
         block.style.opacity = '1';
+
         /* Nous gardons en mémoire l'id du bouton cliqué pour pouvoir
         *  retourner le bloc à sa position initiale lors d'une sortie */
         exit_button.id = `${category}-exit`;
@@ -86,3 +87,5 @@ document.querySelectorAll('.card-container').forEach(card_container =>{
     });
 
 })
+
+window.addEventListener("deviceorientation", handle_orientation);

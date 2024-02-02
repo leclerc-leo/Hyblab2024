@@ -1,21 +1,41 @@
-// Use strict mode
 'use strict';
 
-// Load usefull expressjs and nodejs objects / modules
+const fs = require('fs');
+
 const express = require('express');
 const path = require('path');
-
-// Create our application
 const app = express();
 
-// Minimum routing: serve static content from the html directory
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, '../__common-logos__')));
+const public_path = path.join(__dirname, 'public');
+const views_path = path.join(public_path, 'views');
+app.use(express.static(public_path, { index: false }));
 
-// You can then add whatever routing code you need
+app.get('/', function(req, res) {
+    
+    const files = fs.readdirSync(views_path).map( file => {
+        return [file.split('.')[0], fs.readFileSync(path.join(views_path, file), 'utf8')];
+    });
+    
+    const layout = fs.readFileSync(path.join(public_path, 'index.html'), 'utf8');
 
-// This module is exported and served by the main server.js located
-// at the root of this set of projects. You can access it by lanching the main
-// server and visiting http(s)://127.0.0.1:8080/name_of_you_project/ (if on a local server)
-// or more generally: http(s)://server_name:port/name_of_you_project/
+    const combined = files.reduce( (acc, file) => {
+        return acc.replace(`<%= ${file[0]} %>`, file[1]);
+    }, layout);    
+
+    res.send(combined);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 module.exports = app;
