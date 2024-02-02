@@ -1,6 +1,5 @@
 import './VideoPlayer.css';
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { Player } from "@remotion/player";
 import { MyVideo } from "../remotion/Root";
 import SwipeUp from './SwipeUp';
@@ -8,14 +7,7 @@ import Article from './Article';
 import NavbarT from '../components/Navbar'
 
 function VideoPlayer({ id }: { id: string }) {
-    const navigate = useNavigate();
     const [allowSwipe, setAllowSwipe] = useState(false);
-
-    const handleClick = () => {
-      // After click return button navigate to Accueil
-      navigate('/bretons-1');
-    };
-
     // set 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -37,7 +29,7 @@ function VideoPlayer({ id }: { id: string }) {
             <Player
                 component={MyVideo}
                 inputProps={{ id: id }}
-                durationInFrames={1140}
+                durationInFrames={1680}
                 compositionWidth={1080}
                 compositionHeight={1920}
                 fps={60}

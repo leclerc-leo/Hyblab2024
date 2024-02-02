@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap');
 
 
-.frameContainer {
+.frame2Container {
     width: 100%; 
     /*margin: auto; */
     position: relative;
@@ -32,7 +32,7 @@
     border: 10px solid #25283D; /* s'assurer que la bordure est visible */
 }
 
-.info {
+.infoFrame2 {
     color: #25283D;
     font-family: "Golos Text";
     display: flex;
