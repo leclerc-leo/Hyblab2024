@@ -81,7 +81,7 @@ body{
 /* the aspect ratio is between 3/4 and 9/16. If not it is locked to either 3/4 or 9/16  */
 
 /* When the aspect ratio is smaller that 3/4, display a 3/4 content */
-#container{
+#container, #loader{
     position: fixed; /* To set the size of the container to 100% of the visible viewport height AND for absolute positioning of child elements*/
     height: 100%;   /* even on mobile devices with url or navigation bars */
     margin-left: calc((100vw - 100 * 3vh / 4) / 2); /* Add black bands on left and right */
@@ -102,21 +102,21 @@ p{
 
 /* Fill the whole viewport when its aspect ratio is between 9/16 and 3/4 */
 @media screen and (max-aspect-ratio: 3/4) {
-    #container{
+    #container, #loader{
         margin-left: 0; /* reset margin-left */
         width: 100vw; /* content is full width (and full height because of the default rule for container height */
     }
 
     /* We set a default font size here. It will be the base for all other font sizes */
     /* Here the font size is proportional to content width */
-    body{
+    body, #loader{
         font-size: 15vw;
     }
 }
 
 /* The content is displayed at 9/16 If the aspect ratio is higher that 9/16  */
 @media screen and (max-aspect-ratio: 9/16) {
-    #container{
+    #container, #loader{
         margin-left: 0; /* reset left margin */
         width: 100vw;   /* content is full width */
         margin-top: calc(-50 * 16vw / 9); /* move the content half the height to the top */
@@ -126,7 +126,7 @@ p{
 
     /* We set a default font size here. It will be the base for all other font sizes */
     /* Here the font size is proportional to content width */
-    body{
+    body, #loader{
         font-size: 15vw;
     }
 }
