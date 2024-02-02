@@ -40,16 +40,6 @@
     animation: agrandirBackground 5s infinite alternate;
   }
   
-
-  body {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
   .animationOut {
     transition: transform 2s ease-in-out;
     width: 100%;
