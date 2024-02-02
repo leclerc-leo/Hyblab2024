@@ -25,6 +25,12 @@ body{
     position: absolute;
 }
 
+#swiper_journee{
+    width: 100%;
+    height:100%;
+    position: absolute;
+}
+
 .swiper-pagination-bullets.swiper-pagination-horizontal {
     --swiper-pagination-bottom: 0px;
     width: 100%;
@@ -285,4 +291,51 @@ p{
     font-family: 'Helvetica Neue', sans-serif;
     font-size: 13px;
     padding: 10px 50px;
+}
+
+
+
+
+#journee_1_svg{
+    position: absolute;
+    left: 60%;
+    width: 40%;
+    height: 21%;
+}
+
+#journee_2_svg{
+    position: absolute;
+    left: 60%;
+    width: 40%;
+    height: 21%;
+}
+
+#Kaylia_Nemour_journee{
+    position: absolute;
+    left: 30%;
+    width: 40%;
+    height: 30%;
+}
+
+#journee_1_img{
+    position: absolute;
+    left: 21%;
+    width: 58%;
+    height: 32%;
+    top: 33%;
+    border-radius: 22px;
+
+}
+/*width: 40%; height: 30%; left: 30%; top: 23%; position: absolute; text-align: center"><span style="color: #482E49; font-size: 25px; font-family: Krona One; font-weight: 400; word-wrap: break-word"
+*/
+#journee_type{
+    position: absolute;
+    width: 40%;
+    height: 30%;
+    top:23%;
+    left:30%;
+    text-align: center;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }

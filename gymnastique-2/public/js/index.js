@@ -31,6 +31,18 @@ swiper.on("slideChange", function () {
             break;
     }
 });
+var swiperJournee = new Swiper('#swiper_journee', {
+    direction: "horizontal",
+    loop: true,
+    mousewheel: true,
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    }
+
+});
+
+
 
 init_accueil(swiper);
 
@@ -73,4 +85,13 @@ categories_buttons.forEach( button => {
 
         swiper.disable(); // pour éviter de changer de slide lors d'un scroll et d'autoriser le scroll sur la page
     });
+});
+
+
+const journeeButton = document.getElementById('journee-button');
+
+// Ajoutez un gestionnaire d'événements pour le clic sur le bouton "journee-page"
+journeeButton.addEventListener('click', () => {
+    // Appel de la fonction init_journee
+    init_journee(swiperJournee);
 });
