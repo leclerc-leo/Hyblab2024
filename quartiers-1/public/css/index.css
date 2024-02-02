@@ -368,6 +368,17 @@ h1{
     transform: translateX(50%);
     top: 5%;
     z-index: 2;
+    background: #E69973;
+    border-radius: 100%;
+    color: #FFFFFF;
+    border-color: #E69973;
+    font-family: 'Nexa', sans-serif;
+    font-size: 30%;
+    font-weight: 700;
+    width: 4vw;
+    height: 4vw;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
 }
 
 /* -------------- End of Quartier Preview --------------*/
