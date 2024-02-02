@@ -97,6 +97,16 @@ h1{
 }
 /*-------- End of Drawing ----------*/
 
+/*-------- animation ----------*/
+#animation {
+    position: absolute;
+    top: -12%;
+}
+
+/*-------- End of aniation ----------*/
+
+
+
 /* SlideIn Animations */
 /* Slide Effect from the left to the right*/
 @keyframes slideInLeft {
