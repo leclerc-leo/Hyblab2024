@@ -4,17 +4,17 @@
     font-style: normal;
   }
   
-  .titre {
-    font-weight: 700;
-    color: white;
+  .titre_frame1 {
+    font-weight: 700 !important;
+    color: white !important;
     position: absolute;
     width: 100%;
     text-align: center;
     line-height: normal;
   }
   
-  .sous-titre {
-    font-weight: 700;
+  .sous-titre_frame1 {
+    font-weight: 500;
     color: white;
     position: absolute;
     width: 100%;

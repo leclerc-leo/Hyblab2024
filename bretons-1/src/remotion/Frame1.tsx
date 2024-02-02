@@ -14,9 +14,9 @@ export const Frame1: React.FC<{ text: string, titre: string, sous_titre: string 
             position: 'relative',
             transform: 'scale(1)',
         }}>
-            <h1 className="golos-text-frame1 titre" style={{ fontSize: "13vh", bottom: '31vh' }}>{text}</h1>
-            <h1 className="golos-text-frame1 titre" style={{ fontSize: "12vh", bottom: '18vh' }}>{titre}</h1>
-            <h3 className="golos-text-frame1 sous-titre" style={{ fontSize: "5vh", bottom: '14vh' }}>{sous_titre}</h3>
+            <h1 className="golos-text-frame1 titre_frame1" style={{ fontSize: "17vh", bottom: '55vh' }}>{text}</h1>
+            <h1 className="golos-text-frame1 titre_frame1" style={{ fontSize: "17vh", bottom: '35vh' }}>{titre}</h1>
+            <h3 className="golos-text-frame1 sous-titre_frame1" style={{ fontSize: "5vh", bottom: '30vh' }}>{sous_titre}</h3>
         </div>
     );
 };
