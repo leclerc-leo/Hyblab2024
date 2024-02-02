@@ -8,7 +8,6 @@ document.querySelectorAll('.card-container').forEach(card_container =>{
                 setTimeout(()=>{img_gif.classList.toggle("hidden");},1000) : img_gif.classList.toggle("hidden");
         }else {
             card_container.children[0].classList.toggle("flipcard");
-            card_container.children[0].children[0].classList.toggle("hidden");
         }
     });
 });

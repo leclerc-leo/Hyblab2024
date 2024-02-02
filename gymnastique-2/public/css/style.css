@@ -447,6 +447,7 @@ svg.image-histoire, svg.image-jo{
     border-color: #E47754;
     position: absolute;
     backface-visibility: hidden;
+    transform: rotateX(0deg);
     border-radius: 10px;
 }
 
