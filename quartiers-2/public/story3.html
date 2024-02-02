@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
   <title>Hyblab 2023</title>
   <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/story.css" />
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/loadingio/loading.css@v2.0.0/dist/loading.css" />
-    <link rel="stylesheet" href="css/story.css" />
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
@@ -20,50 +20,81 @@
           <!-- header -->
           <div class="header">
               <!-- image header devanture -->
-              <img src="1-la-commune/img/devanture.svg" class="header-devanture">
-              <img src="1-la-commune/img/claude-head.svg" class="head-person">
-              <h1 class="name-person">Restaurant les bavardes</h1>
+              <img src="2-les-moulins-de-rennes/img/.svg" class="header-devanture">
+              <img src="3-restaurant-les-bavardes/img/marlene.svg" class="head-person">
+              <h1 class="name-person">Restaurant les Bavardes</h1>
           </div>
-
-          <!-- audio file -->
-          <audio controls class="audio-div">
-              <source src="1-la-commune/audio/La-commune-1.mp3" type="audio/mpeg">
-              Your browser does not support the audio element.
-          </audio>
-
-          <!-- image d'illustration -->
-          <img src="img/moulins.png" class="illu-initiative">
 
           <!-- texte Lorem -->
           <p class="text-initiative">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl vitae nisl. Sed euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl vitae nisl. Sed euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl vitae nisl. Sed euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl vitae nisl. Sed euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl vitae nisl. Sed euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl vitae nisl.
+            Marlène Philibert, co-gérante et copropriétaire des Bavardes a lancé cette affaire avec sa meilleure amie d’enfance Alice Lemaire Fournet. Depuis 2022, ce bistrot situé boulevard Laënnec propose une carte carnée avec plusieurs options végétariennes gourmandes pour casser les stéréotypes ! 
+          </p>
+
+          <!-- audio file -->
+          <audio controls class="audio-div">
+              <source src="3-restaurant-les-bavardes/audio/Les-Bavardes-1.wav" type="audio/wav">
+              Your browser does not support the audio element.
+          </audio>
+
+          <p class="text-initiative">
+            En plus de faire fondre les plus sceptiques, les plats proposés s’inscrivent dans une véritable démarche éthique et responsable.  
+          </p>
+
+          <!-- audio file -->
+          <audio controls class="audio-div">
+              <source src="3-restaurant-les-bavardes/audio/Les-Bavardes-2.wav" type="audio/waw">
+              Your browser does not support the audio element.
+          </audio>
+
+          <p class="text-initiative">
+            « Le milieu de la restauration surtout à rennes d’ailleurs développe beaucoup de choses pour faire attention à la planète mais il y a dix ans de ça, c’était beaucoup de gaspillage alimentaire, aucun tri, beaucoup d’imports » ajoute Marlène. Ce constat a conduit les deux femmes à adopter une démarche respectueuse de l’environnement au-delà des bords de l’assiette.
+          </p>
+
+          <!-- audio file -->
+          <audio controls class="audio-div">
+              <source src="3-restaurant-les-bavardes/audio/Les-Bavardes-3.wav" type="audio/waw">
+              Your browser does not support the audio element.
+          </audio>
+
+          <p class="text-initiative">
+            Des efforts qui profitent à tous et qui tiennent à cœur aux deux restauratrices. “Je pense que l’on fait partie de la génération qui est sensible aux questionnements de la durabilité de la planète, de ce que l’on va devenir, du devenir de nos enfants. Il ne faut plus tarder” conclue Marlène. 
           </p>
 
           <!-- question finale -->
           <div class="question">
               <p>Connaissais-tu ce lieu / personne ?</p>
               <div class="question-buttons">
-                <div class="noButton"><object data="./img/boutons/bouton_non.svg" type="image/svg+xml">X</object></div>
-                <div class="yesButton"><object data="./img/boutons/bouton_oui.svg" type="image/svg+xml">X</object></div>
+                <div class="noButton"><object data="./img/boutons/bouton_non.svg" type="image/svg+xml"></object></div>
+                <div class="yesButton"><object data="./img/boutons/bouton_oui.svg" type="image/svg+xml"></object></div>
               </div>
           </div>
 
+
           <!-- motion vidéo qui tourne en boucle -->
           <video autoplay muted loop class="map-motion">
-              <source src="1-la-commune/videos/zoom_map_librairie_la_commune.mp4" type="video/mp4">
+              <source src="3-restaurant-les-bavardes/videos/zoom_restaurant_les_bavardes.mp4" type="video/mp4">
           </video>
 
-          <!-- bouton lien vers google maps -->
-          <button type="submit">Voir sur Google Maps</button>
-
-          <!-- bouton lien vers site web -->
-          <button type="submit">Voir le site web</button>
+          <div class="link-buttons">
+              <div class="link-buttons-img">
+                  <a href="https://www.google.com/maps/place/Les+Bavardes/@48.1061729,-1.668653,17z/data=!3m1!4b1!4m6!3m5!1s0x480edf467d5a25d1:0x6c5e499ecdd2ae1a!8m2!3d48.1061729!4d-1.6660781!16s%2Fg%2F11t7cvmf3b?authuser=0&entry=ttu">
+                    <img class="lienMaps" src="img/boutons/bouton_lien_google_map.svg">
+                  </a>
+                  <a href="">
+                      <img class="lienSite" src="img/boutons/bouton_lien_site.svg">
+                  </a>
+              </div>
+          </div>
 
           <!-- boutons swipe -->
           <div class="nav-buttons">
-              <div class="previous">
-                  <img src="img/arrow.svg" alt="right button" class="left-arrow">
+            <div class="previous">
+                <img src="img/arrow.svg" alt="right button" class="left-arrow">
+                <img src="2-les-moulins-de-rennes/img/fred-head.svg" alt="Fred">
+            </div>
+              <div class="next">
                   <img src="img/marie.svg" alt="Marie">
+                  <img src="img/arrow.svg" alt="right button" class="right-arrow">
               </div>
           </div>
       </div>

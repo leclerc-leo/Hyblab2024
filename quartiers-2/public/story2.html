@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
   <title>Hyblab 2023</title>
   <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/story.css" />
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/loadingio/loading.css@v2.0.0/dist/loading.css" />
-    <link rel="stylesheet" href="css/story.css" />
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
@@ -16,56 +16,82 @@
 <body>
     <!-- Le conteneur sert à verrouiller les proportions (aspect ratio) du contenu de la page (ici des slides) -->
       <div class="content">
+
           <!-- header -->
           <div class="header">
               <!-- image header devanture -->
-              <img src="1-la-commune/img/devanture.svg" class="header-devanture">
-              <img src="1-la-commune/img/claude-head.svg" class="head-person">
-              <h1 class="name-person">Les moulins de Rennes</h1>
+              <img src="2-les-moulins-de-rennes/img/.svg" class="header-devanture">
+              <img src="2-les-moulins-de-rennes/img/fred.svg" class="head-person">
+              <h1 class="name-person">Moulins de Rennes</h1>
           </div>
-
-          <!-- bouton retour -->
-
-          <!-- audio file -->
-          <audio controls class="audio-div">
-              <source src="1-la-commune/audio/jean-bonbeur.mp3" type="audio/mpeg">
-              Your browser does not support the audio element.
-          </audio>
-
-          <!-- image d'illustration -->
-          <img src="img/moulins.png" class="illu-initiative">
 
           <!-- texte Lorem -->
           <p class="text-initiative">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl vitae nisl. Sed euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl vitae nisl. Sed euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl vitae nisl. Sed euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl vitae nisl. Sed euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl vitae nisl. Sed euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl vitae nisl.
+            Au cœur du quartier de Thabor Saint-Hélier, des moulins à blé et à foulon bâtis en 1032 sont toujours en activité. Ils font l’histoire de France puisqu’ils étaient situés en face de la prison militaire dans laquelle Richard Dreyfus attendait son procès en 1899. Pour perpétuer la tradition et la mémoire de ce lieu, la famille Logeais en est propriétaire depuis plus d’un siècle. Trois générations y sont déjà passées.
+          </p>
+
+          <!-- audio file -->
+          <audio controls class="audio-div">
+              <source src="2-les-moulins-de-rennes/audio/Moulins-de-rennes-pt1.mp3" type="audio/mp3">
+              Your browser does not support the audio element.
+          </audio>
+
+          <p class="text-initiative">
+            Tout en haut de cette structure en pierres, le blé est nettoyé, broyé dans des plansichters et tamisé à plusieurs reprises. Chaque année, la production de farine est d’environ 5 000 tonnes. Les sacs sont livrés à des boulangers locaux et le son, l’enveloppe qui protège les grains de blé, est destinée à l’alimentation animale.
+         </p>
+
+          <!-- audio file -->
+          <audio controls class="audio-div">
+              <source src="2-les-moulins-de-rennes/audio/Moulins-de-rennes-pt2.mp3" type="audio/mp3">
+              Your browser does not support the audio element.
+          </audio>
+
+          <p class="text-initiative">
+            Le travail que réalise Frédéric Logeais, actuel propriétaire des Moulins de Rennes, est le même que celui de ses ancêtres. C’est l’un de ses buts principaux : garder l’âme de cet endroit en conservant la tradition familiale.
+          </p>
+
+          <!-- audio file -->
+          <audio controls class="audio-div">
+              <source src="2-les-moulins-de-rennes/audio/Moulins-de-rennes-pt3.mp3" type="audio/mp3">
+              Your browser does not support the audio element.
+          </audio>
+
+          <p class="text-initiative">
+            Et tant que la Vilaine coulera, l’entreprise des Moulins de Saint-Hélier tournera.
           </p>
 
           <!-- question finale -->
           <div class="question">
               <p>Connaissais-tu ce lieu / personne ?</p>
               <div class="question-buttons">
-                <div class="noButton"><object data="./img/boutons/bouton_non.svg" type="image/svg+xml">X</object></div>
-                <div class="yesButton"><object data="./img/boutons/bouton_oui.svg" type="image/svg+xml">X</object></div>
+                <div class="noButton"><object data="./img/boutons/bouton_non.svg" type="image/svg+xml"></object></div>
+                <div class="yesButton"><object data="./img/boutons/bouton_oui.svg" type="image/svg+xml"></object></div>
               </div>
           </div>
 
+
           <!-- motion vidéo qui tourne en boucle -->
           <video autoplay muted loop class="map-motion">
-              <source src="1-la-commune/videos/zoom_map_librairie_la_commune.mp4" type="video/mp4">
+              <source src="2-les-moulins-de-rennes/videos/zoom_les_moulins.mp4" type="video/mp4">
           </video>
 
-          <!-- bouton lien vers google maps -->
-          <button type="submit">Voir sur Google Maps</button>
-
-          <!-- bouton lien vers site web -->
-          <button type="submit">Voir le site web</button>
+          <div class="link-buttons">
+              <div class="link-buttons-img">
+                  <a href="https://www.google.com/maps/place/Moulins+de+Rennes/@48.1086963,-1.6741564,17z/data=!3m1!4b1!4m6!3m5!1s0x480edfb52a6c4a27:0x1c11ba8f1ac65c5a!8m2!3d48.1086963!4d-1.6715815!16s%2Fg%2F1tjdw976?authuser=0&entry=ttu">
+                    <img class="lienMaps" src="img/boutons/bouton_lien_google_map.svg">
+                  </a>
+                  <a href="">
+                      <img class="lienSite" src="img/boutons/bouton_lien_site.svg">
+                  </a>
+              </div>
+          </div>
 
           <!-- boutons swipe -->
           <div class="nav-buttons">
-              <div class="previous">
-                  <img src="img/arrow.svg" alt="right button" class="left-arrow">
-                  <img src="img/marie.svg" alt="Marie">
-              </div>
+            <div class="previous">
+                <img src="img/arrow.svg" alt="right button" class="left-arrow">
+                <img src="1-la-commune/img/claude-head.svg" alt="Claude">
+            </div>
               <div class="next">
                   <img src="img/marie.svg" alt="Marie">
                   <img src="img/arrow.svg" alt="right button" class="right-arrow">
