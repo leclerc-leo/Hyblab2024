@@ -33,7 +33,7 @@ export const MyVideo: React.FC<MyVideoProps> = ({ id }) => {
         <Frame2></Frame2>
       </Sequence>
       <Sequence from={600}>
-        <Frame3 text="t"></Frame3>
+        <Frame3 text={athlete.Athlete}></Frame3>
       </Sequence>
       <Sequence from={720}>
         <Frame6 ></Frame6>
