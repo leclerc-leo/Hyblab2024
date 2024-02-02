@@ -404,6 +404,7 @@ svg.image-histoire, svg.image-jo{
 .credits-list{
     display: flex;
     flex-direction: row;
+    margin: 0 30px;
 }
 
 .credits-list > li{
