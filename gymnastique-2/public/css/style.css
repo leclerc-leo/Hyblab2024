@@ -401,12 +401,11 @@ svg.image-histoire, svg.image-jo{
     text-align: center;
 }
 #palmares-page #titre-palmares {
-    color: #482E49;
     margin: 2.5% auto 0 auto;
-    font-size: 4vh;
 }
 #palmares-page .image-titre{
     margin-bottom: 5%;
+    width: 20%;
     max-width: 40%;
 
 }
