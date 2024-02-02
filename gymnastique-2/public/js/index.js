@@ -83,7 +83,12 @@ categories_buttons.forEach( button => {
 
 document.querySelectorAll('.card-container').forEach(card_container =>{
     card_container.addEventListener("click",()=>{
-        card_container.children[0].classList.toggle("flipcard");
+        card_container.children[1].classList.toggle("flipcard");
+        const img_gif = card_container.children[0];
+        img_gif.classList.contains("invisible") ?
+            setTimeout(()=>{img_gif.classList.toggle("invisible");},1000) : img_gif.classList.toggle("invisible");
+        
+        
     });
 
 })

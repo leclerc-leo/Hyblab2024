@@ -379,13 +379,13 @@ svg.image-histoire, svg.image-jo{
     margin: 5% auto 0 auto;
     font-size: 30px;
 }
-#palmares-page img{
+#palmares-page .image-titre{
     margin-top: 20%;
     margin-bottom: 5%;
     max-width: 40%;
 }
 .card-container {
-    width: 350px;
+    width: 450px;
     height: 125px;
     max-height: 10%;
     max-width: 80%;
@@ -395,13 +395,20 @@ svg.image-histoire, svg.image-jo{
 .flipcard {
     transform: rotateY(180deg);
 }
-
+.doigt-gif{
+    position: absolute;
+    height: 100%;
+    z-index : 2;
+    left: 70%;
+    top: 40%;
+}
 .card {
     height: 100%;
     width: 100%;
     position: relative;
     transition: transform 1500ms;
     transform-style: preserve-3d;
+    z-index: 1;
 
 }
 
@@ -436,7 +443,6 @@ svg.image-histoire, svg.image-jo{
 }
 
 
-
 .credits-list > li{
     display: block;
 }
@@ -452,4 +458,7 @@ svg.image-histoire, svg.image-jo{
     width: 20%;
     height: auto;
     vertical-align: middle;
+}
+.invisible{
+    display: none;
 }
