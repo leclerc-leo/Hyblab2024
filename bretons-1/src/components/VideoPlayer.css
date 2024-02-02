@@ -16,6 +16,6 @@
     left: 3vw;
 }
 
-.head > .navbar {
+#VideoPlayer > div.head > div > nav {
     background-color: transparent !important;
 }
