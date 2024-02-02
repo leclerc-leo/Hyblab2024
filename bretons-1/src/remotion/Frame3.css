@@ -26,16 +26,22 @@
 @keyframes moveCursor {
   0% {
     top: 60%; /* Démarre au milieu verticalement */
-    left: 60%; /* Démarre un peu à gauche du milieu horizontalement */
+    left: 30%; /* Démarre un peu à gauche du milieu horizontalement */
     opacity: 0; /* Commence invisible pour un effet d'entrée en fondu */
   }
-  50% {
-
+  40% {
+    top: 50%;
+    left: 50%;
     opacity: 1; /* Devient visible */
   }
+  60% {
+    top: 55%; /* Se termine au milieu verticalement */
+    left: 70%; /* Ajustez ceci pour que cela corresponde à l'emplacement de la loupe */
+    opacity: 1; /* Fini en devenant invisible */
+  }
   80% {
-    top: 50%; /* Se termine au milieu verticalement */
-    left: 80%; /* Ajustez ceci pour que cela corresponde à l'emplacement de la loupe */
+    top: 55%; /* Se termine au milieu verticalement */
+    left: 70%; /* Ajustez ceci pour que cela corresponde à l'emplacement de la loupe */
     opacity: 1; /* Fini en devenant invisible */
   }
   100% {
@@ -51,7 +57,11 @@
   height: 64px; /* Taille du curseur */
   background-image: '/bretons-1/img/souris3.png'; /* Remplacez par le chemin de votre image de curseur */
   background-size: contain;
-  animation: moveCursor 2s infinite; /* Joue l'animation indéfiniment */
+  animation: moveCursor 4s infinite; /* Joue l'animation indéfiniment */
   animation-timing-function: ease-in-out;
   z-index: 15;
+}
+
+#animatedtext { 
+  visibility:hidden;
 }
