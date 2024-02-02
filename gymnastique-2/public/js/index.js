@@ -54,7 +54,7 @@ categories_buttons.forEach( button => {
 
         const block = document.querySelector(`#${category}-page`);
 
-        if (block == null) {
+        if (block == null) { /* Principalement pour les pages des boutons qui ne sont pas encore implémentés */
             console.log('Le bloc pour le bouton ' + button.id + ' n\'existe pas');
             return;
         }
@@ -79,4 +79,7 @@ categories_buttons.forEach( button => {
         swiper.disable(); // pour éviter de changer de slide lors d'un scroll et d'autoriser le scroll sur la page
     });
 });
+
+/* Pour le warning de dépréciation, voir https://stackoverflow.com/questions/51110881/use-of-deviceorientation-events-in-firefox-give-warning
+*  et https://developer.mozilla.org/en-US/docs/Web/API/Window/deviceorientation_event mais il semble que cela ne soit pas déprécié */
 window.addEventListener("deviceorientation", handle_orientation);
