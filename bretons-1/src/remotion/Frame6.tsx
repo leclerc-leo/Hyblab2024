@@ -3,7 +3,8 @@ import videoPath from '/img/animation/annimation crèpe_1.mp4';
 import Svg from '../assets/img/Compteur.svg';
 import './Frame6.css';
 
-export const Frame6: React.FC = () => {
+
+export const Frame6: React.FC<{ sex: string }> = ({ sex }) => {
   const [compteur, setCompteur] = useState(0);
 
   useEffect(() => {
@@ -25,6 +26,7 @@ export const Frame6: React.FC = () => {
     requestAnimationFrame(animerCompteur);
   }, []);
   const valeurAffichee = compteur < 1 ? "0" : "+1";
+  const pronom = sex === 'F' ? "Elle" : "Il";
 
   return (
     <>
@@ -38,7 +40,7 @@ export const Frame6: React.FC = () => {
         </div>
       </div>
       <img src={Svg} alt="Compteur" className="svgCompteur" />
-      <h1 className="golos-text-frame6 titre_frame6" style={{ fontSize: "10vh", bottom: '178vh' }}>Elle ramène la 1ère médaille au clan Breton</h1>
+      <h1 className="golos-text-frame6 titre_frame6" style={{ fontSize: "10vh", bottom: '178vh' }}>{pronom} ramène la 1ère médaille au clan Breton</h1>
     </>
   );
 };
