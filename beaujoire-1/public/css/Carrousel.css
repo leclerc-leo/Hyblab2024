@@ -1,250 +1,4 @@
-* {
-	font-family: Industry, Bebas Neue Pro, sans-serif;
-	color: #FFFFFF;
-}
-
-body {
-	background-color: hsla(240, 14%, 14%, 0.9);
-	margin: 0;
-}
-
-.container {
-    display: flex;
-    align-items: center;
-    height: 100vh;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: center; 
-    justify-content: space-between;
-}
-
-#main {
-	text-align: center;
-	font-family: Industry;
-	font-weight: bolder;
-}
-
-.green {
-	color: #00A55A;
-}
-
-.big-title {
-	font-size: calc(max(8vh, 8vw));
-}
-
-.small-title {
-	font-size: calc(max(5vh, 5vw));
-}
-
-.wrapper {
-	width: 80%;
-	max-height: 90vw;
-	padding: 3vh 6vw;
-	background-color: #1E1E28;
-	border-radius: 10px;
-	overflow: hidden;
-	box-sizing: border-box;
-}
-
-@media screen and (max-width: 600px) {
-	.wrapper {
-		width: 60vh;
-		padding: 3vw 4vh;
-		transform: rotate(90deg);
-	}
-}
-
-.campo {
-	position: relative;
-	display: inline-block;
-	vertical-align: middle;
-	width: 100%;
-	height: 0;
-	margin: 10px auto;
-	padding: 0 0 60% 0;
-	background-color: #1E1E28;
-}
-
-.interior,
-.divisoria,
-.semi1,
-.semi2,
-.corner {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	width: 100%;
-	height: 100%;
-	margin: auto;
-	border: 2px solid #FFFFFF;
-}
-
-.divisoria:after,
-.divisoria:before {
-	content: "";
-	position: absolute;
-	left: 50%;
-	display: block;
-	width: 0;
-	height: 100%;
-	margin-left: 0.5px;
-	border: 1px solid #FFFFFF;
-}
-
-.divisoria:before {
-	top: 50%;
-	width: 17%;
-	height: 0;
-	margin: -8% 0 0 -8%;
-	margin-top: calc(-8% - 4px);
-	margin-left: calc(-8% - 2px);
-	padding-bottom: 17%;
-	border-radius: 50%;
-	border: 2px solid #FFFFFF;
-}
-
-.campo:before,
-.campo:after {
-	content: "";
-	position: absolute;
-	top: 50%;
-	left: 1px;
-	margin: -8% 0 0 -1px;
-	display: block;
-	width: 8%;
-	height: 30%;
-	border: 2px solid #FFFFFF;
-	z-index: 2;
-}
-
-.campo:after {
-	left: auto;
-	right: -2px;
-}
-
-.interior:before,
-.interior:after {
-	content: "";
-	position: absolute;
-	top: 50%;
-	left: 0;
-	margin: -16% 0 0 -1px;
-	display: block;
-	width: 16%;
-	height: 55%;
-	background-color: #1E1E28;
-	border: 2px solid #FFFFFF;
-}
-
-.interior:after {
-	left: auto;
-	right: 0;
-	margin: -16% -1px 0 0;
-}
-
-.semi2:before {
-	left: auto;
-	right: 12%;
-}
-
-.semi1:after,
-.semi2:after {
-	content: "";
-	position: absolute;
-	top: 50%;
-	left: 3%;
-	width: 16%;
-	height: 0;
-	margin: -8% 0 0 0;
-	padding-bottom: 16%;
-	border: 2px solid #FFFFFF;
-	border-radius: 50%;
-}
-
-.semi2:after {	
-	left: auto;
-	right: 3%;
-}
-
-.goal-left,
-.goal-right {
-	content: "";
-	position: absolute;
-	width: 3%;
-	height: 20%;
-	border: 2px solid #324978;
-	top: 41.8%;
-}
-
-.goal-left {
-	left: -3.2%;
-}
-
-.goal-right {
-	right: -3.4%;
-}
-
-.corner {
-    content: "";
-    position: absolute;
-	margin:0;
-	padding: 0;
-    width: calc(max(3vh, 3vw));
-	height: calc(max(3vh, 3vw));;
-    border: 2px solid #323642;
-    border-radius: 50%;
-}
-
-
-@media screen and (max-width: 600px) {
-	.goal-right {
-		right: -3.7%;
-	}
-}
-
-.choose {
-	position: absolute;
-	font-size: calc(max(13vh, 13vw));
-	font-weight: lighter;
-	text-align: center;
-	top: 50%;
-	left: 50%;
-	width: 17%;
-	height: 0;
-	margin: -8% 0 0 -8%;
-	margin-top: calc(-8% - 4px);
-	margin-left: calc(-8% - 2px);
-	padding-bottom: 17%;
-	border-radius: 50%;
-	border: 2px solid #323642;
-	color: black;
-}
-
-.btn {
-	background-color: #1E1E28;
-	color: #FADC00;
-	padding: 2vh;
-	font-family: Bebad Neue Pro;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-	margin: 3vh auto ;
-	border: none;
-	font-size: calc(max(3vh, 3vw));
-}
-
-.btn:hover {
-	background-color: #FADC00;
-	color: #1E1E28;
-	font-weight: bolder;
-}
-
-.bottom {
-	background-color: #1E1E28;
-}
-
-
-  .popup-overlay {
+.popup-overlay {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -252,9 +6,9 @@ body {
 	height: 100%;
 	background-color: rgba(0, 0, 0, 0.5);
 	z-index: 1000;
-  }
-  
-  .popup-content {
+}
+
+.popup-content {
 	position: fixed;
 	top: 50%;
 	left: 50%;
@@ -262,38 +16,38 @@ body {
 	background-color: white;
 	padding: 20px;
 	z-index: 1001;
-  }
-  
-  .carousel {
+}
+
+.carousel {
 	display: flex;
 	flex-direction: row;
 	overflow: hidden;
-  }
-  
-  .carousel-item {
+}
+
+.carousel-item {
 	min-width: 100%;
 	transition: ease 0.5s;
-  }
-  
-  .carousel-item img {
+}
+
+.carousel-item img {
 	max-width: 100%;
-  }
-  
-  body {
+}
+
+body {
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
-  }
-  
-  .items {
+}
+
+.items {
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	user-select: none;
-  }
-  
-  .items .item {
+}
+
+.items .item {
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -305,59 +59,56 @@ body {
 	transition: all 300ms ease-in-out;
 	z-index: -1;
 	opacity: 0;
-  }
-  
-  .item img {
+}
+
+.item img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-  }
-  
-  .item.active {
+}
+
+.item.active {
 	opacity: 1;
 	z-index: 99;
 	box-shadow: 0px 0px 105px -35px rgba(0, 0, 0, 0.75);
-  }
-  
-  .item.prev {
+}
+
+.item.prev {
 	z-index: 2;
 	opacity: 0.25;
 	transform: translate(-125%, -50%);
-	
-  }
-  
-  .item.next {
+}
+
+.item.next {
 	z-index: 2;
 	opacity: 0.25;
 	transform: translate(25%, -50%);
-	
-  }
-  
-  .items .button-container {
+}
+
+.items .button-container {
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	width: 275px;
 	z-index: 100;
-  }
-  
-  .button-container .button {
-    color: #fff;
-    font-size: 32px;
-    cursor: pointer;
-    position: relative;
-    opacity: 0.75;
-    transition: all 300ms ease-in-out;
-    display: block; /* S'assurer qu'ils sont affichés */
 }
 
-  
-  .button-container .button:hover {
+.button-container .button {
+	color: #fff;
+	font-size: 32px;
+	cursor: pointer;
+	position: relative;
+	opacity: 0.75;
+	transition: all 300ms ease-in-out;
+	display: block; /* S'assurer qu'ils sont affichés */
+}
+
+.button-container .button:hover {
 	opacity: 1;
-  }
-  
-  .button-container .button:before {
+}
+
+.button-container .button:before {
 	content: "";
 	position: absolute;
 	top: 50%;
@@ -368,113 +119,111 @@ body {
 	background-color: rgba(0, 0, 0, 1);
 	border-radius: 50%;
 	z-index: -99;
-  }
-  
-  .button-container .button:nth-child(1) {
-	float: left;
-  }
-  
-  .button-container .button:nth-child(2) {
-	float: right;
-  }
+}
 
-  
-  .item.selected {
-    border: 2px solid #FADC00; /* Par exemple, pour indiquer la sélection */
+.button-container .button:nth-child(1) {
+	float: left;
+}
+
+.button-container .button:nth-child(2) {
+	float: right;
+}
+
+.item.selected {
+	border: 2px solid #fadc00; /* Par exemple, pour indiquer la sélection */
 }
 
 .item:not(.active) .button-container .button {
-    display: none;
+	display: none;
 }
 
 #confirm-selection {
-    position: absolute; /* Position absolue par rapport à son parent positionné */
-    bottom: -420px; /* Descendre le bouton de 50 pixels au-dessous du bas de son conteneur */
-    left: 47%; /* Centrer le bouton horizontalement */
-    transform: translateX(-50%); /* Centrer le bouton par rapport à lui-même */
-    /* Ajouter d'autres styles si nécessaire */
+	position: absolute; /* Position absolue par rapport à son parent positionné */
+	bottom: -270px; /* Descendre le bouton de 50 pixels au-dessous du bas de son conteneur */
+	left: 49%; /* Centrer le bouton horizontalement */
+	transform: translateX(-50%); /* Centrer le bouton par rapport à lui-même */
+	/* Ajouter d'autres styles si nécessaire */
 }
 
 #return {
 	position: absolute;
-	bottom: 220px;
+	bottom: 150px;
 	right: 87%;
 }
 
 /************************** Styles pour le deuxième carrousel ************************************/
 .second-popup-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-    display: none; /* Masqué par défaut */
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 1000;
+	display: none; /* Masqué par défaut */
 }
 
 .second-popup-content {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    padding: 20px;
-    z-index: 1001;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: white;
+	padding: 20px;
+	z-index: 1001;
 }
 
 /* Styles pour les éléments du deuxième carrousel (second-items) */
 .second-items {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    user-select: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	user-select: none;
 }
 
 .second-items .second-item {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    overflow: hidden;
-    transition: all 300ms ease-in-out;
-    z-index: -1;
-    opacity: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 250px;
+	height: 250px;
+	border-radius: 50%;
+	overflow: hidden;
+	transition: all 300ms ease-in-out;
+	z-index: -1;
+	opacity: 0;
 }
 
 .second-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 }
 
 .second-item.active {
-    opacity: 1;
-    z-index: 99;
-    box-shadow: 0px 0px 105px -35px rgba(0, 0, 0, 0.75);
+	opacity: 1;
+	z-index: 99;
+	box-shadow: 0px 0px 105px -35px rgba(0, 0, 0, 0.75);
 }
 
 .second-item.prev {
-    z-index: 2;
-    opacity: 0.25;
-    transform: translate(-125%, -50%);
+	z-index: 2;
+	opacity: 0.25;
+	transform: translate(-125%, -50%);
 	display: block;
 }
 
 .second-item.next {
-    z-index: 2;
-    opacity: 0.25;
-    transform: translate(25%, -50%);
+	z-index: 2;
+	opacity: 0.25;
+	transform: translate(25%, -50%);
 	display: block;
 }
 
-
 .second-item.selected {
-    border: 2px solid #FADC00; /* Par exemple, pour indiquer la sélection */
+	border: 2px solid #fadc00; /* Par exemple, pour indiquer la sélection */
 }
 
 .second-items .button-container1 {
@@ -484,24 +233,23 @@ body {
 	transform: translate(-50%, -50%);
 	width: 275px;
 	z-index: 100;
-  }
-  
-  .button-container1 .button {
-    color: #fff;
-    font-size: 32px;
-    cursor: pointer;
-    position: relative;
-    opacity: 0.75;
-    transition: all 300ms ease-in-out;
-    display: block; /* S'assurer qu'ils sont affichés */
 }
 
-  
-  .button-container1 .button:hover {
+.button-container1 .button {
+	color: #fff;
+	font-size: 32px;
+	cursor: pointer;
+	position: relative;
+	opacity: 0.75;
+	transition: all 300ms ease-in-out;
+	display: block; /* S'assurer qu'ils sont affichés */
+}
+
+.button-container1 .button:hover {
 	opacity: 1;
-  }
-  
-  .button-container1 .button:before {
+}
+
+.button-container1 .button:before {
 	content: "";
 	position: absolute;
 	top: 50%;
@@ -512,16 +260,16 @@ body {
 	background-color: rgba(0, 0, 0, 1);
 	border-radius: 50%;
 	z-index: -99;
-  }
-  
-  .button-container1 .button:nth-child(1) {
-	float: left;
-  }
-  
-  .button-container1 .button:nth-child(2) {
-	float: right;
-  }
+}
 
-  .second-item:not(.active) .button-container .button {
-    display: none;
+.button-container1 .button:nth-child(1) {
+	float: left;
+}
+
+.button-container1 .button:nth-child(2) {
+	float: right;
+}
+
+.second-item:not(.active) .button-container .button {
+	display: none;
 }
