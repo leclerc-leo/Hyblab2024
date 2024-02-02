@@ -10,7 +10,26 @@
               "Gain": "Bronze",
               "Olympiade": "Rio 2016",
               "Résultat (temps /points)": "86 (points)",
-              "Podium (nom + résultat)": "1er. le Néerlandais Dorian Van Rijsselberghe avec 25 points ; 2e : le Britannique Nick Dempsey avec 52 points ; 3e. le Français Pierre Lecoq avec 86 point ; 4e. le Polonais Piotr Myszka avec 88 points",
+              "Podium (nom + résultat)": [
+                {
+                  "Place": "1",
+                  "Nom": "Dorian Van Rijsselberghe",
+                  "Pays": "Pays-Bas",
+                  "Score": "25"
+                },
+                {
+                  "Place": "2",
+                  "Nom": "Nick Dempsey",
+                  "Pays": "Angleterre",
+                  "Score": "52"
+                },
+                {
+                  "Place": "3",
+                  "Nom": "Pierre Lecoq",
+                  "Pays": "France",
+                  "Score": "86"
+                }
+              ],
               "Performance": "Première médaille olympique française en planche à voile depuis l'argent de Julien Bontemps en 2008 à Pékin",
               "Nombre de médailles françaises": "apporte la 20e médaille au clan français"
             },
@@ -24,7 +43,25 @@
               "Gain": "",
               "Olympiade": "Tokyo 2020",
               "Résultat (temps /points)": "121 (points)",
-              "Podium (nom + résultat)": "1ère. la Danoise Anne Marie Rindom avec 78 points",
+              "Podium (nom + résultat)": [
+                {
+                "Place": "1",
+                "Nom": "Anne Marie Rindom",
+                "Pays": "Danemark",
+                "Score": "78"
+              },
+              {
+                "Place": "2",
+                "Nom": "Josefin Olsson",
+                "Pays": "Suéde",
+                "Score": "81"
+              },
+              {
+                "Place": "3",
+                "Nom": "Marit Bouwmeester",
+                "Pays": "Pays-Bas",
+                "Score": "83"
+              }],
               "Performance": "",
               "Nombre de médailles françaises": ""
             },
@@ -38,7 +75,26 @@
               "Gain": "Or",
               "Olympiade": "Londres 2012",
               "Résultat (temps /points)": "1h30'52''0",
-              "Podium (nom + résultat)": "1ère : Julie Bresset = 1h30'52''0/ 2ème : Sabine Spitz = 1h31'54'00 / 3ème = Georgia Gould = 1h32'00''0",
+              "Podium (nom + résultat)": [
+                {
+                  "Place": "1",
+                  "Nom": "Julie Bresset",
+                  "Pays": "France",
+                  "Score": "1h30'52''0"
+                },
+                {
+                  "Place": "2",
+                  "Nom": "Sabine Spitz",
+                  "Pays": "Allemand",
+                  "Score": "1h31'54'00"
+                },
+                {
+                  "Place": "2",
+                  "Nom": "Georgia Gould",
+                  "Pays": "État-Unis",
+                  "Score": "1h32'00''0"
+                }
+              ],
               "Nombre de médailles françaises": "10e médaille française au décompte total quand elle gagne"
             },
             {
@@ -51,9 +107,27 @@
               "Gain": "Argent",
               "Olympiade": "Pékin 2008",
               "Résultat (temps /points)": "1ère en Demi-finale avec 4 pts",
-              "Podium (nom + résultat)": "1ère :Laëtitia Le Corguillé (4pts) / 2ème : Jill Kintner (9pts) / 3ème : Shanaze Reade (10 pts) / 4ème Nicole Callisto (12 pts)",
+              "Podium (nom + résultat)": [
+                {
+                  "Place": "1",
+                  "Nom": "Laëtitia Le Corguillé",
+                  "Pays": "France",
+                  "Score": "4"
+                },
+                {
+                  "Place": "2",
+                  "Nom": "Jill Kintner",
+                  "Pays": "État-Unis",
+                  "Score": "9"
+                },
+                {
+                  "Place": "3",
+                  "Nom": "Shanaze Reade",
+                  "Pays": "Angleterre",
+                  "Score": "10"
+                }
+              ],
               "Performance": "...",
               "Nombre de médailles françaises": "..."
             }
-          
 ]}
