@@ -2,6 +2,7 @@
     height: 100vh;
     overflow: hidden;
     position: relative;
+    pointer-events: none;
   }
   
   .swipe-up-message {
