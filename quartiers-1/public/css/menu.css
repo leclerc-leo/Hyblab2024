@@ -17,7 +17,7 @@
     height: 100%;
     width: 100%;
     position: absolute;
-    z-index: 4;
+    z-index: 5;
     top: 0;
     left: -100%;
     background-color: #FBEFEB;
@@ -68,4 +68,9 @@
     height: 5px;
     background-color: black;
     margin: 6px 0;
+}
+
+#openBtn {
+    position: absolute;
+    z-index: 4;
 }
