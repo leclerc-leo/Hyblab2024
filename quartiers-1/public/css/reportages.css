@@ -70,6 +70,7 @@ h6{
     position: absolute;
     top: 15px;
     width: 100%;
+    color: #292C5E;
     text-align: center;
     font-size: 1em;
     z-index: 3;
@@ -220,12 +221,21 @@ iframe {
     height: 100%;   /* even on mobile devices with url or navigation bars */
     margin-left: calc((100vw - 100 * 3vh / 4) / 2); /* Add black bands on left and right */
     width: calc(100 * 3vh / 4); /* Force 3/4 aspect ratio */
+    overflow: hidden;
 }
 
 /* We set a default font size here. It will be the base for all other font sizes */
 /* Here the font size is proportional to content width */
 body{
     font-size: calc(15vh * 3 / 4);
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-thumb {
+    background: #7D7DB5;
+    border-radius: 10px;
 }
 
 /* Fill the whole viewport when its aspect ratio is between 9/16 and 3/4 */
