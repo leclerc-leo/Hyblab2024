@@ -380,18 +380,22 @@ svg.image-histoire, svg.image-jo{
     height: auto;
 }
 
-
+.svg-boucle{
+    position: absolute;
+    top : 0;
+    width: 50%;
+}
 #palmares-page {
-    text-align: center;
     background-color: #FFD8B3;
     font-family: "Krona_One variant0";
 }
 #palmares-page .palmares-container {
-    margin-top: 20%;
+    margin-top: 10%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 #palmares-page #palmares-logo {
     margin-top : 20px;
@@ -460,6 +464,7 @@ svg.image-histoire, svg.image-jo{
     align-items: center;
 }
 .card-front-palmares-titre{
+    margin: 2% 0 2% 0;
     font-size: 1.8vh;
 }
 .card-palmares-titre{
