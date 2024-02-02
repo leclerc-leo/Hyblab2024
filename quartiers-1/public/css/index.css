@@ -216,80 +216,71 @@ h1{
 .nuage{
     z-index: 0;
     position: absolute;
+<<<<<<< Updated upstream
     scale: 0.75;
     overflow: hidden;
+=======
+    width: 20%;
+>>>>>>> Stashed changes
 }
 
 #nuage1{   
-    animation: animCloud1 30s linear infinite;
-    bottom: 90%;
+    animation: animCloud1 30s ease-in-out infinite;
+    bottom: 87%;
     transform: rotate3d(0, 1, 0, 180deg);
     scale: 0.6 0.5;
 }
 
 #nuage2{
-    animation: animCloud2 35s linear infinite;
-    bottom: 85%;
+    animation: animCloud2 30s ease-in-out infinite;
+    bottom: 79%;
     scale: 0.7 0.7;
 }
 
 #nuage3{
-    animation: animCloud3 38s linear infinite;
-    bottom: 87%;
+    animation: animCloud3 30s ease-in-out infinite;
+    bottom: 40%;
     scale: 0.6 0.55;
 }
 
 
 @keyframes animCloud1 {
-    from {
-        left: -15%;
+    0% {
+        left: 20%;
     }
-    to {
-        left: 100%;
+    50% {
+        left: 35%;
+    }
+    100%{
+        left: 20%
     }
 }
 
 @keyframes animCloud2 {
     0% {
-        left: 40%;
-        visibility: visible;
+        left: 10%;
     }
 
-    49% {
-        left: 100%;
-        visibility: hidden;
+    50%{
+        left: 25%;
     }
-    
 
-    51%{
-        left: -15%;
-        visibility: hidden;
-    }
     100% {
-        left: 40%;
-        visibility: visible;
+        left: 10%;
     }
 }
 
 @keyframes animCloud3 {
     0% {
-        left: 70%;
-        visibility: visible;
+        left: 80%;
     }
 
-    24% {
-        left: 100%;
-        visibility: hidden;
+    50%{
+        left: 65%;
     }
-    
 
-    26%{
-        left: -15%;
-        visibility: hidden;
-    }
     100% {
-        left: 70%;
-        visibility: visible;
+        left: 80%;
     }
 }
 
@@ -363,11 +354,12 @@ h1{
     bottom: 6%;
     z-index: 2;
 }
+
 #tuto-open{
     position: absolute;
     right: 10%;
     transform: translateX(50%);
-    top: 5%;
+    top: 3%;
     z-index: 2;
     background: #E69973;
     border-radius: 100%;
@@ -395,6 +387,7 @@ h1{
     height: 100%;   /* even on mobile devices with url or navigation bars */
     margin-left: calc((100vw - 100 * 3vh / 4) / 2); /* Add black bands on left and right */
     width: calc(100 * 3vh / 4); /* Force 3/4 aspect ratio */
+    overflow: hidden;
 }
 
 /* We set a default font size here. It will be the base for all other font sizes */
