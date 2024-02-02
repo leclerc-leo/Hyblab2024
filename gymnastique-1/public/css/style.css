@@ -77,9 +77,10 @@ body {
 }
 
 #first-slide header {
-  width: 70%;
+  width: 63%;
   position: absolute;
-  left: 25%;
+  left: 30%;
+  top: 3%;
 }
 
 #first-slide p {
