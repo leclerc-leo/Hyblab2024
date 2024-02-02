@@ -383,7 +383,7 @@ svg.image-histoire, svg.image-jo{
     max-width: 40%;
 }
 
-.svg-boucle{
+#palmares-page .svg-boucle{
     position: absolute;
     top : 0;
     width: 50%;
@@ -410,7 +410,7 @@ svg.image-histoire, svg.image-jo{
     max-width: 40%;
 
 }
-.card-container {
+#palmares-page .card-container {
     width: 80vw;
     height: 15vh;
     max-height: 10%;
@@ -418,17 +418,17 @@ svg.image-histoire, svg.image-jo{
     perspective: 90vw;
     margin: 2.5% 10% 2.5% 10%;
 }
-.flipcard {
+#palmares-page .flipcard {
     transform: rotateY(180deg);
 }
-.doigt-gif{
+#palmares-page .doigt-gif{
     position: absolute;
     height: 100%;
     z-index : 2;
     right: 0;
     top: 40%;
 }
-.card {
+#palmares-page .card {
     height: 100%;
     width: 100%;
     position: relative;
@@ -438,8 +438,8 @@ svg.image-histoire, svg.image-jo{
 
 }
 
-.card-front,
-.card-back {
+#palmares-page .card-front,
+#palmares-page .card-back {
     display: table;
     width: 100%;
     height: 100%;
@@ -450,7 +450,7 @@ svg.image-histoire, svg.image-jo{
     border-radius: 10px;
 }
 
-.card-front {
+#palmares-page .card-front {
     background-color: #E47754;
     align-items: center;
     display: flex;
@@ -458,21 +458,21 @@ svg.image-histoire, svg.image-jo{
     justify-content: center;
 }
 
-.card-back {
+#palmares-page .card-back {
     background-color: transparent;
     transform: rotateY(180deg);
     align-items: center;
 }
-.card-front-palmares-titre{
+#palmares-page .card-front-palmares-titre{
     margin: 2% 0 2% 0;
     font-size: 1.8vh;
 }
-.card-palmares-titre{
+#palmares-page .card-palmares-titre{
     margin: 2% 0 2% 0;
     color: #E47754;
     font-size: 1.8vh;
 }
-.card-palmares-texte{
+#palmares-page .card-palmares-texte{
     font-size: 1.5vh;
 }
 
