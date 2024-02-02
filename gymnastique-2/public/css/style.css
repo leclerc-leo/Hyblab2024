@@ -380,19 +380,32 @@ svg.image-histoire, svg.image-jo{
     height: auto;
 }
 
-.credits-list > li{
-    display: block;
-}
-
-.credits-list > li > .logo-partenaire{
-    vertical-align: middle;
-    width: 40%;
-    margin: 10px;
-    display: inline-block;
-}
-
 .logo-licence{
     width: 20%;
     height: auto;
     vertical-align: middle;
+}
+
+#credits-chemin1{
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#credits-chemin2{
+    width: 40%;
+    margin-top: -20%;
+}
+
+.credits-list > li{
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.credits-list > li > p, .credits-list > li > img, .credits-list > li > div{
+    width: 50%;
+    margin: 0;
+    padding: 10px;
+    height: 100%;
 }
