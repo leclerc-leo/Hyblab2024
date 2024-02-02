@@ -21,7 +21,7 @@ const swiper = new Swiper("#mySwiper", {
 swiper.on('progress', () => {
     const blacklisted = [0, 50, 100]
     if (blacklisted.includes(Math.round(100 * swiper.progress))) move_background(Math.round(100 * swiper.progress), true);
-    else move_background(Math.round(100 * swiper.progress)) 
+    else move_background(Math.round(100 * swiper.progress))
 });
 
 swiper.on("slideChange", function () {
@@ -80,5 +80,4 @@ categories_buttons.forEach( button => {
         swiper.disable(); // pour éviter de changer de slide lors d'un scroll et d'autoriser le scroll sur la page
     });
 });
-
 window.addEventListener("deviceorientation", handle_orientation);
