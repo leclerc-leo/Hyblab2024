@@ -277,7 +277,7 @@ const homeStories = function () {
 
         yesImages.forEach((image, index) => {
           image.firstChild.contentDocument.querySelector('#bg-color').style.transition = "all 0.2s ease-in-out";
-          image.addEventListener('touchend', function() {
+          image.addEventListener('mousedown', function() {
               localStorage.setItem('yes' + (index + 1), 'yes');
               changeState('no' + (index + 1), yesImages, noImages);
             });
@@ -285,7 +285,7 @@ const homeStories = function () {
 
         noImages.forEach((image, index) => {
           image.firstChild.contentDocument.querySelector('#bg-color').style.transition = "all 0.2s ease-in-out";
-              image.addEventListener('touchend', function() {
+              image.addEventListener('mousedown', function() {
                   localStorage.setItem('no' + (index + 1), 'no');
                   changeState('yes' + (index + 1), yesImages, noImages);
               });
