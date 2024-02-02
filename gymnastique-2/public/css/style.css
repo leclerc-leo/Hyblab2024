@@ -203,7 +203,7 @@ header{
 /* Bouton de navigation */
 .exit-button{
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
     z-index: 100;
 
@@ -215,11 +215,9 @@ header{
 }
 
 .exit-button::before, .exit-button::after{
-    content: '';
     position: absolute;
     width: 30px;
     height: 5px;
-    background-color: black;
     transform: translate(0, 13px) rotate(45deg);
 }
 
@@ -229,14 +227,9 @@ header{
 
 .home-button{
     position: absolute;
-    top: 0;
+    bottom: 0;
     right: 0;
     z-index: 100;
-    color: black;
-    font-size: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
     width: 50px;
     height: 50px;
