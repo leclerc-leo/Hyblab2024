@@ -25,10 +25,14 @@ body{
     position: absolute;
 }
 
+.swiper-pagination{
+    font-size: 0;
+}
+
 .swiper-pagination-bullets.swiper-pagination-horizontal {
     --swiper-pagination-bottom: 0px;
     width: 100%;
-    margin: 0 auto;
+    margin: 0 auto 10px auto;
 }
 
 .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet{
