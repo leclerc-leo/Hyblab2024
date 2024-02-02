@@ -18,19 +18,13 @@
 }
 
 .compteurContainer_frame6 {
+  font-family: 'Golos Text', sans-serif;
   position: absolute;
-  top: 150vh; /* Corrigé, retiré les guillemets */
-  left: 54vh; /* Corrigé, retiré les guillemets */
-  color: red;
-  font-size: 2rem;
+  top: 155vh;
+  color: black;
+  left: 44%;
   z-index: 10;
-}
-
-.textContainer_frame6 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+  font-weight: bold;
 }
 
 .golos-text-frame6 {
@@ -45,4 +39,16 @@
   text-align: left;
   line-height: normal;
   margin-left: 95px;
+  position: absolute;
+  width: 100%;
 }
+
+.svgCompteur {
+  position: absolute;
+  top: 163vh;
+  left: 51%;
+  transform: translate(-50%, -50%);
+  width: 33vh;
+  height: 17vh;
+}
+

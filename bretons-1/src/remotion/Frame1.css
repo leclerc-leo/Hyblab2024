@@ -40,3 +40,17 @@
     animation: agrandirBackground 5s infinite alternate;
   }
   
+  .animationOut {
+    transition: transform 2s ease-in-out;
+    width: 100%;
+    background-color: white;
+    z-index: 5;
+    padding-top: 250vh;
+    height: 300vh;
+    position: absolute;
+    top: -400vh;
+  }
+  .medailleTransition {
+    width: 100%;
+  }
+  

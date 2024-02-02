@@ -1,25 +1,35 @@
 .main_app .app {
   max-width: 450px;
-  width: auto;
+  width: 80%;
+  height: auto;
   border-radius: 5%;
   padding: 0;
+}
+@media (max-height: 700px) {
+  .main_app .app {
+    width: 65%;
+  }
+}
+
+@media (min-width: 470px) {
+  .main_app .app {
+    width: 65%;
+  }
 }
 
 .app h1 {
   color: #333;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  position: relative;
+.main .container {
+ text-align: unset;
 }
 
 .main_app {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 80vh;
+  height: 80vw;
 }
 .head{
   text-align: center;

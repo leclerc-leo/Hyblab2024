@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
 import './VideoListItem.css';
+import React, { useState, useEffect } from 'react';
 import { FavoriteButton } from './Fav_nav';
 import athleteData from '../data/Athlete.json';
 import { Athlete, Video, VideoListItemProps } from './type';

@@ -33,7 +33,13 @@ export const Frame4: React.FC<{ Gentilé: string, rang:number, Epreuve: string, 
   const [_, setIsLoading] = useState(true);
   useEffect(() => {
       setIsLoading(false);
-      let delay = 20,
+      setTimeout(function () {
+        const element = document.querySelector('.containerText_f4') as HTMLElement;
+        if(element != undefined) {
+          element.style.transform = 'translateX(300vw)';
+        }
+      }, 4500);
+      let delay = 50,
       delay_start = 0;
       let paragraphe = document.getElementsByClassName("animatedtext");
       for (var i = 0; i < paragraphe.length; i++) {
@@ -75,7 +81,7 @@ export const Frame4: React.FC<{ Gentilé: string, rang:number, Epreuve: string, 
     }, []);
     return (
       <div className='containerText_f4'>
-        <p className='animatedtext bold'>Prouesses !</p>
+        <p className='animatedtext bold'>Prouesse !</p>
         <br></br>
         <p className='animatedtext bold'>{sexe === 'F' ? 'La' : 'Le'} {Gentilé}</p><p className='animatedtext'> remporte la </p><p className='animatedtext bold'>{rangToMedaille(rang)}</p><p className='animatedtext'> en </p><p className='animatedtext bold'>{Epreuve} {getSexe(sexe)} {getImage(Sport)}</p>
       </div>

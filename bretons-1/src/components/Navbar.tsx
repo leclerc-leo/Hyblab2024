@@ -3,19 +3,21 @@ import Navbar from 'react-bootstrap/Navbar';
 import BurgerMenu from './BurgerMenu';
 import './Navbar.css';
 
-function OffcanvasExample() {
+function NavbarT() {
     return (
-        <>
-            {['xxxl'].map((expand, index) => (
-                <Navbar fixed="top" key={index.toString()} expand={expand} className="bg-body-tertiary" data-bs-theme="light">
-                    <Container fluid>
-                        <Navbar.Brand><img src="/bretons-1/img/Logo_Treact.png" alt='Logo' /></Navbar.Brand>
-                        <BurgerMenu></BurgerMenu>
-                    </Container>
-                </Navbar>
-            ))}
-        </>
+      <>
+        {['xxxl'].map((expand, index) => (
+          <div key={index.toString()} className='Navbar'>
+            <Navbar fixed="top" expand={expand} className="bg-body-tertiary">
+              <Container fluid>
+                <Navbar.Brand><img src="/bretons-1/img/Logo_Treact.png" alt='Logo' /></Navbar.Brand>
+                <BurgerMenu></BurgerMenu>
+              </Container>
+            </Navbar>
+          </div>
+        ))}
+      </>
     );
-}
-
-export default OffcanvasExample;
+  }
+  
+  export default NavbarT;

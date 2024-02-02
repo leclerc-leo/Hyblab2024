@@ -3,6 +3,7 @@ import './Frame1.css';
 import OrSVG from '../assets/img/Or.svg';
 import ArgentSVG from '../assets/img/Argent.svg';
 import BronzeSVG from '../assets/img/Bronze.svg';
+import { useEffect, useState } from 'react';
 
 const determinerTexteTitre = (rang: number) => {
     switch(rang) {
@@ -36,25 +37,39 @@ export const Frame1: React.FC<{ text: string, titre: number, sous_titre: string 
 
     const titreAdapte = determinerTexteTitre(titre);
     const cheminImageMedaille = determinerImageMedaille(titre);
-
+    const [_, setIsLoading] = useState(true);
+    useEffect(() => {
+        setIsLoading(false);
+        setTimeout(function() {
+          const element = document.querySelector('.animationOut') as HTMLElement;
+          if(element != undefined) {
+            element.style.transform = 'translateY(400vh)';
+          }
+        }, 4000);
+    }, []);
     return (
-        <div className="animationAgrandissement" style={{
-            height: '100%',
-            width: '100%',
-            backgroundImage: `url(/bretons-1/img/athlete/JDE2.jpg)`,
-            objectFit: 'cover',
-            objectPosition: 'center center',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-            position: 'relative',
-            transform: 'scale(1)',
-        }}>
-            {cheminImageMedaille && (
-                <img src={cheminImageMedaille} alt="Médaille" style={{ position: 'absolute', top: '25vh', left: '17vh', width: '150px', height: '168px' }} />
-            )}
-            <h1 className="golos-text-frame1 titre_frame1" style={{ fontSize: "11vh", bottom: '50vh' }}>{text}</h1>
-            <h1 className="golos-text-frame1 titre_frame1" style={{ fontSize: "11vh", bottom: '37vh' }}>{titreAdapte}</h1>
-            <h3 className="golos-text-frame1 sous-titre_frame1" style={{ fontSize: "5vh", bottom: '30vh' }}>{sous_titre}</h3>
-        </div>
+        <>
+            <div className='animationOut'>
+                <img className='medailleTransition' src={determinerImageMedaille(titre)}></img>
+            </div>    
+            <div className="animationAgrandissement" style={{
+                    height: '100%',
+                    width: '100%',
+                    backgroundImage: `url(/bretons-1/img/athlete/JDE2.jpg)`,
+                    objectFit: 'cover',
+                    objectPosition: 'center center',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat',
+                    position: 'relative',
+                    transform: 'scale(1)',
+                }}>
+                    {cheminImageMedaille && (
+                        <img src={cheminImageMedaille} alt="Médaille" style={{ position: 'absolute', top: '25vh', left: '17vh', width: '150px', height: '168px' }} />
+                        )}
+                    <h1 className="golos-text-frame1 titre_frame1" style={{ fontSize: "11vh", bottom: '50vh' }}>{text}</h1>
+                    <h1 className="golos-text-frame1 titre_frame1" style={{ fontSize: "11vh", bottom: '37vh' }}>{titreAdapte}</h1>
+                    <h3 className="golos-text-frame1 sous-titre_frame1" style={{ fontSize: "5vh", bottom: '30vh' }}>{sous_titre}</h3>
+                </div>
+        </>
     );
 };
