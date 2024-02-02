@@ -5,10 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import './CardCarousel.css';
 import athleteData from '../data/Athlete.json';
 import { Carousel } from 'react-bootstrap';
-import { Athlete, VideoListItemProps} from './type';
+import { Athlete, VideoListItemProps, EventDataItem} from './type';
 import EventData from '../data/Event.json';
-import { EventDataItem } from './type';  
-
 
 const allAthletesData = athleteData.Athlete.reduce((allAthletes: Athlete[], athletesArray: Athlete[]) => {
   return allAthletes.concat(athletesArray);

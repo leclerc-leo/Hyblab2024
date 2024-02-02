@@ -3,7 +3,8 @@ import { Player } from "@remotion/player";
 import { MyVideo } from "../remotion/Root";
 import SwipeUp from './SwipeUp';
 import athleteData from '../data/Athlete.json';
-import { Athlete, _ } from './type';
+import { Athlete, EventDataItem} from './type';
+import EventData from '../data/Event.json';
 
 function VideoPlayer({ id }: { id: string }) {
 
@@ -11,9 +12,23 @@ function VideoPlayer({ id }: { id: string }) {
     };
     const allAthletesData = athleteData.Athlete.reduce((allAthletes: Athlete[], athletesArray: Athlete[]) => {
         return allAthletes.concat(athletesArray);
-    }, []);
+      }, []);
+      
+    const athleteVideosData = allAthletesData.map((athlete: Athlete) => {
+        const allEventsData: EventDataItem[] = (EventData.Event.flat() as EventDataItem[]);
+        const athleteEvents = allEventsData.filter((event: EventDataItem) => event.Athlete === athlete.Athlete);
+        const videosForAthlete = athleteEvents.map((event: EventDataItem) => ({
+          id: event.IdEvent.toString(),
+          title: event.Athlete,
+          subtitle: event.Epreuve,
+          srcPhoto: athlete.Photo,
+          description: event.Performance,
+        }));
+        return videosForAthlete;
+      }).flat();
+    
+    let videoData = athleteVideosData.find(a => a.id == id);
 
-    let videoData = allAthletesData.find(a => a.Athlete == id);
     return (
         <div id='VideoPlayer'>
             <div className='headerPlayer'>

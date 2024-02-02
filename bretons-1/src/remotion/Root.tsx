@@ -3,9 +3,9 @@ import { Frame1 } from "./Frame1";
 import { Frame2 } from "./Frame2";
 import { Frame3 } from "./Frame3";
 import { Frame4 } from "./Frame4";
-import { Athlete } from "../components/type";
+import { EventDataItem } from "../components/type";
 
-export const MyVideo = (video: Athlete) => {
+export const MyVideo = (video: EventDataItem) => {
   return (
     <>
       <Sequence from={0} durationInFrames={120}>
