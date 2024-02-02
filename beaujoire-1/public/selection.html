@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width initial-scale=1.0" />
     <title>Vote pour ton 11 favoris</title>
     <link rel="stylesheet" href="https://use.typekit.net/tor7tnx.css" />
+    <link rel="icon" href="img/logo.svg" />
 
     <!--Page CSS-->
     <link rel="stylesheet" href="./css/selection.css" />
@@ -19,6 +20,7 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <script src="./js/field.js"></script>
+    <script src="./js/selection.js"></script>
   </head>
   <body>
     <div class="swiper-container">
@@ -26,11 +28,15 @@
         <div class="swiper-slide">
           <!-- Terrain de football 1 de la rédaction des sports -->
 
-          <div class="container-terrain-1">
-            <div class="logo-container"></div>
+          <div class="container-terrain">
+            <div class="textvote-container"></div>
             <div class="buttons">
               <button id="blason" title="blason"></button>
-              <button class="player-clickable" title="entraineur">
+              <button
+                class="player-clickable"
+                id="entraineur-choix"
+                title="entraineur"
+              >
                 SUAUDEAU
               </button>
               <button id="maillot" title="maillot"></button>
@@ -119,6 +125,7 @@
                 </div>
               </div>
             </div>
+            <button class="writer" id="writer">Julien Soyer</button>
             <a href="field.html">
               <button class="gm-btn gb-shutter">
                 TON 11 DE L&Eacute;GENDE
@@ -129,11 +136,15 @@
         <div class="swiper-slide">
           <!-- Terrain de football 2 de Christophe Delacroix -->
 
-          <div class="container-terrain-2">
-            <div class="logo-container"></div>
+          <div class="container-terrain">
+            <div class="textvote-container"></div>
             <div class="buttons">
               <button id="blason" title="blason"></button>
-              <button class="player-clickable" title="entraineur">
+              <button
+                class="player-clickable"
+                id="entraineur-choix"
+                title="entraineur"
+              >
                 SUAUDEAU
               </button>
               <button id="maillot" title="maillot"></button>
@@ -222,6 +233,115 @@
                 </div>
               </div>
             </div>
+            <button class="writer" id="writer">Christophe Delacroix</button>
+            <a href="field.html">
+              <button class="gm-btn gb-shutter">
+                TON 11 DE L&Eacute;GENDE
+              </button>
+            </a>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <!-- Terrain de football 3 de Jean-Marcel Boudard -->
+
+          <div class="container-terrain">
+            <div class="textvote-container"></div>
+            <div class="buttons">
+              <button id="blason" title="blason"></button>
+              <button
+                class="player-clickable"
+                id="entraineur-choix"
+                title="entraineur"
+              >
+                SUAUDEAU
+              </button>
+              <button id="maillot" title="maillot"></button>
+            </div>
+            <div class="field">
+              <img
+                src="./img/field.svg"
+                alt="field"
+                width="100%"
+                height="100%"
+              />
+
+              <div class="player-card">
+                <!-- Goalkeeper -->
+                <div
+                  class="player player-clickable goalkeeper"
+                  style="top: 86%; left: 50%"
+                >
+                  <div class="player-name">LANDREAU</div>
+                </div>
+
+                <!-- Forward Line (3 players) -->
+                <div
+                  class="player player-clickable forward"
+                  style="top: 21%; left: 20%"
+                >
+                  <div class="player-name">AMISSE</div>
+                </div>
+                <div
+                  class="player player-clickable forward"
+                  style="top: 17%; left: 50%"
+                >
+                  <div class="player-name">KOLO MUANI</div>
+                </div>
+                <div
+                  class="player player-clickable forward"
+                  style="top: 21%; left: 80%"
+                >
+                  <div class="player-name">DE ROCHA</div>
+                </div>
+
+                <!-- Midfield Line (3 players) -->
+                <div
+                  class="player player-clickable midfielder"
+                  style="top: 50%; left: 25%"
+                >
+                  <div class="player-name">ADONKOR</div>
+                </div>
+                <div
+                  class="player player-clickable midfielder"
+                  style="top: 40%; left: 50%"
+                >
+                  <div class="player-name">N'DORAM</div>
+                </div>
+                <div
+                  class="player player-clickable midfielder"
+                  style="top: 50%; left: 75%"
+                >
+                  <div class="player-name">VERETOUT</div>
+                </div>
+
+                <!-- Defensive Line (4 players) -->
+                <div
+                  class="player player-clickable defender"
+                  style="top: 65%; left: 15%"
+                >
+                  <div class="player-name">AYACHE</div>
+                </div>
+                <div
+                  class="player player-clickable defender"
+                  style="top: 72%; left: 39%"
+                >
+                  <div class="player-name">DESAILLY</div>
+                </div>
+                <div
+                  class="player player-clickable defender"
+                  style="top: 72%; left: 61%"
+                >
+                  <div class="player-name">YEPES</div>
+                </div>
+                <div
+                  class="player player-clickable defender"
+                  style="top: 65%; left: 85%"
+                >
+                  <div class="player-name">BOSSIS</div>
+                </div>
+              </div>
+            </div>
+            <button class="writer" id="writer">Jean-Marcel Boudard</button>
             <a href="field.html">
               <button class="gm-btn gb-shutter">
                 TON 11 DE L&Eacute;GENDE
@@ -231,14 +351,14 @@
         </div>
 
         <div class="swiper-slide">
-          <!-- Terrain de football 3 de Loïc Folliot -->
-          <div class="container-terrain-3">
-            <div class="logo-container"></div>
+          <!-- Terrain de football 4 de Loïc Folliot -->
+          <div class="container-terrain">
+            <div class="textvote-container"></div>
             <div class="buttons">
-              <button id="blason" title="blason"></button>
+              <button id="blason" title="blason"><!--Maillot 84-85--></button>
               <button
                 class="player-clickable"
-                id="entraineur"
+                id="entraineur-choix"
                 title="entraineur"
               >
                 SUAUDEAU
@@ -329,6 +449,7 @@
                 </div>
               </div>
             </div>
+            <button class="writer" id="writer">Loïc Folliot</button>
             <a href="field.html">
               <button class="gm-btn gb-shutter">
                 TON 11 DE L&Eacute;GENDE
