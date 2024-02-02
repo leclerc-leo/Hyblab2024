@@ -119,6 +119,35 @@ body {
 	outline: none;
 }
 
+.back-btn {
+	background-color: #ffffff;
+	border: none;
+	border-radius: 50%;
+	width: 36px;
+	aspect-ratio: 1;
+	justify-self: flex-start;
+	display: flex;
+	align-content: center;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+#bottom-btn {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	width: 95%;
+	position: relative;
+	padding: 10px;
+}
+
+#bio-btn {
+	left: -5%;
+	margin: auto;
+}
+
 /* shutter */
 .gb-shutter {
 	border: 2px solid var(--gb-52);
@@ -194,6 +223,25 @@ body {
 	--gb-52: #1e1e28;
 }
 
+/*Bio Overlay*/
+.bio-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.96);
+	z-index: 1000;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.bio-overlay > * {
+	margin: 5%;
+}
+
 /* Card Carousel */
 .carousel-overlay {
 	display: none;
@@ -210,12 +258,18 @@ body {
 
 .carousel {
 	display: flex;
-	overflow: auto;
+	overflow-x: scroll;
+	overflow-y: hidden;
 	width: 100%;
 	scroll-snap-type: x mandatory;
+	padding: 0 5%;
 	scroll-padding: 50%;
+	::-webkit-scrollbar {
+		display: none;
+	}
+	scrollbar-width: none; /* Firefox */
+	-ms-overflow-style: none; /* Internet Explorer 10+ */
 }
-
 .carousel-item.active {
 	z-index: 2;
 	transform: scale(1.2);
@@ -242,7 +296,7 @@ body {
 
 .carousel-item {
 	flex: 0 0 auto;
-	height: 100%;
+	height: 95%;
 	width: 80%;
 	scroll-snap-align: center;
 	font-size: 24px;
@@ -263,6 +317,7 @@ body {
 
 .carte-img {
 	width: 90%;
+	height: 45%;
 	object-fit: contain;
 }
 
@@ -271,13 +326,24 @@ body {
 }
 
 .carousel-grid {
+	height: 55%;
+	width: 100%;
 	align-self: flex-end;
+	justify-content: center;
+	margin-top: 10%;
+	font-weight: bold;
 	display: grid;
-	grid-template-columns: 1fr 1fr; /* Crée deux colonnes de largeur égale */
+	grid-template-columns: 1fr 1fr;
 	grid-template-rows: auto auto;
-	gap: 10px; /* Ajoute un espace de 10px entre les éléments de la grille */
-	font-weight: semi-bold;
-	margin: 3%;
+	gap: 10px;
+}
+
+.carousel-grid > * > * {
+	margin: 0;
+}
+
+.stat-name {
+	font-size: 16px;
 }
 
 @media screen and (min-width: 600px) {

@@ -84,6 +84,15 @@
 			</div>
 
 			<button class="gm-btn gb-shutter">LE 11 DE LA RÉDACTION</button>
+			<div class="bio-overlay" style="display: none">
+				<h2>Titre de la bio</h2>
+				<p>Contenu de la bio ici.</p>
+				<div class="buttons" id="bottom-btn">
+					<button class="back-btn" id="close-bio" title="close">
+						<img src="./img/back-btn.svg" alt="close" />
+					</button>
+				</div>
+			</div>
 			<div class="carousel-overlay">
 				<h1 id="poste-title" class="small-title green"></h1>
 				<div class="carousel">
@@ -98,7 +107,14 @@
 					style="display: none">
 					Valider
 				</button>
-				<button class="gm-btn gb-shutter close">X</button>
+				<div class="buttons" id="bottom-btn">
+					<button class="back-btn" id="back-overlay" title="close">
+						<img src="./img/back-btn.svg" alt="close" />
+					</button>
+					<button class="gm-btn gb-shutter" id="bio-btn">
+						Biographie
+					</button>
+				</div>
 			</div>
 		</div>
 	</body>

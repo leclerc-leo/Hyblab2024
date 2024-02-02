@@ -6,12 +6,43 @@ document.querySelectorAll(".player-clickable").forEach((player) => {
 	player.addEventListener("click", handlePlayerClick);
 });
 
-document.querySelector(".close").addEventListener("click", () => {
+document.querySelector("#back-overlay").addEventListener("click", () => {
 	document.querySelectorAll(".carousel-item").forEach((item) => {
 		item.classList.remove("selected");
 	});
 	document.querySelector(".carousel-overlay").style.display = "none";
 	selectedPlayerId = null;
+});
+
+document.querySelector("#bio-btn").addEventListener("click", () => {
+	let bio = document.querySelector(".bio-overlay");
+	const selectedPlayer = document.querySelector(".carousel-item.selected");
+	if (selectedPlayer) {
+		const selectedPlayerName =
+			selectedPlayer.querySelector("h1").textContent;
+		fetch("./data/DataBase.json")
+			.then((response) => response.json())
+			.then((players) => {
+				const player = players.find(
+					(player) => player.NOM === selectedPlayerName
+				);
+				if (player) {
+					bio.querySelector("h2").textContent = player.NOM;
+					bio.querySelector("p").textContent = player.BIO;
+					bio.style.display = "flex";
+				} else {
+					console.log(
+						`No player found with name ${selectedPlayerName}`
+					);
+				}
+			});
+	} else {
+		console.log("No player selected");
+	}
+});
+
+document.querySelector("#close-bio").addEventListener("click", () => {
+	document.querySelector(".bio-overlay").style.display = "none";
 });
 
 function handlePlayerClick(event) {
@@ -73,10 +104,13 @@ function getPositionFromId(id) {
 			position = "ENTRAÎNEUR";
 			break;
 		case elementId.includes("ailier-droit"):
-			position = "AILIER DROIT";
+			position = "11";
 			break;
 		case elementId.includes("ailier-gauche"):
-			position = "AILIER GAUCHE";
+			position = "7";
+			break;
+		case elementId.includes("attaquant-centre"):
+			position = "9";
 			break;
 		case elementId.includes("arriere-droit"):
 			position = "ARRIÈRE DROIT";
@@ -86,6 +120,12 @@ function getPositionFromId(id) {
 			break;
 		case elementId.includes("midfielder-lead"):
 			position = "MENEUR";
+			break;
+		case elementId.includes("midfielder-1"):
+			position = "LIBERO";
+			break;
+		case elementId.includes("midfielder-2"):
+			position = "STOPPEUR";
 			break;
 		default:
 			position = "";
@@ -98,42 +138,70 @@ function createCarouselItem(player) {
 	const carouselItem = document.createElement("div");
 	carouselItem.classList.add("carousel-item");
 	let carte = player.CARTE;
-	if (carte !== "") {
+	console.log(carte);
+	if (carte == "" || carte == "fcn-" || carte == "fcn") {
+		carte = "NA";
 		carouselItem.innerHTML = `
-            <img class= "carte-img" src="img/cartes/${
-				player.CARTE
-			}.png" alt="Photo de ${player.NOM}" />
-            <h1 style="display : none">${player.NOM}</h1>
-            <div class="carousel-grid">
-                <div class="carousel-matchs">
-                    <p class="small-title green">${player.MATCHS}</p>
-                    <p><span class="green">NOMBRE DE</span> MATCH </p>
-                </div>
-                <div class="carousel-buts">
-                    <p class="small-title green">${
-						player.BUTS || "Guardien"
-					}</p>
-                    <p><span class="green">NOMBRE DE</span> BUT </p>
-                </div>
-                <div class="carousel-coupes">
-                    <p class="small-title green">${player.COUPE}</p>
-                    <p><span class="green">NOMBRE DE</span> COUPE </p>
-                </div>
-                <div class="carousel-taille">
-                    <p class="small-title green">${player.TAILLE}</p>
-                    <p><span class="green">TAILLE EN</span> M </p>
-                </div>
+		<div style="
+		height: 45%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;">
+        <img class= "carte-img" src="img/cartes/${carte}.png" alt="Photo de ${
+			player.NOM
+		}" />
+        <h1 class="green small-title" style="background-color: hsla(240, 14%, 14%, 0.9); border-radius: 10px; padding: 10px">${
+			player.NOM
+		}</h1>
+		</div>
+        <div class="carousel-grid">
+            <div class="carousel-matchs">
+                <p class="small-title green">${player.MATCHS}</p>
+                <p class="stat-name"><span class="green">NOMBRE DE</span> MATCH </p>
             </div>
-        `;
-	} else {
-		carouselItem.innerHTML = `
-            <h1 style="display : none">${player.NOM}</h1>
-            <p>Numéro: ${player.NUMÉRO}</p>
-            <p>Durée: ${player.DURÉE}</p>
-            <p>Matchs: ${player.MATCHS}</p>
-            <p>Buts: ${player.BUTS || "N/A"}</p>
-        `;
+            <div class="carousel-buts">
+                <p class="small-title green">${player.BUTS || "Gardien"}</p>
+                <p class="stat-name"><span class="green">NOMBRE DE</span> BUT </p>
+            </div>
+            <div class="carousel-coupes">
+                <p class="small-title green">999</p>
+                <p class="stat-name"><span class="green">NOMBRE DE</span> COUPE </p>
+            </div>
+            <div class="carousel-taille">
+                <p class="small-title green">${player.TAILLE}</p>
+                <p class="stat-name"><span class="green">TAILLE EN</span> M </p>
+            </div>
+        </div>
+    `;
+
+		carouselItem.addEventListener("click", handleCarouselItemClick);
+
+		return carouselItem;
 	}
+	carouselItem.innerHTML = `
+        <img class= "carte-img" src="img/cartes/${
+			player.CARTE
+		}.png" alt="Photo de ${player.NOM}" />
+        <h1 style="display : none">${player.NOM}</h1>
+        <div class="carousel-grid">
+            <div class="carousel-matchs">
+                <p class="small-title green">${player.MATCHS}</p>
+                <p class="stat-name"><span class="green">NOMBRE DE</span> MATCH </p>
+            </div>
+            <div class="carousel-buts">
+                <p class="small-title green">${player.BUTS || "Gardien"}</p>
+                <p class="stat-name"><span class="green">NOMBRE DE</span> BUT </p>
+            </div>
+            <div class="carousel-coupes">
+                <p class="small-title green">999</p>
+                <p class="stat-name"><span class="green">NOMBRE DE</span> COUPE </p>
+            </div>
+            <div class="carousel-taille">
+                <p class="small-title green">${player.TAILLE}</p>
+                <p class="stat-name"><span class="green">TAILLE EN</span> M </p>
+            </div>
+        </div>
+    `;
 
 	carouselItem.addEventListener("click", handleCarouselItemClick);
 
@@ -160,7 +228,7 @@ document
 			".carousel-item.selected"
 		);
 		const selectedPlayerName =
-			selectedPlayer.querySelector("h2").textContent;
+			selectedPlayer.querySelector("h1").textContent;
 		console.log(selectedPlayerName);
 		document.getElementById(selectedPlayerId).textContent =
 			selectedPlayerName;
