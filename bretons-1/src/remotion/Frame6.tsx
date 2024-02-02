@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import videoPath from '/img/animation/annimation crèpe_1.mp4';
 import './Frame6.css';
-import SvgFrame6 from './SvgFrame6'; // Assurez-vous que le chemin d'importation est correct
 
 export const Frame6: React.FC = () => {
   const [compteur, setCompteur] = useState(0);
@@ -34,7 +33,6 @@ export const Frame6: React.FC = () => {
           Votre navigateur ne supporte pas la balise vidéo.
         </video>
         <div className="compteurContainer_frame6" style={{ fontSize: "10vh", bottom: '145vh' }}>
-        <SvgFrame6 />
           {valeurAffichee}
         </div>
       </div>
