@@ -1,4 +1,4 @@
-import OffcanvasExample from '../components/Navbar'
+import NavbarT from '../components/Navbar'
 import VideoList from '../components/VideoListItem'
 import Ratio from 'react-bootstrap/Ratio';
 import './MySave.css'
@@ -9,7 +9,7 @@ export default function MySave() {
             <Ratio aspectRatio="9x16">
                 <div className="container">
                     <div className="head">
-                        <OffcanvasExample />
+                        <NavbarT />
                     </div>
                     <div className="main_video">
                         <div className='titresave'>

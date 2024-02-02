@@ -75,7 +75,7 @@ export const Frame4: React.FC<{ Gentilé: string, rang:number, Epreuve: string, 
     }, []);
     return (
       <div className='containerText_f4'>
-        <p className='animatedtext bold'>Prouesses !</p>
+        <p className='animatedtext bold'>Prouesse !</p>
         <br></br>
         <p className='animatedtext bold'>{sexe === 'F' ? 'La' : 'Le'} {Gentilé}</p><p className='animatedtext'> remporte la </p><p className='animatedtext bold'>{rangToMedaille(rang)}</p><p className='animatedtext'> en </p><p className='animatedtext bold'>{Epreuve} {getSexe(sexe)} {getImage(Sport)}</p>
       </div>

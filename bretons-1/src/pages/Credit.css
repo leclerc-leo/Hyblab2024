@@ -1,0 +1,24 @@
+/* CreditPage.css */
+.credit-container {
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .credit-logos {
+    display: flex;
+    animation: scrollCredits 20s linear infinite;
+  }
+  
+  .credit-logos img {
+    margin-right: 20px; /* Ajustez selon l'espace entre les logos */
+  }
+  
+  @keyframes scrollCredits {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
