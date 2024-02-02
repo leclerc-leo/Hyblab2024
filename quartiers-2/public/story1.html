@@ -5,10 +5,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
   <title>Hyblab 2023</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/loadingio/loading.css@v2.0.0/dist/loading.css" />
     <link rel="stylesheet" href="css/story.css" />
+    <link rel="stylesheet" href="css/story1.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/loadingio/loading.css@v2.0.0/dist/loading.css" />
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
@@ -16,50 +16,84 @@
 <body>
     <!-- Le conteneur sert à verrouiller les proportions (aspect ratio) du contenu de la page (ici des slides) -->
       <div class="content">
-          <!-- image header deventure -->
-          <img src="img/devanture.png" id="header-deventure">
 
-          <!-- image de la personne -->
-          <img src="img/jean-bonbeur.png" id="illu-personne">
-          <h1 id="name-initiative">Story 1</h1>
+          <!-- header -->
+          <img src="1-la-commune/img/claude.svg" class="head-person">
+          <h1 class="name-person">Librairie La Commune</h1>
+
+          <!-- texte Lorem -->
+          <div class="first">
+              <p class="text-initiative">
+                  Un petit local sur lequel est floqué le nom « La Commune » est situé au 17 rue de Châteaudun. Un terme qui fait référence à de violentes manifestations contre le gouvernement en place, en 1870. Ces événements sont rapidement devenus les emblèmes historiques des mouvements libertaires, des mouvements révolutionnaires et de tous les mouvements favorables à une démocratie directe. Des idéaux qui ont traversé les époques et les murs de cette librairie rennaise.
+              </p>
+          </div>
+
 
           <!-- audio file -->
-          <audio controls>
-              <source src="audio/jean-bonbeur.mp3" type="audio/mpeg">
+          <audio controls class="audio-div">
+              <source src="1-la-commune/audio/La-commune-1.mp3" type="audio/mpeg">
               Your browser does not support the audio element.
           </audio>
 
-          <!-- image d'illustration -->
-          <img src="img/illustration.png" id="illu-initiative">
+          <p class="text-initiative">
+              Dans ce petit local où les étagères de livres s’entremêlent, plusieurs réunions y sont organisées. Elles sont appelées « causeries populaires ». Un groupe de personnes s’y retrouve et discute à propos d’un livre qui a été présenté puis critiqué. Certains sont habitués, d’autres ne sont que de passage pour questionner l’actualité.
+          </p>
 
-          <!-- texte Lorem -->
-          <p id="text-initiative">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl vitae nisl. Sed euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl vitae nisl. Sed euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl vitae nisl. Sed euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl vitae nisl. Sed euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl vitae nisl. Sed euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nisl vitae nisl.
+          <!-- audio file -->
+          <audio controls class="audio-div">
+              <source src="1-la-commune/audio/La-commune-2.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+          </audio>
+
+          <p class="text-initiative">
+              À l'arrière de la boutique, une grande armoire pleine à craquer laisse dépasser quelques feuilles de couleurs. Il s’agit d'affiches fraîchement imprimées que les adhérents vont pouvoir coller sur les murs.
+          </p>
+
+          <!-- audio file -->
+          <audio controls class="audio-div">
+              <source src="1-la-commune/audio/La-commune-3.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+          </audio>
+
+          <p class="text-initiative">
+              Et c’est toujours dans une ambiance conviviale et avec un état d’esprit solidaire que la petite librairie garde son objectif en tête : atteindre une société « empreinte de liberté ».
           </p>
 
           <!-- question finale -->
-          <div id="question">
+          <div class="question">
               <p>Connaissais-tu ce lieu / personne ?</p>
-              <img class="yesButton" src="img/bouton_oui.svg">
-              <img class="noButton" src="img/bouton_non.svg">
+              <div class="question-buttons">
+                <div class="noButton"><object data="./img/boutons/bouton_non.svg" type="image/svg+xml"></object></div>
+                <div class="yesButton"><object data="./img/boutons/bouton_oui.svg" type="image/svg+xml"></object></div>
+              </div>
           </div>
 
+
           <!-- motion vidéo qui tourne en boucle -->
-          <video autoplay muted loop id="myVideo">
-              <source src="img/loop.mp4" type="video/mp4">
+          <video class="map-motion" playsinline loop muted autoplay>
+              <source src="1-la-commune/videos/zoom_map_librairie_la_commune.mp4" type="video/mp4" >
           </video>
 
-          <!-- bouton lien vers google maps -->
-          <button type="submit">Voir sur Google Maps</button>
-
-          <!-- bouton lien vers site web -->
-          <button type="submit">Voir le site web</button>
+          <div class="link-buttons">
+              <div class="link-buttons-img">
+                  <a target="_blank" href="https://www.google.com/maps/place/local+libertaire+%22La+Commune%22/@48.1115294,-1.6661136,17z/data=!3m1!4b1!4m6!3m5!1s0x480edf5c8f478afd:0x4b17773367e94451!8m2!3d48.1115294!4d-1.6661136!16s%2Fg%2F11jm5lp9v7?hl=fr&entry=ttu">
+                    <img class="lienMaps"  src="img/boutons/bouton_lien_google_map.svg">
+                  </a>
+                  <a target="_blank" href="">
+                      <img class="lienSite" src="img/boutons/bouton_lien_site.svg">
+                  </a>
+              </div>
+          </div>
 
           <!-- boutons swipe -->
-          <div id="nav-buttons">
+          <div class="nav-buttons">
+              <div class="hidden-previous">
+                  <img src="img/marie.svg" alt="Marie">
+                  <img src="img/arrow.svg" alt="left button" class="left-arrow">
+            </div>
               <div class="next">
                   <img src="img/marie.svg" alt="Marie">
-                  <img src="img/arrow.svg" alt="right button" id="right-arrow">
+                  <img src="img/arrow.svg" alt="right button" class="right-arrow">
               </div>
           </div>
       </div>

@@ -5,44 +5,171 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     background-color: #FAE6D7;
 }
 
 /* code propre à la page */
-#name-initiative {
-    margin-top: 4vh;
-    font-size: 0.3em;
+.name-person {
+    margin-top: 3%;
+    margin-bottom: 3%;
+    font-size: 0.75em;
     font-weight: bold;
     text-align: center;
-    margin-bottom: 2.5vh;
     color: black;
+    font-family: 'AlwaysInMyHeart','Montserrat', sans-serif;
 }
 
-#text-initiative{
-    color: black;
-    font-size: 0.3em;
+.head-person{
+    margin-top: 5%;
+    width: 40%;
+    height: auto;
 }
 
-#question{
-    color: black;
-    font-size: 0.2em;
-}
-#nav-buttons{
-    display: flex;
-    justify-content: space-between;
-    cursor: pointer;
+.name-person {
+    margin-top: 10%;
 }
 
-.previous, .next {
-    display: flex;
-    align-items: center;
+.first{
+    border: 2px solid black;
+    width: 85%;
 }
 
-#nav-buttons img {
-    height: 100%;
+.first p {
+    color: white;
+    width: 80%;
+}
+
+/* audio */
+.audio-div{
+    margin-top: 5%;
+    width: 80%;
+    height: auto;
+}
+
+.illu-initiative{
     width: 100%;
 }
 
-#right-arrow {
+.text-initiative{
+    color: black;
+    font-size: 0.3em;
+    width: 80%;
+    margin: 4%;
+}
+
+.question{
+    color: black;
+    font-size: 0.2em;
+    display: flex;
+    flex-direction: column;
+    margin: 8.5%;
+}
+
+.question p{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.question-buttons{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5%;
+}
+
+.question-buttons img{
+    width: 40%;
+    height: auto;
+}
+
+/* map motion */
+.map-motion{
+    width: 70%;
+    height: auto;
+    margin-top: 5%;
+    border: 1px solid black;
+}
+
+/* boutons */
+.link-buttons{
+    color: black;
+    font-size: 0.2em;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    cursor: pointer;
+}
+
+.link-buttons-img{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5%;
+}
+
+.link-buttons-img a {
+    width: 40%;
+    height: auto;
+}
+
+.link-buttons-img img{
+    width: 100%;
+    height: auto;
+}
+
+/*nav buttons*/
+.nav-buttons{
+    display: flex;
+    cursor: pointer;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.question-buttons div  {
+    height: auto;
+    width: 30%;
+    cursor: pointer;
+    z-index: 6000;
+    position: relative;
+}
+
+
+.previous, .next {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 50%;
+    height: auto;
+}
+
+.previous{
+    justify-content: start;
+}
+
+.next{
+    justify-content: end;
+}
+
+.hidden-previous{
+    visibility: hidden;
+    width: 50%;
+    cursor: none;
+}
+
+.next img{
+    right: 0.25em;
+    bottom: 0;
+    width: 25%;
+    margin: 2%;
+}
+
+.previous img{
+    left: 0.25em;
+    bottom: 0;
+    width: 25%;
+    margin: 2%;
+}
+
+.right-arrow {
     transform: rotate(180deg);
 }

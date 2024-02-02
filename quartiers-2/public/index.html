@@ -5,7 +5,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
   <title>Hyblab 2023</title>
-  <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/home_page.css">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/loadingio/loading.css@v2.0.0/dist/loading.css" />
@@ -16,12 +15,16 @@
   <script src="js/index.js" defer></script>
 </head>
 <body>
+    <section id="loader">
+      <div id="loader-img" class="ld ld-ring ld-cycle"></div>
+      <p id="loader-text">Veuillez patienter...</p>
+    </section>
     <!-- Le conteneur sert à verrouiller les proportions (aspect ratio) du contenu de la page (ici des slides) -->
     <div id="container">
       <!-- Le loader-->
       <section id="motion">
-        <video id="motion-img" alt="Description du GIF" autoplay muted>
-          <source src="./img/animation_logo.mp4" type="video/mp4">
+        <video id="motion-img" alt="Description du GIF" playsinline loop muted autoplay>
+          <source src="videos/animation_logo.mp4" type="video/mp4">
           Votre navigateur ne prend pas en charge la balise vidéo.
         </video>
       </section>

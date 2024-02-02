@@ -20,26 +20,51 @@ main{
     text-align: center;
     margin-bottom: 2.5vh;
     color: black;
+    position: absolute;
+    top: 0;
+    left: 25%;
+    right: 25%;
+    z-index: 5;
 }
 
-#stories{
+#mainSwiperHomeStories{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 0.5em;
+    height: 100% !important;
+    z-index: 6;
+}
+#mainSwiperHomeStories div{
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 0.5em;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
 }
-#stories img{
-    width: 32%;
+#mainSwiperHomeStories .devanture{
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
 }
 
+#mainSwiperHomeStories .swiper-slide{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
 
 /* Swiper slider. Need to fill the container */
-#mySwiper{
+#mySwiper, #swiperHomeStories{
     position: absolute;
     z-index: 5;
     top: 0;
     width: 100%;
-    height:100%;
+    height: 100%;
     overflow: inherit;
 }
 .swiper-wrapper{
@@ -49,22 +74,39 @@ main{
 
 /* the slides and the loader should fill the whole 9:16 zone */
 .swiper-wrapper section{
-    background-color: dodgerblue;
     width: 100%;
     height: 100%;
 }
 .swiper-slide{
     width: 100%;
+}
+.swiper-slide .devanture-slide{
+    width: 100%;
+    height: auto;
+    position: relative;
+}
 
+/* personnage */
+.swiper-slide .devanture-slide .personnage{
+    height: 40%;
+    width: auto;
+    z-index: 2000;
+    position: absolute;
+    top: 9em;
 }
 
 #recap_button{
     width: 20%;
     cursor: pointer;
+    position: absolute;
+    z-index: 100;
 }
 
 
-#bandeau {
+footer {
+    position: absolute;
+    bottom: 0;
+    z-index: 6;
     margin-top: 5%;
     width:100%;
     background-color: #FCF3EC;
@@ -74,13 +116,13 @@ main{
 }
 
 
-#bandeau p{
+footer p{
     color: black;
     display: flex;
     justify-content: center;
 }
 
-#bandeau p:first-child{
+footer p:first-child{
     color: black;
     display: flex;
     justify-content: center;
@@ -88,10 +130,47 @@ main{
     font-weight: bold;
 }
 
-#bandeau p:last-child{
+footer p:last-child{
     color: black;
     display: flex;
     justify-content: center;
     margin-top: 10px;
     padding-bottom: 15px;
+}
+#swipe_invite_left{
+    position: absolute;
+    top: 45%;
+    left: 10px;
+    height: 8%;
+    width: 8%;
+    z-index: 6;
+    cursor: pointer;
+    transition: opacity 0.5s ease-in-out;
+}
+#swipe_invite_left img{
+    width: 100%;
+}
+
+#swipe_invite_right{
+    position: absolute;
+    top: 45%;
+    right: 10px;
+    height: 8%;
+    width: 8%;
+    z-index: 6;
+    cursor: pointer;
+    transition: opacity 0.5s ease-in-out;
+}
+#swipe_invite_right img{
+    width: 100%;
+    transform: rotate(180deg);
+}
+#loading{
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: red;
+    z-index: 99999;
 }
