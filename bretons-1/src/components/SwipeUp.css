@@ -23,3 +23,16 @@
     bottom: 30vh;
   }
   
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  
+  .swipe-up-message.fade-out {
+    animation: fadeOut 2s forwards; /* 2s是淡出动画的持续时间，可以根据需要调整 */
+  }
+  
