@@ -29,6 +29,9 @@ export type Event = {
 export type Video = {
   id: string;
   title: string;
+  sport: string,
+  gain: string,
+  text: string,
   subtitle: string;
   srcPhoto: string;
   description: string;

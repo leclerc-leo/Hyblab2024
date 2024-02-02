@@ -22,10 +22,13 @@ const athleteVideosData = allAthletesData.map((athlete: Athlete) => {
 
   const videosForAthlete = athleteEvents.map((event: EventDataItem) => ({
     id: event.IdEvent.toString(),
+    sport: event.Sport,
+    gain: event.Gain,
     title: event.Athlete,
     subtitle: event.Epreuve,
     srcPhoto: athlete.Photo,
     description: event.Performance,
+    text: "",
   }));
 
   return videosForAthlete;
@@ -75,8 +78,11 @@ function CardCarousel({ video }: VideoListItemProps) {
         alt="PlayButton"
         onClick={() => handlePlayClick(video.id)}
       />
-      <img className={`overlay-image ${isFavorited ? 'saveyellow' : ''}`} src="/bretons-1/img/GoldMedal.png" alt="Overlay" />
-      <Card.Body>
+      <img
+        className={`overlay-image ${isFavorited ? 'saveyellow' : ''}`}
+        src={video.gain === "" ? "/bretons-1/img/Eliminate.svg" : `/bretons-1/img/${video.gain}.svg`}
+        alt="Overlay"
+      />
         <div className="image-row">
           <img
             className="BicycleLogo"
@@ -96,7 +102,6 @@ function CardCarousel({ video }: VideoListItemProps) {
             onClick={() => handleImageClick('ShareLogo')}
           />
         </div>
-      </Card.Body>
     </Card>
   );
 }

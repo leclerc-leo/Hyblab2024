@@ -19,6 +19,9 @@ const athleteVideosData = allAthletesData.map((athlete: Athlete) => {
   const videosForAthlete = athleteEvents.map((event: EventDataItem) => ({
     id: event.IdEvent.toString(),
     title: event.Athlete,
+    sport: event.Sport,
+    gain: event.Gain,
+    text: event.Performance,
     subtitle: event.Epreuve,
     srcPhoto: athlete.Photo,
     description: event.Performance,
@@ -66,7 +69,7 @@ function VideoListItem({ video }: VideoListItemProps) {
         <div className="video-info">
           <h4>{video.title}</h4>
           <h5>{video.subtitle}</h5>
-          <p>{video.description}</p>
+          <p>{video.text}</p>
         </div>
       </div>
       <FavoriteVideosManager videoId={video.id} />
