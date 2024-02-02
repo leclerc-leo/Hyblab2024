@@ -2,7 +2,7 @@
   max-width: 450px;
   width: auto;
   border-radius: 5%;
-  height: 90%;
+  padding: 0;
 }
 
 .app h1 {
@@ -54,3 +54,8 @@
 .carousel-caption p {
   font-size: 1em;
 }
+
+.app .carousel{
+  margin-top: 0px;
+}
+
