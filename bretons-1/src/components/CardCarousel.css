@@ -2,20 +2,13 @@
     position: relative;
   }
  
-  .image-container {
+.image-container {
     position: relative;
   }
 
-  .custom-image {
-    width: 80%; 
-    height: auto; 
-  }
-  
-  
-  .image-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.image-container .custom-image {
+    width: 100%; 
+    height: auto;
   }
   
   .carousel_main .carousel-indicators [data-bs-target] {
@@ -50,10 +43,6 @@
     z-index:2;
 }
 
-  .custom-image {
-    width: 100%;
-    height: auto;
-  }
   
   .overlay-image {
     position: absolute;
@@ -67,7 +56,7 @@
 
   .card_text {
     position: absolute;
-    bottom: -20px;
+    bottom: 40px;
     left: 0;
     width: 100%;
     padding: 0px 0px 15px 10px ;
@@ -82,6 +71,8 @@
     align-items: center;
     flex-shrink: 0;
     z-index: 5;
+    position: relative;
+    bottom: 40px;
   }
   
   

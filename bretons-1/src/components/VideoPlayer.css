@@ -22,3 +22,7 @@
 .boutonRetour > span {
     margin: 30px;
 }
+
+.head > .navbar {
+    background-color: transparent !important;
+}

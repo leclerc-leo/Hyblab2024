@@ -34,6 +34,6 @@
   }
   
   .swipe-up-message.fade-out {
-    animation: fadeOut 2s forwards; /* 2s是淡出动画的持续时间，可以根据需要调整 */
+    animation: fadeOut 1s forwards; /* 1s */
   }
   
