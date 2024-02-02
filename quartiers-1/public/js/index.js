@@ -49,7 +49,10 @@ const swiper = new Swiper("#quartiers-swiper", {
 
 // Fonction permettant de remettre tous les quartiers en gris
 function resetMapColor() {
-    document.querySelectorAll("#rennes_map path").forEach(function(path) {
+    document.querySelectorAll(".shadow_map").forEach(function(path) {
+        path.style.fill = "#EDBDBF";
+    });
+    document.querySelectorAll(".quartier_map").forEach(function(path) {
         path.style.fill = "#FFFFFF";
     });
 }
@@ -57,7 +60,8 @@ function resetMapColor() {
 // On actualise la couleur du quartier sélectionné
 swiper.on("slideChange", function () {
     resetMapColor();
-    document.querySelector('path[data-no_slide="' + swiper.realIndex + '"]').style.fill = "#E35D5D";
+    document.querySelector('path[data-no_slide_shadow="' + swiper.realIndex + '"]').style.fill = "#AA2E33";
+    document.querySelector('path[data-no_slide="' + swiper.realIndex + '"]').style.fill = "#D74F50";
 });
 
 
