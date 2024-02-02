@@ -1,0 +1,97 @@
+<!doctype html>
+
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <title>Hyblab 2023</title>
+  <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/story.css" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/loadingio/loading.css@v2.0.0/dist/loading.css" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+</head>
+<body>
+    <!-- Le conteneur sert à verrouiller les proportions (aspect ratio) du contenu de la page (ici des slides) -->
+      <div class="content">
+
+              <img src="4-paris-rennes/img/marie.svg" class="head-person">
+              <h1 class="name-person">Restaurant les Bavardes</h1>
+
+          <!-- texte Lorem -->
+          <p class="text-initiative">
+            L’association rennaise Pari-Rennes a été créée en 1996. Plus de vingt ans après, Marie Duperray fait tout pour garder en vie les travaux de son ancienne présidente, Marie-Élise Meffray. Un des piliers de cette association qui garde dans un coin de sa tête le moment de sa création. 
+          </p>
+
+          <!-- audio file -->
+          <audio controls class="audio-div">
+              <source src="4-paris-rennes/audio/pari-rennes-pt1.mp3" type="audio/mp3">
+              Your browser does not support the audio element.
+          </audio>
+
+          <p class="text-initiative">
+            Depuis sa fondation, les membres du groupe aiment se retrouver pour partager de bons moments. En semaine ou le week-end, l’ambiance est chaleureuse et festive. Ici, les adhérents se sentent comme chez eux.
+          </p>
+
+          <!-- audio file -->
+          <audio controls class="audio-div">
+              <source src="4-paris-rennes/audio/pari-rennes-pt2.mp3" type="audio/mp3">
+              Your browser does not support the audio element.
+          </audio>
+
+          <p class="text-initiative">
+            Aujourd’hui, Pari-Rennes propose de multiples activités qui ont pour objectif de créer des liens. Certaines sont ouvertes à tous : le ciné club, le club lecture et la balade du dimanche. Au total, l’association compte 61 fidèles adhérents, la plupart retraités. Pour eux, Pari-Rennes propose des activités comme le yoga ou des ateliers mémoires animés par Marie. ENCADRÉ : Alzheimer touche 8 % des Français de plus de 65 ans selon les chiffres de la fondation Vaincre Alzheimer. 
+          </p>
+
+          <!-- audio file -->
+          <audio controls class="audio-div">
+              <source src="4-paris-rennes/audio/pari-rennes-pt3.mp3" type="audio/mp3">
+              Your browser does not support the audio element.
+          </audio>
+
+          <p class="text-initiative">
+            Pari-Rennes, c’est avant tout une grande famille d’entraide en plein cœur du Thabor. 
+          </p>
+
+          <!-- question finale -->
+          <div class="question">
+              <p>Connaissais-tu ce lieu / personne ?</p>
+              <div class="question-buttons">
+                <div class="noButton"><object data="./img/boutons/bouton_non.svg" type="image/svg+xml"></object></div>
+                <div class="yesButton"><object data="./img/boutons/bouton_oui.svg" type="image/svg+xml"></object></div>
+              </div>
+          </div>
+
+
+          <!-- motion vidéo qui tourne en boucle -->
+          <video autoplay muted loop class="map-motion">
+              <source src="4-paris-rennes/video/zoom_pari_rennes.mp4" type="video/mp4">
+          </video>
+
+          <div class="link-buttons">
+              <div class="link-buttons-img">
+                  <a href="https://www.google.com/maps/place/Pari-Rennes/@48.1113517,-1.6677568,16.11z/data=!4m6!3m5!1s0x480ede4df99537e9:0x99a93d6dab4a9ce7!8m2!3d48.1125808!4d-1.6642454!16s%2Fg%2F11c5t2yj_6?authuser=0&entry=ttu">
+                    <img class="lienMaps" src="img/boutons/bouton_lien_google_map.svg">
+                  </a>
+                  <a href="">
+                      <img class="lienSite" src="img/boutons/bouton_lien_site.svg">
+                  </a>
+              </div>
+          </div>
+
+          <!-- boutons swipe -->
+          <div class="nav-buttons">
+            <div class="previous">
+                <img src="img/arrow.svg" alt="right button" class="left-arrow">
+                <img src="3-restaurant-les-bavardes/img/marlene_head.svg" alt="Fred">
+            </div>
+              <div class="next">
+                  <img src="img/marie.svg" alt="Christophe">
+                  <img src="img/arrow.svg" alt="right button" class="right-arrow">
+              </div>
+          </div>
+      </div>
+</body>
+</html>
