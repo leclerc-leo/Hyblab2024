@@ -363,7 +363,7 @@ svg.image-histoire, svg.image-jo{
     height: auto;
 }
 
-#histoire-header, #jo-header, #credits-header{
+#histoire-header, #jo-header, #credits-header, #palmares-header{
     position:sticky;
     top: 0;
     padding-top: 60px;
