@@ -5,21 +5,32 @@ import { useNavigate } from 'react-router-dom';
 import './CardCarousel.css';
 import athleteData from '../data/Athlete.json';
 import { Carousel } from 'react-bootstrap';
-import { Athlete, VideoListItemProps } from './type';
-
+import { Athlete, VideoListItemProps, EventDataItem} from './type';
+import EventData from '../data/Event.json';
 
 const allAthletesData = athleteData.Athlete.reduce((allAthletes: Athlete[], athletesArray: Athlete[]) => {
   return allAthletes.concat(athletesArray);
 }, []);
 
-const athleteVideosData = allAthletesData.map((athlete: Athlete) => ({
-  id: athlete.Athlete,
-  title: athlete.Athlete,
-  subtitle: athlete.Epreuve,
-  srcPhoto: athlete.Photo,
-  description: athlete.Performance,
-}));
+const athleteVideosData = allAthletesData.map((athlete: Athlete) => {
+  const allEventsData: EventDataItem[] = (EventData.Event.flat() as EventDataItem[]);
 
+
+  const athleteEvents = allEventsData.filter((event: EventDataItem) => event.Athlete === athlete.Athlete);
+
+  const videosForAthlete = athleteEvents.map((event: EventDataItem) => ({
+    id: event.IdEvent.toString(),
+    sport: event.Sport,
+    gain: event.Gain,
+    title: event.Athlete,
+    subtitle: event.Epreuve,
+    srcPhoto: athlete.Photo,
+    description: event.Performance,
+    text: "",
+  }));
+
+  return videosForAthlete;
+}).flat();
 
 function CardCarousel({ video }: VideoListItemProps) {
   const [isFavorited, setIsFavorited] = useState(false);
@@ -35,9 +46,9 @@ function CardCarousel({ video }: VideoListItemProps) {
     console.log(`Image "${imageName}" cliquée !`);
   };
 
-  const handlePlayClick = (imageName: string) => {
-    console.log(`Image "${imageName}" cliquée !`);
-    navigate('VideoPlayer', { state: { id: imageName } })
+  const handlePlayClick = (id: string) => {
+    console.log(`Image "${id}" cliquée !`);
+    navigate('VideoPlayer', { state: { id: id } })
   };
 
   const handleFavoriteClick = () => {
@@ -53,20 +64,23 @@ function CardCarousel({ video }: VideoListItemProps) {
   return (
     <Card className="custom-card" style={{ width: '15rem' }}>
       <div className="image-container">
-        <Card.Img className="custom-image" variant="top" src="/bretons-1/img/sportif_velo.jpeg" />
+        <Card.Img className="custom-image" variant="top" src={video.srcPhoto}  />
         <div className='card_text'>
-            <h4>{video.title}</h4>
-            <p>{video.subtitle}</p>
+          <h4>{video.title}</h4>
+          <p>{video.subtitle}</p>
         </div>
       </div>
       <img
         className="PlayButton"
         src="/bretons-1/img/Play_button.svg"
         alt="PlayButton"
-        onClick={() => handlePlayClick('PlayButton')}
+        onClick={() => handlePlayClick(video.id)}
       />
-      <img className={`overlay-image ${isFavorited ? 'saveyellow' : ''}`} src="/bretons-1/img/GoldMedal.png" alt="Overlay" />
-      <Card.Body>
+      <img
+        className={`overlay-image ${isFavorited ? 'saveyellow' : ''}`}
+        src={video.gain === "" ? "/bretons-1/img/Eliminate.svg" : `/bretons-1/img/${video.gain}.svg`}
+        alt="Overlay"
+      />
         <div className="image-row">
           <img
             className="BicycleLogo"
@@ -86,11 +100,9 @@ function CardCarousel({ video }: VideoListItemProps) {
             onClick={() => handleImageClick('ShareLogo')}
           />
         </div>
-      </Card.Body>
     </Card>
   );
 }
-
 
 function ControlledCarousel() {
   const [videosData] = useState(athleteVideosData);

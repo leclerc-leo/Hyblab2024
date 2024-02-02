@@ -1,12 +1,10 @@
-/* Fichier: styles.css (ou le nom que vous avez choisi) */
-
-/* Styles pour le conteneur de l'application */
 .main_app .app {
   max-width: 450px;
   width: auto;
+  border-radius: 5%;
+  height: 90%;
 }
 
-/* Styles pour le titre de l'application */
 .app h1 {
   color: #333;
 }
@@ -25,9 +23,12 @@
 }
 .head{
   text-align: center;
-  width: 20em;
+  width: 100%;
 }
 
+.ratio .container{
+  --bs-gutter-x: 0;
+}
 .main .ratio {
   position: initial; 
 }
@@ -37,19 +38,19 @@
   height: 49.1px;
   flex-shrink: 0;
 }
-/* Styles pour les captions du carousel */
+
 .carousel-caption {
-  background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent pour les captions */
+  background-color: rgba(0, 0, 0, 0.5);
   padding: 10px;
   color: #fff;
 }
 
-/* Styles pour les titres des slides */
+
 .carousel-caption h3 {
   font-size: 1.5em;
 }
 
-/* Styles pour le texte des slides */
+
 .carousel-caption p {
   font-size: 1em;
 }

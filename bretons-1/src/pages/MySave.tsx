@@ -1,7 +1,7 @@
-import './Home.css';
 import OffcanvasExample from '../components/Navbar'
 import VideoList from '../components/VideoListItem'
 import Ratio from 'react-bootstrap/Ratio';
+import './MySave.css'
 
 export default function MySave() {
     return (
@@ -12,7 +12,7 @@ export default function MySave() {
                         <OffcanvasExample />
                     </div>
                     <div className="main_video">
-                        <div className='titreLike'>
+                        <div className='titresave'>
                             <p className='MySave'>Mes enregistrés</p>
                         </div>
                         <VideoList />

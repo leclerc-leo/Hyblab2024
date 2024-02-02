@@ -1,5 +1,4 @@
 import './Article.css';
-import athleteImage from '../assets/athlete/PONTMARIEBOLOU1.jpg'; // Replace with path to your image
 
 interface ArticleProps {
     title: string;
