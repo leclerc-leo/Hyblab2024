@@ -70,17 +70,17 @@ body{
 
 /* -------------- CSS Commun --------------*/
 #back_button{
-    z-index: 500;
+    z-index: 5000;
     cursor: pointer;
     position: sticky;
-    left : 5%;
-    top: 0;
-    margin-top: 1vh;
-    margin-left: 1vh;
+    left: 5%;
+    top: 5%;
+    width: 100%;
+    display: flex;
 }
 #back_button img{
-    height: 30px;
-    width: 30px;
+    height: 12%;
+    width: 12%;
 }
 
 

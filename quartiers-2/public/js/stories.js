@@ -39,12 +39,23 @@ function changeState(imageId, yesButtons, noButtons) {
 
 const homeStories = function () {
     anime({
-    targets: '#swipe_invite',
+    targets: '#swipe_invite_right',
     scale: 1.1,
     easing: 'easeInOutQuad',
     direction: 'alternate',
     loop: true
   });
+  anime({
+    targets: '#swipe_invite_left',
+    scale: 1.1,
+    easing: 'easeInOutQuad',
+    direction: 'alternate',
+    loop: true
+  });
+
+  let swipe_invite_right = document.querySelector('#swipe_invite_right');
+  let swipe_invite_left = document.querySelector('#swipe_invite_left');
+  swipe_invite_left.style.opacity = '0';
 
   /* Premier slider pour choisir quel story cliquer */
   // Init of the (touch friendly) Swiper slider
@@ -58,8 +69,28 @@ const homeStories = function () {
       allowTouchMove: true, // à mettre en false quand on aura fini de coder pour eviter de swiper
     });
 
-    document.querySelector('#swipe_invite').addEventListener('click', () => {
+    swiperHomeStories.on("slideChange", function () {
+      switch (swiperHomeStories.realIndex) {
+        case 0:
+          swipe_invite_left.style.opacity = '0';
+          break;
+        case 1:
+          swipe_invite_left.style.display = 'block';
+          swipe_invite_left.style.opacity = '1';
+          swipe_invite_right.style.display = 'block';
+          swipe_invite_right.style.opacity = '1';
+          break;
+        case 2:
+          swipe_invite_right.style.opacity = '0';
+          break;
+      }
+    });
+
+    swipe_invite_right.addEventListener('click', () => {
         swiperHomeStories.slideNext();
+    });
+    swipe_invite_left.addEventListener('click', () => {
+        swiperHomeStories.slidePrev();
     });
 
     // on cache le slider au chargement de la page
@@ -170,6 +201,10 @@ const homeStories = function () {
         // on met le z-index du footer à 0
         document.querySelector('footer').style.zIndex = "0";
 
+        // on cache invite_swipe left et right
+        swipe_invite_left.style.display = 'none';
+        swipe_invite_right.style.display = 'none';
+
         // on met la bonne slide active
         swiper.slideToLoop(slideIndex, 0, true);
 
@@ -185,22 +220,16 @@ const homeStories = function () {
         let yesImages = document.querySelectorAll('.yesButton');
         let noImages = document.querySelectorAll('.noButton');
 
-        console.log("yesImages");
-        console.log(yesImages);
-        console.log("noImages");
-        console.log(noImages);
-
         yesImages.forEach((image, index) => {
-          console.log("index : " + index)
-          console.log(image)
+          image.firstChild.contentDocument.querySelector('#bg-color').style.transition = "all 0.2s ease-in-out";
           image.addEventListener('click', function() {
-              console.log('clicked')
               localStorage.setItem('yes' + (index + 1), 'yes');
               changeState('no' + (index + 1), yesImages, noImages);
             });
         });
 
         noImages.forEach((image, index) => {
+          image.firstChild.contentDocument.querySelector('#bg-color').style.transition = "all 0.2s ease-in-out";
               image.addEventListener('click', function() {
                   localStorage.setItem('no' + (index + 1), 'no');
                   changeState('yes' + (index + 1), yesImages, noImages);
@@ -238,6 +267,9 @@ const homeStories = function () {
       document.querySelector('#mySwiper').style.display = 'none';
       // on remet le footer
       document.querySelector('footer').style.zIndex = "6";
-      // on remet l'utilisateur en haut de la page
+
+      // on remet les boutons swipe
+      swipe_invite_left.style.display = 'block';
+      swipe_invite_right.style.display = 'block';
     });
   };
