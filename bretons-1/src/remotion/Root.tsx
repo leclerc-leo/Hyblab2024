@@ -3,6 +3,7 @@ import { Frame1 } from "./Frame1";
 import { Frame2 } from "./Frame2";
 import { Frame3 } from "./Frame3";
 import { Frame4 } from "./Frame4";
+import { Frame5 } from "./Frame5";
 import { Frame6 } from "./Frame6";
 import athleteData from '../data/Athlete.json';
 import { Athlete, EventDataItem} from '../components/type';
@@ -34,6 +35,9 @@ export const MyVideo: React.FC<MyVideoProps> = ({ id }) => {
       </Sequence>
       <Sequence from={600}>
         <Frame3 text={athlete.Athlete}></Frame3>
+      </Sequence>
+      <Sequence>
+        <Frame5 nom="nom" age="Age" taille="Taille" sport="Sport" fun_fact="Fun fact" fun_fact_texte="Fun fact sur l'athlète"></Frame5>
       </Sequence>
       <Sequence from={720}>
         <Frame6 ></Frame6>

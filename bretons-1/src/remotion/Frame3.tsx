@@ -15,32 +15,11 @@ export const Frame3: React.FC<{ text: string }> = ({ text }) => {
           elem!.textContent = "";
           letters = contents.split("");
           elem!.style.visibility = 'visible';
-          let stopImage:string = "";
-          let start = false;
           letters.forEach(function (letter, index_1) {
-            if(letter=="_") {
-              if(stopImage != "") {
-                var image = document.createElement("img");
-                image.src = "/bretons-1/img/"+stopImage;
-                image.style.width = "110px";
-                setTimeout(function () {
-                  elem?.appendChild(image);
-                }, delay_start + delay * index_1);
-                stopImage = "";
-                start = false;
-              } else {
-                start = true;
-              }
-            } else {
-              if(start) {
-                stopImage += letter;
-              } else {
-                setTimeout(function () {
-                  elem!.append(letter);
-                }, delay_start + delay * index_1);
-              }
-            }
-          });    
+            setTimeout(function () {
+              elem!.append(letter);
+            }, delay_start + delay * index_1);
+            });    
           delay_start += delay * letters.length;
         }, 2000)
     }, []);
