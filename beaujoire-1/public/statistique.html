@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width initial-scale=1.0" />
+    <title>Le 11 de légende</title>
+    <link rel="icon" href="img/logo.svg" />
+    <link rel="stylesheet" href="./css/statistique.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/tor7tnx.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo-container"></div>
+      <div class="buttons">
+        <button id="blason" title="blason"></button>
+        <div class="player-selection">
+            % DE SÉLECTION <br> <div class = 'e'> DES JOUEURS</div> 
+          </div>
+                  <button id="maillot" title="maillot"></button>
+      </div>
+      <div class="field">
+        <div class="player-card">
+            <!-- Goalkeeper -->
+            <div
+              class="player player-clickable goalkeeper"
+              id="goalkeeper"
+              style="top: 90%; left: 10%"
+            ></div>
+            <div class="bar">
+                <div class="bar-inner goalkeeper" data-percent="g%"></div>
+              </div>
+  
+            <!-- Forward Line (3 players) -->
+            <div
+              class="player player-clickable forward"
+              id="ailier-gauche"
+              style="top: 75%; left: 10%"
+            ></div>
+            <div class="bar">
+                <div class="bar-inner ailier-gauche" data-percent="ag%"></div>
+              </div>
+            <div
+              class="player player-clickable forward"
+              id="attaquant-centre"
+              style="top: 60%; left: 10%"
+            ></div>
+
+            <div class="bar">
+                <div class="bar-inner attaquant-centre" data-percent="att-centre%"></div>
+              </div>
+            <div
+              class="player player-clickable forward"
+              id="ailier-droit"
+              style="top: 45%; left: 10%"
+            ></div>
+            <div class="bar">
+                <div class="bar-inner ailier-droit" data-percent="ail-d%"></div>
+              </div>
+  
+            <!-- Midfield Line (3 players) -->
+            <div
+              class="player player-clickable midfielder"
+              id="midfielder-1"
+              style="top: 30%; left: 10%"
+            ></div>
+            <div class="bar">
+                <div class="bar-inner midfielder-1" data-percent="mid-1%"></div>
+              </div>
+            <div
+              class="player player-clickable midfielder"
+              id="midfielder-lead"
+              style="top: 15%; left: 10%"
+            ></div>
+            <div class="bar">
+                <div class="bar-inner midfielder-lead" data-percent="mid-lead%"></div>
+              </div>
+            <div
+              class="player player-clickable midfielder"
+              id="midfielder-3"
+              style="top: 90%; left: 90%"
+            ></div>
+            <div class="bar">
+                <div class="bar-inner midfielder-3" data-percent="mid-3%"></div>
+              </div>
+  
+            <!-- Defensive Line (4 players) -->
+            <div
+              class="player player-clickable defender"
+              id="arriere-gauche"
+              style="top: 75%; left: 90%"
+            ></div>
+            <div class="bar">
+                <div class="bar-inner arriere-gauche" data-percent="arr-g%"></div>
+              </div>
+            <div
+              class="player player-clickable defender"
+              id="defender-2"
+              style="top: 60%; left: 90%"
+            ></div>
+            <div class="bar">
+                <div class="bar-inner defender-2" data-percent="def-2%"></div>
+              </div>
+            <div
+              class="player player-clickable defender"
+              id="defender-3"
+              style="top: 45%; left: 90%"
+            ></div>
+            <div class="bar">
+                <div class="bar-inner defender-3" data-percent="def-3%"></div>
+              </div>
+            <div
+              class="player player-clickable defender"
+              id="arriere-droit"
+              style="top: 30%; left: 90%"
+            ></div>
+            <div class="bar">
+                <div class="bar-inner arriere-droit" data-percent="arr-d%"></div>
+              </div>
+            <div
+              class="player player-clickable Entraineur"
+              id="Entraineur"
+              style="top: 15%; left: 90%"
+            ></div>
+            <div class="bar">
+                <div class="bar-inner Entraineur" data-percent="coach%"></div>
+              </div>
+          </div>
+      </div>
+      </div>
+    </div>
+
+     <div class="buttons-container">
+        
+          <a href="field.html">
+            <button class="gm-btn gb-shutter">LES 11 DE LA RÉDACTION</button>
+          </a>
+          <div class="bouton-stat">
+            <button class="gm-btn gb-shutter">STATISTIQUES</button>
+          </div>
+        </div>
+  </body>
+  <script src="./js/field.js"></script>
+</html>
