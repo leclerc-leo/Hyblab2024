@@ -426,15 +426,28 @@ svg.image-histoire, svg.image-jo{
     justify-content: center;
     background-size: cover; 
     background-repeat: no-repeat;
+    background-position: center;
 }
 
-.card-titre{
+.card-titre, .card-texte {
     margin: 2% 0 2% 0;
     padding: 2%;
     color: rgba(255, 216, 179, 0.9);
     border: #E47754 solid 1px ;
     background-color: #E47754;
     border-radius: 15px;
+    max-width: 80%;
+}
+
+.card-titre {
+    position: absolute;
+    top: 15px;
+}
+
+.card-texte {
+    position: absolute;
+    bottom: 15px;
+    opacity: 90%;
 }
 
 .actif {
