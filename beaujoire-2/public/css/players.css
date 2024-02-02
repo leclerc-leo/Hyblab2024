@@ -1,165 +1,111 @@
-/*
-.swiper-wrapper {
-    background-color: var(--bg-green);
+#container{
+  margin-left: 0; /* reset margin-left */
+  width: 100vw; /* content is full width (and full height because of the default rule for container height */
+}
+
+body{
+  font-size: 8vw;
+  color: #fff;
+}
+
+.swiper-wrapper{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+
+  background-color: var(--bg-green);
 }
 
 .bio-player{
-
-    box-sizing: border-box;
-    width : 100% ; 
-    max-width : 500px ; 
-    height : 100% ; 
-    max-height: 700px ; 
-    margin: 20px;
-    padding: 0;
-  
+  width: 6em;
+  margin: 0.28em auto;
+  text-align: center;
   border: 3px solid var(--yellow);
   border-radius: 8px;
-  
-  background-color : transparent ; 
-  color: white;
-
-  text-align: left;
-  font-family: 'Arial', sans-serif;
-
-  position: absolute;
-  top : 15% ;
-  left : 10% ; 
-
-  overflow: hidden;
-  text-align: center;
-
-  line-height: 0.9; 
 }
 
-.background-text {
-  color: var(--green);
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size:200px;
-  white-space: nowrap;
-  font-family: "Abolition";
+.background-text{
+  position: relative;
   z-index: -1;
+  height: 0;
+  font-size: 2.1em;
+  line-height: 0.9em;
+  color: var(--green);
 }
 
-.bio-player img {
-  width: 60%;
-  height : 60% ; 
-  object-fit:contain;
+.avatar{
+  width: 4.4em;
+  margin-top: 0.36em;
+  object-fit: contain;
 }
 
-.fullname {
-  color: #fff;
+.background-text, .fullname, .infos p {
   font-family: "Abolition";
-  
 }
 
-.overlay-firstname {
-  position: absolute;
-  top: 7%;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-size: 50px;
+.overlay-firstname{
+  position: relative;
+  height: 0;
+  bottom: 1.17em;
+  font-size: 1.3em;
 }
 
-.lastname {
-  margin-bottom: 40px;
-  font-size: 90px;
-  line-height: 0; 
+.lastname{
+  position: relative;
+  bottom: 0.25em;
+  font-size: 1.1em; 
 }
 
-
-.display-bio {
-  position: absolute; 
-      bottom: 30%; 
-      right: 0; 
-      width: 80px;
-      padding: 10px;
-      z-index: 2;
+.display-bio{
+  position: relative;
+  z-index: 2;
+  height: 0;
+  left: 2.6em;
+  bottom: 2.4em;
 }
 
+.display-bio img{
+  width: 0.6em;
+}
 
-.bio-player .icons {
-  flex: 1;
-  display: flex;
-  margin-top: 0;
-  padding-top: 0;
-  padding-bottom: 0;
-  height: 70px;
-  width: 100%;
-  margin-bottom: 0 ;
+.icons{
   background-color: var(--green);
-  box-sizing: border-box;
 }
 
-
-.like {
-  height: 150px;
-  width: 150px;
-  padding-top: 0;
-  cursor: pointer;
-  display:flex;
-  justify-content: center;
+.icons > * {
+  display: inline-block;
+  width: 20%;
 }
 
-.icons > img {
-  display: block;
-  margin: 0;
-  height: 150px;
+.infos img{
+  height: 0.5em;
+  object-fit: contain;
 }
-
-
-.infos {
-  height:inherit;
-  width: 90px;
-  padding: 10px;
-  display:flexbox;
-  justify-content: center; 
-  align-items: center;
-}
-
-
-.infos .flags {
-  display:flex;
-  justify-content: center; 
-  align-items: center;
-
-}
-
-.flags > img {
-  height: 25px;
-  padding-bottom: 10%;
-}
-
-
-.infos > img{
-  display: block;
-  padding-left: 20%;
-  padding-bottom: 5%;
-  height: 30px;
-}
-
 
 .infos p{
-  font-family: "Abolition";
-  font-size: 20px;
+  font-size: 0.33em;
+  margin: inherit;
+  text-align: inherit;
+  color: inherit;
 }
 
+.flags > img{
+  display: block;
+  margin: 0 auto;
+  width: 0.5em;
+  height: inherit;
+}
 
-.bio-player .icons-text {
-  padding: 15px;
-  text-align: center;
-  font-size: 20px;
+.like > img{
+  width: 1.35em;
+}
+
+.icons-text{
+  padding: 0.6rem;
+  text-align: left;
+  font-size: 0.27em;
   font-family: "Neue Haas Unica";
 }
-*/
 
 /* Fill the whole viewport when its aspect ratio is between 9/16 and 3/4 */
 @media screen and (max-aspect-ratio: 3/4) {
@@ -168,115 +114,12 @@
       width: 100vw; /* content is full width (and full height because of the default rule for container height */
   }
 
-  /* We set a default font size here. It will be the base for all other font sizes */
-  /* Here the font size is proportional to content width */
   body{
       font-size: 15vw;
   }
 
-  .swiper-wrapper{
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-
-    background-color: var(--bg-green);
-  }
-
-  .bio-player{
-    width: 6em;
-    margin: 0.28em;
-    border: 3px solid var(--yellow);
-    border-radius: 8px;
-    text-align: center;
-    overflow-x: clip;
-    overflow-y: scroll;
-  }
-
-  .background-text{
-    font-family: "Abolition";
-    color: var(--green);
-    font-size: 2.1em;
-    line-height: 0.9em;
-    position: relative;
-    z-index: -1;
-    height: 0;
-  }
-
-  .avatar{
-    width: 4.4em;
-    object-fit: contain;
-    margin-top: 0.36em;
-  }
-  
-  .fullname {
-    color: #fff;
-    font-family: "Abolition"; 
-  }
-
-  .overlay-firstname{
-    position: relative;
-    bottom: 1.15em;
-    font-size: 1.3em;
-    height: 0;
-  }
-
-  .lastname{
-    font-size: 1.1em;
-    position: relative;
-    bottom: 0.25em;
-  }
-
-  .display-bio{
-    position: relative;
-    left: 2.6em;
-    z-index: 2;
-    bottom: 2.4em;
-    height: 0;
-  }
-
-  .display-bio img{
-    width: 0.6em;
-  }
-
-  .icons{
-    background-color: var(--green);
-  }
-
-  .icons > * {
-    display: inline-block;
-    width: 20%;
-  }
-
-  .infos img{
-    height: 0.5em;
-    object-fit: contain;
-  }
-
   .infos p{
-    font-family: "Abolition";
-    font-size: 0.33em;
-
-    margin: inherit;
-    color: inherit;
-    text-align: inherit;
-  }
-
-  .flags > img{
-    display: block;
-    margin: 0 auto;
-    width: 0.5em;
-    height: inherit;
-  }
-
-  .like > img{
-    width: 1.35em;
-  }
-
-  .icons-text{
-    padding: 0.6rem;
-    text-align: left;
-    font-size: 0.9rem;
-    font-family: "Neue Haas Unica";
+    font-size: 0.36em;
   }
 }
 
@@ -288,117 +131,11 @@
       margin-top: calc(-50 * 16vw / 9); /* move the content half the height to the top */
       top:50%; /* then center it ! */
       height: calc(100 * 16vw / 9); /* adjust height so that aspect ratio is 9/16 */
+      position: absolute;
   }
 
-  /* We set a default font size here. It will be the base for all other font sizes */
-  /* Here the font size is proportional to content width */
   body{
       font-size: 15vw;
-  }
-
-  .swiper-wrapper{
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-
-    background-color: var(--bg-green);
-  }
-
-  .bio-player{
-    width: 6em;
-    margin: 0.28em;
-    border: 3px solid var(--yellow);
-    border-radius: 8px;
-    text-align: center;
-    overflow-x: clip;
-    overflow-y: scroll;
-  }
-
-  .background-text{
-    font-family: "Abolition";
-    color: var(--green);
-    font-size: 2.1em;
-    line-height: 0.9em;
-    position: relative;
-    z-index: -1;
-    height: 0;
-  }
-
-  .avatar{
-    width: 4.4em;
-    object-fit: contain;
-    margin-top: 0.36em;
-  }
-  
-  .fullname {
-    color: #fff;
-    font-family: "Abolition"; 
-  }
-
-  .overlay-firstname{
-    position: relative;
-    bottom: 1.15em;
-    font-size: 1.3em;
-    height: 0;
-  }
-
-  .lastname{
-    font-size: 1.1em;
-    position: relative;
-    bottom: 0.25em;
-  }
-
-  .display-bio{
-    position: relative;
-    left: 2.6em;
-    z-index: 2;
-    bottom: 2.4em;
-    height: 0;
-  }
-
-  .display-bio img{
-    width: 0.6em;
-  }
-
-  .icons{
-    background-color: var(--green);
-  }
-
-  .icons > * {
-    display: inline-block;
-    width: 20%;
-  }
-
-  .infos img{
-    height: 0.5em;
-    object-fit: contain;
-  }
-
-  .infos p{
-    font-family: "Abolition";
-    font-size: 0.36em;
-
-    margin: inherit;
-    color: inherit;
-    text-align: inherit;
-  }
-
-  .flags > img{
-    display: block;
-    margin: 0 auto;
-    width: 0.5em;
-    height: inherit;
-  }
-
-  .like > img{
-    width: 1.35em;
-  }
-
-  .icons-text{
-    padding: 0.6rem;
-    text-align: left;
-    font-size: 0.9rem;
-    font-family: "Neue Haas Unica";
   }
 }
 
