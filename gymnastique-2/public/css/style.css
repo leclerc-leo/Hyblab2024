@@ -397,12 +397,9 @@ svg.image-histoire, svg.image-jo{
     justify-content: center;
     text-align: center;
 }
-#palmares-page #palmares-logo {
-    margin-top : 20px;
-}
 #palmares-page #titre-palmares {
     color: #482E49;
-    margin: 5% auto 0 auto;
+    margin: 2.5% auto 0 auto;
     font-size: 4vh;
 }
 #palmares-page .image-titre{
@@ -412,11 +409,11 @@ svg.image-histoire, svg.image-jo{
 }
 .card-container {
     width: 80vw;
-    height: 10vh;
+    height: 15vh;
     max-height: 10%;
     max-width: 80%;
     perspective: 90vw;
-    margin: 5% 10% 5% 10%;
+    margin: 2.5% 10% 2.5% 10%;
 }
 .flipcard {
     transform: rotateY(180deg);
@@ -441,13 +438,13 @@ svg.image-histoire, svg.image-jo{
 .card-front,
 .card-back {
     display: table;
-    height: 100%;
     width: 100%;
-    border-radius: 2rem;
+    height: 100%;
     border-style: solid;
     border-color: #E47754;
     position: absolute;
     backface-visibility: hidden;
+    border-radius: 10px;
 }
 
 .card-front {

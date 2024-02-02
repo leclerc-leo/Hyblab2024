@@ -10,4 +10,4 @@ document.querySelectorAll('.card-container').forEach(card_container =>{
             card_container.children[0].classList.toggle("flipcard");
         }
     });
-})
+});
