@@ -1,8 +1,8 @@
+import './CardCarousel.css';
 import Card from 'react-bootstrap/Card';
 import { FavoriteButton } from './Fav_nav';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './CardCarousel.css';
 import athleteData from '../data/Athlete.json';
 import { Carousel } from 'react-bootstrap';
 import { Athlete, VideoListItemProps, EventDataItem } from './type';
@@ -62,7 +62,7 @@ function CardCarousel({ video }: VideoListItemProps) {
   };
 
   return (
-    <Card className="custom-card" style={{ width: '15rem' }}>
+    <Card className="custom-card">
       <div className="image-container">
         <Card.Img className="custom-image" src={video.srcPhoto} />
         <div className='card_text'>
@@ -111,7 +111,7 @@ function ControlledCarousel() {
   const [videosData] = useState(athleteVideosData);
 
   return (
-    <Carousel className="carousel_main" style={{ width: '15rem' }} indicators={true} controls={false}>
+    <Carousel className="carousel_main" indicators={true} controls={false}>
       {videosData.map(video => (
         <Carousel.Item key={video.id}>
           <CardCarousel key={video.id} video={video} />
