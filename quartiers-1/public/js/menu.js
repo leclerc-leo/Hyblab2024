@@ -7,13 +7,10 @@ closeBtn.onclick = closeNav;
 
 /* Set the width of the side navigation to 250px */
 function openNav() {
-  sidenav.style.display = "block";
   sidenav.classList.add("active");
 }
 
 /* Set the width of the side navigation to 0 */
 function closeNav() {
-  sidenav.classList.remove("active");
-  sidenav.style.display = "none";
-  
+  sidenav.classList.remove("active"); 
 }

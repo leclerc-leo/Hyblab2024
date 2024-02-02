@@ -1,14 +1,6 @@
 /* Burger Menu */
 /* Sidenav menu */
 
-#titre {
-    position: absolute;
-    top:0;
-    left: 45%;
-    font-size: 22px;
-    color: #111;
-}
-
 #mySidenav p {
     color: #818181;
 }
@@ -24,8 +16,6 @@
     padding-top: 60px;
     transition: left 0.5s ease;
     overflow-y: scroll;
-    display: none;
-    /* visibility: hidden; */
 }
 
 /* Sidenav menu links */
