@@ -380,12 +380,6 @@ svg.image-histoire, svg.image-jo{
     height: auto;
 }
 
-.logo-licence{
-    width: 20%;
-    height: auto;
-    vertical-align: middle;
-}
-
 #credits-chemin1{
     position: fixed;
     top: 0;
@@ -394,6 +388,17 @@ svg.image-histoire, svg.image-jo{
 
 #credits-chemin2{
     width: 40%;
+}
+
+#credits-chemin4{
+    width: 40%;
+}
+
+#credits-chemin3{
+    width: 10%;
+    position: absolute;
+    left: 15%;
+    margin-top: 5%;
 }
 
 .credits-list{
@@ -410,9 +415,19 @@ svg.image-histoire, svg.image-jo{
     padding: 0;
 }
 
-.credits-list > li > p, .credits-list > li > img, .credits-list > li > div{
+.credits-list > li > .credits-list-content{
     width: 90%;
     margin: 0;
     padding: 10px;
     height: auto;
+}
+
+.credits-list-license{
+    margin: 0 auto;
+}
+
+.logo-licence{
+    width: 20%;
+    height: auto;
+    vertical-align: middle;
 }
