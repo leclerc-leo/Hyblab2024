@@ -10,7 +10,7 @@
 
 body {
   background-color: black;
-  color: white;
+  color: rgb(0, 0, 0);
   overflow: hidden; /* to avoid slider bugs on some browsers */
   font-family: sans-serif;
 }
@@ -106,11 +106,14 @@ main > section {
 #second-slide .popup {
   display: none;
   position: absolute;
+  background-image: url("../img/pop-48.svg");
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: 100%;
   width: 80%;
   height: 80%;
   top: 10%;
   left: 10%;
-  background-color: rgb(255, 177, 68);
   z-index: 3;
   overflow: hidden;
   border-radius: 20px;
@@ -118,14 +121,13 @@ main > section {
   transform: scale(0.8);
   transition: all 0.3s ease-in-out;
 }
-
 #second-slide .popup.show {
   opacity: 1;
   transform: scale(1);
 }
 
-#second-slide .popup-content {
-  background-color: rgb(255, 177, 68);
+  #second-slide .popup-content {
+  /* background-color: rgb(255, 177, 68); */
   width: 100%;
   height: 100%;
   overflow: auto;
@@ -133,8 +135,8 @@ main > section {
   flex-direction: column;
   align-items: center;
   position: relative;
-  font-family: "Roboto";
-}
+  font-family: "Poppins";
+} 
 #second-slide .popup-content h2 {
   font-size: clamp(20%,1em,40%);
   word-wrap: break-word;
@@ -289,6 +291,6 @@ body {
   }
 }
 svg {
-  height: 100vh;
+  max-height: 100vh;
   width: unset;
 }

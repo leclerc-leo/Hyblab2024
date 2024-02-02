@@ -16,7 +16,7 @@ const closePopup = (name) => {
 };
 
 const clickOutsidePopup = (name, event) => {
-  const popup = document.getElementById(name);
+  let popup = document.getElementById(name);
   if (!popup.contains(event.target) && popup.classList.contains("show")) {
     closePopup(name);
   }
