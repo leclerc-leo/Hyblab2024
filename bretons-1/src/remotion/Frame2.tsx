@@ -5,7 +5,11 @@ import frSvg from '/img/fr.svg';
 import top2Svg from '/img/top2.svg';
 import allemagneSvg from '/img/allemagne.svg';
 import top3Svg from '/img/top3.svg';
+import AngleterreSvg from '/img/Angleterre.svg';
+import DanemarkSvg from '/img/Danemark.svg';
+import Pays_BasSvg from '/img/Pays-Bas.svg';
 import usSvg from '/img/us.svg';
+import SuèdeSvg from '/img/Suède.svg';
 import { Podium } from '../components/type';
 
   
@@ -16,6 +20,10 @@ import { Podium } from '../components/type';
             case 'France': return frSvg;
             case 'Allemand': return allemagneSvg;
             case 'État-Unis': return usSvg;
+            case 'Angleterre': return AngleterreSvg;
+            case 'Danemark': return DanemarkSvg;
+            case 'Pays_Bas': return Pays_BasSvg;
+            case 'Suède': return SuèdeSvg;
             // Ajoutez d'autres pays et leurs drapeaux ici
             default: return ''; // Image de drapeau par défaut ou gestion des cas non trouvés
           }
