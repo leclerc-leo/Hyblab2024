@@ -23,7 +23,9 @@ app.get('/quartiers', (req, res) => {
 app.get('/reportages', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'reportages.html'));
 });
-
+app.get('/menu', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'menu.html'));
+});
 // This module is exported and served by the main server.js located
 // at the root of this set of projects. You can access it by lanching the main
 // server and visiting http(s)://127.0.0.1:8080/name_of_you_project/ (if on a local server)
