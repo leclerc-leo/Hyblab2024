@@ -2,7 +2,8 @@ const hide_block = (block, button) => {
     block.style.width = '0';
     block.style.height = '0';
     block.style.bottom = button.style.bottom;
-    block.style.left = button.style.left;
+    if (block.style.left != '') block.style.left = button.style.left;
+    if (block.style.right != '') block.style.right = button.style.right;
     block.style.overflow = 'hidden';
     block.style.borderRadius = '50%';
     block.style.opacity = '0';
@@ -63,23 +64,17 @@ const move_background = (x, b = false) => {
     background.style.left = `${left}px`;
 }
 
-const handle_orientation = (event) => {    
-    document.querySelectorAll('.background-move-high').forEach( element => {
-        const maxY = 30;
-        const y = Math.min(event.gamma, 90) + 90;
-        const left = `${(maxY * y) / 180 - maxY}px`;
-        element.style.left = left;
-    });
-    document.querySelectorAll('.background-move-med').forEach( element => {
-        const maxY = 20;
-        const y = Math.min(event.gamma, 90) + 90;
-        const left = `${(maxY * y) / 180 - maxY}px`;
-        element.style.left = left;
-    });
-    document.querySelectorAll('.background-move-low').forEach( element => {
-        const maxY = 10;
-        const y = Math.min(event.gamma, 90) + 90;
-        const left = `${(maxY * y) / 180 - maxY}px`;
-        element.style.left = left;
-    });
+const handle_orientation = (event) => { 
+    const y = Math.min(event.gamma, 90) + 90;
+    const maxs = {
+        'high': 30,
+        'med': 20,
+        'low': 10
+    }
+
+    for (const [key, max] of Object.entries(maxs)) {
+        document.querySelectorAll(`.background-move-${key}`).forEach( element => {
+            element.style.left = `${(max * y) / 180 - max}px`;
+        });
+    }
 }
