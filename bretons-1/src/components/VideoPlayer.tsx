@@ -3,9 +3,6 @@ import { useState, useEffect } from 'react';
 import { Player } from "@remotion/player";
 import { MyVideo } from "../remotion/Root";
 import SwipeUp from './SwipeUp';
-import athleteData from '../data/Athlete.json';
-import { Athlete, EventDataItem} from './type';
-import EventData from '../data/Event.json';
 import Article from './Article';
 import OffcanvasExample from '../components/Navbar'
 
