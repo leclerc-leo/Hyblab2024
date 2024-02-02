@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import './CardCarousel.css';
 import athleteData from '../data/Athlete.json';
 import { Carousel } from 'react-bootstrap';
-import { Athlete, VideoListItemProps, EventDataItem} from './type';
+import { Athlete, VideoListItemProps, EventDataItem } from './type';
 import EventData from '../data/Event.json';
 
 const allAthletesData = athleteData.Athlete.reduce((allAthletes: Athlete[], athletesArray: Athlete[]) => {
@@ -64,29 +64,29 @@ function CardCarousel({ video }: VideoListItemProps) {
   return (
     <Card className="custom-card" style={{ width: '15rem' }}>
       <div className="image-container">
-        <Card.Img className="custom-image" src={video.srcPhoto}  />
+        <Card.Img className="custom-image" src={video.srcPhoto} />
         <div className='card_text'>
           <h4>{video.title}</h4>
           <p>{video.subtitle}</p>
         </div>
         <div className="image-row" style={{ zIndex: 5 }}>
-          <img
-            className="BicycleLogo"
-            src="/bretons-1/img/Bicycle_logo.svg"
-            alt="Bicycle"
-            onClick={() => handleImageClick('BicycleLogo')}
-          />
-          <FavoriteButton
-            isFavorited={isFavorited}
-            onClick={handleFavoriteClick}
-            buttonId={favoriteButtonId}
-          />
-          <img
-            className="ShareLogo"
-            src="/bretons-1/img/Share_logo.svg"
-            alt="Share"
-            onClick={() => handleImageClick('ShareLogo')}
-          />
+            <img
+              className="BicycleLogo"
+              src="/bretons-1/img/Bicycle_logo.svg"
+              alt="Bicycle"
+              onClick={() => handleImageClick('BicycleLogo')}
+            />
+              <FavoriteButton
+                isFavorited={isFavorited}
+                onClick={handleFavoriteClick}
+                buttonId={favoriteButtonId}
+              />
+            <img
+              className="ShareLogo"
+              src="/bretons-1/img/Share_logo.svg"
+              alt="Share"
+              onClick={() => handleImageClick('ShareLogo')}
+            />
         </div>
       </div>
       <img
