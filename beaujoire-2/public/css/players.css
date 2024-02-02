@@ -1,161 +1,126 @@
+#container{
+  margin-left: 0; /* reset margin-left */
+  width: 100vw; /* content is full width (and full height because of the default rule for container height */
+}
 
-.swiper-wrapper {
-    background-color: var(--bg-green);
+body{
+  font-size: 8vw;
+  color: #fff;
+}
+
+.swiper-wrapper{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+
+  background-color: var(--bg-green);
 }
 
 .bio-player{
-
-    box-sizing: border-box;
-    width : 100% ; 
-    max-width : 500px ; 
-    height : 100% ; 
-    max-height: 700px ; 
-    margin: 20px;
-    padding: 0;
-  
+  width: 6em;
+  margin: 0.28em auto;
+  text-align: center;
   border: 3px solid var(--yellow);
   border-radius: 8px;
-  
-  /* Background and text color */
-  background-color : transparent ; 
-  color: white;
-  
-  /* Text alignment and font styles */
-  text-align: left;
-  font-family: 'Arial', sans-serif;
-
-  /* positioning */
-  position: absolute;
-  top : 15% ;
-  left : 10% ; 
-
-  /* Centering */
-  overflow: hidden;
-  text-align: center;
-
-  line-height: 0.9; 
 }
 
-.background-text {
-  color: var(--green);
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size:200px;
-  white-space: nowrap;
-  font-family: "Abolition";
+.background-text{
+  position: relative;
   z-index: -1;
+  height: 0;
+  font-size: 2.1em;
+  line-height: 0.9em;
+  color: var(--green);
 }
 
-.bio-player img {
-  width: 60%;
-  height : 60% ; 
-  object-fit:contain;
+.avatar{
+  width: 4.4em;
+  margin-top: 0.36em;
+  object-fit: contain;
 }
 
-.fullname {
-  color: #fff;
+.background-text, .fullname, .infos p {
   font-family: "Abolition";
-  
 }
 
-.overlay-firstname {
-  position: absolute;
-  top: 7%;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-size: 50px;
+.overlay-firstname{
+  position: relative;
+  height: 0;
+  bottom: 1.17em;
+  font-size: 1.3em;
 }
 
-.lastname {
-  margin-bottom: 40px;
-  font-size: 90px;
-  line-height: 0; 
+.lastname{
+  position: relative;
+  bottom: 0.25em;
+  font-size: 1.1em; 
 }
 
-
-.display-bio {
-  position: absolute; 
-      bottom: 30%; 
-      right: 0; 
-      width: 80px;
-      padding: 10px;
-      z-index: 2;
+.display-bio{
+  position: relative;
+  z-index: 2;
+  height: 0;
+  left: 2.6em;
+  bottom: 2.4em;
 }
 
-.bio-player .icons {
-  flex: 1;
-  display: flex;
-  margin-top: 0;
-  padding-top: 0;
-  padding-bottom: 0;
-  height: 70px;
-  width: 100%;
-  margin-bottom: 0 ;
+.display-bio img{
+  width: 0.6em;
+}
+
+.icons{
   background-color: var(--green);
-  box-sizing: border-box;
 }
 
-
-.like {
-  height: 150px;
-  width: 150px;
-  padding-top: 0;
-  cursor: pointer;
-  display:flex;
-  justify-content: center;
+.icons > * {
+  display: inline-block;
+  width: 20%;
 }
 
-.icons > img {
-  display: block;
-  margin: 0;
-  height: 150px;
-}
-
-.infos {
-  height:inherit;
-  width: 90px;
-  padding: 10px;
-  display:flexbox;
-  justify-content: center; 
-  align-items: center;
-}
-
-.infos .flags {
-  display:flex;
-  justify-content: center; 
-  align-items: center;
-
-}
-
-.flags > img {
-  height: 25px;
-  padding-bottom: 10%;
-}
-
-.infos > img{
-  display: block;
-  padding-left: 20%;
-  padding-bottom: 5%;
-  height: 30px;
+.infos img{
+  height: 0.5em;
+  object-fit: contain;
 }
 
 .infos p{
-  font-family: "Abolition";
-  font-size: 20px;
+  font-size: 0.33em;
+  margin: inherit;
+  text-align: inherit;
+  color: inherit;
 }
 
-.bio-player .icons-text {
-  padding: 15px;
-  text-align: center;
-  font-size: 20px;
+.flags > img{
+  display: block;
+  margin: 0 auto;
+  width: 0.5em;
+  height: inherit;
+}
+
+.like > img{
+  width: 1.35em;
+}
+
+.icons-text{
+  padding: 0.6rem;
+  text-align: left;
+  font-size: 0.27em;
   font-family: "Neue Haas Unica";
+}
+
+/* Fill the whole viewport when its aspect ratio is between 9/16 and 3/4 */
+@media screen and (max-aspect-ratio: 3/4) {
+  #container{
+      margin-left: 0; /* reset margin-left */
+      width: 100vw; /* content is full width (and full height because of the default rule for container height */
+  }
+
+  body{
+      font-size: 15vw;
+  }
+
+  .infos p{
+    font-size: 0.36em;
+  }
 }
 
 /* The content is displayed at 9/16 If the aspect ratio is higher that 9/16  */ 
@@ -166,22 +131,11 @@
       margin-top: calc(-50 * 16vw / 9); /* move the content half the height to the top */
       top:50%; /* then center it ! */
       height: calc(100 * 16vw / 9); /* adjust height so that aspect ratio is 9/16 */
+      position: absolute;
   }
 
-  /* We set a default font size here. It will be the base for all other font sizes */
-  /* Here the font size is proportional to content width */
   body{
       font-size: 15vw;
   }
-
-  p{
-      margin: 0.8em;
-      font-size: 5vw;
-      color: black;
-      text-align: justify;
-  }
-
-  i{
-      font-size: 6.5vw;
-  }
 }
+
