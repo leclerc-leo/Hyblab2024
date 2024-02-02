@@ -31,7 +31,7 @@ function VideoPlayer({ id }: { id: string }) {
             <Player
                 component={MyVideo}
                 inputProps={{ id: id }}
-                durationInFrames={1000}
+                durationInFrames={1140}
                 compositionWidth={1080}
                 compositionHeight={1920}
                 fps={60}
