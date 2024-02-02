@@ -56,14 +56,18 @@ body {
   height: 100%;
 }
 
-svg {
-  height: 100vh;
-  width: unset;
+/* Most of the elements in this demo are absolute positioned with percentages */
+#second-slide header,
+#second-slide header {
+  text-align: center;
+  width: 100%;
+  top: 10%;
+  position: absolute;
+  font-size: 30%;
+  z-index: 2;
 }
 
-
 #logo-hyblab {
-  display: none;
   text-align: center;
   width: 50%;
   left: 50%; /* center the logo, in interaction with the negative margin-left */
@@ -85,16 +89,16 @@ svg {
   top: 40%;
   position: absolute;
   margin-left: -35%; /* this is half the width */
-  margin-top: calc(   -25% * 9 / 16 ); /* margins are relative to the element width... :-( */
+  margin-top: calc(
+    -25% * 9 / 16
+  ); /* margins are relative to the element width... :-( */
 }
 
-#second-slide {
-  background-color: rgb(0, 0, 0);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+main > section {
+  background-color: white;
+  background-size: 100% auto; /* background is full width and height is proportional to width */
+  background-position: bottom; /* background is bottom aligned */
 }
-
 
 
 
@@ -102,7 +106,7 @@ svg {
 #second-slide .popup {
   display: none;
   position: absolute;
-  width: 80%; /* 80% of the slide width */      
+  width: 80%;
   height: 80%;
   top: 10%;
   left: 10%;
@@ -123,76 +127,56 @@ svg {
 #second-slide .popup-content {
   background-color: rgb(255, 177, 68);
   width: 100%;
-  height: 80%;
+  height: 100%;
   overflow: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   position: relative;
-  text-align: center;
+  font-family: "Roboto";
 }
-
+#second-slide .popup-content h2 {
+  font-size: clamp(20%,1em,40%);
+  word-wrap: break-word;
+  max-width: 40%;
+  line-height: 1em;
+  position: relative;
+  text-align: left;
+  top: 5%;
+  margin-bottom: 0.45em;
+  right: 20%;
+}
+#second-slide .popup-content img {
+  position: absolute;
+  width: 20%;
+  right: 0%;
+  /* margin: 5%; */
+  top: 0%;
+}
 #second-slide .popup-content p {
-  font-size: 0.5em;
-  line-height: 0.5em;
   word-wrap: break-word;
   max-width: 100%;
-  line-height: 1em;
+  line-height: 1.2em;
+  margin-left: 5%;
+  margin-right: 5%;
+  position: relative;
+  font-size: clamp(10%,0.7em,25%);
+  margin-top: 12%;
 }
-
-#second-slide .close {
-  color: #000000;
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 28px;
-  font-weight: bold;
+#second-slide .Retour {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 4% 6%;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 2em;
 }
-
 #second-slide .close:hover,
 #second-slide .close:focus {
   color: black;
   text-decoration: none;
   cursor: pointer;
-}
-
-.swiper-slide {
-    overflow: hidden;
-}
-
-#Sac :hover {
-    fill: red;
-}
-
-#photo :hover {
-    fill: yellow;
-}
-#algerie :hover {
-    fill: blue;
-}
-
-#medaille :hover {
-    fill: green;
-}
-#coupe :hover {
-    fill: red;
-}
-
-#cupcake :hover {
-    fill: pink;
-}
-
-#manique :hover {
-    fill: purple;
-}
-
-#gourde :hover {
-    fill: orange;
-}
-
-#tel :hover {
-    fill: greenyellow;
 }
 
 /* ---------- Positioning of logos on the last slide -------------------- */
@@ -289,6 +273,13 @@ body {
     height: calc(
       100 * 16vw / 9
     ); /* adjust height so that aspect ratio is 9/16 */
+    body {
+      font-size:15vw;
+    }
+    #second-slide h2 {
+      font-size: 0.6em;
+    }
+   
   }
 
   /* We set a default font size here. It will be the base for all other font sizes */
@@ -296,4 +287,8 @@ body {
   body {
     font-size: 15vw;
   }
+}
+svg {
+  height: 100vh;
+  width: unset;
 }
