@@ -1,0 +1,90 @@
+/* This file is to use for all the pages of our project (include it in all html files) =D !! */
+*{
+  padding:0;
+  margin:0;
+}
+/** colors **/
+/* Defining the colors used through the app here as variables */
+/* use : color : var(--bg-green) */
+:root {
+    --bg-green :#009E49 ;
+    --yellow: #F7EF24 ;
+    --green : #17853C ; 
+    --field-green : #64BF7C ; 
+}
+/** colors **/
+
+/** fonts **/
+@font-face {
+    font-family: 'Abolition';
+    src: url('../fonts/Abolition-W00-Regular.ttf') format('truetype');
+  }
+@font-face {
+    font-family: 'Neue Haas Unica';
+    src: url('../fonts/NeueHaasUnicaPro-Regular.ttf') format('truetype');
+  }
+/** fonts **/
+
+
+/* ---------- Important media queries for easy responsive content :-) ----------------- */
+/* Whatever the device used, the content will be displayed full width and height if      */
+/* the aspect ratio is between 3/4 and 9/16. If not it is locked to either 3/4 or 9/16  */
+
+/* We set a default font size here. It will be the base for all other font sizes */
+/* Here the font size is proportional to content width */
+body{
+  font-size: calc(15vh * 3 / 4);
+}
+
+/* Fill the whole viewport when its aspect ratio is between 9/16 and 3/4 */
+@media screen and (max-aspect-ratio: 3/4) {
+  #container{
+      margin-left: 0; /* reset margin-left */
+      width: 100vw; /* content is full width (and full height because of the default rule for container height */
+  }
+
+  /* We set a default font size here. It will be the base for all other font sizes */
+  /* Here the font size is proportional to content width */
+  body{
+      font-size: 15vw;
+  }
+
+  p{
+      margin: 0.8em;
+      font-size: 5vw;
+      color: black;
+      text-align: justify;
+  }
+
+  i{
+      font-size: 6.5vw;
+  }
+}
+
+/* The content is displayed at 9/16 If the aspect ratio is higher that 9/16  */ 
+@media screen and (max-aspect-ratio: 9/16) {
+  #container{
+      margin-left: 0; /* reset left margin */
+      width: 100vw;   /* content is full width */
+      margin-top: calc(-50 * 16vw / 9); /* move the content half the height to the top */
+      top:50%; /* then center it ! */
+      height: calc(100 * 16vw / 9); /* adjust height so that aspect ratio is 9/16 */
+  }
+
+  /* We set a default font size here. It will be the base for all other font sizes */
+  /* Here the font size is proportional to content width */
+  body{
+      font-size: 15vw;
+  }
+
+  p{
+      margin: 0.8em;
+      font-size: 5vw;
+      color: black;
+      text-align: justify;
+  }
+
+  i{
+      font-size: 6.5vw;
+  }
+}

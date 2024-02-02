@@ -51,7 +51,8 @@ ui.get('/list', async (req, res) => {
     });
 });
 
-ui.get('/archive', async (req, res) => {
+ui.get('/archives', async (req, res) => {
+
     res.sendFile(path.join(__dirname, 'public/archive.html'), {
         locals: {
             pageName: 'Archives'
