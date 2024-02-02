@@ -1,0 +1,86 @@
+<!doctype html>
+
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <title>Hyblab 2023</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/loadingio/loading.css@v2.0.0/dist/loading.css" />
+    <link rel="stylesheet" href="css/story.css" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+</head>
+<body>
+    <!-- Le conteneur sert à verrouiller les proportions (aspect ratio) du contenu de la page (ici des slides) -->
+      <div class="content">
+          <!-- header -->
+          <div class="header">
+              <!-- image header devanture -->
+              <img src="7-coeurs-resistants/img/devanture-coeurs-resistants.svg" class="header-devanture" alt="devanture-coeurs-resistants">
+              <img src="7-coeurs-resistants/img/joachim.svg" class="head-person" alt="Joachim">
+              <h1 class="name-person">Cœurs resistans</h1>
+          </div>
+
+          <!-- bouton retour -->
+
+          <p class="text-initiative">
+              Joachim Goater est co-président de Coeurs résistants, une association d’aide alimentaire. Celle-ci distribue 1450 repas chaque semaine que ce soit via les maraudes, directement dans les rues de Rennes, ou le Village alimentaire, situé 4 rue du Bois Perrin et ouvert du lundi au samedi.
+          </p>
+
+          <audio controls class="audio-div">
+              <source src="7-coeurs-resistants/audio/Coeurs-résistants-1.wav" type="audio/mpeg">
+              Your browser does not support the audio element.
+          </audio>
+
+          <p class="text-initiative">
+              Le local, ruelle Faux-Pont, ouvre également ses portes du lundi au jeudi de 14h30 à 18h pour proposer des repas à manger « sur le pouce » ou des activités.
+          </p>
+
+          <audio controls class="audio-div">
+              <source src="7-coeurs-resistants/audio/Coeurs-résistants-2.wav" type="audio/mpeg">
+              Your browser does not support the audio element.
+          </audio>
+
+          <p class="text-initiative">
+              « On a tous besoin de manger, on aime bien en général manger et on peut créer du lien autour de ce besoin-là » souligne Joachim Goater. Si cette idée vous parait juste, l’association est toujours à la recherche de nouveaux bénévoles ou de dons !
+          </p>
+
+          <audio controls class="audio-div">
+              <source src="7-coeurs-resistants/audio/Coeurs-résistants-3.wav" type="audio/mpeg">
+              Your browser does not support the audio element.
+          </audio>
+
+
+          <!-- question finale -->
+          <div class="question">
+              <p>Connaissais-tu ce lieu / personne ?</p>
+              <div class="question-buttons">
+                <div class="noButton"><object data="./img/boutons/bouton_non.svg" type="image/svg+xml">X</object></div>
+                <div class="yesButton"><object data="./img/boutons/bouton_oui.svg" type="image/svg+xml">X</object></div>
+              </div>
+          </div>
+
+          <!-- motion vidéo qui tourne en boucle -->
+          <video autoplay muted loop class="map-motion">
+              <source src="7-coeurs-resistants/video/zoom_coeurs_resistants.mp4" type="video/mp4">
+          </video>
+
+          <!-- bouton lien vers google maps -->
+          <button type="submit">Voir sur Google Maps</button>
+
+          <!-- bouton lien vers site web -->
+          <button type="submit">Voir le site web</button>
+
+          <!-- boutons swipe -->
+          <div class="nav-buttons">
+              <div class="previous">
+                  <img src="img/arrow.svg" alt="right button" class="left-arrow">
+                  <img src="6-association-st-helier-village/img/nicolas-head.svg" alt="Nicolas">
+              </div>
+          </div>
+      </div>
+</body>
+</html>
