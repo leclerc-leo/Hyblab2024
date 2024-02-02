@@ -40,7 +40,7 @@ export const Frame2: React.FC = () => {
                     <span className="time_3_Frame2">Tps : 1 h 32 min 0 s</span>
                     <div className="flag_3_Frame2">
                         <img src={usSvg} alt="US" className="flag_3_Frame2" />
-                        <span className="countryFrame2">État-Unis</span>
+                        <span className="country_3_Frame2">État-Unis</span>
                     </div>
                 </div>
             </div>

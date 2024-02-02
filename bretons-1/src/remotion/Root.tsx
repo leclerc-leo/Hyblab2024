@@ -24,22 +24,22 @@ export const MyVideo: React.FC<MyVideoProps> = ({ id }) => {
   }
   return (
     <>
-      <Sequence from={0} durationInFrames={120}>
+      <Sequence from={0} durationInFrames={360}>
         <Frame1 text={athlete.Athlete} titre={eventData.Rang} sous_titre={eventData.Epreuve}></Frame1>
       </Sequence>
-      <Sequence from={120} durationInFrames={360}>
+      <Sequence from={360} durationInFrames={300}>
         <Frame4 Gentilé={athlete.Gentilé} rang={eventData.Rang} Epreuve={eventData.Epreuve} sexe={athlete.Sexe} Sport={eventData.Sport}></Frame4>
       </Sequence>
-      <Sequence from={480} durationInFrames={120}>
+      <Sequence from={660} durationInFrames={240}>
         <Frame2></Frame2>
       </Sequence>
-      <Sequence from={600}>
+      <Sequence from={900} durationInFrames={240}>
         <Frame3 text={athlete.Athlete}></Frame3>
       </Sequence>
       <Sequence>
         <Frame5 nom="nom" age="Age" taille="Taille" sport="Sport" fun_fact="Fun fact" fun_fact_texte="Fun fact sur l'athlète"></Frame5>
       </Sequence>
-      <Sequence from={720}>
+      <Sequence from={1140} durationInFrames={240}>
         <Frame6 ></Frame6>
       </Sequence>
     </>

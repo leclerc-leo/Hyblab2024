@@ -119,7 +119,8 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-left: 200px;
+    margin-left: 225px;
+    margin-top: 25px;
 }
 
 .name_3_Frame2 {
@@ -128,7 +129,7 @@
 }
 
 .time_3_Frame2 {
-    font-size: 40px;
+    font-size: 30px;
     font-weight: 400;
     line-height: 30px;
 }
@@ -136,7 +137,7 @@
     padding-top: 10px;
 }
 .flag_3_Frame2 img { 
-    width: 70px; 
+    width: 50px; 
     height: auto;
 }
 
@@ -145,12 +146,14 @@
     height: auto; /* Cela conservera le ratio d'aspect de l'image */
     position: absolute;
     transform: translateY(-50%);
+    margin-top: 150px;
+    margin-left: 25px;
 }
 
 .country_3_Frame2 {
     position: absolute;
     padding-top: 1px; /* Utilisez margin-top au lieu de padding-top */
-    font-size: 30px;
+    font-size: 40px;
     font-style: normal;
     font-weight: 400;
     margin-left: 20px; /* Marge entre le texte et l'icône du drapeau */
