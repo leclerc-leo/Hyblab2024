@@ -115,9 +115,9 @@ body{
 
 /* Postes spécifiques */
 #poste-1 { /* Gardien */
-    top: 89%;
-    left: 48%;
-    width: 12%;
+    top: 90%;
+    left: 46%;
+    width: 15%;
 }
 
 #poste-2 { /* Arrière latéral droit */
@@ -171,9 +171,9 @@ body{
 }
 
 #poste-12 { /* Sélectionneur */
-    width: 7%;
+    width: 14%;
     top: 12%;
-    left: 49%;
+    left: 47%;
 }
 
 
