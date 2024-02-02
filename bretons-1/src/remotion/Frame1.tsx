@@ -3,15 +3,16 @@ import './Frame1.css';
 import OrSVG from '../assets/img/Or.svg';
 import ArgentSVG from '../assets/img/Argent.svg';
 import BronzeSVG from '../assets/img/Bronze.svg';
+import QualifieSVG from '../assets/img/Qualifie.svg';
 import { useEffect, useState } from 'react';
 
-const determinerTexteTitre = (rang: number) => {
-    switch(rang) {
-        case 1:
+const determinerTexteTitre = (gain: string, rang: number) => {
+    switch(gain) {
+        case "Or":
             return "décroche l'or !";
-        case 2:
+        case "Argent":
             return "décroche l'argent !";
-        case 3:
+        case "Bronze":
             return "décroche le bronze !";
         default:
             return `rang ${rang}`;
@@ -19,24 +20,26 @@ const determinerTexteTitre = (rang: number) => {
 };
 
 
-const determinerImageMedaille = (rang: number) => {
-    switch(rang) {
-      case 1:
+const determinerImageMedaille = (gain: string) => {
+    switch(gain) {
+      case "Or":
         return OrSVG;
-      case 2:
+      case "Argent":
         return ArgentSVG;
-      case 3:
+      case "Bronze":
         return BronzeSVG;
+      case "Qualifie":
+        return QualifieSVG;
       default:
         return null;
     }
   };
   
 
-export const Frame1: React.FC<{ text: string, titre: number, sous_titre: string, image:string }> = ({ text, titre, sous_titre,image }) => {
+export const Frame1: React.FC<{ text: string, gain: string,  rang: number, sous_titre: string, image:string }> = ({ text, gain, rang, sous_titre,image, }) => {
 
-    const titreAdapte = determinerTexteTitre(titre);
-    const cheminImageMedaille = determinerImageMedaille(titre);
+    const titreAdapte = determinerTexteTitre(gain, rang);
+    const cheminImageMedaille = determinerImageMedaille(gain);
     const [_, setIsLoading] = useState(true);
     useEffect(() => {
         setIsLoading(false);
@@ -50,7 +53,7 @@ export const Frame1: React.FC<{ text: string, titre: number, sous_titre: string,
     return (
         <>
             <div className='animationOut'>
-                <img className='medailleTransition' src={determinerImageMedaille(titre)}></img>
+                <img className='medailleTransition' src={determinerImageMedaille(gain)}></img>
             </div>    
             <div className="animationAgrandissement" style={{
                     height: '100%',
