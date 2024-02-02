@@ -39,9 +39,6 @@ function VideoPlayer({ id }: { id: string }) {
                 controls
                 autoPlay
             />
-              <div className='boutonRetour'><span>Retour</span>
-            </div>
-
             {(
           allowSwipe &&(
             <>
