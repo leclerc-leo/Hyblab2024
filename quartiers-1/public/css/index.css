@@ -342,11 +342,44 @@ h1{
 #previous{
     left: 12%;
     transform: translateY(-50%) translateX(-50%) rotate(135deg);
+    animation: animArrowLeft 2s ease-in-out infinite;
 }
 #next{
     right: 12%;
     transform: translateY(-50%) translateX(50%) rotateZ(-45deg);
+    animation: animArrowRight 2s ease-in-out infinite;
 }
+
+@keyframes animArrowLeft{
+    0%{
+        left: 11%
+    }
+
+    50%{
+        left: 13%;
+    }
+
+    100%{
+        left:11%;
+    }
+}
+
+@keyframes animArrowRight{
+    0%{
+        right: 11%;
+    }
+
+    50%{
+        right: 13%;
+    }
+
+    100%{
+        right:11%;
+    }
+}
+
+
+
 #see-quartier{
     position: absolute;
     left: 50%;
@@ -372,7 +405,6 @@ h1{
     background: #E69973;
     border-radius: 100%;
     color: #FFFFFF;
-    border-color: #E69973;
     font-family: 'Nexa', sans-serif;
     font-size: 30%;
     font-weight: 700;
@@ -380,6 +412,7 @@ h1{
     height: 4vw;
     padding-top: 1vw;
     padding-bottom: 1vw;
+    border: none;
 }
 
 /* -------------- End of Quartier Preview --------------*/
