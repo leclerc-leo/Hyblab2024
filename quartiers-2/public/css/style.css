@@ -86,7 +86,8 @@ body{
     height: 100%;   /* even on mobile devices with url or navigation bars */
     margin-left: calc((100vw - 100 * 3vh / 4) / 2); /* Add black bands on left and right */
     width: calc(100 * 3vh / 4); /* Force 3/4 aspect ratio */
-    overflow: scroll;
+    overflow-y: auto; /* add a scrollbar if the content is too long */
+    overflow-x: hidden;
 }
 
 /* We set a default font size here. It will be the base for all other font sizes */
