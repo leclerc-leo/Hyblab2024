@@ -75,3 +75,24 @@ document.addEventListener('DOMContentLoaded', function () {
   // Initial update with the first player list
   updatePlayerList('playerList1', playerLists[0]);
 });
+
+const playerBoxes = document.querySelectorAll("img");
+console.log(playerBoxes);
+console.log(playerBoxes[0]);
+
+playerBoxes.forEach((playerBox) => 
+  playerBox.addEventListener("click", () => downSlide(playerBox))
+);
+
+function downSlide(playerBox){
+  const avatar = playerBox.children[0];
+  const name = playerBox.children[1];
+  const heart = playerBox.children[2];
+  const slider = playerBox.children[3];
+
+  avatar.style["display"] = "none";
+  name.style["display"] = "none";
+  heart.style["display"] = "none";
+  slider.style["display"] = "none";
+  
+};
