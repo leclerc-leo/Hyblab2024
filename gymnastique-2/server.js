@@ -20,11 +20,17 @@ app.use((req, _, next) => {
 });
 
 const convert_to_webp = (content) => {
-    const regex = /<img.*?src=["'](.*?)["']/g;
+    const img_regex = /<img.*?src=["'](.*?)["']/g;
     let m;
     let files = new Set();
-    while ((m = regex.exec(content)) !== null) {
+    while ((m = img_regex.exec(content)) !== null) {
         files.add(m[1]);
+    }
+
+    const background_img_regex = /background-image: url\((.*?)\)/g;
+    m = undefined;
+    while ((m = background_img_regex.exec(content)) !== null) {
+        files.add(m[1].slice(1, -1));
     }
 
     files = [...files].filter( file => file.endsWith('.jpg') || file.endsWith('.png'))
