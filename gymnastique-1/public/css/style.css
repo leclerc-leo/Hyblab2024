@@ -159,7 +159,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
+  }
 
   #first-slide .arrow {
     position: absolute;
@@ -185,7 +185,7 @@ body {
     transform: translateX(-50%);
     z-index: 2;
     rotate: -10deg;
-}
+  }
 }
 
 /* Most of the elements in this demo are absolute positioned with percentages */
@@ -236,14 +236,11 @@ main > section {
 #second-slide .popup {
   display: none;
   position: absolute;
-  width: 80%;
-  height: 80%;
-  top: 10%;
-  left: 10%;
-  background-color: rgb(255, 177, 68);
+  width: 100%;
+  height: 100%;
+  background-color: #386f9c;
   z-index: 3;
   overflow: hidden;
-  border-radius: 20px;
   opacity: 0;
   transform: scale(0.8);
   transition: all 0.3s ease-in-out;
@@ -255,9 +252,8 @@ main > section {
 }
 
 #second-slide .popup-content {
-  background-color: rgb(255, 177, 68);
   width: 100%;
-  height: 80%;
+  height: 100%;
   overflow: auto;
   display: flex;
   flex-direction: column;
@@ -267,28 +263,186 @@ main > section {
   text-align: center;
 }
 
-#second-slide .popup-content p {
-  font-size: 0.5em;
-  line-height: 0.5em;
-  word-wrap: break-word;
-  max-width: 100%;
-  line-height: 1em;
+/* for screen under the 0.65 aspect ratio */
+@media screen and (max-aspect-ratio: 0.65) {
+  #second-slide .popup-content h2 {
+    position: absolute;
+    top: 7%;
+    left: 5%;
+    font-size: 90%;
+    color: #de9b94;
+  }
+
+  #second-slide .popup-content h3 {
+    position: absolute;
+    top: 3%;
+    left: 5.1%;
+    font-size: 50%;
+    color: white;
+    font-weight: 500;
+  }
+
+  #second-slide .popup-content #billet {
+    width: 62%;
+    position: absolute;
+    top: 18%;
+    left: 31%;
+    display: flex;
+  }
+
+  #second-slide .popup-content #bouton-retour {
+    position: absolute;
+    top: 92%;
+    left: 50%;
+    width: 27%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    display: flex;
+  }
+
+  #second-slide .popup-content #fleche {
+    position: absolute;
+    top: 84.3%;
+    left: 8.1%;
+    width: 17%;
+    display: flex;
+  }
+
+  #second-slide .popup-content #facebook {
+    position: absolute;
+    top: 82.3%;
+    left: 60.1%;
+    width: 12%;
+    display: flex;
+  }
+
+  #second-slide .popup-content #instagram {
+    position: absolute;
+    top: 82.3%;
+    left: 76.1%;
+    width: 12%;
+    display: flex;
+  }
+
+  #second-slide .popup-content #cadre {
+    position: absolute;
+    top: 41%;
+    left: 50%;
+    width: 80%;
+    transform: translateX(-50%);
+    display: flex;
+  }
+
+  #second-slide .popup-content p {
+    position: absolute;
+    top: 44%;
+    left: 50%;
+    width: 75%;
+    transform: translateX(-50%);
+    display: flex;
+    font-size: 35%;
+    color: #386f9c;
+    z-index: 3;
+  }
+
+  #second-slide .popup-content #tete2 {
+    position: absolute;
+    top: 20%;
+    left: 0%;
+    width: 30%;
+  }
 }
 
-#second-slide .close {
-  color: #000000;
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 28px;
-  font-weight: bold;
+/* for screen over the 0.65 aspect ratio */
+@media screen and (min-aspect-ratio: 0.65) {
+  
+  #second-slide .popup-content h2 {
+    position: absolute;
+    top: 6.5%;
+    left: 5%;
+    font-size: 80%;
+    color: #de9b94;
+  }
+
+  #second-slide .popup-content h3 {
+    position: absolute;
+    top: 3%;
+    left: 5.1%;
+    font-size: 45%;
+    color: white;
+    font-weight: 500;
+  }
+
+  #second-slide .popup-content #billet {
+    width: 52%;
+    position: absolute;
+    top: 17.5%;
+    left: 39%;
+    display: flex;
 }
 
-#second-slide .close:hover,
-#second-slide .close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
+  #second-slide .popup-content #bouton-retour {
+    position: absolute;
+    top: 92%;
+    left: 50%;
+    width: 27%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    display: flex;
+  }
+
+  #second-slide .popup-content #fleche {
+    position: absolute;
+    top: 86.3%;
+    left: 8.1%;
+    width: 12%;
+    display: flex;
+}
+
+  #second-slide .popup-content #facebook {
+    position: absolute;
+    top: 89.3%;
+    left: 70.1%;
+    width: 12%;
+    display: flex;
+}
+
+  #second-slide .popup-content #instagram {
+    position: absolute;
+    top: 89.3%;
+    left: 85.1%;
+    width: 12%;
+    display: flex;
+}
+
+  #second-slide .popup-content #cadre {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    width: auto;
+    height: 47%;
+    transform: translateX(-50%);
+    display: flex;
+  }
+
+  #second-slide .popup-content p {
+    position: absolute;
+    top: 44%;
+    left: 50%;
+    width: 70%;
+    transform: translateX(-50%);
+    display: flex;
+    font-size: 33%;
+    color: #386f9c;
+    z-index: 3;
+  }
+
+  #second-slide .popup-content #tete2 {
+    position: absolute;
+    top: 18%;
+    left: 2%;
+    width: 27%;
+  }
 }
 
 #third-slide {

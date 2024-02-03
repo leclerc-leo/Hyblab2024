@@ -5,6 +5,7 @@ const initSlide2 = async function () {
   // Get logo element
   const logo = document.querySelector("#logo-hyblab");
   const bag = document.querySelector("#bag");
+  const fleche = document.querySelector("#fleche");
 
   // (Re)set initial scale of logo
   logo.setAttribute("style", "transform :scale(1);");
@@ -30,6 +31,14 @@ const initSlide2 = async function () {
     loop: true,
   });
 
+  anime({
+    targets: fleche,
+    translateY: [0, 25],
+    direction: "alternate",
+    loop: true,
+    easing: "easeInOutQuad",
+  });
+
   document.getElementById("logo-hyblab").addEventListener("click", function () {
     var popup = document.getElementById("popup");
     popup.style.display = "block";
@@ -38,7 +47,7 @@ const initSlide2 = async function () {
     }, 20);
   });
 
-  document.querySelector(".close").addEventListener("click", function () {
+  document.querySelector("#bouton-retour").addEventListener("click", function () {
     var popup = document.getElementById("popup");
     popup.classList.remove("show");
     setTimeout(function () {
