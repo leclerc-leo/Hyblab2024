@@ -45,6 +45,7 @@ body{
 }
 
 .swiper-pagination-bullet, .swiper-pagination-bullet::before {
+    --swiper-pagination-bullet-border-radius: 0;
     --swiper-pagination-bullet-horizontal-gap: 1%;
     --swiper-pagination-bullet-size: 10%;
     width: var(--swiper-pagination-bullet-size);
