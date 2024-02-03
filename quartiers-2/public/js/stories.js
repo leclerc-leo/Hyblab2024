@@ -133,18 +133,6 @@ const homeStories = function () {
           document.querySelector('.content').scrollIntoView();
         });
       })
-
-      switch (swiper.realIndex) {
-        case 0:
-          console.log('slide 1');
-          break;
-        case 1:
-          console.log('slide 2');
-          break;
-        case 2:
-          console.log('slide 3');
-          break;
-      }
     });
 
 
@@ -154,7 +142,78 @@ const homeStories = function () {
       fetch('/quartiers-2/recap.html')
         .then(res => res.text())
         .then(html => {
-          document.querySelector('body').innerHTML = html;
+          loader.style.display = 'block';
+          loader.style.opacity = '1';
+          loader.style.zIndex = '3000';
+
+          let container = document.querySelector('#container');
+          container.innerHTML = html;
+
+          setTimeout(() => {
+            anime({
+                delay: 800,
+                targets: '#loader',
+                opacity: '0',
+                'z-index' : -1,
+            });
+          }, 800);
+
+          // on enlève le loader
+          let retour = document.querySelector('#back_button');
+          retour.addEventListener('click', () => {
+            fetch('/quartiers-2/stories.html')
+              .then(res => res.text())
+              .then(html => {
+                loader.style.opacity = '1';
+                loader.style.display = 'block';
+
+
+                // on rajoute a notre container le body de la page credits
+                let container = document.querySelector('#container');
+
+                container.innerHTML = html;
+
+                // on attend 1 seconde
+                setTimeout(() => {
+                  anime({
+                      delay: 300,
+                      targets: '#loader',
+                      opacity: '0',
+                      'z-index' : -1,
+                  });
+                }, 300);
+                // on init l'accueil
+                homeStories();
+              });
+          });
+
+          var leafletCSS = document.createElement('link');
+          leafletCSS.rel = 'stylesheet';
+          leafletCSS.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+          leafletCSS.integrity = 'sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=';
+          leafletCSS.crossOrigin = '';
+
+          // Create new script element for Leaflet JS
+          var leafletJS = document.createElement('script');
+          leafletJS.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+          leafletJS.integrity = 'sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=';
+          leafletJS.crossOrigin = '';
+
+          // Create new link element for recap CSS
+          var recapCSS = document.createElement('link');
+          recapCSS.rel = 'stylesheet';
+          recapCSS.type = 'text/css';
+          recapCSS.href = './css/recap.css';
+
+          // Append the created elements to the body
+          document.body.appendChild(leafletCSS);
+          document.body.appendChild(leafletJS);
+          document.body.appendChild(recapCSS);
+
+          // Execute the recapPage function after the Leaflet JS script has loaded
+          leafletJS.onload = function() {
+              recapPage();
+          };
         });
     });
 

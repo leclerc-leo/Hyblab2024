@@ -7,10 +7,6 @@
 }
 
 #container{
-    position: fixed; /* To set the size of the container to 100% of the visible viewport height AND for absolute positioning of child elements*/
-    height: 100%;   /* even on mobile devices with url or navigation bars */
-    margin-left: calc((100vw - 100 * 3vh / 4) / 2); /* Add black bands on left and right */
-    width: calc(100 * 3vh / 4); /* Force 3/4 aspect ratio */
     background-color: #FCF3EC;
 }
 
