@@ -19,7 +19,7 @@ const BurgerMenu = () => {
       {isOpen && (
         <div className="menu">
           <a href="/bretons-1">Accueil </a>
-          <a href="/bretons-1/MySave">Enregistrer<img className="LogoFav"src="/bretons-1/img/Save_Yellow.svg"/></a>
+          <a href="/bretons-1/MySave">Ma Sélection<img className="LogoFav"src="/bretons-1/img/Save_Yellow.svg"/></a>
           <a href="/bretons-1/Credits">Crédits</a>
         </div>
       )}
