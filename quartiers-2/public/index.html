@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/loadingio/loading.css@v2.0.0/dist/loading.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <link href="https://vjs.zencdn.net/8.10.0/video-js.css" rel="stylesheet" />
   <script src="js/accueil.js" defer></script>
   <script src="js/stories.js" defer></script>
   <script src="js/index.js" defer></script>
@@ -23,7 +24,7 @@
     <div id="container">
       <!-- Le loader-->
       <section id="motion">
-        <video id="motion-img" alt="Description du GIF" playsinline loop muted autoplay>
+          <video id="motion-img" class="video-js" controls preload="auto" playsinline loop muted autoplay data-setup="{}">
           <source src="videos/animation_logo.mp4" type="video/mp4">
           Votre navigateur ne prend pas en charge la balise vidéo.
         </video>
