@@ -38,7 +38,6 @@ body{
         color: var(--yellow);
         background-color: transparent;
         border: solid 3px var(--yellow);
-        cursor: pointer;
         z-index: 3;
         transition: all 0.5s ease-in-out ;
         
@@ -61,12 +60,20 @@ body{
         color: var(--yellow);
     }
 
-    #archives:hover, #statistiques:hover{
+
+    #archives.disabled {
+        opacity: 0.5 ;
+        cursor: default;
+    }
+
+    #archives.enabled:hover, #statistiques:hover{
+        cursor: pointer;
         background-color: var(--yellow);
         color: var(--green);
     }
 
-    #archives:hover #archives-svg {
+    #archives.enabled:hover #archives-svg {
+        cursor: pointer;
         color: var(--green);
         transition: all 1s ease-in-out;
     }
@@ -177,6 +184,51 @@ body{
 }
 
 
+/************* Popup card *****************/
+.popup{
+    background-color: var(--bg-green);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 550px;
+    height: 350px;
+    padding: 30px 40px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+    border-radius: 8px;
+    font-family: 'Abolition';
+    color: var(--yellow);
+    display: none;
+    text-align: center;
+    z-index: 4;
+}
+
+.popup button{
+    display: block;
+    margin:  0 0 -20px auto;
+    background-color: transparent;
+    color: var(--yellow);
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.popup button img {
+    width: 5vmin;
+    display: block;
+}
+
+.popup #archives-popup {
+    width: 10vmin;
+}
+
+.popup p{
+    font-size: 6vmin ; 
+    
+}
+
+  /************* Popup card *****************/
+
 /* ---------- Important media queries for easy responsive content :-) ----------------- */
 /* Whatever the device used, the content will be displayed full width and height if      */
 /* the aspect ratio is between 3/4 and 9/16. If not it is locked to either 3/4 or 9/16  */
@@ -195,6 +247,22 @@ body{
         margin-left: 0; /* reset margin-left */
         width: 100vw; /* content is full width (and full height because of the default rule for container height */
     }
+
+    .popup{
+        width: calc(100 * 7vw / 9);
+        height: calc(100 * 4.5vw / 9);
+        color: var(--yellow);
+        text-align: center;
+    }
+
+    p {
+        margin: 0 ;
+        font-size: calc(100 * 0.3vw / 5);
+        color: var(--yellow);
+        text-align: center;
+    }
+
+
 }
 
 /* The content is displayed at 9/16 If the aspect ratio is higher that 9/16  */ 
@@ -207,15 +275,19 @@ body{
         height: calc(100 * 16vw / 9); /* adjust height so that aspect ratio is 9/16 */
     }
 
-    /* We set a default font size here. It will be the base for all other font sizes */
-    /* Here the font size is proportional to content width */
-    p{
-        margin: 0.8em;
-        font-size: 5vw;
-        color: black;
-        text-align: justify;
+    .popup{
+        width: calc(100 * 7vw / 9);
+        height: calc(100 * 4.5vw / 9);
+        color: var(--yellow);
+        text-align: center;
+        
     }
 
+    p {
+        margin: 0 ;
+        color: var(--yellow);
+        text-align: center;
+    }
     
 }
 
