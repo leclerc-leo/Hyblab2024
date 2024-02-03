@@ -278,6 +278,7 @@ const homeStories = function () {
           image.addEventListener('click', function() {
             localStorage.setItem('yes' + (index + 1), 'yes');
             changeState('no' + (index + 1), yesImages, noImages);
+            this.blur()
           });
           image.firstChild.addEventListener('load', function() {
             image.firstChild.contentDocument.querySelector('#bg-color').style.transition = "all 0.2s ease-in-out";
@@ -293,6 +294,7 @@ const homeStories = function () {
           image.addEventListener('click', function() {
             localStorage.setItem('no' + (index + 1), 'no');
             changeState('yes' + (index + 1), yesImages, noImages);
+            this.blur()
           });
           image.firstChild.addEventListener('load', function() {
             image.firstChild.contentDocument.querySelector('#bg-color').style.transition = "all 0.2s ease-in-out";
