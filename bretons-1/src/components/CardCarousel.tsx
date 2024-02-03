@@ -70,12 +70,12 @@ function CardCarousel({ video }: VideoListItemProps) {
           <p>{video.subtitle}</p>
         </div>
         <div className="image-row" style={{ zIndex: 5 }}>
-            <img
-              className="BicycleLogo"
-              src="/bretons-1/img/Bicycle_logo.svg"
-              alt="Bicycle"
-              onClick={() => handleImageClick('BicycleLogo')}
-            />
+        <img
+            className="BicycleLogo"
+            src={`/bretons-1/img/${video.sport}.svg`}
+            alt="Logo"
+            onClick={() => handleImageClick('BicycleLogo')}
+        />
               <FavoriteButton
                 isFavorited={isFavorited}
                 onClick={handleFavoriteClick}

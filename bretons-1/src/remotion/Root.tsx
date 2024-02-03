@@ -29,7 +29,7 @@ export const MyVideo: React.FC<MyVideoProps> = ({ id }) => {
         <Frame1 text={athlete.Athlete} sexe={athlete.Sexe} gain={eventData.Gain} rang={eventData.Rang} sous_titre={eventData.Epreuve} image={athlete.Photo}></Frame1>
       </Sequence>
       <Sequence from={340} durationInFrames={350}>
-        <Frame4 Gentilé={athlete.Gentilé} rang={eventData.Rang} Epreuve={eventData.Epreuve} sexe={athlete.Sexe} Sport={eventData.Sport}></Frame4>
+        <Frame4 Gentilé={athlete.Gentilé} gain={eventData.Gain} Epreuve={eventData.Epreuve} sexe={athlete.Sexe} Sport={eventData.Sport} Epreuve_1={eventData.Epreuve__1}></Frame4>
       </Sequence>
       <Sequence from={660} durationInFrames={240}>
         <Frame2 podium={eventData["Podium (nom + résultat)"] as Podium[]} />
