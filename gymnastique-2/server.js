@@ -29,7 +29,7 @@ const get_files = (content, regex, files) => {
 
 const convert_to_webp = (content) => {
     let files = get_files(content, /<img.*?src=["'](.*?)["']/g, new Set());
-    files = get_files(content, /background-image: url\((.*?)\)/g, files);
+    files = get_files(content, /background-image: url\(["'](.*?)["']\)/g, files);
 
     files = [...files].filter( file => file.endsWith('.jpg') || file.endsWith('.png'))
         .filter( file => { /* On vérifie que le fichier webp correspondant existe */
