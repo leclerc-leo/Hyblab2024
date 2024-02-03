@@ -30,6 +30,10 @@ body{
     width: 12%;
 }
 
+* :focus {
+    outline: none;
+}
+
 /* -------------- Loader --------------*/
 #loader{
     z-index: 2000;

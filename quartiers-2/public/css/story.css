@@ -141,11 +141,6 @@
     height: 100%;
     cursor: pointer;
 }
-.yesButton:first-child, .noButton:first-child{
-    outline: none;
-    border: none;
-    background-color: transparent;
-}
 
 
 .previous, .next {
