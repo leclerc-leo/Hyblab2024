@@ -5,9 +5,22 @@ import { MyVideo } from "../remotion/Root";
 import SwipeUp from './SwipeUp';
 import Article from './Article';
 import NavbarT from '../components/Navbar'
+import athleteData from '../data/Athlete.json';
+import { Athlete, EventDataItem} from '../components/type';
+import EventData from '../data/Event.json';
 
 function VideoPlayer({ id }: { id: string }) {
     const [allowSwipe, setAllowSwipe] = useState(false);
+    const allEventsData: EventDataItem[] = (EventData.Event.flat() as EventDataItem[]);
+
+    let eventData = allEventsData.find(e => e.IdEvent == Number(id));
+    const allAthletesData = athleteData.Athlete.reduce((allAthletes: Athlete[], athletesArray: Athlete[]) => {
+        return allAthletes.concat(athletesArray);
+      }, []);
+    let athlete = allAthletesData.find(a => a.Athlete == eventData?.Athlete)
+    if(athlete == undefined || eventData == undefined) {
+      return (<></>);
+    }
     // set 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -43,9 +56,9 @@ function VideoPlayer({ id }: { id: string }) {
             <>
             <SwipeUp onSwipeUp={handleSwipeUp} />
             <Article 
-          title="Sounkamba Sylla, médaillée d’or ! "
-          subtitle="Athlétisme : 400m" 
-          content="A moins d’un an des Jeux Olympiques de Paris 2024, le sport français s’organise pour répondre présent. Si pour les stars tricolores, la voie est toute tracée pour représenter la France, pour certains athlètes, la tâche est plus complexe. En Mayenne, la spécialiste du 400 mètres Sounkamba Sylla a décidé de tout sacrifier pour réaliser son rêve olympique."
+          title={athlete.Athlete}
+          subtitle={eventData.Sport}
+          content={athlete.Article}
         />
             </>
           )

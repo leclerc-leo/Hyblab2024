@@ -9,6 +9,7 @@ export type Athlete = {
   "Etudes / Métier": string;
   "Fun fact": string;
   Photo: string;
+  Article:string;
 };
 
 export type Event = {

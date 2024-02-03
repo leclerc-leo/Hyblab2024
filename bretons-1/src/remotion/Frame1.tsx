@@ -8,7 +8,7 @@ import EliminateSVG from '../assets/img/Eliminate.svg'
 import { useEffect, useState } from 'react';
 
 const determinerTexteTitre = (sexe: string, gain: string) => {
-  const suffixeGenre = (sexe === 'femme') ? 'e' : '';
+  const suffixeGenre = (sexe === 'F') ? 'e' : '';
   switch (gain) {
     case "Or":
       return "décroche l'or !";
@@ -17,9 +17,9 @@ const determinerTexteTitre = (sexe: string, gain: string) => {
     case "Bronze":
       return "décroche le bronze !";
     case "Qualifie":
-      return "se Qualifie !"
+      return `qualifié${suffixeGenre} en finale !`
     case "":
-      return `est éliminé${suffixeGenre}`;
+      return `non qualifié${suffixeGenre} pour la finale`;
   }
 };
 
