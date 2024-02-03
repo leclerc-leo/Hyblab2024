@@ -275,16 +275,24 @@ const homeStories = function () {
         let noImages = document.querySelectorAll('.noButton');
 
         yesImages.forEach((image, index) => {
+          image.addEventListener('click', function() {
+            localStorage.setItem('yes' + (index + 1), 'yes');
+            changeState('no' + (index + 1), yesImages, noImages);
+          });
           image.firstChild.addEventListener('load', function() {
             image.firstChild.contentDocument.querySelector('#bg-color').style.transition = "all 0.2s ease-in-out";
             image.firstChild.contentDocument.querySelector("svg").addEventListener('click', function() {
-              localStorage.setItem('yes' + (index + 1), 'yes');
-              changeState('no' + (index + 1), yesImages, noImages);
+                localStorage.setItem('yes' + (index + 1), 'yes');
+                changeState('no' + (index + 1), yesImages, noImages);
             });
           });
         });
 
         noImages.forEach((image, index) => {
+          image.addEventListener('click', function() {
+            localStorage.setItem('no' + (index + 1), 'no');
+            changeState('yes' + (index + 1), yesImages, noImages);
+          });
           image.firstChild.addEventListener('load', function() {
             image.firstChild.contentDocument.querySelector('#bg-color').style.transition = "all 0.2s ease-in-out";
             image.firstChild.contentDocument.querySelector("svg").addEventListener('click', function() {
