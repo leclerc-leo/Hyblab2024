@@ -338,8 +338,14 @@ const homeStories = function () {
         let noImages = document.querySelectorAll('.noButton');
 
         yesImages.forEach((image, index) => {
+          // on vérifie dans le localStorage si on a déjà cliqué sur le bouton
+          console.log(localStorage);
+          if (localStorage.getItem('yes' + (index + 1))) {
+            changeState('no' + (index + 1), yesImages, noImages)
+          }
           image.addEventListener('click', function() {
             localStorage.setItem('yes' + (index + 1), 'yes');
+            localStorage.removeItem('no' + (index + 1));
             changeState('no' + (index + 1), yesImages, noImages);
             setTimeout(() => {}, 1000);
             document.activeElement.blur();
@@ -348,6 +354,7 @@ const homeStories = function () {
             image.firstChild.contentDocument.querySelector('#bg-color').style.transition = "all 0.2s ease-in-out";
             image.firstChild.contentDocument.querySelector("svg").addEventListener('click', function() {
                 localStorage.setItem('yes' + (index + 1), 'yes');
+                localStorage.removeItem('no' + (index + 1));
                 changeState('no' + (index + 1), yesImages, noImages);
                 setTimeout(() => {}, 1000);
                 document.activeElement.blur();
@@ -356,8 +363,13 @@ const homeStories = function () {
         });
 
         noImages.forEach((image, index) => {
+          // on vérifie dans le localStorage si on a déjà cliqué sur le bouton
+          if (localStorage.getItem('no' + (index + 1))) {
+            changeState('yes' + (index + 1), yesImages, noImages)
+          }
           image.addEventListener('click', function() {
             localStorage.setItem('no' + (index + 1), 'no');
+            localStorage.removeItem('yes' + (index + 1));
             changeState('yes' + (index + 1), yesImages, noImages);
             setTimeout(() => {}, 1000);
             document.activeElement.blur();
@@ -366,6 +378,7 @@ const homeStories = function () {
             image.firstChild.contentDocument.querySelector('#bg-color').style.transition = "all 0.2s ease-in-out";
             image.firstChild.contentDocument.querySelector("svg").addEventListener('click', function() {
               localStorage.setItem('no' + (index + 1), 'no');
+              localStorage.removeItem('yes' + (index + 1));
               changeState('yes' + (index + 1), yesImages, noImages);
               setTimeout(() => {}, 1000);
               document.activeElement.blur();
