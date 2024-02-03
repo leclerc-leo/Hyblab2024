@@ -7,6 +7,7 @@
 		<link rel="icon" href="img/logo.svg" />
 		<link rel="stylesheet" href="./css/style2.css" />
 		<link rel="stylesheet" href="https://use.typekit.net/tor7tnx.css" />
+		<script src="https://cdn.jsdelivr.net/npm/interactjs@1.10.11/dist/interact.min.js"></script>
 	</head>
 	<body>
 		<div class="container">
@@ -33,7 +34,7 @@
 					<div
 						class="player player-clickable goalkeeper"
 						id="goalkeeper"
-						style="top: 88%; left: 50%"></div>
+						style="top: 90%; left: 50%"></div>
 
 					<!-- Forward Line (3 players) -->
 					<div
@@ -82,6 +83,45 @@
 						id="arriere-droit"
 						style="top: 65%; left: 85%"></div>
 				</div>
+				<div class="btn" id="share" title="share" style="display: none">
+					<i class="fas fa-share"></i>
+				</div>
+			</div>
+			<div class="share-block">
+				<div class="share-block__bar"></div>
+				<p class="share-block__text">Partage ton 11</p>
+				<div class="share-icons">
+					<div class="share-icons__item">
+						<div class="img-container">
+							<img src="./img/insta.svg" alt="insta" />
+						</div>
+						<p class="social">Instagram</p>
+					</div>
+					<div class="share-icons__item">
+						<div class="img-container">
+							<img src="./img/facebook.svg" alt="fb" />
+						</div>
+						<p class="social">Facebook</p>
+					</div>
+					<div class="share-icons__item">
+						<div class="img-container">
+							<img src="./img/x.svg" alt="x" />
+						</div>
+						<p class="social">X</p>
+					</div>
+					<div class="share-icons__item">
+						<div class="img-container">
+							<img src="./img/youtube.svg" alt="youtube" />
+						</div>
+						<p class="social">Youtube</p>
+					</div>
+					<div class="share-icons__item">
+						<div class="img-container">
+							<img src="./img/bread.svg" alt="plus" />
+						</div>
+						<p class="social">Plus</p>
+					</div>
+				</div>
 			</div>
 
 			<a href="selection.html" style="margin: 5%"
@@ -107,18 +147,12 @@
 					<div class="carousel-item">Joueur 3</div>
 					<!-- Ajoutez plus d'éléments de carrousel ici -->
 				</div>
-				<button
-					class="gm-btn gb-shutter"
-					id="validate-button"
-					style="display: none">
-					Valider
-				</button>
 				<div class="buttons" id="bottom-btn">
 					<button class="back-btn" id="back-overlay" title="close">
 						<img src="./img/back-btn.svg" alt="close" />
 					</button>
 					<button class="gm-btn gb-shutter" id="bio-btn">
-						Biographie
+						Comparer
 					</button>
 				</div>
 			</div>

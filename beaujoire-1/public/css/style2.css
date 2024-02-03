@@ -1,5 +1,46 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 
+@keyframes player-animation {
+	0% {
+		transform: translate(-100% 0) scale(1);
+	}
+	50%,
+	80% {
+		transform: scale(1.5);
+		opacity: 0.5;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes slideIn {
+	0% {
+		transform: translateY(100%);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes slideOut {
+	0% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+	100% {
+		transform: translateY(100%);
+		opacity: 0;
+	}
+}
+
+.player-animation {
+	animation: player-animation 2s ease-out;
+	transform-origin: bottom;
+}
+
 * {
 	font-family: "Industry", "Bebas Neue Pro", sans-serif;
 	color: #ffffff;
@@ -294,86 +335,77 @@ body {
 	}
 	scrollbar-width: none; /* Firefox */
 	-ms-overflow-style: none; /* Internet Explorer 10+ */
-}
-.carousel-item.active {
-	z-index: 2;
-	transform: scale(1.2);
-}
-
-@keyframes player-animation {
-	0% {
-		transform: translate(-100% 0) scale(1);
-	}
-	50%,
-	80% {
-		transform: scale(1.5);
-		opacity: 0.5;
-	}
-	100% {
-		opacity: 1;
-	}
-}
-
-.player-animation {
-	animation: player-animation 2s ease-out;
-	transform-origin: bottom;
+	margin: 0 5%;
 }
 
 .carousel-item {
-	flex: 0 0 auto;
-	height: 95%;
+	flex: 0 0.02 auto;
+	height: 97%;
 	width: 80%;
 	scroll-snap-align: center;
-	font-size: 24px;
 	z-index: 1;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	padding: 20px;
-	margin: 10px;
+	margin: 10px 0;
 	background-color: transparent;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+	transform: scale(0.7);
+	transition: all 0.2s ease-in-out;
 }
 
-.carousel-item.selected > img {
-	transform: scale(1.2);
+.carousel-item.focused {
+	z-index: 2;
+	transform: scale(1);
+	transition: all 0.2s ease-in-out;
 }
 
 .carte-img {
-	width: 90%;
-	height: 45%;
+	width: 100%;
+	height: 100%;
 	object-fit: contain;
 }
 
 #poste-title {
-	margin-top: 15%;
+	margin-top: 1.5rem;
 }
 
 .carousel-grid {
-	height: 55%;
+	height: 35%;
 	width: 100%;
 	align-self: flex-end;
 	justify-content: center;
-	margin-top: 10%;
+	margin-top: 1%;
 	font-weight: bold;
 	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 1fr 1fr;
+	grid-template-columns: minmax(auto, 1fr) minmax(auto, 1fr);
+	grid-template-rows: minmax(auto, 1fr) minmax(auto, 1fr);
 	gap: 10px;
+	animation-duration: 0.5s;
+	animation-fill-mode: forwards;
 }
 
 .carousel-grid > * {
 	object-fit: contain;
 	height: 100%;
+	flex-shrink: 0.05;
 }
 
 .carousel-grid > * > * {
 	margin: 0;
 }
 
+#validate-button {
+	margin-top: 5%;
+}
+
+.carousel-grid > * > .small-title {
+	font-size: 1.5rem;
+}
+
 .stat-name {
-	font-size: 14px;
+	font-size: 12px;
 	margin-top: 5px;
 }
 
@@ -386,6 +418,7 @@ body {
 
 .coupes {
 	display: grid;
+	height: 120%;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	grid-template-rows: auto;
 }
@@ -406,9 +439,16 @@ body {
 
 .bar-container {
 	position: relative;
-	width: 30%;
+	width: 25%;
 	height: 100%;
-	margin-right: 4%;
+	margin-right: 5%;
+}
+
+.bar2-container {
+	position: relative;
+	width: 5%;
+	height: 100%;
+	margin: 0 5%;
 }
 
 #bar1 {
@@ -435,6 +475,85 @@ body {
 	border-radius: 20px;
 }
 
+#bar4 {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 20%;
+	border-radius: 20px;
+}
+
+#bar5 {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 40%;
+	border-radius: 20px;
+}
+
+#bar6 {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 60%;
+	border-radius: 20px;
+}
+
+#bar7 {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 80%;
+	border-radius: 20px;
+}
+
+#bar8 {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: 20px;
+}
+
+.circle-container {
+	position: relative;
+	display: inline-block;
+	height: 100%;
+	width: 5%;
+	margin-right: 4%;
+}
+
+#circle1 {
+	position: absolute;
+	bottom: 0;
+	height: 45%;
+	border-radius: 50%;
+	aspect-ratio: 1;
+}
+
+#circle2 {
+	position: absolute;
+	bottom: 0;
+	height: 66%;
+	border-radius: 50%;
+	aspect-ratio: 1;
+}
+
+#circle3 {
+	position: absolute;
+	bottom: 0;
+	height: 100%;
+	border-radius: 50%;
+	aspect-ratio: 1;
+}
+
+.flex-row {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	height: 60%;
+}
+
 .flex-row {
 	display: flex;
 	flex-direction: row;
@@ -443,8 +562,154 @@ body {
 }
 
 .player-name {
-	font-size: 10%;
+	font-size: 10px;
 	font-weight: bold;
 	width: 100%;
 	line-break: normal;
+	margin-top: 0;
+}
+
+/*Share sections*/
+
+.share-icons {
+	list-style: none;
+	cursor: pointer;
+	padding: auto;
+	margin-top: 15px;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	flex-direction: row;
+}
+
+.share-icons__item {
+	padding: 5px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	height: 53px;
+}
+.share-icons__item img {
+	border: none;
+	width: 25px;
+	aspect-ratio: 1;
+}
+
+.img-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	background-color: #ffffff;
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+}
+
+.share-icons__item p {
+	font-size: 0.8rem;
+	margin: 3px 0 0 0;
+}
+
+.fab,
+.fas {
+	color: #fadc00;
+}
+
+#share {
+	position: absolute;
+	bottom: -2%;
+	left: 1%;
+	border-radius: 50%;
+	background-color: #fff;
+}
+
+.share-block {
+	position: fixed;
+	bottom: 0;
+	background-color: hsla(240, 14%, 14%, 0.9);
+	border-radius: 30px;
+	max-width: 90vw;
+	width: 370px;
+	height: 130px;
+	padding: 5px 15px;
+	transform: translateY(100%);
+}
+
+.share-block__text {
+	font-size: 22;
+	font-weight: bolder;
+	margin: 20px auto 0 auto;
+}
+.share-block__bar {
+	position: absolute;
+	transform: translate(-50%, 0);
+	background-color: #fff;
+	left: 50%;
+	margin-top: 10px;
+	height: 0;
+	width: 15%;
+	border-radius: 2px;
+	border: #ffffff 2px solid;
+}
+
+/* Styling pour le conteneur du flip */
+.flip-container {
+	perspective: 10000px; /* Effet de profondeur */
+	width: 100%;
+	height: 60%;
+}
+
+/* Styling pour les faces recto et verso */
+.flipper {
+	width: 100%;
+	height: 100%;
+	transform-style: preserve-3d;
+	transition: transform 0.6s;
+	transform-origin: center;
+}
+
+/* Styling pour le recto */
+.front {
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+	transition: rotate 0.2s ease-in-out, scale 0.5s ease-in-out;
+}
+
+/* Styling pour le verso */
+.back {
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+	transform: translateY(-100%) rotateY(180deg);
+	transition: rotate 0.2s ease-in-out, scale 0.5s ease-in-out;
+}
+
+/* Styling pour l'effet de retournement lorsque la classe 'flip' est ajoutée */
+.flip-container.flip .flipper {
+	transform: rotateY(180deg) scale(1.1);
+	transition: 0.2s ease-in-out;
+}
+
+.back-title {
+	position: absolute;
+	top: 5%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: #00a55a;
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.back-text {
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: white;
+	font-size: 14px;
+	text-align: center;
 }

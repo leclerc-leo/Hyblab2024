@@ -1,6 +1,7 @@
 "use strict";
 
 let selectedPlayerId = null;
+
 let players = JSON.parse(localStorage.getItem("players")) || {
 	goalkeeper: "",
 	entraineur: "",
@@ -34,9 +35,11 @@ window.addEventListener("load", function () {
 					const player = players.find(
 						(player) => player.NOM === playerName
 					);
-					document
-						.getElementById(playerId)
-						.setAttribute("data-number", player.NUMÉRO);
+					if (player.NUMÉRO !== undefined) {
+						document
+							.getElementById(playerId)
+							.setAttribute("data-number", player.NUMÉRO);
+					}
 				});
 			playerElement;
 			playerElement.innerHTML = `
@@ -136,12 +139,63 @@ function showCarousel(id) {
 				console.log(`Created carousel item: ${carouselItemHTML}`);
 				carousel.appendChild(carouselItemHTML);
 			});
+
 			document.querySelector(".carousel-overlay").style.display = "flex";
 			document.getElementById("poste-title").textContent = poste;
+			handleCarouselItemClick();
+
+			// Trouver l'élément du milieu et faire défiler jusqu'à lui
+			const carouselItems = document.querySelectorAll(".carousel-item");
+			const middleItemIndex = Math.floor(carouselItems.length / 2);
+			const middleItem = carouselItems[middleItemIndex];
+			middleItem.scrollIntoView({ behavior: "smooth", block: "center" });
+
+			const isAnyItemFlipped = Array.from(
+				document.querySelectorAll(".flip-container")
+			).some((el) => el.classList.contains("flip"));
+			if (isAnyItemFlipped) {
+				handleGridAnimation();
+			}
 		});
 	document.querySelectorAll(".carousel-item").forEach((item) => {
 		item.addEventListener("click", handleCarouselItemClick);
 	});
+
+	document
+		.querySelector(".carousel")
+		.addEventListener("scroll", handleCarouselScroll);
+}
+
+function handleValidateButtonClick() {
+	const selectedPlayer = document.querySelector(".carousel-item.selected");
+	const selectedPlayerName =
+		selectedPlayer.querySelector("#name").textContent;
+	console.log(selectedPlayerName);
+	console.log(selectedPlayerId);
+	//Add the player to the list of selected players
+	players[selectedPlayerId] = selectedPlayerName;
+	//Save the list of selected players to local storage
+	localStorage.setItem("players", JSON.stringify(players));
+	//Update the field with the selected player
+	document.getElementById(selectedPlayerId).innerHTML = `
+	<img src="./img/jersey.svg" alt="jersey" />
+	<p>${selectedPlayerName}</p>
+	`;
+	selectedPlayerName;
+	document.getElementById(selectedPlayerId).innerHTML = `
+	<img src="./img/jersey.svg" alt="jersey" />
+	<p class="player-name">${selectedPlayerName}</p>
+	`;
+	//Hide the carousel
+	document.querySelectorAll(".carousel-item").forEach((item) => {
+		item.classList.remove("selected");
+	});
+	if (areAllPlayersSelected()) {
+		console.log("Tous les joueurs ont été sélectionnés");
+		document.querySelector("#share").style.display = "block";
+	}
+	document.querySelector(".carousel-overlay").style.display = "none";
+	selectedPlayerId = null;
 }
 
 function getPositionFromId(id) {
@@ -255,131 +309,218 @@ function createCarouselItem(player) {
 
 	let carte = player.CARTE;
 	console.log(carte);
-	if (carte == "" || carte == "fcn-" || carte == "fcn") {
-		carte = "NA";
-		carouselItem.innerHTML = `
-		<div style="
-		height: 45%;
-		display: flex;
-		flex-direction: column;
-		align-items: center;">
-        <img class= "carte-img" src="img/cartes/${carte}.webp" alt="Photo de ${player.NOM}" />
-        <h1 class="green small-title" style="background-color: hsla(240, 14%, 14%, 0.9); border-radius: 10px; padding: 10px">${player.NOM}</h1>
-		</div>
-        <div class="carousel-grid">
-            <div class="carousel-matchs">
-                <p class="small-title green">${player.MATCHS}</p>
-				<div class="flex-row">
-					<div class="bar-container">
-						<div id="bar1" class="bar"></div>
-					</div>
-					<div class="bar-container">
-						<div id="bar2" class="bar"></div>
-					</div>
-					<div class="bar-container">
-						<div id="bar3" class="bar"></div>
-					</div>
-				</div>
-                <p class="stat-name"><span class="green">NOMBRE DE</span> MATCHS </p>
-            </div>
-            <div class="carousel-buts">
-                <p class="small-title green">${player.BUTS}</p>
-                <p class="stat-name"><span class="green">NOMBRE DE</span> ${but} </p>
-            </div>
-            <div class="carousel-coupes">
-                <div class="coupes">
-					<div class="cp-col">
-						<p class="small-title green" style="align-self:flex-start">${player.champ_fr}</p>
-						${champ_fr}
-					</div>
-					<div class="cp-col">
-						<p class="small-title green">${player.tr_champ}</p>
-						${tr_champ}
-					</div>
-					<div class="cp-col">
-						<p class="small-title green">${player.cp_fr}</p>
-						${cp_fr}
-					</div>
-					<div class="cp-col">
-						<p class="small-title green">${player.lig_champ}</p>
-						${lig_champ}
-					</div>
-				</div>			
-                <p class="stat-name"><span class="green">NOMBRE DE</span> COUPES </p>
-            </div>
-            <div class="carousel-taille">
-                <p class="small-title green">${player.TAILLE}</p>
-                <p class="stat-name"><span class="green">TAILLE EN</span> M </p>
-            </div>
-        </div>
-    `;
+	// if (carte == "" || carte == "fcn-" || carte == "fcn") {
+	// 	carte = "NA";
+	// 	carouselItem.innerHTML = `
+	// 	<div style="
+	// 	height: 45%;
+	// 	display: flex;
+	// 	flex-direction: column;
+	// 	align-items: center;">
+	//     <img class= "carte-img" src="img/cartes/${carte}.webp" alt="Photo de ${player.NOM}" />
+	//     <h1 class="green small-title" style="background-color: hsla(240, 14%, 14%, 0.9); border-radius: 10px; padding: 10px">${player.NOM}</h1>
+	// 	</div>
+	//     <div class="carousel-grid">
+	//         <div class="carousel-matchs">
+	//             <p class="small-title green">${player.MATCHS}</p>
+	// 			<div class="flex-row">
+	// 				<div class="bar-container">
+	// 					<div id="bar1" class="bar"></div>
+	// 				</div>
+	// 				<div class="bar-container">
+	// 					<div id="bar2" class="bar"></div>
+	// 				</div>
+	// 				<div class="bar-container">
+	// 					<div id="bar3" class="bar"></div>
+	// 				</div>
+	// 			</div>
+	//             <p class="stat-name"><span class="green">NOMBRE DE</span> MATCHS </p>
+	//         </div>
+	//         <div class="carousel-buts">
+	//             <p class="small-title green">${player.BUTS}</p>
+	//             <p class="stat-name"><span class="green">NOMBRE DE</span> ${but} </p>
+	//         </div>
+	//         <div class="carousel-coupes">
+	//             <div class="coupes">
+	// 				<div class="cp-col">
+	// 					<p class="small-title green" style="align-self:flex-start">${player.champ_fr}</p>
+	// 					${champ_fr}
+	// 				</div>
+	// 				<div class="cp-col">
+	// 					<p class="small-title green">${player.tr_champ}</p>
+	// 					${tr_champ}
+	// 				</div>
+	// 				<div class="cp-col">
+	// 					<p class="small-title green">${player.cp_fr}</p>
+	// 					${cp_fr}
+	// 				</div>
+	// 				<div class="cp-col">
+	// 					<p class="small-title green">${player.lig_champ}</p>
+	// 					${lig_champ}
+	// 				</div>
+	// 			</div>
+	//             <p class="stat-name"><span class="green">NOMBRE DE</span> COUPES </p>
+	//         </div>
+	//         <div class="carousel-taille">
+	//             <p class="small-title green">${player.TAILLE}</p>
+	//             <p class="stat-name"><span class="green">TAILLE EN</span> M </p>
+	//         </div>
+	//     </div>
+	// `;
 
-		carouselItem.addEventListener("click", handleCarouselItemClick);
+	// 	carouselItem.addEventListener("click", handleCarouselItemClick);
 
-		return carouselItem;
-	}
+	// 	return carouselItem;
+	// }
 	carouselItem.innerHTML = `
-        <img class= "carte-img" src="img/cartes/${player.CARTE}.webp" alt="Photo de ${player.NOM}" />
-        <h1 style="display : none">${player.NOM}</h1>
-        <div class="carousel-grid">
-            <div class="carousel-matchs">
-                <p class="small-title green">${player.MATCHS}</p>
-				<div class="flex-row">
-					<div class="bar-container">
-						<div id="bar1" class="bar"></div>
-					</div>
-					<div class="bar-container">
-						<div id="bar2" class="bar"></div>
-					</div>
-					<div class="bar-container">
-						<div id="bar3" class="bar"></div>
-					</div>
+	<div class="flip-container">
+		<div class="flipper">
+		<!-- Recto -->
+		<div class="front">
+			<img class="carte-img" src="img/cartes/${player.CARTE}.webp" alt="Photo de ${player.NOM}" />
+			<h1 id="name" style="display: none">${player.NOM}</h1>
+		</div>
+		<!-- Verso -->
+		<div class="back">
+		<img class="carte-img" src="img/back_card.svg" alt="Bio de ${player.NOM}" />
+			<p class="back-title">${player.NOM}</p>
+			<p class="back-text">${player.DOS}}</p>
+			<div class="buttons" id="bottom-btn">
+				<button class="back-btn" id="back-overlay" title="close">
+					<img src="./img/back-btn.svg" alt="close" />
+				</button>
+				<button class="gm-btn gb-shutter" id="bio-btn">
+					Biographie
+				</button>
+			</div>
+			</div>
+		</div>
+	</div>
+	<button class="gm-btn gb-shutter" id="validate-button">
+	Sélectionner
+	</button>
+	<div class="carousel-grid">
+		<div class="carousel-matchs">
+			<p class="small-title green">${player.MATCHS}</p>
+			<div class="flex-row">
+				<div class="bar-container">
+					<div id="bar1" class="bar"></div>
 				</div>
-                <p class="stat-name"><span class="green">NOMBRE DE</span> MATCHS </p>
-            </div>
-            <div class="carousel-buts">
-                <p class="small-title green">${player.BUTS}</p>
-                <p class="stat-name"><span class="green">NOMBRE DE</span> ${but} </p>
-            </div>
-            <div class="carousel-coupes">
-				<div class="coupes">
-					<div class="cp-col">
-						<p class="small-title green">${player.champ_fr}</p>
-						${champ_fr}
-					</div>
-					<div class="cp-col">
-						<p class="small-title green">${player.tr_champ}</p>
-						${tr_champ}
-					</div>
-					<div class="cp-col">
-						<p class="small-title green">${player.cp_fr}</p>
-						${cp_fr}
-					</div>
-					<div class="cp-col">
-						<p class="small-title green">${player.lig_champ}</p>
-						${lig_champ}
-					</div>
+				<div class="bar-container">
+					<div id="bar2" class="bar"></div>
 				</div>
-                <p class="stat-name"><span class="green">NOMBRE DE</span> COUPES </p>
-            </div>
-            <div class="carousel-taille">
-                <p class="small-title green">${player.TAILLE}</p>
-                <p class="stat-name"><span class="green">TAILLE EN</span> M </p>
-            </div>
-        </div>
+				<div class="bar-container">
+					<div id="bar3" class="bar"></div>
+				</div>
+			</div>
+			<p class="stat-name"><span class="green">NOMBRE DE</span> MATCHS </p>
+		</div>
+		<div class="carousel-buts">
+			<p class="small-title green">${player.BUTS}</p>
+			<div class="flex-row">
+				<div class="circle-container" style="width:20%">
+					<div id="circle1"></div>
+				</div>
+				<div class="circle-container" style="width:30%">
+					<div id="circle2"></div>
+				</div>
+				<div class="circle-container" style="width:50%">
+					<div id="circle3"></div>
+				</div>
+			</div>
+			<p class="stat-name"><span class="green">NOMBRE DE</span> ${but} </p>
+		</div>
+		<div class="carousel-coupes">
+			<div class="coupes">
+				<div class="cp-col">
+					<p class="small-title green">${player.champ_fr}</p>
+					${champ_fr}
+				</div>
+				<div class="cp-col">
+					<p class="small-title green">${player.tr_champ}</p>
+					${tr_champ}
+				</div>
+				<div class="cp-col">
+					<p class="small-title green">${player.cp_fr}</p>
+					${cp_fr}
+				</div>
+				<div class="cp-col">
+					<p class="small-title green">${player.lig_champ}</p>
+					${lig_champ}
+				</div>
+			</div>
+			<p class="stat-name"><span class="green">NOMBRE DE</span> COUPES </p>
+		</div>
+		<div class="carousel-taille">
+			<p class="small-title green">${player.TAILLE}</p>
+			<div class="flex-row">
+				<div class="bar2-container">
+					<div id="bar4" class="bar"></div>
+				</div>
+				<div class="bar2-container">
+					<div id="bar5" class="bar"></div>
+				</div>
+				<div class="bar2-container">
+					<div id="bar6" class="bar"></div>
+				</div>
+				<div class="bar2-container">
+					<div id="bar7" class="bar"></div>
+				</div>
+				<div class="bar2-container">
+					<div id="bar8" class="bar"></div>
+				</div>
+			</div>
+			<p class="stat-name"><span class="green">TAILLE EN</span> M </p>
+		</div>
+	</div>
     `;
 	const matchs = player.MATCHS; // Remplacez ceci par le nombre de matchs du joueur
 
 	const bar1 = carouselItem.querySelector("#bar1");
 	const bar2 = carouselItem.querySelector("#bar2");
 	const bar3 = carouselItem.querySelector("#bar3");
+	const bar4 = carouselItem.querySelector("#bar4");
+	const bar5 = carouselItem.querySelector("#bar5");
+	const bar6 = carouselItem.querySelector("#bar6");
+	const bar7 = carouselItem.querySelector("#bar7");
+	const bar8 = carouselItem.querySelector("#bar8");
+	const circle1 = carouselItem.querySelector("#circle1");
+	const circle2 = carouselItem.querySelector("#circle2");
+	const circle3 = carouselItem.querySelector("#circle3");
+
+	circle1.style.backgroundColor = player.BUTS >= 1 ? "#00a55a" : "white";
+	circle2.style.backgroundColor = player.BUTS >= 30 ? "#00a55a" : "white";
+	circle3.style.backgroundColor = player.BUTS >= 70 ? "#00a55a" : "white";
+
+	if (player.POSTE == "GARDIEN") {
+		circle1.style.backgroundColor = player.BUTS >= 1 ? "#00a55a" : "white";
+		circle2.style.backgroundColor =
+			player.BUTS >= 100 ? "#00a55a" : "white";
+		circle3.style.backgroundColor =
+			player.BUTS >= 200 ? "#00a55a" : "white";
+	}
 
 	bar1.style.backgroundColor = matchs >= 36 ? "#00a55a" : "white";
 	bar2.style.backgroundColor = matchs >= 200 ? "#00a55a" : "white";
 	bar3.style.backgroundColor = matchs >= 400 ? "#00a55a" : "white";
 
-	carouselItem.addEventListener("click", handleCarouselItemClick);
+	bar4.style.backgroundColor = player.TAILLE >= 1.5 ? "#00a55a" : "white";
+	bar5.style.backgroundColor = player.TAILLE >= 1.6 ? "#00a55a" : "white";
+	bar6.style.backgroundColor = player.TAILLE >= 1.7 ? "#00a55a" : "white";
+	bar7.style.backgroundColor = player.TAILLE >= 1.8 ? "#00a55a" : "white";
+	bar8.style.backgroundColor = player.TAILLE >= 1.9 ? "#00a55a" : "white";
 
+	carouselItem.addEventListener("click", handleCarouselItemClick);
+	carouselItem
+		.querySelector("#validate-button")
+		.addEventListener("click", () => {
+			handleValidateButtonClick();
+		});
+	carouselItem
+		.querySelector(".flip-container")
+		.addEventListener("click", function () {
+			handleFlip(this);
+		});
 	return carouselItem;
 }
 
@@ -393,40 +534,136 @@ function handleCarouselItemClick(event) {
 		"Selected class to:" +
 			event.currentTarget.querySelector("h1").textContent
 	);
-	document.getElementById("validate-button").style.display = "block";
+	document.getElementById("validate-button").style.backgroundColor = "white";
 }
 
-document
-	.getElementById("validate-button")
-	.addEventListener("click", function () {
-		const selectedPlayer = document.querySelector(
-			".carousel-item.selected"
-		);
-		const selectedPlayerName =
-			selectedPlayer.querySelector("h1").textContent;
-		console.log(selectedPlayerName);
-		console.log(selectedPlayerId);
-		//Add the player to the list of selected players
-		players[selectedPlayerId] = selectedPlayerName;
-		//Save the list of selected players to local storage
-		localStorage.setItem("players", JSON.stringify(players));
-		//Update the field with the selected player
-		document.getElementById(selectedPlayerId).innerHTML = `
-		<img src="./img/jersey.svg" alt="jersey" />
-		<p>${selectedPlayerName}</p>
-		`;
-		selectedPlayerName;
-		document.getElementById(selectedPlayerId).innerHTML = `
-		<img src="./img/jersey.svg" alt="jersey" />
-		<p class="player-name">${selectedPlayerName}</p>
-		`;
-		//Hide the carousel
-		document.querySelectorAll(".carousel-item").forEach((item) => {
-			item.classList.remove("selected");
-		});
-		if (areAllPlayersSelected()) {
-			console.log("Tous les joueurs ont été sélectionnés");
+var shareBlock;
+
+function hideShareBlock() {
+	shareBlock.style.transform = "translateY(100%) ";
+	shareBlock.style.opacity = "0";
+	shareBlock.style.transition =
+		"transform 0.3s ease-in, opacity 0.2s ease-in";
+	shareBlock.classList.remove("visible");
+}
+
+function showShareBlock() {
+	shareBlock.style.transform = "translateY(-10%) ";
+	shareBlock.style.opacity = "1";
+	shareBlock.style.transition =
+		"transform 0.3s ease-out, opacity 0.2s ease-out";
+	shareBlock.classList.add("visible");
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+	shareBlock = document.querySelector(".share-block");
+	document.querySelector("#share").addEventListener("click", function () {
+		if (shareBlock.classList.contains("visible")) {
+			hideShareBlock();
+		} else {
+			showShareBlock();
 		}
-		document.querySelector(".carousel-overlay").style.display = "none";
-		selectedPlayerId = null;
 	});
+	interact(".share-block").draggable({
+		onmove: function (event) {
+			var target = shareBlock,
+				// keep the dragged position in the data-x/data-y attributes
+				y = (parseFloat(target.getAttribute("data-y")) || 0) + event.dy;
+
+			// translate the element
+			target.style.webkitTransform = target.style.transform =
+				"translateY(" + y + "px)";
+
+			// update the position attributes
+			target.setAttribute("data-y", y);
+		},
+		onend: function () {
+			var target = shareBlock;
+			if (
+				parseInt(target.getAttribute("data-y")) > 10 ||
+				parseInt(target.getAttribute("data-y")) < -10
+			) {
+				hideShareBlock();
+			}
+		},
+	});
+});
+
+function handleGridAnimation() {
+	document.querySelectorAll(".carousel-grid").forEach((item) => {
+		item.addEventListener("animationend", () => {
+			if (
+				item.style.animationName === "slideOut" ||
+				item.style.animationName === ""
+			) {
+				item.style.display = "none";
+			} else if (item.style.animationName === "slideIn") {
+				item.style.display = "grid";
+			}
+		});
+
+		if (item.style.animationName === "slideOut") {
+			item.style.animationName = "slideIn";
+			item.style.display = "block";
+		} else if (
+			item.style.animationName === "slideIn" ||
+			item.style.animationName === ""
+		) {
+			item.style.animationName = "slideOut";
+		}
+	});
+}
+
+function handleFlip(element) {
+	element.classList.toggle("flip");
+	handleGridAnimation();
+	document.querySelectorAll("#validate-button").forEach((item) => {
+		if (item.style.display === "none") {
+			item.style.display = "block";
+		} else {
+			item.style.display = "none";
+		}
+	});
+}
+
+function handleCarouselScroll() {
+	const carousel = document.querySelector(".carousel");
+	const carouselItems = document.querySelectorAll(".carousel-item");
+	const scrollPosition = carousel.scrollLeft;
+	const itemWidth = carouselItems[0].offsetWidth;
+	const carouselWidth = itemWidth * carouselItems.length;
+	const middleIndex = Math.floor(carouselItems.length / 2);
+
+	const focusedIndex = Math.round(
+		(scrollPosition + itemWidth / 4) / itemWidth
+	);
+
+	carouselItems.forEach((item, index) => {
+		item.classList.remove("focused");
+		// Si l'élément a la classe 'flip', la retirer
+		const flipContainer = item.querySelector(".flip-container");
+		if (flipContainer && flipContainer.classList.contains("flip")) {
+			flipContainer.classList.remove("flip");
+		}
+	});
+
+	// Ensure the focused index is within valid bounds
+	const validFocusedIndex = Math.min(
+		Math.max(focusedIndex, 0),
+		carouselItems.length - 1
+	);
+
+	const scrollThreshold = itemWidth / 2;
+	// Calculate the target scroll position to snap to the middle of the focused item
+	const targetScrollPosition =
+		validFocusedIndex * itemWidth - (carousel.offsetWidth - itemWidth) / 2;
+
+	// Check if the user has scrolled beyond the threshold
+	if (Math.abs(targetScrollPosition - scrollPosition) > scrollThreshold) {
+		// Set the scroll position directly
+		carousel.scrollTo({
+			left: targetScrollPosition,
+			behavior: "smooth",
+		});
+	}
+}
