@@ -56,7 +56,6 @@ const recapPage = function () {
     "<div>" +
       "<h3>Adresse Adresse Adresse Adresse Adresse Adresse</h3>" +
       "<button id='claude-button' class='popup-button'><a target='_blank' href='https://www.google.com/maps/place/local+libertaire+%22La+Commune%22/@48.1115294,-1.6661136,17z/data=!3m1!4b1!4m6!3m5!1s0x480edf5c8f478afd:0x4b17773367e94451!8m2!3d48.1115294!4d-1.6661136!16s%2Fg%2F11jm5lp9v7?hl=fr&entry=ttu\'>Y aller</a></button>" +
-      "<button id='claude-button' class='popup-button'>Découvrez Son Histoire</button>" +
     "</div>"
   );
 
@@ -65,7 +64,6 @@ const recapPage = function () {
     "<div>" +
       "<h3>Adresse</h3>" +
       "<button id='marlene-button' class='popup-button'><a target=\"_blank\" href=\"https://www.google.com/maps/place/Les+Bavardes/@48.1061729,-1.668653,17z/data=!3m1!4b1!4m6!3m5!1s0x480edf467d5a25d1:0x6c5e499ecdd2ae1a!8m2!3d48.1061729!4d-1.6660781!16s%2Fg%2F11t7cvmf3b?authuser=0&entry=ttu\">Y aller</a></button>" +
-      "<button id='marlene-button' class='popup-button'>Découvrez Son Histoire</button>" +
     "</div>"
   );
 
@@ -74,7 +72,6 @@ const recapPage = function () {
     "<div>" +
       "<h3>Adresse</h3>" +
       "<button id='marie-button' class='popup-button'><a target=\"_blank\" href=\"https://www.google.com/maps/place/Pari-Rennes/@48.1113517,-1.6677568,16.11z/data=!4m6!3m5!1s0x480ede4df99537e9:0x99a93d6dab4a9ce7!8m2!3d48.1125808!4d-1.6642454!16s%2Fg%2F11c5t2yj_6?authuser=0&entry=ttu\">Y aller</a></button>" +
-      "<button id='marie-button' class='popup-button'>Découvrez Son Histoire</button>" +
     "</div>"
   );
 
@@ -83,7 +80,6 @@ const recapPage = function () {
     "<div>" +
       "<h3>Adresse</h3>" +
       "<button id='frederic-button' class='popup-button'><a target=\"_blank\" href=\"https://www.google.com/maps/place/Moulins+de+Rennes/@48.1086963,-1.6741564,17z/data=!3m1!4b1!4m6!3m5!1s0x480edfb52a6c4a27:0x1c11ba8f1ac65c5a!8m2!3d48.1086963!4d-1.6715815!16s%2Fg%2F1tjdw976?authuser=0&entry=ttu\">Y aller</a></button>" +
-      "<button id='frederic-button' class='popup-button'>Découvrez Son Histoire</button>" +
     "</div>"
   );
 
@@ -92,7 +88,6 @@ const recapPage = function () {
     "<div>" +
       "<h3>Adresse</h3>" +
       "<button id='joachim-button' class='popup-button'>Y aller</button>" +
-      "<button id='joachim-button' class='popup-button'>Découvrez Son Histoire</button>" +
     "</div>"
   );
 
@@ -101,7 +96,6 @@ const recapPage = function () {
     "<div>" +
       "<h3>Adresse</h3>" +
       "<button id='nicolas-button' class='popup-button'>Y aller</button>" +
-      "<button id='nicolas-button' class='popup-button'>Découvrez Son Histoire</button>" +
     "</div>"
   );
 
@@ -110,7 +104,6 @@ const recapPage = function () {
     "<div>" +
       "<h3>Adresse</h3>" +
       "<button id='christophe-button' class='popup-button'>Y aller</button>" +
-      "<button id='christophe-button' class='popup-button'>Découvrez Son Histoire</button>" +
     "</div>"
   );
 }
