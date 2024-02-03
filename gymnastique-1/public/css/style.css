@@ -233,7 +233,7 @@ main > section {
 }
 
 /* popup div on the second slide class popup */
-#second-slide .popup {
+#second-slide .popup-billet {
   display: none;
   position: absolute;
   width: 100%;
@@ -246,12 +246,12 @@ main > section {
   transition: all 0.3s ease-in-out;
 }
 
-#second-slide .popup.show {
+#second-slide .popup-billet.show {
   opacity: 1;
   transform: scale(1);
 }
 
-#second-slide .popup-content {
+#second-slide .billet-content {
   width: 100%;
   height: 100%;
   overflow: auto;
@@ -265,7 +265,7 @@ main > section {
 
 /* for screen under the 0.65 aspect ratio */
 @media screen and (max-aspect-ratio: 0.65) {
-  #second-slide .popup-content h2 {
+  #second-slide .billet-content h2 {
     position: absolute;
     top: 7%;
     left: 5%;
@@ -273,7 +273,7 @@ main > section {
     color: #de9b94;
   }
 
-  #second-slide .popup-content h3 {
+  #second-slide .billet-content h3 {
     position: absolute;
     top: 3%;
     left: 5.1%;
@@ -282,7 +282,7 @@ main > section {
     font-weight: 500;
   }
 
-  #second-slide .popup-content #billet {
+  #second-slide .billet-content #billet {
     width: 62%;
     position: absolute;
     top: 18%;
@@ -290,7 +290,7 @@ main > section {
     display: flex;
   }
 
-  #second-slide .popup-content #bouton-retour {
+  #second-slide .billet-content #bouton-retour {
     position: absolute;
     top: 92%;
     left: 50%;
@@ -300,7 +300,7 @@ main > section {
     display: flex;
   }
 
-  #second-slide .popup-content #fleche {
+  #second-slide .billet-content #fleche {
     position: absolute;
     top: 84.3%;
     left: 8.1%;
@@ -308,7 +308,7 @@ main > section {
     display: flex;
   }
 
-  #second-slide .popup-content #facebook {
+  #second-slide .billet-content #facebook {
     position: absolute;
     top: 82.3%;
     left: 60.1%;
@@ -316,7 +316,7 @@ main > section {
     display: flex;
   }
 
-  #second-slide .popup-content #instagram {
+  #second-slide .billet-content #instagram {
     position: absolute;
     top: 82.3%;
     left: 76.1%;
@@ -324,7 +324,7 @@ main > section {
     display: flex;
   }
 
-  #second-slide .popup-content #cadre {
+  #second-slide .billet-content #cadre {
     position: absolute;
     top: 41%;
     left: 50%;
@@ -333,7 +333,7 @@ main > section {
     display: flex;
   }
 
-  #second-slide .popup-content p {
+  #second-slide .billet-content p {
     position: absolute;
     top: 44%;
     left: 50%;
@@ -345,7 +345,7 @@ main > section {
     z-index: 3;
   }
 
-  #second-slide .popup-content #tete2 {
+  #second-slide .billet-content #tete2 {
     position: absolute;
     top: 20%;
     left: 0%;
@@ -356,7 +356,7 @@ main > section {
 /* for screen over the 0.65 aspect ratio */
 @media screen and (min-aspect-ratio: 0.65) {
   
-  #second-slide .popup-content h2 {
+  #second-slide .billet-content h2 {
     position: absolute;
     top: 6.5%;
     left: 5%;
@@ -364,7 +364,7 @@ main > section {
     color: #de9b94;
   }
 
-  #second-slide .popup-content h3 {
+  #second-slide .billet-content h3 {
     position: absolute;
     top: 3%;
     left: 5.1%;
@@ -373,7 +373,7 @@ main > section {
     font-weight: 500;
   }
 
-  #second-slide .popup-content #billet {
+  #second-slide .billet-content #billet {
     width: 52%;
     position: absolute;
     top: 17.5%;
@@ -381,7 +381,7 @@ main > section {
     display: flex;
 }
 
-  #second-slide .popup-content #bouton-retour {
+  #second-slide .billet-content #bouton-retour {
     position: absolute;
     top: 92%;
     left: 50%;
@@ -391,7 +391,7 @@ main > section {
     display: flex;
   }
 
-  #second-slide .popup-content #fleche {
+  #second-slide .billet-content #fleche {
     position: absolute;
     top: 86.3%;
     left: 8.1%;
@@ -399,7 +399,7 @@ main > section {
     display: flex;
 }
 
-  #second-slide .popup-content #facebook {
+  #second-slide .billet-content #facebook {
     position: absolute;
     top: 89.3%;
     left: 70.1%;
@@ -407,7 +407,7 @@ main > section {
     display: flex;
 }
 
-  #second-slide .popup-content #instagram {
+  #second-slide .billet-content #instagram {
     position: absolute;
     top: 89.3%;
     left: 85.1%;
@@ -415,7 +415,7 @@ main > section {
     display: flex;
 }
 
-  #second-slide .popup-content #cadre {
+  #second-slide .billet-content #cadre {
     position: absolute;
     top: 40%;
     left: 50%;
@@ -425,7 +425,7 @@ main > section {
     display: flex;
   }
 
-  #second-slide .popup-content p {
+  #second-slide .billet-content p {
     position: absolute;
     top: 44%;
     left: 50%;
@@ -437,7 +437,7 @@ main > section {
     z-index: 3;
   }
 
-  #second-slide .popup-content #tete2 {
+  #second-slide .billet-content #tete2 {
     position: absolute;
     top: 18%;
     left: 2%;

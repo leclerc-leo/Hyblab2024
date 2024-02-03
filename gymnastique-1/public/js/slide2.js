@@ -40,7 +40,7 @@ const initSlide2 = async function () {
   });
 
   document.getElementById("logo-hyblab").addEventListener("click", function () {
-    var popup = document.getElementById("popup");
+    var popup = document.getElementById("popup-billet");
     popup.style.display = "block";
     setTimeout(function () {
       popup.classList.add("show");
@@ -48,7 +48,7 @@ const initSlide2 = async function () {
   });
 
   document.querySelector("#bouton-retour").addEventListener("click", function () {
-    var popup = document.getElementById("popup");
+    var popup = document.getElementById("popup-billet");
     popup.classList.remove("show");
     setTimeout(function () {
       popup.style.display = "none";
