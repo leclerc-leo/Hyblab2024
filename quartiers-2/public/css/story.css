@@ -141,6 +141,9 @@
     height: 100%;
     cursor: pointer;
 }
+.yesButton:focus, .noButton:focus {
+    outline: none;
+}
 
 
 .previous, .next {
