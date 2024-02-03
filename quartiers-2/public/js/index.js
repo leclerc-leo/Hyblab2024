@@ -5,6 +5,7 @@
 setTimeout(() => { 
   // fade out the loader "slide"
   // and send it to the back (z-index = -1)
+  localStorage.clear();
   anime({
     delay: 100,
     targets: '#motion',
