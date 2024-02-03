@@ -278,6 +278,7 @@ const homeStories = function () {
           image.addEventListener('click', function() {
             localStorage.setItem('yes' + (index + 1), 'yes');
             changeState('no' + (index + 1), yesImages, noImages);
+            setTimeout(() => {}, 1000);
             document.activeElement.blur();
           });
           image.firstChild.addEventListener('load', function() {
@@ -285,6 +286,7 @@ const homeStories = function () {
             image.firstChild.contentDocument.querySelector("svg").addEventListener('click', function() {
                 localStorage.setItem('yes' + (index + 1), 'yes');
                 changeState('no' + (index + 1), yesImages, noImages);
+                setTimeout(() => {}, 1000);
                 document.activeElement.blur();
             });
           });
@@ -293,6 +295,8 @@ const homeStories = function () {
         noImages.forEach((image, index) => {
           image.addEventListener('click', function() {
             localStorage.setItem('no' + (index + 1), 'no');
+            changeState('yes' + (index + 1), yesImages, noImages);
+            setTimeout(() => {}, 1000);
             document.activeElement.blur();
           });
           image.firstChild.addEventListener('load', function() {
@@ -300,8 +304,8 @@ const homeStories = function () {
             image.firstChild.contentDocument.querySelector("svg").addEventListener('click', function() {
               localStorage.setItem('no' + (index + 1), 'no');
               changeState('yes' + (index + 1), yesImages, noImages);
+              setTimeout(() => {}, 1000);
               document.activeElement.blur();
-
             });
           });
         });
