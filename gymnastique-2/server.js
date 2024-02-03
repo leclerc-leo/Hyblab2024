@@ -8,14 +8,13 @@ const app = express();
 
 const public_path = path.join(__dirname, 'public');
 const views_path = path.join(public_path, 'views');
-const webp_path = path.join(public_path, 'img', 'webp');
 app.use(express.static(public_path, { index: false }));
 
 // Middleware pour savoir si le navigateur supporte les images webp
 app.use((req, _, next) => {
-    const acceptsWebP = req.get('Accept').includes('image/webp');
-  
-    req.isWebPSupported = acceptsWebP;
+    const accept = req.get('Accept');
+
+    req.webp_supported = accept.includes('image/webp');
   
     next();
 });
@@ -31,7 +30,7 @@ const convert_to_webp = (content) => {
     files = [...files].filter( file => file.endsWith('.jpg') || file.endsWith('.png'))
         .filter( file => { /* On vérifie que le fichier webp correspondant existe */
             const f = file.split('/').slice(-1)[0];
-            return fs.existsSync(path.join(webp_path, path.basename(f, path.extname(f)) + '.webp'));
+            return fs.existsSync(path.join(path.join(public_path, 'img', 'webp'), path.basename(f, path.extname(f)) + '.webp'));
         });
 
     files.forEach( file => {
@@ -55,7 +54,7 @@ app.get('/', function(req, res) {
         return acc.replace(`<%= ${file[0]} %>`, file[1]);
     }, layout);    
 
-    if (req.isWebPSupported) combined = convert_to_webp(combined);
+    if (req.webp_supported) combined = convert_to_webp(combined);
 
     res.send(combined);
 });
