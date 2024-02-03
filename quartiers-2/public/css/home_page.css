@@ -77,8 +77,6 @@ body{
     position: sticky;
     left: 5%;
     top: 5%;
-    width: 100%;
-    display: flex;
 }
 #back_button img{
     height: 12%;
