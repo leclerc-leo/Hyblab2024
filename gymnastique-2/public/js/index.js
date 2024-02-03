@@ -37,6 +37,7 @@ swiper.on("slideChange", function () {
     }
 });
 
+move_background(50);
 init_accueil(swiper);
 
 const categories_buttons = document.querySelectorAll('.category-button'); // les boutons permettant d'accéder aux informations

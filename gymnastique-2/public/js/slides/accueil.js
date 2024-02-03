@@ -2,8 +2,6 @@
 
 const init_accueil = async swiper => {
 
-    move_background(50, true);
-
     remove_listeners('.exit-button');
     remove_listeners('.home-button');
     remove_listeners('.credits-button');

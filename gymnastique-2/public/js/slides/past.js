@@ -2,8 +2,6 @@
 
 const init_past = async swiper => {
 
-    move_background(0, true);
-
     remove_listeners('.exit-button');
     remove_listeners('.home-button');
   
