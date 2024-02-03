@@ -144,11 +144,7 @@ function showCarousel(id) {
 			document.getElementById("poste-title").textContent = poste;
 			handleCarouselItemClick();
 
-			// Trouver l'élément du milieu et faire défiler jusqu'à lui
-			const carouselItems = document.querySelectorAll(".carousel-item");
-			const middleItemIndex = Math.floor(carouselItems.length / 2);
-			const middleItem = carouselItems[middleItemIndex];
-			middleItem.scrollIntoView({ behavior: "smooth", block: "center" });
+			//TODO Trouver l'élément du milieu et faire défiler jusqu'à lui
 
 			const isAnyItemFlipped = Array.from(
 				document.querySelectorAll(".flip-container")
