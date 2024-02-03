@@ -28,7 +28,7 @@ const get_files = (content, regex, files) => {
 }
 
 const convert_to_webp = (content) => {
-    files = get_files(content, /<img.*?src=["'](.*?)["']/g, new Set());
+    let files = get_files(content, /<img.*?src=["'](.*?)["']/g, new Set());
     files = get_files(content, /background-image: url\((.*?)\)/g, files);
 
     files = [...files].filter( file => file.endsWith('.jpg') || file.endsWith('.png'))
