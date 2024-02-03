@@ -43,7 +43,7 @@
 }
 
 .numberCircleFrame2 {
-    width: 200px; /* Définissez la largeur souhaitée ici */
+    width: 180px; /* Définissez la largeur souhaitée ici */
     height: auto; /* Cela conservera le ratio d'aspect de l'image */
     position: absolute;
     left: 30px;
@@ -57,11 +57,12 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-left: 210px;
+    margin-left: 220px;
+    margin-top: 15px;
 }
 
 .nameFrame2 {
-    font-size: 70px;
+    font-size: 68px;
     font-weight: 500;
 }
 
@@ -71,20 +72,19 @@
     line-height: 30px;
 }
 .flagFrame2 {
-    padding-top: 10px;
+    padding-top: 0px;
 }
 .flagFrame2 img { 
-    width: 70px; 
+    width: 90px; 
     height: auto;
 }
 
 .countryFrame2 {
     position: absolute;
-    padding-top: 1px; /* Utilisez margin-top au lieu de padding-top */
-    font-size: 50px;
+    font-size: 45px;
     font-style: normal;
     font-weight: 400;
-    margin-left: 20px; /* Marge entre le texte et l'icône du drapeau */
+    padding-top: 25px;
 }
 
 .rectangleBlueFrame2{
@@ -97,14 +97,51 @@
     position: relative;
 }
 
+.numberCircleFrame_2_2 {
+    width: 175px; /* Définissez la largeur souhaitée ici */
+    height: auto; /* Cela conservera le ratio d'aspect de l'image */
+    position: absolute;
+    left: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
 .infoFrame2_2 {
     color: white;
     font-family: "Golos Text";
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-left: 200px;
+    padding-right: 80px;
+    margin-top: 25px;
 }
+
+.name_2_Frame2 {
+    font-size: 60px;
+    font-weight: 500;
+}
+
+.time_2_Frame2 {
+    font-size: 35px;
+    font-weight: 400;
+    line-height: 30px;
+}
+
+.flag_2_Frame2 img { 
+    width: 90px; 
+    position: relative;
+    /*height: auto;*/
+}
+
+.country_2_Frame2 {
+    position: absolute;
+    padding-top: 28px; /* Utilisez margin-top au lieu de padding-top */
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    margin-left: 0px; /* Marge entre le texte et l'icône du drapeau */
+}
+
 
 .rectangleRedFrame2{
     width: 80%;
@@ -119,17 +156,17 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-left: 225px;
-    margin-top: 25px;
+    margin-left: 210px;
+    margin-top: 35px;
 }
 
 .name_3_Frame2 {
-    font-size: 75px;
+    font-size: 60px;
     font-weight: 500;
 }
 
 .time_3_Frame2 {
-    font-size: 30px;
+    font-size: 35px;
     font-weight: 400;
     line-height: 30px;
 }

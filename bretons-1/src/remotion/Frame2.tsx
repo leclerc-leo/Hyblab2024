@@ -37,6 +37,11 @@ import { Podium } from '../components/type';
             default: return '';
           }
     };
+
+    const getScoreLabel = (Score : string) => {
+      const isTime = /h|'|''/.test(Score);
+      return isTime ? "Temps : " : "Score : ";
+    };
   
     return (
       <div className="frame2Container">
@@ -44,18 +49,18 @@ import { Podium } from '../components/type';
         {podium.slice(0, 3).map((entry: Podium, index: number) => {
           const rectangleClass = index === 0 ? "rectangleYellowFrame2" : index === 1 ? "rectangleBlueFrame2" : "rectangleRedFrame2";
           const infoFrameClass = index === 0 ? "infoFrame2" : index === 1 ? "infoFrame2_2" : "infoFrame3_2";
-          const numberCircleFrameClass = index === 2 ? "numberCircle_3_Frame2" : "numberCircleFrame2";
-          const flagFrameClass = index === 2 ? "flag_3_Frame2" : "flagFrame2";
-          const nameFrameClass = index === 2 ? "name_3_Frame2" : "nameFrame2";
-          const timeFrameClass = index === 2 ? "time_3_Frame2" : "timeFrame2";
-          const countryFrameClass = index === 2 ? "country_3_Frame2" : "countryFrame2";
+          const numberCircleFrameClass = index === 0 ? "numberCircleFrame2" : index === 1 ? "numberCircleFrame_2_2" : "numberCircle_3_Frame2";
+          const flagFrameClass = index === 0 ? "flagFrame2" : index === 1 ? "flag_2_Frame2" : "flag_3_Frame2";
+          const nameFrameClass = index === 0 ? "nameFrame2" : index === 1 ? "name_2_Frame2" : "name_3_Frame2";
+          const timeFrameClass = index === 0 ? "timeFrame2" : index === 1 ? "time_2_Frame2" : "time_3_Frame2";
+          const countryFrameClass = index === 0 ? "countryFrame2" : index === 1 ? "country_2_Frame2" : "country_3_Frame2";
   
           return (
             <div key={index} className={rectangleClass}>
               <img src={getPlace(entry.Place)} alt={`Top ${index + 1}`} className={numberCircleFrameClass} />
               <div className={infoFrameClass}>
                 <span className={nameFrameClass}>{entry.Nom}</span>
-                <span className={timeFrameClass}>Tps : {entry.Score}</span>
+                <span className={timeFrameClass}>{getScoreLabel(entry.Score)}{entry.Score}</span>
                 <div className={flagFrameClass}>
                   <img src={getFlagSrc(entry.Pays)} alt={entry.Pays} className={flagFrameClass} />
                   <span className={countryFrameClass}>{entry.Pays}</span>
