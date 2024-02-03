@@ -180,7 +180,7 @@
 }
 
 .squared-text p{
-    color: white;
+    color: black;
 }
 
 #first-text{
@@ -191,16 +191,24 @@
     background-color: #FFE178;
 }
 
+#first-text p {
+    color: white;
+}
+
 #third-text{
     background-color:#AAC382;
 }
 
-#fourth-text{
+.fourth-text{
     background-color:#F0AAC8;
 }
 
 #fifth-text{
     background-color:#4669AA;
+}
+
+#fifth-text p {
+    color: white;
 }
 
 #sixth-text{
