@@ -278,16 +278,14 @@ const homeStories = function () {
           image.addEventListener('click', function() {
             localStorage.setItem('yes' + (index + 1), 'yes');
             changeState('no' + (index + 1), yesImages, noImages);
-            setTimeout(() => {}, 500);
-            this.blur()
+            document.activeElement.blur();
           });
           image.firstChild.addEventListener('load', function() {
             image.firstChild.contentDocument.querySelector('#bg-color').style.transition = "all 0.2s ease-in-out";
             image.firstChild.contentDocument.querySelector("svg").addEventListener('click', function() {
                 localStorage.setItem('yes' + (index + 1), 'yes');
                 changeState('no' + (index + 1), yesImages, noImages);
-                setTimeout(() => {}, 500);
-                this.blur()
+                document.activeElement.blur();
             });
           });
         });
@@ -295,16 +293,15 @@ const homeStories = function () {
         noImages.forEach((image, index) => {
           image.addEventListener('click', function() {
             localStorage.setItem('no' + (index + 1), 'no');
-            setTimeout(() => {}, 500);
-            this.blur()
+            document.activeElement.blur();
           });
           image.firstChild.addEventListener('load', function() {
             image.firstChild.contentDocument.querySelector('#bg-color').style.transition = "all 0.2s ease-in-out";
             image.firstChild.contentDocument.querySelector("svg").addEventListener('click', function() {
               localStorage.setItem('no' + (index + 1), 'no');
               changeState('yes' + (index + 1), yesImages, noImages);
-              setTimeout(() => {}, 500);
-              this.blur()
+              document.activeElement.blur();
+
             });
           });
         });
