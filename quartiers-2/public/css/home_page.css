@@ -22,6 +22,7 @@
 
 #page-accueil header p:last-child{
     font-family: 'AlwaysInMyHeart','Montserrat', sans-serif;
+    font-size: 1.7em;
 }
 
 #introduction{
@@ -179,4 +180,13 @@ body, #loader{
         font-size: 15vw;
     }
 }
+
+@font-face {
+    font-family: 'AlwaysInMyHeart';
+    src: url('../font/AlwaysInMyHeart.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 

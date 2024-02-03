@@ -296,7 +296,7 @@ const homeStories = function () {
 
       // On ajoute les event listeners sur les stories pour afficher le slider
       story.addEventListener('click', () => {
-        // on enleve le bouton recap
+        // on enleve le footer recap
         recap.style.display = 'none';
 
         // on met le z-index du footer à 0
@@ -409,7 +409,7 @@ const homeStories = function () {
           });
       }
       // on réaffiche le bouton recap
-      recap.style.display = 'block';
+      recap.style.display = 'flex';
       // on reaffiche les stories
       stories.forEach(story => {
         story.style.display = 'block';
