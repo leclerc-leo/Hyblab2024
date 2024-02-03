@@ -284,6 +284,7 @@ const homeStories = function () {
             image.firstChild.contentDocument.querySelector("svg").addEventListener('click', function() {
                 localStorage.setItem('yes' + (index + 1), 'yes');
                 changeState('no' + (index + 1), yesImages, noImages);
+                this.blur()
             });
           });
         });
@@ -298,6 +299,7 @@ const homeStories = function () {
             image.firstChild.contentDocument.querySelector("svg").addEventListener('click', function() {
               localStorage.setItem('no' + (index + 1), 'no');
               changeState('yes' + (index + 1), yesImages, noImages);
+                this.blur()
             });
           });
         });
