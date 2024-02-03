@@ -39,7 +39,7 @@ import { Podium } from '../components/type';
     };
 
     const getScoreLabel = (Score : string) => {
-      const isTime = /h|'|''/.test(Score);
+      const isTime = /h|'|''|s/.test(Score);
       return isTime ? "Temps : " : "Score : ";
     };
   
