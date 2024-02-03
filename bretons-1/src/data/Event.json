@@ -89,7 +89,7 @@
                   "Score": "1h31'54'00"
                 },
                 {
-                  "Place": "2",
+                  "Place": "3",
                   "Nom": "Georgia Gould",
                   "Pays": "État-Unis",
                   "Score": "1h32'00''0"
@@ -110,21 +110,21 @@
               "Podium (nom + résultat)": [
                 {
                   "Place": "1",
-                  "Nom": "Laëtitia Le Corguillé",
+                  "Nom": "Anne-Caroline Chausson",
                   "Pays": "France",
-                  "Score": "4"
+                  "Score": "35s 976"
                 },
                 {
                   "Place": "2",
-                  "Nom": "Jill Kintner",
-                  "Pays": "État-Unis",
-                  "Score": "9"
+                  "Nom": "Laëtitia Le Corguillé",
+                  "Pays": "France",
+                  "Score": "38s 042"
                 },
                 {
                   "Place": "3",
-                  "Nom": "Shanaze Reade",
-                  "Pays": "Angleterre",
-                  "Score": "10"
+                  "Nom": "Jill Kintner",
+                  "Pays": "État-Unis",
+                  "Score": "38s 674"
                 }
               ],
               "Performance": "...",
