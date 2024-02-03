@@ -8,7 +8,7 @@
   
   .titre_frame1 {
     font-weight: 700;
-    color: white;
+    color: #ffffff;
     position: absolute;
     width: 100%;
     text-align: left;
@@ -18,7 +18,7 @@
   
   .sous-titre_frame1 {
     font-weight: 500;
-    color: white;
+    color: #ffffff;
     position: absolute;
     width: 100%;
     text-align: left;
@@ -26,6 +26,18 @@
     margin-left: 95px;
 
   }
+
+  .animationAgrandissement::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 40%; 
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+    pointer-events: none;
+    border-radius: 2%;
+}
     
 @keyframes agrandirBackground {
     from {

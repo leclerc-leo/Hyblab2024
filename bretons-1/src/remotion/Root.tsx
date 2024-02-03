@@ -25,7 +25,7 @@ export const MyVideo: React.FC<MyVideoProps> = ({ id }) => {
   return (
     <>
       <Sequence from={0} durationInFrames={340}>
-        <Frame1 text={athlete.Athlete} gain={eventData.Gain} rang={eventData.Rang} sous_titre={eventData.Epreuve} image={athlete.Photo}></Frame1>
+        <Frame1 text={athlete.Athlete} sexe={athlete.Sexe} gain={eventData.Gain} rang={eventData.Rang} sous_titre={eventData.Epreuve} image={athlete.Photo}></Frame1>
       </Sequence>
       <Sequence from={340} durationInFrames={350}>
         <Frame4 Gentilé={athlete.Gentilé} rang={eventData.Rang} Epreuve={eventData.Epreuve} sexe={athlete.Sexe} Sport={eventData.Sport}></Frame4>
