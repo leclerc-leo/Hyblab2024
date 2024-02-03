@@ -19,19 +19,17 @@ app.use((req, _, next) => {
     next();
 });
 
-const convert_to_webp = (content) => {
-    const img_regex = /<img.*?src=["'](.*?)["']/g;
+const get_files = (content, regex, files) => {
     let m;
-    let files = new Set();
-    while ((m = img_regex.exec(content)) !== null) {
+    while ((m = regex.exec(content)) !== null) {
         files.add(m[1]);
     }
+    return files;
+}
 
-    const background_img_regex = /background-image: url\((.*?)\)/g;
-    m = undefined;
-    while ((m = background_img_regex.exec(content)) !== null) {
-        files.add(m[1].slice(1, -1));
-    }
+const convert_to_webp = (content) => {
+    files = get_files(content, /<img.*?src=["'](.*?)["']/g, new Set());
+    files = get_files(content, /background-image: url\((.*?)\)/g, files);
 
     files = [...files].filter( file => file.endsWith('.jpg') || file.endsWith('.png'))
         .filter( file => { /* On vérifie que le fichier webp correspondant existe */
