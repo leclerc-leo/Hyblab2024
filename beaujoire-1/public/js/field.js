@@ -653,17 +653,5 @@ function handleCarouselScroll() {
 		carouselItems.length - 1
 	);
 
-	const scrollThreshold = itemWidth / 2;
-	// Calculate the target scroll position to snap to the middle of the focused item
-	const targetScrollPosition =
-		validFocusedIndex * itemWidth - (carousel.offsetWidth - itemWidth) / 2;
-
-	// Check if the user has scrolled beyond the threshold
-	if (Math.abs(targetScrollPosition - scrollPosition) > scrollThreshold) {
-		// Set the scroll position directly
-		carousel.scrollTo({
-			left: targetScrollPosition,
-			behavior: "smooth",
-		});
-	}
+	carouselItems[validFocusedIndex].classList.add("focused");
 }
