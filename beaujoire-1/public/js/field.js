@@ -212,13 +212,13 @@ function getPositionFromId(id) {
 			position = "ENTRAÎNEUR";
 			break;
 		case elementId.includes("ailier-droit"):
-			position = "11";
+			position = "MILIEU OFF D";
 			break;
 		case elementId.includes("ailier-gauche"):
-			position = "7";
+			position = "MILIEU OFF G";
 			break;
 		case elementId.includes("attaquant-centre"):
-			position = "9";
+			position = "AVANT CENTRE";
 			break;
 		case elementId.includes("arriere-droit"):
 			position = "ARRIÈRE D";
@@ -227,7 +227,7 @@ function getPositionFromId(id) {
 			position = "ARRIÈRE G";
 			break;
 		case elementId.includes("midfielder-lead"):
-			position = "MENEUR";
+			position = "ATTAQUANT";
 			break;
 		case elementId.includes("midfielder-1"):
 			position = "MILIEU DÉF G";

@@ -340,8 +340,8 @@ body {
 
 .carousel-item {
 	flex: 0 0.02 auto;
-	height: 97%;
-	width: 80%;
+	height: 95%;
+	width: 65%;
 	scroll-snap-align: center;
 	z-index: 1;
 	display: flex;
@@ -351,7 +351,7 @@ body {
 	margin: 10px 0;
 	background-color: transparent;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-	transform: scale(0.7);
+	transform: scale(0.8);
 	transition: all 0.2s ease-in-out;
 }
 
@@ -405,7 +405,7 @@ body {
 }
 
 .stat-name {
-	font-size: 12px;
+	font-size: 10px;
 	margin-top: 5px;
 }
 
