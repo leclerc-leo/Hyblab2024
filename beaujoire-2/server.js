@@ -9,7 +9,16 @@ const path = require('path');
 // Create our application
 const app = express();
 
-let db = require('./public/data/dbinit');
+let db = require('./public/data/dbutils');
+
+db.selectPlayer(1);
+db.vote("test", [2, 2, 2, 1, 1, 2, 2, 1, 4, 3, 1, 2]);
+db.vote("test2", [2, 2, 2, 1, 1, 2, 3, 1, 4, 3, 1, 2]);
+db.vote("test3", [2, 4, 2, 1, 3, 2, 2, 1, 4, 3, 1, 2]);
+db.selectVotes();
+db.getStats(7, 2);
+db.getTop(7);
+
 // Load and register our REST API
 const api = require('./api/api');
 app.use('/api', api);
@@ -53,7 +62,7 @@ ui.get('/list', async (req, res) => {
 
 ui.get('/archives', async (req, res) => {
 
-    res.sendFile(path.join(__dirname, 'public/archive.html'), {
+    res.sendFile(path.join(__dirname, 'public/archives.html'), {
         locals: {
             pageName: 'Archives'
         }
