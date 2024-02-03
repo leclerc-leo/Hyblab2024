@@ -3,11 +3,10 @@
 
 .frame2Container {
     width: 100%; 
-    /*margin: auto; */
     position: relative;
     display: flex; 
     flex-direction: column; 
-    height: auto; /* Ajuster la hauteur pour la compatibilité mobile */
+    height: auto; 
 }
 
 .titreFrame2 {
@@ -15,13 +14,13 @@
     font-size: 80px; 
     color: #25283D; 
     height: 600px;
-    text-align: center; /* Centrer le titre */
+    text-align: center;
     padding-top: 150px;
     font-weight: bold;
 }
 
 .rectangleYellowFrame2 {
-    width: 100%;/* ajuster la largeur pour prendre en compte la bordure */
+    width: 100%;
     height: 300px;
     flex-shrink: 0;
     background: #FACD5F;
@@ -29,7 +28,7 @@
     flex-direction: column;
     align-items: center;
     position: relative;
-    border: 10px solid #25283D; /* s'assurer que la bordure est visible */
+    border: 10px solid #25283D; 
 }
 
 .infoFrame2 {
@@ -38,13 +37,13 @@
     display: flex;
     flex-direction: column;
     align-items: center; 
-    margin: 0; /* Ajuster les marges */
-    text-align: center; /* Centrer le texte */
+    margin: 0; 
+    text-align: center; 
 }
 
 .numberCircleFrame2 {
-    width: 180px; /* Définissez la largeur souhaitée ici */
-    height: auto; /* Cela conservera le ratio d'aspect de l'image */
+    width: 180px; 
+    height: auto; 
     position: absolute;
     left: 30px;
     top: 50%;
@@ -98,8 +97,8 @@
 }
 
 .numberCircleFrame_2_2 {
-    width: 175px; /* Définissez la largeur souhaitée ici */
-    height: auto; /* Cela conservera le ratio d'aspect de l'image */
+    width: 175px; 
+    height: auto;
     position: absolute;
     left: 30px;
     top: 50%;
@@ -130,16 +129,15 @@
 .flag_2_Frame2 img { 
     width: 90px; 
     position: relative;
-    /*height: auto;*/
 }
 
 .country_2_Frame2 {
     position: absolute;
-    padding-top: 28px; /* Utilisez margin-top au lieu de padding-top */
+    padding-top: 28px; 
     font-size: 40px;
     font-style: normal;
     font-weight: 400;
-    margin-left: 0px; /* Marge entre le texte et l'icône du drapeau */
+    margin-left: 0px; 
 }
 
 
@@ -179,8 +177,8 @@
 }
 
 .numberCircle_3_Frame2 {
-    width: 150px; /* Définissez la largeur souhaitée ici */
-    height: auto; /* Cela conservera le ratio d'aspect de l'image */
+    width: 150px; 
+    height: auto; 
     position: absolute;
     transform: translateY(-50%);
     margin-top: 150px;
@@ -189,10 +187,10 @@
 
 .country_3_Frame2 {
     position: absolute;
-    padding-top: 1px; /* Utilisez margin-top au lieu de padding-top */
+    padding-top: 1px; 
     font-size: 40px;
     font-style: normal;
     font-weight: 400;
-    margin-left: 20px; /* Marge entre le texte et l'icône du drapeau */
+    margin-left: 20px; 
 }
 
