@@ -8,6 +8,22 @@ import { Carousel } from 'react-bootstrap';
 import { Athlete, VideoListItemProps, EventDataItem } from './type';
 import EventData from '../data/Event.json';
 
+const determinerTexteTitre = (sexe: string, gain: string) => {
+  const suffixeGenre = (sexe === 'F') ? 'e' : '';
+  switch (gain) {
+    case "Or":
+      return "décroche l'or en";
+    case "Argent":
+      return "décroche l'argent en";
+    case "Bronze":
+      return "décroche le bronze en";
+    case "Qualifie":
+      return `qualifié${suffixeGenre} pour la finale en`
+    case "":
+      return `non qualifié${suffixeGenre} pour la finale`;
+  }
+};
+
 const allAthletesData = athleteData.Athlete.reduce((allAthletes: Athlete[], athletesArray: Athlete[]) => {
   return allAthletes.concat(athletesArray);
 }, []);
@@ -20,12 +36,12 @@ const athleteVideosData = allAthletesData.map((athlete: Athlete) => {
 
   const videosForAthlete = athleteEvents.map((event: EventDataItem) => ({
     id: event.IdEvent.toString(),
-    sport: event.Sport,
+    sport: event.Epreuve,
     gain: event.Gain,
     title: event.Athlete,
-    subtitle: event.Epreuve,
+    subtitle: event.Gain,
     srcPhoto: athlete.Photo,
-    description: event.Performance,
+    description: athlete.Sexe,
     text: "",
   }));
 
@@ -67,7 +83,7 @@ function CardCarousel({ video }: VideoListItemProps) {
         <Card.Img className="custom-image" src={video.srcPhoto} />
         <div className='card_text'>
           <h4>{video.title}</h4>
-          <p>{video.subtitle}</p>
+          <p>{determinerTexteTitre(video.description, video.subtitle)} en {video.sport} ! </p>
         </div>
         <div className="image-row" style={{ zIndex: 5 }}>
         <img
