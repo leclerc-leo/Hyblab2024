@@ -30,15 +30,6 @@
     margin-top: 10%;
 }
 
-.first{
-    border: 2px solid black;
-    width: 85%;
-}
-
-.first p {
-    color: white;
-    width: 80%;
-}
 
 /* audio */
 .audio-div{
@@ -186,6 +177,10 @@
 .squared-text{
     border: 2px solid black;
     width: 85%;
+}
+
+.squared-text p{
+    color: white;
 }
 
 #first-text{

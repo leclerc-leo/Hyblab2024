@@ -1,7 +1,7 @@
 /* à supprimer et mettre dans un fichier css commun à toutes les pages */
 
 #container {
-    background-color: #F8D8DB;
+    background-color: #F8E8DB;
 }
 
 main{
@@ -109,7 +109,7 @@ footer {
     z-index: 6;
     margin-top: 5%;
     width:100%;
-    background-color: #FCF3EC;
+    background-color: #F8E8DB;
     font-size: 20%;
     border-top: 2px solid black;
     cursor: pointer;
