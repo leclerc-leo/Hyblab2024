@@ -141,8 +141,10 @@
     height: 100%;
     cursor: pointer;
 }
-.yesButton:focus, .noButton:focus {
+.yesButton:first-child, .noButton:first-child{
     outline: none;
+    border: none;
+    background-color: transparent;
 }
 
 
