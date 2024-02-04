@@ -21,6 +21,9 @@ document.addEventListener('DOMContentLoaded', function() {
   
 	// Fonction pour afficher le popup du premier carrousel
 	function showPopup() {
+		var popupText = document.getElementById("popup-text");
+    	popupText.textContent = "Veuillez choisir votre maillot";
+
 		popupOverlay.style.display = 'block';
 		updateCarousel(current);
 	}
@@ -108,6 +111,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Fonction pour afficher le popup du deuxième carrousel
 	function showSecondPopup() {
+		var popupText1 = document.getElementById("second-popup-text");
+    	popupText1.textContent = "Veuillez choisir votre blason";
+
 		secondPopupOverlay.style.display = 'block';
 		updateSecondCarousel(currentSecond);
 	}
