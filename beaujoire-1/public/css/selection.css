@@ -1,1 +1,62 @@
 @import "style2.css";
+
+:root {
+  --gb-50: #00a55a;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  background: none;
+  color: #00a55a !important;
+  fill: #00a55a !important;
+}
+
+.swiper-pagination-bullet {
+  background: #00a55a !important;
+  margin-top: auto;
+}
+
+.container-terrain {
+  display: flex;
+  align-items: center;
+  height: 100dvh;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-evenly;
+}
+
+.textvote-container {
+  margin: 5%;
+  width: 100%;
+  height: 50px;
+  background-image: url("../img/textvote.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+#writer {
+  display: inline-block;
+  padding: 7px 30px;
+  font-size: 12px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  color: var(--gb-50);
+  font-weight: 800;
+  margin-bottom: 10px;
+  border: none;
+  box-shadow: 3px 3px 0 var(--gb-52);
+}
+
+#entraineur-choix {
+  display: inline-block;
+  padding: 12px 35px;
+  font-size: 16px;
+  border-radius: 30px;
+  background-color: #ffffff;
+  color: var(--gb-51);
+  font-weight: 800;
+  margin-bottom: 10px;
+  border: none;
+  box-shadow: 3px 3px 0 var(--gb-52);
+}
