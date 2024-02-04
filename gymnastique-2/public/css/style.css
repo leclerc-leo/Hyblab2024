@@ -95,6 +95,11 @@ header{
     bottom: 0;
 }
 
+.background .container > div{
+    position: absolute;
+    bottom: 0;
+}
+
 .category-button{
     position: absolute; 
     width: 60%;
