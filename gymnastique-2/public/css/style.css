@@ -16,12 +16,9 @@
 
 .swiper-pagination-bullets.swiper-pagination-horizontal {
     --swiper-pagination-bottom: 0px;
-    width: 100%;
-    margin: 0 auto 10px auto;
 }
 
 .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet{
-    margin:  0 var(--swiper-pagination-bullet-horizontal-gap,4px);
     margin-bottom: 1%;
 }
 
@@ -32,7 +29,6 @@
 .swiper-pagination-bullet, .swiper-pagination-bullet::before {
     position: relative;
     --swiper-pagination-bullet-border-radius: 0;
-    --swiper-pagination-bullet-horizontal-gap: 1%;
     --swiper-pagination-bullet-size: 10%;
     width: var(--swiper-pagination-bullet-size);
     padding-bottom: var(--swiper-pagination-bullet-size);
@@ -45,7 +41,7 @@
     --swiper-pagination-bullet-size: 50%;
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: 20%;
     transform: translate(-50%, 0);
     border: 2px solid white;
     border-radius: 50%;
