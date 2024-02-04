@@ -34,7 +34,7 @@ body{
 /* Most of the elements in this demo are absolute positioned with percentages */
 #first-slide header{
     width: 100%;
-    bottom: 40%;
+    bottom: 27%;
     position: absolute;
     z-index: 2;
     text-align: center;
@@ -52,7 +52,7 @@ body{
     #ecu{
         position: absolute;
         top:0.8em;
-        left: 0.94em;
+        left: 1em;
         height: 0.35em;
         -webkit-transform: rotate(-15deg);
         -moz-transform: rotate(-15deg);
@@ -68,20 +68,23 @@ body{
     }
 
     #accroche {
+        position: relative;
         font-size: 0.5em;
-        z-index: 2;
+        z-index: 4;
+        margin-top: 2em;
     }
         #anim-40{
             position: absolute;
-            right:1.7em;
-            top:57%;
+            right:1.85em;
+            top: -53%;
             height: 3em;
+            display: none;
         }
         #img-40 {
             position: absolute;
             height : 1.5em;
-            right : 1.855em;
-            top : 67.45%;
+            right : 2em;
+            top : -16%;
             display: none;
         }
 
@@ -102,10 +105,10 @@ body{
 
 #acceuil_papier{
     position: absolute;
-    z-index: 2;
+    z-index: 1;
     width:100%;
     bottom:0;
-    height: 19%;
+    height: 25%;
     transform: scale(3);
     z-index: -1;
 }
@@ -127,9 +130,9 @@ body{
     justify-content: center;
     width:76%;
     position: relative;
-    font-size: 0.2em;
+    font-size: 0.22em;
     z-index: 2;
-    top:71%;
+    top:76%;
     color:white;
     text-align: center;
     margin: 0 12%;
@@ -143,7 +146,7 @@ body{
     position: relative;
     width: 70%;
     height: 7%;
-    top: 75%;
+    top: 80%;
     border-radius: 30px;
     color: var(--yellow);
     text-transform: uppercase;
