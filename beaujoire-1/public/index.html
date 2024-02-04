@@ -1,138 +1,116 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width initial-scale=1.0" />
-    <title>Le 11 de légende</title>
-    <link rel="icon" href="img/logo.svg" />
-    <link rel="stylesheet" href="./css/style_field.css" />
-    <link rel="stylesheet" href="https://use.typekit.net/tor7tnx.css" />
-    <link rel="stylesheet" href="./css/Carrousel.css" />
-    <script src="https://cdn.jsdelivr.net/npm/interactjs@1.10.11/dist/interact.min.js"></script>
-    <script src="https://kit.fontawesome.com/f29a899f6e.js" crossorigin="anonymous"></script>
-    <script src="./js/index.js"></script>
-  </head>
-  <body>
-    <div class="container">
-      <h1 id="main" class="small-title">
-        CRÉE TON <span class="green big-title">11</span> DE
-        <br />
-        <span class="green big-title">LÉGENDE</span>
-      </h1>
-      <div class="field">
-        <img src="./img/field.svg" alt="field" width="100%" height="100%" />
-        <button type="button" id="mid-choose" class="choose" title="choose">COMMENCER</button>
-        <div class="btn" id="share" title="share">
-          <i class="fas fa-share"></i>
-        </div>
-      </div>
-      <div class="share-block">
-        <div class="share-block__bar"></div>
-        <p class="share-block__text">Partage ton 11</p>
-        <div class="share-icons">
-          <div class="share-icons__item">
-            <div class="img-container">
-              <img src="./img/insta.svg" alt="insta" />
-            </div>
-            <p class="social">Instagram</p>
-          </div>
-          <div class="share-icons__item">
-            <div class="img-container">
-              <img src="./img/facebook.svg" alt="fb" />
-            </div>
-            <p class="social">Facebook</p>
-          </div>
-          <div class="share-icons__item">
-            <div class="img-container">
-              <img src="./img/x.svg" alt="x" />
-            </div>
-            <p class="social">X</p>
-          </div>
-          <div class="share-icons__item">
-            <div class="img-container">
-              <img src="./img/youtube.svg" alt="youtube" />
-            </div>
-            <p class="social">Youtube</p>
-          </div>
-          <div class="share-icons__item">
-            <div class="img-container">
-              <img src="./img/bread.svg" alt="plus" />
-            </div>
-            <p class="social">Plus</p>
-          </div>
-        </div>
-      </div>
-      <a href="./index.html">
-        <button class="gm-btn gb-shutter">LE 11 DE LA RÉDACTION</button>
-      </a>
-    </div>
-    <!-- Popup Overlay -->
-    <div id="popup-overlay" class="popup-overlay" style="display: none">
-      <!-- Popup Content -->
-      <!-- Carousel Container -->
-      <div class="items">
-        <div class="item">
-          <img src="img/00-01.png" />
-        </div>
-        <div class="item">
-          <img src="img/12-13.png" />
-        </div>
-        <div class="item">
-          <img src="img/21-22.png" />
-        </div>
-        <div class="item">
-          <img src="img/84-85.png" />
-        </div>
-        <div class="item">
-          <img src="img/94-95.png" />
-        </div>
-        <div class="button-container">
-          <div class="button"><i class="fas fa-angle-left"></i></div>
-          <div class="button"><i class="fas fa-angle-right"></i></div>
-          <button id="confirm-selection" class="btn">Valider</button>
-          <a href="./index.html">
-            <button id="return" class="btn">Quitter</button>
-          </a>
-        </div>
-      </div>
-    </div>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width initial-scale=1.0" />
+		<title>Le 11 de légende</title>
+		<link rel="icon" href="img/logo.svg" />
+		<link rel="stylesheet" href="./css/style_field.css" />
+		<link rel="stylesheet" href="https://use.typekit.net/tor7tnx.css" />
+		<link rel="stylesheet" href="./css/Carrousel.css" />
+		<script src="https://cdn.jsdelivr.net/npm/interactjs@1.10.11/dist/interact.min.js"></script>
+		<script
+			src="https://kit.fontawesome.com/f29a899f6e.js"
+			crossorigin="anonymous"></script>
+		<script src="./js/index.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<h1 id="main" class="small-title">
+				CRÉE TON <span class="green big-title">11</span> DE
+				<br />
+				<span class="green big-title">LÉGENDE</span>
+			</h1>
+			<div class="field">
+				<img
+					src="./img/field.svg"
+					alt="field"
+					width="100%"
+					height="100%" />
+				<button
+					type="button"
+					id="mid-choose"
+					class="choose"
+					title="choose">
+					COMMENCER
+				</button>
+			</div>
+			<a href="./selection.html" style="margin: 5%">
+				<button class="gm-btn gb-shutter">LE 11 DE LA RÉDACTION</button>
+			</a>
+		</div>
+		<!-- Popup Overlay -->
+		<div id="popup-overlay" class="popup-overlay" style="display: none">
+			<!-- Popup Content -->
+			<!-- Carousel Container -->
+			<div class="items">
+				<div class="item">
+					<img src="img/maillot-00-01.png" />
+				</div>
+				<div class="item">
+					<img src="img/maillot-12-13.png" />
+				</div>
+				<div class="item">
+					<img src="img/maillot-21-22.png" />
+				</div>
+				<div class="item">
+					<img src="img/maillot-84-85.png" />
+				</div>
+				<div class="item">
+					<img src="img/maillot-94-95.png" />
+				</div>
+				<div class="button-container">
+					<div class="button"><i class="fas fa-angle-left"></i></div>
+					<div class="button"><i class="fas fa-angle-right"></i></div>
+					<button id="confirm-selection" class="btn">Valider</button>
+					<a href="./index.html">
+						<button id="return" class="btn">Quitter</button>
+					</a>
+				</div>
+			</div>
+		</div>
 
-    <div id="second-popup-overlay" class="second-popup-overlay" style="display: none">
-      <!-- Popup Content -->
-      <div class="popup-content">
-        <!-- Carousel Container -->
-        <div class="second-items">
-          <div class="second-item">
-            <img src="./img/l1.png" />
-          </div>
-          <div class="second-item">
-            <img src="img/l2.png" />
-          </div>
-          <div class="second-item">
-            <img src="img/l3.png" />
-          </div>
-          <div class="second-item">
-            <img src="img/l4.png" />
-          </div>
-          <div class="second-item">
-            <img src="img/l5.png" />
-          </div>
-          <div class="button-container1">
-            <div class="button"><i id="fas fa-angle-left"></i></div>
-            <div class="button"><i id="fas fa-angle-left"></i></div>
-            <a href="./field.html">
-              <button id="confirm-selection" class="btn">Valider</button>
-            </a>
-            <a href="./index.html">
-              <button id="return" class="btn">Quitter</button>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Fin Popup Overlay -->
+		<div
+			id="second-popup-overlay"
+			class="second-popup-overlay"
+			style="display: none">
+			<!-- Popup Content -->
+			<div class="popup-content">
+				<!-- Carousel Container -->
+				<div class="second-items">
+					<div class="second-item">
+						<img src="./img/blason-fcn-08-19.webp" />
+					</div>
+					<div class="second-item">
+						<img src="img/blason-fcn-19.webp" />
+					</div>
+					<div class="second-item">
+						<img src="img/blason-fcn-77-88.webp" />
+					</div>
+					<div class="second-item">
+						<img src="img/blason-fcn-88-97.webp" />
+					</div>
+					<div class="second-item">
+						<img src="img/blason-fcn-97-03.webp" />
+					</div>
+					<div class="button-container1">
+						<div class="button"><i id="fas fa-angle-left"></i></div>
+						<div class="button"><i id="fas fa-angle-left"></i></div>
+						<a href="./field.html">
+							<button id="confirm-selection" class="btn">
+								Valider
+							</button>
+						</a>
+						<a href="./index.html">
+							<button id="return" class="btn">Quitter</button>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Fin Popup Overlay -->
 
-    <!-- Liens vers vos fichiers JavaScript et CSS externes -->
-    <script src="./js/Carrousel.js"></script>
-  </body>
+		<!-- Liens vers vos fichiers JavaScript et CSS externes -->
+		<script src="./js/Carrousel.js"></script>
+	</body>
 </html>
