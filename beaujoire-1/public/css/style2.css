@@ -327,10 +327,9 @@ body {
 	overflow-x: scroll;
 	overflow-y: hidden;
 	width: 100%;
-	scroll-snap-type: x proximity;
+	scroll-snap-type: x mandatory;
 	scroll-behavior: smooth;
 	padding: 0 5%;
-	scroll-padding: 5%;
 	::-webkit-scrollbar {
 		display: none;
 	}
@@ -354,6 +353,8 @@ body {
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 	transform: scale(0.8);
 	transition: all 0.2s ease-in-out;
+	user-select: none;
+	-webkit-user-select: none;
 }
 
 .carousel-item.focused {
