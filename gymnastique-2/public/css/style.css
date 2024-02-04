@@ -87,6 +87,7 @@ header{
     bottom: 0;
     min-height: 100%;
     transform: translate(-50%, 0%);
+    font-size: 0;
 }
 
 .background > *{
