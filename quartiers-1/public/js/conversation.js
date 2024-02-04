@@ -9,20 +9,14 @@ function scrollSmoothlyToBottom() {
 };
 
 function treatBubble(bubbleJson) {
-    console.log("TreatBubble");
     console.log(lastBubble);
     if (lastBubble["type"] == "choice" || lastBubble["type"] == "topicChoice") {
-        console.log("rapide");
-        console.log(bubbleJson);
         time += 1000;
     } else {
-        console.log("long");
-        console.log(bubbleJson);
         time += 1100*lastBubble["content"].length;
     }
 
     setTimeout(() => { 
-        console.log(time)
         if (bubbleJson["type"] == "bubble") {
             addBubble(bubbleJson["speaker"], bubbleJson["content"]);
         }
@@ -112,6 +106,7 @@ function addNameBubble(bubbleJson) {
     conversation.append(choiceBubblesContent);
 
     scrollSmoothlyToBottom();
+    saveConversation();
 }
 
 function saveUsername(event){
@@ -146,6 +141,7 @@ function addChoiceBubble(bubbleJson) {
     conversation.append(choiceBubblesContent);
 
     scrollSmoothlyToBottom();
+    saveConversation();
 }
 
 function choiceSelected(btnChoiceSelected){
@@ -178,6 +174,7 @@ function addTopicBubble(bubbleJson) {
     conversation.append(choiceBubblesContent);
 
     scrollSmoothlyToBottom();
+    saveConversation();
 }
 
 function topicSelected(btntopicSelected){
@@ -212,6 +209,7 @@ function addQuitBubble(bubbleJson) {
     conversation.append(choiceBubblesContent);
 
     scrollSmoothlyToBottom();
+    saveConversation();
 }
 
 function changeTopic() {
@@ -224,14 +222,13 @@ function changeTopic() {
     setTimeout(() => { 
         conversationUnfold("Debut");
     }, 1000);
-
-    console.log(textChoice);
 }
 
 function saveConversation() {
     save.user_name = user_name;
     save.quartier = quartier;
     save.topic = topic;
+    save.nextTopic = nextTopic;
     save.time = time;
     save.lastBubble = lastBubble;
     save.conversation = conversation.html();
@@ -247,6 +244,7 @@ function reloadConversation() {
     user_name = save.user_name;
     quartier = save.quartier;
     topic = save.topic;
+    nextTopic = save.nextTopic;
     time = save.time;
     lastBubble = save.lastBubble;
 
@@ -284,27 +282,34 @@ async function conversationUnfold(nextID) {
 }
 
 let conversation = $(".conversation");
-let user_name = "Vous";
 let quartier = "Villejean";
 let topic = "bienvenue";
 let nextTopic = "bienvenue";
 let time = 0;
 let lastBubble = {"content": []};
-console.log(topic);
 let save = {};
 
+let user_name = sessionStorage.getItem("user_name");
+let start;
+if (user_name == null) {
+    start = "Debut";
+} else {
+    start = "Binvenue1";
+}
 
 backgroundTransition();
-
 setTimeout(() => {
-    conversationUnfold("Debut");
+    if (sessionStorage.getItem("save") == null) {
+        conversationUnfold(start);
+    } else {
+        reloadConversation();
+    }
 }, 1000);
 
 const save_button = document.querySelector(".save");
 save_button.addEventListener("click", function() {
     saveConversation();
 });
-
 const reload_button = document.querySelector(".reload");
 reload_button.addEventListener("click", function() {
     reloadConversation();

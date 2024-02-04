@@ -27,14 +27,3 @@ function backgroundTransition() {
         old_img.remove();
     }, 2000);
 }
-
-const test_button = document.querySelector(".test");
-test_button.addEventListener("click", function() {
-    test_button.disabled = true
-
-    backgroundTransition();
-
-    setTimeout(function() {
-        test_button.disabled = false
-    }, 2000);
-});
