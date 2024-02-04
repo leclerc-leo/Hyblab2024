@@ -1,9 +1,23 @@
 // list.js
 
 document.addEventListener('DOMContentLoaded', function () {
-  const positions = ['Gardien','Arrière latéral droit','Arriere latéral gauche','Défenseur central 1','Défenseur central 2','Milieu défensif','Milieu gauche',
-  'Milieu offensif','Attaquant 1','Milieu droit','Attaquant 2','Sélectionneur']
+  const positions = ['Gardien', 'Arrière droit', 'Arriere gauche', 'Défenseur central 1'];
+
   const playerLists = [
+    [
+      { name: 'Player 1', photo: 'img/ndoram.jpg' },
+      { name: 'Player 2', photo: 'img/ndoram.jpg' },
+      { name: 'Player 3', photo: 'img/ndoram.jpg' },
+      { name: 'Player 4', photo: 'img/ndoram.jpg' },
+      { name: 'Player 5', photo: 'img/ndoram.jpg' },
+    ],
+    [
+      { name: 'Player 6', photo: 'img/ndoram.jpg' },
+      { name: 'Player 7', photo: 'img/ndoram.jpg' },
+      { name: 'Player 8', photo: 'img/ndoram.jpg' },
+      { name: 'Player 9', photo: 'img/ndoram.jpg' },
+      { name: 'Player 10', photo: 'img/ndoram.jpg' },
+    ],
     [
       { name: 'Player 1', photo: 'img/ndoram.jpg' },
       { name: 'Player 2', photo: 'img/ndoram.jpg' },
@@ -21,24 +35,22 @@ document.addEventListener('DOMContentLoaded', function () {
     // Add more player lists as needed
   ];
 
-  // Initialize Swiper
-  const swiper = new Swiper('.swiper-container', {
+
+  let playerSwiper;
+
+  // Initialize Swiper for player lists
+  playerSwiper = new Swiper('.player-swiper-container', {
     loop: true,
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    on: {
-      slideChange: function () {
-        const currentpos = positions[this.activeIndex];
-        const currentList = playerLists[this.activeIndex];
-        updatePlayerList(`playerList${this.activeIndex + 1}`, currentList);
-      },
-    },
   });
 
-  // Your existing player list update function
-  function updatePlayerList(playerListId, players) {
+
+  // Event handler for player swiper
+  playerSwiper.on('slideChange', function () {
+    updateContent(this.activeIndex);
+  });
+
+
+  function updatePlayerListContent(playerListId, players) {
     const playerListContainer = document.getElementById(playerListId);
     playerListContainer.innerHTML = '';
 
@@ -60,10 +72,41 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  function updatePositions(currentIndex) {
+    const positionPreviewContainer = document.getElementById(`positionPreview${currentIndex + 1}`);
+    positionPreviewContainer.innerHTML = '';
+  
+    const currentPos = document.createElement('div');
+    currentPos.classList.add('position-preview-box', 'current');
+    currentPos.textContent = positions[currentIndex];
+  
+    const prevIndex = (currentIndex - 1 + positions.length) % positions.length;
+    const nextIndex = (currentIndex + 1) % positions.length;
+  
+    const prevPos = document.createElement('div');
+    prevPos.classList.add('position-preview-box', 'prev');
+    prevPos.textContent = positions[prevIndex];
+  
+    const nextPos = document.createElement('div');
+    nextPos.classList.add('position-preview-box', 'next');
+    nextPos.textContent = positions[nextIndex];
+  
+    positionPreviewContainer.appendChild(prevPos);
+    positionPreviewContainer.appendChild(currentPos);
+    positionPreviewContainer.appendChild(nextPos);
+  }
+  
+  
+
+  function updateContent(currentIndex) {
+    updatePlayerListContent(`playerList${currentIndex + 1}`, playerLists[currentIndex]);
+    updatePositions(currentIndex);
+  }
+  
+
   let selectedHeartButton = null;
   function toggleHeart(button) {
     if (button.dataset.type === 'heart') {
-      // Deselect the previously selected heart button
       if (selectedHeartButton && selectedHeartButton !== button) {
         selectedHeartButton.classList.remove('pressed');
       }
@@ -73,6 +116,5 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  // Initial update with the first player list
-  updatePlayerList('playerList1', playerLists[0]);
+  updateContent(0);
 });

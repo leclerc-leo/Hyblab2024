@@ -23,44 +23,45 @@ body{
     flex-direction: column;
     align-items: center;
     width: 100%;
+    margin-top: -2%;
   }
   
   .player-box {
-    border: 3px solid var(--yellow); /* Border styling */
+    border: 0.04em solid var(--yellow); /* Border styling */
     border-radius: 0.2em; /* Rounded corners */
     overflow: hidden; /* Ensure content doesn't overflow */
     margin: 1%;
-    width: 80%; /* Adjust the width as needed */
+    width: 75%; /* Adjust the width as needed */
     max-width: 100%; /* Adjust the maximum width as needed */
     display: flex; /* Use flexbox for layout */
   }
   
   .player-box img {
-    margin-top: 0.625rem;
-    margin-bottom: 0.625rem;
-    margin-left: 0.938rem;
-    width: 2.813rem; 
-    height: 2.813rem;
-    border-radius: 0.2rem;
-    max-width: 100%; 
+    margin-top: 3%;
+    margin-bottom: 3%;
+    margin-left: 5%;
+    width: 0.7em;
+    height: 0.7em;
+    border-radius: 0.09em;
+    max-width: 100%;
     object-fit: cover;
   }
   
   .player-box p {
-    flex: 1; /* Take remaining space */
-    padding: 1.438rem;
-    text-align: center; /* Center the name */
+    flex: 1;
+    padding: 1.1em;
+    text-align: center;
     color: white;
-    font-family: "Abolition"; 
-    font-size: 1.25rem;
+    font-family: "Abolition";
+    font-size: 30%;
   }
   
   .heart-button {
-    background: url('../img/COEUR1.svg') no-repeat center center;
+    background: url(../img/COEUR1.svg) no-repeat center center;
     background-size: contain;
-    width: 1.563rem;
-    margin-right: 0.625rem;
-    margin-left: 1rem;
+    width: 8%;
+    margin-right: 5%;
+    margin-left: 9%;
     border: none;
     cursor: pointer;
   }
@@ -69,9 +70,9 @@ body{
   .heart-button.pressed{
     background: url("../img/COEUR2.svg") no-repeat center center;
     background-size: contain;
-    width: 1.563rem;
-    margin-right: 0.625rem;
-    margin-left: 1rem;
+    width: 8%;
+    margin-right: 5%;
+    margin-left: 9%;
     border: none;
     cursor: pointer;
   }
@@ -79,7 +80,7 @@ body{
   .down-slider {
     background: url("../img/fleche_correction.svg") no-repeat center center;
     background-size: contain;
-    width: 1rem;;
+    width: 4%;
     border: none;
     cursor: pointer;
   }
@@ -87,25 +88,105 @@ body{
   /* Styling for the footer */
   .fixed-footer{
     text-align: center;
-    background-image: url('../img/Footer_papier.svg');
-    margin-top: 15%;
+    position: relative; 
+    margin-top: 6%;
+    height:20%;
   }
-  
-  /* Styling for the "Sauvegarder les votes" button */
+  .background-paper{
+    background-image: url('../img/Footer_papier.svg');
+    background-size: cover;
+    transform: scale(1.1);
+    position: absolute;
+    right: inherit;
+    width: 100%;
+    height: 100%;
+    transform-origin: top;
+    z-index: -1;
+  }
+  /* Styling for the "Retour au terrain" button */
   #retour {
     background-color: var(--bg-green);
-    padding: 0.625rem 1.25rem;
-    border: 0.188rem solid var(--yellow);
+    padding: 0.625em 1.25em;
+    border: 0.188em solid var(--yellow);
     cursor: pointer;
-    border-radius: 0.313rem;
     color: var(--yellow);
-    font-family: "Abolition"; 
-    font-size: 1.25rem;
-    border-radius: 1.25rem;
+    font-family: "Abolition";
+    font-size: 25%;
+    border-radius: 1.25em;
+    width: 40%;
+    margin-top: 10%;
   }
-  .arrow-container{
-    color: var(--yellow);
-    display: flex;
-    justify-content: space-between; 
-    cursor: pointer;
-  }
+
+/* Styling for the position preview */
+.position-preview {
+  display: flex;
+  align-items: center;
+  position: relative; /* Make it a positioned container */
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: -2%;
+}
+
+/* Styling for the fixed light gray line */
+.position-line {
+  height: 0.2%;
+  background-color: rgba(211, 211, 211, 0.8);;
+  width: 80%; /* Take the full width of the position preview */
+  position: absolute;
+  margin-top: -5%;
+  margin-left: 10%;
+  margin-right: 10%;
+
+}
+
+/* Styling for the yellow segment under the current position */
+.current-position-segment {
+  width: 30%;
+  height: 0.5%;
+  background-color: var(--yellow);
+  position: absolute;
+  margin-top: -5%;
+  transition: width 0.3s ease;
+  left: 35%;
+  z-index: 1;
+}
+
+/* Styling for the current, previous, and next positions */
+.position-preview-box {
+  flex: 1;
+  text-align: center;
+  color: var(--yellow);
+  font-family: 'Abolition';
+  font-size: 27%;
+  line-height: 4em;
+  height: 5%;
+  margin: 0 4%;
+  transition: background-color 0.3s ease;
+}
+
+.prev,
+.next {
+  color: rgba(211, 211, 211, 0.8);
+  font-size: 20%;
+  transition: transform 0.3s ease; /* Add smooth transition for position changes */
+}
+
+.prev.current,
+.next.current {
+  transform: scale(4); /* Example: Move to the left and slightly scale */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

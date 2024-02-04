@@ -107,6 +107,7 @@ body{
     bottom:0;
     height: 19%;
     transform: scale(3);
+    z-index: -1;
 }
 
 #accueil_logo {
