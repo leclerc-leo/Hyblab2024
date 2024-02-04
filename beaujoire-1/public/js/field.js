@@ -204,10 +204,6 @@ function handleValidateButtonClick() {
 	document.querySelectorAll(".carousel-item").forEach((item) => {
 		item.classList.remove("selected");
 	});
-	if (areAllPlayersSelected()) {
-		console.log("Tous les joueurs ont été sélectionnés");
-		document.querySelector("#share").style.display = "block";
-	}
 	document.querySelector(".carousel-overlay").style.display = "none";
 	selectedPlayerId = null;
 }
@@ -668,4 +664,9 @@ function handleCarouselScroll() {
 	);
 
 	carouselItems[validFocusedIndex].classList.add("focused");
+}
+
+if (areAllPlayersSelected()) {
+	console.log("Tous les joueurs ont été sélectionnés");
+	document.querySelector("#share").style.display = "flex";
 }
