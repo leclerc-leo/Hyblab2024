@@ -30,6 +30,7 @@
 }
 
 .swiper-pagination-bullet, .swiper-pagination-bullet::before {
+    position: relative;
     --swiper-pagination-bullet-border-radius: 0;
     --swiper-pagination-bullet-horizontal-gap: 1%;
     --swiper-pagination-bullet-size: 10%;
@@ -41,10 +42,11 @@
 }
 
 .swiper-pagination-bullet::before{
-    --swiper-pagination-bullet-size: 5%;
+    --swiper-pagination-bullet-size: 50%;
     content: '';
     position: absolute;
-    transform: translate(-50%, 5%);
+    bottom: 0;
+    transform: translate(-50%, 0);
     border: 2px solid white;
     border-radius: 50%;
 }
@@ -57,9 +59,8 @@
 }
 
 .swiper-pagination-bullet-active::before{
-    --swiper-pagination-bullet-size: 7%;
+    --swiper-pagination-bullet-size: 50%;
     background-color: white;
-    transform: translate(-50%, 14%);
 }
 
 /* the slides and the loader should fill the whole 9:16 zone */
