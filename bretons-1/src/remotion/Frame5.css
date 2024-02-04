@@ -1,21 +1,81 @@
 .container-frame5 {
-    font-family: 'Arial', sans-serif; /* Utilisez la police de votre choix */
-    color: #333; /* Couleur du texte */
-    background-color: #f9f9f9; /* Couleur de fond de la carte */
-    padding: 20px; /* Espacement autour du contenu */
-    border-radius: 15px; /* Coins arrondis */
-    width: 300px; /* Largeur de la carte */
-    margin: auto; /* Centrer la carte */
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 15px;
+    width: 100%;
+    height: auto;
+    margin: auto;
+  }
+
+  .identity {
+    position: absolute;
+    top: 40px;
+    left: 40%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 3em;
+    white-space: nowrap;
+    font-size: 100px;
+    font-weight: bold;
   }
   
-  .container-frame5 h1 {
-    color: #ff4081; /* Couleur du titre */
-    text-align: center; /* Titre centré */
+  .identity-name {
+    position: absolute;
+    top: 180px;
+    left: 17%;
+    transform: translateX(-50%);
+    font-size: 1.5em;
+    color: #fff;
+    font-size: 80px;
   }
-  
-  .infos-perso div, .fun-fact p {
-    background-color: #fff; /* Fond blanc pour les sections de texte */
-    margin-bottom: 10px; /* Espacement entre les sections */
-    padding: 10px; /* Espacement à l'intérieur des sections */
-    border-radius: 10px; /* Coins arrondis pour les sections */
+
+  .athlete-frame5 {
+    top: 50%;
+    left: 50%;
+  }
+
+  .fun-fact {
+    position: absolute;
+    top: 50%;
+    left: 93%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    color: #000;
+    text-align: left;
+    font-size: 60px;
+  }
+
+  .fun-fact-texte {
+    position: absolute;
+    top: 55%;
+    left: 93%;
+    transform: translate(-50%, -50%);
+    width: 80%; 
+    color: #000;
+    text-align: left;
+    font-size: 50px;
+  }
+
+  .record {
+    position: absolute;
+    top: 58%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    width: 80%; 
+    color: #000;
+    text-align: left;
+    font-size: 50px;
+  }
+
+  .record-texte {
+    position: absolute;
+    top: 63%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    width: 80%; 
+    color: #000;
+    text-align: left;
+    font-size: 50px;
   }
