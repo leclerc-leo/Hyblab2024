@@ -327,7 +327,8 @@ body {
 	overflow-x: scroll;
 	overflow-y: hidden;
 	width: 100%;
-	scroll-snap-type: x mandatory;
+	scroll-snap-type: x proximity;
+	scroll-behavior: smooth;
 	padding: 0 5%;
 	scroll-padding: 50%;
 	::-webkit-scrollbar {
