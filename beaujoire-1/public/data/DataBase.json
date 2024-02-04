@@ -680,7 +680,7 @@
         "TAILLE": "1.87",
         "BIO": "« Aux âmes bien nées, la valeur n’attend pas le nombre des années » pourrait être l’adage de Kolo Muani. <span style =' font-weight: bold;'>À 23 ans, cette force tranquille puise dans son large registre de techniques, son intelligence et sa vitesse</span> pour emmener le FC Nantes en finale de la Coupe de France 2022. Il part sur cette victoire à la fin de la saison pour Francfort et rejoint le PSG en 2023.  ",
         "champ_fr": 1,
-        "DOS": "«Je suis une personne loyale et Nantes est mon club formateur. Je lui dois tout. Il m'a donné mon premier match en pro, mon premier contrat pro donc j'ai envie de me donner à fond jusqu'au bout parce que je me sens redevable.»"
+        "DOS": "« Je suis une personne loyale et Nantes est mon club formateur. Je lui dois tout. Il m'a donné mon premier match en pro, mon premier contrat pro donc j'ai envie de me donner à fond jusqu'au bout parce que je me sens redevable. »"
     },
     {
         "NOM": "SALA",
@@ -710,7 +710,7 @@
         "TAILLE": "1.87",
         "BIO": "<span style =' font-weight: bold;'>À Nantes, José Touré acquiert son surnom « le brésilien » pour sa technique hors du commun.</span> Arrivé en 1976, il y reste jusqu’en 1986. Touré est l'un des premiers joueurs du foot français à être rapidement adulé mais aussi à faire les frais du star système. Ruiné, mal conseillé, l’addiction l’éloigne du sport. Il reste un souvenir impérissable dans les couloirs du stade.",
         "champ_fr": 2,
-        "DOS": "\"Le surdoué\""
+        "DOS": "« Le surdoué »"
     },
     {
         "NOM": "CARRIÈRE",
@@ -724,7 +724,8 @@
         "TAILLE": "1.73",
         "BIO": "Meilleur joueur et meilleur passeur de D1 lors de la saison 2000-2001, le début du 21eme siècle sonne comme une consécration. <span style =' font-weight: bold;'>Meneur de jeu époustouflant, il remplace Zidane (blessé) en équipe de France pour la Coupe des confédérations (deux passes, deux buts).</spa,> Dans les mémoires, sa magnifique gestuelle technique face à Bordeaux, feinte de frappe, extérieur petit pont.",
         "champ_fr": 1,
-        "cp_fr": 2
+        "cp_fr": 2,
+        "DOS": "\n« Ailleurs qu’au FC Nantes, jamais je n’aurais fait la carrière que j’ai faite. Quand je suis arrivé, j’étais à l’état brut, avec quelques qualités développées dans mes anciens clubs, mais sans beaucoup de culture tactique ou collective, sans trop d’idées sur le jeu. »"
     },
     {
         "NOM": "BURRUCHAGA",
@@ -740,7 +741,7 @@
         "cp_fr": 0,
         "lig_champ": 0,
         "tr_champ": 0,
-        "DOS": "«J’aimais ce football simple, offensif, dynamique, cette perpétuelle mobilité que réclamait Suaudeau. Il correspondait à mes qualités, a facilité mon intégration dans l’équipe et m’a fait progresser.»\n"
+        "DOS": "« J’aimais ce football simple, offensif, dynamique, cette perpétuelle mobilité que réclamait Suaudeau. Il correspondait à mes qualités, a facilité mon intégration dans l’équipe et m’a fait progresser.»\n"
     },
     {
         "NOM": "ZIANI",
@@ -754,7 +755,8 @@
         "TAILLE": "1.67",
         "BIO": "Formé au FC Nantes, il engrange de l’expérience dans plusieurs clubs de D1 avant de revenir à Nantes lors du huitième titre de champion de France en 2001. <span style =' font-weight: bold;'>La Beaujoire est un théâtre mythique qui a vu Ziani éclore, grandir et mûrir avec plus de 250 matchs à son actif.</span> Daniel Leclercq, ancien entraîneur de Lens, avait déclaré qu’il <span style =' font-weight: bold;'>« avait toute l’étoffe des plus grands ».</span>",
         "champ_fr": 1,
-        "tr_champ": 1
+        "tr_champ": 1,
+        "DOS": "Stéphane Ziani a eu plusieurs vies au FC Nantes. Formé au club, il a été un acteur décisif pour le titre de champion de France de 2001. Aujourd'hui, il a repris sa casquette de formateur auprès des jeunes canaris."
     },
     {
         "NOM": "N'DORAM",
@@ -782,7 +784,8 @@
         "TAILLE": "1.66",
         "BIO": "<span style =' font-weight: bold;'>Petit, véloce, explosif et virevoltant sur l’aile gauche, Loïc Amisse a martyrisé plus d’un latéral et d’une défense en D1.</span> Son pied gauche était une arme redoutable. S’il tentait sa frappe, il ne restait plus qu’à prier le bon dieu. <span style =' font-weight: bold;'>Il a passé 17 années de sa vie professionnelle à défendre les couleurs nantaise</span> et l’antre du nid des Canaris. Un musée à lui tout seul.",
         "champ_fr": 1,
-        "cp_fr": 1
+        "cp_fr": 1,
+        "DOS": "« La saison 1976/1977 reste à mes yeux la meilleure. On était jeunes, plein de fougue, et on rentrait des JO de Montréal avec Pécout et Baronchelli, pour finir champions avec dix points d’avance. »"
     },
     {
         "NOM": "LOKO",
@@ -811,7 +814,8 @@
         "BIO": "À la fin d’une saison 1999-2000 très difficile, Raynald Denoueix lance un jeune buteur tahitien lors du dernier match face au Havre : Marama Vahirua. <span style =' font-weight: bold;'>Il inscrit le but de la victoire. Super-joker, Vahirua porte avec lui un ratio buts et minutes jouées complètement dingue.</span> Il célèbre ses buts avec un genou au sol et deux coups de pagaie, le public le surnomme « Tahitigoal ». ",
         "champ_fr": 1,
         "cp_fr": 1,
-        "tr_champ": 2
+        "tr_champ": 2,
+        "DOS": "« Tahitigoal ! »"
     },
     {
         "NOM": "SIMON",
@@ -825,7 +829,7 @@
         "TAILLE": "1.68",
         "BIO": "À noël 2023, le FC Nantes s’est offert la prolongation de l’international nigérian Moses Simon. Parti pour rester jusqu’en 2026, l’international nigérian totalise 148 matches en Ligue 1 pour un total de 25 buts et 27 passes décisives. <span style =' font-weight: bold;'>Avec un jeu basé sur le dribble et l’accélération balle au pied,</spa,> il est l’arme offensive dont les Canaris ne peuvent plus se passer. ",
         "cp_fr": 1,
-        "DOS": "« Mon père adore le football mais il ne voulait pas que je joue. Il voulait que je m’engage dans l’armée, comme lui. Parce que la plupart des footballeurs de ma région n’ont pas réussi dans le foot ». "
+        "DOS": "« Mon père adore le football mais il ne voulait pas que je joue. Il voulait que je m’engage dans l’armée, comme lui. Parce que la plupart des footballeurs de ma région n’ont pas réussi dans le foot. » "
     },
     {
         "NOM": "BARONCHELLI",
@@ -839,7 +843,8 @@
         "TAILLE": "1.74",
         "BIO": "<span style =' font-weight: bold;'>« Je me sens imprégné FC Nantes. J’ai mangé, j’ai vécu FC Nantes, j’ai toujours été FC Nantes »,</span> avait déclaré à So Foot Baronchelli. Pièce maîtresse du football champagne nantais, il a fait partie d’une équipe qui roulait sur le championnat de France. <span style =' font-weight: bold;'>Véritable machine à buts, il a été appelé en équipe de France.</span> La Beaujoire s’est érigée à ses côtés. Lui l’a fait chavirer.",
         "champ_fr": 3,
-        "cp_fr": 1
+        "cp_fr": 1,
+        "DOS": "« Lors d'un déplacement à Sochaux, on s'est retrouvé à trois dans la même chambre, avec Éric Pécout et Thierry Tusseau. À l'heure de la sieste, on n'a pas arrêté de rigoler et de se bagarrer avec les polochons. Derrière, on gagne 6-2 et je marque trois buts. » "
     },
     {
         "NOM": "DER ZAKARIAN",
@@ -852,7 +857,7 @@
         "cp_fr": 0,
         "lig_champ": 0,
         "tr_champ": 0,
-        "DOS": "«Après la défaite du FC Nantes face à Montpellier, Der Zakarian commente : j’espère qu’ils vont rester en Ligue 1, car quand on voit le public à la Beaujoire, le stade et les infrastructures… c’est un grand club de notre championnat.» "
+        "DOS": "« Après la défaite du FC Nantes face à Montpellier, Der Zakarian commente : j’espère qu’ils vont rester en Ligue 1, car quand on voit le public à la Beaujoire, le stade et les infrastructures… c’est un grand club de notre championnat. » "
     },
     {
         "NOM": "SUAUDEAU",
@@ -862,7 +867,8 @@
         "MATCHS": 377,
         "COUPES": "Champion de FRANCE X2 Demi-finale Ligue des Champions",
         "BIO": "Pour les 70 ans du club nantais, Jean-Claude Suaudeau avait déclaré : « Le foot m’a marqué principalement <span style =' font-weight: bold;'>parce qu’il faut courir. Toute ta vie, pendant quarante saisons, tu cours, et il ne faut pas que les autres te rattrapent.</span> Mais avec beaucoup d’envie de courir ensemble, je n’ai pas vu les saisons passer. » <span style =' font-weight: bold;'>Une ode à l’amour du club pour qui il a conquis de nombreux titres.</span>",
-        "champ_fr": 2
+        "champ_fr": 2,
+        "DOS": "« À Nantes, on avait 30 ans d'avance sur le barça ». Merci « Coco » !"
     },
     {
         "NOM": "DENOUEIX",
@@ -884,7 +890,8 @@
         "MATCHS": 109,
         "COUPES": "Coupe de France X1",
         "BIO": "Défenseur rugueux et solide du FC Nantes dans les années 80, il revient au club comme entraîneur trente ans plus tard. <span style =' font-weight: bold;'>Il amène le club en finale de Coupe de France face à Nice et la remporte (1-0).</span> Il réalise l’exploit d’atteindre une deuxième fois la finale un an plus tard. <span style =' font-weight: bold;'>Un vrai leader, il contribue au beau parcours de Nantes en Europa League,</span> toujours avec sa casquette !",
-        "cp_fr": 1
+        "cp_fr": 1,
+        "DOS": "« Quand il (Ludovic Blas contre Lyon en Coupe de France) a marqué, j’ai eu un flash, j’ai pensé à José Touré en finale de coupe de France, lors du fameux PSG – Nantes (3-2, 1983). C’est la première image qui m’est venue à l’esprit. Au départ, je ne vois pas le ballon rentrer. »"
     },
     {
         "NOM": "RANIERI",
