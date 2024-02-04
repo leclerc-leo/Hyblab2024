@@ -96,30 +96,6 @@ document.addEventListener("DOMContentLoaded", () => {
 		selectedPlayerId = null;
 	});
 
-	document.querySelector("#bio-btn").addEventListener("click", () => {
-		let bio = document.querySelector(".bio-overlay");
-		const selectedPlayer = document.querySelector(
-			".carousel-item.selected"
-		);
-		if (selectedPlayer) {
-			const selectedPlayerName =
-				selectedPlayer.querySelector("h1").textContent;
-
-			const player = playersData.find(
-				(player) => player.NOM === selectedPlayerName
-			);
-			if (player) {
-				bio.querySelector("h2").textContent = player.NOM;
-				bio.querySelector("p").innerHTML = player.BIO;
-				bio.style.display = "flex";
-			} else {
-				console.log(`No player found with name ${selectedPlayerName}`);
-			}
-		} else {
-			console.log("No player selected");
-		}
-	});
-
 	document.querySelector("#close-bio").addEventListener("click", () => {
 		document.querySelector(".bio-overlay").style.display = "none";
 	});
@@ -202,11 +178,6 @@ function showCarousel(id) {
 		handleGridAnimation();
 	}
 
-	// Add event listeners after the carousel items are loaded
-	document.querySelectorAll(".carousel-item").forEach((item) => {
-		item.addEventListener("click", handleCarouselItemClick);
-	});
-
 	document
 		.querySelector(".carousel")
 		.addEventListener("scroll", handleCarouselScroll);
@@ -237,6 +208,12 @@ function handleValidateButtonClick() {
 	if (areAllPlayersSelected()) {
 		console.log("Tous les joueurs ont été sélectionnés");
 		document.querySelector("#share").style.display = "flex";
+		document.querySelector("#captain").style.display = "flex";
+		setTimeout(() => {
+			document.addEventListener("click", function () {
+				document.querySelector("#captain").style.display = "none";
+			});
+		}, 1000);
 	}
 }
 
@@ -351,90 +328,27 @@ function createCarouselItem(player) {
 
 	let carte = player.CARTE;
 	console.log(carte);
-	// if (carte == "" || carte == "fcn-" || carte == "fcn") {
-	// 	carte = "NA";
-	// 	carouselItem.innerHTML = `
-	// 	<div style="
-	// 	height: 45%;
-	// 	display: flex;
-	// 	flex-direction: column;
-	// 	align-items: center;">
-	//     <img class= "carte-img" src="img/cartes/${carte}.webp" alt="Photo de ${player.NOM}" />
-	//     <h1 class="green small-title" style="background-color: hsla(240, 14%, 14%, 0.9); border-radius: 10px; padding: 10px">${player.NOM}</h1>
-	// 	</div>
-	//     <div class="carousel-grid">
-	//         <div class="carousel-matchs">
-	//             <p class="small-title green">${player.MATCHS}</p>
-	// 			<div class="flex-row">
-	// 				<div class="bar-container">
-	// 					<div id="bar1" class="bar"></div>
-	// 				</div>
-	// 				<div class="bar-container">
-	// 					<div id="bar2" class="bar"></div>
-	// 				</div>
-	// 				<div class="bar-container">
-	// 					<div id="bar3" class="bar"></div>
-	// 				</div>
-	// 			</div>
-	//             <p class="stat-name"><span class="green">NOMBRE DE</span> MATCHS </p>
-	//         </div>
-	//         <div class="carousel-buts">
-	//             <p class="small-title green">${player.BUTS}</p>
-	//             <p class="stat-name"><span class="green">NOMBRE DE</span> ${but} </p>
-	//         </div>
-	//         <div class="carousel-coupes">
-	//             <div class="coupes">
-	// 				<div class="cp-col">
-	// 					<p class="small-title green" style="align-self:flex-start">${player.champ_fr}</p>
-	// 					${champ_fr}
-	// 				</div>
-	// 				<div class="cp-col">
-	// 					<p class="small-title green">${player.tr_champ}</p>
-	// 					${tr_champ}
-	// 				</div>
-	// 				<div class="cp-col">
-	// 					<p class="small-title green">${player.cp_fr}</p>
-	// 					${cp_fr}
-	// 				</div>
-	// 				<div class="cp-col">
-	// 					<p class="small-title green">${player.lig_champ}</p>
-	// 					${lig_champ}
-	// 				</div>
-	// 			</div>
-	//             <p class="stat-name"><span class="green">NOMBRE DE</span> COUPES </p>
-	//         </div>
-	//         <div class="carousel-taille">
-	//             <p class="small-title green">${player.TAILLE}</p>
-	//             <p class="stat-name"><span class="green">TAILLE EN</span> M </p>
-	//         </div>
-	//     </div>
-	// `;
-
-	// 	carouselItem.addEventListener("click", handleCarouselItemClick);
-
-	// 	return carouselItem;
-	// }
 	carouselItem.innerHTML = `
 	<div class="flip-container">
 		<div class="flipper">
-		<!-- Recto -->
-		<div class="front">
-			<img class="carte-img" src="img/cartes/${player.CARTE}.webp" alt="Photo de ${player.NOM}" />
-			<h1 id="name" style="display: none">${player.NOM}</h1>
-		</div>
-		<!-- Verso -->
-		<div class="back">
-		<img class="carte-img" src="img/back_card.svg" alt="Bio de ${player.NOM}" />
-			<p class="back-title">${player.NOM}</p>
-			<p class="back-text">${player.DOS}}</p>
-			<div class="buttons" id="bottom-btn">
-				<button class="back-btn" id="back-overlay" title="close">
-					<img src="./img/back-btn.svg" alt="close" />
-				</button>
-				<button class="gm-btn gb-shutter" id="bio-btn">
-					Biographie
-				</button>
+			<!-- Recto -->
+			<div class="front">
+				<img class="carte-img" src="img/cartes/${player.CARTE}.webp" alt="Photo de ${player.NOM}" />
+				<h1 id="name" style="display: none">${player.NOM}</h1>
 			</div>
+			<!-- Verso -->
+			<div class="back">
+			<img class="carte-img" src="img/back_card.svg" alt="Bio de ${player.NOM}" />
+				<p class="back-title">${player.NOM}</p>
+				<p class="back-text">${player.DOS}</p>
+				<div class="bottom-btn" id="flip-btn">
+					<button class="round-btn" id="back-overlay" title="close">
+						<img src="./img/close.svg" alt="close" />
+					</button>
+					<button class="gm-btn gb-shutter" id="bio-btn">
+						Biographie
+					</button>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -552,31 +466,46 @@ function createCarouselItem(player) {
 	bar7.style.backgroundColor = player.TAILLE >= 1.8 ? "#00a55a" : "white";
 	bar8.style.backgroundColor = player.TAILLE >= 1.9 ? "#00a55a" : "white";
 
-	carouselItem.addEventListener("click", handleCarouselItemClick);
+	let flip_container = carouselItem.querySelector(".flip-container");
+	let sides = Array.from(carouselItem.querySelector(".flipper").children);
+	sides.forEach((side) => {
+		side.addEventListener("click", (e) => {
+			if (e.target.id !== "bio-btn") {
+				handleFlip(flip_container);
+			}
+		});
+	});
 	carouselItem
 		.querySelector("#validate-button")
 		.addEventListener("click", () => {
 			handleValidateButtonClick();
 		});
-	carouselItem
-		.querySelector(".flip-container")
-		.addEventListener("click", function () {
-			handleFlip(this);
-		});
-	return carouselItem;
-}
 
-function handleCarouselItemClick(event) {
-	console.log("Carousel item clicked");
-	document.querySelectorAll(".carousel-item").forEach((item) => {
-		item.classList.remove("selected");
-	});
-	event.currentTarget.classList.add("selected");
-	console.log(
-		"Selected class to:" +
-			event.currentTarget.querySelector("h1").textContent
-	);
-	document.getElementById("validate-button").style.backgroundColor = "white";
+	let bioBtn = carouselItem.querySelector("#bio-btn");
+	if (bioBtn) {
+		bioBtn.addEventListener("click", () => {
+			const bio = document.querySelector(".bio-overlay");
+			const selectedPlayerName = document
+				.querySelector(".carousel-item.focused")
+				?.querySelector("h1")?.textContent;
+			const player = playersData.find(
+				(player) => player.NOM === selectedPlayerName
+			);
+			bio.querySelector("h2").textContent = player.NOM;
+			bio.querySelector("p").innerHTML = player.BIO;
+			bio.style.display = player ? "flex" : "none";
+
+			const closeBio = document.querySelector("#close-bio");
+			if (closeBio) {
+				closeBio.addEventListener("click", () => {
+					bio.style.display = "none";
+				});
+			}
+		});
+	} else {
+		console.log("bio-btn not found");
+	}
+	return carouselItem;
 }
 
 var shareBlock;
@@ -678,15 +607,15 @@ function handleGridAnimation() {
 				item.style.animationName === "slideOut" ||
 				item.style.animationName === ""
 			) {
-				item.style.display = "none";
+				item.style.visibility = "hidden";
 			} else if (item.style.animationName === "slideIn") {
-				item.style.display = "grid";
+				item.style.visibility = "visible";
 			}
 		});
 
 		if (item.style.animationName === "slideOut") {
 			item.style.animationName = "slideIn";
-			item.style.display = "block";
+			item.style.visibility = "visible";
 		} else if (
 			item.style.animationName === "slideIn" ||
 			item.style.animationName === ""
@@ -698,6 +627,12 @@ function handleGridAnimation() {
 
 function handleFlip(element) {
 	element.classList.toggle("flip");
+	var carouBtn = document.querySelector("#carou-btn");
+	if (element.classList.contains("flip")) {
+		carouBtn.style.opacity = "0";
+	} else {
+		carouBtn.style.opacity = "1";
+	}
 	handleGridAnimation();
 	document.querySelectorAll("#validate-button").forEach((item) => {
 		if (item.style.display === "none") {

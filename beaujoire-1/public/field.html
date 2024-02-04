@@ -69,7 +69,7 @@
 					<div
 						class="player player-clickable defender"
 						id="arriere-gauche"
-						style="top: 65%; left: 15%"></div>
+						style="top: 67%; left: 15%"></div>
 					<div
 						class="player player-clickable defender"
 						id="defender-2"
@@ -81,10 +81,10 @@
 					<div
 						class="player player-clickable defender"
 						id="arriere-droit"
-						style="top: 65%; left: 85%"></div>
+						style="top: 67%; left: 85%"></div>
 				</div>
 				<div
-					class="back-btn"
+					class="round-btn"
 					id="share"
 					title="share"
 					style="display: none">
@@ -137,7 +137,7 @@
 					<button class="gm-btn gb-shutter">STATISTIQUES</button>
 				</a>
 				<div class="settings">
-					<div class="back-btn" id="settings" title="settings">
+					<div class="round-btn" id="settings" title="settings">
 						<img src="./img/settings.svg" alt="settings" />
 					</div>
 					<div class="dropdown">
@@ -146,13 +146,19 @@
 					</div>
 				</div>
 			</div>
-
+			<div id="captain">
+				<h1 id="main" class="big-title">
+					CHOISI TON
+					<br />
+					<span class="green">CAPITAINE</span>
+				</h1>
+			</div>
 			<div class="bio-overlay" style="display: none">
 				<h2>Titre de la bio</h2>
 				<p>Contenu de la bio ici.</p>
-				<div class="buttons" id="bottom-btn">
-					<button class="back-btn" id="close-bio" title="close">
-						<img src="./img/back-btn.svg" alt="close" />
+				<div class="bottom-btn" id="flip-btn">
+					<button class="round-btn" id="close-bio" title="close">
+						<img src="./img/close.svg" alt="close" />
 					</button>
 				</div>
 			</div>
@@ -164,11 +170,11 @@
 					<div class="carousel-item">Joueur 3</div>
 					<!-- Ajoutez plus d'éléments de carrousel ici -->
 				</div>
-				<div class="buttons" id="bottom-btn">
-					<button class="back-btn" id="back-overlay" title="close">
+				<div class="bottom-btn" id="carou-btn">
+					<button class="round-btn" id="back-overlay" title="close">
 						<img src="./img/back-btn.svg" alt="close" />
 					</button>
-					<button class="gm-btn gb-shutter" id="bio-btn">
+					<button class="gm-btn gb-shutter" id="compare-btn">
 						Comparer
 					</button>
 				</div>
