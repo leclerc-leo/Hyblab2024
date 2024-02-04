@@ -4,23 +4,13 @@
 // Here we simulate a loading time of one second
 setTimeout(() => { 
     anime({
-        delay: 900,
-        targets: '#loader',
+        delay: 8000,
+        targets: '#accueil',
         opacity: '0',
         'z-index' : -1,
         easing: 'easeOutQuad',
     });
 }, 100);
-
-setTimeout(() => {
-    anime({
-        delay: 4000,
-        targets: '#accueil',
-        opacity: '0',
-        'z-index' : -1,
-        easing: 'easeOutQuad',
-    })
-},1000)
 
 // Fermer l'accueil
 document.querySelector("#accueil").addEventListener("click", function(event) {

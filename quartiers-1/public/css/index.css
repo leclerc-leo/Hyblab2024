@@ -32,13 +32,17 @@ h1{
     background-color: #FBEFEB;
 }
 
-#loader img{
+#logo-loader{
     position: relative;
     height: 25%;
     width: auto;
     top: 45%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
+    animation: logoloader 2s linear infinite 0s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
 }
 
 #loader-text{
@@ -81,6 +85,27 @@ h1{
         transform: translateX(0%);
     }
 }
+
+@keyframes logoloader{
+    0%{
+        position: absolute;
+        height: 25%;
+        width: auto;
+        top: 45%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+    }
+
+    100%{
+        position: absolute;
+        height: 20%;
+        width: auto;
+        top: 25%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        margin-bottom: 5%;
+    }
+}
 /* -------------- End of Loader --------------*/
 
 /* -------------- Accueil --------------*/
@@ -93,22 +118,15 @@ h1{
     background-color: #FBEFEB;
 }
 
-#accueil_logo{
-    position: absolute;
-    height: 20%;
-    width: auto;
-    top: 25%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    margin-bottom: 5%;
-}
-
 #accueil .p_container{
     position: absolute;
+    opacity: 0;
     width: 55%;
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
+    animation: spawnloader 2s linear 3s;
+    animation-fill-mode: forwards;
     
 }
 #accueil p{
@@ -125,6 +143,20 @@ h1{
     position: absolute;
     width: 100%;
     bottom: 10%;
+    animation: spawnloader 2s linear 3s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes spawnloader {
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 100%;
+    }
+    
 }
 
 /* -------------- End of Accueil --------------*/
@@ -237,6 +269,30 @@ h1{
     scale: 0.6 0.55;
 }
 
+#nuage4{
+    animation: animCloud4 20s ease-in-out infinite, spawnloader 2s linear 3s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    bottom: 25%;
+    scale: 0.5 0.5;
+}
+
+#nuage5{
+    animation: animCloud5 20s ease-in-out infinite, spawnloader 2s linear 3s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    bottom: 25%;
+    scale: 0.5 0.55;
+}
+
+#nuage6{
+    animation: animCloud6 20s ease-in-out infinite, spawnloader 2s linear 3s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    bottom: 32%;
+    scale: 0.6 0.55;
+}
+
 
 @keyframes animCloud1 {
     0% {
@@ -275,6 +331,48 @@ h1{
 
     100% {
         left: 80%;
+    }
+}
+
+@keyframes animCloud4 {
+    0% {
+        left: 80%;
+    }
+
+    50%{
+        left: 70%;
+    }
+
+    100% {
+        left: 80%;
+    }
+}
+
+@keyframes animCloud5 {
+    0% {
+        left: 20%;
+    }
+
+    50%{
+        left: 30%;
+    }
+
+    100% {
+        left: 20%;
+    }
+}
+
+@keyframes animCloud6 {
+    0% {
+        left: 5%;
+    }
+
+    50%{
+        left: 15%;
+    }
+
+    100% {
+        left: 5%;
     }
 }
 
