@@ -139,24 +139,20 @@ const img_convert = (content, webp_supported) => {
         let files = fs.readdirSync(folder).filter( f => get_name(f) === new_file_name && f.endsWith(extension));
         if (files.length === 0) return;
 
-        // get the highest resolution image
-        const index = files.reduce( (acc, f, i) => {
-            const width = get_width(f);
-            return width > get_width(files[acc]) ? i : acc;
-        }, 0);
-        
+        // get the smallest resolution image
+        files = files.sort( (a, b) => get_width(b) - get_width(a));
+
+        const index = 0
         const width = get_width(files[index]);
         const new_src = path.join(new_file + '-' + width + extension);
 
         //remove the index file from the list
-        files.splice(index, 1);
         let srcset = files.reduce( (acc, f) => {
             const width = get_width(f);
             return acc + `, ${path.join(new_file + '-' + width + extension)} ${width}w`;
-        }, `${new_src} ${width}w`);
+        }, '');
 
-        srcset = srcset.replace(new_src + ' ' + width + 'w', '');
-        srcset = srcset.trim();
+        srcset = srcset.startsWith(', ') ? srcset.substring(2) : srcset;
 
         content = content.replaceAll(file, `${new_src}" srcset="${srcset}`);
     });
