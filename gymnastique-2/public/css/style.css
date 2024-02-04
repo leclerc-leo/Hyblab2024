@@ -158,42 +158,50 @@ header{
     visibility: hidden;
 }
 
+.page-controls{
+    display: block;
+    z-index: 100; /* ne pas enlever autrement l'animation est cassée */
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+    position: relative; /* ne pas enlever */
+}
+
+.page-controls.hidden {
+    opacity: 0;
+    display: block;
+}
+
 /* Bouton de navigation */
-.exit-button{
+.return-button{
     position: absolute;
     bottom: 0;
     left: 0;
-    z-index: 100;
+    right: 0;
+    margin: auto;
 
-    width: 50px;
-    height: 50px;
-    padding: 20px;
+    width: 20px;
+    height: 20px;
+    padding: 25px;
+    border-radius: 50%;
+    background: /* #e47e5d from 0 to 50 then gradualy transparent */ radial-gradient(circle at 50% 50%, #e47e5d 0%, #e47e5d 50%, transparent 70%);
 
     cursor: pointer;
 }
 
-.exit-button::before, .exit-button::after{
+.return-button::before, .return-button::after{
+    content: '';
     position: absolute;
+    border-radius: 5px;
     width: 30px;
     height: 5px;
-    transform: translate(0, 13px) rotate(45deg);
+    background: #ffd8b3;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
 }
 
-.exit-button::after{
-    transform: translate(0, 13px) rotate(-45deg);
-}
-
-.home-button{
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    z-index: 100;
-
-    width: 50px;
-    height: 50px;
-    padding: 20px;
-
-    cursor: pointer;
+.return-button::after{
+    transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 .credits-button {

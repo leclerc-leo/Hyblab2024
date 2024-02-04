@@ -8,8 +8,8 @@ const hide_block = (block) => {
     block.style.opacity = '0';
 };
 
-const handle_exit = (swiper,swiper_controls, page_controls, exit_button, home_button) => {
-    const category = exit_button.id.split('-')[0];
+const handle_return = (swiper,swiper_controls, page_controls, return_button) => {
+    const category = return_button.id.split('-')[0];
         
     const block = document.querySelector(`#${category}-page`);
     
@@ -20,27 +20,9 @@ const handle_exit = (swiper,swiper_controls, page_controls, exit_button, home_bu
     
     hide_block(block);
     
-    exit_button.id = 'exit';
-    home_button.id = 'home';
+    return_button.id = 'return';
     
     swiper.enable();
-}
-
-const handle_home = (swiper, swiper_controls, page_controls, home_button) => {
-    const category = home_button.id.split('-')[0];
-  
-    const block = document.querySelector(`#${category}-page`);
-
-    if (block == null) return;
-  
-    swiper_controls.classList.toggle('hidden');
-    page_controls.classList.toggle('hidden');
-  
-    block.style.visibility = 'hidden'; // pour éviter de jouer l'animation de sortie
-    hide_block(block);
-  
-    swiper.enable();
-    swiper.slideTo(1);
 }
 
 const remove_listeners = id => {

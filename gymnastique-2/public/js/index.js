@@ -48,8 +48,7 @@ categories_buttons.forEach( button => {
     button.addEventListener('click', () => {
         /* Les boutons sont recréés à chaque fois que l'on change de slide 
         *  pour éviter que les listeners ne se cumulent */
-        const exit_button = page_controls.querySelector('.exit-button'); 
-        const home_button = page_controls.querySelector('.home-button');
+        const return_button = page_controls.querySelector('.return-button'); 
 
         const category = button.id.split('-')[0];
 
@@ -74,8 +73,7 @@ categories_buttons.forEach( button => {
 
         /* Nous gardons en mémoire l'id du bouton cliqué pour pouvoir
         *  retourner le bloc à sa position initiale lors d'une sortie */
-        exit_button.id = `${category}-exit`;
-        home_button.id = `${category}-home`;
+        return_button.id = `${category}-return`;
 
         swiper.disable(); // pour éviter de changer de slide lors d'un scroll et d'autoriser le scroll sur la page
     });
