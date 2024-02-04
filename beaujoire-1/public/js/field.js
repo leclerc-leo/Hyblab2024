@@ -83,42 +83,58 @@ let players = JSON.parse(localStorage.getItem("players")) || {
 	"defender-3": "",
 };
 
-document.querySelectorAll(".player-clickable").forEach((player) => {
-	player.addEventListener("click", handlePlayerClick);
-});
-
-document.querySelector("#back-overlay").addEventListener("click", () => {
-	document.querySelectorAll(".carousel-item").forEach((item) => {
-		item.classList.remove("selected");
+document.addEventListener("DOMContentLoaded", () => {
+	document.querySelectorAll(".player-clickable").forEach((player) => {
+		player.addEventListener("click", handlePlayerClick);
 	});
-	document.querySelector(".carousel-overlay").style.display = "none";
-	selectedPlayerId = null;
-});
 
-document.querySelector("#bio-btn").addEventListener("click", () => {
-	let bio = document.querySelector(".bio-overlay");
-	const selectedPlayer = document.querySelector(".carousel-item.selected");
-	if (selectedPlayer) {
-		const selectedPlayerName =
-			selectedPlayer.querySelector("h1").textContent;
+	document.querySelector("#back-overlay").addEventListener("click", () => {
+		document.querySelectorAll(".carousel-item").forEach((item) => {
+			item.classList.remove("selected");
+		});
+		document.querySelector(".carousel-overlay").style.display = "none";
+		selectedPlayerId = null;
+	});
 
-		const player = playersData.find(
-			(player) => player.NOM === selectedPlayerName
+	document.querySelector("#bio-btn").addEventListener("click", () => {
+		let bio = document.querySelector(".bio-overlay");
+		const selectedPlayer = document.querySelector(
+			".carousel-item.selected"
 		);
-		if (player) {
-			bio.querySelector("h2").textContent = player.NOM;
-			bio.querySelector("p").innerHTML = player.BIO;
-			bio.style.display = "flex";
-		} else {
-			console.log(`No player found with name ${selectedPlayerName}`);
-		}
-	} else {
-		console.log("No player selected");
-	}
-});
+		if (selectedPlayer) {
+			const selectedPlayerName =
+				selectedPlayer.querySelector("h1").textContent;
 
-document.querySelector("#close-bio").addEventListener("click", () => {
-	document.querySelector(".bio-overlay").style.display = "none";
+			const player = playersData.find(
+				(player) => player.NOM === selectedPlayerName
+			);
+			if (player) {
+				bio.querySelector("h2").textContent = player.NOM;
+				bio.querySelector("p").innerHTML = player.BIO;
+				bio.style.display = "flex";
+			} else {
+				console.log(`No player found with name ${selectedPlayerName}`);
+			}
+		} else {
+			console.log("No player selected");
+		}
+	});
+
+	document.querySelector("#close-bio").addEventListener("click", () => {
+		document.querySelector(".bio-overlay").style.display = "none";
+	});
+
+	document.querySelector("#settings").addEventListener("click", () => {
+		const menu = document.querySelector(".dropdown");
+		if (
+			menu.style.animationName === "dropDownAnimation" ||
+			menu.style.animationName === ""
+		) {
+			menu.style.animationName = "dropUpAnimation";
+		} else {
+			menu.style.animationName = "dropDownAnimation";
+		}
+	});
 });
 
 function areAllPlayersSelected() {
