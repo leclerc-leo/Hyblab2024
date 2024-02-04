@@ -233,7 +233,7 @@ function getPositionFromId(id) {
 			position = "MILIEU OFF D";
 			break;
 		case elementId.includes("ailier-gauche"):
-			position = "MILIEU OFF G";
+			position = "MILIEU OFF";
 			break;
 		case elementId.includes("attaquant-centre"):
 			position = "AVANT CENTRE";
