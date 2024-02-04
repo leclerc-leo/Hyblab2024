@@ -179,9 +179,9 @@ header{
     right: 0;
     margin: auto;
 
-    width: 20px;
-    height: 20px;
-    padding: 25px;
+    width: 5vh;
+    height: 5vh;
+    padding: 4vh;
     border-radius: 50%;
     background: /* #e47e5d from 0 to 50 then gradualy transparent */ radial-gradient(circle at 50% 50%, #e47e5d 0%, #e47e5d 50%, transparent 70%);
 
@@ -192,8 +192,9 @@ header{
     content: '';
     position: absolute;
     border-radius: 5px;
-    width: 30px;
-    height: 5px;
+    width: 5.5vh;
+    height: 0.7vh;
+    min-height: 2px;
     background: #ffd8b3;
     top: 50%;
     left: 50%;
