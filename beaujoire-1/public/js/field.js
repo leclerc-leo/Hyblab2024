@@ -1,6 +1,72 @@
 "use strict";
 
+let isAnyItemFlipped = false;
 let selectedPlayerId = null;
+let updatePlayerElement;
+let playersData;
+
+window.onload = fetch("./data/DataBase.json")
+	.then((response) => response.json())
+	.then((players) => {
+		playersData = players;
+		initizalizePage();
+	});
+
+function initizalizePage() {
+	updatePlayerElement = function (playerElement, playerName) {
+		const player = playersData.find((player) => player.NOM === playerName);
+		if (player.POSTE !== "ENTRAÎNEUR" && player.NUMÉRO !== undefined) {
+			playerElement.setAttribute("data-number", player.NUMÉRO);
+			playerElement.innerHTML = `
+				<img src="./img/jersey.svg" alt="jersey" />
+				<p class="player-name">${playerName}</p>
+			`;
+		} else {
+			playerElement.textContent = playerName;
+		}
+	};
+
+	const urlParams = new URLSearchParams(window.location.search);
+	const playersParam = urlParams.get("players");
+	console.log(`URL parameters: ${playersParam}`);
+	const storedPlayers = JSON.parse(localStorage.getItem("players"));
+
+	if (playersParam !== null) {
+		const players = playersParam.split("&");
+		localStorage.clear();
+		console.log("Cleared local storage");
+		console.log(`Players from URL: ${players}`);
+		// Iterate through each player from the URL parameters
+		players.forEach((player) => {
+			let [playerId, playerName] = player.split("=");
+			playerId = decodeURIComponent(playerId);
+			playerName = decodeURIComponent(playerName);
+
+			// Retrieve the player element corresponding to the player's id
+			const playerElement = document.getElementById(playerId);
+			// Update the player information
+			if (playerElement && playerName !== "") {
+				updatePlayerElement(playerElement, playerName);
+			} else {
+				console.log(`No element found with id ${playerId}`);
+			}
+		});
+	} else if (storedPlayers) {
+		console.log("Players found in local storage");
+		// Iterate through each player from the local storage
+		for (const playerId in storedPlayers) {
+			const playerName = storedPlayers[playerId];
+			// Retrieve the player element corresponding to the player's id
+			const playerElement = document.getElementById(playerId);
+			// Update the player information
+			if (playerElement && playerName !== "") {
+				updatePlayerElement(playerElement, playerName);
+			} else {
+				console.log(`No element found with id ${playerId}`);
+			}
+		}
+	}
+}
 
 let players = JSON.parse(localStorage.getItem("players")) || {
 	goalkeeper: "",
@@ -16,41 +82,6 @@ let players = JSON.parse(localStorage.getItem("players")) || {
 	"defender-2": "",
 	"defender-3": "",
 };
-
-window.addEventListener("load", function () {
-	// Récupérer les joueurs du localStorage
-	const storedPlayers = JSON.parse(localStorage.getItem("players"));
-	console.log(storedPlayers);
-	// Parcourir chaque joueur stocké
-	for (const playerId in storedPlayers) {
-		// Récupérer le nom du joueur
-		const playerName = storedPlayers[playerId];
-		// Récupérer l'élément du terrain correspondant à l'id du joueur
-		const playerElement = document.getElementById(playerId);
-		if (playerElement && playerName !== "") {
-			// Mettre à jour le terrain avec le nom du joueur
-			fetch("./data/DataBase.json")
-				.then((response) => response.json())
-				.then((players) => {
-					const player = players.find(
-						(player) => player.NOM === playerName
-					);
-					if (player.NUMÉRO !== undefined) {
-						document
-							.getElementById(playerId)
-							.setAttribute("data-number", player.NUMÉRO);
-					}
-				});
-			playerElement;
-			playerElement.innerHTML = `
-			<img src="./img/jersey.svg" alt="jersey" />
-			<p class="player-name">${playerName}</p>
-			`;
-		} else {
-			console.log(`No element found with id ${playerId}`);
-		}
-	}
-});
 
 document.querySelectorAll(".player-clickable").forEach((player) => {
 	player.addEventListener("click", handlePlayerClick);
@@ -70,22 +101,17 @@ document.querySelector("#bio-btn").addEventListener("click", () => {
 	if (selectedPlayer) {
 		const selectedPlayerName =
 			selectedPlayer.querySelector("h1").textContent;
-		fetch("./data/DataBase.json")
-			.then((response) => response.json())
-			.then((players) => {
-				const player = players.find(
-					(player) => player.NOM === selectedPlayerName
-				);
-				if (player) {
-					bio.querySelector("h2").textContent = player.NOM;
-					bio.querySelector("p").innerHTML = player.BIO;
-					bio.style.display = "flex";
-				} else {
-					console.log(
-						`No player found with name ${selectedPlayerName}`
-					);
-				}
-			});
+
+		const player = playersData.find(
+			(player) => player.NOM === selectedPlayerName
+		);
+		if (player) {
+			bio.querySelector("h2").textContent = player.NOM;
+			bio.querySelector("p").innerHTML = player.BIO;
+			bio.style.display = "flex";
+		} else {
+			console.log(`No player found with name ${selectedPlayerName}`);
+		}
 	} else {
 		console.log("No player selected");
 	}
@@ -96,12 +122,14 @@ document.querySelector("#close-bio").addEventListener("click", () => {
 });
 
 function areAllPlayersSelected() {
+	let compteur = 0;
 	for (const playerId in players) {
 		if (players[playerId] === "") {
-			return false;
+			console.log(`Player position not selected yet: ${playerId}`);
+			compteur++;
 		}
 	}
-	return true;
+	return compteur === 0;
 }
 
 function handlePlayerClick(event) {
@@ -117,63 +145,51 @@ function handlePlayerClick(event) {
 	console.log(`Selected player: ${selectedPlayerId}`);
 }
 
-async function showCarousel(id) {
+function showCarousel(id) {
 	const poste = getPositionFromId(id);
 
-	try {
-		const response = await fetch("./data/DataBase.json");
-		const players = await response.json();
+	const filteredPlayers = playersData.filter(
+		(player) => player.POSTE === poste
+	);
+	console.log(
+		`Found ${filteredPlayers.length} players for position ${poste}`
+	);
 
-		const filteredPlayers = players.filter(
-			(player) => player.POSTE === poste
-		);
-		console.log(
-			`Found ${filteredPlayers.length} players for position ${poste}`
-		);
+	const carousel = document.querySelector(".carousel");
+	carousel.innerHTML = "";
 
-		const carousel = document.querySelector(".carousel");
-		carousel.innerHTML = "";
+	filteredPlayers.forEach((player) => {
+		const carouselItemHTML = createCarouselItem(player);
+		console.log(`Created carousel item: ${carouselItemHTML}`);
+		carousel.appendChild(carouselItemHTML);
+	});
 
-		filteredPlayers.forEach((player) => {
-			const carouselItemHTML = createCarouselItem(player);
-			document
-				.getElementById(selectedPlayerId)
-				.setAttribute("data-number", player.NUMÉRO);
-			console.log(`Created carousel item: ${carouselItemHTML}`);
-			carousel.appendChild(carouselItemHTML);
-		});
+	document.querySelector(".carousel-overlay").style.display = "flex";
+	document.getElementById("poste-title").textContent = poste;
 
-		document.querySelector(".carousel-overlay").style.display = "flex";
-		document.getElementById("poste-title").textContent = poste;
-		handleCarouselItemClick();
+	// Wait for the next animation frame before scrolling to the middle item
+	const middleItemIndex = Math.floor(carousel.children.length / 2);
+	const middleItem = carousel.children[middleItemIndex];
+	const scrollPosition = middleItem.offsetLeft - middleItem.offsetWidth / 2;
+	carousel.scrollTo({
+		left: scrollPosition,
+		behavior: "smooth",
+	});
 
-		// Wait for the next animation frame before scrolling to the middle item
-		requestAnimationFrame(() => {
-			const middleItemIndex = Math.floor(carousel.children.length / 2);
-			const middleItem = carousel.children[middleItemIndex];
-			const scrollPosition =
-				middleItem.offsetLeft * middleItemIndex -
-				middleItem.offsetWidth / 2;
-			carousel.scrollTo({
-				left: scrollPosition,
-				behavior: "smooth",
-			});
-		});
+	middleItem.classList.add("focused");
 
-		const isAnyItemFlipped = Array.from(
-			document.querySelectorAll(".flip-container")
-		).some((el) => el.classList.contains("flip"));
-		if (isAnyItemFlipped) {
-			handleGridAnimation();
-		}
+	isAnyItemFlipped = Array.from(
+		document.querySelectorAll(".flip-container")
+	).some((el) => el.classList.contains("flip"));
 
-		// Add event listeners after the carousel items are loaded
-		document.querySelectorAll(".carousel-item").forEach((item) => {
-			item.addEventListener("click", handleCarouselItemClick);
-		});
-	} catch (error) {
-		console.error("Error fetching players", error);
+	if (isAnyItemFlipped) {
+		handleGridAnimation();
 	}
+
+	// Add event listeners after the carousel items are loaded
+	document.querySelectorAll(".carousel-item").forEach((item) => {
+		item.addEventListener("click", handleCarouselItemClick);
+	});
 
 	document
 		.querySelector(".carousel")
@@ -181,7 +197,7 @@ async function showCarousel(id) {
 }
 
 function handleValidateButtonClick() {
-	const selectedPlayer = document.querySelector(".carousel-item.selected");
+	const selectedPlayer = document.querySelector(".carousel-item.focused");
 	const selectedPlayerName =
 		selectedPlayer.querySelector("#name").textContent;
 	console.log(selectedPlayerName);
@@ -190,22 +206,22 @@ function handleValidateButtonClick() {
 	players[selectedPlayerId] = selectedPlayerName;
 	//Save the list of selected players to local storage
 	localStorage.setItem("players", JSON.stringify(players));
-	//Update the field with the selected player
-	document.getElementById(selectedPlayerId).innerHTML = `
-	<img src="./img/jersey.svg" alt="jersey" />
-	<p>${selectedPlayerName}</p>
-	`;
-	selectedPlayerName;
-	document.getElementById(selectedPlayerId).innerHTML = `
-	<img src="./img/jersey.svg" alt="jersey" />
-	<p class="player-name">${selectedPlayerName}</p>
-	`;
+	updatePlayerElement(
+		document.getElementById(selectedPlayerId),
+		selectedPlayerName
+	);
+
 	//Hide the carousel
 	document.querySelectorAll(".carousel-item").forEach((item) => {
 		item.classList.remove("selected");
 	});
 	document.querySelector(".carousel-overlay").style.display = "none";
 	selectedPlayerId = null;
+
+	if (areAllPlayersSelected()) {
+		console.log("Tous les joueurs ont été sélectionnés");
+		document.querySelector("#share").style.display = "flex";
+	}
 }
 
 function getPositionFromId(id) {
@@ -558,11 +574,51 @@ function hideShareBlock() {
 }
 
 function showShareBlock() {
+	document.querySelectorAll(".share-icons_item").forEach((item) => {
+		item.addEventListener("click", handleShareUrl);
+	});
+	document.querySelector(".share-icons").addEventListener("click", () => {
+		handleShareUrl();
+	});
 	shareBlock.style.transform = "translateY(-10%) ";
 	shareBlock.style.opacity = "1";
 	shareBlock.style.transition =
 		"transform 0.3s ease-out, opacity 0.2s ease-out";
 	shareBlock.classList.add("visible");
+	document
+		.querySelector("#share")
+		.addEventListener("click", function (event) {
+			event.stopPropagation();
+			showShareBlock();
+		});
+	document.addEventListener("click", function (event) {
+		if (
+			!shareBlock.contains(event.target) &&
+			shareBlock.classList.contains("visible")
+		) {
+			hideShareBlock();
+		}
+	});
+}
+
+function handleShareUrl() {
+	let playersArray = Object.entries(players).map(
+		([key, value]) =>
+			`${encodeURIComponent(key)}=${encodeURIComponent(value)}`
+	);
+	let params = playersArray.join("&");
+	let shareUrl = new URL(window.location.href);
+	shareUrl.search = `players=${encodeURIComponent(params)}`;
+
+	navigator.clipboard.writeText(shareUrl.toString()).then(
+		function () {
+			console.log("URL copied to clipboard");
+			console.log(shareUrl.toString());
+		},
+		function () {
+			console.log("Error copying URL to clipboard");
+		}
+	);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
