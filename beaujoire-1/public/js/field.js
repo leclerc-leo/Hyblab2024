@@ -117,45 +117,63 @@ function handlePlayerClick(event) {
 	console.log(`Selected player: ${selectedPlayerId}`);
 }
 
-function showCarousel(id) {
+async function showCarousel(id) {
 	const poste = getPositionFromId(id);
 
-	fetch("./data/DataBase.json")
-		.then((response) => response.json())
-		.then((players) => {
-			const filteredPlayers = players.filter(
-				(player) => player.POSTE === poste
-			);
-			console.log(
-				`Found ${filteredPlayers.length} players for position ${poste}`
-			);
-			const carousel = document.querySelector(".carousel");
-			carousel.innerHTML = "";
-			filteredPlayers.forEach((player) => {
-				const carouselItemHTML = createCarouselItem(player);
-				document
-					.getElementById(selectedPlayerId)
-					.setAttribute("data-number", player.NUMÉRO);
-				console.log(`Created carousel item: ${carouselItemHTML}`);
-				carousel.appendChild(carouselItemHTML);
-			});
+	try {
+		const response = await fetch("./data/DataBase.json");
+		const players = await response.json();
 
-			document.querySelector(".carousel-overlay").style.display = "flex";
-			document.getElementById("poste-title").textContent = poste;
-			handleCarouselItemClick();
+		const filteredPlayers = players.filter(
+			(player) => player.POSTE === poste
+		);
+		console.log(
+			`Found ${filteredPlayers.length} players for position ${poste}`
+		);
 
-			//TODO Trouver l'élément du milieu et faire défiler jusqu'à lui
+		const carousel = document.querySelector(".carousel");
+		carousel.innerHTML = "";
 
-			const isAnyItemFlipped = Array.from(
-				document.querySelectorAll(".flip-container")
-			).some((el) => el.classList.contains("flip"));
-			if (isAnyItemFlipped) {
-				handleGridAnimation();
-			}
+		filteredPlayers.forEach((player) => {
+			const carouselItemHTML = createCarouselItem(player);
+			document
+				.getElementById(selectedPlayerId)
+				.setAttribute("data-number", player.NUMÉRO);
+			console.log(`Created carousel item: ${carouselItemHTML}`);
+			carousel.appendChild(carouselItemHTML);
 		});
-	document.querySelectorAll(".carousel-item").forEach((item) => {
-		item.addEventListener("click", handleCarouselItemClick);
-	});
+
+		document.querySelector(".carousel-overlay").style.display = "flex";
+		document.getElementById("poste-title").textContent = poste;
+		handleCarouselItemClick();
+
+		// Wait for the next animation frame before scrolling to the middle item
+		requestAnimationFrame(() => {
+			const middleItemIndex = Math.floor(carousel.children.length / 2);
+			const middleItem = carousel.children[middleItemIndex];
+			const scrollPosition =
+				middleItem.offsetLeft * middleItemIndex -
+				middleItem.offsetWidth / 2;
+			carousel.scrollTo({
+				left: scrollPosition,
+				behavior: "smooth",
+			});
+		});
+
+		const isAnyItemFlipped = Array.from(
+			document.querySelectorAll(".flip-container")
+		).some((el) => el.classList.contains("flip"));
+		if (isAnyItemFlipped) {
+			handleGridAnimation();
+		}
+
+		// Add event listeners after the carousel items are loaded
+		document.querySelectorAll(".carousel-item").forEach((item) => {
+			item.addEventListener("click", handleCarouselItemClick);
+		});
+	} catch (error) {
+		console.error("Error fetching players", error);
+	}
 
 	document
 		.querySelector(".carousel")
@@ -631,7 +649,7 @@ function handleCarouselScroll() {
 	const middleIndex = Math.floor(carouselItems.length / 2);
 
 	const focusedIndex = Math.round(
-		(scrollPosition + itemWidth / 4) / itemWidth
+		(scrollPosition + itemWidth / 100000) / itemWidth
 	);
 
 	carouselItems.forEach((item, index) => {
