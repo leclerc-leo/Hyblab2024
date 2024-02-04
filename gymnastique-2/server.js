@@ -52,7 +52,7 @@ let [JPG_FRIENDLY, WEBP_FRIENDLY] = generate();
 setInterval ( () => {
     make();
     [JPG_FRIENDLY, WEBP_FRIENDLY] = generate();
-}, 5000); // 30 minutes
+}, 30 * 60 * 1000); // 30 minutes
 
 app.get('/', function(req, res) {
     res.send(req.webp_supported ? WEBP_FRIENDLY : JPG_FRIENDLY);
