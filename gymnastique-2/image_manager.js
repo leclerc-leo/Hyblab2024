@@ -90,7 +90,7 @@ const img_convert = (content, webp_supported) => {
 
     elements = [...elements].filter( file => file.endsWith('.jpg') || file.endsWith('.png'))
 
-    elements = elements.filter( file => file !== 'img/background/fond vrai.jpg');
+    elements = elements.filter( file => file !== 'img/background/frame.jpg');
 
     elements.forEach( file => {
 
