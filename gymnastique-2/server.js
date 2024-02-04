@@ -31,7 +31,7 @@ app.get('/', function(req, res) {
         return acc.replace(`<%= ${file[0]} %>`, file[1]);
     }, layout);    
 
-    let temp = combined;
+    let temp = combined; // au cas où img_convert a eu un problème
     combined = img_convert(combined, req.webp_supported);
     if (combined === undefined || combined === null) {
         combined = temp;

@@ -90,7 +90,7 @@ const img_convert = (content, webp_supported) => {
 
     elements = [...elements].filter( file => file.endsWith('.jpg') || file.endsWith('.png'))
 
-    console.log(elements);
+    elements = elements.filter( file => file !== 'img/background/fond vrai.jpg');
 
     elements.forEach( file => {
 
@@ -99,11 +99,11 @@ const img_convert = (content, webp_supported) => {
         new_file = new_file.replace(path.extname(new_file), '');
         const extension = webp_supported ? '.webp' : '.jpg';
 
-        // replace the src attributes with the biggest image available
-        // and add the srcset attribute with all the other images
-
         const folder = path.dirname(path.join(PUBLIC_PATH, new_file));
+        if (!fs.existsSync(folder)) return;
+
         const files = fs.readdirSync(folder).filter( f => f.startsWith(new_file_name) && f.endsWith(extension)); 
+        if (files.length === 0) return;
         
         const width = get_width(files[0]);
         const new_src = path.join(new_file + '-' + width + extension);
@@ -119,7 +119,7 @@ const img_convert = (content, webp_supported) => {
         content = content.replaceAll(file, `${new_src}" srcset="${srcset}`);
     });
 
-    //return content;
+    return content;
 
     } 
     catch (e) {
