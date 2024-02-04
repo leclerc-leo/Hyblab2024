@@ -20,8 +20,10 @@ app.use((req, _, next) => {
     next();
 });
 
-app.get('/', function(req, res) {
-        const files = fs.readdirSync(views_path).map( file => {
+// generate static pages to be served
+const generate = () => {
+
+    const files = fs.readdirSync(views_path).map( file => {
         return [file.split('.')[0], fs.readFileSync(path.join(views_path, file), 'utf8')];
     });
     
@@ -32,12 +34,28 @@ app.get('/', function(req, res) {
     }, layout);    
 
     let temp = combined; // au cas où img_convert a eu un problème
-    combined = img_convert(combined, req.webp_supported);
-    if (combined === undefined || combined === null) {
-        combined = temp;
+    let combined1 = img_convert(combined, false);
+    if (combined1 === undefined || combined1 === null) {
+        combined1 = temp;
     }
 
-    res.send(combined);
+    let combined2 = img_convert(combined, true);
+    if (combined2 === undefined || combined2 === null) {
+        combined2 = temp;
+    }
+
+    return [combined1, combined2];
+}
+
+let [JPG_FRIENDLY, WEBP_FRIENDLY] = generate();
+
+setInterval ( () => {
+    make();
+    [JPG_FRIENDLY, WEBP_FRIENDLY] = generate();
+}, 5000); // 30 minutes
+
+app.get('/', function(req, res) {
+    res.send(req.webp_supported ? WEBP_FRIENDLY : JPG_FRIENDLY);
 });
 
 make();
