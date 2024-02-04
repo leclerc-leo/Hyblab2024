@@ -339,7 +339,8 @@ body {
 	--gb-52: #1e1e28;
 }
 
-#captain {
+#captain,
+#intro {
 	position: fixed;
 	top: 0;
 	left: 0;
