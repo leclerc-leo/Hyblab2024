@@ -59,6 +59,9 @@ const homeStories = function () {
 
   let loader = document.querySelector('#loader');
   loader.style.opacity = '1';
+  let retour = document.querySelector('#back_button');
+  retour.style.display = 'none';
+  let container = document.querySelector('#container');
 
   /* Premier slider pour choisir quel story cliquer */
   // Init of the (touch friendly) Swiper slider
@@ -159,7 +162,8 @@ const homeStories = function () {
           loader.style.opacity = '1';
           loader.style.zIndex = '3000';
 
-          let container = document.querySelector('#container');
+          retour.style.display = 'block';
+
           container.innerHTML = html;
 
           setTimeout(() => {
@@ -172,7 +176,7 @@ const homeStories = function () {
           }, 800);
 
           // on enlève le loader
-          let retour = document.querySelector('#back_button');
+          retour = document.querySelector('#back_button');
           retour.addEventListener('click', () => {
             fetch('/quartiers-2/stories.html')
               .then(res => res.text())
@@ -180,10 +184,10 @@ const homeStories = function () {
                 loader.style.opacity = '1';
                 loader.style.display = 'block';
 
+                retour.style.display = 'none';
+
 
                 // on rajoute a notre container le body de la page credits
-                let container = document.querySelector('#container');
-
                 container.innerHTML = html;
 
                 // on attend 1 seconde
@@ -240,8 +244,10 @@ const homeStories = function () {
           loader.style.opacity = '1';
           loader.style.zIndex = '3000';
 
+          retour = document.querySelector('#back_button');
+          retour.style.display = 'block';
+
           // on rajoute a notre container le body de la page credits
-          let container = document.querySelector('#container');
 
           container.innerHTML = html;
 
@@ -255,7 +261,7 @@ const homeStories = function () {
           }, 800);
 
           // on enlève le loader
-          let retour = document.querySelector('#back_button');
+          retour = document.querySelector('#back_button');
           retour.addEventListener('click', () => {
             fetch('/quartiers-2/stories.html')
               .then(res => res.text())
@@ -265,7 +271,6 @@ const homeStories = function () {
 
 
                 // on rajoute a notre container le body de la page credits
-                let container = document.querySelector('#container');
 
                 container.innerHTML = html;
 
@@ -316,6 +321,9 @@ const homeStories = function () {
         // on enleve le footer recap
         recap.style.display = 'none';
 
+        // on affiche le bouton retour
+        retour.style.display = 'block';
+
         // on met le z-index du footer à 0
         document.querySelector('footer').style.zIndex = "0";
 
@@ -335,7 +343,6 @@ const homeStories = function () {
         loader.style.opacity = '1';
         loader.style.zIndex = '3000';
 
-        let container = document.querySelector('#container');
 
         setTimeout(() => {
           anime({
@@ -356,7 +363,6 @@ const homeStories = function () {
 
         yesImages.forEach((image, index) => {
           // on vérifie dans le localStorage si on a déjà cliqué sur le bouton
-          console.log(localStorage);
           if (localStorage.getItem('yes' + (index + 1))) {
             changeState('no' + (index + 1), yesImages, noImages)
           }
@@ -413,29 +419,17 @@ const homeStories = function () {
 
 
 
-    // on récupère la fleche de retour
-    let retour = document.querySelector('#back_button');
-
     // La fleche retour a deux comportements différents selon si le swiper est affiché ou non
+    retour = document.querySelector('#back_button');
     retour.addEventListener('click', () => {
-      // si le swiper n'est pas affiché alors, on retourne à l'accueil
-      if (document.querySelector('#mySwiper').style.display === 'none') {
-        fetch('/quartiers-2/index.html')
-          .then(res => res.text())
-          .then(html => {
-            document.querySelector('body').innerHTML = html;
-            // on récupère la motion et on l'enlève
-            document.querySelector('#motion').style.display = 'none';
-            // on init l'accueil
-            initAccueil();
-          });
-      }
       // on réaffiche le bouton recap
       recap.style.display = 'flex';
       // on reaffiche les stories
       stories.forEach(story => {
         story.style.display = 'block';
       });
+      retour.style.display = 'none';
+
       document.querySelector('#mySwiper').style.display = 'none';
       // on remet le footer
       document.querySelector('footer').style.zIndex = "6";
