@@ -28,7 +28,12 @@
     flex-direction: column;
     align-items: center;
     position: relative;
-    border: 10px solid #25283D; 
+    border: 10px solid #25283D;
+    left: -277vw;
+    transition: left 1s ease-in-out;
+}
+.appear {
+    left: 0 !important;
 }
 
 .infoFrame2 {
@@ -94,6 +99,8 @@
     flex-direction: column;
     align-items: center;
     position: relative;
+    left: -249vw;
+    transition: left 1s ease-in-out;
 }
 
 .numberCircleFrame_2_2 {
@@ -145,7 +152,10 @@
     width: 80%;
     height: 300px;
     flex-shrink: 0; 
-    background: #FA8C5F; 
+    background: #FA8C5F;
+    left: -222vw;
+    position: relative;
+    transition: left 1s ease-in-out;
 }
 
 .infoFrame3_2 {
