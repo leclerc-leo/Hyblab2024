@@ -240,7 +240,6 @@ async function page_historique(sport) {
 
 	//title.style.fontWeight = "bold";
 	title.style.zIndex = "2";
-	title.style.position = "absolute";
 
 	divTitle.appendChild(title);
 	blank.appendChild(divTitle);
@@ -415,10 +414,12 @@ async function page_historique(sport) {
 	const titleAthlete = document.createElement("h1");
 	titleAthlete.classList.add("title");
 
-	const divImgAthlete = document.createElement("div");
-	divImgAthlete.id = "divImgAthlete";
+	titleAthlete.style.zIndex = "2";
+	titleAthlete.style.position = "absolute";
 
-	blank.appendChild(divImgAthlete);
+	divTitleAthlete.appendChild(titleAthlete);
+	blank.appendChild(divTitleAthlete);
+
 
 	// const divNomAthlete = document.createElement("div");
 	// divNomAthlete.id = "divNomAthlete";
@@ -427,50 +428,112 @@ async function page_historique(sport) {
 	// nomAthlete.classList.add("title");
 	
 	if(Object.keys(listeAthletes).length == 0) {
-		titleAthlete.innerHTML = `AUCUN JOUEUR POUR CETTE DISPLINE`;
+		titleAthlete.innerHTML = `AUCUN JOUEUR POUR CETTE DISCIPLINE`;
 		titleAthlete.style.fontSize = "3vh";
 	} else if(Object.keys(listeAthletes).length == 1) {
 		titleAthlete.innerHTML = `LE<span style='color:red'>\nJOUEUR<span>`;
 		
 		const uniqueAthleteName = Object.keys(listeAthletes)[0];
 		const uniqueAthlete = listeAthletes[uniqueAthleteName];
-		const imgAthlete = document.createElement("img");
-
-		imgAthlete.src = uniqueAthlete.illustration;
-    	imgAthlete.alt = uniqueAthleteName;
-
-		document.getElementById('divImgAthlete').appendChild(imgAthlete);
-	} else {
-		titleAthlete.innerHTML = `LES<span style='color:red'>\nJOUEURS<span>`;
 
 		const imagesContainer = document.createElement("div");
 		imagesContainer.style.display = "flex";
 		imagesContainer.style.justifyContent = "center";
 		imagesContainer.style.flexWrap = "wrap";
 
-		for (const athleteName in listeAthletes) {
-			const athlete = listeAthletes[athleteName];
-			const imgAthlete = document.createElement("img");
-		
-			imgAthlete.src = athlete.illustration;
-			imgAthlete.alt = athleteName;
-		
-			imagesContainer.appendChild(imgAthlete);
-		}
+		const divImgAthlete = document.createElement("div");
+		divImgAthlete.id = "divImgAthlete";
+
+		const imgAthlete = document.createElement("img");
+
+		const divNomAthlete = document.createElement("div");
+		divNomAthlete.style.backgroundColor = "#141456";
+		divNomAthlete.style.cursor = "pointer";
+
+		const nomAthlete = document.createElement("h1");
+		nomAthlete.style.color = "white";
+
+		imgAthlete.src = uniqueAthlete.illustration;
+    	imgAthlete.alt = uniqueAthleteName;
+
+		nomAthlete.innerHTML = `${uniqueAthleteName}`;
+
+		divNomAthlete.appendChild(nomAthlete);
+
+		imagesContainer.appendChild(imgAthlete);
+
+		imagesContainer.appendChild(divNomAthlete);
 
 		divImgAthlete.appendChild(imagesContainer);
+
+		blank.appendChild(divImgAthlete);
+
+		divNomAthlete.onclick = () => {
+			page_athlete(uniqueAthlete);
+		}
+
+	} else {
+		titleAthlete.innerHTML = `LES<span style='color:red'>\nJOUEURS<span>`;
+
+		for (const athleteName in listeAthletes) {
+			const athlete = listeAthletes[athleteName];
+
+			const imagesContainer = document.createElement("div");
+			imagesContainer.style.display = "flex";
+			imagesContainer.style.justifyContent = "center";
+			imagesContainer.style.flexWrap = "wrap";
+
+			const divImgAthlete = document.createElement("div");
+			divImgAthlete.id = "divImgAthlete";
+
+			const imgAthlete = document.createElement("img");
+
+			const divNomAthlete = document.createElement("div");
+			divNomAthlete.style.backgroundColor = "#141456";
+			divNomAthlete.style.cursor = "pointer";
+
+			const nomAthlete = document.createElement("h1");
+			nomAthlete.style.color = "white";
+
+			imgAthlete.src = athlete.illustration;
+			imgAthlete.alt = athleteName;
+
+			nomAthlete.innerHTML = `${athleteName}`;
+
+			divNomAthlete.appendChild(nomAthlete);
+
+			imagesContainer.appendChild(imgAthlete);
+
+			imagesContainer.appendChild(divNomAthlete);
+
+			divImgAthlete.appendChild(imagesContainer);
+
+			blank.appendChild(divImgAthlete);
+
+			divNomAthlete.onclick = () => {
+				page_athlete(athlete);
+			}
+		}
+		
+	}
+	
+}
+
+function page_athlete(athlete) {
+
+	const blank = document.querySelector("#blank");
+	blank.innerHTML = ""; // clear
+	// blank.style.height = "100%";
+
+	const retour = document.createElement("img");
+	retour.src = "./Image/bouton-back.svg";
+	retour.alt = "retour";
+	retour.id = "retour";
+	retour.onclick = () => {
+		page_sport();
 	}
 
-
-
-	titleAthlete.style.zIndex = "2";
-	titleAthlete.style.position = "absolute";
-
-	divTitleAthlete.appendChild(titleAthlete);
-	blank.appendChild(divTitleAthlete);
-
-	blank.appendChild(divImgAthlete);
-	
+	blank.appendChild(retour);
 }
 
 const myModal = new bootstrap.Modal('#modal')
