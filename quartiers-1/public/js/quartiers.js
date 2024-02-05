@@ -20,7 +20,7 @@ function backgroundTransition() {
     old_img.classList.add("out");
 
     const new_img = document.createElement("img");
-    new_img.src = "img/backgrounds/" + quartier.toLocaleLowerCase() + "/" + topic + ".svg";
+    new_img.src = "img/backgrounds/" + quartier.toLocaleLowerCase() + "/" + topic + "." + extension;
     container.appendChild(new_img);
 
     setTimeout(function() {
