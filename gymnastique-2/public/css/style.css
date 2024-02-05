@@ -312,7 +312,7 @@ svg.image-histoire, svg.image-jo{
 }
 
 #histoire-header > img {
-    padding: 10px;  
+    padding: 10px;
 }
 
 .image-titre{
@@ -328,6 +328,7 @@ svg.image-histoire, svg.image-jo{
     background-color: #FFD8B3;
     font-family: "Krona_One variant0";
 }
+
 #palmares-page .palmares-container {
     margin-top: 10%;
     display: flex;
@@ -530,4 +531,46 @@ svg.image-histoire, svg.image-jo{
 .actif .jo-card{
     height: 100%;
     margin-bottom: 10px;
+}
+
+
+#mouvement-header{
+    position:sticky;
+    top: 0;
+    padding-top: 10px;
+    background-color: rgba(255, 216, 179, 0.9);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#mouvement-header > img {
+    padding: 10px;
+}
+
+.image-titre{
+    max-width: 40%;
+}
+#mouvement-video{
+    width: 60%;
+    height: 60%;
+}
+#twitter-widget-0{
+    border-radius: 10%;
+}
+#mouvement-contenu{
+    width: 80%;
+    height: 60%;
+}
+#mouvement-contenue-texte{
+}
+.page-container{
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+#mouvement-page .svg-boucle{
+    position: absolute;
 }
