@@ -11,7 +11,7 @@ const initAccueil = function(){
     anime({
       targets: '#bouton-decouvrir',
       scale: 1.3, // Faites grossir l'élément
-      duration: 1200,
+      duration: 2000,
       opacity: 0, // Rendre l'élément transparent
       easing: 'easeInOutQuad', // Utilisez une fonction d'atténuation pour une animation plus agréable
       complete: function(anim) {

@@ -121,11 +121,16 @@ const recapPage = function () {
   }
   if (size > 0) {
     note.innerHTML = yesCount + '/' + size;
+    note.parentElement.style.backgroundColor = '#4669AA';
+    note.style.color = 'white';
     if (yesCount / size === 0) {
       message.innerHTML = 'Ouch ! Pas besoin d\'habiter dans le quartier Thabor Saint-Hélier pour s\'y promener. Vas-y, fonce !';
     }
     if (yesCount / size === 1) {
       message.innerHTML = 'Nous n\'avons plus rien à t\'apprendre, tu connais le quartier par coeur ! Mais est-ce le cas de tes amis? N\'hésite pas à leur envoyer le lien du site afin de le découvrir !';
+      // on met la couleur de note en vert
+      note.parentElement.style.backgroundColor = '#AAC382';
+      note.style.color = 'black';
     }
     else if (yesCount / size >= 0.7) {
       message.innerHTML = 'Tu as découvert quelques-unes des nombreuses initiatives du coin, continue sur ta lancée !';
