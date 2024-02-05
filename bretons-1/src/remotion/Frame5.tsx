@@ -8,7 +8,8 @@ export const Frame5: React.FC<{ nom: string, age: string, taille: string, sport:
             <div className="identity-name">de {nom}</div>
             <div className="record">Record</div>
             <div className="record-texte">Record texte</div>
-            <img src='/bretons-1/src/assets/img/athlete/JDE1.png' alt="Athlete" className="athlete-frame5" />
+            <img src='/bretons-1/img/BolBreton.svg' className="bols"></img>
+            <img src='/bretons-1/img/test.png' className="athlete-frame5"></img>
             <div className="infos-perso">
                 <div className="age-frame5">{age}</div>
                 <div className="taille-frame5">{taille}</div>

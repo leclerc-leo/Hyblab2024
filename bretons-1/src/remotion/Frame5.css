@@ -1,4 +1,4 @@
-.container-frame5 {
+.frame6-image {
     font-family: 'Arial', sans-serif;
     color: #333;
     background-color: #f9f9f9;
@@ -7,6 +7,26 @@
     width: 100%;
     height: auto;
     margin: auto;
+    z-index: 0;
+    position: absolute;
+  }
+
+  .bols {
+    width: 40%;
+    height: auto;
+    z-index: 10;
+    top: 21%;
+    left: 6%;
+    position: absolute;
+  }
+
+  .athlete-frame5 {
+    top: 18%;
+    left: 50%;
+    width: 518px;
+    height: 530px;
+    z-index: 20;
+    position: absolute;
   }
 
   .identity {
@@ -31,11 +51,6 @@
     font-size: 80px;
   }
 
-  .athlete-frame5 {
-    top: 50%;
-    left: 50%;
-  }
-
   .fun-fact {
     position: absolute;
     top: 50%;
@@ -45,6 +60,7 @@
     color: #000;
     text-align: left;
     font-size: 60px;
+    font-weight: bold;
   }
 
   .fun-fact-texte {
@@ -67,6 +83,7 @@
     color: #000;
     text-align: left;
     font-size: 50px;
+    font-weight: bold;
   }
 
   .record-texte {
@@ -78,4 +95,34 @@
     color: #000;
     text-align: left;
     font-size: 50px;
+  }
+
+  .age-frame5 {
+    position: absolute;
+    top: 22.5%;
+    left: 20%;
+    font-size: 70px;
+    font-family: Apple Chancery, cursive;
+    transform: rotate(5deg);
+    z-index: 12;
+  }
+
+  .taille-frame5 {
+    position: absolute;
+    top: 30%;
+    left: 18%;
+    font-size: 70px;
+    font-family: Apple Chancery, cursive;
+    transform: rotate(-7deg);
+    z-index: 12;
+  }
+
+  .sport-frame5 {
+    position: absolute;
+    top: 36.5%;
+    left: 16.2%;
+    font-size: 70px;
+    font-family: Apple Chancery, cursive;
+    transform: rotate(5deg);
+    z-index: 12;
   }
