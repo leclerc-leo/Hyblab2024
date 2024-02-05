@@ -96,6 +96,7 @@ explore(js_path).forEach( file => {
 });
 
 let [JPG_FRIENDLY, WEBP_FRIENDLY] = generate();
+regroup_js();
 
 setInterval ( () => {
     let changed_HTML = false,
