@@ -8,12 +8,11 @@
     <link rel="stylesheet" href="css/reportages.css">
     <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/loadingio/loading.css@v2.0.0/dist/loading.css">
-    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'> <!-- Police Google -->
-    <link href="https://fonts.cdnfonts.com/css/nexa-bold" rel="stylesheet"> <!-- Police Nexa -->
+    <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Inter'> <!-- Police Google -->
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/nexa-bold"> <!-- Police Nexa -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="js/quartiers.js" defer></script>
-    <script src="js/conversation.js" defer></script>
+    <script src="js/reportages.js" defer></script>
     <script src="js/menu.js" defer></script>
 </head>
 <body>
@@ -23,40 +22,46 @@
         </section>
             
         <section id="reportage">
-            <div class="drawing">
-                <div id="mySidenav" class="sidenav">
-                    <div id="mySidenav-header">
-                        <button id="closeBtn" onclick="closeNav()"></button>
-                        <h1>Villejean</h1>
-                    </div>
-                    <p>Accès direct aux thématiques</p>
-                    <ul>
-                        <!-- # should be replaced by url later -->
-                        <hr />
-                        <li><button onclick="">Portraits d'habitants</button></li>
-                        <hr />
-                        <li><button onclick="">Associations</button></li>
-                        <hr />
-                        <li><button onclick="">Habitat</button></li>
-                        <hr />
-                        <li><button onclick="">Sports</button></li>
-                        <hr />
-                        <li><button onclick="">Education</button></li>
-                        <hr />
-                        <li><button onclick="">Commerces</button></li>
-                        <hr />
-                    <ul>
-                    </ul>
-                        <hr />
-                        <li><a href="./reportages">Reportages</a></li>
-                        <hr />
-                        <li><a href="../quartiers-1">Carte des quartiers</a></li>
-                        <hr />
-                        <li><a href="#">Crédits</a></li>
-        
-                    </ul>
+
+            <div id="mySidenav" class="sidenav">
+                <div id="mySidenav-header">
+                    <button id="closeBtn" onclick="closeNav()"></button>
+                    <h1>Villejean</h1>
                 </div>
-        
+                <p>Accès direct aux thématiques</p>
+                <ul>
+                    <!-- # should be replaced by url later -->
+                    <hr />
+                    <li><button onclick="">Portraits d'habitants</button></li>
+                    <hr />
+                    <li><button onclick="">Associations</button></li>
+                    <hr />
+                    <li><button onclick="">Habitat</button></li>
+                    <hr />
+                    <li><button onclick="">Sports</button></li>
+                    <hr />
+                    <li><button onclick="">Education</button></li>
+                    <hr />
+                    <li><button onclick="">Commerces</button></li>
+                    <hr />
+                <ul>
+                </ul>
+                    <hr />
+                    <li><a href="./reportages">Reportages</a></li>
+                    <hr />
+                    <li><a href="../quartiers-1">Carte des quartiers</a></li>
+                    <hr />
+                    <li><a href="#">Crédits</a></li>
+    
+                </ul>
+            </div>
+
+            <div class="drawing">
+                <h1>Villejean</h1>
+                <div class="background-container">           
+                    <div id="animation"></div> <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.8/lottie.min.js"></script> <script> var animation = lottie.loadAnimation({ container: document.getElementById('animation'), renderer: 'svg', loop: false, autoplay: true, path: 'Villejean_3.json' }); </script>
+                </div>
+
                 <!-- create burger icon by span -->
                 <button id="openBtn" onclick="openNav()">
                     <span class="burger-icon">
@@ -65,19 +70,9 @@
                         <span></span>
                     </span>
                 </button>
-                
-                <h1>Villejean</h1>
-                <div class="background-container">
-                                    
-                    <div id="animation"></div> <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.8/lottie.min.js"></script> <script> var animation = lottie.loadAnimation({ container: document.getElementById('animation'), renderer: 'svg', loop: false, autoplay: true, path: 'Villejean_3.json' }); </script> 
-
-
-                </div>
             </div>
 
             <div class="reportages">
-
-
                 <div class="video-player">
                     <h6>Collectif Kune</h6>
                     <iframe class="videos" src="https://www.youtube.com/embed/4wR5ubwNarE?si=bT3NZbn262FIpfp2&start=43&end=191&controls=0" title="YouTube video player" frameborder="0"></iframe>
@@ -94,18 +89,8 @@
                     <h6>Melting Potes</h6>
                     <iframe class="videos" src="https://www.youtube.com/embed/4wR5ubwNarE?si=bT3NZbn262FIpfp2&start=379&end=486&controls=0" title="YouTube video player" frameborder="0"></iframe>
                 </div>
-
-
-
             </div>
-
-            
-
-
-            <!--<img class="guide" src="img/guide.png" alt="Guide">-->
-            <input type="button" onclick="location.href='/quartiers-1';" value="Carte" class="navigation-button go-to-map">
-        </section>
-            
+        </section>  
     </div>
 </body>
 </html>

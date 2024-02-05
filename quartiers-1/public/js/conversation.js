@@ -325,6 +325,7 @@ let extension = "svg";
 let user_name = sessionStorage.getItem("user_name");
 let start;
 if (user_name == null) {
+    user_name = "Vous";
     start = "Debut";
 } else {
     start = "Binvenue1";
@@ -349,7 +350,6 @@ setTimeout(() => {
     if (sessionStorage.getItem("save") == null || !quartier_dispo[quartier]) {
         conversationUnfold(start);
     } else {
-        console.log("fqzfq")
         reloadConversation();
     }
 }, 1000);
@@ -364,3 +364,12 @@ reload_button.addEventListener("click", function() {
     reloadConversation();
 });
 */
+
+document.querySelectorAll(".topicButton").forEach(button => {
+    button.addEventListener("click", function(event) {
+        closeNav();
+        nextTopic = event.target.dataset.topic;
+        console.log(event.target.dataset.topic);
+        changeTopic();
+    });
+});
