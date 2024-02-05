@@ -12,13 +12,13 @@ const determinerTexteTitre = (sexe: string, gain: string) => {
   const suffixeGenre = (sexe === 'F') ? 'e' : '';
   switch (gain) {
     case "Or":
-      return "décroche l'or en";
+      return "décroche l'or ";
     case "Argent":
-      return "décroche l'argent en";
+      return "décroche l'argent ";
     case "Bronze":
-      return "décroche le bronze en";
+      return "décroche le bronze";
     case "Qualifie":
-      return `qualifié${suffixeGenre} pour la finale en`
+      return `qualifié${suffixeGenre} pour la finale`
     case "":
       return `non qualifié${suffixeGenre} pour la finale`;
   }
@@ -36,7 +36,8 @@ const athleteVideosData = allAthletesData.map((athlete: Athlete) => {
 
   const videosForAthlete = athleteEvents.map((event: EventDataItem) => ({
     id: event.IdEvent.toString(),
-    sport: event.Epreuve,
+    sport: event.Sport,
+    epreuve:event.Epreuve,
     gain: event.Gain,
     title: event.Athlete,
     subtitle: event.Gain,
@@ -83,7 +84,8 @@ function CardCarousel({ video }: VideoListItemProps) {
         <Card.Img className="custom-image" src={video.srcPhoto} />
         <div className='card_text'>
           <h4>{video.title}</h4>
-          <p>{determinerTexteTitre(video.description, video.subtitle)} en {video.sport} ! </p>
+          <p className='psanspadding'>{determinerTexteTitre(video.description, video.subtitle)}</p>
+          <p> en {video.epreuve} ! </p>
         </div>
         <div className="image-row" style={{ zIndex: 5 }}>
         <img
