@@ -108,8 +108,8 @@ body{
     z-index: 1;
     width:100%;
     bottom:0;
-    height: 25%;
-    transform: scale(3);
+    height: 33%;
+    transform: scale(2);
 }
 
 #accueil_logo {
