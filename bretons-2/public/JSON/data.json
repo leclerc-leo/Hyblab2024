@@ -5,7 +5,7 @@
         "discipline" : "Football",
         "club" : "Stade Rennais",
         "poste" : "Milieu de terrain",
-        "illustration" : "./Image/IllustrationsJoueurs/illu-alicia-toublanc-hyb.svg",
+        "illustration" : "./Image/IllustrationsJoueurs/illu-enzo-lefee-hyb.svg",
         "photo" : "https://cdn-apps.letelegramme.fr/files/outils/2023/05/LE-FEE-Enzo-PH2-6776.JPG",
         "bio" : ""
     },
@@ -15,6 +15,7 @@
         "discipline" : "Handball",
         "club" : "Brest Bretagne Handball Club",
         "poste" : "",
+        "illustration" : "./Image/IllustrationsJoueurs/illu-pauline-coatanéa-hyb.svg",
         "photo" : "https://cdn-apps.letelegramme.fr/files/outils/2023/05/COATANEA-Pauline-PH2-6776.JPG",
         "bio" : "La Renanaise faisait partie de l'aventure aux Jeux Olympiques de Tokyo, où les Bleues ont remporté leur premier titre olympique. Finaliste de la Ligue des champions avec Brest la même année, la Bretonne devra relever le défi de revenir au niveau à temps pour les Jeux de Paris après son congé maternité."
     },
@@ -24,6 +25,7 @@
         "discipline" : "Handball",
         "club" : "Aix",
         "poste" : "",
+        "illustration" : "./Image/IllustrationsJoueurs/illu-romain-lagarde-hyb.svg",
         "photo" : "https://cdn-apps.letelegramme.fr/files/outils/2023/05/LAGARDE-Romain-min.jpg",
         "bio" : "D'abord remplaçant à Tokyo, Romain Lagarde a finalement intégré le groupe olympique en cours de tournoi, pour s'adjuger le titre de champion olympique en 2021, Formé à Nantes, le Ploemeurois est depuis 2021 l'un des pivots du Pays d'Aix Université Club."
     },
@@ -33,6 +35,7 @@
         "discipline" : "Volley-ball",
         "club" : "Zenith St Pétersbourg",
         "poste" : "",
+        "illustration" : "./Image/IllustrationsJoueurs/illu-jenia-grebennikov-hyb.svg",
         "photo" : "https://cdn-apps.letelegramme.fr/files/outils/2023/05/GREBENNIKOV-Jenia.JPG",
         "bio" : "Jenia Grebennikov est probablement l'un des meilleurs libéros au monde. Formé à Rennes, il passe ensuite par l'Allemagne et l'Italie, avant de rejoindre, en 2021, le Zenit Saint-Pétersbourg, en Russie. Champion olympique avec les Bleus en 2021, il cherchera à remporter une deuxième médaille olympique de rang."
     }

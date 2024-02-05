@@ -40,6 +40,8 @@ nav img {
 #blank {
     height: 85%;
     /* width: 100%; */
+    overflow: hidden;
+    overflow-y: auto;
 }
 
 #retour {
@@ -74,8 +76,9 @@ iframe {
 }
 
 footer {
+    position : absolute;
     background-color: #E209174D;
-    height: 5%;
+    height: 8%;
     width: 100%;
     font-size: xx-small;
     display: flex;
@@ -95,8 +98,8 @@ footer {
     width: auto;
 }
 
-#modal{
-}
+/* #modal{
+} */
 
 .modal{
     position: fixed;
@@ -149,4 +152,68 @@ footer {
 .fade-out {
     transition: opacity 1s ease; 
 }
+
+/* Styles pour le modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Fond semi-transparent */
+  }
+  
+/* Style carousel page sport */
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.mySwiper {
+    height: 50%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* margin-right: 5%; */
+
+    width: 100%;
+    height: 100%;
+  }
+
+.swiper-slide div {
+    /* Assurez-vous que la div interne n'introduit pas de marges ou de largeurs indésirables */
+    margin: 0;
+    width: 100%;
+    /* background-color: rgba(255, 206, 66, 0.6);  */
+}
+
+.swiper-slide video {
+    display: block;
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+  }
+
+/* removing blue outline from buttons */
+button:focus, button:active {
+   outline: none;
+}
+
+#divTitleAthlete {
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 4%;
+}
+  
 

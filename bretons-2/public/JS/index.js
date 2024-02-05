@@ -1,5 +1,7 @@
 "use strict";
 
+let swiperSportInstance;
+
 function page_accueil() {
 	const blank = document.querySelector("#blank");
 	blank.innerHTML = ""; // clear
@@ -60,6 +62,8 @@ function page_accueil() {
 	divButton.appendChild(button);
 	blank.appendChild(divButton);
 }
+
+
 
 function page_sport(){
 
@@ -138,8 +142,8 @@ function page_sport(){
 		button.classList.add("btn-dark");
 		button.setAttribute("style", "--bs-btn-font-size: 4vh; margin-bottom: auto; padding-left: 5vh; padding-right: 5vh; border-radius: 0px; background-color: #141456; text-transform: uppercase");
 		button.textContent = sport;
-		button.onclick = () => {
-			page_historique(sport);
+		button.onclick = async () => {
+			await page_historique(sport);
 		}
 
 		div.appendChild(button);
@@ -171,193 +175,302 @@ function page_sport(){
 	});
 }
 
-function page_historique(sport) {
+async function fetchAndProcessData(sport) {
+
+	const listeVideo = {}
 	
-	const athlete = {};
-
-	fetch("./JSON/data.json")
-	.then(response => response.json())
-	.then(data => {
-		for (const [a, dataAthlete] of Object.entries(data)) {
-			if (dataAthlete.discipline == sport) {
-				athlete[a] = dataAthlete;
-				console.log(dataAthlete) // pour tester
-			}
+	try {
+	  const response = await fetch("./JSON/videos.json");
+	  if (!response.ok) {
+		throw new Error(`Erreur de réseau (statut ${response.status})`);
+	  }
+  
+	  const data = await response.json();
+	  for (const [discipline, videos] of Object.entries(data)) {
+		if (discipline === sport) {
+		  listeVideo[discipline] = videos;
+		  console.log(videos); // pour tester
 		}
-	}).then(() => {
-		console.log(athlete);
+	  }
+  
+	  // Vous pouvez accéder à listeVideo ici, assurez-vous que le fetch est terminé.
+	  console.log(listeVideo);
+	} catch (error) {
+	  console.error("Une erreur s'est produite lors de la récupération des vidéos :", error);
+	}
+	
+	return listeVideo
+}
 
-		const blank = document.querySelector("#blank");
-		blank.innerHTML = ""; // clear
+async function page_historique(sport) {
+	
+	const listeVideo = await fetchAndProcessData(sport);
 
-		const retour = document.createElement("img");
-		retour.src = "./Image/bouton-back.svg";
-		retour.alt = "retour";
-		retour.id = "retour";
-		retour.onclick = () => {
-			page_sport();
-		}
+	// fetch("./JSON/videos.json")
+	// .then(response => response.json())
+	// .then(data => {
+	// 	for (const [discipline, videos] of Object.entries(data)) {
+	// 		if (discipline == sport) {
+	// 			listeVideo[discipline] = videos;
+	// 			console.log(videos) // pour tester
+	// 		}
+	// 	}
 
-		blank.appendChild(retour);
+	const blank = document.querySelector("#blank");
+	blank.innerHTML = ""; // clear
+	// blank.style.height = "100%";
 
-		const divTitle = document.createElement("div");
-		divTitle.id = "divTitle";
+	const retour = document.createElement("img");
+	retour.src = "./Image/bouton-back.svg";
+	retour.alt = "retour";
+	retour.id = "retour";
+	retour.onclick = () => {
+		page_sport();
+	}
 
-		const title = document.createElement("h1");
-		title.classList.add("title");
-		title.innerHTML = `HISTORIQUE<span style='color:red'>\n${sport.toUpperCase()}<span>`;
-		//title.style.fontWeight = "bold";
-		title.style.zIndex = "2";
-		title.style.position = "absolute";
+	blank.appendChild(retour);
 
-		divTitle.appendChild(title);
-		blank.appendChild(divTitle);
+	const divTitle = document.createElement("div");
+	divTitle.id = "divTitle";
+	divTitle.style.height = "20vh";
 
-		const divSwipper = document.createElement("div");
-		divSwipper.classList.add("swiper");
+	const title = document.createElement("h1");
+	title.classList.add("title");
+	title.innerHTML = `HISTORIQUE<span style='color:red'>\n${sport.toUpperCase()}<span>`;
 
-		const divSwipperWrapper = document.createElement("div");
-		divSwipperWrapper.classList.add("swiper-wrapper");
+	//title.style.fontWeight = "bold";
+	title.style.zIndex = "2";
+	title.style.position = "absolute";
 
-		divSwipper.appendChild(divSwipperWrapper);
+	divTitle.appendChild(title);
+	blank.appendChild(divTitle);
 
-		blank.appendChild(divSwipper);
+	const swiperSport = document.createElement("div")
+	swiperSport.classList.add("Swiper2")
+	// swiperSport.classList.add("mySwiper")
 
-		for (const [a, dataAthlete] of Object.entries(athlete)) {
+	const swipperSportWrapper = document.createElement("div")
+	swipperSportWrapper.classList.add("swiper-wrapper")
 
+	swiperSport.appendChild(swipperSportWrapper)
+	blank.appendChild(swiperSport)
 
-			const slide = document.createElement("div");
-			slide.classList.add("swiper-slide");
-		
-			const div = document.createElement("div");
-			div.style.display = "flex";
-			div.style.flexDirection = "column";
-			div.style.justifyContent = "center";
-			div.style.alignItems = "center";
-			div.style.height = "100%";
+	for (const [videoKey, videoPath] of Object.entries(listeVideo[sport])) {
+		console.log(`Chargement de la vidéo ${videoKey} depuis ${videoPath}`);
 
-			const video = document.createElement("video");
+		const slide = document.createElement("div");
+		slide.classList.add("swiper-slide");
+		// slide.style.height = "40%";
+		// //slide.style.width = "50%";
+		// slide.style.float = "left"
+		// slide.style.marginRight = "10px";
+		// slide.style.marginTop = "15vh";
+		// slide.style.backgroundColor = "#FBCB5D";
 
-			video.src = './Videos/debut_fin.mp4';
-			// video.autoplay = true;
-			video.controle = true;
-			video.controlsList = "nodownload";
-			video.style.height = "40%";
-			video.style.border = "0.5px solid black"; //à modifier ?
+		const video = document.createElement("video");
 
-			const sourceMP4 = document.createElement("source");
-			sourceMP4.src = './Videos/debut_fin.mp4';
-			sourceMP4.type = 'video/mp4';
+		console.log(`Création de l'élément vidéo pour ${videoKey}`);
+	
+		const div = document.createElement("div");
+		div.style.display = "flex";
+		div.style.flexDirection = "column";
+		div.style.justifyContent = "center";
+		div.style.alignItems = "center";
+		div.style.height = "100%";
 
-			const sourceWebM = document.createElement("source");
-			sourceWebM.src = './IVideos/debut_fin.webm';
-			sourceWebM.type = 'video/webm';
+		// video.src = videos[${}];
+		// video.autoplay = true;
+		// video.controls = true;
+		video.controlsList = "nodownload";
+		// video.style.height = "100%";
+		// video.style.border = "0.5px solid black"; //à modifier ?
 
-			video.oncanplay = ()=>{
-				video.style.cursor = "pointer";
-				const playButton = document.createElement("button");
-				const playButtonImage = document.createElement("img");
-				playButtonImage.src = "./Image/picto-button-video/play.svg";
-				playButtonImage.alt = "Play"; 
-				playButton.appendChild(playButtonImage);
+		const sourceMP4 = document.createElement("source");
+		sourceMP4.src = videoPath;
+		sourceMP4.type = 'video/mp4';
 
-				playButton.style.backgroundColor = "transparent";
-				playButton.style.border = "none";
-				playButton.style.cursor = "pointer";
+		const sourceWebM = document.createElement("source");
+		sourceWebM.src = videoPath.replace("mp4", ".webm");
+		sourceWebM.type = 'video/webm';
 
-				playButtonImage.style.width = "30px"; 
-    			playButtonImage.style.height = "30px";
+		video.appendChild(sourceMP4);
+		video.appendChild(sourceWebM);
 
-				playButton.style.border = "none"; 
-				playButton.style.cursor = "pointer"; 
-				playButton.style.position = "absolute"; 
-				playButton.style.top = "50%"; 
-				playButton.style.left = "50%"; 
-				playButton.style.transform = "translate(-50%, -50%)";
+		video.oncanplay = ()=>{
+			console.log(`La vidéo ${videoKey} est prête à être lue.`);
+			video.style.cursor = "pointer";
+			const playButton = document.createElement("button");
+			const playButtonImage = document.createElement("img");
+			playButtonImage.src = "./Image/picto-button-video/play.svg";
+			playButtonImage.alt = "Play"; 
+			playButton.appendChild(playButtonImage);
 
-				let isPlaying = false;
+			playButton.style.backgroundColor = "transparent";
+			playButton.style.border = "none";
+			playButton.style.cursor = "pointer";
 
-				playButton.addEventListener("click", function () {
-					playButton.style.opacity = 1;
+			playButtonImage.style.width = "30px"; 
+			playButtonImage.style.height = "30px";
 
-					if (!isPlaying) {
-						video.play();
-						playButtonImage.src = "./Image/picto-button-video/pause.svg";
+			playButton.style.border = "none"; 
+			playButton.style.cursor = "pointer"; 
+			playButton.style.position = "absolute"; 
+			playButton.style.top = "50%"; 
+			playButton.style.left = "50%"; 
+			playButton.style.transform = "translate(-50%, -50%)";
 
-						isPlaying = true;
+			let isPlaying = false;
 
-						playButton.classList.add("fade-out");
+			playButton.addEventListener("click", function () {
+				playButton.style.opacity = 1;
 
-						setTimeout(function () {
-							playButton.style.opacity = 0; 
-						}, 1000);
-					} else {
-						playButtonImage.src = "./Image/picto-button-video/play.svg"; 
-						video.pause();
+				if (!isPlaying) {
+					video.play();
+					playButtonImage.src = "./Image/picto-button-video/pause.svg";
 
-						isPlaying = false;
+					isPlaying = true;
 
-						playButton.classList.add("fade-out");
-				
-						setTimeout(function () {
-							playButton.style.opacity = 0; 
-						}, 1000);
-					}
-				});
+					playButton.classList.add("fade-out");
 
-				video.addEventListener("click", function () {
-					playButton.style.opacity = 1;
+					setTimeout(function () {
+						playButton.style.opacity = 0; 
+					}, 1000);
+				} else {
+					playButtonImage.src = "./Image/picto-button-video/play.svg"; 
+					video.pause();
 
-					if (isPlaying) {
-						playButtonImage.src = "./Image/picto-button-video/pause.svg"; 
-						video.pause();
+					isPlaying = false;
+				}
+			});
 
-						isPlaying = false;
+			video.addEventListener("click", function () {
+				playButton.style.opacity = 1;
 
-						// playButton.classList.add("fade-out");
-				
-						// setTimeout(function () {
-						// 	playButton.style.opacity = 0; 
-						// }, 1000);
+				if (isPlaying) {
+					playButtonImage.src = "./Image/picto-button-video/play.svg"; 
+					video.pause();
 
-						playButtonImage.src = "./Image/picto-button-video/play.svg"; 
-					}
-					else {
-						playButtonImage.src = "./Image/picto-button-video/pause.svg"; 
-						video.play();
+					isPlaying = false;
+				}
+				else {
+					playButtonImage.src = "./Image/picto-button-video/pause.svg"; 
+					video.play();
 
-						isPlaying = true;
+					isPlaying = true;
 
-						playButton.classList.add("fade-out");
-				
-						setTimeout(function () {
-							playButton.style.opacity = 0; 
-						}, 1000);
-					}
-				});
-
-				// playButton.addEventListener("transitionend", function () {
-				// 	playButton.style.display = "none";
-				// });
-
-				video.appendChild(sourceMP4);
-				video.appendChild(sourceWebM);
-
-				div.appendChild(video);
-				div.appendChild(playButton);
-				slide.appendChild(div);
-				divSwipperWrapper.appendChild(slide);
-
-			}
+					playButton.classList.add("fade-out");
 			
+					setTimeout(function () {
+						playButton.style.opacity = 0; 
+					}, 1000);
+				}
+			});
+
+			video.appendChild(sourceMP4);
+			video.appendChild(sourceWebM);
+
+			div.appendChild(video);
+			div.appendChild(playButton);
+			slide.appendChild(div);
+			swipperSportWrapper.appendChild(slide);
+
+			console.log(`Vidéo ${videoKey} ajoutée à la page.`);
+
+		}
+	}
+
+	const swiperSportInstance = new Swiper('.Swiper2', {
+		direction: 'horizontal',
+		loop: true,
+		mousewheel: true,
+		slidesPerView: 2,
+	});
+
+	console.log("Nouvelle instance de swiperSportInstance créée.");
+
+	const listeAthletes = {}
+	
+	try {
+	  const response = await fetch("./JSON/data.json");
+	  if (!response.ok) {
+		throw new Error(`Erreur de réseau (statut ${response.status})`);
+	  }
+  
+	  const data = await response.json();
+	  for (const [titleAthlete, athleteData] of Object.entries(data)) {
+		if (athleteData.discipline === sport) {
+			listeAthletes[titleAthlete] = athleteData;
+		  	console.log(athleteData); // pour tester
+		}
+	  }
+	  console.log(listeAthletes);
+	} catch (error) {
+	  console.error("Une erreur s'est produite lors de la récupération des vidéos :", error);
+	}
+
+	const divTitleAthlete = document.createElement("div");
+	divTitleAthlete.id = "divTitleAthlete";
+	divTitleAthlete.style.position = "sticky";
+
+	const titleAthlete = document.createElement("h1");
+	titleAthlete.classList.add("title");
+
+	const divImgAthlete = document.createElement("div");
+	divImgAthlete.id = "divImgAthlete";
+
+	blank.appendChild(divImgAthlete);
+
+	// const divNomAthlete = document.createElement("div");
+	// divNomAthlete.id = "divNomAthlete";
+
+	// const nomAthlete = document.createElement("h1");
+	// nomAthlete.classList.add("title");
+	
+	if(Object.keys(listeAthletes).length == 0) {
+		titleAthlete.innerHTML = `AUCUN JOUEUR POUR CETTE DISPLINE`;
+		titleAthlete.style.fontSize = "3vh";
+	} else if(Object.keys(listeAthletes).length == 1) {
+		titleAthlete.innerHTML = `LE<span style='color:red'>\nJOUEUR<span>`;
+		
+		const uniqueAthleteName = Object.keys(listeAthletes)[0];
+		const uniqueAthlete = listeAthletes[uniqueAthleteName];
+		const imgAthlete = document.createElement("img");
+
+		imgAthlete.src = uniqueAthlete.illustration;
+    	imgAthlete.alt = uniqueAthleteName;
+
+		document.getElementById('divImgAthlete').appendChild(imgAthlete);
+	} else {
+		titleAthlete.innerHTML = `LES<span style='color:red'>\nJOUEURS<span>`;
+
+		const imagesContainer = document.createElement("div");
+		imagesContainer.style.display = "flex";
+		imagesContainer.style.justifyContent = "center";
+		imagesContainer.style.flexWrap = "wrap";
+
+		for (const athleteName in listeAthletes) {
+			const athlete = listeAthletes[athleteName];
+			const imgAthlete = document.createElement("img");
+		
+			imgAthlete.src = athlete.illustration;
+			imgAthlete.alt = athleteName;
+		
+			imagesContainer.appendChild(imgAthlete);
 		}
 
-		blank.appendChild(divSwipper);
+		divImgAthlete.appendChild(imagesContainer);
+	}
 
-		const swiperConfig = {
-			centeredSlides: true,
-		  }
-	});
+
+
+	titleAthlete.style.zIndex = "2";
+	titleAthlete.style.position = "absolute";
+
+	divTitleAthlete.appendChild(titleAthlete);
+	blank.appendChild(divTitleAthlete);
+
+	blank.appendChild(divImgAthlete);
+	
 }
 
 const myModal = new bootstrap.Modal('#modal')
