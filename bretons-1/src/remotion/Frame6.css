@@ -18,7 +18,7 @@
 }
 
 .compteurContainer_frame6 {
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text";
   position: absolute;
   top: 193vh;
   color: black;
@@ -28,7 +28,7 @@
 }
 
 .golos-text-frame6 {
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text";
   font-optical-sizing: auto;
   font-style: normal;
 }

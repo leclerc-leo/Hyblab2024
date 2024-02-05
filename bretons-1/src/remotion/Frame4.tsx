@@ -35,8 +35,12 @@ export const Frame4: React.FC<{ Gentilé: string, gain: string, Epreuve: string,
     setIsLoading(false);
     setTimeout(function () {
       const element = document.querySelector('.containerText_f4') as HTMLElement;
+      const elementImageRed = document.querySelector('.LogoRed') as HTMLElement;
+      const elementImageJaune = document.querySelector('.LogoJaune') as HTMLElement;
       if (element != undefined) {
         element.style.transform = 'translateX(300vw)';
+        elementImageJaune.style.transform = 'translateX(300vw)';
+        elementImageRed.style.transform = 'translateX(300vw)';
       }
     }, 4500);
     let delay = 50,
@@ -80,27 +84,31 @@ export const Frame4: React.FC<{ Gentilé: string, gain: string, Epreuve: string,
     }
   }, []);
   return (
-    <div className='containerText_f4'>
-      {gain === 'Qualifie' ? (
-        <>
-          <p className='animatedtext bold'>Prouesse !</p>
-          <br></br>
-          <p className='animatedtext bold'>{sexe === 'F' ? 'La' : 'Le'} {Gentilé} se {Epreuve_1}</p>
-        </>
-      ) : gain === '' ? (
-        <>
-          <p className='animatedtext bold'>{sexe === 'F' ? 'La' : 'Le'} {Gentilé} n'est {Epreuve_1} </p>
-        </>
-      ) : (
-        <>
-          <p className='animatedtext bold'>Prouesse !</p>
-          <br></br>
-          <p className='animatedtext bold'>{sexe === 'F' ? 'La' : 'Le'} {Gentilé} remporte la </p>
-          <p className='animatedtext'>{rangToMedaille(gain)}</p>
-        </>
-      )}
-      <p className='animatedtext'> en </p>
-      <p className='animatedtext bold'>{Epreuve} {getSexe(sexe)} {getImage(Sport)}</p>
+    <div>
+      <img className='containerimage LogoJaune'  src='/bretons-1/img/logoFrame2Jaune.svg'></img>
+      <div className='containerText_f4'>
+        {gain === 'Qualifie' ? (
+          <>
+            <p className='animatedtext bold'>Prouesse !</p>
+            <br></br>
+            <p className='animatedtext bold'>{sexe === 'F' ? 'La' : 'Le'} {Gentilé} se {Epreuve_1}</p>
+          </>
+        ) : gain === '' ? (
+          <>
+            <p className='animatedtext bold'>{sexe === 'F' ? 'La' : 'Le'} {Gentilé} n'est {Epreuve_1} </p>
+          </>
+        ) : (
+          <>
+            <p className='animatedtext bold'>Prouesse !</p>
+            <br></br>
+            <p className='animatedtext bold'>{sexe === 'F' ? 'La' : 'Le'} {Gentilé} remporte la </p>
+            <p className='animatedtext'>{rangToMedaille(gain)}</p>
+          </>
+        )}
+        <p className='animatedtext'> en </p>
+        <p className='animatedtext bold'>{Epreuve} {getSexe(sexe)} {getImage(Sport)}</p>
+      </div>
+      <img className='LogoRed' src='/bretons-1/img/logoFrame2Red.svg'></img>
     </div>
   );
 

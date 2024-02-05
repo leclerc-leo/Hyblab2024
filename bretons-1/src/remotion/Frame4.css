@@ -1,9 +1,23 @@
 .animatedtext { 
     visibility:hidden;
-    font-family:"courier",sans-serif;
+    font-family:"Golos Text";
     color:black;
     margin: auto;
     font-size: 2em;
+}
+
+.LogoJaune{
+  position: absolute;
+  top:15%;
+  left: 10%;
+  height: 110px;
+}
+
+.LogoRed{
+  position: absolute;
+  bottom:15%;
+  right: 10%;
+  height: 110px;
 }
 
 .animate-text span { 
