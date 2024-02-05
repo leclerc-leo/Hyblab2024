@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Audio Player</title>
+    <link rel="stylesheet" href="css/audio.css">
+</head>
+<body>
+<div class="audio-player">
+    <audio id="myAudio">
+        <source src="1-la-commune/audio/La-commune-1.mp3" type="audio/wav">
+    </audio>
+    <div class="controls">
+        <!-- SVG for the play button -->
+        <img id="playIcon" src="play.png" alt="Play" class="play">
+        <!-- SVG for the pause button -->
+        <img id="pauseIcon" src="pause.png" alt="Pause" style="display:none;">
+        <input id="progressBar" type="range" min="0" max="100" value="0">
+    </div>
+    <div class="time-display">
+        <span id="currentTime">00:00</span> / <span id="duration">00:00</span>
+    </div>
+</div>
+<script src="js/audio_player.js"></script>
+</body>
+</html>
