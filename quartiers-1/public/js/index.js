@@ -4,7 +4,7 @@
 // Here we simulate a loading time of one second
 setTimeout(() => { 
     anime({
-        delay: 8000,
+        delay: 7000,
         targets: '#accueil',
         opacity: '0',
         'z-index' : -1,

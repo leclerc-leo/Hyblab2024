@@ -39,7 +39,7 @@ h1{
     top: 45%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
-    animation: logoloader 2s linear infinite 0s;
+    animation: logoloader 1s ease-out infinite 0s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
     animation-delay: 1s;
@@ -125,7 +125,7 @@ h1{
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
-    animation: spawnloader 2s linear 3s;
+    animation: spawnloader 2s linear 2s;
     animation-fill-mode: forwards;
     
 }
