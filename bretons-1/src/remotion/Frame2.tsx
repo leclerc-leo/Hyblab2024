@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Frame2.css';
 import top1Svg from '/img/top1.svg';
 import frSvg from '/img/fr.svg';
@@ -15,6 +15,22 @@ import { Podium } from '../components/type';
   
   export const Frame2: React.FC<{ podium: Podium[] }> = ({ podium }) => {
     // Fonction pour obtenir le src de l'image du drapeau basé sur le pays
+    const [_, setIsLoading] = useState(true);
+    useEffect(() => {
+        setIsLoading(false);
+        setTimeout(function () {
+          let div1 = document.querySelector(".rectangleYellowFrame2") as HTMLElement
+          div1.classList.add('appear');
+        }, 250);
+        setTimeout(function () {
+          let div2 = document.querySelector(".rectangleBlueFrame2") as HTMLElement
+          div2.classList.add('appear');
+        }, 500);
+        setTimeout(function () {
+          let div3 = document.querySelector(".rectangleRedFrame2") as HTMLElement
+          div3.classList.add('appear');
+        }, 750);
+    }, []);
     const getFlagSrc = (pays: string) => {
         switch (pays) {
             case 'France': return frSvg;
