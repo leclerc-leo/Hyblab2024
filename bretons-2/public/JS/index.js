@@ -14,11 +14,13 @@ function page_accueil() {
 
 	const title = document.createElement("h1");
 	title.style.fontSize = "9vh";
-	title.innerHTML = "DÉCOUVREZ";
+	title.innerHTML = "supportez";
 	title.style.width = "87%";
+	title.style.textTransform = "uppercase";
 
 	const subtitle = document.createElement("h2");
-	subtitle.innerHTML = "NOTRE QUESTIONNAIRE POUR SUIVRE<br>CEUX QUE VOUS AIMEZ";
+	subtitle.style.textTransform = "uppercase";
+	subtitle.innerHTML = "les athlètes<br>près de chez vous !";
 	subtitle.style.fontSize = "6vh";
 	subtitle.style.width = "87%";
 	subtitle.style.marginTop = "-10px";
@@ -40,7 +42,7 @@ function page_accueil() {
 	paragraphe.style.fontFamily = "Arial";
 	paragraphe.style.lineHeight = "3vh";
 	//paragraphe.style.fontWeight = "bold";
-	paragraphe.innerHTML = "Découvrez et suivez vos sportifs bretons favoris dans leur parcours dans les Jeux Olympiques Paris 2024 !";
+	paragraphe.innerHTML = "Accompagnez les sportifs représentant la Bretagne dans leur quête des Jeux Olympiques 2024 !";
 
 	divParagraphe.appendChild(paragraphe);
 	blank.appendChild(divParagraphe);
@@ -552,4 +554,4 @@ document.getElementById("retour-modal").onclick = () =>{
 }
 
 //const modal = document.getElementById("modal");modal.addEventListener()
-page_sport();
+page_accueil();
