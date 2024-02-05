@@ -186,7 +186,7 @@ header{
     height: 5vh;
     padding: 4vh;
     border-radius: 50%;
-    background: /* #e47e5d from 0 to 50 then gradualy transparent */ radial-gradient(circle at 50% 50%, #e47e5d 0%, #e47e5d 50%, transparent 70%);
+    background: /* #e47e5d from 0 to 50 then gradualy transparent */ radial-gradient(circle at 50% 50%, #e47e5d 0%, #e47e5d 50%, transparent 55%);
 
     cursor: pointer;
 }
