@@ -1,0 +1,25 @@
+.audio-player {
+    width: 300px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+}
+
+#playIcon,
+#pauseIcon {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+#progressBar {
+    flex-grow: 1;
+}
+
+.time-display {
+    margin-top: 10px;
+}
