@@ -47,7 +47,10 @@ main{
     width: 100%;
     height: auto;
     position: absolute;
+    /*
     top: 0;
+    */
+    bottom: 10%;
 }
 
 #mainSwiperHomeStories .swiper-slide{
@@ -165,6 +168,11 @@ main{
     margin-top: 10px;
     padding-bottom: 15px;
 }
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+}
+
 #swipe_invite_left{
     position: absolute;
     top: 45%;
@@ -173,7 +181,10 @@ main{
     width: 8%;
     z-index: 6;
     cursor: pointer;
+    /*
     transition: opacity 0.5s ease-in-out;
+    */
+    animation: fadeIn 1s infinite alternate;
 }
 #swipe_invite_left img{
     width: 100%;
@@ -187,8 +198,12 @@ main{
     width: 8%;
     z-index: 6;
     cursor: pointer;
+    /*
     transition: opacity 0.5s ease-in-out;
+    */
+    animation: fadeIn 1s infinite alternate;
 }
+
 #swipe_invite_right img{
     width: 100%;
     transform: rotate(180deg);
@@ -204,7 +219,7 @@ main{
 
 #mainSwiperHomeStories .swiper-slide h1{
     position: absolute;
-    top: 3em;
+    top: 1em;
     margin-right: 0.5em;
     margin-left: 0.5em;
     font-size: 0.5em;
