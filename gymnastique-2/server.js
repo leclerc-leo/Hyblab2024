@@ -65,8 +65,6 @@ setInterval ( () => {
 
     if (!changed) return;
 
-    console.log('Regenerating views');
-
     [JPG_FRIENDLY, WEBP_FRIENDLY] = generate();
 }, 2 * 1000); // 30 minutes
 
