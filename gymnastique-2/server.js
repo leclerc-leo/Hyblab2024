@@ -20,9 +20,8 @@ app.use((req, _, next) => {
     next();
 });
 
-// generate static pages to be served
-const generate = () => {
 
+const generate = () => {
     const files = fs.readdirSync(views_path).map( file => {
         return [file.split('.')[0], fs.readFileSync(path.join(views_path, file), 'utf8')];
     });
@@ -31,7 +30,7 @@ const generate = () => {
 
     let combined = files.reduce( (acc, file) => {
         return acc.replace(`<%= ${file[0]} %>`, file[1]);
-    }, layout);    
+    }, layout);
 
     let temp = combined; // au cas où img_convert a eu un problème
     let combined1 = img_convert(combined, false);
@@ -47,12 +46,29 @@ const generate = () => {
     return [combined1, combined2];
 }
 
+let files = {}
+fs.readdirSync(views_path).forEach( file => {
+    files[path.join(views_path, file)] = fs.statSync(path.join(views_path, file)).mtime;
+});
+files[path.join(public_path, 'index.html')] = fs.statSync(path.join(public_path, 'index.html')).mtime;  
 let [JPG_FRIENDLY, WEBP_FRIENDLY] = generate();
 
 setInterval ( () => {
-    make();
+    let changed = false;
+
+    for (let file in files) {
+        if (fs.statSync(file).mtime > files[file]) {
+            files[file] = fs.statSync(file).mtime;
+            changed = true;
+        }
+    }
+
+    if (!changed) return;
+
+    console.log('Regenerating views');
+
     [JPG_FRIENDLY, WEBP_FRIENDLY] = generate();
-}, 30 * 60 * 1000); // 30 minutes
+}, 2 * 1000); // 30 minutes
 
 app.get('/', function(req, res) {
     res.send(req.webp_supported ? WEBP_FRIENDLY : JPG_FRIENDLY);
