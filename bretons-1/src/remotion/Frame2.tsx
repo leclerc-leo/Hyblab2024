@@ -13,7 +13,7 @@ import SuèdeSvg from '/img/Suède.svg';
 import { Podium } from '../components/type';
 
   
-  export const Frame2: React.FC<{ podium: Podium[] }> = ({ podium }) => {
+  export const Frame2: React.FC<{athlete:string, podium: Podium[] }> = ({ athlete, podium }) => {
     // Fonction pour obtenir le src de l'image du drapeau basé sur le pays
     const [_, setIsLoading] = useState(true);
     useEffect(() => {
@@ -70,9 +70,10 @@ import { Podium } from '../components/type';
           const nameFrameClass = index === 0 ? "nameFrame2" : index === 1 ? "name_2_Frame2" : "name_3_Frame2";
           const timeFrameClass = index === 0 ? "timeFrame2" : index === 1 ? "time_2_Frame2" : "time_3_Frame2";
           const countryFrameClass = index === 0 ? "countryFrame2" : index === 1 ? "country_2_Frame2" : "country_3_Frame2";
-  
+          const highlightClass = athlete === entry.Nom ? "highlight" : "";
+
           return (
-            <div key={index} className={rectangleClass}>
+              <div key={index} className={`${rectangleClass} ${highlightClass}`}>
               <img src={getPlace(entry.Place)} alt={`Top ${index + 1}`} className={numberCircleFrameClass} />
               <div className={infoFrameClass}>
                 <span className={nameFrameClass}>{entry.Nom}</span>

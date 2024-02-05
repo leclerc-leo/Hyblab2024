@@ -25,9 +25,15 @@
                 },
                 {
                   "Place": "3",
-                  "Nom": "Pierre Lecoq",
+                  "Nom": "Pierre Le Coq",
                   "Pays": "France",
                   "Score": "86"
+                },
+                {
+                  "Place": "4",
+                  "Nom": "Piotr Myszka",
+                  "Pays": "Pologne",
+                  "Score": "88"
                 }
               ],
               "Performance": "Première médaille olympique française en planche à voile depuis l'argent de Julien Bontemps en 2008 à Pékin",
@@ -61,7 +67,14 @@
                 "Nom": "Marit Bouwmeester",
                 "Pays": "Pays-Bas",
                 "Score": "83"
-              }],
+              },
+              {
+                "Place": "11",
+                "Nom": "Marie Bolou",
+                "Pays": "France",
+                "Score": "121"
+              }
+            ],
               "Performance": "",
               "Nombre de médailles françaises": ""
             },
@@ -93,6 +106,12 @@
                   "Nom": "Georgia Gould",
                   "Pays": "État-Unis",
                   "Score": "1h32'00''0"
+                },
+                {
+                  "Place": "4",
+                  "Nom": "Irina Kalentyeva",
+                  "Pays": "Russie",
+                  "Score": "1h32'33''0"
                 }
               ],
               "Nombre de médailles françaises": "10e médaille française au décompte total quand elle gagne"
@@ -125,6 +144,12 @@
                   "Nom": "Jill Kintner",
                   "Pays": "État-Unis",
                   "Score": "38s 674"
+                },
+                {
+                  "Place": "4",
+                  "Nom": "Sarah Walker",
+                  "Pays": "Nouvelle-Zélande",
+                  "Score": "38s 805"
                 }
               ],
               "Performance": "...",
