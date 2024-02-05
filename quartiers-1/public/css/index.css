@@ -167,15 +167,15 @@ h1{
     width: 100%;
     height: 100%;
     z-index: 3;
-    background-color: black;
-    opacity: 0.5;
+    opacity: 1;
     text-align: center;
 }
 
 .tuto-text{
     position: absolute;
     font-size: 28%;
-    color: white;
+    color: #292C5E;
+    font-weight: 700;
 }
 #tuto-map{
     left: 28%;
