@@ -108,8 +108,14 @@ body{
     z-index: 1;
     width:100%;
     bottom:0;
+<<<<<<< HEAD
     height: 33%;
     transform: scale(2);
+=======
+    height: 25%;
+    transform: scale(3);
+    z-index: -1;
+>>>>>>> dee5e394c4b7778ae908d1b13eac2585523f7c59
 }
 
 #accueil_logo {
