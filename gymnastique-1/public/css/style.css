@@ -103,6 +103,10 @@ main > section {
 
 
 /* popup div on the second slide class popup */
+#second-slide {
+  background-color: rgb(86, 86, 86);
+}
+
 #second-slide .popup {
   display: none;
   position: absolute;
@@ -280,6 +284,13 @@ main > section {
   background-repeat: no-repeat;
   background-size: 100%;
 }
+#popup_tel {
+  position: absolute;
+  background-image: url("../img/pop-49.svg");
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
 /* ---------- Important media queries for easy responsive content :-) ----------------- */
 /* Whatever the device used, the content will be displayed full width and height if      */
 /* the aspect ratio is between 3/4 and 9/16. If not it is locked to either 3/4 or 9/16  */
@@ -344,4 +355,12 @@ body {
 svg {
   max-height: 100vh;
   width: unset;
+}
+
+.clicked {
+   filter: brightness(0.5);
+}
+
+.blured {
+  filter: blur(20px) brightness(0.5);
 }
