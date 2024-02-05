@@ -78,16 +78,22 @@ const homeStories = function () {
           swipe_invite_left.style.opacity = '0';
           break;
         case 1:
+          break;
         case 2:
+          break;
         case 3:
+          break;
         case 4:
+          break;
         case 5:
+          break;
+        case 6:
           swipe_invite_left.style.display = 'block';
           swipe_invite_left.style.opacity = '1';
           swipe_invite_right.style.display = 'block';
           swipe_invite_right.style.opacity = '1';
           break;
-        case 6:
+        case 7:
           swipe_invite_right.style.opacity = '0';
           break;
       }
@@ -218,7 +224,7 @@ const homeStories = function () {
     });
 
     /* a factoriser */
-    let credits = document.querySelector('footer');
+    let credits = document.querySelector('#credits_button');
     credits.addEventListener('click', () => {
       fetch('/quartiers-2/credits.html')
         .then(res => res.text())
@@ -276,6 +282,10 @@ const homeStories = function () {
 
     let stories = document.querySelectorAll(".story");
     let swiper_slides = document.querySelectorAll(".swiper-slide");
+
+    // on enlève la première slide qui est vide
+    swiper_slides = Array.prototype.slice.call(swiper_slides, 1, swiper_slides.length);
+
     // on récupère la deuxième moitié des slides
     swiper_slides = Array.prototype.slice.call(swiper_slides, swiper_slides.length - stories.length, swiper_slides.length);
 

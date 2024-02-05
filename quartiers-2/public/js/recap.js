@@ -125,7 +125,7 @@ const recapPage = function () {
       message.innerHTML = 'Ouch ! Pas besoin d\'habiter dans le quartier Thabor Saint-Hélier pour s\'y promener. Vas-y, fonce !';
     }
     if (yesCount / size === 1) {
-      message.innerHTML = 'Bravo, tu connais le quartier sur le bout des doigts ! /   Nous n\'avons plus rien à t\'apprendre, tu connais le quartier par coeur ! Mais est-ce le cas de tes amis? N\'hésite pas à leur envoyer le lien du site afin de le découvrir !';
+      message.innerHTML = 'Nous n\'avons plus rien à t\'apprendre, tu connais le quartier par coeur ! Mais est-ce le cas de tes amis? N\'hésite pas à leur envoyer le lien du site afin de le découvrir !';
     }
     else if (yesCount / size >= 0.7) {
       message.innerHTML = 'Tu as découvert quelques-unes des nombreuses initiatives du coin, continue sur ta lancée !';

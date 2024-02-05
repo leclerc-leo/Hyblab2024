@@ -59,7 +59,6 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     margin: 1vh;
 }
 
@@ -70,10 +69,9 @@ body{
 }
 
 #porteur_projet .photo{
-    width: 150px;
+    width: 20%;
     height: auto;
-    background-color: blue;
-    border-radius: 50%;
+    object-fit: cover;
 }
 
 /*lien linkedin*/
@@ -104,15 +102,13 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     margin: 1vh;
 }
 
 .personne .photo{
-    width: 150px;
+    width: 50%;
     height: auto;
-    background-color: blue;
-    border-radius: 50%;
+    object-fit: cover;
 }
 
 #personnes .nom{
