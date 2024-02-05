@@ -8,7 +8,7 @@
   <title>Player List</title>
   <link rel="icon" href="../favicon.ico" type="image/ico">
 
-  <!--css files-->
+  <!-- CSS files -->
   <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="css/list.css">
   <link rel="stylesheet" href="css/players.css">
@@ -17,24 +17,49 @@
 </head>
 <body>
   <div id="container">
-    <div class="swiper-container">
+    <div class="player-swiper-container">
       <div class="swiper-wrapper">
-        <!-- Each swiper-slide will contain a list of players -->
         <div class="swiper-slide">
+          <div class="position-preview" id="positionPreview1"></div>
+          <div class="current-position-segment"></div>
+          <div class="position-line"></div>
           <div class="player-list" id="playerList1">
             <!-- Player boxes for list 1 will be dynamically added here -->
           </div>
         </div>
+
         <div class="swiper-slide">
+          <div class="position-preview" id="positionPreview2"></div>
+          <div class="current-position-segment"></div>
+          <div class="position-line"></div>
           <div class="player-list" id="playerList2">
             <!-- Player boxes for list 2 will be dynamically added here -->
           </div>
         </div>
-        <!-- Add more swiper-slide for additional lists as needed -->
+
+        <div class="swiper-slide">
+          <div class="position-preview" id="positionPreview3"></div>
+          <div class="current-position-segment"></div>
+          <div class="position-line"></div>
+          <div class="player-list" id="playerList3">
+            <!-- Player boxes for list 3 will be dynamically added here -->
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="position-preview" id="positionPreview4"></div>
+          <div class="current-position-segment"></div>
+          <div class="position-line"></div>
+          <div class="player-list" id="playerList4">
+            <!-- Player boxes for list 4 will be dynamically added here -->
+          </div>
+        </div>
+
       </div>
     </div>
 
     <div class="fixed-footer">
+      <div class="background-paper"></div>
       <button id="retour"> Retour au terrain!</button>
     </div>
 

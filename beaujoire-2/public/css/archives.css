@@ -1,0 +1,341 @@
+body {
+  background-color: black;
+  color: white;
+  overflow: hidden;
+  /* to avoid slider bugs on some browsers */
+  font-family: sans-serif;
+  font-size: calc(15vh * 3 / 4);
+}
+
+/* When the aspect ratio is smaller that 3/4, display a 3/4 content */
+#container {
+  position: fixed;
+  /* To set the size of the container to 100% of the visible viewport height AND for absolute positioning of child elements*/
+  height: 100%;
+  /* even on mobile devices with url or navigation bars */
+  margin-left: calc((100vw - 100 * 3vh / 4) / 2);
+  /* Add black bands on left and right */
+  width: calc(100 * 3vh / 4);
+  /* Force 3/4 aspect ratio */
+  background-color: white;
+
+  overflow: hidden;
+}
+
+
+.header {
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  /* Use space-between to move items to the edges */
+  align-items: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+  .title {
+    padding: 0.1em;
+    width: 2em;
+  }
+
+.return-button {
+  position: absolute;
+  top: 3%;
+  left: 5%;
+  width: 0.75em;
+  z-index: 2;
+}
+
+#page-content {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  position: relative;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+}
+
+#page-content::-webkit-scrollbar {
+  width: 0;
+}
+
+
+.content {
+  position: absolute;
+  top: 4%;
+  left: 8%;
+  z-index: 2;
+}
+
+.line {
+  position: inherit;
+  top: 5%;
+  left: 20%;
+  z-index: 1;
+}
+
+.line>img {
+  width: 90%;
+  height: 200%;
+}
+
+
+.content-1 {
+  width: 80%;
+}
+
+.content-1 img {
+  position: relative;
+  left: 2%;
+  width: 110%;
+}
+
+.content-2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.content-2-subtitle {
+  position: absolute;
+  left: 0;
+
+}
+
+.content-2 img {
+  width: 45%;
+  padding: 5%;
+}
+
+h4 {
+  font-family: 'Abolition';
+  font-size: 0.5em;
+  color: black;
+  text-align: center;
+  z-index: 2;
+}
+
+p {
+  font-family: 'Neue Haas Unica';
+  color: black;
+  font-size: 0.25em;
+  text-align: center;
+  margin: 2%;
+}
+
+h2 {
+  position: absolute;
+  font-family: 'Abolition';
+  font-size: 100%;
+  color: var(--bg-green);
+  z-index: 2;
+
+}
+
+.content-3 {
+  margin-top: -2.2em;
+}
+
+  .content-3 h2 {
+    position: relative;
+    left: 75%;
+    top: 2em;
+  }
+
+  .content-3 #img-3 {
+    position: relative;
+    width: 70%;
+  }
+
+  .content-3 #img-4 {
+    position: relative;
+    right:-40%;
+    width: 60%;
+    margin-top: -1.5em;
+  }
+
+
+.content-4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.content-4>h2 {
+  position: absolute;
+  top:-1em;
+  left:0;
+}
+
+.content-4-subtitle {
+  background-color: white;
+  padding: 0.2em;
+}
+
+
+.players {
+  background-color: white;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: relative;
+  width:100%;
+  right: 5%;
+}
+  .player{
+    width:30%;
+  }
+
+  .info-player {
+    padding-left: 10px;
+  }
+
+  .player img {
+    width: 100%;
+  }
+
+  .player h4 {
+    font-size: 0.35em;
+    text-align: center;
+  }
+
+.content-5 {
+  position: relative;
+}
+
+  .content-5 img {
+    width: 90%;
+    position: relative;
+  }
+
+  .content-5-subtitle {
+    position: relative;
+    margin-top: -0.3em;
+    width: 85%;
+  }
+
+  .content-5-subtitle h4 {
+    text-align: right;
+  }
+
+  .content-5-subtitle p {
+    font-size: 0.2em;
+    text-align: right;
+  }
+
+.content-6 h2 {
+  position: relative;
+}
+
+  .content-6 img {
+    width: 100%;
+    position: relative;
+  }
+
+  .content-6 h4 {
+    position: relative;
+    text-align: left;
+  }
+
+  .content-6 p {
+    position: relative;
+    text-align: left;
+    max-width: 90%;
+  }
+
+
+.content-7 {
+  position: relative;
+}
+  .content-7 h2 {
+    position: absolute;
+    top:0;
+    right: 0;
+  }
+
+  .content-7 img {
+    width:80%;
+  }
+
+
+  .content-7 h2 {
+    position: relative;
+  }
+
+  .content-7-subtitle {
+    width: 4.5em;
+    overflow: hidden;
+  }
+    .content-7 h4 {
+      text-align: left;
+    }
+
+    .content-7 p {
+      text-align: left;
+      margin-left: 0;
+    }
+
+.return-field {
+  position: relative;
+  font-size: 0.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width:80%;
+  margin-bottom: 0.5em;
+}
+
+/* Fill the whole viewport when its aspect ratio is between 9/16 and 3/4 */
+@media screen and (max-aspect-ratio: 3/4) {
+  #container {
+    margin-left: 0;
+    /* reset margin-left */
+    width: 100vw;
+    /* content is full width (and full height because of the default rule for container height */
+    overflow: hidden;
+  }
+
+  .line {
+    position: inherit;
+    left: 15%;
+  }
+
+  .line>img {
+    width: 98%;
+  }
+
+  h2 {
+    font-size: 90%;
+  }
+
+}
+
+@media screen and (max-aspect-ratio: 3/4) {
+  h2 {
+    font-size: 0.6em;
+  }
+
+
+  h4 {
+    font-size: 0.4em;
+  }
+
+  p {
+    font-size: 0.2em;
+  }
+}
+
+/* The content is displayed at 9/16 If the aspect ratio is higher that 9/16  */
+@media screen and (max-aspect-ratio: 9/16) {
+  .line {
+    position: inherit;
+    top: 0.5%;
+    left: 13%;
+  }
+
+  .line>img {
+    width: 100%;
+  }
+  
+}
