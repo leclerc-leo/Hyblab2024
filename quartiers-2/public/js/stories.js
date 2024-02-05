@@ -78,6 +78,10 @@ const homeStories = function () {
           swipe_invite_left.style.opacity = '0';
           break;
         case 1:
+          swipe_invite_left.style.display = 'block';
+          swipe_invite_left.style.opacity = '1';
+          swipe_invite_right.style.display = 'block';
+          swipe_invite_right.style.opacity = '1';
           break;
         case 2:
           break;
