@@ -3,7 +3,7 @@
         "speaker": "guide",
         "type": "bubble",
         "choicesLabel": [],
-        "content": ["Nous voici devant Rosa Parks, l’unique collège du quartier.", "L’établissement accueille une section internationale britannique, une section bilingue anglais-arabe, une section sportive athlétisme ainsi que des sections ULIS et SEGPA.","Dis-moi, quelle est ta préoccupation concernant la scolarité ? As-tu des enfants ?"],
+        "content": ["Nous voici devant Rosa Parks, l’unique collège du quartier 🏫.", "L’établissement accueille une section internationale britannique, une section bilingue anglais-arabe, une section sportive athlétisme ainsi que des sections ULIS et SEGPA.","Dis-moi, quelle est ta préoccupation concernant la scolarité ? As-tu des enfants ?"],
         "next": ["Choix1"]
     },
 
@@ -34,7 +34,7 @@
     "Choix2": {
         "speaker": "user",
         "type": "choice",
-        "choicesLabel": ["Mais trop génial ça !","Je ne comprends pas.","Mouais"],
+        "choicesLabel": ["Mais trop génial ça !","Je ne comprends pas","Mouais"],
         "content": ["Mais trop génial ça !","Je ne comprends pas trop. Qu’est-ce que cela veut dire ?","Mouais, il en faudra plus pour me convaincre."],
         "next": ["Reponse2","Reponse2","Reponse2"]
     },
@@ -68,26 +68,34 @@
         "type": "choice",
         "choicesLabel": ["1","3","5"],
         "content": ["1","3","5"],
-        "next": ["Reponse4","Reponse4","Reponse4"]
+        "next": ["Reponse41","Reponse41","Reponse42"]
     },
 
-    "Reponse4": {
+    "Reponse41": {
         "speaker": "guide",
         "type": "bubble",
         "choicesLabel": [],
-        "content": ["Et oui, il en existe plein ! Comme l’association Mosaïque par exemple, qui depuis 2003, s’est lancée dans l’aide aux devoirs.","D’ailleurs, en 2023, ils ont aidé onze élèves à obtenir leur brevet des collèges 🧑‍🎓.","Bon je ne t’en dis pas plus, Natacha le raconte mieux que moi !","${video_begin}https://www.youtube.com/embed/4wR5ubwNarE?si=bT3NZbn262FIpfp2&start=43&end=191&controls=0${video_end}"],
-        "next": ["Reponse42"]
+        "content": ["Il en existe 5 ! Comme l’association Mosaïque par exemple, qui depuis 2003, s’est lancée dans l’aide aux devoirs.","D’ailleurs, en 2023, ils ont aidé onze élèves à obtenir leur brevet des collèges 🧑‍🎓.","Bon je ne t’en dis pas plus, Natacha le raconte mieux que moi !","${video_begin}https://www.youtube.com/embed/4wR5ubwNarE?si=bT3NZbn262FIpfp2&start=43&end=191&controls=0${video_end}"],
+        "next": ["Reponse5"]
     },
 
     "Reponse42": {
         "speaker": "guide",
         "type": "bubble",
         "choicesLabel": [],
-        "content": ["Quand il grandira, il pourra aller au lycée Victor-et-Hélène Basch.","Ou même, si tu as un autre enfant, il existe plusieurs établissements primaires comme les groupes scolaires Andrée Chedid ou Jean Moulin, l’école Guyenne, Picardie ou encore, l’école privée Saint Jean Bosco. 🧑‍💻"],
-        "next": ["Reponse43"]
+        "content": ["Et oui, il en existe plein ! Comme l’association Mosaïque par exemple, qui depuis 2003, s’est lancée dans l’aide aux devoirs.","D’ailleurs, en 2023, ils ont aidé onze élèves à obtenir leur brevet des collèges 🧑‍🎓.","Bon je ne t’en dis pas plus, Natacha le raconte mieux que moi !","${video_begin}https://www.youtube.com/embed/4wR5ubwNarE?si=bT3NZbn262FIpfp2&start=43&end=191&controls=0${video_end}"],
+        "next": ["Reponse5"]
     },
 
-    "Reponse43": {
+    "Reponse5": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Quand il grandira, il pourra aller au lycée Victor-et-Hélène Basch.","Ou même, si tu as un autre enfant, il existe plusieurs établissements primaires comme les groupes scolaires Andrée Chedid ou Jean Moulin, l’école Guyenne, Picardie ou encore, l’école privée Saint Jean Bosco. 🧑‍💻"],
+        "next": ["QuestionFin"]
+    },
+
+    "QuestionFin": {
         "speaker": "guide",
         "type": "bubble",
         "choicesLabel": [],
@@ -99,23 +107,32 @@
         "speaker": "user",
         "type": "topicChoice",
         "choicesLabel": ["Portrait", "Association", "Habitat", "Sport", "Education", "Commerce"],
-        "content": ["Les portraits de Villejean", "Les associations à Villejean", "Je go Urbanisme", "Je go Sports", "L'éducation à Villejean", "Je go Commerces"],
-        "next": ["GoPortraits", "GoAssociations", "GoUrbanisme", "GoSports", "GoEducation", "GoCommerces"]
+        "content": ["Les portraits de ${quartier}", "Les associations à ${quartier}", "L'habitat à ${quartier}", "Le sport à ${quartier}", "L'éducation à ${quartier}", "Les commerces à ${quartier}"],
+        "next": ["GoLieu", "GoLieu", "GoLieu", "GoLieu", "GoLieu", "GoLieu"]
     },
 
-    "GoEducation": {
+    "GoLieu": {
         "speaker": "guide",
         "type": "bubble",
         "choicesLabel": [],
-        "content": ["Parfait ! Allez viens, je t’emmène au collège Rosa Parks."],
+        "content": ["Parfait ! Allez viens je t’emmène ${lieu}"],
         "next": ["Quitter"]
     },
 
     "Quitter": {
         "speaker": "user",
         "type": "quit",
-        "choicesLabel": ["Aller à Rosa Parks"],
+        "choicesLabel": ["Aller ${lieu}"],
         "content": [],
         "next": ["Fin"]
+    },
+
+    "Lieux": {
+        "portrait": "à la maison de quartier de Villejean",
+        "association": "au centre Avicenne",
+        "habitat": "à la tour Bourbonnais",
+        "sport": "au stade Robert-Poirier",
+        "education": "à Rosa Parks",
+        "commerce": "au marché de Villejean"
     }
 }

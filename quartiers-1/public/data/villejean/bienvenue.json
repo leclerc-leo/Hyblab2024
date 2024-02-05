@@ -27,15 +27,15 @@
         "speaker": "user",
         "type": "topicChoice",
         "choicesLabel": ["Portrait", "Association", "Habitat", "Sport", "Education", "Commerce"],
-        "content": ["Les portraits de Villejean", "Les associations à Villejean", "Je go Urbanisme", "Je go Sports", "L'éducation à Villejean", "Je go Commerces"],
-        "next": ["GoPortraits", "GoAssociations", "GoUrbanisme", "GoSports", "GoEducation", "GoCommerces"]
+        "content": ["Les portraits de ${quartier}", "Les associations à ${quartier}", "L'habitat à ${quartier}", "Le sport à ${quartier}", "L'éducation à ${quartier}", "Les commerces à ${quartier}"],
+        "next": ["GoLieu", "GoLieu", "GoLieu", "GoLieu", "GoLieu", "GoLieu"]
     },
 
-    "GoEducation": {
+    "GoLieu": {
         "speaker": "guide",
         "type": "bubble",
         "choicesLabel": [],
-        "content": ["Parfait ! Allez viens, je t’emmène au collège Rosa Parks."],
+        "content": ["Parfait ! Allez viens je t’emmène ${lieu}"],
         "next": ["Aide"]
     },
 
@@ -50,8 +50,17 @@
     "Quitter": {
         "speaker": "user",
         "type": "quit",
-        "choicesLabel": ["Aller à Rosa Parks"],
+        "choicesLabel": ["Aller ${lieu}"],
         "content": [],
         "next": ["Fin"]
+    },
+
+    "Lieux": {
+        "portrait": "à la maison de quartier de Villejean",
+        "association": "au centre Avicenne",
+        "habitat": "à la tour Bourbonnais",
+        "sport": "au stade Robert-Poirier",
+        "education": "à Rosa Parks",
+        "commerce": "au marché de Villejean"
     }
 }

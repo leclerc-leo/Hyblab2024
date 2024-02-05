@@ -41,7 +41,8 @@ function addBubble(speaker, contents) {
     let i = 0;
     let conv_dico = {
         "${user_name}": user_name,
-        "${quartier}": quartier,
+        "${quartier}": quartier_dico[quartier],
+        "${lieu}": data["Lieux"][nextTopic],
         "${video_begin}": "<iframe class=\"videos\" src=\"",
         "${video_end}": "\" title=\"YouTube video player\" frameborder=\"0\"></iframe>",
         "${image_begin}": "<img class=\"conversation_image\" src=\"img/images_conversation/" + quartier.toLocaleLowerCase() + "/",
@@ -199,7 +200,7 @@ function addQuitBubble(bubbleJson) {
     let placeholder = '<div class="choices-placeholder">';
 
     bubbleJson["choicesLabel"].forEach(textContentChoice => {
-        choiceBubblesContent += '<button class="choice-bubbles" onclick="changeTopic()">'+ textContentChoice + '</button>';
+        choiceBubblesContent += '<button class="choice-bubbles" onclick="changeTopic()">'+ textContentChoice.replace("${lieu}", data["Lieux"][nextTopic]) + '</button>';
         placeholder += '<button class="choice-bubbles" onclick="changeTopic()">'+ textContentChoice + '</button>';
     });
     choiceBubblesContent += '</div>';
@@ -258,7 +259,7 @@ function reloadConversation() {
 
 async function conversationUnfold(nextID) {
     let resp  = await fetch('./data/' + quartier.toLowerCase() + '/' + topic.toLowerCase() + '.json')
-    let data = await resp.json();
+    data = await resp.json();
 
     console.log(data);
 
@@ -313,6 +314,7 @@ let quartier_dico = {
 }
 let quartier = sessionStorage.getItem("quartier");
 
+let data;
 let conversation = $(".conversation");
 let topic = "bienvenue";
 let nextTopic = "bienvenue";
