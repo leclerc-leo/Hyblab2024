@@ -8,7 +8,7 @@
     z-index: 5;
     top: 0;
     left: -100%;
-    padding-top: 20%;
+    padding-top: 24%;
     background-color: #FBEFEB;
     transition: left 0.5s ease;
     overflow-y: scroll;
@@ -16,55 +16,60 @@
 
 #mySidenav p {
     color: #292C5E;
-    font-size: 0.4em;
+    font-size: 0.25em;
     text-indent: 3%;
-}
-
-#mySidenav-header{
-    display: flex;
-    justify-content: center;
+    padding: 2%;
 }
 
 #mySidenav h1{
-    width: fit-content;
+    position: absolute;
+    top: 15px;
+    width: 100%;
+    z-index: -1;
     text-align: center;
-    font-size: 1em;
-    color:#31356B;
+    font-size: 0.6em;
+    color: #31356B;
 }
 
 /* Sidenav menu links */
-#mySidenav a {
-    padding: 8px 8px 8px 0px;
-    text-decoration: none;
-    font-size: 25px;
-    font-weight: 600;
+#mySidenav button {
+    padding: 8px 8px 8px 4%;
+    font-size: 0.5em;
+    font-weight: 500;
     color: #292C5E;
-    display: block;
+    transition: 0.3s;
+    background: none;
+    border: none;
+}
+#mySidenav a{
+    text-decoration: none;
+    font-size: 0.5em;
+    font-weight: 500;
+    color: #292C5E;
     transition: 0.3s;
 }
 
-#mySidenav a:hover {
+#mySidenav button:hover,#mySidenav a:hover{
     color: #111;
 }
 
 #mySidenav ul {
-    list-style-type: disc;
+    list-style-type: none;
     margin-bottom: 20%;
 }
 
 #mySidenav li{
-    margin: 2px 0 0 12%;
+    margin: 1% 0 1% 1%;
     color: #7D7DB5;
+    display: flex;
+    align-items: center;
+    text-indent: 20px;
 }
 
-li::before {
+#mySidenav li::before {
     content: "●";
     color: #7D7DB5;
-    font-size: 16px;
-    position: absolute;
-    left: -8%;
-    top: 57%;
-    transform: translateY(-50%);
+    font-size: 0.4em;
 }
 
 #mySidenav hr{
@@ -77,9 +82,16 @@ li::before {
     left: 0;
 }
 
+/* last ul */
+#mySidenavlastul{
+    padding-bottom: 40%;
+}
 
+#mySidenavlastul li::before{
+    display: none;
+}
 #mySidenavlastul li{
-    list-style-type: none;
+    margin: 1% 0 1% 10%;
 }
 /* Close btn */
 #closeBtn {
@@ -99,8 +111,8 @@ li::before {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 31px;
-  height: 3px;
+  width: 80%;
+  height: 8%;
   background-color: #31356B;
 }
 
