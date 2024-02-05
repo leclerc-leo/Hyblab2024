@@ -20,18 +20,16 @@
   <link rel="icon" type="image/png" href="img/favicon.png" />
 
   <!-- Polices d'écriture -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
+  <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
 
   <link rel="preload" href="https://unpkg.com/swiper@11.0.5/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://unpkg.com/swiper@11.0.5/swiper-bundle.min.css"/></noscript>
 
-  <link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="css/style.css"></noscript> <!-- En dernier, car plus un CSS est chargé en dernier (on peut quand meme les font apres), plus il a de priorité sur les éléments avec les mêmes classes 
+  <link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'" fetchpriority="high">
+  <noscript><link rel="stylesheet" href="css/style.css" fetchpriority="high"></noscript> <!-- En dernier, car plus un CSS est chargé en dernier (on peut quand meme les font apres), plus il a de priorité sur les éléments avec les mêmes classes 
     voir https://stackoverflow.com/questions/16913131/can-one-css-file-take-priority-over-another-css-file -->
 
-  <link rel="preload" href="https://fonts.googleapis.com/icon?family=Material+Icons" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"></noscript>
   <!-- <link rel="preload" href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"> -->
   <!-- <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap"></noscript> -->
   <link rel="preload" href="css/Metropolis Font family/Metropolis-Regular.otf" as="font" type="font/otf" crossorigin>
