@@ -1,5 +1,3 @@
-"use strict";
-
 const init_past = async swiper => {
 
     remove_listeners('.return-button');

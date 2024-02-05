@@ -1,5 +1,3 @@
-"use strict";
-
 const cards = Array.from(document.querySelectorAll('.jo-card-container'));
 
 cards.forEach(card => {

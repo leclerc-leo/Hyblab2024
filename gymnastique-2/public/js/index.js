@@ -1,5 +1,3 @@
-"use strict";
-
 const swiper = new Swiper("#mySwiper", {
     direction: "horizontal",
     mousewheel: true,

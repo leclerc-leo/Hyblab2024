@@ -46,27 +46,80 @@ const generate = () => {
     return [combined1, combined2];
 }
 
-let files = {}
-fs.readdirSync(views_path).forEach( file => {
-    files[path.join(views_path, file)] = fs.statSync(path.join(views_path, file)).mtime;
+const explore = (folder) => fs.readdirSync(folder).map( file => {
+    file = path.join(folder, file);
+    const stat = fs.statSync(file);
+    if (file.endsWith('.cache')) return [];
+    if (stat.isDirectory()) {
+        return explore(file);
+    }
+    return file;
+}).flat();
+
+const regroup_js = () => {
+    const folder = path.join(public_path, 'js');
+
+    let files = explore(folder);
+    
+    const util = files.find( file => file.endsWith('util.js'));
+    const index = files.find( file => file.endsWith('index.js'));
+
+    files = files.filter( file => file !== util && file !== index);
+
+    let content = files.reduce( (acc, file) => {
+        return acc + '\n\n' + fs.readFileSync(file, 'utf8');
+    }, '');
+
+    content += fs.readFileSync(util, 'utf8') + '\n\n';
+    content += fs.readFileSync(index, 'utf8');
+    
+    const cache = path.join(folder, '.cache');
+    if (!fs.existsSync(cache)) {
+        fs.mkdirSync(cache);
+    }
+
+    fs.writeFileSync(path.join(cache, 'app.js'), content);
+}
+
+/* HTML files */
+let HTML_files = {}
+explore(views_path).forEach( file => {
+    HTML_files[file] = fs.statSync(file).mtime;
 });
-files[path.join(public_path, 'index.html')] = fs.statSync(path.join(public_path, 'index.html')).mtime;  
+HTML_files[path.join(public_path, 'index.html')] = fs.statSync(path.join(public_path, 'index.html')).mtime;  
+
+/* JS files */
+let JS_files = {};
+const js_path = path.join(public_path, 'js');
+explore(js_path).forEach( file => {
+    JS_files[file] = fs.statSync(file).mtime;
+});
+
 let [JPG_FRIENDLY, WEBP_FRIENDLY] = generate();
 
 setInterval ( () => {
-    let changed = false;
+    let changed_HTML = false,
+        changed_JS = false;
 
-    for (let file in files) {
-        if (fs.statSync(file).mtime > files[file]) {
-            files[file] = fs.statSync(file).mtime;
-            changed = true;
+    for (let file in HTML_files) {
+        if (fs.statSync(file).mtime > HTML_files[file]) {
+            HTML_files[file] = fs.statSync(file).mtime;
+            changed_HTML = true;
         }
     }
 
-    if (!changed) return;
+    for (let file in JS_files) {
+        if (fs.statSync(file).mtime > JS_files[file]) {
+            JS_files[file] = fs.statSync(file).mtime;
+            changed_JS = true;
+        }
+    }
 
-    [JPG_FRIENDLY, WEBP_FRIENDLY] = generate();
-}, 2 * 1000); // 30 minutes
+    if (!changed_HTML && !changed_JS) return;
+
+    if (changed_HTML) [JPG_FRIENDLY, WEBP_FRIENDLY] = generate();
+    if (changed_JS) regroup_js();
+}, 2 * 1000); // 2 secondes because we are only checking for changes and not actually doing much
 
 app.get('/', function(req, res) {
     res.send(req.webp_supported ? WEBP_FRIENDLY : JPG_FRIENDLY);

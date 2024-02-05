@@ -1,4 +1,3 @@
-"use strict";
 document.querySelectorAll('.card-container').forEach(card_container =>{
     card_container.addEventListener("click",()=>{
         if(card_container.childElementCount>1){
