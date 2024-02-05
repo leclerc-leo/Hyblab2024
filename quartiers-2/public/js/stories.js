@@ -126,12 +126,24 @@ const homeStories = function () {
         button.addEventListener('click', () => {
           swiper.slideNext();
           document.querySelector('.content').scrollIntoView();
+          // on arrete tous les audios
+          document.querySelectorAll('audio').forEach(audio => {
+            audio.pause();
+            audio.nextElementSibling.querySelector('.playIcon').style.display = 'inline';
+            audio.nextElementSibling.querySelector('.pauseIcon').style.display = 'none';
+          });
         });
       })
       previous.forEach(button => {
         button.addEventListener('click', () => {
           swiper.slidePrev();
           document.querySelector('.content').scrollIntoView();
+          // on arrete tous les audios
+          document.querySelectorAll('audio').forEach(audio => {
+            audio.pause();
+            audio.nextElementSibling.querySelector('.playIcon').style.display = 'inline';
+            audio.nextElementSibling.querySelector('.pauseIcon').style.display = 'none';
+          });
         });
       })
     });
@@ -388,6 +400,11 @@ const homeStories = function () {
               setTimeout(() => {}, 1000);
               document.activeElement.blur();
             });
+          });
+          // Créer une instance de AudioPlayer pour chaque balise audio
+          document.querySelectorAll('.audio-player').forEach(audioPlayerElement => {
+              const audioElement = audioPlayerElement.querySelector('audio');
+              new AudioPlayer(audioElement, audioPlayerElement);
           });
         });
       });

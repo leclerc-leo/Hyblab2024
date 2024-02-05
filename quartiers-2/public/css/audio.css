@@ -1,25 +1,35 @@
 .audio-player {
-    width: 300px;
-    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5%;
     text-align: center;
+    width: 70%;
 }
 
 .controls {
+    width: 90%;
     display: flex;
     align-items: center;
 }
 
-#playIcon,
-#pauseIcon {
-    width: 30px;
-    height: 30px;
+.playIcon,
+.pauseIcon {
+    width: 12%;
     cursor: pointer;
+    margin-right: 5%;
 }
-
-#progressBar {
+.progressBar {
     flex-grow: 1;
+    height: 50px;
 }
 
 .time-display {
+    display: flex;
     margin-top: 10px;
+}
+.time-display span{
+    font-size: 0.3em;
+    color: black;
 }
