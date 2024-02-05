@@ -198,9 +198,26 @@ h6{
 /* ----------------- logo ---------------------*/
 
 #logo li img {
-    max-height: 50px;
-}
+    margin: 4%;
 
+    max-height: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 50%;
+    
+}
+/*
+#logo li:last-of-type img {
+        margin: 4%;
+        max-height: 50px;
+        display: inline-block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 50%;
+        
+    }
+    */
 /* --------------- End of logo ----------------*/
 
 /* -------------- End of credits --------------*/
