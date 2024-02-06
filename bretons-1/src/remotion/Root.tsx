@@ -5,7 +5,6 @@ import { Frame3 } from "./Frame3";
 import { Frame4 } from "./Frame4";
 import { Frame5 } from "./Frame5";
 import { Frame6 } from "./Frame6";
-import { Frame7 } from "./Frame7";
 import athleteData from '../data/Athlete.json';
 import { Athlete, EventDataItem, Podium } from '../components/type';
 import EventData from '../data/Event.json';
