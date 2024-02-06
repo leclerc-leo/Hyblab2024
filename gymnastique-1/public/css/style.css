@@ -150,7 +150,7 @@ main > section {
 }
 #img-obj {
   position: absolute;
-  width: 20%;
+  width: 40%;
   right: 0%;
   top: 0%;
 }
@@ -169,16 +169,18 @@ main > section {
 
 #img-cupcake  {
   position: absolute;
-  max-width: 70%;
-  top:50%;
+  max-width: 60%;
+  top:30%;
 
 
 }
 #cupcake-p0 {
-  top:30% !important;
+  position: absolute;
+  top:20% !important;
   left:50% !important;
 }
 #cupcake-p1 {
+  position: absolute;
   top:70% !important;
   left:50% !important;
 }
