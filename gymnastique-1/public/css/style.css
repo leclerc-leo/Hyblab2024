@@ -134,9 +134,9 @@ main > section {
   font-family: "Poppins";
 } 
 #second-slide .popup-content h2 {
-  font-size: clamp(20%,1em,40%);
+  font-size: clamp(20%,1em,35%);
   word-wrap: break-word;
-  max-width: 40%;
+  max-width: 45%;
   line-height: 1em;
   position: relative;
   text-align: left;
@@ -144,37 +144,34 @@ main > section {
   margin-bottom: 0.45em;
   right: 20%;
 }
-#second-slide .popup-content img {
+#img-obj {
   position: absolute;
   width: 20%;
   right: 0%;
-  /* margin: 5%; */
   top: 0%;
 }
 #second-slide .popup-content p {
-  word-wrap: break-word;
-  max-width: 100%;
-  line-height: 1.2em;
-  margin-left: 5%;
-  margin-right: 5%;
-  position: relative;
-  font-size: clamp(10%,0.7em,25%);
-  margin-top: 12%;
+  position: absolute;
+    top: 30%;
+    left: 50%;
+    width: 75%;
+    transform: translateX(-50%);
+    display: flex;
+    font-size: 18%;
+    color: #386f9c;
+    z-index: 3;  
+  ;
 }
-#second-slide .Retour {
-  background-color: #007bff;
+
+#close {
   color: #fff;
   border: none;
-  padding: 4% 6%;
   cursor: pointer;
   border-radius: 5px;
   margin-top: 2em;
-}
-#second-slide .close:hover,
-#second-slide .close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
+  position: absolute;
+  bottom:5%;
+  width:27%;
 }
 
 /* ---------- Positioning of logos on the last slide -------------------- */

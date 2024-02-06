@@ -39,7 +39,7 @@ const initSlide2 = async function (popupId, objectId) {
     text.textContent = objData.text || " PAS DE TEXTE ";
 
     // Si vous avez des images dans votre JSON, vous pouvez également les afficher
-    // img.setAttribute("src", objData.picture);
+    img.setAttribute("src", objData.picture);
 
   } catch (error) {
     console.error("ERREUR JSON :", error);

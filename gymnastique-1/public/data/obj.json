@@ -1,30 +1,37 @@
 {
   "manique": {
-    "title": "Maniques",
-    "text": "Kaylia suit un programme d'entraînement intensif à quelques mois du lancement des JO. Sa routine s'organise de la sorte : trois heures d'entraînement le matin, une pause déjeuner, deux heures de cours à distance, puis trois heures d'entraînement l'après-midi."
+    "title": "Une journée bien cadrée",
+    "text": "Kaylia suit un programme d'entraînement intensif à quelques mois du lancement des JO. Sa routine s'organise de la sorte : trois heures d'entraînement le matin, une pause déjeuner, deux heures de cours à distance, puis trois heures d'entraînement l'après-midi.",
+    "picture" : "img/maniques.svg"
   },
   "cupcake": {
-    "title": "Gâteau",
-    "text": "L'autre passion de Kaylia est… la pâtisserie ! Préparer des gâteaux lui permet de décompresser entre deux entraînements. Dans sa future vie, la vice-championne du monde aux barres se voit même devenir pâtissière, le même métier que son grand-père. À l'approche des JO, son entourage se régale plus qu'elle. « Je fais attention à ce que je mange, donc je ne les mange pas tous », explique la jeune fille."
+    "title": "Une pâtissière en or",
+    "text": "L'autre passion de Kaylia est… la pâtisserie ! Préparer des gâteaux lui permet de décompresser entre deux entraînements. Dans sa future vie, la vice-championne du monde aux barres se voit même devenir pâtissière, le même métier que son grand-père. À l'approche des JO, son entourage se régale plus qu'elle. « Je fais attention à ce que je mange, donc je ne les mange pas tous », explique la jeune fille.",
+    "picture" : "img/cupcake.svg"
   },
   "coupe": {
-    "title": "coupe",
-    "text": "À 17 ans, Kaylia a déjà un beau palmarès derrière elle. En 2023, elle a raflé de nombreux prix : championne d'Afrique à Pretoria en mai, médaille d'argent à la poutre et médaille de bronze aux barres lors des Internationaux de France en septembre, vice-championne du monde aux barres à Anvers en octobre. Lors de cette dernière compétition, elle a été battue par la chinoise Qiyuan Qiu, d'à peine un dixième. Kaylia, qui a au passage été élue meilleure athlète algérienne de l'année 2023, espère prendre sa revanche aux JO."
+    "title": "Un palmarès déjà étoffé",
+    "text": "À 17 ans, Kaylia a déjà un beau palmarès derrière elle. En 2023, elle a raflé de nombreux prix : championne d'Afrique à Pretoria en mai, médaille d'argent à la poutre et médaille de bronze aux barres lors des Internationaux de France en septembre, vice-championne du monde aux barres à Anvers en octobre. Lors de cette dernière compétition, elle a été battue par la chinoise Qiyuan Qiu, d'à peine un dixième. Kaylia, qui a au passage été élue meilleure athlète algérienne de l'année 2023, espère prendre sa revanche aux JO.",
+    "picture" : "img/coupe.svg"
   },
   "gourde": {
-    "title": "gourde",
-    "text": "« Ce n'est pas toujours simple, il a fallu que Kaylia puisse être forte psychologiquement, notamment face à la situation compliquée qu'il y a eu avec la Fédération », explique sa maman. Des épisodes difficiles, Kaylia en a vécu plusieurs. Opérée en 2021 d'une ostéochondrite, une maladie qui touche les articulations, la gymnaste à dû arrêter les compétitions un an et demi. « C'est une jeune femme qui m'épate. Elle a surmonté tout cela avec beaucoup de force », poursuit Stéphanie Nemour. La sportive de haut niveau laisse parfois son justaucorps de côté pour lire, faire du shopping et voir ses amis."
+    "title": "Un chemin semé d'embuches",
+    "text": "« Ce n'est pas toujours simple, il a fallu que Kaylia puisse être forte psychologiquement, notamment face à la situation compliquée qu'il y a eu avec la Fédération », explique sa maman. Des épisodes difficiles, Kaylia en a vécu plusieurs. Opérée en 2021 d'une ostéochondrite, une maladie qui touche les articulations, la gymnaste à dû arrêter les compétitions un an et demi. « C'est une jeune femme qui m'épate. Elle a surmonté tout cela avec beaucoup de force », poursuit Stéphanie Nemour. La sportive de haut niveau laisse parfois son justaucorps de côté pour lire, faire du shopping et voir ses amis.",
+    "picture" : "img/gourde.svg"
   },
   "algerie": {
-    "title": "Porte-clés",
-    "text": "Franco-algérienne, Kaylia représentera l'Algérie aux JO 2024. Un choix fait à contre-cœur, elle qui a longtemps représenté la France. Mais à l'issue de différents conflits entre son club d'Avoine-Beaumont et la fédération française, la gymnaste a dû se tourner vers le pays de son papa pour avoir la possibilité de concourir à haut-niveau. La jeune Kaylia a été beaucoup affectée par cet épisode."
+    "title": "L'espoir de l'Algérie",
+    "text": "Franco-algérienne, Kaylia représentera l'Algérie aux JO 2024. Un choix fait à contre-cœur, elle qui a longtemps représenté la France. Mais à l'issue de différents conflits entre son club d'Avoine-Beaumont et la fédération française, la gymnaste a dû se tourner vers le pays de son papa pour avoir la possibilité de concourir à haut-niveau. La jeune Kaylia a été beaucoup affectée par cet épisode.",
+    "picture" : "img/porte_clef.svg"
   },
   "medaille": {
-    "title": "Médaille des JO",
-    "text": "Aller aux Jeux Olympiques, Kaylia en rêve depuis quatre ans. Avec sa qualification en finale du concours général des Mondiaux, à Anvers, elle a obtenu son ticket pour Paris. Pour remporter la médaille d'or aux barres, ce qu'elle vise, elle devra battre des concurrentes de taille."
+    "title": "Un objectif doré",
+    "text": "Aller aux Jeux Olympiques, Kaylia en rêve depuis quatre ans. Avec sa qualification en finale du concours général des Mondiaux, à Anvers, elle a obtenu son ticket pour Paris. Pour remporter la médaille d'or aux barres, ce qu'elle vise, elle devra battre des concurrentes de taille.",
+    "picture" : "img/medaille.svg"
   },
   "photo": {
-    "title": "photo",
-    "text": "« Je suis très bien entourée », reconnaît Kaylia. Derrière son talent, se cache le travail de toute une équipe bien soudée. La championne est très reconnaissante envers ses coachs, Marc et Gina Chirilcenco. Ils l'entraînent depuis des années dans son club d'Avoine, qui l'a vu naître. Kaylia y progresse depuis ses quatre ans, quand sa mère, Stéphanie Nemmour, présidente du club, l'y a inscrite. Tous sont très fiers de leur jeune prodige."
+    "title": " Une famille unie",
+    "text": "« Je suis très bien entourée », reconnaît Kaylia. Derrière son talent, se cache le travail de toute une équipe bien soudée. La championne est très reconnaissante envers ses coachs, Marc et Gina Chirilcenco. Ils l'entraînent depuis des années dans son club d'Avoine, qui l'a vu naître. Kaylia y progresse depuis ses quatre ans, quand sa mère, Stéphanie Nemmour, présidente du club, l'y a inscrite. Tous sont très fiers de leur jeune prodige.",
+    "picture" : "img/photo.svg"
   }
 }
