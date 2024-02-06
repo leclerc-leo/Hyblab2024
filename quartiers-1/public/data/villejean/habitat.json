@@ -3,8 +3,8 @@
         "speaker": "guide",
         "type": "bubble",
         "choicesLabel": [],
-        "content": ["Ici c'est l'urbanisme"],
-        "next": ["Question1"]
+        "content": ["Bienvenue à ${quartier} !", "Je serai ton guide pendant tout ton séjour à Rennes."],
+        "next": ["EntrerNom"]
     },
 
     "EntrerNom": {
@@ -12,110 +12,55 @@
         "type": "nom",
         "choicesLabel": ["Bonjour, je m'appelle"],
         "content": ["Bonjour, je m’appelle ${user_name} !"],
-        "next": ["Question1"]
+        "next": ["Bienvenue1"]
     },
 
-    "Question1": {
+    "Bienvenue1": {
         "speaker": "guide",
         "type": "bubble",
         "choicesLabel": [],
-        "content": ["Fais un choix"],
-        "next": ["Choix1"]
-    },
-
-    "Choix1": {
-        "speaker": "user",
-        "type": "choice",
-        "choicesLabel": ["Choix 1", "Choix 2", "Choix 3"],
-        "content": ["Je choisis 1", "Je choisis 2", "Je choisis 3"],
-        "next": ["ReponseChoix11", "ReponseChoix12", "ReponseChoix13"]
-    },
-
-    "ReponseChoix11": {
-        "speaker": "guide",
-        "type": "bubble",
-        "choicesLabel": [],
-        "content": ["Ok tu as pris le choix 1"],
-        "next": ["Suite1"]
-    },
-    
-    "ReponseChoix12": {
-        "speaker": "guide",
-        "type": "bubble",
-        "choicesLabel": [],
-        "content": ["Ok tu as pris le choix 2"],
-        "next": ["Suite1"]
-    },
-
-    "ReponseChoix13": {
-        "speaker": "guide",
-        "type": "bubble",
-        "choicesLabel": [],
-        "content": ["Ok tu as pris le choix 3"],
-        "next": ["Suite1"]
-    },
-
-    "Suite1": {
-        "speaker": "guide",
-        "type": "bubble",
-        "choicesLabel": [],
-        "content": ["De quoi veux-tu parler ?"],
-        "next": ["Question2"]
-    },
-
-    "Question2": {
-        "speaker": "guide",
-        "type": "bubble",
-        "choicesLabel": [],
-        "content": ["Refais un choix"],
-        "next": ["Choix2"]
-    },
-
-    "Choix2": {
-        "speaker": "user",
-        "type": "choice",
-        "choicesLabel": ["Choix 1", "Choix 2", "Choix 3"],
-        "content": ["Je choisis 1", "Je choisis 2", "Je choisis 3"],
-        "next": ["ReponseChoix21", "ReponseChoix22", "ReponseChoix23"]
-    },
-
-    "ReponseChoix21": {
-        "speaker": "guide",
-        "type": "bubble",
-        "choicesLabel": [],
-        "content": ["Ok tu as pris le choix 1"],
-        "next": ["Suite2"]
-    },
-    
-    "ReponseChoix22": {
-        "speaker": "guide",
-        "type": "bubble",
-        "choicesLabel": [],
-        "content": ["Ok tu as pris le choix 2"],
-        "next": ["Suite2"]
-    },
-
-    "ReponseChoix23": {
-        "speaker": "guide",
-        "type": "bubble",
-        "choicesLabel": [],
-        "content": ["Ok tu as pris le choix 3"],
-        "next": ["Suite2"]
-    },
-
-    "Suite2": {
-        "speaker": "guide",
-        "type": "bubble",
-        "choicesLabel": [],
-        "content": ["De quoi veux-tu parler ?"],
+        "content": ["Pour commencer je te propose une rapide présentation du quartier.","Situé au nord-ouest de Rennes, ce quartier compte 12 071 habitants en 2017. ","Ancienne étendue de champs, son aménagement est relativement récent puisque c’est dans les années 1950, alors que Rennes est en pleine croissance démographique, que le conseil municipal choisit d’en faire un quartier de logements.","C'est parti pour la visite !","Que souhaites-tu découvrir en premier ?"],
         "next": ["ChoixTheme"]
     },
 
     "ChoixTheme": {
         "speaker": "user",
-        "type": "topic",
-        "choicesLabel": ["Portraits", "Associations", "Urbanisme", "Sports", "Education", "Commerces"],
-        "content": ["Je go Portraits", "Je go Associations", "Je go Urbanisme", "Je go Sports", "Je go Education", "Je go Commerces"],
-        "next": ["Portraits", "Associations", "Urbanisme", "Sports", "Education", "Commerces"]
+        "type": "topicChoice",
+        "choicesLabel": ["Portrait", "Association", "Habitat", "Sport", "Education", "Commerce"],
+        "content": ["Les portraits de ${quartier}", "Les associations à ${quartier}", "L'habitat à ${quartier}", "Le sport à ${quartier}", "L'éducation à ${quartier}", "Les commerces à ${quartier}"],
+        "next": ["GoLieu", "GoLieu", "GoLieu", "GoLieu", "GoLieu", "GoLieu"]
+    },
+
+    "GoLieu": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Parfait ! Allez viens je t’emmène ${lieu}"],
+        "next": ["Aide"]
+    },
+
+    "Aide": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Tu peux retrouver toutes les thématiques à tout moment dans le menu en haut à gauche."],
+        "next": ["Quitter"]
+    },
+
+    "Quitter": {
+        "speaker": "user",
+        "type": "quit",
+        "choicesLabel": ["Aller ${lieu}"],
+        "content": [],
+        "next": ["Fin"]
+    },
+
+    "Lieux": {
+        "portrait": "à la maison de quartier de Villejean",
+        "association": "au centre Avicenne",
+        "habitat": "à la tour Bourbonnais",
+        "sport": "au stade Robert-Poirier",
+        "education": "à Rosa Parks",
+        "commerce": "au marché de Villejean"
     }
 }

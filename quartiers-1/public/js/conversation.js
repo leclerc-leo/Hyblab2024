@@ -9,7 +9,6 @@ function scrollSmoothlyToBottom() {
 };
 
 function treatBubble(bubbleJson) {
-    console.log(lastBubble);
     if (lastBubble["type"] == "choice" || lastBubble["type"] == "topicChoice") {
         time += 1000;
     } else {
@@ -236,7 +235,7 @@ function saveConversation() {
 
     sessionStorage.setItem("save", JSON.stringify(save));
 
-    console.log("saved");
+    console.log("Saved");
 }
 
 function reloadConversation() {
@@ -254,14 +253,12 @@ function reloadConversation() {
 
     scrollSmoothlyToBottom();
 
-    console.log("reloaded");
+    console.log("Reloaded");
 }
 
 async function conversationUnfold(nextID) {
     let resp  = await fetch('./data/' + quartier.toLowerCase() + '/' + topic.toLowerCase() + '.json')
     data = await resp.json();
-
-    console.log(data);
 
     time = 0;
     let i = 0;
@@ -344,7 +341,6 @@ if (quartier_dispo[quartier] === false) {
 document.querySelectorAll(".quartier-titre").forEach(element => {
     element.innerHTML = quartier_dico[quartier];
 });
-console.log(quartier);
 
 backgroundTransition();
 
@@ -371,7 +367,6 @@ document.querySelectorAll(".topicButton").forEach(button => {
     button.addEventListener("click", function(event) {
         closeNav();
         nextTopic = event.target.dataset.topic;
-        console.log(event.target.dataset.topic);
         changeTopic();
     });
 });
