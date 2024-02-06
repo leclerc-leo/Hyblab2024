@@ -182,7 +182,7 @@ function showCarousel(id) {
 	).some((el) => el.classList.contains("flip"));
 
 	if (isAnyItemFlipped) {
-		handleGridAnimation();
+		handleCarouselAnimation();
 	}
 
 	document
@@ -345,9 +345,13 @@ function createCarouselItem(player) {
 			</div>
 			<!-- Verso -->
 			<div class="back">
-			<img class="carte-img" src="img/back_card.svg" alt="Bio de ${player.NOM}" />
-				<p class="back-title">${player.NOM}</p>
-				<p class="back-text">${player.DOS}</p>
+				<div>
+					<img class="carte-img" src="img/back_card.svg" alt="Bio de ${player.NOM}" />
+					<div>
+						<p class="back-title">${player.NOM}</p>
+						<p class="back-text">${player.DOS}</p>
+					</div>
+				</div>
 				<div class="bottom-btn" id="flip-btn">
 					<button class="round-btn" id="back-overlay" title="close">
 						<img src="./img/close.svg" alt="close" />
@@ -607,7 +611,21 @@ document.addEventListener("DOMContentLoaded", () => {
 	});
 });
 
-function handleGridAnimation() {
+function handleCarouselAnimation() {
+	const carousel = document.querySelector(".carousel");
+	const carouselItems = document.querySelectorAll(".carousel-item");
+	carouselItems.forEach((item) => {
+		if (!item.classList.contains("focused")) {
+			if (
+				item.style.animationName === "shrinkAnimation" ||
+				item.style.animationName === ""
+			) {
+				item.style.animationName = "growBack";
+			} else if (item.style.animationName === "growBack") {
+				item.style.animationName = "shrinkAnimation";
+			}
+		}
+	});
 	document.querySelectorAll(".carousel-grid").forEach((item) => {
 		item.addEventListener("animationend", () => {
 			if (
@@ -633,23 +651,25 @@ function handleGridAnimation() {
 }
 
 function handleFlip(element) {
-	element.classList.toggle("flip");
-	var carouBtn = document.querySelector("#carou-btn");
-	if (element.classList.contains("flip")) {
-		carouBtn.style.opacity = "0";
-	} else {
-		carouBtn.style.opacity = "1";
-	}
-	handleGridAnimation();
-	document.querySelectorAll("#validate-button").forEach((val_btn) => {
-		if (val_btn.style.opacity === "0") {
-			setTimeout(() => {
-				val_btn.style.opacity = "1";
-			}, 210);
+	if (element.parentElement.classList.contains("focused")) {
+		element.classList.toggle("flip");
+		let carouBtn = document.querySelector("#carou-btn");
+		if (element.classList.contains("flip")) {
+			carouBtn.style.opacity = "0";
 		} else {
-			val_btn.style.opacity = "0";
+			carouBtn.style.opacity = "1";
 		}
-	});
+		handleCarouselAnimation();
+		document.querySelectorAll("#validate-button").forEach((val_btn) => {
+			if (val_btn.style.opacity === "0") {
+				setTimeout(() => {
+					val_btn.style.opacity = "1";
+				}, 210);
+			} else {
+				val_btn.style.opacity = "0";
+			}
+		});
+	}
 }
 
 function handleCarouselScroll() {
@@ -670,15 +690,21 @@ function handleCarouselScroll() {
 		const flipContainer = item.querySelector(".flip-container");
 		if (flipContainer && flipContainer.classList.contains("flip")) {
 			flipContainer.classList.remove("flip");
-			handleGridAnimation();
-			let val_btn = item.querySelector("#validate-button");
-
-			if (val_btn.style.opacity === "0") {
-				setTimeout(() => {
-					val_btn.style.opacity = "1";
-				}, 210);
+			handleCarouselAnimation();
+			document.querySelectorAll("#validate-button").forEach((val_btn) => {
+				if (val_btn.style.opacity === "0") {
+					setTimeout(() => {
+						val_btn.style.opacity = "1";
+					}, 210);
+				} else {
+					val_btn.style.opacity = "0";
+				}
+			});
+			let carouBtn = document.querySelector("#carou-btn");
+			if (carouBtn.style.opacity === "0") {
+				carouBtn.style.opacity = "1";
 			} else {
-				val_btn.style.opacity = "0";
+				carouBtn.style.opacity = "0";
 			}
 		}
 	});
