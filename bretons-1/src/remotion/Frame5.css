@@ -24,11 +24,12 @@
   .identity-name {
     position: absolute;
     top: 360px;
-    left: 30%;
+    left: 46.8%;
     transform: translateX(-50%);
     font-size: 1.5em;
     color: #fff;
     font-size: 80px;
+    width: 900px;
   }
 
   .bols {
