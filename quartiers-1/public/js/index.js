@@ -2,14 +2,22 @@
 
 // Wait for the content to preload and display 1st slide
 // Here we simulate a loading time of one second
-setTimeout(() => { 
-    anime({
-        delay: 7000,
-        targets: '#accueil',
-        opacity: '0',
-        'z-index' : -1,
-        easing: 'easeOutQuad',
-    });
+setTimeout(() => {
+    //Vérifie si le cookie first anim pour savoir si l'animation doit se jouer
+    if(window.sessionStorage.getItem("first-anim") != "faux"){
+        anime({
+            delay: 7000,
+            targets: '#accueil',
+            opacity: '0',
+            'z-index' : -1,
+            easing: 'easeOutQuad',
+        });
+    }
+    //Conséquence de si l'animation a déjà été lancé
+    else{
+        document.querySelector("#accueil").style.visibility = "hidden";
+        document.querySelector("#tuto").style.visibility = "hidden";
+    }
 }, 100);
 
 // Fermer l'accueil
