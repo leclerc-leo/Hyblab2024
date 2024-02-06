@@ -8,8 +8,8 @@ import top3Svg from '/img/top3.svg';
 import AngleterreSvg from '/img/Angleterre.svg';
 import DanemarkSvg from '/img/Danemark.svg';
 import Pays_BasSvg from '/img/Pays-Bas.svg';
-import usSvg from '/img/us.svg';
-import SuèdeSvg from '/img/Suède.svg';
+import usSvg from '/img/USA.svg';
+import SuèdeSvg from '/img/Suède.svg';
 import { Podium } from '../components/type';
 
   
