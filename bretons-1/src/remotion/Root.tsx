@@ -5,6 +5,7 @@ import { Frame3 } from "./Frame3";
 import { Frame4 } from "./Frame4";
 import { Frame5 } from "./Frame5";
 import { Frame6 } from "./Frame6";
+import { Frame7 } from "./Frame7";
 import athleteData from '../data/Athlete.json';
 import { Athlete, EventDataItem, Podium } from '../components/type';
 import EventData from '../data/Event.json';
@@ -31,9 +32,16 @@ export const MyVideo: React.FC<MyVideoProps> = ({ id }) => {
       <Sequence from={340} durationInFrames={350}>
         <Frame4 Gentilé={athlete.Gentilé} gain={eventData.Gain} Epreuve={eventData.Epreuve} sexe={athlete.Sexe} Sport={eventData.Sport} Epreuve_1={eventData.Epreuve__1}></Frame4>
       </Sequence>
-      <Sequence from={660} durationInFrames={240}>
-        <Frame2 athlete={athlete.Athlete}  podium={eventData["Podium (nom + résultat)"] as Podium[]} />
-      </Sequence>
+      {!showFrame6 && (
+        <Sequence from={660} durationInFrames={240}>
+          <Frame7 athlete={athlete.Athlete}  podium={eventData["Podium (nom + résultat)"] as Podium[]} gain={eventData.Gain} />
+        </Sequence>
+        )}
+      {showFrame6 && (
+        <Sequence from={660} durationInFrames={240}>
+          <Frame2 athlete={athlete.Athlete}  podium={eventData["Podium (nom + résultat)"] as Podium[]} />
+        </Sequence>
+        )}
       <Sequence from={900} durationInFrames={300}>
         <Frame3 text={athlete.Athlete}></Frame3>
       </Sequence>

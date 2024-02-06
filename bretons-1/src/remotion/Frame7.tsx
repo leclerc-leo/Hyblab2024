@@ -1,16 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './Frame7.css';
-import frSvg from '/img/fr.svg';
-import allemagneSvg from '/img/allemagne.svg';
-import AngleterreSvg from '/img/Angleterre.svg';
-import DanemarkSvg from '/img/Danemark.svg';
-import Pays_BasSvg from '/img/Pays-Bas.svg';
-import usSvg from '/img/us.svg';
-import SuèdeSvg from '/img/Suède.svg';
 import { Podium } from '../components/type';
 
 
-export const Frame7: React.FC<{ athlete: string, podium: Podium[] }> = ({ athlete, podium }) => {
+export const Frame7: React.FC<{ athlete: string, podium: Podium[], gain:string}> = ({ athlete, podium, gain }) => {
     // Fonction pour obtenir le src de l'image du drapeau basé sur le pays
     const [_, setIsLoading] = useState(true);
     useEffect(() => {
@@ -30,13 +23,13 @@ export const Frame7: React.FC<{ athlete: string, podium: Podium[] }> = ({ athlet
     }, []);
     const getFlagSrc = (pays: string) => {
         switch (pays) {
-            case 'France': return frSvg;
-            case 'Allemand': return allemagneSvg;
-            case 'État-Unis': return usSvg;
-            case 'Angleterre': return AngleterreSvg;
-            case 'Danemark': return DanemarkSvg;
-            case 'Pays-Bas': return Pays_BasSvg;
-            case 'Suède': return SuèdeSvg;
+            case 'France': return '/bretons-1/img/fr.svg';
+            case 'Allemand': return '/bretons-1/img/allemagne.svg';
+            case 'État-Unis': return '/bretons-1/img/us.svg';
+            case 'Angleterre': return '/bretons-1/img/Angleterre.svg';
+            case 'Danemark': return '/bretons-1/img/Danemark.svg';
+            case 'Pays-Bas': return '/bretons-1/img/Pays-Bas.svg';
+            case 'Suède': return '/bretons-1/img/Suède.svg';
             default: return '';
         }
     };
@@ -52,11 +45,11 @@ export const Frame7: React.FC<{ athlete: string, podium: Podium[] }> = ({ athlet
             <div className="titreFrame7">Elle gagne avec 1 minute d'avance</div>
             <div className='GroupeRectangle'>
                 {podium.slice(0, 4).map((entry: Podium, index: number) => {
-                    const rectangleClass = index === 0 ? "rectangle1Frame7" : index === 1 ? "rectangle2Frame7" :  index === 2 ?"rectangle3Frame7" : "rectangle4Frame7" ;
+                    const rectangleClass = index === 0 ? "rectangle1Frame7" : index === 1 ? "rectangle2Frame7" : index === 2 ? "rectangle3Frame7" : "rectangle4Frame7";
                     const infoFrameClass = index === 0 ? "infoFrame7" : index === 1 ? "infoFrame7_2" : index === 2 ? "infoFrame3_7" : "infoFrame4_7";
                     const flagFrameClass = index === 0 ? "flagFrame7" : index === 1 ? "flag_2_Frame7" : index === 2 ? "flag_3_Frame7" : "flag_4_Frame7";
                     const nameFrameClass = index === 0 ? "nameFrame7" : index === 1 ? "name_2_Frame7" : index === 2 ? "name_3_Frame7" : "name_4_Frame7";
-                    const timeFrameClass = index === 0 ? "timeFrame7" : index === 1 ? "time_2_Frame7" : index === 2 ? "time_3_Frame7": "time_4_Frame7";
+                    const timeFrameClass = index === 0 ? "timeFrame7" : index === 1 ? "time_2_Frame7" : index === 2 ? "time_3_Frame7" : "time_4_Frame7";
                     const countryFrameClass = index === 0 ? "countryFrame7" : index === 1 ? "country_2_Frame7" : index === 2 ? "country_3_Frame7" : "country_4_Frame7";
                     const highlightClass = athlete === entry.Nom ? "highlight" : "";
 
@@ -71,7 +64,12 @@ export const Frame7: React.FC<{ athlete: string, podium: Podium[] }> = ({ athlet
                                         <span className={countryFrameClass}>{entry.Pays}</span>
                                     </div>
                                 </div>
-                                <img className='QualifieBW' src='/bretons-1/img/QualifieBW.svg'></img>
+                                {gain === "" && entry.Nom === athlete && (
+                                    <img className='QualifieBW' src={`/bretons-1/img/Eliminate.svg`} alt='Eliminate' />
+                                )}
+                                {entry.Nom !== athlete && (
+                                    <img className='QualifieBW' src='/bretons-1/img/QualifieBW.svg' alt='Qualification' />
+                                )}
                             </div>
                         </div>
                     );

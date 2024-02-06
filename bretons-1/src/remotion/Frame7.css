@@ -10,6 +10,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    bottom: 5%;
 }
 
 .frame7Container {
@@ -35,7 +36,6 @@
     flex-shrink: 0;
     background: #2EA26E;
     position: relative;
-    left: -277vw;
     transition: left 1s ease-in-out;
     text-align: center;
 }
@@ -95,9 +95,9 @@
 
 .rectangle2Frame7{
     width: 50%;
+    height: 56.5%;
     background: #82C7AB; 
     position: relative;
-    left: -249vw;
     transition: left 1s ease-in-out;
 }
 
@@ -152,7 +152,6 @@
     height: 96%;
     flex-shrink: 0; 
     background: #82C7AB;
-    left: -222vw;
     position: relative;
     transition: left 1s ease-in-out;
 }
@@ -221,3 +220,60 @@
     align-items: center;
     flex-direction: column;
 }
+
+
+.rectangle4Frame7{
+    width: 50%;
+    height: 96%;
+    flex-shrink: 0; 
+    background: #82C7AB;
+    position: relative;
+    transition: left 1s ease-in-out;
+}
+
+.infoFrame4_7 {
+    color: #ffffff;
+    font-family: "Golos Text";
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    margin: 0; 
+    text-align: center; 
+}
+
+.name_4_Frame7 {
+    font-size: 60px;
+    font-weight: 500;
+    margin-top: 10%;
+}
+
+.time_4_Frame7 {
+    font-size: 35px;
+    font-weight: 400;
+    line-height: 30px;
+}
+.flag_4_Frame7 {
+    padding-top: 10px;
+}
+.flag_4_Frame7 img { 
+    width: 50px; 
+    height: auto;
+}
+
+.numberCircle_4_Frame7 {
+    width: 150px; 
+    height: auto; 
+    position: absolute;
+    transform: translateY(-50%);
+    margin-top: 150px;
+    margin-left: 25px;
+}
+
+.country_4_Frame7 {
+    padding-top: 1px; 
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    margin-left: 20px; 
+}
+
