@@ -8,5 +8,5 @@ export default defineConfig({
     outDir: './public',
   },
   publicDir:'./src/assets',
-  base: '/bretons-1/'
+  base:"bretons-1"
 })
