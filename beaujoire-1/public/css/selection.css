@@ -12,8 +12,7 @@
 }
 
 .swiper-pagination-bullet {
-  background: #00a55a !important;
-  margin-top: auto;
+  display: none !important;
 }
 
 .container-terrain {
@@ -33,6 +32,27 @@
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+}
+
+.player {
+  background-image: url("../img/jersey.svg");
+}
+
+.player-name {
+  position: absolute;
+  bottom: -10px;
+  font-size: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.player-name-long {
+  position: absolute;
+  bottom: -23px;
+  font-size: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: bold;
 }
 
 #writer {
