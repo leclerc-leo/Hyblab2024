@@ -348,7 +348,7 @@ svg.image-histoire, svg.image-jo{
 }
 #palmares-page .card-container {
     width: 80vw;
-    height: 15vh;
+    height: 20vh;
     max-height: 10%;
     max-width: 80%;
     perspective: 90vw;
@@ -357,12 +357,12 @@ svg.image-histoire, svg.image-jo{
 #palmares-page .flipcard {
     transform: rotateY(180deg);
 }
-#palmares-page .doigt-gif{
+#palmares-page .doigt-gif ,#palmares-page .logo-retourner{
     position: absolute;
-    height: 100%;
+    height: 20%;
     z-index : 2;
-    right: 0;
-    top: 40%;
+    right: 5%;
+    bottom: 10%;
 }
 #palmares-page .card {
     height: 100%;
