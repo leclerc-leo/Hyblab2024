@@ -23,13 +23,13 @@ const handle_return = (swiper,swiper_controls, page_controls, return_button) => 
     return_button.id = 'return';
     
     swiper.enable();
-}
+};
 
 const remove_listeners = id => {
     const el = document.querySelector(`${id}`),
             elClone = el.cloneNode(true);
     el.parentNode.replaceChild(elClone, el);
-}
+};
 
 const move_background = (x, b = false) => {
     const background = document.querySelector('.background');
@@ -39,7 +39,7 @@ const move_background = (x, b = false) => {
 
     x = (100 - x) * 1.5 - 25;
     background.style.left = `${x}%`;
-}
+};
 
 const handle_orientation = (event) => { 
     const y = Math.min(event.gamma, 90) + 90;
@@ -54,4 +54,4 @@ const handle_orientation = (event) => {
             element.style.left = `${(max * y) / 180 - max}px`;
         });
     }
-}
+};
