@@ -465,6 +465,8 @@ body {
 }
 
 #validate-button {
+	transition: opacity 0.2s ease-in-out;
+	opacity: 1;
 	margin-top: 5%;
 }
 
@@ -630,15 +632,12 @@ body {
 }
 
 .player-name {
-	font-size: 10px;
+	font-size: 12px;
 	font-weight: bold;
-	width: fit-content;
-	width: -moz-fit-content;
-	line-break: normal;
-	margin-top: 0;
-	margin-right: auto;
-	margin-left: auto;
-	display: table;
+	width: 100%;
+	text-align: center;
+	overflow: visible;
+	margin: 0 auto;
 }
 
 /*Share sections*/
@@ -768,7 +767,7 @@ body {
 
 /* Styling pour l'effet de retournement lorsque la classe 'flip' est ajoutée */
 .flip-container.flip .flipper {
-	transform: translateY(30%) rotateY(180deg) scale(1.15);
+	transform: translateY(30%) rotateY(180deg) scale(1.1);
 	transition: 0.5s ease;
 }
 

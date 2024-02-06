@@ -24,6 +24,13 @@ function initizalizePage() {
 		} else {
 			playerElement.textContent = playerName;
 		}
+		const playerNames = document.querySelectorAll(".player-name");
+		playerNames.forEach((playerName) => {
+			const overflow = playerName.scrollWidth - playerName.clientWidth;
+			if (overflow > 0) {
+				playerName.style.transform = `translateX(-${overflow / 2}px)`;
+			}
+		});
 	};
 
 	const urlParams = new URLSearchParams(window.location.search);
@@ -634,11 +641,13 @@ function handleFlip(element) {
 		carouBtn.style.opacity = "1";
 	}
 	handleGridAnimation();
-	document.querySelectorAll("#validate-button").forEach((item) => {
-		if (item.style.display === "none") {
-			item.style.display = "block";
+	document.querySelectorAll("#validate-button").forEach((val_btn) => {
+		if (val_btn.style.opacity === "0") {
+			setTimeout(() => {
+				val_btn.style.opacity = "1";
+			}, 210);
 		} else {
-			item.style.display = "none";
+			val_btn.style.opacity = "0";
 		}
 	});
 }
@@ -661,6 +670,16 @@ function handleCarouselScroll() {
 		const flipContainer = item.querySelector(".flip-container");
 		if (flipContainer && flipContainer.classList.contains("flip")) {
 			flipContainer.classList.remove("flip");
+			handleGridAnimation();
+			let val_btn = item.querySelector("#validate-button");
+
+			if (val_btn.style.opacity === "0") {
+				setTimeout(() => {
+					val_btn.style.opacity = "1";
+				}, 210);
+			} else {
+				val_btn.style.opacity = "0";
+			}
 		}
 	});
 
