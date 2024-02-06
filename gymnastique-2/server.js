@@ -16,6 +16,13 @@ app.use((req, _, next) => {
     const accept = req.get('Accept');
 
     req.webp_supported = accept.includes('image/webp');
+
+    if (req.get('User-Agent').includes('iPhone') || req.get('User-Agent').includes('iPad')) {
+        req.webp_supported = false;
+    }
+    if (req.get('User-Agent').includes('Safari') && !req.get('User-Agent').includes('Chrome')) {
+        req.webp_supported = false;
+    }
   
     next();
 });
