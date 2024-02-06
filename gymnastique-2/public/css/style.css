@@ -75,8 +75,12 @@ header{
     width: 100%;
     top: 10%;
     position: absolute;
-    font-size: 30%;
+    font-size: calc(1.5vh + 1.5vw);
     z-index: 2;
+}
+
+header > * {
+    margin: 0 auto;
 }
 
 .background {
@@ -235,20 +239,20 @@ header{
 h1{
     color: #482E49;
     font-family: "Metropolis";
-    font-size: 25px;
+    font-size: calc(1.5vh + 10px);
 }
 
 h2{
     color: #482E49;
     font-family: "Metropolis";
-    font-size: 18px;
+    font-size: calc(1.2vh + 8px);
 }
 
 /* Format des textes */
 p{
     color: #E47754;
     font-family: 'Helvetica Neue', sans-serif;
-    font-size: 16px;
+    font-size: calc(1vh + 5px);
     padding: 10px 30px;
 }
 
@@ -256,7 +260,7 @@ li{
     list-style: none;
     color: #E47754;
     font-family: 'Helvetica Neue', sans-serif;
-    font-size: 16px;
+    font-size: calc(1vh + 5px);
     padding: 0 30px;
 }
 
