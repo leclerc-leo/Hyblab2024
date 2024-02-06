@@ -161,7 +161,7 @@ main > section {
     width: 75%;
     transform: translateX(-50%);
     display: flex;
-    font-size: 18%;
+    font-size: 20%;
     color: #386f9c;
     z-index: 3;  
   ;
@@ -169,8 +169,8 @@ main > section {
 
 #img-cupcake  {
   position: absolute;
-  max-width: 60%;
-  top:30%;
+  max-width: 45%;
+  top:35%;
 
 
 }
@@ -181,10 +181,9 @@ main > section {
 }
 #cupcake-p1 {
   position: absolute;
-  top:70% !important;
+  top:61% !important;
   left:50% !important;
 }
-
 #close {
   color: #fff;
   border: none;
