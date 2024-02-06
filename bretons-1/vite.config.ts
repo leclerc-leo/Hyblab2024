@@ -6,8 +6,7 @@ export default defineConfig({
   plugins: [react()],
   build: {
     outDir: './public',
-    minify: false,
   },
   publicDir:'./src/assets',
-  base:"bretons-1"
+  base:"/bretons-1"
 })
