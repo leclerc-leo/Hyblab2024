@@ -140,13 +140,13 @@ main > section {
 #second-slide .popup-content h2 {
   font-size: clamp(20%,1em,35%);
   word-wrap: break-word;
-  max-width: 45%;
+  max-width: 70%;
   line-height: 1em;
   position: relative;
   text-align: left;
   top: 5%;
   margin-bottom: 0.45em;
-  right: 20%;
+  right: 10%;
 }
 #img-obj {
   position: absolute;
@@ -156,8 +156,8 @@ main > section {
 }
 #second-slide .popup-content p {
   position: absolute;
-    top: 30%;
-    left: 50%;
+    top: 30%; /* pas enlever pour pas tout casser */
+    left: 50%; 
     width: 75%;
     transform: translateX(-50%);
     display: flex;
@@ -165,6 +165,22 @@ main > section {
     color: #386f9c;
     z-index: 3;  
   ;
+}
+
+#img-cupcake  {
+  position: absolute;
+  max-width: 70%;
+  top:50%;
+
+
+}
+#cupcake-p0 {
+  top:30% !important;
+  left:50% !important;
+}
+#cupcake-p1 {
+  top:70% !important;
+  left:50% !important;
 }
 
 #close {
@@ -338,7 +354,7 @@ body {
       font-size:15vw;
     }
     #second-slide h2 {
-      font-size: 0.6em;
+      font-size: 0.4em;
     }
    
   }

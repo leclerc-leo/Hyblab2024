@@ -34,28 +34,47 @@ const clickOutsidePopup = (name, event) => {
 };
 
 const initSlide2 = async function (popupId, objectId) {
-  document.getElementById(objectId).addEventListener("click", (evt) => { showPopup(popupId,objectId); });
+  document.getElementById(objectId).addEventListener("click", (evt) => {
+    showPopup(popupId, objectId);
+  });
 
   try {
     const response = await fetch("data/obj.json");
     const data = await response.json();
 
-    const objData = data[objectId]; // Récupérer les données de l'objet correspondant
-
+    const objData = data[objectId];
     const title = document.querySelector(`#${popupId} #title-obj`);
-    const text = document.querySelector(`#${popupId} #text-obj`);
     const img = document.querySelector(`#${popupId} #img-obj`);
+    const textContainer = document.querySelector(`#${popupId} #text-container`);
 
-    title.textContent = objData.title || " PAS DE TITRE ";
-    text.textContent = objData.text || " PAS DE TEXTE ";
-    img.src = objData.image || " PAS D'IMAGE ";
+    title.textContent = objData.title || "PAS DE TITRE";
+    img.src = objData.picture || "PAS D'IMAGE";
+    textContainer.innerHTML = '';
 
+    if (objData.text &&Array.isArray(objData.text)) {
+      objData.text.forEach((paragraphText, index) => {
+        const paragraph= document.createElement('p');
+        paragraph.classList.add('text-obj');
+        paragraph.textContent =paragraphText;
+        paragraph.setAttribute('id', `${objectId}-p${index}`);
+        textContainer.appendChild(paragraph);
+      });
+    } else {
+      const paragraph = document.createElement('p');
+      paragraph.classList.add('text-obj');
+      paragraph.textContent = objData.text || "PAS DE TEXTE";
+      textContainer.appendChild(paragraph);
+    }
   } catch (error) {
     console.error("ERREUR JSON :", error);
   }
 
-  document.querySelector(`#${popupId} #close`).addEventListener("click", (evt) => { closePopup(popupId) });
-  document.addEventListener("click", (evt) => { clickOutsidePopup(popupId, evt) });
+  document.querySelector(`#${popupId} #close`).addEventListener("click", (evt) => {
+    closePopup(popupId);
+  });
+  document.addEventListener("click", (evt) => {
+    clickOutsidePopup(popupId, evt);
+  });
 };
 
 // Utilisation de la fonction initSlide2 pour chaque objet dans le JSON
