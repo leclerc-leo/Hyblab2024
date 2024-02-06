@@ -39,9 +39,10 @@ function addBubble(speaker, contents) {
     let container;
     let bubble;
     let i = 0;
-    let dictionary = {
+    let conv_dico = {
         "${user_name}": user_name,
-        "${quartier}": quartier,
+        "${quartier}": quartier_dico[quartier],
+        "${lieu}": data["Lieux"][nextTopic],
         "${video_begin}": "<iframe class=\"videos\" src=\"",
         "${video_end}": "\" title=\"YouTube video player\" frameborder=\"0\"></iframe>",
         "${image_begin}": "<img class=\"conversation_image\" src=\"img/images_conversation/" + quartier.toLocaleLowerCase() + "/",
@@ -55,7 +56,7 @@ function addBubble(speaker, contents) {
 
         contents.forEach(content => {
             setTimeout(() => { 
-                for (const [key, value] of Object.entries(dictionary)) {
+                for (const [key, value] of Object.entries(conv_dico)) {
                     content = content.replace(key, value);
                 }
 
@@ -79,7 +80,7 @@ function addBubble(speaker, contents) {
 
         contents.forEach(content => {
             setTimeout(() => { 
-                for (const [key, value] of Object.entries(dictionary)) {
+                for (const [key, value] of Object.entries(conv_dico)) {
                     content = content.replace(key, value);
                 }
 
@@ -199,7 +200,7 @@ function addQuitBubble(bubbleJson) {
     let placeholder = '<div class="choices-placeholder">';
 
     bubbleJson["choicesLabel"].forEach(textContentChoice => {
-        choiceBubblesContent += '<button class="choice-bubbles" onclick="changeTopic()">'+ textContentChoice + '</button>';
+        choiceBubblesContent += '<button class="choice-bubbles" onclick="changeTopic()">'+ textContentChoice.replace("${lieu}", data["Lieux"][nextTopic]) + '</button>';
         placeholder += '<button class="choice-bubbles" onclick="changeTopic()">'+ textContentChoice + '</button>';
     });
     choiceBubblesContent += '</div>';
@@ -258,20 +259,22 @@ function reloadConversation() {
 
 async function conversationUnfold(nextID) {
     let resp  = await fetch('./data/' + quartier.toLowerCase() + '/' + topic.toLowerCase() + '.json')
-    let data = await resp.json();
+    data = await resp.json();
+
+    console.log(data);
 
     time = 0;
     let i = 0;
     let loopBreak = false;
     while (i < 10 && !loopBreak) {
-        if (nextID == "Fin") {
+        if (nextID === "Fin") {
             loopBreak = true;
         } else {
             treatBubble(data[nextID]);
             lastBubble = data[nextID];
 
             // Si la bulle qu'on vient d'ajouter est un choix ou entrer le nom, on arrête
-            if (data[nextID]["type"] == "nom" || data[nextID]["type"] == "choice" || data[nextID]["type"] == "topicChoice") { 
+            if (data[nextID]["type"] === "nom" || data[nextID]["type"] === "choice" || data[nextID]["type"] === "topicChoice") { 
                 loopBreak = true;
             } else {
                 nextID = data[nextID]["next"][0];
@@ -280,32 +283,80 @@ async function conversationUnfold(nextID) {
         i++;
     }
 }
+let quartier_dispo = {
+    "villejean": true,
+    "st_martin": false,
+    "maurepas": false,
+    "bourg_eveque": false,
+    "cleunay": false,
+    "centre": false,
+    "thabor": false,
+    "jeanne_darc": false,
+    "sud_gare": false,
+    "francisco": false,
+    "brequigny": false,
+    "le_blosne": false
+}
+let quartier_dico = {
+    "villejean": "Villejean",
+    "st_martin": "Nord-St Martin",
+    "maurepas": "Maurepas-Patton",
+    "bourg_eveque": "Bourg L'Evêque-La Touche Moulin du Comte",
+    "cleunay": "Cleunay-Arsenal-Redon",
+    "centre": "Centre",
+    "thabor": "Thabor-St Hélier",
+    "jeanne_darc": "Jeanne d'Arc-Longs Champs-Atalante Beaulieu",
+    "sud_gare": "Sud-gare",
+    "francisco": "Francisco Ferrer-Vern-Poterie",
+    "brequigny": "Bréquigny",
+    "le_blosne": "Le Blosne",
+    "autres": "Indisponible"
+}
+let quartier = sessionStorage.getItem("quartier");
 
+let data;
 let conversation = $(".conversation");
-let quartier = "Villejean";
 let topic = "bienvenue";
 let nextTopic = "bienvenue";
 let time = 0;
 let lastBubble = {"content": []};
 let save = {};
+let extension = "svg";
 
+// On regarde s'il y a déjà une sauvegarde
 let user_name = sessionStorage.getItem("user_name");
 let start;
 if (user_name == null) {
+    user_name = "Vous";
     start = "Debut";
 } else {
     start = "Binvenue1";
 }
 
+// Si le quartier n'est pas implémenté
+if (quartier_dispo[quartier] === false) {
+    quartier = "autres";
+    start = "Debut";
+    extension = "png";
+    console.log("Indisponible");
+}
+
+document.querySelectorAll(".quartier-titre").forEach(element => {
+    element.innerHTML = quartier_dico[quartier];
+});
+console.log(quartier);
+
 backgroundTransition();
+
 setTimeout(() => {
-    if (sessionStorage.getItem("save") == null) {
+    if (sessionStorage.getItem("save") == null || !quartier_dispo[quartier]) {
         conversationUnfold(start);
     } else {
         reloadConversation();
     }
 }, 1000);
 
+/*
 const save_button = document.querySelector(".save");
 save_button.addEventListener("click", function() {
     saveConversation();
@@ -313,4 +364,14 @@ save_button.addEventListener("click", function() {
 const reload_button = document.querySelector(".reload");
 reload_button.addEventListener("click", function() {
     reloadConversation();
+});
+*/
+
+document.querySelectorAll(".topicButton").forEach(button => {
+    button.addEventListener("click", function(event) {
+        closeNav();
+        nextTopic = event.target.dataset.topic;
+        console.log(event.target.dataset.topic);
+        changeTopic();
+    });
 });

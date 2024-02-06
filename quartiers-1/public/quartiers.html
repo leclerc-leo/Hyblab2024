@@ -25,38 +25,39 @@
         <section id="quartier">
 
             <div id="mySidenav" class="sidenav">
-                <button id="closeBtn" onclick="closeNav()"></button>
-                <h1>Villejean</h1>
+                <div id="mySidenav-header">
+                    <button id="closeBtn" onclick="closeNav()"></button>
+                    <h1 class="quartier-titre">Villejean</h1>
+                </div>
                 <p>Accès direct aux thématiques</p>
                 <ul>
                     <!-- # should be replaced by url later -->
                     <hr />
-                    <li><a href="#">Portraits</a></li>
+                    <li><button class="topicButton" data-topic="portrait" onclick="">Portraits d'habitants</button></li>
                     <hr />
-                    <li><a href="#">Associations</a></li>
+                    <li><button class="topicButton" data-topic="association" onclick="">Associations</button></li>
                     <hr />
-                    <li><a href="#">Urbanisme</a></li>
+                    <li><button class="topicButton" data-topic="habitat" onclick="">Habitat</button></li>
                     <hr />
-                    <li><a href="#">Sports</a></li>
+                    <li><button class="topicButton" data-topic="sport" onclick="">Sports</button></li>
                     <hr />
-                    <li><a href="#">Education</a></li>
+                    <li><button class="topicButton" data-topic="education" onclick="">Education</button></li>
                     <hr />
-                    <li><a href="#">Commerces</a></li>
+                    <li><button class="topicButton" data-topic="commerce" onclick="">Commerces</button></li>
                     <hr />
                 </ul>
                 <ul id="mySidenavlastul">
                     <hr />
-                    <li><a href="./reportages">Reportages</a></li>
+                    <li><a href="./reportages">Tous les Reportages</a></li>
                     <hr />
                     <li><a href="../quartiers-1">Carte des quartiers</a></li>
                     <hr />
                     <li><a href="#">Crédits</a></li>
-    
                 </ul>
             </div>
 
             <div class="drawing">
-                <h1>Villejean</h1>
+                <h1 class="quartier-titre">Villejean</h1>
                 <div class="background-container">
                     <img class="empty" src="img/backgrounds/villejean/bienvenue.svg">
                 </div>
