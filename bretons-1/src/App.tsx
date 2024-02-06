@@ -5,7 +5,6 @@ import MySave from './pages/MySave';
 import Credits from './pages/Credits';
 
 export default function App() {
-  console.log("Current location path:", window.location.pathname);
 
   return (
     <div className="App">

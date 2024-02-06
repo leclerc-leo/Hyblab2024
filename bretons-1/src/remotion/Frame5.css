@@ -1,8 +1,3 @@
-@font-face {
-  font-family: 'MaBrushScript';
-  src: url('chemin/vers/brushscript.ttf') format('truetype');
-}
-
 .frame6-image {
     color: #333;
     background-color: gray;
