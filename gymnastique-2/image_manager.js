@@ -68,12 +68,13 @@ const create_versions = (sharp, input, output) => {
                 if (err) console.log(err, input, output + '-' + width + '.webp');
             });
 
-        if (!fs.existsSync(output + '-' + width + '.jpg')
-            || !fs.lstatSync(input).mtimeMs === fs.lstatSync(output + '-' + width + '.jpg').mtimeMs)
+        const input_extension = path.extname(input);
+        if (!fs.existsSync(output + '-' + width + input_extension
+            || !fs.lstatSync(input).mtimeMs === fs.lstatSync(output + '-' + width + input_extension).mtimeMs))
         sharp(input)
             .resize({ width })
-            .toFile(output + '-' + width + '.jpg', (err, info) => {
-                if (err) console.log(err, input, output + '-' + width + '.jpg');
+            .toFile(output + '-' + width + input_extension, (err, info) => {
+                if (err) console.log(err, input, output + '-' + width + input_extension);
             });
     });
 }
@@ -131,14 +132,15 @@ const img_convert = (content, webp_supported) => {
         let new_file = file.replace('img/', 'img/.cache/')
         const new_file_name = path.basename(new_file, path.extname(new_file));
         new_file = new_file.replace(path.extname(new_file), '');
-        const extension = file.endsWith('.gif') ? '.gif' : webp_supported ? '.webp' : '.jpg';
+        const original_extension = path.extname(file);
+        const extension = file.endsWith('.gif') ? '.gif' : webp_supported ? '.webp' : original_extension
 
         const folder = path.dirname(path.join(PUBLIC_PATH, new_file));
         if (!fs.existsSync(folder)) return;
 
         let files = fs.readdirSync(folder).filter( f => get_name(f) === new_file_name && f.endsWith(extension));
         if (files.length === 0) return;
-
+        
         // get the smallest resolution image
         files = files.sort( (a, b) => get_width(b) - get_width(a));
 
