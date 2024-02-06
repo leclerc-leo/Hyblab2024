@@ -1,6 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23" fill="none">
-<circle cx="11.5" cy="11.5" r="11.5" fill="#F5F8FB"/>
-<rect x="4" y="18" width="4.33333" height="15" transform="rotate(-90 4 18)" fill="#FACD60"/>
-<rect x="4" y="13.6667" width="4.33333" height="15" transform="rotate(-90 4 13.6667)" fill="#FA5F5F"/>
-<rect x="4" y="9.33333" width="4.33333" height="15" transform="rotate(-90 4 9.33333)" fill="#25283D"/>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 28.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 30 40" style="enable-background:new 0 0 30 40;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#F5F8FB;}
+	.st1{fill:#FACD60;}
+	.st2{fill:#FA5F5F;}
+	.st3{fill:#25283D;}
+</style>
+<path class="st0" d="M26.5,20c0,6.4-5.1,11.5-11.5,11.5C8.6,31.5,3.5,26.3,3.5,20C3.5,13.6,8.6,8.5,15,8.5
+	C21.4,8.5,26.5,13.6,26.5,20z"/>
+<g>
+	<rect x="7.8" y="22" class="st1" width="14.5" height="4.1"/>
+	<g>
+		<rect x="7.8" y="17.9" class="st2" width="14.5" height="4.1"/>
+		<rect x="7.8" y="13.9" class="st3" width="14.5" height="4.1"/>
+	</g>
+</g>
 </svg>
