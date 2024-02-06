@@ -1,7 +1,4 @@
-#container{
-  margin-left: 0; /* reset margin-left */
-  width: 100vw; /* content is full width (and full height because of the default rule for container height */
-}
+
 
 body{
   font-size: 8vw;

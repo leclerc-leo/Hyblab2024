@@ -5,6 +5,7 @@
 body{
   overflow: hidden;
   background-color: black;
+
 }
   /* Container for the entire content */
 #container {
@@ -31,7 +32,7 @@ body{
     border-radius: 0.2em; /* Rounded corners */
     overflow: hidden; /* Ensure content doesn't overflow */
     margin: 1%;
-    width: 75%; /* Adjust the width as needed */
+    width: 60vmin; /* Adjust the width as needed */
     max-width: 100%; /* Adjust the maximum width as needed */
     display: flex; /* Use flexbox for layout */
   }
@@ -136,6 +137,7 @@ body{
   margin-top: -5%;
   margin-left: 10%;
   margin-right: 10%;
+  
 
 }
 
@@ -177,6 +179,19 @@ body{
 }
 
 
+@media screen and (max-aspect-ratio: 3/4) {
+  p{
+      margin: 0;
+  }
+
+}
+
+/* The content is displayed at 9/16 If the aspect ratio is higher that 9/16  */ 
+@media screen and (max-aspect-ratio: 9/16) {
+  p{
+      margin: 0;
+  }
+}
 
 
 
