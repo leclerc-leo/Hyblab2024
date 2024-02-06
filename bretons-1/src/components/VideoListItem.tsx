@@ -20,6 +20,7 @@ const athleteVideosData = allAthletesData.map((athlete: Athlete) => {
     id: event.IdEvent.toString(),
     title: event.Athlete,
     sport: event.Sport,
+    epreuve:"",
     gain: event.Gain,
     text: event.Performance,
     subtitle: event.Epreuve,
