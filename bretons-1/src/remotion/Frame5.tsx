@@ -3,7 +3,7 @@ import './Frame5.css';
 export const Frame5: React.FC<{ nom: string, age: string, taille: string, sport: string, fun_fact: string }> = ({ nom, age, taille, sport, fun_fact }) => {
     return (
         <div className="container-frame5">
-            <img src='/bretons-1/img/frame6.svg' className="frame6-image"></img>
+            <img src='/bretons-1/img/frame5.png' className="frame6-image"></img>
             <div className="identity">La fiche identité</div>
             <div className="identity-name">de {nom}</div>
             <div className="record">Record</div>

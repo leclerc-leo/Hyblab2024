@@ -1,9 +1,12 @@
+@font-face {
+  font-family: 'MaBrushScript';
+  src: url('chemin/vers/brushscript.ttf') format('truetype');
+}
+
 .frame6-image {
-    font-family: "Golos Text";
     color: #333;
-    background-color: #f9f9f9;
+    background-color: gray;
     padding: 20px;
-    border-radius: 15px;
     width: 100%;
     height: auto;
     margin: auto;
@@ -11,27 +14,9 @@
     position: absolute;
   }
 
-  .bols {
-    width: 40%;
-    height: auto;
-    z-index: 10;
-    top: 21%;
-    left: 6%;
-    position: absolute;
-  }
-
-  .athlete-frame5 {
-    top: 18%;
-    left: 50%;
-    width: 518px;
-    height: 530px;
-    z-index: 20;
-    position: absolute;
-  }
-
   .identity {
     position: absolute;
-    top: 40px;
+    top: 230px;
     left: 40%;
     transform: translateX(-50%);
     color: #fff;
@@ -43,50 +28,56 @@
   
   .identity-name {
     position: absolute;
-    top: 180px;
-    left: 17%;
+    top: 360px;
+    left: 30%;
     transform: translateX(-50%);
     font-size: 1.5em;
     color: #fff;
     font-size: 80px;
   }
 
+  .bols {
+    width: 35%;
+    height: auto;
+    z-index: 10;
+    top: 30%;
+    left: 9%;
+    position: absolute;
+  }
+
+  .athlete-frame5 {
+    top: 26.7%;
+    left: 50%;
+    width: 520px;
+    height: 485px;
+    z-index: 20;
+    position: absolute;
+  }
+
   .fun-fact {
     position: absolute;
-    top: 50%;
-    left: 93%;
+    top: 55%;
+    left: 92.5%;
     transform: translate(-50%, -50%);
     width: 80%;
     color: #000;
     text-align: left;
-    font-size: 60px;
+    font-size: 50px;
     font-weight: bold;
   }
 
   .fun-fact-texte {
     position: absolute;
-    top: 55%;
-    left: 93%;
+    top: 65%;
+    left: 75%;
     transform: translate(-50%, -50%);
-    width: 80%; 
+    width: 480px; 
     color: #000;
     text-align: left;
-    font-size: 50px;
+    font-size: 40px;
   }
 
   .record {
-    position: absolute;
-    top: 58%;
-    left: 45%;
-    transform: translate(-50%, -50%);
-    width: 80%; 
-    color: #000;
-    text-align: left;
-    font-size: 50px;
-    font-weight: bold;
-  }
-
-  .record-texte {
     position: absolute;
     top: 63%;
     left: 45%;
@@ -94,23 +85,35 @@
     width: 80%; 
     color: #000;
     text-align: left;
-    font-size: 50px;
+    font-size: 40px;
+    font-weight: bold;
+  }
+
+  .record-texte {
+    position: absolute;
+    top: 66.5%;
+    left: 26%;
+    transform: translate(-50%, -50%);
+    width: 450px; 
+    color: #000;
+    text-align: left;
+    font-size: 40px;
   }
 
   .age-frame5 {
     position: absolute;
-    top: 22.5%;
-    left: 20%;
-    font-size: 70px;
+    top: 32%;
+    left: 16.3%;
+    font-size: 40px;
     font-family: "Golos Text";
-    transform: rotate(5deg);
+    transform: rotate(6deg);
     z-index: 12;
   }
 
   .taille-frame5 {
     position: absolute;
-    top: 30%;
-    left: 18%;
+    top: 37%;
+    left: 18.5%;
     font-size: 70px;
     font-family: "Golos Text";
     transform: rotate(-7deg);
@@ -119,10 +122,11 @@
 
   .sport-frame5 {
     position: absolute;
-    top: 36.5%;
-    left: 16.2%;
+    top: 43.5%;
+    left: 16.8%;
     font-size: 70px;
     font-family: "Golos Text";
     transform: rotate(5deg);
     z-index: 12;
   }
+
