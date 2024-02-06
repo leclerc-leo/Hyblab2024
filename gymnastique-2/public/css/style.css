@@ -576,6 +576,9 @@ svg.image-histoire, svg.image-jo{
 #mouvement-page #mouvement-contenue-titre-texte{
     margin: 0 5%;
     width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #mouvement-page #mouv-chemin-1{
@@ -587,7 +590,9 @@ svg.image-histoire, svg.image-jo{
     left : 0;
     top : 0;
 }
-
+#mouvement-page .mouv-button{
+    font-size: 3vh;
+}
 #mouvement-page .mouvActif {
     animation: fadeIn 0.5s;
     -webkit-animation: fadeIn 0.5s;
