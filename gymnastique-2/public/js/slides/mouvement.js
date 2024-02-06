@@ -14,8 +14,7 @@ boutonG.addEventListener("click",()=>{
     titre.querySelector(("#mouvement-contenue-titre-texte-"+(idActif-1))).classList.replace("hidden","mouvActif");
     texte.querySelector(("#mouvement-contenue-texte-"+idActif)).classList.replace("mouvActif","hidden");
     texte.querySelector(("#mouvement-contenue-texte-"+(idActif-1))).classList.replace("hidden","mouvActif");
-    pageMouvement.querySelector(("#mouv-chemin-"+idActif)).classList.replace("mouvActif","hidden");
-    pageMouvement.querySelector(("#mouv-chemin-"+(idActif-1))).classList.replace("hidden","mouvActif");
+    console.log(idActif);
     if(idActif-1===1){
         boutonG.classList.add("hidden");
     }
@@ -23,12 +22,11 @@ boutonG.addEventListener("click",()=>{
 boutonD.addEventListener("click",()=>{
     const idActif = getActif(titre);
     boutonG.classList.remove("hidden");
+    console.log(idActif);
     titre.querySelector(("#mouvement-contenue-titre-texte-"+idActif)).classList.replace("mouvActif","hidden");
     titre.querySelector(("#mouvement-contenue-titre-texte-"+(idActif+1))).classList.replace("hidden","mouvActif");
     texte.querySelector(("#mouvement-contenue-texte-"+idActif)).classList.replace("mouvActif","hidden");
     texte.querySelector(("#mouvement-contenue-texte-"+(idActif+1))).classList.replace("hidden","mouvActif");
-    pageMouvement.querySelector(("#mouv-chemin-"+idActif)).classList.replace("mouvActif","hidden");
-    pageMouvement.querySelector(("#mouv-chemin-"+(idActif+1))).classList.replace("hidden","mouvActif");
     if(idActif+1===titre.childElementCount){
         boutonD.classList.add("hidden");
     }
