@@ -3,26 +3,154 @@
         "speaker": "guide",
         "type": "bubble",
         "choicesLabel": [],
-        "content": ["Bienvenue à ${quartier} !", "Je serai ton guide pendant tout ton séjour à Rennes."],
-        "next": ["EntrerNom"]
+        "content": ["Nous voilà arrivé au marché 🍎🍒🍅 !","Il a lieu chaque vendredi au pied des tours de la rue de Bourgogne. Il fait partie du paysage du quartier","D’ailleurs, sais-tu depuis quelle année il a lieu ?"],
+        "next": ["Choix1"]
     },
 
-    "EntrerNom": {
+    "Choix1": {
         "speaker": "user",
-        "type": "nom",
-        "choicesLabel": ["Bonjour, je m'appelle"],
-        "content": ["Bonjour, je m’appelle ${user_name} !"],
-        "next": ["Bienvenue1"]
+        "type": "choice",
+        "choicesLabel": ["1953","1968","1976"],
+        "content": ["1953","1968","1976"],
+        "next": ["ReponseChoix11", "ReponseChoix12","ReponseChoix11"]
     },
 
-    "Bienvenue1": {
+    "ReponseChoix11": {
         "speaker": "guide",
         "type": "bubble",
         "choicesLabel": [],
-        "content": ["Pour commencer je te propose une rapide présentation du quartier.","Situé au nord-ouest de Rennes, ce quartier compte 12 071 habitants en 2017. ","Ancienne étendue de champs, son aménagement est relativement récent puisque c’est dans les années 1950, alors que Rennes est en pleine croissance démographique, que le conseil municipal choisit d’en faire un quartier de logements.","C'est parti pour la visite !","Que souhaites-tu découvrir en premier ?"],
-        "next": ["ChoixTheme"]
+        "content": ["Pas loin !","Le premier marché s’est tenu le 10 octobre 1968. Avant, les habitants devaient faire leur marché dans d’autres quartiers, comme Sainte-Thérèse, au sud de la gare.","Pas très pratique, non ? ☹️"],
+        "next": ["Reponse2"]
+    },
+    
+    "ReponseChoix12": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Tout à fait !","Le premier marché s’est tenu le 10 octobre 1968. Avant, les habitants devaient faire leur marché dans d’autres quartiers, comme Sainte-Thérèse, au sud de la gare.","Pas très pratique, non ? ☹️"],
+        "next": ["Reponse2"]
     },
 
+    "Reponse2": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Alors certains habitants ont lancé une pétition pour créer un marché à Villejean. Légumes, fruits, chaussures ou même galettes-saucisses à emporter, il y a le choix !","Mais dis-moi, tu n’as pas l’air d’avoir très faim ?"],
+        "next": ["Choix3"]
+    },
+
+    "Choix3": {
+        "speaker": "user",
+        "type": "choice",
+        "choicesLabel": ["Y a-t-il des commerces à proximité ?","Je n’aime pas la galette-saucisse… 😥"],
+        "content": ["Y a-t-il des commerces à proximité ?","Je n’aime pas la galette-saucisse… 😥"],
+        "next": ["Reponse31","Reponse32"]
+    },
+
+    "Reponse31": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["C’est vrai qu’à l’origine, Villejean est un quartier résidentiel, construit pour accueillir les travailleurs venus s’installer en ville dans les années 1950.","Mais cela ne veut pas dire que le commerce y est inexistant. Le quartier dispose d’un centre commercial 🏪 rénové en 2010, pour 55 millions d’euros."],
+        "next": ["Choix4"]
+    },
+
+    "Reponse32": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Ah mince ! Il va falloir t’y faire, parce qu’à Rennes, c’est le plat phare !","Mais ne t’en fais pas, si tu as envie d’autre chose, tu trouveras certainement ton bonheur au centre commercial 🏪. Il a été rénové en 2010, pour 55 millions d’euros !"],
+        "next": ["Choix4"]
+    },
+
+    "Choix4": {
+        "speaker": "user",
+        "type": "choice",
+        "choicesLabel": ["Et pour sortir le soir ?","Je préfère faire du lèche-vitrines au centre-ville"],
+        "content": ["Et pour sortir le soir ?","Je préfère faire du lèche-vitrines au centre-ville"],
+        "next": ["Reponse41","Reponse42"]
+    },
+
+    "Reponse41": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Je te l’accorde, la vie nocturne de Villejean n’est pas très animée. Mais le centre-ville n’est pas si loin que ça.","Sais-tu combien de stations de métro 🚇 desservent le quartier ?"],
+        "next": ["Choix5"]
+    },
+
+    "Reponse42": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Alors là, pas de problème !","Sais-tu combien de stations de métro 🚇 desservent le quartier ?"],
+        "next": ["Choix5"]
+    },
+
+    "Choix5": {
+        "speaker": "user",
+        "type": "choice",
+        "choicesLabel": ["1","2","3"],
+        "content": ["1","2","3"],
+        "next": ["Reponse51","Reponse52","Reponse51"]
+    },
+
+    "Reponse51": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Raté ! La ligne A du métro passe par deux stations dans le quartier : Kennedy et Villejean-Université.","Grâce au métro, tu es à cinq minutes du centre historique, et sept minutes de la gare !"],
+        "next": ["Choix6"]
+    },
+
+    "Reponse52": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["C'est ça ! La ligne A du métro passe par deux stations dans le quartier : Kennedy et Villejean-Université.","Grâce au métro, tu es à cinq minutes du centre historique, et sept minutes de la gare !"],
+        "next": ["Choix6"]
+    },
+    
+    "Choix6": {
+        "speaker": "user",
+        "type": "choice",
+        "choicesLabel": ["C’est plutôt raisonnable, en effet","Et si le métro tombe en panne ?"],
+        "content": ["C’est plutôt raisonnable, en effet.","Et si le métro tombe en panne ?"],
+        "next": ["Reponse61","Reponse62"]
+    },
+
+    "Reponse61": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Et ce n’est pas tout : Villejean est aussi desservi par quinze lignes de bus 🚌 et dispose de trois stations de vélo 🚲 en libre-service.","Avec ça, tu as le choix si jamais le métro tombe en panne !"],
+        "next": ["Reponse7"]
+    },
+
+    "Reponse62": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Pas d’inquiétude : Villejean est aussi desservi par quinze lignes de bus 🚌 et dispose de trois stations de vélo 🚲 en libre-service.","Avec ça, tu as le choix si jamais le métro tombe en panne !"],
+        "next": ["Reponse7"]
+    },
+
+    "Reponse7": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Bon, j’ai faim moi. On la mange cette galette ? 😉"],
+        "next": ["QuestionFin"]
+    },
+
+    "QuestionFin": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Et voilà ! Souhaites-tu découvrir une autre thématique ?"],
+        "next": ["ChoixTheme"]
+    },
+    
     "ChoixTheme": {
         "speaker": "user",
         "type": "topicChoice",
@@ -35,15 +163,7 @@
         "speaker": "guide",
         "type": "bubble",
         "choicesLabel": [],
-        "content": ["Parfait ! Allez viens je t’emmène ${lieu}"],
-        "next": ["Aide"]
-    },
-
-    "Aide": {
-        "speaker": "guide",
-        "type": "bubble",
-        "choicesLabel": [],
-        "content": ["Tu peux retrouver toutes les thématiques à tout moment dans le menu en haut à gauche."],
+        "content": ["Parfait ! Allez viens je t’emmène ${lieu}."],
         "next": ["Quitter"]
     },
 

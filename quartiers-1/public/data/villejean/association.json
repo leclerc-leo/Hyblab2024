@@ -35,7 +35,7 @@
         "speaker": "guide",
         "type": "bubble",
         "choicesLabel": [],
-        "content": ["Parfait ! Allez viens je t’emmène ${lieu}"],
+        "content": ["Parfait ! Allez viens je t’emmène ${lieu}."],
         "next": ["Aide"]
     },
 

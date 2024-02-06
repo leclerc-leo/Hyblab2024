@@ -10,9 +10,9 @@ function scrollSmoothlyToBottom() {
 
 function treatBubble(bubbleJson) {
     if (lastBubble["type"] == "choice" || lastBubble["type"] == "topicChoice") {
-        time += 1000;
+        time += 2000;
     } else {
-        time += 1100*lastBubble["content"].length;
+        time += 2100*lastBubble["content"].length;
     }
 
     setTimeout(() => { 
@@ -65,10 +65,10 @@ function addBubble(speaker, contents) {
                 setTimeout(() => { 
                     var element = document.querySelector(".anime_user");
                     element.classList.remove("anime_user");
-                }, 1000 );
+                }, 2000 );
 
                 scrollSmoothlyToBottom();
-            }, 1100*i);
+            }, 2100*i);
             i++;
         });
 
@@ -90,9 +90,9 @@ function addBubble(speaker, contents) {
                 setTimeout(() => { 
                     var element = document.querySelector(".anime_guide");
                     element.classList.remove("anime_guide");
-                }, 1000);
+                }, 2000);
 
-            }, 1100*i);
+            }, 2100*i);
             i++;
         });
     }

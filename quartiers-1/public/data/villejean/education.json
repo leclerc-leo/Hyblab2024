@@ -75,7 +75,7 @@
         "speaker": "guide",
         "type": "bubble",
         "choicesLabel": [],
-        "content": ["Il en existe 5 ! Comme l’association Mosaïque par exemple, qui depuis 2003, s’est lancée dans l’aide aux devoirs.","D’ailleurs, en 2023, ils ont aidé onze élèves à obtenir leur brevet des collèges 🧑‍🎓.","Bon je ne t’en dis pas plus, Natacha le raconte mieux que moi !","${video_begin}https://www.youtube.com/embed/4wR5ubwNarE?si=bT3NZbn262FIpfp2&start=43&end=191&controls=0${video_end}"],
+        "content": ["Et non, il en existe 5 ! Comme l’association Mosaïque par exemple, qui depuis 2003, s’est lancée dans l’aide aux devoirs.","D’ailleurs, en 2023, ils ont aidé onze élèves à obtenir leur brevet des collèges 🧑‍🎓.","Bon je ne t’en dis pas plus, Natacha le raconte mieux que moi !","${video_begin}https://www.youtube.com/embed/4wR5ubwNarE?si=bT3NZbn262FIpfp2&start=43&end=191&controls=0${video_end}"],
         "next": ["Reponse5"]
     },
 
@@ -115,7 +115,7 @@
         "speaker": "guide",
         "type": "bubble",
         "choicesLabel": [],
-        "content": ["Parfait ! Allez viens je t’emmène ${lieu}"],
+        "content": ["Parfait ! Allez viens je t’emmène ${lieu}."],
         "next": ["Quitter"]
     },
 

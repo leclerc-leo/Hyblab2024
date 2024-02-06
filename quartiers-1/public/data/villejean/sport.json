@@ -10,7 +10,7 @@
     "Choix1": {
         "speaker": "user",
         "type": "choice",
-        "choicesLabel": ["Pas du tout", "Les équipements et les clubs","Je ne fais pas de sport"],
+        "choicesLabel": ["Pas du tout", "Y a-t-il des équipements et des clubs ?","Je ne fais pas de sport"],
         "content": ["Non, je ne suis pas inquièt.e 🤷","Il n’y a pas assez d’équipements et de clubs.","Je n’aime pas trop le sport mais qui sait, je pourrais changer d’avis… 😉"],
         "next": ["ReponseChoix11", "ReponseChoix12","ReponseChoix13"]
     },
@@ -131,7 +131,7 @@
         "speaker": "guide",
         "type": "bubble",
         "choicesLabel": [],
-        "content": ["Parfait ! Allez viens je t’emmène ${lieu}"],
+        "content": ["Parfait ! Allez viens je t’emmène ${lieu}."],
         "next": ["Quitter"]
     },
 
