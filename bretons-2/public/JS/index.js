@@ -658,7 +658,6 @@ function page_athlete(athlete,listeAthletes) {
 	const currentIndex = listeAthletesArray.findIndex(item => item.nom === athlete.nom);
 	const nextIndex = (currentIndex + 1) % listeAthletesArray.length;
 	const nextAthlete = listeAthletesArray[nextIndex];
-	
 	 nextAthleteDiv.textContent = `SUIVANT : ${nextAthlete.nom}`;
 	 nextAthleteDiv.classList.add("next-athlete-div");
 	 nextAthleteDiv.addEventListener("click", () => {
