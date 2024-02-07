@@ -47,6 +47,15 @@
 }
 /* -------------- End of Loader --------------*/
 
+/*-------------- Return button */
+.return-button {
+  position: absolute;
+  top: 3%;
+  left: 5%;
+  width: 0.5em;
+  z-index: 2;
+}
+
 
 /* ---------- Important media queries for easy responsive content :-) ----------------- */
 /* Whatever the device used, the content will be displayed full width and height if      */
