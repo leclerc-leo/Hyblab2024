@@ -16,7 +16,7 @@ body{
     background-color: black;
     color: white;
     overflow: hidden;   /* to avoid slider bugs on some browsers */
-    font-family: 'Inter', serif;
+    font-family: 'Inter', sans-serif;
     overflow-y: scroll;
 }
 h1{
@@ -103,13 +103,7 @@ h6{
 }
 /*-------- End of Drawing ----------*/
 
-/*-------- animation ----------*/
-#animation {
-    position: absolute;
-    top: -12%;
-}
 
-/*-------- End of aniation ----------*/
 
 
 
@@ -177,47 +171,66 @@ h6{
     flex-direction: column;
     color: black;
     background-color: white;
+    font-size: 0.5em;
+    color: #292C5E;
+    font-family: nexa;
 }
 
 
 #nom p {
     margin-top: 10%;
+    margin-left: 4%;
 }
 
 #nom li {
     margin: 4%;
-    padding: 1%;
+
+    max-height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 70%;
+    font-weight: bold;
 }
 
-#nom li::marker {
-    color: orange;
-    padding: 1%;
+#nom li::marker{
+    font-size: 1.5em;
+    line-height: 0.1;
 
+ }
+
+#informatique li::marker {
+    color: #EDBDBF;
+    padding: 10%;
 }
-
+#journalisme li::marker {
+    color: #E69973;
+    padding: 10%;
+}
+#AGR li::marker {
+    color: #7D7DB5;
+    padding: 10%;
+}
 /* ----------------- logo ---------------------*/
 
 #logo li img {
     margin: 4%;
 
-    max-height: 50px;
+    max-height: 100px;
     display: block;
     margin-left: auto;
     margin-right: auto;
     max-width: 50%;
     
 }
-/*
-#logo li:last-of-type img {
+
+#logo li:last-of-type  {
         margin: 4%;
-        max-height: 50px;
-        display: inline-block;
+        display: flex;
         margin-left: auto;
         margin-right: auto;
-        max-width: 50%;
-        
+        max-width: 50%; 
     }
-    */
+    
 /* --------------- End of logo ----------------*/
 
 /* -------------- End of credits --------------*/
