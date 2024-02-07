@@ -23,7 +23,7 @@ export const MyVideo: React.FC<MyVideoProps> = ({ id }) => {
   if (athlete == undefined || eventData == undefined) {
     return (<></>);
   }
-  const showFrame6 = eventData.Gain !== "Qualifie" && eventData.Gain !== "";
+  const showFrame6 = eventData.Gain !== "";
   return (
     <>
       <Sequence from={0} durationInFrames={340}>
