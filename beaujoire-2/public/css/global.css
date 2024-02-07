@@ -47,15 +47,96 @@
 }
 /* -------------- End of Loader --------------*/
 
-/*-------------- Return button */
-.return-button {
+/* -------------- Return button -------------- */
+#return {
   position: absolute;
-  top: 3%;
-  left: 5%;
-  width: 0.5em;
-  z-index: 2;
+  top: 0;
+  left: 1em;
 }
 
+#return-img {
+  width: 0.5em;
+}
+
+@media only screen and (max-width: 320px) {
+
+  #return {
+      left:0.5em;
+  }
+
+  #return-img {
+    width: 0.3em;
+  }
+}
+
+/* -------------- Info Button -------------- */
+#info {
+  position: absolute;
+  top: 0;
+  right: 1em;
+}
+
+#info-img {
+  width: 0.5em;
+}
+
+@media only screen and (max-width: 320px) {
+
+  #return {
+    right:0.5em;
+  }
+
+  #return-img {
+    width: 0.3em;
+  }
+}
+/* -------------- Info Pop-Up -------------- */
+.popup-info{
+  background-color: var(--bg-green);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 25%;
+  height: 40%;
+  padding: 30px 40px;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  left: 50%;
+  top: 50%;
+  border-radius: 8px;
+  font-family: 'Neue Haas Unica';
+  color: var(--yellow);
+  text-align: center;
+  z-index: 4;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 1s ease-in-out;
+}
+
+.popup-info button{
+  display: block;
+  position: absolute;
+  right: 1em;
+  top: 1em;
+
+  background-color: transparent;
+  color: var(--yellow);
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.popup-info button img {
+  width: 6.5vmin;
+  display: block;
+}
+
+
+.popup-info p{
+  font-size: 0.2em ;
+  text-align: justify;
+  
+}
 
 /* ---------- Important media queries for easy responsive content :-) ----------------- */
 /* Whatever the device used, the content will be displayed full width and height if      */

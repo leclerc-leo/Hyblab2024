@@ -6,16 +6,6 @@ body{
     font-family: sans-serif;
 }
 
-#return {
-    position: absolute;
-    top: 0;
-    left: 1em;
-}
-
-#return-img {
-    width: 0.7em;
-}
-
 
 #footer {
     display: flex;
@@ -336,9 +326,3 @@ body{
     }
 }
 
-@media only screen and (max-width: 320px) {
-
-    #return {
-        left:0.5em;
-    }
-}
