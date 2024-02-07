@@ -144,6 +144,23 @@ h1{
     flex-direction: column;
     margin: 10px 10% 10px 10px;
 }
+.rp_guide:first-child .cont_guide:first-child{
+    border-top-left-radius: 0;
+}
+.rp_guide:first-child .cont_guide:last-child{
+    border-radius: 18px;
+}
+.rp_guide:first-child .cont_guide:last-child::before{
+    display: none;
+}
+.rp_guide:first-child .cont_guide:first-child::before{
+    content: '';
+    position: absolute;
+    top: -0.68em;
+    left: 0;
+    border: 0.65em solid;
+    border-color: transparent transparent #E69973 #E69973;
+}
 .name_guide{
     display: flex;
     margin: 10px;
