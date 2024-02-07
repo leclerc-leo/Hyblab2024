@@ -1,88 +1,38 @@
 "use strict";
-const showPopup = (name,objID) => {
-  const popup = document.getElementById(name);
-  popup.style.display = "block";
-  setTimeout(() => {
-    popup.classList.add("show");
-  }, 20);
-  document.getElementById(objID).classList.add("clicked");
-  const svgElements = document.getElementsByTagName('svg');
-  for(let i = 0; i < svgElements.length; i++) {
-    svgElements[i].classList.add("blured");
-    svgElements[i].style.transition = "filter 0.5s";
-  }
-};
 
-const closePopup = (name) => {
-  const popup = document.getElementById(name);
-  popup.classList.remove("show");
-  setTimeout(() => {
-    popup.style.display = "none";
-  }, 20);
-  const svgElements = document.getElementsByTagName('svg');
-  for(let i = 0; i < svgElements.length; i++) {
-    svgElements[i].classList.remove("blured");
-    svgElements[i].style.transition = "filter 0.5s";
-  }
-};
+// async init function (because of the awaits on fetches)
+const initSlideIntro = async function () {
+  const titre = document.querySelector("#titre");
+  const sous_titre = document.querySelector("#sous-titre");
+  const texte1 = document.querySelector("#texte1");
+  const down_arrow = document.querySelector("#down-arrow");
+  const bag = document.querySelector("#bag");
 
-const clickOutsidePopup = (name, event) => {
-  let popup = document.getElementById(name);
-  if (!popup.contains(event.target) && popup.classList.contains("show")) {
-    closePopup(name);
-  }
-};
+  // get the data from our data/first-slide.json file
+  let response = await fetch("data/first-slide.json");
+  const data = await response.json();
 
-const initSlide2 = async function (popupId, objectId) {
-  document.getElementById(objectId).addEventListener("click", (evt) => {
-    showPopup(popupId, objectId);
+  /* set the title
+  titre.innerHTML = data.title;
+
+  // set the subtitle
+  sous_titre.innerHTML = data.soustitre;
+*/
+  // set the text
+  texte1.innerHTML = data.texte1;
+
+  anime({
+    targets: down_arrow,
+    translateY: [0, 25],
+    direction: "alternate",
+    loop: true,
+    easing: "easeInOutQuad",
   });
-
-  try {
-    const response = await fetch("data/obj.json");
-    const data = await response.json();
-
-    const objData = data[objectId];
-    const title = document.querySelector(`#${popupId} #title-obj`);
-    const img = document.querySelector(`#${popupId} #img-obj`);
-    const textContainer = document.querySelector(`#${popupId} #text-container`);
-
-    title.textContent = objData.title || "PAS DE TITRE";
-    img.src = objData.picture || "PAS D'IMAGE";
-    textContainer.innerHTML = '';
-
-    if (objData.text &&Array.isArray(objData.text)) {
-      objData.text.forEach((paragraphText, index) => {
-        const paragraph= document.createElement('p');
-        paragraph.classList.add('text-obj');
-        paragraph.textContent =paragraphText;
-        paragraph.setAttribute('id', `${objectId}-p${index}`);
-        textContainer.appendChild(paragraph);
-      });
-    } else {
-      const paragraph = document.createElement('p');
-      paragraph.classList.add('text-obj');
-      paragraph.textContent = objData.text || "PAS DE TEXTE";
-      textContainer.appendChild(paragraph);
-    }
-  } catch (error) {
-    console.error("ERREUR JSON :", error);
-  }
-
-  document.querySelector(`#${popupId} #close`).addEventListener("click", (evt) => {
-    closePopup(popupId);
-  });
-  document.addEventListener("click", (evt) => {
-    clickOutsidePopup(popupId, evt);
+  anime({
+    targets: bag,
+    width: "95%",
+    top: "70%",
+    easing: "easeInOutQuad",
+    duration: 300,
   });
 };
-
-// Utilisation de la fonction initSlide2 pour chaque objet dans le JSON
-initSlide2("popup_manique", "manique");
-initSlide2("popup_cupcake", "cupcake");
-initSlide2("popup_coupe", "coupe");
-initSlide2("popup_gourde", "gourde");
-initSlide2("popup_algerie", "algerie");
-initSlide2("popup_medaille", "medaille");
-initSlide2("popup_photo", "photo");
-initSlide2("popup_tel", "tel");
