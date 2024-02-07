@@ -145,44 +145,40 @@ main > section {
   position: relative;
   text-align: left;
   top: 5%;
-  margin-bottom: 0.45em;
   right: 10%;
 }
 #img-obj {
   position: absolute;
-  width: 40%;
-  right: 0%;
-  top: 0%;
+  width: 38%;
+  right: -5%;
+  top: -5%;
 }
 #second-slide .popup-content p {
   position: absolute;
-    top: 30%; /* pas enlever pour pas tout casser */
-    left: 50%; 
-    width: 75%;
-    transform: translateX(-50%);
-    display: flex;
-    font-size: 20%;
-    color: #386f9c;
-    z-index: 3;  
-  ;
+  top: 30%;
+  left: 50%;
+  width: 85%;
+  transform: translateX(-50%);
+  display: flex;
+  font-size: 20%;
+  color: #386f9c;
+  z-index: 3;
 }
 
-#img-cupcake  {
+#img-cupcake {
   position: absolute;
-  max-width: 45%;
-  top:35%;
-
-
+  max-width: 55%;
+  top: 24%;
 }
 #cupcake-p0 {
   position: absolute;
-  top:20% !important;
-  left:50% !important;
+  top: 18% !important;
+  left: 50% !important;
 }
 #cupcake-p1 {
   position: absolute;
-  top:61% !important;
-  left:50% !important;
+  top: 57% !important;
+  left: 50% !important;
 }
 #close {
   color: #fff;
@@ -191,8 +187,8 @@ main > section {
   border-radius: 5px;
   margin-top: 2em;
   position: absolute;
-  bottom:5%;
-  width:27%;
+  bottom: 2%;
+  width: 27%;
 }
 
 /* ---------- Positioning of logos on the last slide -------------------- */
