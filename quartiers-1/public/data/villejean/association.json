@@ -3,7 +3,7 @@
         "speaker": "guide",
         "type": "bubble",
         "choicesLabel": [],
-        "content": ["Cette thématique n'est malheureusement pas encore disponible, en revanche tu peux en choisir une autre"],
+        "content": ["Cette thématique n'est malheureusement pas encore disponible, en revanche tu peux en choisir une autre."],
         "next": ["ChoixTheme"]
     },
 

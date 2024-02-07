@@ -172,12 +172,12 @@ function addTopicBubble(bubbleJson) {
     let placeholder = '<div class="choices-placeholder">';
 
     bubbleJson["choicesLabel"].forEach(textContentChoice => {
-        choiceBubblesContent += '<button class="choice-bubbles" onclick="topicSelected(this)">'+ textContentChoice + '</button>';
-        placeholder += '<button class="choice-bubbles" onclick="topicSelected(this)">'+ textContentChoice + '</button>';
-
         if (textContentChoice.toLocaleLowerCase() == topic) {
-            choiceBubblesContent = choiceBubblesContent.replace("choice-bubbles", "choice-bubbles greyed");
+            choiceBubblesContent += '<button class="choice-bubbles greyed" onclick="topicSelected(this)">'+ textContentChoice + '</button>';
+        } else {
+            choiceBubblesContent += '<button class="choice-bubbles" onclick="topicSelected(this)">'+ textContentChoice + '</button>';
         }
+        placeholder += '<button class="choice-bubbles" onclick="topicSelected(this)">'+ textContentChoice + '</button>';        
     });
     choiceBubblesContent += '</div>';
     placeholder += '</div>';
@@ -395,7 +395,6 @@ document.querySelectorAll(".quartier-titre").forEach(element => {
 document.querySelectorAll(".topicButton").forEach(button => {
     button.addEventListener("click", function(event) {
         closeNav();
-        console.log(canChange);
         if (canChange) {
             nextTopic = event.target.dataset.topic;
             changeTopic();
