@@ -71,7 +71,6 @@ const homeStories = function () {
         el: ".swiper-pagination",
         clickable: true,
       },
-      autoHeight: true,
       allowTouchMove: true, // à mettre en false quand on aura fini de coder pour eviter de swiper
     });
 
@@ -114,7 +113,6 @@ const homeStories = function () {
         el: ".swiper-pagination",
         clickable: true,
       },
-      autoHeight: true,
       allowTouchMove: false, // a mettre en false quand on aura fini de coder pour eviter de swiper
       loop: true // pour swiper en boucle
     });
@@ -162,9 +160,11 @@ const homeStories = function () {
           loader.style.opacity = '1';
           loader.style.zIndex = '3000';
 
+          container.innerHTML = html;
+
+          retour = document.querySelector('#back_button');
           retour.style.display = 'block';
 
-          container.innerHTML = html;
 
           setTimeout(() => {
             anime({
