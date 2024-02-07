@@ -61,7 +61,7 @@
   height: 64px;
   background-image: '/bretons-1/img/souris3.png';
   background-size: contain;
-  animation: moveCursor 5s;
+  animation: moveCursor 6s;
   animation-timing-function: ease-in-out;
   z-index: 15;
 }

@@ -42,7 +42,7 @@ export const Frame4: React.FC<{ Gentilé: string, gain: string, Epreuve: string,
         elementImageJaune.style.transform = 'translateX(300vw)';
         elementImageRed.style.transform = 'translateX(300vw)';
       }
-    }, 4500);
+    }, 5500);
     let delay = 50,
       delay_start = 0;
     let paragraphe = document.getElementsByClassName("animatedtext");
