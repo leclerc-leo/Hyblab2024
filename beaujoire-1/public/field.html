@@ -181,12 +181,15 @@
 			</div>
 			<div class="compare-overlay">
 				<div class="compare-titles">
-					<h1 id="compare-title" class="small-title green">Stats</h1>
+					<h1 id="compare-title" class="small-title green">
+						Statistiques
+					</h1>
 					<h2 id="compare-subtitle">POSTE</h2>
 				</div>
 				<div class="compare-players">
 					<div class="compare-item" id="f-player">
-						<img src="./img/card.svg" alt="Joueur à comparer" />
+						<img src="./img/compare.svg" alt="Joueur à comparer" />
+						<h1 id="name" style="display: none"></h1>
 						<button
 							class="gm-btn gb-shutter comparo"
 							id="validate-button">
@@ -194,7 +197,8 @@
 						</button>
 					</div>
 					<div class="compare-item" id="c-player">
-						<img src="./img/card.svg" alt="Joueur à comparer" />
+						<img src="./img/compare.svg" alt="Joueur à comparer" />
+						<h1 id="name" style="display: none"></h1>
 						<button
 							class="gm-btn gb-shutter comparo"
 							id="validate-button">
@@ -206,58 +210,86 @@
 					<div class="compare-grid-item">
 						<p>MATCHS</p>
 						<div class="comparo-container" id="matchs-bar">
-							<div class="player1-bar"></div>
-							<div class="player2-bar"></div>
+							<div class="player1-bar">
+								<div class="bar-score">0</div>
+							</div>
+							<div class="player2-bar">
+								<div class="bar-score">0</div>
+							</div>
 						</div>
 					</div>
 					<div class="compare-grid-item">
 						<p>BUTS</p>
 						<div class="comparo-container" id="buts-bar">
-							<div class="player1-bar"></div>
-							<div class="player2-bar"></div>
+							<div class="player1-bar">
+								<div class="bar-score">0</div>
+							</div>
+							<div class="player2-bar">
+								<div class="bar-score">0</div>
+							</div>
 						</div>
 					</div>
 					<div class="compare-grid-item">
 						<p>COUPES</p>
 						<div class="comparo-container" id="coupes-bar">
-							<div class="player1-bar"></div>
-							<div class="player2-bar"></div>
+							<div class="player1-bar">
+								<div class="bar-score">0</div>
+							</div>
+							<div class="player2-bar">
+								<div class="bar-score">0</div>
+							</div>
 						</div>
 					</div>
 					<div class="compare-grid-item">
 						<p>TAILLE</p>
 						<div class="comparo-container" id="taille-bar">
-							<div class="player1-bar"></div>
-							<div class="player2-bar"></div>
+							<div class="player1-bar">
+								<div class="bar-score">0</div>
+							</div>
+							<div class="player2-bar">
+								<div class="bar-score">0</div>
+							</div>
 						</div>
 					</div>
 				</div>
-				<button class="round-btn" id="compare-back" title="close">
+				<button
+					class="round-btn"
+					id="compare-back"
+					title="close"
+					onclick="closeCompareOverlay()">
 					<img src="./img/back-btn.svg" alt="close" />
 				</button>
-				<div id="compare-carousel-overlay>">
-					<div id="compare-carousel">
-						<h1 id="poste-title" class="small-title green">
-							Poste
-						</h1>
-						<div class="carousel">
-							<div class="carousel-item">Joueur 1</div>
-							<div class="carousel-item">Joueur 2</div>
-							<div class="carousel-item">Joueur 3</div>
-							<!-- Ajoutez plus d'éléments de carrousel ici -->
-						</div>
-						<div class="bottom-btn" id="compare-close">
-							<button
-								class="round-btn"
-								id="back-overlay"
-								title="close">
-								<img src="./img/back-btn.svg" alt="close" />
-							</button>
-						</div>
+				<div id="compare-carousel">
+					<h1 id="poste-title" class="small-title green">Poste</h1>
+					<div id="cmp-carou">
+						<div class="carousel-item">Joueur 1</div>
+						<div class="carousel-item">Joueur 2</div>
+						<div class="carousel-item">Joueur 3</div>
+						<!-- Ajoutez plus d'éléments de carrousel ici -->
+					</div>
+					<div class="bottom-btn" id="compare-close">
+						<button
+							class="round-btn"
+							id="back-overlay"
+							title="close"
+							onclick="closeCompareCarousel()">
+							<img src="./img/close.svg" alt="close" />
+						</button>
 					</div>
 				</div>
 			</div>
 		</div>
+		<div
+			class="gif-container"
+			id="attaquant-gif"
+			style="display: none"></div>
+		<div class="gif-container" id="milieu-gif" style="display: none"></div>
+		<div
+			class="gif-container"
+			id="defenseur-gif"
+			style="display: none"></div>
+		<div class="gif-container" id="gardien-gif" style="display: none"></div>
+		<div class="gif-container" id="coach-gif" style="display: none"></div>
 	</body>
 	<script src="./js/field.js"></script>
 </html>

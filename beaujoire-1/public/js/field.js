@@ -31,6 +31,7 @@ function initizalizePage() {
 				playerName.style.transform = `translateX(-${overflow / 2}px)`;
 			}
 		});
+		selectedPlayerId = null;
 	};
 
 	const urlParams = new URLSearchParams(window.location.search);
@@ -122,7 +123,73 @@ document.addEventListener("DOMContentLoaded", () => {
 	document.querySelector("#compare-btn").addEventListener("click", () => {
 		handleCompareClick();
 	});
+
+	document
+		.querySelectorAll(".player.player-clickable.forward")
+		.forEach((player) => {
+			player.addEventListener("click", () => {
+				animatePlayer(
+					"attaquant-gif",
+					"img/animations/attaquant-fond-gris.gif",
+					1200
+				);
+			});
+		});
+	document
+		.querySelectorAll(".player.player-clickable.midfielder")
+		.forEach((player) => {
+			player.addEventListener("click", () => {
+				animatePlayer(
+					"milieu-gif",
+					"img/animations/milieu-fond-gris.gif",
+					1020
+				);
+			});
+		});
+
+	document
+		.querySelectorAll(".player.player-clickable.defender")
+		.forEach((player) => {
+			player.addEventListener("click", () => {
+				animatePlayer(
+					"defenseur-gif",
+					"img/animations/defence-fond-gris.gif",
+					1100
+				);
+			});
+		});
+
+	document.querySelector("#goalkeeper").addEventListener("click", () => {
+		animatePlayer(
+			"gardien-gif",
+			"img/animations/gardien-fond-gris.gif",
+			1360
+		);
+	});
+
+	document.querySelector("#entraineur").addEventListener("click", () => {
+		animatePlayer("coach-gif", "img/animations/coach-fond-gris.gif", 1360);
+	});
 });
+
+function animatePlayer(elementId, imgSrc, timeoutDuration) {
+	const element = document.getElementById(elementId);
+
+	const imgElement = document.createElement("img");
+	imgElement.src = imgSrc;
+	element.appendChild(imgElement);
+
+	element.style.display = "flex";
+	element.style.opacity = "1";
+
+	setTimeout(() => {
+		element.style.opacity = "0";
+		setTimeout(() => {
+			element.removeChild(imgElement);
+			element.style.display = "none";
+		}, 200);
+	}, timeoutDuration);
+}
 
 function areAllPlayersSelected() {
 	let compteur = 0;
@@ -211,7 +278,8 @@ function handleValidateButtonClick() {
 
 	//Hide the carousel
 	document.querySelectorAll(".carousel-item").forEach((item) => {
-		item.classList.remove("selected");
+		item.classList.remove("focused");
+		item.classList.remove("unfocused");
 	});
 	document.querySelector(".carousel-overlay").style.display = "none";
 	selectedPlayerId = null;
@@ -733,11 +801,6 @@ function handleCarouselScroll() {
 	carouselItems[validFocusedIndex].classList.add("focused");
 }
 
-let comparePlayerMatchs = 0;
-let comparePlayerButs = 0;
-let comparePlayerCoupes = 0;
-let comparePlayerTaille = 0;
-
 function handleCompareClick() {
 	//Open compare overlay with focused player
 	const focusedItem = document.querySelector(".carousel-item.focused");
@@ -746,93 +809,70 @@ function handleCompareClick() {
 		(player) => player.NOM === focusedPlayerName
 	);
 
-	const focusedPlayerMatchs = focusedPlayer.MATCHS;
-	const focusedPlayerButs = focusedPlayer.BUTS;
-	const focusedPlayerCoupes = parseFloat(
-		focusedPlayer.champ_fr +
-			focusedPlayer.tr_champ +
-			focusedPlayer.cp_fr +
-			focusedPlayer.lig_champ
-	);
-	const focusedPlayerTaille = parseFloat(focusedPlayer.TAILLE);
 	const focusedPlayerCarte = focusedPlayer.CARTE;
-
+	let poste = focusedPlayer.POSTE;
 	const compareOverlay = document.querySelector(".compare-overlay");
 	compareOverlay.style.display = "flex";
 	const comparePlayers = document.querySelector(".compare-players");
-
+	document.querySelector("#compare-subtitle").textContent = poste;
+	comparePlayers.querySelector("#c-player").querySelector("img").src =
+		"./img/compare.svg";
+	comparePlayers
+		.querySelector("#c-player")
+		.querySelector("#validate-button").style.visibility = "hidden";
 	comparePlayers
 		.querySelector("#c-player")
 		.querySelector("img")
 		.addEventListener("click", () => {
-			showCompareCarousel(selectedPlayerId);
+			showCompareCarousel(focusedPlayer);
 		});
 	compareOverlay
 		.querySelector("#f-player")
 		.querySelector("img").src = `img/cartes/${focusedPlayerCarte}.webp`;
-
-	let matchs_bar = compareOverlay.querySelector("#matchs-bar");
-	let buts_bar = compareOverlay.querySelector("#buts-bar");
-	let coupes_bar = compareOverlay.querySelector("#coupes-bar");
-	let taille_bar = compareOverlay.querySelector("#taille-bar");
-
-	let tot_matchs = focusedPlayerMatchs + comparePlayerMatchs;
-	let tot_buts = focusedPlayerButs + comparePlayerButs;
-	let tot_coupes = focusedPlayerCoupes + comparePlayerCoupes;
-	let tot_taille = focusedPlayerTaille + comparePlayerTaille;
-
-	matchs_bar.querySelector(".player1-bar").style.width =
-		tot_matchs !== 0
-			? `${(focusedPlayerMatchs / tot_matchs) * 100}%`
-			: "0%";
-	matchs_bar.querySelector(".player2-bar").style.width =
-		tot_matchs !== 0
-			? `${(comparePlayerMatchs / tot_matchs) * 100}%`
-			: "0%";
-
-	buts_bar.querySelector(".player1-bar").style.width =
-		tot_buts !== 0 ? `${(focusedPlayerButs / tot_buts) * 100}%` : "0%";
-	buts_bar.querySelector(".player2-bar").style.width =
-		tot_buts !== 0 ? `${(comparePlayerButs / tot_buts) * 100}%` : "0%";
-
-	coupes_bar.querySelector(".player1-bar").style.width =
-		tot_coupes !== 0
-			? `${(focusedPlayerCoupes / tot_coupes) * 100}%`
-			: "0%";
-	coupes_bar.querySelector(".player2-bar").style.width =
-		tot_coupes !== 0
-			? `${(comparePlayerCoupes / tot_coupes) * 100}%`
-			: "0%";
-
-	taille_bar.querySelector(".player1-bar").style.width =
-		tot_taille !== 0
-			? `${(focusedPlayerTaille / tot_taille) * 100}%`
-			: "0%";
-	taille_bar.querySelector(".player2-bar").style.width =
-		tot_taille !== 0
-			? `${(comparePlayerTaille / tot_taille) * 100}%`
-			: "0%";
+	resetBars();
+	updateCompareOverlay();
+	compareOverlay
+		.querySelector("#f-player")
+		.querySelector("#validate-button")
+		.addEventListener("click", () => {
+			updatePlayerElement(
+				document.getElementById(selectedPlayerId),
+				focusedPlayerName
+			);
+			document.querySelector(".compare-overlay").style.display = "none";
+			document.querySelector("#compare-carousel").style.display = "none";
+			document.querySelector(".carousel-overlay").style.display = "none";
+		});
 }
 
 function showCompareCarousel(player) {
 	//Show carousel with players to compare
-
-	const poste = getPositionFromId(selectedPlayerId);
-
+	let poste = player.POSTE;
 	const filteredPlayers = playersData.filter(
 		(player) => player.POSTE === poste
 	);
 
-	const carousel = document.querySelector("#compare-carousel");
+	const compare_carousel = document.querySelector("#compare-carousel");
+	const carousel = compare_carousel.querySelector("#cmp-carou");
+	compare_carousel.querySelector("#poste-title").textContent = poste;
 	carousel.innerHTML = "";
 
-	filteredPlayers.forEach((player) => {
-		const carouselItemHTML = createCarouselItem(player);
+	filteredPlayers.forEach((playert) => {
+		if (playert.NOM === player.NOM) {
+			return;
+		}
+		const carouselItemHTML = createCompareCarouselItem(playert);
 		carousel.appendChild(carouselItemHTML);
 	});
 
-	document.querySelector("#compare-carousel-overlay").style.display = "flex";
-	document.getElementById("compare-subtitle").textContent = poste;
+	document.querySelectorAll(".player1-bar").forEach((bar) => {
+		bar.style.animationName = "";
+	});
+	document.querySelectorAll(".player2-bar").forEach((bar) => {
+		bar.style.animationName = "";
+	});
+
+	document.querySelector("#compare-carousel").style.display = "flex";
 
 	// Wait for the next animation frame before scrolling to the middle item
 	const middleItemIndex = Math.floor(carousel.children.length / 2);
@@ -842,25 +882,192 @@ function showCompareCarousel(player) {
 		left: scrollPosition,
 		behavior: "smooth",
 	});
-
-	middleItem.classList.add("focused");
 }
 
 function createCompareCarouselItem(player) {
 	const carouselItem = document.createElement("div");
 	carouselItem.classList.add("compare-carousel-item");
 	carouselItem.innerHTML = `
-		<div>
-			<img class="carte-img" src="img/cartes/${player.CARTE}.webp" alt="Photo de ${player.NOM}" />
-			<h1 id="name" style="display: none">${player.NOM}</h1>
-		</div>
+		<img class="carte-img" src="img/cartes/${player.CARTE}.webp" alt="Photo de ${player.NOM}" />
+		<h1 id="name" style="display: none">${player.NOM}</h1>
 	`;
 
 	carouselItem.addEventListener("click", () => {
+		const comparePlayerName =
+			carouselItem.querySelector("#name").textContent;
+		const comparePlayer = playersData.find(
+			(player) => player.NOM === comparePlayerName
+		);
+		updateCompareOverlay(comparePlayer);
 		document.querySelector("#compare-carousel").style.display = "none";
+
+		let c_player = document
+			.querySelector(".compare-overlay")
+			.querySelector("#c-player");
+		c_player.querySelector(
+			"img"
+		).src = `img/cartes/${comparePlayer.CARTE}.webp`;
+		c_player.querySelector("#validate-button").style.visibility = "visible";
+		c_player
+			.querySelector("#validate-button")
+			.addEventListener("click", () => {
+				updatePlayerElement(
+					document.getElementById(selectedPlayerId),
+					comparePlayer.NOM
+				);
+				document.querySelector(".compare-overlay").style.display =
+					"none";
+				document.querySelector("#compare-carousel").style.display =
+					"none";
+				document.querySelector(".carousel-overlay").style.display =
+					"none";
+			});
 	});
 
 	return carouselItem;
+}
+
+function updateCompareOverlay(comparePlayer) {
+	comparePlayer = comparePlayer || {
+		MATCHS: 0,
+		BUTS: 0,
+		champ_fr: 0,
+		tr_champ: 0,
+		cp_fr: 0,
+		lig_champ: 0,
+		TAILLE: 0,
+	};
+
+	// Récupérer les données du joueur actuellement en focus
+	const focusedItem = document.querySelector(".carousel-item.focused");
+	const focusedPlayerName = focusedItem.querySelector("#name").textContent;
+	const focusedPlayer = playersData.find(
+		(player) => player.NOM === focusedPlayerName
+	);
+
+	//calculer total coupes
+	let focusedCoupes =
+		focusedPlayer.champ_fr +
+		focusedPlayer.tr_champ +
+		focusedPlayer.cp_fr +
+		focusedPlayer.lig_champ;
+	let comparePlayerCoupes =
+		comparePlayer.champ_fr +
+		comparePlayer.tr_champ +
+		comparePlayer.cp_fr +
+		comparePlayer.lig_champ;
+
+	// ParseFloat pour éviter les problèmes de concaténation
+	focusedPlayer.TAILLE = parseFloat(focusedPlayer.TAILLE);
+	comparePlayer.TAILLE = parseFloat(comparePlayer.TAILLE);
+
+	// Calculer les totaux
+	let tot_matchs = focusedPlayer.MATCHS + comparePlayer.MATCHS;
+	let tot_buts = focusedPlayer.BUTS + comparePlayer.BUTS;
+	let tot_coupes = focusedCoupes + comparePlayerCoupes;
+	let tot_taille = focusedPlayer.TAILLE + comparePlayer.TAILLE;
+
+	// Mettre à jour les barres
+	let matchs_bar = document.querySelector("#matchs-bar");
+	let buts_bar = document.querySelector("#buts-bar");
+	let coupes_bar = document.querySelector("#coupes-bar");
+	let taille_bar = document.querySelector("#taille-bar");
+
+	matchs_bar.querySelector(".player1-bar > .bar-score").textContent =
+		focusedPlayer.MATCHS;
+	matchs_bar.querySelector(".player2-bar > .bar-score").textContent =
+		comparePlayer.MATCHS;
+	if (
+		matchs_bar.querySelector(".player2-bar > .bar-score").textContent != "0"
+	) {
+		matchs_bar.querySelector(".player2-bar > .bar-score").style.visibility =
+			"visible";
+	}
+
+	buts_bar.querySelector(".player1-bar > .bar-score").textContent =
+		focusedPlayer.BUTS;
+	buts_bar.querySelector(".player2-bar > .bar-score").textContent =
+		comparePlayer.BUTS;
+	if (
+		buts_bar.querySelector(".player2-bar > .bar-score").textContent != "0"
+	) {
+		buts_bar.querySelector(".player2-bar > .bar-score").style.visibility =
+			"visible";
+	}
+
+	coupes_bar.querySelector(".player1-bar > .bar-score").textContent =
+		focusedCoupes;
+	coupes_bar.querySelector(".player2-bar > .bar-score").textContent =
+		comparePlayerCoupes;
+	if (
+		coupes_bar.querySelector(".player2-bar > .bar-score").textContent != "0"
+	) {
+		coupes_bar.querySelector(".player2-bar > .bar-score").style.visibility =
+			"visible";
+	}
+
+	taille_bar.querySelector(".player1-bar > .bar-score").textContent =
+		focusedPlayer.TAILLE;
+	taille_bar.querySelector(".player2-bar > .bar-score").textContent =
+		comparePlayer.TAILLE;
+	if (
+		taille_bar.querySelector(".player2-bar > .bar-score").textContent != "0"
+	) {
+		taille_bar.querySelector(".player2-bar > .bar-score").style.visibility =
+			"visible";
+	}
+
+	matchs_bar.querySelector(".player1-bar").style.width =
+		tot_matchs !== 0
+			? `${(focusedPlayer.MATCHS / tot_matchs) * 100}%`
+			: "0%";
+	matchs_bar.querySelector(".player2-bar").style.width =
+		tot_matchs !== 0
+			? `${(comparePlayer.MATCHS / tot_matchs) * 100}%`
+			: "0%";
+
+	buts_bar.querySelector(".player1-bar").style.width =
+		tot_buts !== 0 ? `${(focusedPlayer.BUTS / tot_buts) * 100}%` : "0%";
+	buts_bar.querySelector(".player2-bar").style.width =
+		tot_buts !== 0 ? `${(comparePlayer.BUTS / tot_buts) * 100}%` : "0%";
+
+	coupes_bar.querySelector(".player1-bar").style.width =
+		tot_coupes !== 0 ? `${(focusedCoupes / tot_coupes) * 100}%` : "0%";
+	coupes_bar.querySelector(".player2-bar").style.width =
+		tot_coupes !== 0
+			? `${(comparePlayerCoupes / tot_coupes) * 100}%`
+			: "0%";
+
+	taille_bar.querySelector(".player1-bar").style.width =
+		tot_taille !== 0
+			? `${(focusedPlayer.TAILLE / tot_taille) * 100}%`
+			: "0%";
+	taille_bar.querySelector(".player2-bar").style.width =
+		tot_taille !== 0
+			? `${(comparePlayer.TAILLE / tot_taille) * 100}%`
+			: "0%";
+
+	// Animer les barres
+	document.querySelectorAll(".player1-bar").forEach((bar) => {
+		bar.style.animationName = "scaleSide";
+	});
+	document.querySelectorAll(".player2-bar").forEach((bar) => {
+		bar.style.animationName = "scaleSide";
+	});
+}
+
+function resetBars() {
+	document.querySelectorAll("player1-bar").forEach((bar) => {
+		bar.style.width = "0%";
+		bar.querySelector(".bar-score").textContent = "0";
+	});
+
+	document.querySelectorAll("player2-bar").forEach((bar) => {
+		bar.style.width = "0%";
+		bar.querySelector(".bar-score").textContent = "0";
+		bar.querySelector(".bar-score").style.visibility = "hidden";
+		bar.style.animationName = "";
+	});
 }
 
 function handleCaptain() {}
@@ -870,9 +1077,18 @@ if (areAllPlayersSelected()) {
 	document.querySelector("#share").style.display = "flex";
 }
 
-//Compare Section
-let team1Possession = 60; // Remplacez par la possession réelle de l'équipe 1
-let team2Possession = 40; // Remplacez par la possession réelle de l'équipe 2
+function closeCompareCarousel() {
+	document.querySelector("#compare-carousel").style.display = "none";
+}
 
-document.querySelector(".player1-bar").style.width = `${team1Possession}%`;
-document.querySelector(".player2-bar").style.width = `${team2Possession}%`;
+function closeCompareOverlay() {
+	document.querySelector(".compare-overlay").style.display = "none";
+}
+
+function closeCarouselOverlay() {
+	document.querySelector(".carousel-overlay").style.display = "none";
+}
+
+function closeBioOverlay() {
+	document.querySelector(".bio-overlay").style.display = "none";
+}
