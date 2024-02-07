@@ -118,11 +118,11 @@
 
   .sport-frame5 {
     position: absolute;
-    top: 43.5%;
-    left: 16.8%;
-    font-size: 70px;
+    top: 44.5%;
+    left: 15.8%;
+    font-size: 50px;
     font-family: "Golos Text";
-    transform: rotate(5deg);
+    transform: rotate(4deg);
     z-index: 12;
   }
 
