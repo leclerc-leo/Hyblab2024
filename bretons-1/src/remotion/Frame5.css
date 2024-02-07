@@ -46,9 +46,9 @@
   }
 
   .athlete-frame5 {
-    top: 26.7%;
+    top: 26.9%;
     left: 50%;
-    width: 520px;
+    width: 518px;
     height: 485px;
     z-index: 20;
     position: absolute;
@@ -113,18 +113,22 @@
   .taille-frame5 {
     position: absolute;
     top: 37%;
-    left: 18.5%;
+    left: 17.5%;
+    width: 200px;
     font-size: 70px;
     font-family: "Golos Text";
     transform: rotate(-7deg);
     z-index: 12;
+    text-align: center;
   }
 
   .sport-frame5 {
     position: absolute;
     top: 44.5%;
-    left: 15.8%;
+    left: 15.5%;
+    width: 226px;
     font-size: 50px;
+    text-align: center;
     font-family: "Golos Text";
     transform: rotate(4deg);
     z-index: 12;
