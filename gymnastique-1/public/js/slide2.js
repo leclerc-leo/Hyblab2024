@@ -56,8 +56,11 @@ const initSlide2 = async function () {
   });
 
   // Retrieve the partner's topic from our API
-  let response = await fetch("api/topic");
+  let response = await fetch("data/ticket.json");
   const data1 = await response.json();
+  document.getElementById("popup-title").innerHTML = data1.title;
+  document.getElementById("popup-subtitle").innerHTML = data1.subtitle;
+  document.getElementById("popup-text").innerHTML = data1.texte;
 
   // Get some dummy data
   response = await fetch("data/dummy.json");
