@@ -25,11 +25,11 @@ export const Frame7: React.FC<{ athlete: string, podium: Podium[], gain:string}>
         switch (pays) {
             case 'France': return '/bretons-1/img/fr.svg';
             case 'Allemand': return '/bretons-1/img/allemagne.svg';
-            case 'État-Unis': return '/bretons-1/img/us.svg';
+            case 'Etat-Unis': return '/bretons-1/img/USA.svg';
             case 'Angleterre': return '/bretons-1/img/Angleterre.svg';
             case 'Danemark': return '/bretons-1/img/Danemark.svg';
             case 'Pays-Bas': return '/bretons-1/img/Pays-Bas.svg';
-            case 'Suède': return '/bretons-1/img/Suède.svg';
+            case 'Suede': return '/bretons-1/img/Suede.svg';
             default: return '';
         }
     };
