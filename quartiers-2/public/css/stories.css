@@ -47,10 +47,7 @@ main{
     width: 100%;
     height: auto;
     position: absolute;
-    /*
     top: 0;
-    */
-    bottom: 10%;
 }
 
 #mainSwiperHomeStories .swiper-slide{
@@ -91,11 +88,11 @@ main{
 
 /* personnage */
 .swiper-slide .devanture-slide .personnage{
-    height: 40%;
+    height: 42%;
     width: auto;
     z-index: 2000;
     position: absolute;
-    top: 9em;
+    top: 8em;
 }
 
 #recap_button{
@@ -219,9 +216,9 @@ main{
 
 #mainSwiperHomeStories .swiper-slide h1{
     position: absolute;
-    top: 1em;
-    margin-right: 0.5em;
-    margin-left: 0.5em;
+    top: 4em;
+    margin-right: 1em;
+    margin-left: 1em;
     font-size: 0.5em;
     text-align: center;
     font-family: "Roboto", sans-serif;
