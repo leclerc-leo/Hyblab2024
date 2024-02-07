@@ -3,12 +3,12 @@ votesTmp =  JSON.parse(localStorage.getItem('votes'));
 console.log(votesTmp);
 var allVotes = true ;
 
-for (let i = 1; i <= 12; i++) {
+/*for (let i = 1; i <= 12; i++) {
   if(votesTmp[i] === 0 ) {
     allVotes = false ;
     break;
   }
-}
+}*/
 
 /************* Archives *************/
 function checkVotes() {

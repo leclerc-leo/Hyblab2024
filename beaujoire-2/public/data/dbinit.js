@@ -3,13 +3,69 @@ const sqlite3 = require('sqlite3');
 const path = require('path');
 const dbname = path.join(__dirname, 'beaujoire-2.db');
 const fs = require("fs");
-
+const jsonFilePath = path.join(__dirname, 'joueurs.json');
 const exists = fs.existsSync(dbname);
 // Ouverture de la base de données
 let db = new sqlite3.Database(dbname, err => {
     if (err) throw err;
     console.log('Database started: ' + dbname);
 });
+
+// Function to convert date format from 'DD/MM/YYYY' to 'YYYY-MM-DD'
+function convertDateFormat(dateString) {
+    // Split the date components
+    const dateComponents = dateString.split('/');
+
+    // Check if the date has valid components
+    if (dateComponents.length === 3) {
+        const day = dateComponents[0].padStart(2, '0');
+        const month = dateComponents[1].padStart(2, '0');
+        const year = dateComponents[2];
+
+        // Return the converted date in 'YYYY-MM-DD' format
+        return `${year}-${month}-${day}`;
+    } else {
+        // Return null for invalid date format
+        return null;
+    }
+}
+
+// Function to insert players from JSON
+function insertPlayersFromJSON(jsonData) {
+    const insertStmt = db.prepare(`
+        INSERT INTO Joueurs(nom, prenom, age, naissance, nationalité1, nationalité2, poste, AnnéeDébut, AnnéeFin, selections, buts, photo, citation, biographie)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+    `);
+
+    jsonData.forEach(player => {
+        // Replace "/" or "NULL" with null for appropriate fields
+        const convertedNaissance = player.naissance === '/' || player.naissance === 'NULL' ? null : convertDateFormat(player.naissance);
+        const convertedAnneeFin = player.annéeFin === '/' || player.annéeFin === 'NULL' ? null : player.annéeFin;
+        const convertedButs = player.buts === '/' || player.buts === 'NULL' ? null : player.buts;
+        const convertedPhoto = player.photo === '/' || player.photo === 'NULL' ? null : player.photo;
+        const convertedCitation = player.citation === '/' || player.citation === 'NULL' ? null : player.citation;
+        const convertedBiographie = player.biographie === '/' || player.biographie === 'NULL' ? null : player.biographie;
+
+        insertStmt.run(
+            player.nom,
+            player.prenom,
+            parseInt(player.age,10),
+            convertedNaissance,
+            parseInt(player.nationalite1,10),
+            parseInt(player.nationalite2,10),
+            parseInt(player.poste,10),
+            parseInt(player.annéeDébut,10),
+            convertedAnneeFin,
+            parseInt(player.selections,10),
+            parseInt(convertedButs,10),
+            convertedPhoto,
+            convertedCitation,
+            convertedBiographie
+        );
+    });
+
+    insertStmt.finalize();
+}
 
 db.serialize(() => {
     if (!exists) {
@@ -141,21 +197,60 @@ db.serialize(() => {
                 ('Sélectionneur')
         `);
         db.run(`
-        INSERT OR IGNORE INTO Nationalités(nationalité) VALUES 
-        ('Français'),
-        ('Nigérian'),
-        ('Camerounais');
+        INSERT OR IGNORE INTO Nationalités (nationalité, abreviation) VALUES
+        ('Français', 'FRA'),
+            ('Burkinabé', 'BFA'),
+            ('Nigérian', 'NGA'),
+            ('Camerounais', 'CMR'),
+            ('Portugais', 'PRT'),
+            ('Roumain', 'ROU'),
+            ('Congolais', 'COD'),
+            ('Serbien', 'SRB'),
+            ('Argentin', 'ARG'),
+            ('Italien', 'ITA'),
+            ('Mali', 'MLI'),
+            ('Algérien', 'DZA'),
+            ('Tchadien', 'TCD'),
+            ('Arménien', 'ARM'),
+            ('Nouvelle-Calédonien', 'NCL'),
+            ('Brasilien', 'BRA'),
+            ('Libanais', 'LBN'),
+            ('Ghanéen', 'GHA'),
+            ('Espagnol', 'ESP'),
+            ('Marocain', 'MAR'),
+            ('Colombien', 'COL');
         `);
 
-        db.run(`
+        // Read JSON file and insert players
+        fs.readFile(jsonFilePath, 'utf8', (err, data) => {
+            if (err) {
+                console.error(err.message);
+                return;
+            }
+
+            const jsonData = JSON.parse(data);
+            insertPlayersFromJSON(jsonData);
+
+            // Close the database connection
+            db.close((err) => {
+                if (err) {
+                    console.error(err.message);
+                    return;
+                }
+                console.log('Data inserted successfully.');
+            });
+        });
+    }
+
+/*        db.run(`
         INSERT INTO Joueurs(nom, prenom, age, naissance, nationalité1, nationalité2, poste, AnnéeDébut, AnnéeFin, selections, buts, photo, citation, biographie)
-        VALUES 
-        ('Makélélé', 'Claude', 50, '1973-02-18', (SELECT id FROM Nationalités WHERE nationalité = 'Français'), NULL, 7, 1992, 1997, 207, 12, NULL, 'lorem ipsum dolor sit amet', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'),
+        VALUES
+            ('Makélélé', 'Claude', 50, '1973-02-18', (SELECT id FROM Nationalités WHERE nationalité = 'Français'), NULL, 7, 1992, 1997, 207, 12, NULL, 'lorem ipsum dolor sit amet', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'),
         ('Vahirua', 'Marama', 43, '1980-05-12', (SELECT id FROM Nationalités WHERE nationalité = 'Français'), NULL, 7, 1997, 2004, 141, 41, NULL, 'lorem ipsum dolor sit amet', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'),
         ('Simon', 'Moses', 28, '1995-07-12', (SELECT id FROM Nationalités WHERE nationalité = 'Nigérian'), NULL, 7, 2019, NULL, 198, 33, NULL, 'lorem ipsum dolor sit amet', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'),
         ('Ganago', 'Ignatius', 24, '1999-02-16', (SELECT id FROM Nationalités WHERE nationalité = 'Camerounais'), NULL, 7, 2022, NULL, 48, 6, NULL, NULL, NULL);
         `);
-    }
+    } */
     db.all('SELECT * FROM Joueurs', (err, rows) => {
         if (err) console.error(err.message);
         else console.log('Résultat de la sélection : ', rows)
