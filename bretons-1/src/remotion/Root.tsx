@@ -29,27 +29,27 @@ export const MyVideo: React.FC<MyVideoProps> = ({ id }) => {
       <Sequence from={0} durationInFrames={340}>
         <Frame1 text={athlete.Athlete} sexe={athlete.Sexe} gain={eventData.Gain} rang={eventData.Rang} sous_titre={eventData.Epreuve} image={athlete.Photo}></Frame1>
       </Sequence>
-      <Sequence from={340} durationInFrames={350}>
+      <Sequence from={340} durationInFrames={410}>
         <Frame4 Gentilé={athlete.Gentilé} gain={eventData.Gain} Epreuve={eventData.Epreuve} sexe={athlete.Sexe} Sport={eventData.Sport} Epreuve_1={eventData.Epreuve__1}></Frame4>
       </Sequence>
       {!showFrame6 && (
-        <Sequence from={660} durationInFrames={240}>
+        <Sequence from={720} durationInFrames={360}>
           <Frame7 athlete={athlete.Athlete}  podium={eventData["Podium (nom + résultat)"] as Podium[]} gain={eventData.Gain} />
         </Sequence>
         )}
       {showFrame6 && (
-        <Sequence from={660} durationInFrames={240}>
+        <Sequence from={720} durationInFrames={360}>
           <Frame2 athlete={athlete.Athlete}  podium={eventData["Podium (nom + résultat)"] as Podium[]} />
         </Sequence>
         )}
-      <Sequence from={900} durationInFrames={300}>
+      <Sequence from={1080} durationInFrames={360}>
         <Frame3 text={athlete.Athlete}></Frame3>
       </Sequence>
-      <Sequence from={1200} durationInFrames={300}>
+      <Sequence from={1440} durationInFrames={300}>
         <Frame5 nom={athlete.Athlete} age={athlete["Date de naissance"]} taille="Taille" sport="Sport" fun_fact={athlete["Fun fact"]}></Frame5>
       </Sequence>
       {showFrame6 && (
-        <Sequence from={1440} durationInFrames={240}>
+        <Sequence from={1740} durationInFrames={240}>
           <Frame6 sex={athlete.Sexe} />
         </Sequence>
         )}

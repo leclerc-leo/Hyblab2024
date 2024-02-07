@@ -25,7 +25,7 @@ function VideoPlayer({ id }: { id: string }) {
     useEffect(() => {
         const timer = setTimeout(() => {
         setAllowSwipe(true);
-        }, 6000); // 6 seconds
+        }, 20000); // 20 seconds
 
         return () => clearTimeout(timer); // clear the timer 
     }, []); // An empty dependency array means that this effect will only run once when the component is loaded.
@@ -42,7 +42,7 @@ function VideoPlayer({ id }: { id: string }) {
             <Player
                 component={MyVideo}
                 inputProps={{ id: id }}
-                durationInFrames={1680}
+                durationInFrames={1980}
                 compositionWidth={1080}
                 compositionHeight={1920}
                 fps={60}
