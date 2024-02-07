@@ -170,23 +170,38 @@ document.addEventListener("DOMContentLoaded", () => {
 	document.querySelector("#entraineur").addEventListener("click", () => {
 		animatePlayer("coach-gif", "img/animations/coach-fond-gris.gif", 1360);
 	});
+
+	document.addEventListener("click", () => {
+		document.querySelector("#back-sound").play();
+	});
+
+	document
+		.querySelector(".dropdown")
+		.querySelector("img")
+		.addEventListener("click", () => {
+			document.querySelectorAll("audio").forEach((audio) => {
+				audio.muted = !audio.muted;
+			});
+		});
 });
 
 function animatePlayer(elementId, imgSrc, timeoutDuration) {
 	const element = document.getElementById(elementId);
+	const imgElement = element.querySelector("img");
 
-	const imgElement = document.createElement("img");
 	imgElement.src = imgSrc;
-	element.appendChild(imgElement);
 
 	element.style.display = "flex";
 	element.style.opacity = "1";
 
 	setTimeout(() => {
+		element.querySelector("audio").play();
+	}, 10);
+	setTimeout(() => {
 		element.style.opacity = "0";
 		setTimeout(() => {
-			element.removeChild(imgElement);
 			element.style.display = "none";
+			imgElement.src = "";
 		}, 200);
 	}, timeoutDuration);
 }
@@ -873,6 +888,9 @@ function showCompareCarousel(player) {
 	});
 
 	document.querySelector("#compare-carousel").style.display = "flex";
+	document
+		.querySelector(".carousel")
+		.addEventListener("scroll", handleCompareScroll);
 
 	// Wait for the next animation frame before scrolling to the middle item
 	const middleItemIndex = Math.floor(carousel.children.length / 2);
@@ -1068,6 +1086,39 @@ function resetBars() {
 		bar.querySelector(".bar-score").style.visibility = "hidden";
 		bar.style.animationName = "";
 	});
+}
+
+function handleCompareScroll() {
+	const carousel = document.querySelector("#cmp-carou");
+	const carouselItems = document.querySelectorAll(".compare-carousel-item");
+	const scrollPosition = carousel.scrollLeft;
+	const itemWidth = carouselItems[0].offsetWidth;
+	const carouselWidth = itemWidth * carouselItems.length;
+	const middleIndex = Math.floor(carouselItems.length / 2);
+
+	const focusedIndex = Math.round(
+		(scrollPosition + itemWidth / 100000) / itemWidth
+	);
+
+	carouselItems.forEach((item, index) => {
+		// Si l'élément a la classe 'focused', la retirer et ajouter la class 'unfocused'
+		if (item.classList.contains("focus")) {
+			item.classList.add("unfocused");
+		}
+		item.classList.remove("focus");
+		// Si l'élément a la classe 'unfocused', la retirer
+		if (item.classList.contains("unfocused")) {
+			item.classList.remove("unfocused");
+		}
+	});
+
+	// Ensure the focused index is within valid bounds
+	const validFocusedIndex = Math.min(
+		Math.max(focusedIndex, 0),
+		carouselItems.length - 1
+	);
+	// Add the 'focused' class to the item
+	carouselItems[validFocusedIndex].classList.add("focus");
 }
 
 function handleCaptain() {}
