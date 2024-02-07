@@ -118,6 +118,10 @@ document.addEventListener("DOMContentLoaded", () => {
 			menu.style.animationName = "dropDownAnimation";
 		}
 	});
+
+	document.querySelector("#compare-btn").addEventListener("click", () => {
+		handleCompareClick();
+	});
 });
 
 function areAllPlayersSelected() {
@@ -613,15 +617,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function handleCarouselAnimation() {
 	const carousel = document.querySelector(".carousel");
-	const carouselItems = document.querySelectorAll(".carousel-item");
-	carouselItems.forEach((item) => {
-		if (!item.classList.contains("focused")) {
-			if (
-				item.style.animationName === "shrinkAnimation" ||
+	const flipContainers = document.querySelectorAll(".flip-container");
+	flipContainers.forEach((item) => {
+		if (
+			!item.parentElement.classList.contains("focused") &&
+			!item.parentElement.classList.contains("unfocused")
+		) {
+			if (item.style.animationName === "shrinkAnimation") {
+				item.style.animationName = "growBack";
+			} else if (
+				item.style.animationName === "growBack" ||
 				item.style.animationName === ""
 			) {
-				item.style.animationName = "growBack";
-			} else if (item.style.animationName === "growBack") {
 				item.style.animationName = "shrinkAnimation";
 			}
 		}
@@ -685,6 +692,10 @@ function handleCarouselScroll() {
 	);
 
 	carouselItems.forEach((item, index) => {
+		// Si l'élément a la classe 'focused', la retirer et ajouter la class 'unfocused'
+		if (item.classList.contains("focused")) {
+			item.classList.add("unfocused");
+		}
 		item.classList.remove("focused");
 		// Si l'élément a la classe 'flip', la retirer
 		const flipContainer = item.querySelector(".flip-container");
@@ -707,6 +718,10 @@ function handleCarouselScroll() {
 				carouBtn.style.opacity = "0";
 			}
 		}
+		// Si l'élément a la classe 'unfocused', la retirer
+		if (item.classList.contains("unfocused")) {
+			item.classList.remove("unfocused");
+		}
 	});
 
 	// Ensure the focused index is within valid bounds
@@ -714,11 +729,150 @@ function handleCarouselScroll() {
 		Math.max(focusedIndex, 0),
 		carouselItems.length - 1
 	);
-
+	// Add the 'focused' class to the item
 	carouselItems[validFocusedIndex].classList.add("focused");
 }
+
+let comparePlayerMatchs = 0;
+let comparePlayerButs = 0;
+let comparePlayerCoupes = 0;
+let comparePlayerTaille = 0;
+
+function handleCompareClick() {
+	//Open compare overlay with focused player
+	const focusedItem = document.querySelector(".carousel-item.focused");
+	const focusedPlayerName = focusedItem.querySelector("#name").textContent;
+	const focusedPlayer = playersData.find(
+		(player) => player.NOM === focusedPlayerName
+	);
+
+	const focusedPlayerMatchs = focusedPlayer.MATCHS;
+	const focusedPlayerButs = focusedPlayer.BUTS;
+	const focusedPlayerCoupes = parseFloat(
+		focusedPlayer.champ_fr +
+			focusedPlayer.tr_champ +
+			focusedPlayer.cp_fr +
+			focusedPlayer.lig_champ
+	);
+	const focusedPlayerTaille = parseFloat(focusedPlayer.TAILLE);
+	const focusedPlayerCarte = focusedPlayer.CARTE;
+
+	const compareOverlay = document.querySelector(".compare-overlay");
+	compareOverlay.style.display = "flex";
+	const comparePlayers = document.querySelector(".compare-players");
+
+	comparePlayers
+		.querySelector("#c-player")
+		.querySelector("img")
+		.addEventListener("click", () => {
+			showCompareCarousel(selectedPlayerId);
+		});
+	compareOverlay
+		.querySelector("#f-player")
+		.querySelector("img").src = `img/cartes/${focusedPlayerCarte}.webp`;
+
+	let matchs_bar = compareOverlay.querySelector("#matchs-bar");
+	let buts_bar = compareOverlay.querySelector("#buts-bar");
+	let coupes_bar = compareOverlay.querySelector("#coupes-bar");
+	let taille_bar = compareOverlay.querySelector("#taille-bar");
+
+	let tot_matchs = focusedPlayerMatchs + comparePlayerMatchs;
+	let tot_buts = focusedPlayerButs + comparePlayerButs;
+	let tot_coupes = focusedPlayerCoupes + comparePlayerCoupes;
+	let tot_taille = focusedPlayerTaille + comparePlayerTaille;
+
+	matchs_bar.querySelector(".player1-bar").style.width =
+		tot_matchs !== 0
+			? `${(focusedPlayerMatchs / tot_matchs) * 100}%`
+			: "0%";
+	matchs_bar.querySelector(".player2-bar").style.width =
+		tot_matchs !== 0
+			? `${(comparePlayerMatchs / tot_matchs) * 100}%`
+			: "0%";
+
+	buts_bar.querySelector(".player1-bar").style.width =
+		tot_buts !== 0 ? `${(focusedPlayerButs / tot_buts) * 100}%` : "0%";
+	buts_bar.querySelector(".player2-bar").style.width =
+		tot_buts !== 0 ? `${(comparePlayerButs / tot_buts) * 100}%` : "0%";
+
+	coupes_bar.querySelector(".player1-bar").style.width =
+		tot_coupes !== 0
+			? `${(focusedPlayerCoupes / tot_coupes) * 100}%`
+			: "0%";
+	coupes_bar.querySelector(".player2-bar").style.width =
+		tot_coupes !== 0
+			? `${(comparePlayerCoupes / tot_coupes) * 100}%`
+			: "0%";
+
+	taille_bar.querySelector(".player1-bar").style.width =
+		tot_taille !== 0
+			? `${(focusedPlayerTaille / tot_taille) * 100}%`
+			: "0%";
+	taille_bar.querySelector(".player2-bar").style.width =
+		tot_taille !== 0
+			? `${(comparePlayerTaille / tot_taille) * 100}%`
+			: "0%";
+}
+
+function showCompareCarousel(player) {
+	//Show carousel with players to compare
+
+	const poste = getPositionFromId(selectedPlayerId);
+
+	const filteredPlayers = playersData.filter(
+		(player) => player.POSTE === poste
+	);
+
+	const carousel = document.querySelector("#compare-carousel");
+	carousel.innerHTML = "";
+
+	filteredPlayers.forEach((player) => {
+		const carouselItemHTML = createCarouselItem(player);
+		carousel.appendChild(carouselItemHTML);
+	});
+
+	document.querySelector("#compare-carousel-overlay").style.display = "flex";
+	document.getElementById("compare-subtitle").textContent = poste;
+
+	// Wait for the next animation frame before scrolling to the middle item
+	const middleItemIndex = Math.floor(carousel.children.length / 2);
+	const middleItem = carousel.children[middleItemIndex];
+	const scrollPosition = middleItem.offsetLeft - middleItem.offsetWidth / 2;
+	carousel.scrollTo({
+		left: scrollPosition,
+		behavior: "smooth",
+	});
+
+	middleItem.classList.add("focused");
+}
+
+function createCompareCarouselItem(player) {
+	const carouselItem = document.createElement("div");
+	carouselItem.classList.add("compare-carousel-item");
+	carouselItem.innerHTML = `
+		<div>
+			<img class="carte-img" src="img/cartes/${player.CARTE}.webp" alt="Photo de ${player.NOM}" />
+			<h1 id="name" style="display: none">${player.NOM}</h1>
+		</div>
+	`;
+
+	carouselItem.addEventListener("click", () => {
+		document.querySelector("#compare-carousel").style.display = "none";
+	});
+
+	return carouselItem;
+}
+
+function handleCaptain() {}
 
 if (areAllPlayersSelected()) {
 	console.log("Tous les joueurs ont été sélectionnés");
 	document.querySelector("#share").style.display = "flex";
 }
+
+//Compare Section
+let team1Possession = 60; // Remplacez par la possession réelle de l'équipe 1
+let team2Possession = 40; // Remplacez par la possession réelle de l'équipe 2
+
+document.querySelector(".player1-bar").style.width = `${team1Possession}%`;
+document.querySelector(".player2-bar").style.width = `${team2Possession}%`;

@@ -38,20 +38,23 @@
 
 @keyframes shrinkAnimation {
 	0% {
-		transform: scale(1);
+		transform: scale(1) translateY(0);
+		filter: blur(0);
 	}
 	100% {
 		transform: scale(0.8) translateY(30%);
+		filter: blur(5px);
 	}
 }
 
 @keyframes growBack {
 	0% {
-		transform: scale(0.8);
+		transform: scale(0.8) translateY(30%);
+		filter: blur(5px);
 	}
-
 	100% {
-		transform: scale(1) translateY(-30%);
+		transform: scale(1) translateY(0);
+		filter: blur(0);
 	}
 }
 
@@ -61,7 +64,7 @@
 }
 
 * {
-	font-family: "Industry", "Bebas Neue Pro", sans-serif;
+	font-family: "Industry", "Bebas Neue", sans-serif;
 	color: #ffffff;
 	min-width: 0;
 	min-height: 0;
@@ -756,7 +759,7 @@ body {
 	perspective: 10000px; /* Effet de profondeur */
 	width: 100%;
 	height: 60%;
-	animation: 0.5s ease-in-out;
+	animation: 0.5s ease-in-out forwards;
 }
 
 /* Styling pour les faces recto et verso */
@@ -766,7 +769,6 @@ body {
 	transform-style: preserve-3d;
 	transition: transform 0.6s;
 	transform-origin: center;
-	animation: 0.5s ease-in-out;
 }
 
 /* Styling pour le recto */
@@ -775,7 +777,6 @@ body {
 	height: 100%;
 	backface-visibility: hidden;
 	transition: rotate 0.2s ease-in-out, scale 0.5s ease-in-out;
-	animation: 0.5s ease-in-out;
 }
 
 /* Styling pour le verso */
@@ -785,14 +786,12 @@ body {
 	backface-visibility: hidden;
 	transform: translateY(-100%) rotateY(180deg);
 	transition: rotate 0.2s ease-in-out, scale 0.5s ease-in-out;
-	animation: 0.5s ease-in-out;
 }
 
 /* Styling pour l'effet de retournement lorsque la classe 'flip' est ajoutée */
 .flip-container.flip .flipper {
 	transform: translateY(30%) rotateY(180deg) scale(1.1);
 	transition: 0.5s ease;
-	animation: 0.5s ease-in-out;
 }
 
 .back-title {
@@ -815,4 +814,122 @@ body {
 	color: white;
 	font-size: 14px;
 	text-align: center;
+}
+
+/* Compare Section */
+.compare-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #2a2a2f;
+	z-index: 1000000000;
+	display: none;
+	flex-direction: column;
+	align-items: center;
+}
+
+.compare-titles {
+	margin: 3%;
+	align-self: flex-start;
+}
+
+.compare-overlay > * > h1,
+h2 {
+	margin: 1%;
+}
+
+#compare-subtitle {
+	font-size: 1rem;
+	font-weight: 300;
+}
+.compare-players {
+	width: 100%;
+	height: 30%;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 10px;
+	justify-content: center;
+	align-items: center;
+	margin: 1% 0;
+}
+
+.compare-players > * {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+}
+
+.compare-players > * > img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+.compare-players > * > .comparo {
+	width: -moz-fit-content;
+	width: fit-content;
+	text-align: center;
+	align-self: center;
+	line-height: unset;
+	padding-bottom: 0.75rem;
+	margin: 1% 0 0 0;
+}
+
+.compare-overlay > .compare-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr 1fr 1fr 1fr;
+	gap: 10px;
+	animation-duration: 0.5s;
+	animation-fill-mode: forwards;
+	align-items: center;
+	justify-content: center;
+	height: 50%;
+	width: 100%;
+}
+
+.compare-grid-item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	align-self: center;
+	justify-self: center;
+	width: 100%;
+}
+
+.compare-grid-item > * {
+	text-align: center;
+}
+
+#compare-back,
+#compare-close {
+	position: absolute;
+	left: 0;
+	bottom: 1%;
+}
+
+.comparo-container {
+	display: flex;
+	height: 20px;
+	width: 90%;
+	background-color: #1e1e28;
+	overflow: hidden;
+	border-radius: 20px;
+}
+
+.player2-bar {
+	height: 100%;
+	background-color: #00a55a;
+	border-radius: 20px;
+}
+
+.player1-bar {
+	height: 100%;
+	background-color: #fadc00;
+	border-radius: 20px;
 }

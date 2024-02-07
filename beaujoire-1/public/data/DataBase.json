@@ -31,7 +31,7 @@
         "cp_fr": 0,
         "lig_champ": 0,
         "tr_champ": 0,
-        "DOS": "« Mes meilleurs moments? Venir tous les jours à l'entraînement et côtoyer les Touré, Amisse, Halilhodzic, Eydelie, Le Roux, Burruchaga, Kombouaré... <span style =' font-weight: bold;'>C'était un cadeau de la vie.</span> »"
+        "DOS": "« Mes meilleurs moments ? Venir tous les jours à l'entraînement et côtoyer les Touré, Amisse, Halilhodzic, Eydelie, Le Roux, Burruchaga, Kombouaré... <span style =' font-weight: bold;'>C'était un cadeau de la vie.</span> »"
     },
     {
         "NOM": "LANDREAU",
@@ -56,7 +56,7 @@
         "POSTE": "GARDIEN",
         "NUMÉRO": 1,
         "DURÉE": "19-24",
-        "MATCHS": "171...",
+        "MATCHS": 171,
         "BUTS": 42,
         "COUPES": "Coupe de FRANCE X1",
         "TAILLE": "1.96",
@@ -158,11 +158,11 @@
         "BUTS": 1,
         "COUPES": "Champion de FRANCE X1 Coupe de FRANCE X2",
         "TAILLE": "1.75",
-        "BIO": "Quelle aurait été sa carrière s’il ne s’était pas effondré sur un tacle violent du Marseillais Patrick Blondeau ? Arrière droit de qualité et un jeu de jambe indescriptible, il avait toutes les qualités pour réussir sur la scène européenne. Ses centres millimétrés et sa vivacité d’esprit dans les dédoublements offensifs ont marqué son passage à la Beaujoire.",
+        "BIO": "Quelle aurait été sa carrière s’il ne s’était pas effondré sur un tacle violent du Marseillais Patrick Blondeau ? <span style =' font-weight: bold;'>Arrière droit de qualité et un jeu de jambe indescriptible,</span> il avait toutes les qualités pour réussir sur la scène européenne. Ses <span style =' font-weight: bold;'>centres millimétrés et sa vivacité d’esprit</span> dans les dédoublements offensifs ont marqué son passage à la Beaujoire.",
         "champ_fr": 1,
         "cp_fr": 2,
         "tr_champ": 0,
-        "DOS": "« On nous a parfois comparés à la génération du titre 94-95 mais elle comptait beaucoup plus de talents. En revanche, on avait cette force collective, cette confiance et cette capacité à rebondir malgré les embûches.»"
+        "DOS": "« On nous a parfois comparés à la génération du titre 94-95 mais elle comptait beaucoup plus de talents. <span style =' font-weight: bold;'>En revanche, on avait cette force collective, cette confiance et cette capacité à rebondir malgré les embûches.</span>»"
     },
     {
         "NOM": "AYACHE",
@@ -251,6 +251,7 @@
         "NOM": "DESAILLY",
         "CARTE": "fcn-77",
         "POSTE": "STOPPEUR",
+        "NUMÉRO": 8,
         "DURÉE": "86-92",
         "MATCHS": 178,
         "BUTS": 5,
@@ -287,7 +288,7 @@
         "MATCHS": 82,
         "BUTS": 11,
         "TAILLE": "1.89",
-        "BIO": "À l'ouest, il trouve un renouveau. Originaire de Plouvorn, le défenseur Yvon Le Roux joue à Brest puis Monaco, où il se blesse au genou. Recruté par Suaudeau, qui croit en ses capacités de défenseur, le FC Nantes sort « le colosse de Plouvorn » d’une période compliquée. Un titre de champion de France en 1984, lui permet de reprendre  définitivement confiance. ",
+        "BIO": "À l'ouest, il trouve un renouveau. Originaire de Plouvorn, le défenseur Yvon Le Roux joue à Brest puis Monaco, où il se blesse au genou. Recruté par Suaudeau, qui croit en <span style =' font-weight: bold;'>ses capacités de défenseur,</span> le FC Nantes sort <span style =' font-weight: bold;'>« le colosse de Plouvorn » </span>d’une période compliquée. Un titre de champion de France en 1984, lui permet de reprendre  définitivement confiance. ",
         "champ_fr": 0,
         "cp_fr": 0,
         "lig_champ": 0,
@@ -354,6 +355,9 @@
         "TAILLE": "1.86",
         "BIO": "Entre le FC Nantes et Guyot, c’est une histoire qui remonte à l’enfance. Inscrit au club dès l’âge de huit ans, il y devient <span style =' font-weight: bold;'>joueur pro pendant près d’une décennie,</span> entre 1985 et 1998 et connaît le football champagne de la Beaujoire. Une fois à la retraite, le Canari s’envole pour quelques années avec sa famille au Canada, où il entraîne l’académie de football de Toronto. ",
         "champ_fr": 1,
+        "cp_fr": 0,
+        "lig_champ": 0,
+        "tr_champ": 0,
         "DOS": "« <span style =' font-weight: bold;'>J’ai commencé à jouer au FC Nantes à 8 ans.</span> Et, à 10 ou 11 ans, j’y étais ramasseur de balles. Je me souviens d’avoir été ramasseur de balles d’un Nantes - Saint-Etienne avec Platini ! » "
     },
     {
@@ -362,12 +366,15 @@
         "POSTE": "LIBERO",
         "NUMÉRO": 4,
         "DURÉE": "17-...",
-        "MATCHS": "204 ...",
+        "MATCHS": 204,
         "BUTS": 6,
         "COUPES": "Coupe de FRANCE X1",
         "TAILLE": "1.90",
         "BIO": "Palois est un aficionados de la Maison Jaune. Avec plus de 200 matchs au compteur, <span style =' font-weight: bold;'>il préfère l’efficacité à la technique.</span> Un tacle réussi à la 90e minute est une victoire en phase finale de Coupe du Monde. Menuisier de formation, il a troqué le bois pour les crampons, le choisir permet de ne pas renier ses origines de techniciens !",
+        "champ_fr": 0,
         "cp_fr": 1,
+        "lig_champ": 0,
+        "tr_champ": 0,
         "DOS": "« <span style =' font-weight: bold;'>Je suis monsieur tout le monde, quelqu’un de simple.</span> Oui, je suis très loin du foot bling-bling. »"
     },
     {
@@ -400,19 +407,25 @@
         "BIO": "Patrice Rio a <span style =' font-weight: bold;'>le plus beau palmarès du club !</span> Il permet de trouver la passe aveugle au bon moment : « On se trouvait les yeux bandés » avait-il indiqué dans une interview d’après carrière. Resté 14 ans au club, il a voué sa vie aux Jaunes et Verts. Il a inauguré la Beaujoire <span style =' font-weight: bold;'>en patron de la défense,</span> le 8 mai 1984 contre la Roumanie (0-1). Tout un symbole.",
         "champ_fr": 4,
         "cp_fr": 1,
+        "lig_champ": 0,
+        "tr_champ": 0,
         "DOS": "« Ça reste évidemment mon club de cœur. On ne fait pas quatorze saisons dans un Club, avec plusieurs titres de Champion de France et une Coupe de France, sans rien sur le cœur. <span style =' font-weight: bold;'>Bien sûr que je suis marqué à vie</span> par mon histoire avec le FC Nantes. »"
     },
     {
         "NOM": "ADONKOR",
         "CARTE": "fcn-71",
         "POSTE": "MILIEU DÉF D",
+        "NUMÉRO": 6,
         "DURÉE": "81-84",
         "MATCHS": 134,
         "BUTS": 2,
         "COUPES": "Champion de FRANCE X1",
         "TAILLE": "1.82",
-        "BIO": "Remarqué par Suaudeau pour sa polyvalence et son aisance aux postes de défense centrale, il permet à Nantes de s’imposer lors de la saison 1982-1983. Pour son frère cadet, Marcel Desailly, Seth est un guide. Qui sait quels sommets Adonkor aurait pu atteindre s’il n’avait pas perdu la vie prématurément, à l’âge de 23 ans, dans un accident de voiture en 1984.",
+        "BIO": "Remarqué par Suaudeau pour <span style =' font-weight: bold;'>sa polyvalence et son aisance </span>aux postes de défense centrale, il permet à Nantes de s’imposer lors de la saison 1982-1983. Pour son frère cadet, Marcel Desailly, <span style =' font-weight: bold;'>Seth est un guide.</span> Qui sait quels sommets Adonkor aurait pu atteindre s’il n’avait pas perdu la vie prématurément, à l’âge de 23 ans, dans un accident de voiture en 1984.",
         "champ_fr": 1,
+        "cp_fr": 0,
+        "lig_champ": 0,
+        "tr_champ": 0,
         "DOS": "«J’ai sans doute passé plus de temps avec lui qu’avec mon fils. Je me fous du vide sportif. <span style =' font-weight: bold;'>Ce qui est infiniment plus grave, c’est que la vie, ici, est cassée.</span> » Jean-Claude Suaudeau.  "
     },
     {
@@ -425,8 +438,11 @@
         "BUTS": 24,
         "COUPES": "Champion de FRANCE X1 DEMI-FINALE Ligue des Champions X1",
         "TAILLE": "1.85",
-        "BIO": "Son idole : Henri Michel. Son histoire : 340 matchs au FC Nantes. Jean-Michel Ferri est un leader né. Il porte le brassard de capitaine lors de la saison météorique de 1994-1995. Plus que passionné, il a tenu un carnet de notes quotidien pendant trois années sur les entraînements concoctés par Jean-Claude Suaudeau. Schémas tactiques en vue !",
+        "BIO": "Son idole : Henri Michel. Son histoire : 340 matchs au FC Nantes. Jean-Michel Ferri est <span style =' font-weight: bold;'>un leader né.</span> Il porte le brassard de capitaine lors de la saison météorique de 1994-1995. Plus que passionné, il a tenu un carnet de notes quotidien pendant trois années sur les entraînements concoctés par Jean-Claude Suaudeau. <span style =' font-weight: bold;'>Schémas tactiques en vue !</span>",
         "champ_fr": 1,
+        "cp_fr": 0,
+        "lig_champ": 0,
+        "tr_champ": 0,
         "DOS": "« <span style =' font-weight: bold;'>Nous étions une bande de potes qui se suivaient depuis le centre de formation</span> et qui allaient symboliser tout ce que représentait alors le jeu à la nantaise, avec deux techniciens exceptionnels, Reynald Denoueix à la formation et Coco Suaudeau avec les pros. »"
     },
     {
@@ -438,12 +454,12 @@
         "MATCHS": 124,
         "BUTS": 4,
         "TAILLE": "1.74",
-        "BIO": "On sait jusqu’où il est arrivé. Moins d’où Didier Deschamps a commencé. Passé par le FC Nantes, son premier club ne lui offre pas de victoire, mais son premier contrat pro et un poste de capitaine à 19 ans. Dans les carnets des recruteurs, Deschamps est affublé du surnom « Elgarrekin », qui signifie ensemble en basque, donc jamais sans lui. Prémonitoire. ",
+        "BIO": "On sait jusqu’où il est arrivé. Moins d’où Didier Deschamps a commencé. Passé par le FC Nantes, son premier club ne lui offre pas de victoire, mais <span style =' font-weight: bold;'>son premier contrat pro et un poste de capitaine à 19 ans. </span>Dans les carnets des recruteurs, Deschamps est affublé du surnom « Elgarrekin », qui signifie ensemble en basque, donc jamais sans lui. <span style =' font-weight: bold;'>Prémonitoire. </span>",
         "champ_fr": 0,
         "cp_fr": 0,
         "lig_champ": 0,
         "tr_champ": 0,
-        "DOS": "Dès ses 20 ans à Nantes, Deschamps est capitaine. « Ça ne pose pas de problème d'être un si jeune capitaine. Sur le terrain, j'ai toujours beaucoup parlé, j'aime diriger mes partenaires. Chez moi, c'est naturel. »"
+        "DOS": "Dès ses 20 ans à Nantes, Deschamps est capitaine. « <span style =' font-weight: bold;'>Ça ne pose pas de problème d'être un si jeune capitaine.</span> Sur le terrain, j'ai toujours beaucoup parlé, j'aime diriger mes partenaires. <span style =' font-weight: bold;'>Chez moi, c'est naturel.</span> »"
     },
     {
         "NOM": "MAKÉLÉLÉ",
@@ -455,8 +471,11 @@
         "BUTS": 12,
         "COUPES": "Champion de FRANCE X1",
         "TAILLE": "1.74",
-        "BIO": "En lingala, une des langues nationales du Congo, Makélélé signifie « beaucoup de bruits ». Il mêle engagement, endurance et ténacité. L’international français champion du monde a toutes les qualités d’un des meilleurs milieu de terrain au monde. Il participe au record d’invincibilité de 32 matchs lors de la saison 1994-1995, record battu par le PSG en 2016. Prodigieux.",
+        "BIO": "En lingala, une des langues nationales du Congo, Makélélé signifie « beaucoup de bruits ». Il mêle<span style =' font-weight: bold;'> engagement, endurance et ténacité. </span>L’international français champion du monde a toutes les qualités d’un des meilleurs milieu de terrain au monde. Il participe au <span style =' font-weight: bold;'>record d’invincibilité</span> de 32 matchs lors de la saison 1994-1995, record battu par le PSG en 2016. Prodigieux.",
         "champ_fr": 1,
+        "cp_fr": 0,
+        "lig_champ": 0,
+        "tr_champ": 0,
         "DOS": "Makélélé fait parti des six joueurs passés par le FC Nantes à avoir été <span style =' font-weight: bold;'>nommé sur la liste du Ballon d'Or.</span>"
     },
     {
@@ -469,8 +488,11 @@
         "BUTS": 6,
         "COUPES": "Champion de FRANCE X1",
         "TAILLE": "1.77",
-        "BIO": "Engagé sur le terrain comme dans la vie. Avec le FC Nantes, il remporte la coupe de France de 1995. Sprinter, récupérateur, endurant, sans crainte du contact, Karembeu refuse de chanter la Marseillaise pour son caractère colonialiste et s’implique aux côtés d’associations comme Peace and sport mais aussi l’opération Pièces jaunes.   ",
+        "BIO": "Engagé sur le terrain comme dans la vie. Avec le FC Nantes, il remporte la coupe de France de 1995. <span style =' font-weight: bold;'>Sprinter, récupérateur, endurant, sans crainte du contact,</span> Karembeu refuse de chanter la Marseillaise pour son caractère colonialiste et s’implique aux côtés d’associations comme Peace and sport mais aussi l’opération Pièces jaunes.   ",
         "champ_fr": 1,
+        "cp_fr": 0,
+        "lig_champ": 0,
+        "tr_champ": 0,
         "DOS": "<span style =' font-weight: bold;'>« Le cheval fou »</span>"
     },
     {
@@ -483,9 +505,10 @@
         "BUTS": 56,
         "COUPES": "Champion de FRANCE X1 Coupe de FRANCE X1 Trophée des CHAMPIONS X1",
         "TAILLE": "1.77",
-        "BIO": "En un seul mot : fidélité. Da Rocha a joué 508 matchs avec le FC Nantes et a même refusé une offre de Liverpool après le titre de champion de France en 2001. La Brigade Loire entonne un chant à son honneur. Lors du maintien obtenu à la dernière journée en 2005, Da Rocha exprime ces quelques mots : « Les légendes ne meurent jamais ! » Séquence émotion.",
+        "BIO": "En un seul mot : <span style =' font-weight: bold;'>fidélité.</span> Da Rocha a joué 508 matchs avec le FC Nantes et a même refusé une offre de Liverpool après le titre de champion de France en 2001. La Brigade Loire entonne <span style =' font-weight: bold;'>un chant à son honneur. </span>Lors du maintien obtenu à la dernière journée en 2005, Da Rocha exprime ces quelques mots : <span style =' font-weight: bold;'>« Les légendes ne meurent jamais ! »</span> Séquence émotion.",
         "champ_fr": 1,
         "cp_fr": 1,
+        "lig_champ": 0,
         "tr_champ": 1,
         "DOS": "« La philosophie, <span style =' font-weight: bold;'>c’est le jeu de mouvement et j’adore ce jeu-là.</span> Mais je suis un compétiteur aussi. Quand je fais un jeu ou un match, c’est pour essayer de gagner. Parfois, il faut aussi savoir ne pas perdre. »"
     },
@@ -499,9 +522,10 @@
         "BUTS": 35,
         "COUPES": "Champion de FRANCE X1 Coupe de FRANCE X1 Trophée des CHAMPIONS X1",
         "TAILLE": "1.72",
-        "BIO": "Natif du Tarn, Monterrubio arrive à la Jonelière à 17 ans et réalise un beau palmarès : double-vainqueur de la coupe de France, meilleur buteur du FC Nantes du championnat de France de 2001. Il manque cependant la Ligue des Champion. En 2001, Rubbio rejoint le Stade Rennais, mais confie, à l’occasion des vingts ans du sacre, que son coeur est resté jaune et vert.",
+        "BIO": "Natif du Tarn, Monterrubio arrive à la Jonelière à 17 ans et réalise <span style =' font-weight: bold;'>un beau palmarès</span> : double-vainqueur de la coupe de France, meilleur buteur du FC Nantes du championnat de France de 2001. Il manque cependant la Ligue des Champion. En 2001, Rubbio rejoint le Stade Rennais, mais confie, à l’occasion des vingts ans du sacre, que <span style =' font-weight: bold;'>son coeur est resté jaune et vert.</span>",
         "champ_fr": 1,
         "cp_fr": 1,
+        "lig_champ": 0,
         "tr_champ": 1,
         "DOS": "« <span style =' font-weight: bold;'>Qui aurait dit que Nantes, l’année suivante, serait champion de France ?</span> Personne. Même nous les joueurs. »"
     },
@@ -515,7 +539,10 @@
         "BUTS": 13,
         "COUPES": "Trophée des CHAMPIONS X1",
         "TAILLE": "1.72",
-        "BIO": "Cheveux blonds au vent, la régularité footballistique d’Olivier Quint est admirable. Avec une moyenne de trente matchs, il connaît la Ligue des Champions en 2001. Milieu polyvalent, il n’hésitait pas à se présenter pour tirer les penaltys, fierté nantaise. La Beaujoire a vibré sur sa magnifique demi-volée fouettée contre Marseille, le 23 avril 2005. Grand artisan du maintien.",
+        "BIO": "Cheveux blonds au vent, la régularité footballistique d’Olivier Quint est admirable. Avec une moyenne de trente matchs, il connaît la Ligue des Champions en 2001. <span style =' font-weight: bold;'>Milieu polyvalent,</span> il n’hésitait pas à se présenter pour tirer les penaltys, fierté nantaise. La Beaujoire a vibré sur sa magnifique demi-volée fouettée contre Marseille, le 23 avril 2005. <span style =' font-weight: bold;'>Grand artisan du maintien.</span>",
+        "champ_fr": 0,
+        "cp_fr": 0,
+        "lig_champ": 0,
         "tr_champ": 1,
         "DOS": "Football amateur, football professionnel puis football amateur, Olivier Quint voue sa vie au football et a même <span style =' font-weight: bold;'>continué le foot en club jusqu'à ses 47 ans.</span>"
     },
@@ -529,8 +556,11 @@
         "BUTS": 45,
         "COUPES": "Coupe de FRANCE X1",
         "TAILLE": "1.80",
-        "BIO": "Ludovic Blas est un canari au jeu d’or. À 25 ans, il s’impose comme un milieu polyvalent et créatif, aux passes décisives magiques. Il inscrit le but de la victoire sur penalty pour le FC Nantes en finale de la Coupe de France face à l'OGC Nice et marque contre la Juve en Europa League l’année suivante. Le FC Nantes s’en sépare à un prix record : quinze millions d’euros. ",
+        "BIO": "Ludovic Blas est <span style =' font-weight: bold;'>un canari au jeu d’or. </span>À 25 ans, il s’impose comme un milieu polyvalent et créatif, aux <span style =' font-weight: bold;'>passes décisives magiques.</span> Il inscrit le but de la victoire sur penalty pour le FC Nantes en finale de la Coupe de France face à l'OGC Nice et marque contre la Juve en Europa League l’année suivante. Le FC Nantes s’en sépare à un prix record : quinze millions d’euros. ",
+        "champ_fr": 0,
         "cp_fr": 2,
+        "lig_champ": 0,
+        "tr_champ": 0,
         "DOS": "« Les plus grands dribbleurs ont un petit grain de folie. Il faut tenter tout et n’importe quoi. <span style =' font-weight: bold;'>Il ne faut pas réfléchir, avoir de l’audace surtout.</span> Il faut essayer n’importe quel dribble pour surprendre l’adversaire. »"
     },
     {
@@ -542,7 +572,7 @@
         "MATCHS": 81,
         "BUTS": 12,
         "TAILLE": "1.77",
-        "BIO": "Vif, altruiste et bon frappeur, Christophe Le Roux a joué toute sa carrière en Bretagne. Auteur d’une dizaine de buts, il laisse un bon souvenir à La Beaujoire. Au moindre espace devant lui, il arme sa frappe d’une foulée puissante. Petit filet droit, reprise en première intention, il fusille à l’eau chaude les lucarnes adverses. Palette technique garantie. ",
+        "BIO": "<span style =' font-weight: bold;'>Vif, altruiste et bon frappeur,</span> Christophe Le Roux a joué toute sa carrière en Bretagne. Auteur d’une dizaine de buts, il laisse un bon souvenir à La Beaujoire. Au moindre espace devant lui, il arme sa frappe <span style =' font-weight: bold;'>d’une foulée puissante.</span> Petit filet droit, reprise en première intention, il fusille à l’eau chaude les lucarnes adverses. <span style =' font-weight: bold;'>Palette technique garantie. </span>",
         "champ_fr": 0,
         "cp_fr": 0,
         "lig_champ": 0,
@@ -559,9 +589,12 @@
         "BUTS": 34,
         "COUPES": "Champion de FRANCE X1",
         "TAILLE": "1.72",
-        "BIO": "Meilleur passeur du championnat 93-94 et en 94-95, Pedros s’illustre par ses ouvertures millimétrées et ses passes décisives. Celle faite pour Patrice Loko, contribue à marquer un but d’anthologie face au PSG en 1995. Hyper émotif, réactif, Pedros connaît une carrière post-FC Nantes en dents de scie. Avoir quitté le club est l’un de ses plus grands regrets. ",
+        "BIO": "<span style =' font-weight: bold;'>Meilleur passeur du championnat</span> 93-94 et en 94-95, Pedros s’illustre par ses ouvertures millimétrées et ses passes décisives. Celle faite pour Patrice Loko, contribue à marquer <span style =' font-weight: bold;'>un but d’anthologie</span> face au PSG en 1995. Hyper émotif, réactif, Pedros connaît une carrière post-FC Nantes en dents de scie. Avoir quitté le club est l’un de <span style =' font-weight: bold;'>ses plus grands regrets. </span>",
         "champ_fr": 1,
-        "DOS": "«Cette saison (ndlr 1994-1995) est passée à 2.000 à l’heure, témoigne Reynald Pédros sur RMC. J’avais l’impression de m’amuser tout en travaillant.» "
+        "cp_fr": 0,
+        "lig_champ": 0,
+        "tr_champ": 0,
+        "DOS": "« Cette saison (ndlr 1994-1995) est passée à 2 000 à l’heure, témoigne Reynald Pédros sur RMC. <span style =' font-weight: bold;'>J’avais l’impression de m’amuser tout en travaillant.</span> » "
     },
     {
         "NOM": "RONGIER",
@@ -572,7 +605,7 @@
         "MATCHS": 135,
         "BUTS": 10,
         "TAILLE": "1.73",
-        "BIO": "Biberonné aux Jaunes et Verts depuis ses sept ans, il fait ses classes à Nantes avant de signer pro en juin 2014. En 2015, il a une rupture du ligament croisé mais le club veut le prolonger à tout prix. Besogneux et talentueux, il devient même le meilleur tacleur de la saison 2016-2017 dans les cinq grands championnats européens. (Très grande) classe mondiale.",
+        "BIO": "Biberonné aux Jaunes et Verts depuis ses sept ans, il fait <span style =' font-weight: bold;'>ses classes à Nantes</span> avant de signer pro en juin 2014. En 2015, il a une rupture du ligament croisé mais le club veut le prolonger à tout prix. Besogneux et talentueux, il devient même <span style =' font-weight: bold;'>le meilleur tacleur</span> de la saison 2016-2017 dans les cinq grands championnats européens. <span style =' font-weight: bold;'>(Très grande) classe mondiale.</span>",
         "champ_fr": 0,
         "cp_fr": 0,
         "lig_champ": 0,
@@ -588,12 +621,12 @@
         "MATCHS": 143,
         "BUTS": 15,
         "TAILLE": "1.77",
-        "BIO": "Enfant, le foot est une passion mais il n’envisage pas d’en faire son métier. Guy Jolivet, l’un des éducateurs du club nantais, le convainc d'intégrer la Jonelière à dix ans. Pour compenser son manque de capacités physiques, il développe une palette technique impressionnante. Titularisé à partir de 2011, sous Der Zakharian, Veretout permet au FC Nantes de retrouver la ligue 1.",
+        "BIO": "Enfant, le foot est une passion mais il n’envisage pas d’en faire son métier. Guy Jolivet, l’un des éducateurs du club nantais, le convainc d'intégrer la Jonelière à dix ans. Pour compenser son manque de capacités physiques, il développe<span style =' font-weight: bold;'> une palette technique impressionnante.</span> Titularisé à partir de 2011, sous Der Zakharian, Veretout permet au FC Nantes de retrouver <span style =' font-weight: bold;'>la ligue 1.</span>",
         "champ_fr": 0,
         "cp_fr": 0,
         "lig_champ": 0,
         "tr_champ": 0,
-        "DOS": "«En 2021, à l’âge de 28 ans, Veretout devient le deuxième Français de l'histoire à inscrire dix buts en championnat d'Italie sur une saison, après un certain Michel Platini.»"
+        "DOS": "«En 2021, à l’âge de 28 ans, Veretout devient le <span style =' font-weight: bold;'>deuxième Français de l'histoire à inscrire dix buts en championnat d'Italie sur une saison,</span> après un certain Michel Platini.»"
     },
     {
         "NOM": "CHIRIVELLA",
@@ -601,12 +634,15 @@
         "POSTE": "MILIEU OFF D",
         "NUMÉRO": 5,
         "DURÉE": "20-...",
-        "MATCHS": "125 ...",
+        "MATCHS": 125,
         "BUTS": 4,
         "COUPES": "Coupe de FRANCE X1",
         "TAILLE": "1.78",
-        "BIO": "Prénom : Pedro. Nom : Chirivella. Il pourrait mourir sur le terrain. Arrivé au club en 2020, La Beaujoire découvre un milieu de terrain espagnol qui a tout d’un « grande jugador ». Il porte le FC Nantes vers son quatrième titre de coupe de France en 2002 face à Nice. On apprend quelques semaines plus tard qu’il a joué ce match et la fin de saison avec une pubalgie. Héroïque.",
+        "BIO": "Prénom : Pedro. Nom : Chirivella. Il pourrait mourir sur le terrain. Arrivé au club en 2020, La Beaujoire découvre un milieu de terrain espagnol qui a tout d’un <span style =' font-weight: bold;'>« grande jugador ».</span> Il porte le FC Nantes vers son quatrième titre de coupe de France en 2002 face à Nice. On apprend quelques semaines plus tard qu’il a joué ce match et la fin de saison avec une pubalgie. <span style =' font-weight: bold;'>Héroïque.</span>",
+        "champ_fr": 0,
         "cp_fr": 1,
+        "lig_champ": 0,
+        "tr_champ": 0,
         "DOS": "« Tout le monde me parle de la grinta, mais la première fois que j’ai entendu ce mot, <span style =' font-weight: bold;'>j’ai regardé sur internet ce que ça signifiait. »</span>"
     },
     {
@@ -618,12 +654,12 @@
         "MATCHS": 121,
         "BUTS": 2,
         "TAILLE": "1.83",
-        "BIO": "Une qualité de relance et une vision de jeu acérée font de Toulalan un joueur incontournable dans l’effectif de Serge Le Dizet. Il est élu meilleur espoir de Ligue 1 en 2005. Après un tour par l’OL, Malaga ou les Girondins de Bordeaux, Toulalan met fin à sa carrière à l’âge de 34 ans, et remonte à l’ouest, pour vivre dans la région nantaise.",
+        "BIO": "Une qualité de relance et une vision de jeu acérée font de Toulalan <span style =' font-weight: bold;'>un joueur incontournable</span> dans l’effectif de Serge Le Dizet. Il est élu <span style =' font-weight: bold;'>meilleur espoir de Ligue 1</span> en 2005. Après un tour par l’OL, Malaga ou les Girondins de Bordeaux, Toulalan met fin à sa carrière à l’âge de 34 ans, et remonte à l’ouest, pour vivre dans la région nantaise.",
         "champ_fr": 0,
         "cp_fr": 0,
         "lig_champ": 0,
         "tr_champ": 0,
-        "DOS": "\nSylvain Armand pense que le foot ne lui manque pas : «C'est un type normal, qui est bien loin des paillettes. Il est en famille, avec ses amis. Il profite de son quotidien, de la vie, des choses qu'il n'a pas pu faire durant des années.»"
+        "DOS": "\nSylvain Armand pense que le foot ne lui manque pas : «<span style =' font-weight: bold;'>C'est un type normal, qui est bien loin des paillettes. Il est en famille, avec ses amis.</span> Il profite de son quotidien, de la vie, des choses qu'il n'a pas pu faire durant des années.»"
     },
     {
         "NOM": "MOLDOVAN",
@@ -637,6 +673,8 @@
         "TAILLE": "1.77",
         "BIO": "Roumain, Moldovan est le 9 par excellence du FC Nantes. <span style =' font-weight: bold;'>Son body language illustre un avant implacable. Son jeu de tête a fait pâlir plus d’un gardien. Véritable rouleau compresseur sur sa dernière saison.</span> Le triplé qu’il inscrit contre Montpellier le 27 mars 2004 reste un moment gravé de La Beaujoire. <span style =' font-weight: bold;'>Un monument qui ne cesse de faire voyager les grands nostalgiques.</span>",
         "champ_fr": 1,
+        "cp_fr": 0,
+        "lig_champ": 0,
         "tr_champ": 1,
         "DOS": "« Pour moi, c’est l’endroit (le FC Nantes) où je me suis senti le mieux. C’était extraordinaire et <span style =' font-weight: bold;'>je suis convaincu que j’étais fait pour le Club,</span> autant que le FC Nantes était fait pour moi. <span style =' font-weight: bold;'>Oui, c’était le mariage parfait. »</span>"
     },
@@ -652,7 +690,10 @@
         "TAILLE": "1.82",
         "BIO": "Les débuts à Nantes du bosniaque Halilhodzic sont difficiles. Alors après chaque entraînement, <span style =' font-weight: bold;'>il s’impose des séances de travail supplémentaires en solitaire.</span> Soutenu par Suaudeau, il triomphe de la barrière de la langue et <span style =' font-weight: bold;'>apprivoise le jeu collectif nantais.</span> Ses efforts paient : <span style =' font-weight: bold;'>il est le meilleur buteur du championnat en 1983 et en 1985.</span> Les parieurs savent sur qui miser.",
         "champ_fr": 1,
-        "DOS": "Halilhodzic est le premier sélectionneur à qualifier quatre nations différentes pour un mondial : la Côte d'Ivoire, l’Algérie, le Japon et le Maroc. À trois reprises, il est remercié juste avant la phase finale du mondiale. "
+        "cp_fr": 0,
+        "lig_champ": 0,
+        "tr_champ": 0,
+        "DOS": "<span style =' font-weight: bold;'>Halilhodzic est le premier sélectionneur à qualifier quatre nations différentes pour un mondial</span> : la Côte d'Ivoire, l’Algérie, le Japon et le Maroc. À trois reprises, il est remercié juste avant la phase finale du mondiale. "
     },
     {
         "NOM": "OUEDEC",
@@ -666,6 +707,9 @@
         "TAILLE": "1.80",
         "BIO": "Intemporel. Nicolas Ouédec a écrit l’une des plus belles pages du FC Nantes, un temps que les moins de vingt ans ne peuvent pas connaître. <span style =' font-weight: bold;'>Il finit meilleur buteur du championnat lors du titre de champion de France 1994-1995 et continue d’occuper la première place des meilleurs buteurs du club en Ligue des Champions.</span> Son duo avec Patrice Loko était plus que magique.",
         "champ_fr": 1,
+        "cp_fr": 0,
+        "lig_champ": 0,
+        "tr_champ": 0,
         "DOS": "« C’est évidemment ici, que j'ai vécu toutes mes plus belles émotions footballistiques, avec une structure et une mentalité qui me convenaient. <span style =' font-weight: bold;'>Oui, le FC Nantes aura considérablement marqué ma carrière et ma vie aussi. »</span>"
     },
     {
@@ -680,7 +724,10 @@
         "TAILLE": "1.87",
         "BIO": "« Aux âmes bien nées, la valeur n’attend pas le nombre des années » pourrait être l’adage de Kolo Muani. <span style =' font-weight: bold;'>À 23 ans, cette force tranquille puise dans son large registre de techniques, son intelligence et sa vitesse</span> pour emmener le FC Nantes en finale de la Coupe de France 2022. Il part sur cette victoire à la fin de la saison pour Francfort et rejoint le PSG en 2023.  ",
         "champ_fr": 1,
-        "DOS": "« Je suis une personne loyale et Nantes est mon club formateur. Je lui dois tout. Il m'a donné mon premier match en pro, mon premier contrat pro donc j'ai envie de me donner à fond jusqu'au bout parce que je me sens redevable. »"
+        "cp_fr": 0,
+        "lig_champ": 0,
+        "tr_champ": 0,
+        "DOS": "« Je suis une personne loyale et Nantes est mon club formateur. <span style =' font-weight: bold;'>Je lui dois tout. Il m'a donné mon premier match en pro, mon premier contrat pro</span> donc j'ai envie de me donner à fond jusqu'au bout parce que je me sens redevable. »"
     },
     {
         "NOM": "SALA",
@@ -710,7 +757,10 @@
         "TAILLE": "1.87",
         "BIO": "<span style =' font-weight: bold;'>À Nantes, José Touré acquiert son surnom « le brésilien » pour sa technique hors du commun.</span> Arrivé en 1976, il y reste jusqu’en 1986. Touré est l'un des premiers joueurs du foot français à être rapidement adulé mais aussi à faire les frais du star système. Ruiné, mal conseillé, l’addiction l’éloigne du sport. Il reste un souvenir impérissable dans les couloirs du stade.",
         "champ_fr": 2,
-        "DOS": "« Le surdoué »"
+        "cp_fr": 0,
+        "lig_champ": 0,
+        "tr_champ": 0,
+        "DOS": "<span style =' font-weight: bold;'>« Le surdoué »</span>"
     },
     {
         "NOM": "CARRIÈRE",
@@ -722,10 +772,12 @@
         "BUTS": 18,
         "COUPES": "Champion de FRANCE X1 Coupe de FRANCE X2",
         "TAILLE": "1.73",
-        "BIO": "Meilleur joueur et meilleur passeur de D1 lors de la saison 2000-2001, le début du 21eme siècle sonne comme une consécration. <span style =' font-weight: bold;'>Meneur de jeu époustouflant, il remplace Zidane (blessé) en équipe de France pour la Coupe des confédérations (deux passes, deux buts).</spa,> Dans les mémoires, sa magnifique gestuelle technique face à Bordeaux, feinte de frappe, extérieur petit pont.",
+        "BIO": "Meilleur joueur et meilleur passeur de D1 lors de la saison 2000-2001, le début du 21eme siècle sonne comme une consécration. <span style =' font-weight: bold;'>Meneur de jeu époustouflant, il remplace Zidane (blessé) en équipe de France pour la Coupe des confédérations (deux passes, deux buts).</span> Dans les mémoires, sa magnifique gestuelle technique face à Bordeaux, feinte de frappe, extérieur petit pont.",
         "champ_fr": 1,
         "cp_fr": 2,
-        "DOS": "\n« Ailleurs qu’au FC Nantes, jamais je n’aurais fait la carrière que j’ai faite. Quand je suis arrivé, j’étais à l’état brut, avec quelques qualités développées dans mes anciens clubs, mais sans beaucoup de culture tactique ou collective, sans trop d’idées sur le jeu. »"
+        "lig_champ": 0,
+        "tr_champ": 0,
+        "DOS": "\n« Ailleurs qu’au FC Nantes, jamais je n’aurais fait la carrière que j’ai faite. Quand je suis arrivé, <span style =' font-weight: bold;'>j’étais à l’état brut, avec quelques qualités développées dans mes anciens clubs,</span> mais sans beaucoup de culture tactique ou collective, sans trop d’idées sur le jeu. »"
     },
     {
         "NOM": "BURRUCHAGA",
@@ -741,7 +793,7 @@
         "cp_fr": 0,
         "lig_champ": 0,
         "tr_champ": 0,
-        "DOS": "« J’aimais ce football simple, offensif, dynamique, cette perpétuelle mobilité que réclamait Suaudeau. Il correspondait à mes qualités, a facilité mon intégration dans l’équipe et m’a fait progresser.»\n"
+        "DOS": "« J’aimais ce football simple, offensif, dynamique, cette perpétuelle mobilité que réclamait Suaudeau. <span style =' font-weight: bold;'>Il correspondait à mes qualités, a facilité mon intégration dans l’équipe et m’a fait progresser.</span>»\n"
     },
     {
         "NOM": "ZIANI",
@@ -755,8 +807,10 @@
         "TAILLE": "1.67",
         "BIO": "Formé au FC Nantes, il engrange de l’expérience dans plusieurs clubs de D1 avant de revenir à Nantes lors du huitième titre de champion de France en 2001. <span style =' font-weight: bold;'>La Beaujoire est un théâtre mythique qui a vu Ziani éclore, grandir et mûrir avec plus de 250 matchs à son actif.</span> Daniel Leclercq, ancien entraîneur de Lens, avait déclaré qu’il <span style =' font-weight: bold;'>« avait toute l’étoffe des plus grands ».</span>",
         "champ_fr": 1,
+        "cp_fr": 0,
+        "lig_champ": 0,
         "tr_champ": 1,
-        "DOS": "Stéphane Ziani a eu plusieurs vies au FC Nantes. Formé au club, il a été un acteur décisif pour le titre de champion de France de 2001. Aujourd'hui, il a repris sa casquette de formateur auprès des jeunes canaris."
+        "DOS": "Stéphane Ziani a eu plusieurs vies au FC Nantes. Formé au club, il a été un acteur décisif pour le titre de champion de France de 2001. <span style =' font-weight: bold;'>Aujourd'hui, il a repris sa casquette de formateur auprès des jeunes canaris.</span>"
     },
     {
         "NOM": "N'DORAM",
@@ -770,7 +824,7 @@
         "TAILLE": "1.82",
         "BIO": "N’Doram commence sa carrière au Tchad et est l’un des rares joueurs de la génération qui remporte la coupe de 1995, à ne pas être issu de la formation nantaise. Suaudeau et Denoueix décèlent chez <span style =' font-weight: bold;'>« le sorcier de la Beaujoire » des grandes capacités techniques, une vision de jeu inédite et une âme de leader.</span> Il anime aujourd'hui des séances de foot pour des migrants mineurs.",
         "champ_fr": 1,
-        "DOS": "Le 22 mars 1997, le FC Nantes reçoit le LOSC à la Beaujoire. Japhet N’Doram tire, et marque le 2000e but nantais en ligue 1, un nouveau palier symbolique franchi. Le FC Nantes gagnera avec le plus petit des scores (1-0), et finira 3ᵉ de Ligue 1."
+        "DOS": "Le 22 mars 1997, le FC Nantes reçoit le LOSC à la Beaujoire. Japhet N’Doram tire, <span style =' font-weight: bold;'>et marque le 2000e but nantais en ligue 1,</span> un nouveau palier symbolique franchi. Le FC Nantes gagnera avec le plus petit des scores (1-0), et finira 3ᵉ de Ligue 1."
     },
     {
         "NOM": "AMISSE",
@@ -785,7 +839,9 @@
         "BIO": "<span style =' font-weight: bold;'>Petit, véloce, explosif et virevoltant sur l’aile gauche, Loïc Amisse a martyrisé plus d’un latéral et d’une défense en D1.</span> Son pied gauche était une arme redoutable. S’il tentait sa frappe, il ne restait plus qu’à prier le bon dieu. <span style =' font-weight: bold;'>Il a passé 17 années de sa vie professionnelle à défendre les couleurs nantaise</span> et l’antre du nid des Canaris. Un musée à lui tout seul.",
         "champ_fr": 1,
         "cp_fr": 1,
-        "DOS": "« La saison 1976/1977 reste à mes yeux la meilleure. On était jeunes, plein de fougue, et on rentrait des JO de Montréal avec Pécout et Baronchelli, pour finir champions avec dix points d’avance. »"
+        "lig_champ": 0,
+        "tr_champ": 0,
+        "DOS": "« La saison 1976/1977 reste à mes yeux la meilleure. <span style =' font-weight: bold;'>On était jeunes, plein de fougue, et on rentrait des JO de Montréal</span> avec Pécout et Baronchelli, pour finir champions avec dix points d’avance. »"
     },
     {
         "NOM": "LOKO",
@@ -799,7 +855,10 @@
         "TAILLE": "1.78",
         "BIO": "Avec Ouédec et Pedros, Patrice Loko forme un triangle offensif redoutable lors de ses années au FC Nantes, de 1988 à 1995. Il termine sa saison, <span style =' font-weight: bold;'>récompensé par le titre de meilleur buteur du championnat, après avoir marqué 22 fois.</span> L’un de ses buts entre dans les annales : <span style =' font-weight: bold;'>marqué le 19 août 1994, contre le PSG, le ballon atteint le fond de la cage sans toucher le sol.</span>",
         "champ_fr": 1,
-        "DOS": "« J’ai Nantes car c’était le club qui me semblait le plus intéressant. On laissait plus les attaquants s’exprimer. En plus le centre de formation de Nantes était beaucoup plus grand, plus aéré et on avait une chambre chacun. »"
+        "cp_fr": 0,
+        "lig_champ": 0,
+        "tr_champ": 0,
+        "DOS": "« J’aime Nantes car c’était le club qui me semblait le plus intéressant. <span style =' font-weight: bold;'>On laissait plus les attaquants s’exprimer.</span> En plus le centre de formation de Nantes était beaucoup plus grand, plus aéré et on avait une chambre chacun. »"
     },
     {
         "NOM": "VAHIRUA",
@@ -814,8 +873,9 @@
         "BIO": "À la fin d’une saison 1999-2000 très difficile, Raynald Denoueix lance un jeune buteur tahitien lors du dernier match face au Havre : Marama Vahirua. <span style =' font-weight: bold;'>Il inscrit le but de la victoire. Super-joker, Vahirua porte avec lui un ratio buts et minutes jouées complètement dingue.</span> Il célèbre ses buts avec un genou au sol et deux coups de pagaie, le public le surnomme « Tahitigoal ». ",
         "champ_fr": 1,
         "cp_fr": 1,
+        "lig_champ": 0,
         "tr_champ": 2,
-        "DOS": "« Tahitigoal ! »"
+        "DOS": "<span style =' font-weight: bold;'>« Tahitigoal ! »</span>"
     },
     {
         "NOM": "SIMON",
@@ -823,13 +883,16 @@
         "POSTE": "ATTAQUANT",
         "NUMÉRO": 27,
         "DURÉE": "19- ...",
-        "MATCHS": "166 ...",
+        "MATCHS": 166,
         "BUTS": 29,
         "COUPES": "Coupe de FRANCE X1",
         "TAILLE": "1.68",
-        "BIO": "À noël 2023, le FC Nantes s’est offert la prolongation de l’international nigérian Moses Simon. Parti pour rester jusqu’en 2026, l’international nigérian totalise 148 matches en Ligue 1 pour un total de 25 buts et 27 passes décisives. <span style =' font-weight: bold;'>Avec un jeu basé sur le dribble et l’accélération balle au pied,</spa,> il est l’arme offensive dont les Canaris ne peuvent plus se passer. ",
+        "BIO": "À noël 2023, le FC Nantes s’est offert la prolongation de l’international nigérian Moses Simon. Parti pour rester jusqu’en 2026, l’international nigérian totalise 148 matches en Ligue 1 pour un total de 25 buts et 27 passes décisives. <span style =' font-weight: bold;'>Avec un jeu basé sur le dribble et l’accélération balle au pied,</span> il est l’arme offensive dont les Canaris ne peuvent plus se passer. ",
+        "champ_fr": 0,
         "cp_fr": 1,
-        "DOS": "« Mon père adore le football mais il ne voulait pas que je joue. Il voulait que je m’engage dans l’armée, comme lui. Parce que la plupart des footballeurs de ma région n’ont pas réussi dans le foot. » "
+        "lig_champ": 0,
+        "tr_champ": 0,
+        "DOS": "« <span style =' font-weight: bold;'>Mon père adore le football mais il ne voulait pas que je joue.</span> Il voulait que je m’engage dans l’armée, comme lui. Parce que la plupart des footballeurs de ma région n’ont pas réussi dans le foot. » "
     },
     {
         "NOM": "BARONCHELLI",
@@ -844,7 +907,9 @@
         "BIO": "<span style =' font-weight: bold;'>« Je me sens imprégné FC Nantes. J’ai mangé, j’ai vécu FC Nantes, j’ai toujours été FC Nantes »,</span> avait déclaré à So Foot Baronchelli. Pièce maîtresse du football champagne nantais, il a fait partie d’une équipe qui roulait sur le championnat de France. <span style =' font-weight: bold;'>Véritable machine à buts, il a été appelé en équipe de France.</span> La Beaujoire s’est érigée à ses côtés. Lui l’a fait chavirer.",
         "champ_fr": 3,
         "cp_fr": 1,
-        "DOS": "« Lors d'un déplacement à Sochaux, on s'est retrouvé à trois dans la même chambre, avec Éric Pécout et Thierry Tusseau. À l'heure de la sieste, on n'a pas arrêté de rigoler et de se bagarrer avec les polochons. Derrière, on gagne 6-2 et je marque trois buts. » "
+        "lig_champ": 0,
+        "tr_champ": 0,
+        "DOS": "« Lors d'un déplacement à Sochaux, on s'est retrouvé à trois dans la même chambre, avec Éric Pécout et Thierry Tusseau. À l'heure de la sieste, on n'a pas arrêté de <span style =' font-weight: bold;'>rigoler et de se bagarrer avec les polochons.</span> Derrière, on gagne 6-2 et <span style =' font-weight: bold;'>je marque trois buts.</span> » "
     },
     {
         "NOM": "DER ZAKARIAN",
@@ -857,7 +922,7 @@
         "cp_fr": 0,
         "lig_champ": 0,
         "tr_champ": 0,
-        "DOS": "« Après la défaite du FC Nantes face à Montpellier, Der Zakarian commente : j’espère qu’ils vont rester en Ligue 1, car quand on voit le public à la Beaujoire, le stade et les infrastructures… c’est un grand club de notre championnat. » "
+        "DOS": "« Après la défaite du FC Nantes face à Montpellier, Der Zakarian commente : <span style =' font-weight: bold;'>j’espère qu’ils vont rester en Ligue 1</span>, car quand on voit le public à la Beaujoire, le stade et les infrastructures… <span style =' font-weight: bold;'>c’est un grand club de notre championnat.</span> » "
     },
     {
         "NOM": "SUAUDEAU",
@@ -868,7 +933,10 @@
         "COUPES": "Champion de FRANCE X2 Demi-finale Ligue des Champions",
         "BIO": "Pour les 70 ans du club nantais, Jean-Claude Suaudeau avait déclaré : « Le foot m’a marqué principalement <span style =' font-weight: bold;'>parce qu’il faut courir. Toute ta vie, pendant quarante saisons, tu cours, et il ne faut pas que les autres te rattrapent.</span> Mais avec beaucoup d’envie de courir ensemble, je n’ai pas vu les saisons passer. » <span style =' font-weight: bold;'>Une ode à l’amour du club pour qui il a conquis de nombreux titres.</span>",
         "champ_fr": 2,
-        "DOS": "« À Nantes, on avait 30 ans d'avance sur le barça ». Merci « Coco » !"
+        "cp_fr": 0,
+        "lig_champ": 0,
+        "tr_champ": 0,
+        "DOS": "« À Nantes, on avait <span style =' font-weight: bold;'>30 ans d'avance</span> sur le barça ». Merci « Coco » !"
     },
     {
         "NOM": "DENOUEIX",
@@ -880,7 +948,9 @@
         "BIO": "Intuitif, rigoureux, il forme le redoutable duo d’entraîneur avec Suaudeau, <span style =' font-weight: bold;'>qui met au point le « jeu à la nantaise ».</span> Arrivé en 1982, Denoueix est chargé de former les joueurs du centre de formation de la Jonelière. En 2020, <span style =' font-weight: bold;'>la mise aux enchères de sa médaille permet de récolter plus de 13 000 euros pour les personnels soignants du centre hospitalier universitaire de Nantes.</span>",
         "champ_fr": 1,
         "cp_fr": 2,
-        "DOS": "« Etre entraîneur, c’est se poser les questions et essayer de prendre le maximum autour de soi. Souvent, on invente rien : on reprend les idées, mais on les exploite différemment. »"
+        "lig_champ": 0,
+        "tr_champ": 0,
+        "DOS": "« Etre entraîneur, c’est <span style =' font-weight: bold;'>se poser les questions et essayer de prendre le maximum autour de soi.</span> Souvent, on invente rien : <span style =' font-weight: bold;'>on reprend les idées, mais on les exploite différemment.</span> »"
     },
     {
         "NOM": "KOMBOUARÉ",
@@ -890,8 +960,11 @@
         "MATCHS": 109,
         "COUPES": "Coupe de France X1",
         "BIO": "Défenseur rugueux et solide du FC Nantes dans les années 80, il revient au club comme entraîneur trente ans plus tard. <span style =' font-weight: bold;'>Il amène le club en finale de Coupe de France face à Nice et la remporte (1-0).</span> Il réalise l’exploit d’atteindre une deuxième fois la finale un an plus tard. <span style =' font-weight: bold;'>Un vrai leader, il contribue au beau parcours de Nantes en Europa League,</span> toujours avec sa casquette !",
+        "champ_fr": 0,
         "cp_fr": 1,
-        "DOS": "« Quand il (Ludovic Blas contre Lyon en Coupe de France) a marqué, j’ai eu un flash, j’ai pensé à José Touré en finale de coupe de France, lors du fameux PSG – Nantes (3-2, 1983). C’est la première image qui m’est venue à l’esprit. Au départ, je ne vois pas le ballon rentrer. »"
+        "lig_champ": 0,
+        "tr_champ": 0,
+        "DOS": "« Quand il (Ludovic Blas contre Lyon en Coupe de France) a marqué, j’ai eu <span style =' font-weight: bold;'>un flash,</span> j’ai pensé à José Touré en finale de coupe de France, lors du fameux PSG – Nantes (3-2, 1983). C’est la première image qui m’est venue à l’esprit. Au départ, <span style =' font-weight: bold;'>je ne vois pas le ballon rentrer.</span> »"
     },
     {
         "NOM": "RANIERI",
@@ -904,6 +977,6 @@
         "cp_fr": 0,
         "lig_champ": 0,
         "tr_champ": 0,
-        "DOS": "Il a atteint la limite d'âge requis pour occuper ce poste, fixée à 65 ans, selon le règlement de la Fédération française de football. Le club doit obtenir une dérogation pour pouvoir recruter Ranieri.  "
+        "DOS": "Il a atteint <span style =' font-weight: bold;'>la limite d'âge requis</span> pour occuper ce poste, fixée à 65 ans, selon le règlement de la Fédération française de football. Le club doit obtenir une dérogation pour pouvoir recruter Ranieri.  "
     }
 ]
