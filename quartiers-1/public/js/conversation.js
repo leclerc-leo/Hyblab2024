@@ -238,7 +238,7 @@ function saveConversation() {
     console.log("Saved");
 }
 
-function reloadConversation() {
+async function reloadConversation() {
     save = JSON.parse(sessionStorage.getItem("save"));
 
     user_name = save.user_name;
@@ -247,6 +247,9 @@ function reloadConversation() {
     nextTopic = save.nextTopic;
     time = save.time;
     lastBubble = save.lastBubble;
+
+    let resp  = await fetch('./data/' + quartier.toLowerCase() + '/' + topic.toLowerCase() + '.json')
+    data = await resp.json();
 
     conversation.empty();
     conversation.append(save.conversation);
@@ -259,6 +262,8 @@ function reloadConversation() {
 async function conversationUnfold(nextID) {
     let resp  = await fetch('./data/' + quartier.toLowerCase() + '/' + topic.toLowerCase() + '.json')
     data = await resp.json();
+
+    console.log(data);
 
     time = 0;
     let i = 0;
@@ -341,8 +346,6 @@ if (quartier_dispo[quartier] === false) {
 document.querySelectorAll(".quartier-titre").forEach(element => {
     element.innerHTML = quartier_dico[quartier];
 });
-
-backgroundTransition();
 
 setTimeout(() => {
     if (sessionStorage.getItem("save") == null || !quartier_dispo[quartier]) {
