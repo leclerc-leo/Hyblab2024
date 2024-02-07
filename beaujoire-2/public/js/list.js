@@ -1,36 +1,39 @@
 // list.js
 
+// get the temporary votes :
+votesTmp =  JSON.parse(localStorage.getItem('votes'));
+
 document.addEventListener('DOMContentLoaded', function () {
   const positions = ['Gardien', 'Arrière droit', 'Arriere gauche', 'Défenseur central 1'];
 
   const playerLists = [
     [
-      { name: 'Player 1', photo: 'img/ndoram.jpg' },
-      { name: 'Player 2', photo: 'img/ndoram.jpg' },
-      { name: 'Player 3', photo: 'img/ndoram.jpg' },
-      { name: 'Player 4', photo: 'img/ndoram.jpg' },
-      { name: 'Player 5', photo: 'img/ndoram.jpg' },
+      { id: 1 , name: 'Player 1', photo: 'img/ndoram.jpg' },
+      { id: 2 ,name: 'Player 2', photo: 'img/ndoram.jpg' },
+      { id: 3 ,name: 'Player 3', photo: 'img/ndoram.jpg' },
+      { id: 4 ,name: 'Player 4', photo: 'img/ndoram.jpg' },
+      { id: 5 ,name: 'Player 5', photo: 'img/ndoram.jpg' },
     ],
     [
-      { name: 'Player 6', photo: 'img/ndoram.jpg' },
-      { name: 'Player 7', photo: 'img/ndoram.jpg' },
-      { name: 'Player 8', photo: 'img/ndoram.jpg' },
-      { name: 'Player 9', photo: 'img/ndoram.jpg' },
-      { name: 'Player 10', photo: 'img/ndoram.jpg' },
+      { id: 6 ,name: 'Player 6', photo: 'img/ndoram.jpg' },
+      { id: 7 ,name: 'Player 7', photo: 'img/ndoram.jpg' },
+      { id: 8 ,name: 'Player 8', photo: 'img/ndoram.jpg' },
+      { id: 9 ,name: 'Player 9', photo: 'img/ndoram.jpg' },
+      { id: 10 ,name: 'Player 10', photo: 'img/ndoram.jpg' },
     ],
     [
-      { name: 'Player 1', photo: 'img/ndoram.jpg' },
-      { name: 'Player 2', photo: 'img/ndoram.jpg' },
-      { name: 'Player 3', photo: 'img/ndoram.jpg' },
-      { name: 'Player 4', photo: 'img/ndoram.jpg' },
-      { name: 'Player 5', photo: 'img/ndoram.jpg' },
+      { id: 11 ,name: 'Player 1', photo: 'img/ndoram.jpg' },
+      { id: 12 ,name: 'Player 2', photo: 'img/ndoram.jpg' },
+      { id: 13 ,name: 'Player 3', photo: 'img/ndoram.jpg' },
+      { id: 14 ,name: 'Player 4', photo: 'img/ndoram.jpg' },
+      { id: 15 ,name: 'Player 5', photo: 'img/ndoram.jpg' },
     ],
     [
-      { name: 'Player 6', photo: 'img/ndoram.jpg' },
-      { name: 'Player 7', photo: 'img/ndoram.jpg' },
-      { name: 'Player 8', photo: 'img/ndoram.jpg' },
-      { name: 'Player 9', photo: 'img/ndoram.jpg' },
-      { name: 'Player 10', photo: 'img/ndoram.jpg' },
+      { id: 16 ,name: 'Player 6', photo: 'img/ndoram.jpg' },
+      { id: 17 ,name: 'Player 7', photo: 'img/ndoram.jpg' },
+      { id: 18 ,name: 'Player 8', photo: 'img/ndoram.jpg' },
+      { id: 19 ,name: 'Player 9', photo: 'img/ndoram.jpg' },
+      { id: 20 ,name: 'Player 10', photo: 'img/ndoram.jpg' },
     ],
     // Add more player lists as needed
   ];
@@ -50,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
 
-  function updatePlayerListContent(playerListId, players) {
+  function updatePlayerListContent(playerListId, players , positionId) {
     const playerListContainer = document.getElementById(playerListId);
     playerListContainer.innerHTML = '';
 
@@ -69,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
       playerBox.addEventListener("click", () => downSlide(playerBox));  
 
       const heartButton = playerBox.querySelector('.heart-button');
-      heartButton.addEventListener('click', () => {toggleHeart(heartButton);});
+      heartButton.addEventListener('click', () => {toggleHeart(heartButton, player.id ,positionId);});
     });
   }
 
@@ -217,18 +220,32 @@ document.addEventListener('DOMContentLoaded', function () {
   
 
   function updateContent(currentIndex) {
-    updatePlayerListContent(`playerList${currentIndex + 1}`, playerLists[currentIndex]);
+    updatePlayerListContent(`playerList${currentIndex + 1}`, playerLists[currentIndex] , currentIndex);
     updatePositions(currentIndex);
   }
   
+  function toggleVote(positionId,playerId){
+    if (votesTmp[positionId] === 0)
+    {
+      votesTmp[positionId] = playerId ;
+    } else {
+      if (votesTmp[positionId] === playerId)
+            votesTmp[positionId] = 0 ;
+    }
+  }
 
   let selectedHeartButton = null;
-  function toggleHeart(button) {
+  function toggleHeart(button,playerId ,positionId) {
     if (button.dataset.type === 'heart') {
       if (selectedHeartButton && selectedHeartButton !== button) {
         selectedHeartButton.classList.remove('pressed');
+        // update temporary votes :
+        votesTmp[positionId] = 0 ;
       }
-
+      // update temporary votes :
+      toggleVote(positionId,playerId);
+      console.log(votesTmp);
+      localStorage.setItem('votes', JSON.stringify(votesTmp));
       button.classList.toggle('pressed');
       selectedHeartButton = button;
     }

@@ -120,6 +120,42 @@ body{
     width:160%;
 }
 
+/*** For vote in progress ***/
+
+.voted {
+    cursor: default;
+    text-decoration: none;
+}
+.player-voted {
+    margin-left: 25% ;
+
+}
+
+.player-img {
+    width : 120% ;
+    display: block;
+}
+
+.player-img-box {
+    height: 11vw;
+    width: 11vw;
+    border-radius :1.5vw ;
+    overflow: hidden;
+}
+
+.player-voted p {
+    font-size : 25% ;
+    font-weight : lighter;
+    line-height: 1;
+    font-family : 'Abolition';
+    color : white;
+    text-align: center;
+    padding-left : 25% ;
+}
+
+
+/*** For vote in progress ***/
+
 /* Postes spécifiques */
 #poste-1 { /* Gardien */
     top: 90%;
@@ -214,7 +250,7 @@ body{
 }
 
 .popup button img {
-    width: 5vmin;
+    width: 6.5vmin;
     display: block;
 }
 
@@ -223,7 +259,7 @@ body{
 }
 
 .popup p{
-    font-size: 5.5vmin ;
+    font-size: 6.5vmin ;
     
 }
 

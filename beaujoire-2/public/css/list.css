@@ -104,19 +104,27 @@ body{
     transform-origin: top;
     z-index: -1;
   }
-  /* Styling for the "Retour au terrain" button */
-  #retour {
-    background-color: var(--bg-green);
-    padding: 0.625em 1.25em;
-    border: 0.188em solid var(--yellow);
-    cursor: pointer;
-    color: var(--yellow);
-    font-family: "Abolition";
-    font-size: 25%;
-    border-radius: 1.25em;
-    width: 40%;
-    margin-top: 10%;
-  }
+/* Styling for the "Retour au terrain" button */
+#retour {
+  background-color: var(--bg-green);
+  padding: 0.625em 1.25em;
+  border: 0.188em solid var(--yellow);
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--yellow);
+  font-family: "Abolition";
+  font-size: 25%;
+  border-radius: 1.25em;
+  width: 40%;
+  margin-top: 10%;
+  transition: all 0.5s ease-in-out ;
+}
+
+#retour:hover{
+  cursor: pointer;
+  background-color: var(--yellow);
+  color: var(--green);
+}
 
 /* Styling for the position preview */
 .position-preview {
@@ -179,6 +187,7 @@ body{
 }
 
 
+
 @media screen and (max-aspect-ratio: 3/4) {
   p{
       margin: 0;
@@ -192,8 +201,6 @@ body{
       margin: 0;
   }
 }
-
-
 
 
 
