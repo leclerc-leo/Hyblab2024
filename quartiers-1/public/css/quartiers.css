@@ -117,9 +117,9 @@ h1{
 }
 #background-animation{
     position: absolute;
-    bottom: -5%;
+    bottom: -5.1%;
     height: auto;
-    width: 100%;
+    width: 102%;
 }
 /*-------- End of Drawing ----------*/
 
@@ -254,6 +254,10 @@ h1{
     align-items: center;
     color: white;
     background-color: #7D7DB5; 
+}
+.greyed{
+    color: #5c5454  !important;
+    border: solid thin #5c5454  !important;
 }
 .choice-bubbles{
     padding: 0.45em;

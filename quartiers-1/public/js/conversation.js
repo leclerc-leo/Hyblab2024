@@ -15,6 +15,8 @@ function treatBubble(bubbleJson) {
         time += 2100*lastBubble["content"].length;
     }
 
+    canChange = false;
+
     setTimeout(() => { 
         if (bubbleJson["type"] == "bubble") {
             addBubble(bubbleJson["speaker"], bubbleJson["content"]);
@@ -30,6 +32,10 @@ function treatBubble(bubbleJson) {
         }
         if (bubbleJson["type"] == "quit") {
             addQuitBubble(bubbleJson);
+        }
+
+        if (bubbleJson["type"] != "bubble") {
+            canChange = true;
         }
     }, time);
 }
@@ -106,6 +112,7 @@ function addNameBubble(bubbleJson) {
     conversation.append(choiceBubblesContent);
 
     scrollSmoothlyToBottom();
+    time = 0;
     saveConversation();
 }
 
@@ -141,6 +148,7 @@ function addChoiceBubble(bubbleJson) {
     conversation.append(choiceBubblesContent);
 
     scrollSmoothlyToBottom();
+    time = 0;
     saveConversation();
 }
 
@@ -166,6 +174,10 @@ function addTopicBubble(bubbleJson) {
     bubbleJson["choicesLabel"].forEach(textContentChoice => {
         choiceBubblesContent += '<button class="choice-bubbles" onclick="topicSelected(this)">'+ textContentChoice + '</button>';
         placeholder += '<button class="choice-bubbles" onclick="topicSelected(this)">'+ textContentChoice + '</button>';
+
+        if (textContentChoice.toLocaleLowerCase() == topic) {
+            choiceBubblesContent = choiceBubblesContent.replace("choice-bubbles", "choice-bubbles greyed");
+        }
     });
     choiceBubblesContent += '</div>';
     placeholder += '</div>';
@@ -174,6 +186,7 @@ function addTopicBubble(bubbleJson) {
     conversation.append(choiceBubblesContent);
 
     scrollSmoothlyToBottom();
+    time = 0;
     saveConversation();
 }
 
@@ -209,6 +222,7 @@ function addQuitBubble(bubbleJson) {
     conversation.append(choiceBubblesContent);
 
     scrollSmoothlyToBottom();
+    time = 0;
     saveConversation();
 }
 
@@ -252,10 +266,10 @@ async function reloadConversation() {
         let resp  = await fetch('./data/' + quartier.toLowerCase() + '/' + topic.toLowerCase() + '.json')
         data = await resp.json();
 
+        backgroundTransition();
+
         conversation.empty();
         conversation.append(save.conversation);
-
-        changeTopic();
 
         scrollSmoothlyToBottom();
 
@@ -265,8 +279,6 @@ async function reloadConversation() {
 async function conversationUnfold(nextID) {
     let resp  = await fetch('./data/' + quartier.toLowerCase() + '/' + topic.toLowerCase() + '.json')
     data = await resp.json();
-
-    console.log(data);
 
     time = 0;
     let i = 0;
@@ -327,6 +339,7 @@ let time = 0;
 let lastBubble = {"content": []};
 let save = {};
 let extension = "svg";
+let canChange = true;
 
 // On regarde s'il y a déjà une sauvegarde
 let user_name = sessionStorage.getItem("user_name");
@@ -339,11 +352,16 @@ if (user_name == null) {
 }
 
 // Si le quartier n'est pas encore implémenté
-if (quartier_dispo[quartier] === false) {
+if (quartier_dispo[quartier] === false || quartier == undefined) {
     quartier = "autres";
     start = "Debut";
     extension = "png";
     nextTopic = "aucun"
+
+    document.querySelectorAll(".undefinedElement").forEach(element => {
+        element.remove();
+    });
+
     console.log("Indisponible");
 }
 
@@ -377,7 +395,11 @@ document.querySelectorAll(".quartier-titre").forEach(element => {
 document.querySelectorAll(".topicButton").forEach(button => {
     button.addEventListener("click", function(event) {
         closeNav();
-        nextTopic = event.target.dataset.topic;
-        changeTopic();
+        console.log(canChange);
+        if (canChange) {
+            nextTopic = event.target.dataset.topic;
+            changeTopic();
+        }
     });
 });
+
