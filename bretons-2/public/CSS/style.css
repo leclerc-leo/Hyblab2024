@@ -241,4 +241,76 @@ button:focus, button:active {
     justify-content: center;
     padding-top: 4%;
 }
+.ele_fleche{
+    width:60px;
+    transform: rotate(70deg);
+    /* z-index: 2; */
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: -85px;
+    margin-left: 150px;
+}
+.ele_sardine{
+    width:80px;
+    transform: rotate(17deg);
+    /* z-index: 2; */
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: -40px;
+    margin-left: 400px;
+}
+.nom_div_pg_at{
+    text-align: center; 
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 80px;
+}
+.img_div_pg_at{
+
+    text-align: center; 
+    width: 100%;
+}
+.img_at_pg_at {
+    width:70%;
+    margin: 0 auto;
+}
+.text_pg_at{
+    width: 80%;
+    margin-top:50px;
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size: large;
+}
+.text2_pg_at {
+    margin-bottom: 30px;
+    font-weight: bold;
+    margin-top: 60px;
+    margin-left: 80px;
+}
+
+.text3_pg_at {
+    margin-bottom: 30px;
+    font-weight: bold;
+    margin-top: 80px;
+    text-align: center;
+}
+
+.box_p_c{
+    margin-bottom: 30px;
+    width: 90%;
+    margin-left: 5%;
+    font-weight: bold;
+}
+
+.next-athlete-div{
+    text-align: center; 
+    cursor:pointer; 
+    background-color : #141456;
+    color : white;
+    margin-left : 26% ; 
+    width : 50% ; 
+    font-size : 30px;  
+}
   
