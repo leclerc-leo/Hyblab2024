@@ -9,6 +9,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 		setTimeout(function () {
 			document.getElementById("gif").style.display = "none";
-		}, 6040);
+		}, 5040);
 	});
 });

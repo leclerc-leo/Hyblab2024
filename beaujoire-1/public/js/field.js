@@ -1,6 +1,7 @@
 "use strict";
 
 let isAnyItemFlipped = false;
+let isCaptainSelected = false;
 let selectedPlayerId;
 let updatePlayerElement;
 let playersData;
@@ -24,25 +25,39 @@ function initizalizePage() {
 		} else {
 			playerElement.textContent = playerName;
 		}
-		const playerNames = document.querySelectorAll(".player-name");
-		playerNames.forEach((playerName) => {
+		if (player.POSTE !== "ENTRAÎNEUR" && player.NUMÉRO !== undefined) {
+			const playerNameElem = playerElement.querySelector(".player-name");
+			const overflow =
+				playerElement.scrollWidth - playerNameElem.clientWidth;
+			if (overflow > 0) {
+				playerNameElem.style.transform = `translateX(-${
+					overflow / 2
+				}px)`;
+			}
+		}
+
+		selectedPlayerId = null;
+	};
+
+	const playerNames = document.querySelectorAll(".player-name");
+	playerNames.forEach((playerName) => {
+		if (player.POSTE !== "ENTRAÎNEUR" && player.NUMÉRO !== undefined) {
 			const overflow = playerName.scrollWidth - playerName.clientWidth;
 			if (overflow > 0) {
 				playerName.style.transform = `translateX(-${overflow / 2}px)`;
 			}
-		});
-		selectedPlayerId = null;
-	};
+		}
+	});
 
 	const urlParams = new URLSearchParams(window.location.search);
 	const playersParam = urlParams.get("players");
+	const captainParam = urlParams.get("captain");
+	console.log(`Captain parameter: ${captainParam}`);
 	console.log(`URL parameters: ${playersParam}`);
 	const storedPlayers = JSON.parse(localStorage.getItem("players"));
 
 	if (playersParam !== null) {
 		const players = playersParam.split("&");
-		localStorage.clear();
-		console.log("Cleared local storage");
 		console.log(`Players from URL: ${players}`);
 		// Iterate through each player from the URL parameters
 		players.forEach((player) => {
@@ -56,9 +71,33 @@ function initizalizePage() {
 			if (playerElement && playerName !== "") {
 				updatePlayerElement(playerElement, playerName);
 			} else {
-				console.log(`No element found with id ${playerId}`);
+				console.log(`No player found for id ${playerId}`);
 			}
 		});
+		if (captainParam) {
+			handleCaptainSelect(captainParam);
+		}
+		document.querySelector("#share").style.display = "flex";
+		document.getElementById("statistiques").style.display = "inline-block";
+		document.getElementById("redac").style =
+			"margin:0 ; transform: translateX(0)";
+		document.getElementById("capitaine").style.display = "inline-block";
+		document.getElementById("capitaine").style.animationName =
+			"cap-bar-down";
+		document.getElementById("capitaine").style.display = "inline-block";
+		document
+			.getElementById("capitaine")
+			.addEventListener("click", handleCaptainClick);
+
+		setInterval(() => {
+			if (isCaptainSelected) {
+				document.querySelector("#cap-bar").style.animationName =
+					"cap-bar-down";
+			} else {
+				document.querySelector("#cap-bar").style.animationName =
+					"cap-bar-up";
+			}
+		}, 100);
 	} else if (storedPlayers) {
 		console.log("Players found in local storage");
 		// Iterate through each player from the local storage
@@ -70,7 +109,7 @@ function initizalizePage() {
 			if (playerElement && playerName !== "") {
 				updatePlayerElement(playerElement, playerName);
 			} else {
-				console.log(`No element found with id ${playerId}`);
+				console.log(`No player found for id ${playerId}`);
 			}
 		}
 	}
@@ -128,22 +167,26 @@ document.addEventListener("DOMContentLoaded", () => {
 		.querySelectorAll(".player.player-clickable.forward")
 		.forEach((player) => {
 			player.addEventListener("click", () => {
-				animatePlayer(
-					"attaquant-gif",
-					"img/animations/attaquant-fond-gris.gif",
-					1200
-				);
+				if (!(!isCaptainSelected && areAllPlayersSelected())) {
+					animatePlayer(
+						"attaquant-gif",
+						"img/animations/attaquant-fond-gris.gif",
+						1200
+					);
+				}
 			});
 		});
 	document
 		.querySelectorAll(".player.player-clickable.midfielder")
 		.forEach((player) => {
 			player.addEventListener("click", () => {
-				animatePlayer(
-					"milieu-gif",
-					"img/animations/milieu-fond-gris.gif",
-					1020
-				);
+				if (!(!isCaptainSelected && areAllPlayersSelected())) {
+					animatePlayer(
+						"milieu-gif",
+						"img/animations/milieu-fond-gris.gif",
+						1020
+					);
+				}
 			});
 		});
 
@@ -151,24 +194,34 @@ document.addEventListener("DOMContentLoaded", () => {
 		.querySelectorAll(".player.player-clickable.defender")
 		.forEach((player) => {
 			player.addEventListener("click", () => {
-				animatePlayer(
-					"defenseur-gif",
-					"img/animations/defence-fond-gris.gif",
-					1100
-				);
+				if (!(!isCaptainSelected && areAllPlayersSelected())) {
+					animatePlayer(
+						"defenseur-gif",
+						"img/animations/defence-fond-gris.gif",
+						1100
+					);
+				}
 			});
 		});
 
 	document.querySelector("#goalkeeper").addEventListener("click", () => {
-		animatePlayer(
-			"gardien-gif",
-			"img/animations/gardien-fond-gris.gif",
-			1360
-		);
+		if (!(!isCaptainSelected && areAllPlayersSelected())) {
+			animatePlayer(
+				"gardien-gif",
+				"img/animations/gardien-fond-gris.gif",
+				1360
+			);
+		}
 	});
 
 	document.querySelector("#entraineur").addEventListener("click", () => {
-		animatePlayer("coach-gif", "img/animations/coach-fond-gris.gif", 1360);
+		if (!(!isCaptainSelected && areAllPlayersSelected())) {
+			animatePlayer(
+				"coach-gif",
+				"img/animations/coach-fond-gris.gif",
+				1360
+			);
+		}
 	});
 
 	document.addEventListener("click", () => {
@@ -191,19 +244,21 @@ function animatePlayer(elementId, imgSrc, timeoutDuration) {
 
 	imgElement.src = imgSrc;
 
-	element.style.display = "flex";
-	element.style.opacity = "1";
+	imgElement.onload = function () {
+		element.style.display = "flex";
+		element.style.opacity = "1";
 
-	setTimeout(() => {
-		element.querySelector("audio").play();
-	}, 10);
-	setTimeout(() => {
-		element.style.opacity = "0";
 		setTimeout(() => {
-			element.style.display = "none";
-			imgElement.src = "";
-		}, 200);
-	}, timeoutDuration + 20);
+			element.querySelector("audio").play();
+		}, 10);
+		setTimeout(() => {
+			element.style.opacity = "0";
+			setTimeout(() => {
+				element.style.display = "none";
+				imgElement.src = "";
+			}, 200);
+		}, timeoutDuration + 20);
+	};
 }
 
 function areAllPlayersSelected() {
@@ -218,13 +273,9 @@ function areAllPlayersSelected() {
 }
 
 function handlePlayerClick(event) {
-	console.log("Clicked event:", event);
-	console.log("Clicked target:", event.target);
 	const playerElement = event.target.closest(".player-clickable");
 	if (playerElement) {
 		selectedPlayerId = playerElement.id;
-		console.log(`Selected player: ${selectedPlayerId}`);
-
 		// Add player animation class
 		playerElement.classList.add("player-animation");
 
@@ -246,16 +297,12 @@ function showCarousel(id) {
 	const filteredPlayers = playersData.filter(
 		(player) => player.POSTE === poste
 	);
-	console.log(
-		`Found ${filteredPlayers.length} players for position ${poste}`
-	);
 
 	const carousel = document.querySelector(".carousel");
 	carousel.innerHTML = "";
 
 	filteredPlayers.forEach((player) => {
 		const carouselItemHTML = createCarouselItem(player);
-		console.log(`Created carousel item: ${carouselItemHTML}`);
 		carousel.appendChild(carouselItemHTML);
 	});
 
@@ -289,8 +336,9 @@ function handleValidateButtonClick() {
 	const selectedPlayer = document.querySelector(".carousel-item.focused");
 	const selectedPlayerName =
 		selectedPlayer.querySelector("#name").textContent;
-	console.log(selectedPlayerName);
-	console.log(selectedPlayerId);
+	console.log(
+		`Selected player for position ${selectedPlayerId}: ${selectedPlayerName}`
+	);
 	//Add the player to the list of selected players
 	players[selectedPlayerId] = selectedPlayerName;
 	//Save the list of selected players to local storage
@@ -312,16 +360,28 @@ function handleValidateButtonClick() {
 		console.log("Tous les joueurs ont été sélectionnés");
 		document.querySelector("#share").style.display = "flex";
 		document.querySelector("#captain").style.display = "flex";
+		document.getElementById("statistiques").style.display = "inline-block";
+		document.getElementById("redac").style =
+			"margin:0 ; transform: translateX(0)";
+		document.getElementById("capitaine").style.display = "inline-block";
+		document.getElementById("capitaine").style.animationName =
+			"cap-bar-down";
+		document.getElementById("capitaine").style.display = "inline-block";
+		document
+			.getElementById("capitaine")
+			.addEventListener("click", handleCaptainClick);
 		setTimeout(() => {
 			document.addEventListener("click", function () {
 				document.querySelector("#captain").style.display = "none";
 			});
+			setTimeout(() => {
+				document.querySelector("#captain").style.display = "none";
+			}, 5000);
 		}, 1000);
 	}
 }
 
 function getPositionFromId(id) {
-	console.log(`Getting position from id: ${id}`); // Log the input
 	const element = document.getElementById(id);
 	if (!element) {
 		console.log(`No element found with id ${id}`);
@@ -370,7 +430,6 @@ function getPositionFromId(id) {
 		default:
 			position = "";
 	}
-	console.log(`Position for id ${id} is ${position}`); // Log the result
 	return position;
 }
 
@@ -430,7 +489,6 @@ function createCarouselItem(player) {
 	}
 
 	let carte = player.CARTE;
-	console.log(carte);
 	carouselItem.innerHTML = `
 	<div class="flip-container">
 		<div class="flipper">
@@ -660,9 +718,12 @@ function handleShareUrl() {
 		([key, value]) =>
 			`${encodeURIComponent(key)}=${encodeURIComponent(value)}`
 	);
+	const captain = localStorage.getItem("captain");
 	let params = playersArray.join("&");
 	let shareUrl = new URL(window.location.href);
-	shareUrl.search = `players=${encodeURIComponent(params)}`;
+	shareUrl.search = `players=${encodeURIComponent(
+		params
+	)}&captain=${encodeURIComponent(captain)}`;
 
 	navigator.clipboard.writeText(shareUrl.toString()).then(
 		function () {
@@ -1159,11 +1220,46 @@ function handleCompareScroll() {
 	carouselItems[validFocusedIndex].classList.add("focus");
 }
 
-function handleCaptain() {}
+function handleCaptainClick(event) {
+	if (isCaptainSelected) {
+		const capElements = document.querySelectorAll(".cap");
+		capElements.forEach((element) => {
+			element.remove();
+		});
+		isCaptainSelected = false;
+	}
+	const cap_btn = event.target.closest("#capitaine");
+	const cap_bar = cap_btn.querySelector("#cap-bar");
+	if (cap_btn) {
+		document.querySelectorAll(".player-clickable").forEach((player) => {
+			player.removeEventListener("click", handlePlayerClick);
+			player.addEventListener("click", (event) => {
+				handleCaptainSelect(
+					event.target.closest(".player-clickable").id
+				);
+			});
+		});
+	} else {
+		console.log("captain button not found");
+	}
+}
 
-if (areAllPlayersSelected()) {
-	console.log("Tous les joueurs ont été sélectionnés");
-	document.querySelector("#share").style.display = "flex";
+function handleCaptainSelect(id) {
+	const selectedPlayer = id;
+	const selectedPlayerElement = document.getElementById(selectedPlayer);
+	const captain = document.createElement("div");
+	captain.classList.add("cap");
+	captain.innerHTML = `
+		c
+	`;
+	selectedPlayerElement.appendChild(captain);
+	selectedPlayerElement.classList.add("captain");
+	isCaptainSelected = true;
+	localStorage.setItem("captain", id);
+	document.querySelectorAll(".player-clickable").forEach((player) => {
+		player.removeEventListener("click", handleCaptainClick);
+		player.addEventListener("click", handlePlayerClick);
+	});
 }
 
 function closeCompareCarousel() {
@@ -1180,4 +1276,8 @@ function closeCarouselOverlay() {
 
 function closeBioOverlay() {
 	document.querySelector(".bio-overlay").style.display = "none";
+}
+
+function closeCaptainOverlay() {
+	document.querySelector("#captain").style.display = "none";
 }
