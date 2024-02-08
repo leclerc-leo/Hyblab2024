@@ -86,3 +86,10 @@ document.querySelector("#see-quartier").addEventListener("click", function() {
     window.location.href = "/quartiers-1/quartiers";
 });
 
+var animation = lottie.loadAnimation({ 
+    container: document.getElementById('animation-logo'), 
+    renderer: 'svg', 
+    loop: false, 
+    autoplay: true, 
+    path: 'animation/logo_trouve_ton_quartier.json'
+ }); 
