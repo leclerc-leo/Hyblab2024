@@ -10,13 +10,24 @@
 }
 
 /* code propre à la page */
-.name-person {
-    margin-top: 3%;
-    margin-bottom: 3%;
+.name-devanture {
+    margin-bottom: 5%;
+    margin-right: 5%;
     font-size: 0.75em;
     font-weight: bold;
     text-align: center;
     color: black;
+    font-family: 'AlwaysInMyHeart','Montserrat', sans-serif;
+}
+
+.name-person{
+    font-size: 0.75em;
+    width: 100%;
+    font-weight: bold;
+    text-align: center;
+    color: black;
+    margin-top: 2%;
+    margin-right: 5%;
     font-family: 'AlwaysInMyHeart','Montserrat', sans-serif;
 }
 
@@ -25,11 +36,6 @@
     width: 40%;
     height: auto;
 }
-
-.name-person {
-    margin-top: 10%;
-}
-
 
 /* audio */
 .audio-div{
