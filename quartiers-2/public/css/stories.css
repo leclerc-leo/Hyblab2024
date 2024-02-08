@@ -227,21 +227,43 @@ main{
 }
 
 #slide-credit{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
     color: black;
     font-size: 0.5em;
-    height: 100%;
+    height: 80% !important;
+    justify-content: space-around !important;
+    width: 100%;
+    margin-bottom: auto;
+}
+#slide-credit img{
+    width: 100%;
+    height: auto;
 }
 #slide-credit p{
-    margin-top: 10%;
-    margin-bottom: 1em;
+    margin-top: 3%;
+    margin-bottom: 3%;
     font-size: 1em;
     text-align: center;
     width: 70%;
-    font-weight: bold;
 }
 #credits_button{
     width: 30%;
+}
+#slide-credit p:first-child{
+    margin-top: 5%;
+    margin-bottom: 2%;
+}
+.style-text{
+    text-align: center;
+    font-weight: bold;
+    font-family: 'AlwaysInMyHeart','Montserrat', sans-serif;
+    font-size: 1.7em !important;
+}
+@font-face {
+    font-family: 'AlwaysInMyHeart';
+    src: url('../font/AlwaysInMyHeart.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }

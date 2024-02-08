@@ -21,13 +21,13 @@ const recapPage = function () {
   function getIconSize() {
     const height = window.innerHeight;
     if (height <= 480) {
-      return 30; // Icon size for mobile devices
+      return 40; // Icon size for mobile devices
     } else if (height <= 768) {
-      return 40; // Icon size for tablets
+      return 50; // Icon size for tablets
     } else if (height <= 1024) {
-      return 50; // Icon size for desktop
+      return 60; // Icon size for desktop
     } else {
-      return 60; // Icon size for large desktop
+      return 80; // Icon size for large desktop
     }
   }
 
