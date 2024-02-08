@@ -2,29 +2,32 @@
 const recapPage = function () {
 
   function getInitialZoomLevel() {
-    const width = window.innerWidth;
-    if (width <= 480) {
-        return 13; // Zoom level for mobile devices
-    } else if (width <= 768) {
-        return 14; // Zoom level for tablets
-    } else if (width <= 1024) {
-        return 15; // Zoom level for desktop
-    } else{
-        return 16; // Zoom level for large desktop
+    const height = window.innerHeight;
+    if (height <= 480) {
+      console.log(14);
+      return 12; // Zoom level for mobile devices
+    } else if (height <= 768) {
+      console.log(15);
+      return 13; // Zoom level for tablets
+    } else if (height <= 1024) {
+      console.log(16);
+      return 14; // Zoom level for desktop
+    } else {
+      console.log(17);
+      return 16; // Zoom level for large desktop
     }
   }
 
   function getIconSize() {
-    var width = window.innerWidth;
-    if (width <= 480) {
-        return 50; // Icon size for mobile devices
-    } else if (width <= 768) {
-        return 60; // Icon size for tablets
-    } else if (width <= 1024) {
-        return 80; // Icon size for desktop
-    }
-    else{
-        return 90; // Icon size for large desktop
+    const height = window.innerHeight;
+    if (height <= 480) {
+      return 30; // Icon size for mobile devices
+    } else if (height <= 768) {
+      return 40; // Icon size for tablets
+    } else if (height <= 1024) {
+      return 50; // Icon size for desktop
+    } else {
+      return 60; // Icon size for large desktop
     }
   }
 

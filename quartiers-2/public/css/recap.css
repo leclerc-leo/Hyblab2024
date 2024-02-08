@@ -119,19 +119,19 @@
 }
 
 .leaflet-popup{
-
+  width: fit-content !important;
 }
 
 .leaflet-popup-content{
   display: flex;
-  justify-content: space-between;
-  width: 40vw !important;
-  height: 20vw;
+  justify-content: space-evenly;
+  width: 20vw !important;
+  height: 10vh;
   align-items: center;
 
 }
 .leaflet-popup-content img{
-  width: 100%;
+  width: 7vh;
 }
 .leaflet-popup-content div:first-child{
   display: flex;
@@ -156,12 +156,44 @@
   color: white;
   text-decoration: none;
 }
-.leaflet-popup-content h3, .leaflet-popup-content button a{
-  font-size: xx-large;
+
+.leaflet-popup-content{
+    width: fit-content !important;
+    height: fit-content !important;
 }
+
 @font-face {
     font-family: 'AlwaysInMyHeart';
     src: url('../font/AlwaysInMyHeart.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
+}
+
+@media screen and (max-width: 480px) {
+  .leaflet-popup-content h3,
+  .leaflet-popup-content button a {
+    font-size: 140%;
+  }
+
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .leaflet-popup-content h3,
+  .leaflet-popup-content button a {
+    font-size: 160%;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .leaflet-popup-content h3,
+  .leaflet-popup-content button a {
+    font-size: 180%;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .leaflet-popup-content h3,
+  .leaflet-popup-content button a {
+    font-size: 200%;
+  }
 }

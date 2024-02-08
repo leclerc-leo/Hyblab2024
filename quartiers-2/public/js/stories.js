@@ -244,12 +244,10 @@ const homeStories = function () {
           loader.style.opacity = '1';
           loader.style.zIndex = '3000';
 
+          // on rajoute a notre container le body de la page credits
+          container.innerHTML = html;
           retour = document.querySelector('#back_button');
           retour.style.display = 'block';
-
-          // on rajoute a notre container le body de la page credits
-
-          container.innerHTML = html;
 
           setTimeout(() => {
             anime({
