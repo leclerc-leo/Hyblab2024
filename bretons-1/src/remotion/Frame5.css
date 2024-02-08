@@ -41,7 +41,7 @@
     height: auto;
     z-index: 10;
     top: 30%;
-    left: 9%;
+    left: 8.2%;
     position: absolute;
   }
 
@@ -52,6 +52,11 @@
     height: 485px;
     z-index: 20;
     position: absolute;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    object-fit: cover;
   }
 
   .fun-fact {
@@ -68,18 +73,19 @@
 
   .fun-fact-texte {
     position: absolute;
-    top: 65%;
+    top: 65.5%;
     left: 75%;
     transform: translate(-50%, -50%);
     width: 480px; 
+    height: 320px;
     color: #000;
     text-align: left;
-    font-size: 40px;
+    font-size: 38px;
   }
 
   .record {
     position: absolute;
-    top: 63%;
+    top: 62.5%;
     left: 45%;
     transform: translate(-50%, -50%);
     width: 80%; 
@@ -91,19 +97,22 @@
 
   .record-texte {
     position: absolute;
-    top: 66.5%;
+    top: 68.7%;
     left: 26%;
     transform: translate(-50%, -50%);
     width: 450px; 
+    height: 180px;
     color: #000;
     text-align: left;
-    font-size: 40px;
+    font-size: 35px;
   }
 
   .age-frame5 {
     position: absolute;
+    text-align: center;
     top: 32%;
-    left: 16.3%;
+    left: 15%;
+    width: 240px;
     font-size: 40px;
     font-family: "Golos Text";
     transform: rotate(6deg);
@@ -125,12 +134,28 @@
   .sport-frame5 {
     position: absolute;
     top: 44.5%;
-    left: 15.5%;
+    left: 14.5%;
     width: 226px;
     font-size: 50px;
     text-align: center;
     font-family: "Golos Text";
     transform: rotate(4deg);
     z-index: 12;
+  }
+
+  .sport-image {
+    position: absolute;
+    top: 50.5%;
+    left: 19%;
+    width: 150px;
+    height: auto;
+    text-align: center;
+    z-index: 12;
+  }
+
+  .pointeur {
+    position: absolute;
+    width: 70px;
+    z-index: 20;
   }
 
