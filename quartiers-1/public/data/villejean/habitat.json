@@ -20,7 +20,7 @@
         "type": "bubble",
         "choicesLabel": [],
         "content": ["Effectivement, les tours du quartier sont vieilles de plusieurs décennies et ont clairement besoin de rénovation.","C’est d’ailleurs l’objectif du programme de renouvellement urbain signé par la municipalité à l’horizon 2025-2026."],
-        "next": ["Reponse2"]
+        "next": ["Choix2"]
     },
     
     "ReponseChoix12": {
@@ -179,7 +179,7 @@
         "speaker": "user",
         "type": "topicChoice",
         "choicesLabel": ["Portrait", "Association", "Habitat", "Sport", "Education", "Commerce"],
-        "content": ["Les portraits de ${quartier}", "Les associations à ${quartier}", "L'habitat à ${quartier}", "Le sport à ${quartier}", "L'éducation à ${quartier}", "Les commerces à ${quartier}"],
+        "content": ["Les portraits de ${quartier}.", "Les associations à ${quartier}.", "L'habitat à ${quartier}.", "Le sport à ${quartier}.", "L'éducation à ${quartier}.", "Les commerces à ${quartier}."],
         "next": ["GoLieu", "GoLieu", "GoLieu", "GoLieu", "GoLieu", "GoLieu"]
     },
 

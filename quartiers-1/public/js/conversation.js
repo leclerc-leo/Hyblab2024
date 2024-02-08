@@ -15,6 +15,8 @@ function treatBubble(bubbleJson) {
         time += 2100*lastBubble["content"].length;
     }
 
+    canChange = false;
+
     setTimeout(() => { 
         if (bubbleJson["type"] == "bubble") {
             addBubble(bubbleJson["speaker"], bubbleJson["content"]);
@@ -30,6 +32,10 @@ function treatBubble(bubbleJson) {
         }
         if (bubbleJson["type"] == "quit") {
             addQuitBubble(bubbleJson);
+        }
+
+        if (bubbleJson["type"] != "bubble") {
+            canChange = true;
         }
     }, time);
 }
@@ -106,11 +112,12 @@ function addNameBubble(bubbleJson) {
     conversation.append(choiceBubblesContent);
 
     scrollSmoothlyToBottom();
+    time = 0;
     saveConversation();
 }
 
 function saveUsername(event){
-    if (event.key === 'Enter') {
+    if (event.key === 'Enter' && document.querySelector(".conversation #username_input").value.length > 0) {
         user_name = document.querySelector(".conversation #username_input").value;
 
         // remove all choices
@@ -141,6 +148,7 @@ function addChoiceBubble(bubbleJson) {
     conversation.append(choiceBubblesContent);
 
     scrollSmoothlyToBottom();
+    time = 0;
     saveConversation();
 }
 
@@ -164,8 +172,12 @@ function addTopicBubble(bubbleJson) {
     let placeholder = '<div class="choices-placeholder">';
 
     bubbleJson["choicesLabel"].forEach(textContentChoice => {
-        choiceBubblesContent += '<button class="choice-bubbles" onclick="topicSelected(this)">'+ textContentChoice + '</button>';
-        placeholder += '<button class="choice-bubbles" onclick="topicSelected(this)">'+ textContentChoice + '</button>';
+        if (textContentChoice.toLocaleLowerCase() == topic) {
+            choiceBubblesContent += '<button class="choice-bubbles greyed" onclick="topicSelected(this)">'+ textContentChoice + '</button>';
+        } else {
+            choiceBubblesContent += '<button class="choice-bubbles" onclick="topicSelected(this)">'+ textContentChoice + '</button>';
+        }
+        placeholder += '<button class="choice-bubbles" onclick="topicSelected(this)">'+ textContentChoice + '</button>';        
     });
     choiceBubblesContent += '</div>';
     placeholder += '</div>';
@@ -174,6 +186,7 @@ function addTopicBubble(bubbleJson) {
     conversation.append(choiceBubblesContent);
 
     scrollSmoothlyToBottom();
+    time = 0;
     saveConversation();
 }
 
@@ -209,6 +222,7 @@ function addQuitBubble(bubbleJson) {
     conversation.append(choiceBubblesContent);
 
     scrollSmoothlyToBottom();
+    time = 0;
     saveConversation();
 }
 
@@ -239,31 +253,32 @@ function saveConversation() {
 }
 
 async function reloadConversation() {
-    save = JSON.parse(sessionStorage.getItem("save"));
+    
+        save = JSON.parse(sessionStorage.getItem("save"));
 
-    user_name = save.user_name;
-    quartier = save.quartier;
-    topic = save.topic;
-    nextTopic = save.nextTopic;
-    time = save.time;
-    lastBubble = save.lastBubble;
+        user_name = save.user_name;
+        quartier = save.quartier;
+        topic = save.topic;
+        nextTopic = save.nextTopic;
+        time = save.time;
+        lastBubble = save.lastBubble;
 
-    let resp  = await fetch('./data/' + quartier.toLowerCase() + '/' + topic.toLowerCase() + '.json')
-    data = await resp.json();
+        let resp  = await fetch('./data/' + quartier.toLowerCase() + '/' + topic.toLowerCase() + '.json')
+        data = await resp.json();
 
-    conversation.empty();
-    conversation.append(save.conversation);
+        backgroundTransition();
 
-    scrollSmoothlyToBottom();
+        conversation.empty();
+        conversation.append(save.conversation);
 
-    console.log("Reloaded");
+        scrollSmoothlyToBottom();
+
+        console.log("Reloaded ");
 }
 
 async function conversationUnfold(nextID) {
     let resp  = await fetch('./data/' + quartier.toLowerCase() + '/' + topic.toLowerCase() + '.json')
     data = await resp.json();
-
-    console.log(data);
 
     time = 0;
     let i = 0;
@@ -324,6 +339,7 @@ let time = 0;
 let lastBubble = {"content": []};
 let save = {};
 let extension = "svg";
+let canChange = true;
 
 // On regarde s'il y a déjà une sauvegarde
 let user_name = sessionStorage.getItem("user_name");
@@ -335,41 +351,54 @@ if (user_name == null) {
     start = "Binvenue1";
 }
 
-// Si le quartier n'est pas implémenté
-if (quartier_dispo[quartier] === false) {
+// Si le quartier n'est pas encore implémenté
+if (quartier_dispo[quartier] === false || quartier == undefined) {
     quartier = "autres";
     start = "Debut";
     extension = "png";
+    nextTopic = "aucun"
+
+    document.querySelectorAll(".undefinedElement").forEach(element => {
+        element.remove();
+    });
+
     console.log("Indisponible");
 }
 
-document.querySelectorAll(".quartier-titre").forEach(element => {
-    element.innerHTML = quartier_dico[quartier];
-});
+// Si le quartier de la sauvegarde n'est pas bienvenue, on cache l'animation
+if (sessionStorage.getItem("save") !== null) {
+    if (sessionStorage.getItem("save").topic !== "bienvenue") {
+        const img = document.querySelector("#background-animation");
+        img.classList.add("empty");
+    }
+}
 
+// On attend un peu avant de lancer la conversation
 setTimeout(() => {
+    // Si c'est la première fois qu'on arrive, 
     if (sessionStorage.getItem("save") == null || !quartier_dispo[quartier]) {
         conversationUnfold(start);
+    // Sinon on recharge la sauvegarde
     } else {
         reloadConversation();
     }
 }, 1000);
 
-/*
-const save_button = document.querySelector(".save");
-save_button.addEventListener("click", function() {
-    saveConversation();
-});
-const reload_button = document.querySelector(".reload");
-reload_button.addEventListener("click", function() {
-    reloadConversation();
-});
-*/
 
+
+// On met le nom du quartier dans les titres 
+document.querySelectorAll(".quartier-titre").forEach(element => {
+    element.innerHTML = quartier_dico[quartier];
+});
+
+// Ajout des event listener sur les boutons de thème du menu burger
 document.querySelectorAll(".topicButton").forEach(button => {
     button.addEventListener("click", function(event) {
         closeNav();
-        nextTopic = event.target.dataset.topic;
-        changeTopic();
+        if (canChange) {
+            nextTopic = event.target.dataset.topic;
+            changeTopic();
+        }
     });
 });
+

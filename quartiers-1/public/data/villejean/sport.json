@@ -100,7 +100,7 @@
         "type": "bubble",
         "choicesLabel": [],
         "content": ["Bonne réponse !","Et au-delà de la pratique sportive, certains ont fait de l’intégration l’une de leurs missions. Parmi eux, il y a le Melting Potes, un club de football ⚽ qui intègre les jeunes du quartier par le sport.","Si tu veux t’entraîner avec eux, c’est par ici !","${video_begin}https://www.youtube.com/embed/4wR5ubwNarE?si=bT3NZbn262FIpfp2&start=379&end=486&controls=0${video_end}"],
-        "next": ["Reponse5"]
+        "next": ["QuestionFin"]
     },
 
     "Reponse42": {
@@ -123,7 +123,7 @@
         "speaker": "user",
         "type": "topicChoice",
         "choicesLabel": ["Portrait", "Association", "Habitat", "Sport", "Education", "Commerce"],
-        "content": ["Les portraits de ${quartier}", "Les associations à ${quartier}", "L'habitat à ${quartier}", "Le sport à ${quartier}", "L'éducation à ${quartier}", "Les commerces à ${quartier}"],
+        "content": ["Les portraits de ${quartier}.", "Les associations à ${quartier}.", "L'habitat à ${quartier}.", "Le sport à ${quartier}.", "L'éducation à ${quartier}.", "Les commerces à ${quartier}."],
         "next": ["GoLieu", "GoLieu", "GoLieu", "GoLieu", "GoLieu", "GoLieu"]
     },
 

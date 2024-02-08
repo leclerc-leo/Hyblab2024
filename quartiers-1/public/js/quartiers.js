@@ -15,13 +15,10 @@ setTimeout(() => {
 }, 100);
 
 function backgroundTransition() {
-    console.log("transition");
     const container = document.querySelector(".background-container");
     const old_img = document.querySelector(".background-container img, #background-animation");
-    console.log(old_img);
 
     old_img.classList.add("out");
-
 
     const new_img = document.createElement("img");
     new_img.src = "img/backgrounds/" + quartier.toLocaleLowerCase() + "/" + topic + "." + extension;

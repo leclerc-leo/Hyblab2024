@@ -3,23 +3,7 @@
         "speaker": "guide",
         "type": "bubble",
         "choicesLabel": [],
-        "content": ["Bienvenue à ${quartier} !", "Je serai ton guide pendant tout ton séjour à Rennes."],
-        "next": ["EntrerNom"]
-    },
-
-    "EntrerNom": {
-        "speaker": "user",
-        "type": "nom",
-        "choicesLabel": ["Bonjour, je m'appelle"],
-        "content": ["Bonjour, je m’appelle ${user_name} !"],
-        "next": ["Bienvenue1"]
-    },
-
-    "Bienvenue1": {
-        "speaker": "guide",
-        "type": "bubble",
-        "choicesLabel": [],
-        "content": ["Pour commencer je te propose une rapide présentation du quartier.","Situé au nord-ouest de Rennes, ce quartier compte 12 071 habitants en 2017. ","Ancienne étendue de champs, son aménagement est relativement récent puisque c’est dans les années 1950, alors que Rennes est en pleine croissance démographique, que le conseil municipal choisit d’en faire un quartier de logements.","C'est parti pour la visite !","Que souhaites-tu découvrir en premier ?"],
+        "content": ["Cette thématique n'est malheureusement pas encore disponible, en revanche tu peux en choisir une autre."],
         "next": ["ChoixTheme"]
     },
 
@@ -27,7 +11,7 @@
         "speaker": "user",
         "type": "topicChoice",
         "choicesLabel": ["Portrait", "Association", "Habitat", "Sport", "Education", "Commerce"],
-        "content": ["Les portraits de ${quartier}", "Les associations à ${quartier}", "L'habitat à ${quartier}", "Le sport à ${quartier}", "L'éducation à ${quartier}", "Les commerces à ${quartier}"],
+        "content": ["Les portraits de ${quartier}.", "Les associations à ${quartier}.", "L'habitat à ${quartier}.", "Le sport à ${quartier}.", "L'éducation à ${quartier}.", "Les commerces à ${quartier}."],
         "next": ["GoLieu", "GoLieu", "GoLieu", "GoLieu", "GoLieu", "GoLieu"]
     },
 
@@ -36,14 +20,6 @@
         "type": "bubble",
         "choicesLabel": [],
         "content": ["Parfait ! Allez viens je t’emmène ${lieu}."],
-        "next": ["Aide"]
-    },
-
-    "Aide": {
-        "speaker": "guide",
-        "type": "bubble",
-        "choicesLabel": [],
-        "content": ["Tu peux retrouver toutes les thématiques à tout moment dans le menu en haut à gauche."],
         "next": ["Quitter"]
     },
 
