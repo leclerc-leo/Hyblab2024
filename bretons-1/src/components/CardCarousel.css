@@ -85,14 +85,14 @@
     z-index: 2;
   }
 
-  .image-row {
+  .image-container .image-row {
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-shrink: 0;
     z-index: 5;
     position: relative;
-    bottom: 20px;
+    bottom: 20px; 
   }
   
   .favbutton {
