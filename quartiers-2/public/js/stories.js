@@ -428,6 +428,13 @@ const homeStories = function () {
       });
       retour.style.display = 'none';
 
+      // on coupe tous les audios
+      document.querySelectorAll('audio').forEach(audio => {
+        audio.pause();
+        audio.nextElementSibling.querySelector('.playIcon').style.display = 'inline';
+        audio.nextElementSibling.querySelector('.pauseIcon').style.display = 'none';
+      });
+
       document.querySelector('#mySwiper').style.display = 'none';
       // on remet le footer
       document.querySelector('footer').style.zIndex = "6";
