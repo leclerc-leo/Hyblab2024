@@ -213,13 +213,13 @@ main > section {
 #second-slide .popup {
   display: none;
   position: absolute;
-  width: 80%;
-  height: 80%;
-  top: 10%;
-  left: 10%;
+  width: 90%;
+  height: 90%;
+  top: 5%;
+  left: 5%;
   z-index: 3;
   overflow: hidden;
-  border-radius: 20px;
+  /* border-radius: 20px; */
   opacity: 0;
   transform: scale(0.8);
   transition: all 0.3s ease-in-out;
@@ -252,9 +252,9 @@ main > section {
 }
 #img-obj {
   position: absolute;
-  width: 38%;
-  right: -5%;
-  top: -5%;
+  width: 30%;
+  right: 0%;
+  top: 0%;
 }
 #second-slide .popup-content p {
   position: absolute;
@@ -263,7 +263,7 @@ main > section {
   width: 85%;
   transform: translateX(-50%);
   display: flex;
-  font-size: 20%;
+  font-size: 25%;
   color: #386f9c;
   z-index: 3;
 }
@@ -271,7 +271,7 @@ main > section {
 #img-cupcake {
   position: absolute;
   max-width: 55%;
-  top: 24%;
+  top: 27%;
 }
 #cupcake-p0 {
   position: absolute;
@@ -281,6 +281,81 @@ main > section {
 #cupcake-p1 {
   position: absolute;
   top: 57% !important;
+  left: 50% !important;
+}
+#img-coupe {
+  position: absolute;
+  max-width: 55%;
+  top: 47%;
+}
+#coupe-p0 {
+  position: absolute;
+  top: 19% !important;
+  left: 50% !important;
+}
+#coupe-p1 {
+  position: absolute;
+  top: 68% !important;
+  left: 50% !important;
+}
+#img-medaille {
+  position: absolute;
+  max-width: 70%;
+  top: 47%;
+}
+#medaille-p0 {
+  position: absolute;
+  top: 18% !important;
+  left: 50% !important;
+}
+#img-manique {
+  position: absolute;
+  max-width: 55%;
+  top: 33%;
+}
+#manique-p0 {
+  position: absolute;
+  top: 19% !important;
+  left: 50% !important;
+}
+#manique-p1 {
+  position: absolute;
+  top: 60% !important;
+  left: 50% !important;
+}
+#img-photo{
+  position: absolute;
+  max-width: 55%;
+  top: 43%;
+}
+#photo-p0 {
+  position: absolute;
+  top: 19% !important;
+  left: 50% !important;
+}
+#photo-p1 {
+  position: absolute;
+  top: 67% !important;
+  left: 50% !important;
+}
+#img-algerie {
+  position: absolute;
+  max-width: 70%;
+  top: 35%;
+}
+#algerie-p0 {
+  position: absolute;
+  top: 18% !important;
+  left: 50% !important;
+}
+#algerie-p1 {
+  position: absolute;
+  top: 64% !important;
+  left: 50% !important;
+}
+#gourde-p0 {
+  position: absolute;
+  top: 18% !important;
   left: 50% !important;
 }
 #close {
