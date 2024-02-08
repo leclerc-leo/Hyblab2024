@@ -128,13 +128,15 @@
 				</div>
 			</div>
 			<div class="bottom-btn">
-				<a href="selection.html" style="margin: 5%"
+				<a href="selection.html"
 					><button class="gm-btn gb-shutter">
-						LE 11 DE LA R&Eacute;DACTION
+						LES 11 DE LA R&Eacute;DACTION
 					</button>
 				</a>
 				<a href="statistique.html">
-					<button class="gm-btn gb-shutter">STATISTIQUES</button>
+					<button id="statistiques" class="gm-btn gb-shutter">
+						STATISTIQUES
+					</button>
 				</a>
 				<div class="settings">
 					<div class="round-btn" id="settings" title="settings">
@@ -279,17 +281,49 @@
 				</div>
 			</div>
 		</div>
-		<div
-			class="gif-container"
-			id="attaquant-gif"
-			style="display: none"></div>
-		<div class="gif-container" id="milieu-gif" style="display: none"></div>
-		<div
-			class="gif-container"
-			id="defenseur-gif"
-			style="display: none"></div>
-		<div class="gif-container" id="gardien-gif" style="display: none"></div>
-		<div class="gif-container" id="coach-gif" style="display: none"></div>
+		<div class="gif-container" id="attaquant-gif" style="display: none">
+			<audio class="audio">
+				<source
+					src="./img/soundDesign/attaquant-sound.mp3"
+					type="audio/mpeg" />
+			</audio>
+			<img src="" alt="Ataquant open gif" />
+		</div>
+		<div class="gif-container" id="milieu-gif" style="display: none">
+			<audio class="audio">
+				<source
+					src="./img/soundDesign/milieu-sound.mp3"
+					type="audio/mpeg" />
+			</audio>
+			<img src="" alt="Milieu open gif" />
+		</div>
+		<div class="gif-container" id="defenseur-gif" style="display: none">
+			<audio class="audio">
+				<source
+					src="./img/soundDesign/defence-sound.mp3"
+					type="audio/mpeg" />
+			</audio>
+			<img src="" alt="Defenseur open gif" />
+		</div>
+		<div class="gif-container" id="gardien-gif" style="display: none">
+			<audio class="audio">
+				<source
+					src="./img/soundDesign/gardien-sound.mp3"
+					type="audio/mpeg" />
+			</audio>
+			<img src="" alt="Gardien open gif" />
+		</div>
+		<div class="gif-container" id="coach-gif" style="display: none">
+			<audio class="audio">
+				<source
+					src="./img/soundDesign/coach-sound.mp3"
+					type="audio/mpeg" />
+			</audio>
+			<img src="" alt="Coach open gif" />
+		</div>
+		<audio class="audio" id="back-sound" autoplay loop>
+			<source src="./img/soundDesign/fond-sonore.mp3" type="audio/mpeg" />
+		</audio>
 	</body>
 	<script src="./js/field.js"></script>
 </html>

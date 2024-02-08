@@ -52,7 +52,7 @@
     },
     {
         "NOM": "LAFONT",
-        "CARTE": "fcn-52",
+        "CARTE": "fcn-53",
         "POSTE": "GARDIEN",
         "NUMÉRO": 1,
         "DURÉE": "19-24",
@@ -954,7 +954,7 @@
     },
     {
         "NOM": "KOMBOUARÉ",
-        "CARTE": "fcn-53",
+        "CARTE": "fcn-52",
         "POSTE": "ENTRAÎNEUR",
         "DURÉE": "21-23",
         "MATCHS": 109,

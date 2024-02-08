@@ -84,8 +84,10 @@ body {
 	padding: 5% 3%;
 	border-radius: 20px;
 	aspect-ratio: 0.65;
-	margin-top: -50px;
+    margin-top: -50px; 
 }
+
+
 
 #footer {
 	display: flex;
@@ -109,7 +111,7 @@ body {
 	outline: none;
 }
 
-.round-btn {
+.back-btn {
 	background-color: #ffffff;
 	border: none;
 	border-radius: 50%;
@@ -149,7 +151,8 @@ body {
 	background: var(--gb-52);
 	font-family: Bebas Neue;
 	margin: 0 5% 5% 5%;
-	display: inline-block;
+	display: inline-block; 
+
 }
 
 .gb-shutter:active {
@@ -224,19 +227,89 @@ body {
 }
 
 .player-selection {
-	color: green; /* Assuming the text is white */
-	font-family: Arial, sans-serif; /* You can change this to match the font in the image */
-	font-size: 18px; /* Adjust the size as needed */
-	padding: 5px; /* Adjust padding to match your design */
-	text-align: center; /* Centers the text inside the div */
-	border-radius: 5px; /* Optional: if you want rounded corners */
-}
+    color: green; /* Assuming the text is white */
+    font-family: Arial, sans-serif; /* You can change this to match the font in the image */
+    font-size: 18px; /* Adjust the size as needed */
+    padding: 5px; /* Adjust padding to match your design */
+    text-align: center; /* Centers the text inside the div */
+    border-radius: 5px; /* Optional: if you want rounded corners */
+  }
+
+
 
 .buttons-container {
 	display: flex;
 	justify-content: center; /* Centrer horizontalement */
 	align-items: center; /* Centrer verticalement, si nécessaire */
 }
+
+.player1-bar {
+	flex: 1;
+	position: relative;
+	height: 100%;
+	background-color: #00a55a;
+	border-radius: 20px 0 0 20px;
+	transform-origin: left center;
+	animation: scaleSide 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.player2-bar {
+	flex:1;
+	position: relative;
+	height: 100%;
+	background-color: white;
+	border-radius: 0 20px 20px 0;
+	transform-origin: right center;
+	animation: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.stat-player {
+	position: absolute;
+	display: flex;
+	height: 5px;
+	width: 30%;
+	background-color: black;
+	overflow: visible;
+	border-radius: 20px;
+	
+}
+#arriere-droit-bar{
+	top:36%; left: 55%;
+}
+#defender-3-bar{
+	top: 51%; left: 55%;
+}
+
+#defender-2-bar{
+	top: 66%; left: 55%;
+}
+#arriere-gauche-bar{
+	top: 81%; left: 55%;
+}
+#midfielder-3-bar{
+	top: 96%; left: 55%;
+
+}
+#midfielder-lead-bar{
+	top: 21%; left: 4%;
+}
+#midfielder-1-bar{
+	top: 36%; left: 4%;
+}
+#ailier-droit-bar{
+	top: 51%; left: 4%;
+}
+#attaquant-centre-bar{
+	top: 66%; left: 4%;
+}
+#ailier-gauche-bar {
+	top:81%; left: 4%;
+}
+#goalkeeper-bar {
+	top: 96%; left: 4%
+}
+#Entraineur-bar {top: 21%; left: 55%}
+
 
 @media screen and (min-width: 600px) {
 	.field {
@@ -247,4 +320,6 @@ body {
 		aspect-ratio: 0.000005;
 		padding: 5px 20px;
 	}
+
+
 }

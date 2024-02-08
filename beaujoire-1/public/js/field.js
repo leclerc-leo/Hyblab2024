@@ -1,7 +1,7 @@
 "use strict";
 
 let isAnyItemFlipped = false;
-let selectedPlayerId = null;
+let selectedPlayerId;
 let updatePlayerElement;
 let playersData;
 
@@ -170,25 +170,40 @@ document.addEventListener("DOMContentLoaded", () => {
 	document.querySelector("#entraineur").addEventListener("click", () => {
 		animatePlayer("coach-gif", "img/animations/coach-fond-gris.gif", 1360);
 	});
+
+	document.addEventListener("click", () => {
+		document.querySelector("#back-sound").play();
+	});
+
+	document
+		.querySelector(".dropdown")
+		.querySelector("img")
+		.addEventListener("click", () => {
+			document.querySelectorAll("audio").forEach((audio) => {
+				audio.muted = !audio.muted;
+			});
+		});
 });
 
 function animatePlayer(elementId, imgSrc, timeoutDuration) {
 	const element = document.getElementById(elementId);
+	const imgElement = element.querySelector("img");
 
-	const imgElement = document.createElement("img");
 	imgElement.src = imgSrc;
-	element.appendChild(imgElement);
 
 	element.style.display = "flex";
 	element.style.opacity = "1";
 
 	setTimeout(() => {
+		element.querySelector("audio").play();
+	}, 10);
+	setTimeout(() => {
 		element.style.opacity = "0";
 		setTimeout(() => {
-			element.removeChild(imgElement);
 			element.style.display = "none";
+			imgElement.src = "";
 		}, 200);
-	}, timeoutDuration);
+	}, timeoutDuration + 20);
 }
 
 function areAllPlayersSelected() {
@@ -203,16 +218,26 @@ function areAllPlayersSelected() {
 }
 
 function handlePlayerClick(event) {
-	event.target.classList.add("player-animation");
-	showCarousel(event.target.id);
-	event.target.addEventListener("animationend", () =>
-		event.target.classList.remove("player-animation")
-	);
-	selectedPlayerId = event.currentTarget.id;
-	if (selectedPlayerId == null) {
+	console.log("Clicked event:", event);
+	console.log("Clicked target:", event.target);
+	const playerElement = event.target.closest(".player-clickable");
+	if (playerElement) {
+		selectedPlayerId = playerElement.id;
+		console.log(`Selected player: ${selectedPlayerId}`);
+
+		// Add player animation class
+		playerElement.classList.add("player-animation");
+
+		// Show carousel for selected player
+		showCarousel(selectedPlayerId);
+
+		// Remove player animation class after animation ends
+		playerElement.addEventListener("animationend", () =>
+			playerElement.classList.remove("player-animation")
+		);
+	} else {
 		console.log("No player selected");
 	}
-	console.log(`Selected player: ${selectedPlayerId}`);
 }
 
 function showCarousel(id) {
@@ -237,16 +262,19 @@ function showCarousel(id) {
 	document.querySelector(".carousel-overlay").style.display = "flex";
 	document.getElementById("poste-title").textContent = poste;
 
-	// Wait for the next animation frame before scrolling to the middle item
-	const middleItemIndex = Math.floor(carousel.children.length / 2);
-	const middleItem = carousel.children[middleItemIndex];
-	const scrollPosition = middleItem.offsetLeft - middleItem.offsetWidth / 2;
-	carousel.scrollTo({
-		left: scrollPosition,
-		behavior: "smooth",
-	});
-
-	middleItem.classList.add("focused");
+	// Wait for the items to load before scrolling to the middle item
+	setTimeout(() => {
+		const middleItemIndex = Math.floor(carousel.children.length / 2);
+		const middleItem = carousel.children[middleItemIndex];
+		const scrollPosition =
+			middleItem.offsetLeft - middleItem.offsetWidth / 2;
+		carousel.scrollTo({
+			left: scrollPosition,
+			behavior: "smooth",
+		});
+		middleItem.classList.add("focused");
+		carousel.addEventListener("scroll", handleCarouselScroll);
+	}, 10);
 
 	isAnyItemFlipped = Array.from(
 		document.querySelectorAll(".flip-container")
@@ -255,10 +283,6 @@ function showCarousel(id) {
 	if (isAnyItemFlipped) {
 		handleCarouselAnimation();
 	}
-
-	document
-		.querySelector(".carousel")
-		.addEventListener("scroll", handleCarouselScroll);
 }
 
 function handleValidateButtonClick() {
@@ -440,7 +464,7 @@ function createCarouselItem(player) {
 	</button>
 	<div class="carousel-grid">
 		<div class="carousel-matchs">
-			<p class="small-title green">${player.MATCHS}</p>
+			<p class="stat-score green">${player.MATCHS}</p>
 			<div class="flex-row">
 				<div class="bar-container">
 					<div id="bar1" class="bar"></div>
@@ -455,43 +479,45 @@ function createCarouselItem(player) {
 			<p class="stat-name"><span class="green">NOMBRE DE</span> MATCHS </p>
 		</div>
 		<div class="carousel-buts">
-			<p class="small-title green">${player.BUTS}</p>
+			<p class="stat-score green">${player.BUTS}</p>
 			<div class="flex-row">
-				<div class="circle-container" style="width:20%">
+				<div class="circle-container">
 					<div id="circle1"></div>
 				</div>
-				<div class="circle-container" style="width:30%">
+				<div class="circle-container" >
 					<div id="circle2"></div>
 				</div>
-				<div class="circle-container" style="width:50%">
+				<div class="circle-container">
 					<div id="circle3"></div>
 				</div>
 			</div>
 			<p class="stat-name"><span class="green">NOMBRE DE</span> ${but} </p>
 		</div>
 		<div class="carousel-coupes">
-			<div class="coupes">
+			<div class= coupes-score>
+				<p class="stat-score green">${player.champ_fr}</p>
+				<p class="stat-score green">${player.tr_champ}</p>
+				<p class="stat-score green">${player.cp_fr}</p>
+				<p class="stat-score green">${player.lig_champ}</p>
+			</div>
+			<div class="flex-row">
 				<div class="cp-col">
-					<p class="small-title green">${player.champ_fr}</p>
 					${champ_fr}
 				</div>
 				<div class="cp-col">
-					<p class="small-title green">${player.tr_champ}</p>
 					${tr_champ}
 				</div>
 				<div class="cp-col">
-					<p class="small-title green">${player.cp_fr}</p>
 					${cp_fr}
 				</div>
 				<div class="cp-col">
-					<p class="small-title green">${player.lig_champ}</p>
 					${lig_champ}
 				</div>
 			</div>
 			<p class="stat-name"><span class="green">NOMBRE DE</span> COUPES </p>
 		</div>
 		<div class="carousel-taille">
-			<p class="small-title green">${player.TAILLE}</p>
+			<p class="stat-score green">${player.TAILLE}</p>
 			<div class="flex-row">
 				<div class="bar2-container">
 					<div id="bar4" class="bar"></div>
@@ -874,6 +900,8 @@ function showCompareCarousel(player) {
 
 	document.querySelector("#compare-carousel").style.display = "flex";
 
+	carousel.addEventListener("scroll", handleCompareScroll);
+
 	// Wait for the next animation frame before scrolling to the middle item
 	const middleItemIndex = Math.floor(carousel.children.length / 2);
 	const middleItem = carousel.children[middleItemIndex];
@@ -947,15 +975,32 @@ function updateCompareOverlay(comparePlayer) {
 
 	//calculer total coupes
 	let focusedCoupes =
-		focusedPlayer.champ_fr +
-		focusedPlayer.tr_champ +
-		focusedPlayer.cp_fr +
-		focusedPlayer.lig_champ;
+		(isNaN(parseInt(focusedPlayer.champ_fr))
+			? 0
+			: parseInt(focusedPlayer.champ_fr)) +
+		(isNaN(parseInt(focusedPlayer.tr_champ))
+			? 0
+			: parseInt(focusedPlayer.tr_champ)) +
+		(isNaN(parseInt(focusedPlayer.cp_fr))
+			? 0
+			: parseInt(focusedPlayer.cp_fr)) +
+		(isNaN(parseInt(focusedPlayer.lig_champ))
+			? 0
+			: parseInt(focusedPlayer.lig_champ));
+
 	let comparePlayerCoupes =
-		comparePlayer.champ_fr +
-		comparePlayer.tr_champ +
-		comparePlayer.cp_fr +
-		comparePlayer.lig_champ;
+		(isNaN(parseInt(comparePlayer.champ_fr))
+			? 0
+			: parseInt(comparePlayer.champ_fr)) +
+		(isNaN(parseInt(comparePlayer.tr_champ))
+			? 0
+			: parseInt(comparePlayer.tr_champ)) +
+		(isNaN(parseInt(comparePlayer.cp_fr))
+			? 0
+			: parseInt(comparePlayer.cp_fr)) +
+		(isNaN(parseInt(comparePlayer.lig_champ))
+			? 0
+			: parseInt(comparePlayer.lig_champ));
 
 	// ParseFloat pour éviter les problèmes de concaténation
 	focusedPlayer.TAILLE = parseFloat(focusedPlayer.TAILLE);
@@ -982,6 +1027,9 @@ function updateCompareOverlay(comparePlayer) {
 	) {
 		matchs_bar.querySelector(".player2-bar > .bar-score").style.visibility =
 			"visible";
+	} else {
+		matchs_bar.querySelector(".player2-bar > .bar-score").style.visibility =
+			"hidden";
 	}
 
 	buts_bar.querySelector(".player1-bar > .bar-score").textContent =
@@ -993,6 +1041,9 @@ function updateCompareOverlay(comparePlayer) {
 	) {
 		buts_bar.querySelector(".player2-bar > .bar-score").style.visibility =
 			"visible";
+	} else {
+		buts_bar.querySelector(".player2-bar > .bar-score").style.visibility =
+			"hidden";
 	}
 
 	coupes_bar.querySelector(".player1-bar > .bar-score").textContent =
@@ -1004,6 +1055,9 @@ function updateCompareOverlay(comparePlayer) {
 	) {
 		coupes_bar.querySelector(".player2-bar > .bar-score").style.visibility =
 			"visible";
+	} else {
+		coupes_bar.querySelector(".player2-bar > .bar-score").style.visibility =
+			"hidden";
 	}
 
 	taille_bar.querySelector(".player1-bar > .bar-score").textContent =
@@ -1015,6 +1069,9 @@ function updateCompareOverlay(comparePlayer) {
 	) {
 		taille_bar.querySelector(".player2-bar > .bar-score").style.visibility =
 			"visible";
+	} else {
+		taille_bar.querySelector(".player2-bar > .bar-score").style.visibility =
+			"hidden";
 	}
 
 	matchs_bar.querySelector(".player1-bar").style.width =
@@ -1068,6 +1125,38 @@ function resetBars() {
 		bar.querySelector(".bar-score").style.visibility = "hidden";
 		bar.style.animationName = "";
 	});
+}
+
+function handleCompareScroll() {
+	const carousel = document.querySelector("#cmp-carou");
+	const carouselItems = document.querySelectorAll(".compare-carousel-item");
+	const scrollPosition = carousel.scrollLeft;
+	const itemWidth = carouselItems[0].offsetWidth;
+	const carouselWidth = itemWidth * carouselItems.length;
+	const middleIndex = Math.floor(carouselItems.length / 2);
+
+	const focusedIndex = Math.round(
+		(scrollPosition + itemWidth / 100000) / itemWidth
+	);
+
+	carouselItems.forEach((item) => {
+		// Si l'élément a la classe 'focused', la retirer et ajouter la class 'unfocused'
+		if (item.classList.contains("focus")) {
+			item.classList.add("unfocused");
+		}
+		item.classList.remove("focus");
+		// Si l'élément a la classe 'unfocused', la retirer
+		if (item.classList.contains("unfocused")) {
+			item.classList.remove("unfocused");
+		}
+	});
+
+	// Ensure the focused index is within valid bounds
+	const validFocusedIndex = Math.min(
+		Math.max(focusedIndex, 0),
+		carouselItems.length - 1
+	);
+	carouselItems[validFocusedIndex].classList.add("focus");
 }
 
 function handleCaptain() {}
