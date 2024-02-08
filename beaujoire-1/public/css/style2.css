@@ -252,6 +252,7 @@ body {
 }
 .settings {
 	position: relative;
+	align-self: flex-end;
 }
 
 @keyframes dropUpAnimation {
@@ -298,8 +299,8 @@ body {
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-between;
-	width: 85%;
-	margin: 10px 0;
+	width: 80%;
+	margin: 5% 0;
 }
 
 /* shutter */
