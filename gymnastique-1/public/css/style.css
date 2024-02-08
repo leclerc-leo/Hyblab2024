@@ -424,29 +424,42 @@ main > section {
   background-repeat: no-repeat;
   background-size: 100%;
 }
+
+/*TELEPHONE OBJET -------------------------------------------------------*/
+#second-slide .show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+
 #popup_tel {
   position: absolute;
+  height: 80%;
   background-image: url("../img/pop-49.svg");
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: 100%;
 }
 #source_video {
-  font-size: 50% !important;
+  margin: 0.2em;
   position: relative;
-  top: -20%;
+  top: -18%;
+  left: 42%;
+  transform: translateX(-50%);
+  display: flex;
+  font-size: 20%;
+  color: #386f9c;
   text-decoration: none;
   font-weight: 600;
   font-style: italic;
-  color: #000;
 }
 
-#quizz_end_popup {
+#popup_quizz_end {
   display:none;
   position: absolute;
   width: 90%;
-  height: 90%;
-  top: 5%;
+  height: 60%;
+  top: 20%;
   left: 5%;
   background-image: url("../img/pop-53.svg");
   background-position: 50%;
@@ -455,24 +468,134 @@ main > section {
   /* background-color: rgb(255, 177, 68); */
   z-index: 3;
   overflow: hidden;
-  border-radius: 20px;
+  /* border-radius: 20px; */
   opacity: 0;
   transform: scale(0.8);
   transition: all 0.3s ease-in-out;
 }
-#quizz_end_popup h2 {
+#popup_quizz_end h2 {
   color:#386f9c;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
   margin: 0.1em 0.1em;
 }
 
-#quizz_end_popup img {
+#quizz_end_img {
   position: relative;
-  left: 15%;
-  max-width: 75%;
+  left: 11%;
+  max-width: 80%;
+}
+#popup_quizz_end #close{
+  position: absolute;
+  left: 35%;
 }
 #explication_quizz_p{
-  margin: 1em 1em;
+  margin: 0em 1em 1em 1em;
   font-size: small;
+  font-family: "Poppins";
+  color: #386f9c;
+}
+#telephone-content{
+  padding: 1% 1% 1% 1%;
+}
+#telephone-content h2{
+  top: 5%;
+  font-size: 40%;
+  position: fixed;
+}
+#telephone-content .impact_title {
+  top: 10%;
+  font-size: 60% !important;
+  color: #386f9c;
+  position: fixed;
+} 
+#phone_video{
+display: grid;
+grid-template-columns: 1% 98% 1%;
+grid-template-rows: 1% 198% 1%;
+top: 4%;
+position: relative;
+  
+}
+
+
+#telephone-content svg{
+top: -11%;
+/* left: -15%; */
+rotate: 75deg;
+scale: 1.05;
+overflow: hidden;
+pointer-events: none;
+grid-area: 2 / 2 / 2 / 2;
+position: relative;
+z-index: 1;
+}
+
+#telephone-content #nemour-quiz-video{
+top: 3.5%;
+height: 21.5%;
+width: 76%;
+left: 15%;
+z-index: 0;
+grid-area: 2 / 2 / 2 / 2;
+position: relative;
+pointer-events: none;
+}
+
+#video_quizz{
+  top: 52.5%;
+  position: fixed;
+}
+#video_quizz #question{
+  position: absolute;
+  top: -16%;
+  font-size: 30%;
+  font-weight: 700;
+  padding-bottom: 1%;
+}
+
+:root {
+  --hue-neutral: 200;
+  --hue-wrong: 0;
+  --hue-correct: 145;
+  --noir: #212425;
+  --blanc: #e5dfca;
+  --rouge: #d85f45;
+  --bleu: #386f9c;
+  --rose: #de9b94;
+  --vert: #677f63;
+}
+
+.btn-grid {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 15px;
+  margin: 18px 10px;
+} 
+.btn_quiz {
+  --hue: var(--hue-neutral);
+  border: 1px solid hsl(var(--hue), 100%, 30%);
+  background-color: hsl(var(--hue), 100%, 50%);
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-family: "Poppins", sans-serif;
+  text-align: left;
+  font-size: 20.5%;
+  color: white;
+  outline: none;
+}
+
+.btn_quiz:hover {
+  border-color: black;
+}
+
+.btn_quiz.correct {
+  background-color: #66bd57;
+  color: black;
+}
+
+.btn_quiz.wrong {
+  background-color: #d85f45;
 }
 
 /* CSS for the last popup : billet */

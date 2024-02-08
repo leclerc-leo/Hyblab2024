@@ -21,7 +21,7 @@ const initSlide2 = async function (popupId, objectId) {
         setTimeout(function () {
           phone_popup.style.display = "none";
         }, 300);
-        var answer_popup = document.getElementById("quizz_end_popup");
+        var answer_popup = document.getElementById("popup_quizz_end");
         answer_popup.style.display = "block";
         setTimeout(function () {
           answer_popup.classList.add("show");
@@ -141,7 +141,8 @@ const initSlide2 = async function (popupId, objectId) {
   
 };
 const showPopup = (name, objID) => {
-  const popup = document.getElementById(name);
+  if (name!="popup_quizz_end"){
+    const popup = document.getElementById(name);
   popup.style.display = "block";
   setTimeout(() => {
     popup.classList.add("show");
@@ -149,8 +150,11 @@ const showPopup = (name, objID) => {
   document.getElementById(objID).classList.add("clicked");
   const svgElements = document.getElementsByTagName("svg");
   for (let i = 0; i < svgElements.length; i++) {
-    svgElements[i].classList.add("blured");
-    svgElements[i].style.transition = "filter 0.5s";
+    if (svgElements[i].id != "Video_Phone_contour_svg"){
+      svgElements[i].classList.add("blured");
+      svgElements[i].style.transition = "filter 0.5s";
+    }
+  }
   }
 };
 
@@ -183,3 +187,4 @@ initSlide2("popup_algerie", "algerie");
 initSlide2("popup_medaille", "medaille");
 initSlide2("popup_photo", "photo");
 initSlide2("popup_tel", "tel");
+initSlide2("popup_quizz_end", "tel");
