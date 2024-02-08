@@ -15,7 +15,7 @@ const Article: React.FC<ArticleProps> = ({ id, title, subtitle, content }) => {
   const [isFavorited, setIsFavorited] = useState(false);
   const [favoriteButtonId] = useState(id);
   const navigate = useNavigate();
-  
+
   useEffect(() => {
     const favoritesFromStorage = JSON.parse(localStorage.getItem('favorites') || '[]');
     setIsFavorited(favoritesFromStorage.includes(id));
@@ -35,24 +35,31 @@ const Article: React.FC<ArticleProps> = ({ id, title, subtitle, content }) => {
     localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
   };
   return (
-    <div className="article-container">
-      <h1 className="article-title">{title}</h1>
-      <h2 className="article-subtitle">{subtitle}</h2>
-      <p className="article-content">{content}</p>
-      <div className='Lastline'>
-        <button onClick={() => handleBackClick()}>Retour</button>
-        <div className='inversedColor'>
-          <FavoriteButton
-            isFavorited={isFavorited}
-            onClick={handleFavoriteClick}
-            buttonId={favoriteButtonId}
-          />
+    <>
+      <img className='GuilleVerte' src='/bretons-1/img/Logo_Guille_vert.svg'></img>
+      <div className="article-container">
+        <h1 className="article-title">{title}</h1>
+        <div className='subtitle'>
+          <h2 className="article-subtitle">{subtitle}</h2>
+          <img className="BicycleLogoArticle" src={`/bretons-1/img/${subtitle}.svg`} />
         </div>
-        <div className='inversedColor'>
-          <ShareMenu />
+        <p className="article-content">{content}</p>
+        <img className='GuilleVerteinversed' src='/bretons-1/img/Logo_Guille_vert.svg'></img>
+        <div className='Lastline'>
+          <button onClick={() => handleBackClick()}>Retour</button>
+          <div className='inversedColor'>
+            <FavoriteButton
+              isFavorited={isFavorited}
+              onClick={handleFavoriteClick}
+              buttonId={favoriteButtonId}
+            />
+          </div>
+          <div className='inversedColor'>
+            <ShareMenu />
+          </div>
         </div>
-      </div>
-    </div >
+      </div >
+    </>
   );
 };
 
