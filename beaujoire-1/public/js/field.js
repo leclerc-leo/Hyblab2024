@@ -244,19 +244,21 @@ function animatePlayer(elementId, imgSrc, timeoutDuration) {
 
 	imgElement.src = imgSrc;
 
-	element.style.display = "flex";
-	element.style.opacity = "1";
+	imgElement.onload = function () {
+		element.style.display = "flex";
+		element.style.opacity = "1";
 
-	setTimeout(() => {
-		element.querySelector("audio").play();
-	}, 10);
-	setTimeout(() => {
-		element.style.opacity = "0";
 		setTimeout(() => {
-			element.style.display = "none";
-			imgElement.src = "";
-		}, 200);
-	}, timeoutDuration + 20);
+			element.querySelector("audio").play();
+		}, 10);
+		setTimeout(() => {
+			element.style.opacity = "0";
+			setTimeout(() => {
+				element.style.display = "none";
+				imgElement.src = "";
+			}, 200);
+		}, timeoutDuration + 20);
+	};
 }
 
 function areAllPlayersSelected() {
