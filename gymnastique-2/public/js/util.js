@@ -26,6 +26,7 @@ const handle_return = (swiper,swiper_controls, page_controls, return_button) => 
 };
 
 const remove_listeners = id => {
+    console.log(id);
     const el = document.querySelector(`${id}`),
             elClone = el.cloneNode(true);
     el.parentNode.replaceChild(elClone, el);
@@ -42,8 +43,6 @@ const move_background = (x, b = false) => {
 };
 
 const handle_orientation = (event) => { 
-    //console.log(event);
-
     const y = Math.min(event.gamma, 90) + 90;
     const maxs = {
         'high': 30,
@@ -53,7 +52,6 @@ const handle_orientation = (event) => {
 
     for (const [key, max] of Object.entries(maxs)) {
         document.querySelectorAll(`.background-move-${key}`).forEach( element => {
-            // take the parent element 
             element = element.parentElement;
             element.style.left = `${(max * y) / 180 - max}px`;
         });
