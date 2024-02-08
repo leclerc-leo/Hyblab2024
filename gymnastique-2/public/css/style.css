@@ -10,19 +10,8 @@
     min-height: 0;
 }
 
-body{
-    background-color: black;
-    color: white;
-    overflow: hidden;   /* to avoid slider bugs on some browsers */
-    font-family: sans-serif;
-    font-size: calc(15vh * 3 / 4);
-}
-
-/* Swiper slider. Need to fill the container */
-#mySwiper{
-    width: 100%;
-    height:100%;
-    position: absolute;
+.swiper-pagination{
+    font-size: 0;
 }
 
 #swiper_journee{
@@ -39,19 +28,47 @@ body{
 
 .swiper-pagination-bullets.swiper-pagination-horizontal {
     --swiper-pagination-bottom: 0px;
-    width: 100%;
-    margin: 0 auto;
 }
 
-.swiper-pagination-bullet {
-    --swiper-pagination-bullet-horizontal-gap: 15px;
-    --swiper-pagination-bullet-size: 40px;
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet{
+    margin-bottom: 1%;
+}
+
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet-active{
+    margin-bottom: 0;
+}
+
+.swiper-pagination-bullet, .swiper-pagination-bullet::before {
+    position: relative;
+    --swiper-pagination-bullet-border-radius: 0;
+    --swiper-pagination-bullet-size: 10%;
+    width: var(--swiper-pagination-bullet-size);
+    padding-bottom: var(--swiper-pagination-bullet-size);
+    --swiper-pagination-bullet-inactive-opacity: 1;
+    --swiper-pagination-bullet-inactive-color: transparent;
+    background-color: transparent;
+}
+
+.swiper-pagination-bullet::before{
+    --swiper-pagination-bullet-size: 35%;
+    content: '';
+    position: absolute;
+    bottom: 20%;
+    transform: translate(-50%, 0);
+    border: 2px solid white;
+    border-radius: 50%;
 }
 
 /* white navigation bullets */
-.swiper-pagination-bullet-active {
-    background-color: white !important;
-    --swiper-pagination-bullet-size: 45px;
+.swiper-pagination-bullet-active, .swiper-pagination-bullet-active::before {
+    --swiper-pagination-bullet-size: 13%;
+    width: var(--swiper-pagination-bullet-size);
+    padding-bottom: var(--swiper-pagination-bullet-size);
+}
+
+.swiper-pagination-bullet-active::before{
+    --swiper-pagination-bullet-size: 35%;
+    background-color: white;
 }
 
 /* the slides and the loader should fill the whole 9:16 zone */
@@ -68,29 +85,19 @@ body{
 header{
     text-align: center;
     width: 100%;
-    top: 10%;
+    padding-top: 3%;
+    padding-bottom: 2%;
     position: absolute;
-    font-size: 30%;
+    font-size: calc(1.5vh + 1.5vw);
     z-index: 2;
 }
 
-#container::before, #container::after {
-    background-color: black;
-    content: '';
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    bottom: 0;
+#titre{
+    background: radial-gradient(closest-side, rgba(255, 217, 179, 0.6) 0, rgba(255, 217, 179, 0.6) 50%, rgba(255, 217, 179, 0) 100%);
 }
 
-#container::before{
-    left: -500%;
-    padding-right: 500%;
-}
-
-#container::after{
-    right: -500%;
-    padding-left: 500%;
+header > * {
+    margin: 0 auto;
 }
 
 .background {
@@ -100,89 +107,53 @@ header{
     position: absolute;
     bottom: 0;
     min-height: 100%;
+    transform: translate(-50%, 0%);
+    font-size: 0;
 }
 
-.background > img{
+.background > *{
     position: absolute; 
     bottom: 0;
 }
 
-.background::before, .background::after {
-    content: '';
+.background .container > div{
     position: absolute;
-    z-index: -1;
-    width: 100%;
-    background-color: transparent;
-}
-
-.background::before{
     bottom: 0;
-    height: 100%;
-    border-top: 10000px solid black;
-}
-
-.background::after{
-    bottom: -10000px;
-    padding-bottom: 10000px;
-    background-color: black;
-}
-
-/* ---------- Important media queries for easy responsive content :-) ----------------- */
-/* Whatever the device used, the content will be displayed full width and height if      */
-/* the aspect ratio is between 3/4 and 9/16. If not it is locked to either 3/4 or 9/16  */
-
-/* When the aspect ratio is smaller that 3/4, display a 3/4 content */
-#container{
-    position: fixed; /* To set the size of the container to 100% of the visible viewport height AND for absolute positioning of child elements*/ 
-    height: 100%;   /* even on mobile devices with url or navigation bars */
-    margin-left: calc((100vw - 100 * 3vh / 4) / 2); /* Add black bands on left and right */
-    width: calc(100 * 3vh / 4); /* Force 3/4 aspect ratio */
-}
-
-/* Fill the whole viewport when its aspect ratio is between 9/16 and 3/4 */
-@media screen and (max-aspect-ratio: 3/4) {
-    #container{
-        margin-left: 0; /* reset margin-left */
-        width: 100vw; /* content is full width (and full height because of the default rule for container height */
-    }
-
-    /* We set a default font size here. It will be the base for all other font sizes */
-    /* Here the font size is proportional to content width */
-    body{
-        font-size: 15vw;
-    }
-}
-
-/* The content is displayed at 9/16 If the aspect ratio is higher that 9/16  */ 
-@media screen and (max-aspect-ratio: 9/16) {
-    #container{
-        margin-left: 0; /* reset left margin */
-        width: 100vw;   /* content is full width */
-        margin-top: calc(-50 * 16vw / 9); /* move the content half the height to the top */
-        top:50%; /* then center it ! */
-        height: calc(100 * 16vw / 9); /* adjust height so that aspect ratio is 9/16 */
-    }
-
-    /* We set a default font size here. It will be the base for all other font sizes */
-    /* Here the font size is proportional to content width */
-    body{
-        font-size: 15vw;
-    }
 }
 
 .category-button{
     position: absolute; 
-    width: 60%; 
+    width: 60%;
     height: 0; 
-    padding: 30% 0; 
+    padding: 30% 0;
     transform: translate(-50%, 50%); 
     display: flex; 
     justify-content: center; 
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0);
     border-radius: 50%;
     font-size: 40px;
     text-align: center;
+    cursor: pointer;
+}
+
+.growing {
+    animation: growing 2s infinite;
+}
+
+@keyframes growing {
+    0% {
+        transform: scale(1);
+        -webkit-transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+        -webkit-transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+        -webkit-transform: scale(1);
+    }
 }
 
 .category-page{
@@ -211,42 +182,51 @@ header{
     visibility: hidden;
 }
 
+.page-controls{
+    display: block;
+    z-index: 100; /* ne pas enlever autrement l'animation est cassée */
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+    position: relative; /* ne pas enlever */
+}
+
+.page-controls.hidden {
+    opacity: 0;
+    display: block;
+}
+
 /* Bouton de navigation */
-.exit-button{
+.return-button{
     position: absolute;
     bottom: 0;
     left: 0;
-    z-index: 100;
-
-    width: 50px;
-    height: 50px;
-    padding: 20px;
-
-    cursor: pointer;
-}
-
-.exit-button::before, .exit-button::after{
-    position: absolute;
-    width: 30px;
-    height: 5px;
-    transform: translate(0, 13px) rotate(45deg);
-}
-
-.exit-button::after{
-    transform: translate(0, 13px) rotate(-45deg);
-}
-
-.home-button{
-    position: absolute;
-    bottom: 0;
     right: 0;
-    z-index: 100;
+    margin: auto;
 
-    width: 50px;
-    height: 50px;
-    padding: 20px;
+    width: 5vh;
+    height: 5vh;
+    padding: 4vh;
+    border-radius: 50%;
+    background: /* #e47e5d from 0 to 50 then gradualy transparent */ radial-gradient(circle at 50% 50%, #e47e5d 0%, #e47e5d 50%, transparent 50%);
 
     cursor: pointer;
+}
+
+.return-button::before, .return-button::after{
+    content: '';
+    position: absolute;
+    border-radius: 5px;
+    width: 5.5vh;
+    height: 0.7vh;
+    min-height: 2px;
+    background: #ffd8b3;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.return-button::after{
+    transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 .credits-button {
@@ -275,21 +255,21 @@ header{
 /* Format des titres */
 h1{
     color: #482E49;
-    font-family: "Krona One", sans-serif;
-    font-size: 25px;
+    font-family: "Metropolis";
+    font-size: calc(2vh + 10px);
 }
 
 h2{
     color: #482E49;
-    font-family: "Krona One", sans-serif;
-    font-size: 18px;
+    font-family: "Metropolis";
+    font-size: calc(1.5vh + 10px);
 }
 
 /* Format des textes */
 p{
     color: #E47754;
     font-family: 'Helvetica Neue', sans-serif;
-    font-size: 16px;
+    font-size: calc(1.3vh + 8px);
     padding: 10px 30px;
 }
 
@@ -297,7 +277,7 @@ li{
     list-style: none;
     color: #E47754;
     font-family: 'Helvetica Neue', sans-serif;
-    font-size: 16px;
+    font-size: calc(1.3vh + 8px);
     padding: 0 30px;
 }
 
@@ -308,11 +288,10 @@ span{
 /* Format des pages */
 #histoire-page, #jo-page, #credits-page{
     text-align: center;
-    padding: 0;
 }
 
 #histoire-page h1, #jo-page h1, #credits-page h1{
-    margin: 30px 0;
+    margin: 10px 0;
 }
 
 #histoire-page h2, #credits-page h2{
@@ -322,20 +301,21 @@ span{
 .image-histoire, .image-jo, .image-credits{
     display: block;
     margin: 0 auto;
-    width: 100%;
+    width: 30%;
     max-width: 40%;
 }
 
 svg.image-histoire, svg.image-jo{
-    width: 100%;
-    max-width: 70%;
+    width: 20%;
+    max-width: 40%;
 }
 
 
 #chemin1{
-    margin-right: 15%;
+    margin-right: 20%;
     width: 30%;
     height: auto;
+    margin-bottom: -10%;
 }
 
 #chemin2{
@@ -343,32 +323,148 @@ svg.image-histoire, svg.image-jo{
     height: auto;
 }
 
-#histoire-header, #jo-header, #credits-header{
+#histoire-header, #credits-header{
     position:sticky;
     top: 0;
-    padding-top: 60px;
+    padding-top: 10px;
     background-color: rgba(255, 216, 179, 0.9);
     margin-bottom: 20px;
 }
 
-#histoire-header > img, #jo-header > img{
+#histoire-header > img {
     padding: 10px;
 }
 
 .image-titre{
-    width: 85%;
-    height: auto;
+    max-width: 40%;
+}
+
+#palmares-page .svg-boucle{
+    position: absolute;
+    top : 0;
+    width: 50%;
+}
+#palmares-page {
+    background-color: #FFD8B3;
+    font-family: "Krona_One variant0";
+}
+#palmares-page #titre-palmares {
+    margin: 2.5% auto 0 auto;
+}
+#palmares-page .image-titre{
+    margin-bottom: 5%;
+    width: 30%;
+    max-width: 40%;
+
+}
+#palmares-page .card-container {
+    width: 80vw;
+    height: 18vh;
+    max-height: 10%;
+    max-width: 80%;
+    perspective: 90vw;
+    margin: 2.5% 10% 2.5% 10%;
+}
+#palmares-page .flipcard {
+    transform: rotateY(180deg);
+}
+#palmares-page .doigt-gif ,#palmares-page .logo-retourner{
+    position: absolute;
+    height: 20%;
+    z-index : 2;
+    right: 5%;
+    bottom: 10%;
+}
+#palmares-page .card {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    transition: transform 1500ms;
+    transform-style: preserve-3d;
+    z-index: 1;
+
+}
+
+#palmares-page .card-front,
+#palmares-page .card-back {
+    display: table;
+    width: 100%;
+    height: 100%;
+    border-style: solid;
+    border-color: #E47754;
+    position: absolute;
+    backface-visibility: hidden;
+    transform: rotateX(0deg);
+    border-radius: 10px;
+}
+
+#palmares-page .card-front {
+    background-color: #E47754;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color : #FFF9F9;
+}
+
+#palmares-page .card-back {
+    background-color: transparent;
+    transform: rotateY(180deg);
+    align-items: center;
+}
+#palmares-page .card-front-palmares-titre{
+    margin: 2% 0 2% 0;
+    color: #FFD8B3;
+}
+#palmares-page .card-palmares-titre{
+    margin: 2% 0 2% 0;
+}
+
+#credits-chemin1{
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#credits-chemin2{
+    width: 18%;
+}
+
+#credits-chemin3{
+    width: 10%;
+}
+
+#credits-chemin4{
+    width: 12%;
+    position: absolute;
+    right: 20%;
+    margin-top: -10%;
+}
+
+.credits-list{
+    display: flex;
+    flex-direction: row;
+    margin: 0 30px;
 }
 
 .credits-list > li{
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    margin: 0;
+    padding: 0;
 }
 
-.credits-list > li > .logo-partenaire{
-    vertical-align: middle;
-    width: 40%;
-    margin: 10px;
-    display: inline-block;
+.credits-list > li > .credits-list-content{
+    width: 90%;
+    margin: 0;
+    padding: 10px;
+    height: auto;
+}
+
+.credits-list-license{
+    margin: 0 auto;
 }
 
 .logo-licence{
@@ -376,9 +472,6 @@ svg.image-histoire, svg.image-jo{
     height: auto;
     vertical-align: middle;
 }
-
-
-
 
 #journee_1_svg{
     position: absolute;
@@ -426,9 +519,6 @@ svg.image-histoire, svg.image-jo{
     color: #482e48;
     font-size: 16px;
 }
-
-
-
 
 #journee_1_svg{
     position: absolute;
@@ -523,4 +613,193 @@ svg.image-histoire, svg.image-jo{
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+}
+
+#jo-header {
+    position:sticky;
+    top: 0;
+    background-color: rgba(255, 216, 179, 0.9);
+    margin-bottom: 10px;
+    padding-top: 40px;
+}
+
+#jo-contenu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 65vh;
+}
+
+.jo-card-container {
+    perspective: 800px;
+    margin: 0% 10% 3% 10%;
+}
+
+/* add a cross to the top right of the card */
+.jo-card-container.actif::before, .jo-card-container.actif::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    width: 20px;
+    height: 3px;
+    background-color: #E47754;
+    transform: rotate(45deg);
+}
+
+.jo-card-container.actif::after {
+    transform: rotate(-45deg);
+}
+
+.jo-card {
+    display: table;
+    width: 370px;
+    height: 100px;
+    border-radius: 2rem;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.jo-card-titre, .jo-card-texte {
+    margin: 2% 0 2% 0;
+    padding: 2%;
+    color: rgba(255, 216, 179, 0.9);
+    border: #E47754 solid 1px ;
+    background-color: #E47754;
+    border-radius: 15px;
+    max-width: 80%;
+}
+
+.jo-card-titre {
+    position: absolute;
+    top: 20px;
+}
+
+.jo-card-texte {
+    position: absolute;
+    bottom: 15px;
+    opacity: 90%;
+}
+
+.actif {
+    max-height: 60vh;
+    height: 100%;
+}
+
+.actif .jo-card{
+    height: 100%;
+    margin-bottom: 10px;
+}
+
+
+#mouvement-header{
+    position:sticky;
+    top: 0;
+    padding-top: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#mouvement-header > img {
+    padding: 10px;
+}
+
+.image-titre{
+    max-width: 40%;
+}
+#mouvement-video{
+    width: 60%;
+    height: 60%;
+}
+#twitter-widget-0{
+    border-radius: 10%;
+}
+
+
+#mouvement-contenu{
+    width: 100%;
+    height: 60%;
+}
+.page-container{
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+#mouvement-page .svg-boucle{
+    position: absolute;
+}
+#mouvement-page #mouvement-contenue-titre{
+    display: flex;
+    justify-content: center;
+}
+#mouvement-page #mouvement-contenue-titre-texte{
+    margin: 0 5%;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#mouvement-page #mouv-chemin-1{
+    right : 0;
+    top :0;
+    transform: rotateY(180deg) ;
+}
+#mouvement-page #mouv-chemin-2{
+    left : 0;
+    top : 0;
+}
+#mouvement-page .mouv-button{
+    font-size: 3vh;
+}
+#mouvement-page .mouvActif {
+    animation: fadeIn 0.5s;
+    -webkit-animation: fadeIn 0.5s;
+    -moz-animation: fadeIn 0.5s;
+    -o-animation: fadeIn 0.5s;
+    -ms-animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@-moz-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@-webkit-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@-o-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@-ms-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+#credits-button h1{
+    background-color: #E47754;
+    border: 3px solid #FFD8B3;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+    padding: 2% 10%;
+    text-shadow: none;
+    color: white;
 }

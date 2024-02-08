@@ -1,35 +1,37 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <meta name="description" content="Kaylia Nemour, gymnaste franco-algérienne, se prépare pour les Jeux Olympiques de Paris 2024.">
+  <meta name="keywords" content="gymnastique, JO, Paris 2024, Kaylia Nemour, barres asymétriques, championne de France, championne du monde, championnats d'Afrique, Avoine-Beaumont, FFGym, Anvers">
+
+  <meta property="og:title" content="Kaylia Nemour : Direction Paris 2024">
+  <meta property="og:description" content="Kaylia Nemour, gymnaste franco-algérienne, se prépare pour les Jeux Olympiques de Paris 2024.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Kaylia Nemour : Direction Paris 2024">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kaylia Nemour : Direction Paris 2024">
+  <meta name="twitter:description" content="Kaylia Nemour, gymnaste franco-algérienne, se prépare pour les Jeux Olympiques de Paris 2024.">
+
   <title>Kaylia Nemour : Direction Paris 2024</title>
-  <link rel="icon" type="image/png" href="img/favicon.png" />
+  <link rel="icon" type="image/png" href="img/favicon.png" fetchpriority="low">
+
+  <!-- Préchargement de l'image qui sert a place des éléments -->
+  <link rel="preload" as="image" href="img/background/frame.jpg" fetchpriority="high">
 
   <!-- Polices d'écriture -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://unpkg.com/swiper@11.0.5/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://unpkg.com/swiper@11.0.5/swiper-bundle.min.css"/></noscript>
 
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
-  <link rel="preload" href="https://fonts.googleapis.com/icon?family=Material+Icons" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"></noscript>
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap"></noscript>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'" fetchpriority="high">
+  <noscript><link rel="stylesheet" href="css/style.css" fetchpriority="high"></noscript> <!-- En dernier, car plus un CSS est chargé en dernier (on peut quand meme les font apres), plus il a de priorité sur les éléments avec les mêmes classes
+    voir https://stackoverflow.com/questions/16913131/can-one-css-file-take-priority-over-another-css-file -->
 
-  <!--
-    Libraries :
-     - Swiper API : https://swiperjs.com/ 
-     - Anime.js : https://animejs.com/
-  -->
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script> -->
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <!-- Swiper JS : https://swiperjs.com/ -->
+  <script src="https://unpkg.com/swiper@11.0.5/swiper-bundle.min.js" fetchpriority="high" defer></script>
             
+  <script src="js/.cache/app.js" defer></script>
 
-  <script src="js/util.js" defer></script>
-  <script src="js/slides/accueil.js" defer></script>
-  <script src="js/slides/futur.js" defer></script>
-  <script src="js/slides/past.js" defer></script>
-  <script src="js/index.js" defer></script>
-  
-
-  <link rel="preload" as="image" href="img/background.jpg">
+  <link rel="preload" as="image" href="img/background/fond vrai.jpg" fetchpriority="high">
 </head>
