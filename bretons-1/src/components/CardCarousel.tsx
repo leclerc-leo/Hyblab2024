@@ -38,7 +38,7 @@ const athleteVideosData = allAthletesData.map((athlete: Athlete) => {
   const videosForAthlete = athleteEvents.map((event: EventDataItem) => ({
     id: event.IdEvent.toString(),
     sport: event.Sport,
-    epreuve:event.Epreuve,
+    epreuve: event.Epreuve,
     gain: event.Gain,
     title: event.Athlete,
     subtitle: event.Gain,
@@ -89,18 +89,18 @@ function CardCarousel({ video }: VideoListItemProps) {
           <p> en {video.epreuve} ! </p>
         </div>
         <div className="image-row" style={{ zIndex: 5 }}>
-        <img
+          <img
             className="BicycleLogo"
             src={`/bretons-1/img/${video.sport}.svg`}
             alt="Logo"
             onClick={() => handleImageClick('BicycleLogo')}
-        />
-              <FavoriteButton
-                isFavorited={isFavorited}
-                onClick={handleFavoriteClick}
-                buttonId={favoriteButtonId}
-              />
-            <ShareMenu/>
+          />
+          <FavoriteButton
+            isFavorited={isFavorited}
+            onClick={handleFavoriteClick}
+            buttonId={favoriteButtonId}
+          />
+          <ShareMenu />
         </div>
       </div>
       <img
