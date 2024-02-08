@@ -965,15 +965,15 @@ function updateCompareOverlay(comparePlayer) {
 
 	//calculer total coupes
 	let focusedCoupes =
-		focusedPlayer.champ_fr +
-		focusedPlayer.tr_champ +
-		focusedPlayer.cp_fr +
-		focusedPlayer.lig_champ;
+		parseFloat(focusedPlayer.champ_fr) +
+		parseFloat(focusedPlayer.tr_champ) +
+		parseFloat(focusedPlayer.cp_fr) +
+		parseFloat(focusedPlayer.lig_champ);
 	let comparePlayerCoupes =
-		comparePlayer.champ_fr +
-		comparePlayer.tr_champ +
-		comparePlayer.cp_fr +
-		comparePlayer.lig_champ;
+		parseFloat(comparePlayer.champ_fr) +
+		parseFloat(comparePlayer.tr_champ) +
+		parseFloat(comparePlayer.cp_fr) +
+		parseFloat(comparePlayer.lig_champ);
 
 	// ParseFloat pour éviter les problèmes de concaténation
 	focusedPlayer.TAILLE = parseFloat(focusedPlayer.TAILLE);
