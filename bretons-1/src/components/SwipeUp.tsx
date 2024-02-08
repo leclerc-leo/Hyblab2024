@@ -17,6 +17,7 @@ const SwipeUp: React.FC<SwipeUpProps> = ({ onSwipeUp }) => {
   return (
     <div className="swipe-up-container" onTouchStart={handleTouchStart}>
       <div className={`swipe-up-message ${showMessage ? 'visible' : ''} ${startFadeOut ? 'fade-out' : ''}`}>
+        <p>Lire sa bio</p>
         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="16" viewBox="0 0 25 16" fill="none">
             <path d="M2 2L12.5 13L23 2" stroke="white" strokeWidth="3"/>
         </svg>

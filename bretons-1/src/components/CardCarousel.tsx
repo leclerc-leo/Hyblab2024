@@ -123,10 +123,11 @@ function CardCarousel({ video }: VideoListItemProps) {
 
 function ControlledCarousel() {
   const [videosData] = useState(athleteVideosData);
+  const last4Videos = videosData.slice(-4).reverse(); // Get the last 4 videos and reverse the order
 
   return (
     <Carousel className="carousel_main" indicators={true} controls={false}>
-      {videosData.map(video => (
+      {last4Videos.map(video => (
         <Carousel.Item key={video.id}>
           <CardCarousel key={video.id} video={video} />
         </Carousel.Item>
