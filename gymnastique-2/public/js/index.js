@@ -96,7 +96,6 @@ categories_buttons.forEach( button => {
 });
 
 const fleche_gauche = document.querySelectorAll('#fleche_gauche'); 
-console.log(fleche_gauche);
 fleche_gauche.forEach( fleche => {
     fleche.addEventListener('click', () => {
         swiperJournee.slidePrev(); 
@@ -104,7 +103,6 @@ fleche_gauche.forEach( fleche => {
 });
 
 const fleche_droite = document.querySelectorAll('#fleche_droite'); 
-console.log(fleche_droite);
 fleche_droite.forEach( fleche => {
     fleche.addEventListener('click', () => {
         swiperJournee.slideNext(); 

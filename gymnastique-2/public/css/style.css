@@ -401,17 +401,6 @@ svg.image-histoire, svg.image-jo{
     height: 30%;
 }
 
-#journee_1_img{
-    position: absolute;
-    left: 21%;
-    width: 58%;
-    height: 32%;
-    top: 33%;
-    border-radius: 22px;
-
-}
-/*width: 40%; height: 30%; left: 30%; top: 23%; position: absolute; text-align: center"><span style="color: #482E49; font-size: 25px; font-family: Krona One; font-weight: 400; word-wrap: break-word"
-*/
 #journee_type{
     position: absolute;
     width: 40%;
@@ -423,22 +412,7 @@ svg.image-histoire, svg.image-jo{
     font-weight: 400;
     line-height: normal;
 }
-/*"width: 30%; height: 30%; left: 33%; top: 70%; position: absolute; text-align: center; color: #472D48; font-size: 20px; font-family: Krona One; font-weight: 400; word-wrap: break-word"
-*/
-#categorie_journee{
-    position: absolute;
-    width:30%;
-    height: 30%;
-    top: 70%;
-    left: 35%;
-    text-align: center;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-/*
-"width: 70%; height: 30%; left: 13%; top: 75%; position: absolute; text-align: center; color: #472D48; font-size: 16px; font-family: Krona One; font-weight: 400; word-wrap: break-word"
-*/
+
 #description_journee{
     position: absolute;
     width: 70%;
@@ -495,21 +469,22 @@ svg.image-histoire, svg.image-jo{
 
 #journee_img{
     position: absolute;
-    left: 18%;
-    width: 65%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: auto;
     height: 32%;
     top: 33%;
     border-radius: 22px;
 
 }
-/*width: 40%; height: 30%; left: 30%; top: 23%; position: absolute; text-align: center"><span style="color: #482E49; font-size: 25px; font-family: Krona One; font-weight: 400; word-wrap: break-word"
-*/
+
 #journee_type{
     position: absolute;
     width: 40%;
     height: 30%;
     top:23%;
-    left:30%;
+    left: 50%;
+    transform: translate(-50%, 0);    
     text-align: center;
     font-style: normal;
     font-weight: 400;
@@ -529,4 +504,23 @@ svg.image-histoire, svg.image-jo{
     color: #482e48;
     font-size: 16px;
     font-family: Inter;
+}
+
+#barre_navigation_journee {
+    position: absolute;
+    top: 70%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly; 
+    flex : 1;
+}
+#categorie_journee{
+    padding: 10px 10px;
+    text-align: center;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
