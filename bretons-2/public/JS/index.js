@@ -485,7 +485,7 @@ async function page_historique(sport) {
 		blank.appendChild(divImgAthlete);
 
 		divNomAthlete.onclick = () => {
-			page_athlete(uniqueAthlete,listeAthletes);
+			page_athlete(uniqueAthlete,listeAthletes , isFirtAthlete);
 		}
 
 	} else {
@@ -535,7 +535,7 @@ async function page_historique(sport) {
 			blank.appendChild(divImgAthlete);
 
 			divNomAthlete.onclick = () => {
-				page_athlete(athlete, listeAthletes);
+				page_athlete(athlete, listeAthletes , isFirtAthlete);
 			}
 		}
 		
@@ -543,7 +543,7 @@ async function page_historique(sport) {
 
 }
 
-function page_athlete(athlete,listeAthletes) {
+function page_athlete(athlete,listeAthletes, isFirtAthlete) {
     const blank = document.querySelector("#blank");
     blank.innerHTML = ""; // clear
 
@@ -658,14 +658,19 @@ function page_athlete(athlete,listeAthletes) {
 	const currentIndex = listeAthletesArray.findIndex(item => item.nom === athlete.nom);
 	const nextIndex = (currentIndex + 1) % listeAthletesArray.length;
 	const nextAthlete = listeAthletesArray[nextIndex];
-	 nextAthleteDiv.textContent = `SUIVANT : ${nextAthlete.nom}`;
+	if (isFirtAthlete){
+		nextAthleteDiv.textContent = `SUIVANT : ${nextAthlete.nom}`;
+	} 
+
+	else{
+		nextAthleteDiv.textContent = `PRECEDENT : ${nextAthlete.nom}`;
+	}
 	 nextAthleteDiv.classList.add("next-athlete-div");
 	 nextAthleteDiv.addEventListener("click", () => {
-
-        page_athlete(nextAthlete, listeAthletes);
+        page_athlete(nextAthlete, listeAthletes, !isFirtAthlete);
 
     });
- 
+	 
 	 blank.appendChild(nextAthleteDiv);
 
 	console.log("AYMEN");
@@ -673,6 +678,7 @@ function page_athlete(athlete,listeAthletes) {
 	console.log(listeAthletes);
 }
 
+const isFirtAthlete= true;
 
 const myModal = new bootstrap.Modal('#modal')
 const phone = document.getElementById("phone");
@@ -716,4 +722,5 @@ function page_credits() {
 
 //const modal = document.getElementById("modal");modal.addEventListener()
 page_historique("Handball");
+
 
