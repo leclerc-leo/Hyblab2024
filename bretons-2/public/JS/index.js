@@ -11,6 +11,7 @@ function page_accueil() {
 	divTitle.style.flexDirection = "column";
 	divTitle.style.alignItems = "center";
 	divTitle.style.paddingTop = "6vh";
+	divTitle.style.paddingLeft = "4vw";
 
 	const title = document.createElement("h1");
 	title.style.fontSize = "9vh";
@@ -20,7 +21,7 @@ function page_accueil() {
 
 	const subtitle = document.createElement("h2");
 	subtitle.style.textTransform = "uppercase";
-	subtitle.innerHTML = "les athlètes<br>près de chez vous !";
+	subtitle.innerHTML = "les athlètes bretons !";
 	subtitle.style.fontSize = "6vh";
 	subtitle.style.width = "87%";
 	subtitle.style.marginTop = "-10px";
@@ -34,6 +35,7 @@ function page_accueil() {
 	divParagraphe.style.display = "flex";
 	divParagraphe.style.justifyContent = "center";
 	divParagraphe.style.paddingTop = "4vh";
+	divParagraphe.style.paddingLeft = "4vw";
 	divParagraphe.width = "100%";
 
 	const paragraphe = document.createElement("p");
@@ -42,7 +44,7 @@ function page_accueil() {
 	paragraphe.style.fontFamily = "Arial";
 	paragraphe.style.lineHeight = "3vh";
 	//paragraphe.style.fontWeight = "bold";
-	paragraphe.innerHTML = "Accompagnez les sportifs représentant la Bretagne dans leur quête des Jeux Olympiques 2024 !";
+	paragraphe.innerHTML = "Suivez les derniers résultats des sportifs bretons aux Jeux Olympiques 2024 grâce au Télégramme des Scores";
 
 	divParagraphe.appendChild(paragraphe);
 	blank.appendChild(divParagraphe);
@@ -155,20 +157,23 @@ function page_sport(){
 		divSwipperWrapper.appendChild(slide);
 
 	});
+	const divNextButton = document.createElement("div");
+	divNextButton.classList.add("swiper-button-next");
+	const divPreviousButton = document.createElement("div");
+	divPreviousButton.classList.add("swiper-button-prev");
 
-	
+	divSwipper.appendChild(divNextButton);
+	divSwipper.appendChild(divPreviousButton);
 
 	const swiper = new Swiper('.swiper', {
 		
 		direction: 'horizontal',
 		loop: true,
 		mousewheel: true,
-	
-		// If we need pagination
-		// pagination: {
-		//   el: '.swiper-pagination',
-		//   clickable: true,
-		// }
+		navigation: {
+			nextEl: ".swiper-button-next",
+			prevEl: ".swiper-button-prev",
+		},
 	
 		// scrollbar: {
 		// 	el: '.swiper-scrollbar',
@@ -207,16 +212,6 @@ async function fetchAndProcessData(sport) {
 async function page_historique(sport) {
 	
 	const listeVideo = await fetchAndProcessData(sport);
-
-	// fetch("./JSON/videos.json")
-	// .then(response => response.json())
-	// .then(data => {
-	// 	for (const [discipline, videos] of Object.entries(data)) {
-	// 		if (discipline == sport) {
-	// 			listeVideo[discipline] = videos;
-	// 			console.log(videos) // pour tester
-	// 		}
-	// 	}
 
 	const blank = document.querySelector("#blank");
 	blank.innerHTML = ""; // clear
@@ -369,7 +364,6 @@ async function page_historique(sport) {
 
 			video.appendChild(sourceMP4);
 			video.appendChild(sourceWebM);
-
 			div.appendChild(video);
 			div.appendChild(playButton);
 			slide.appendChild(div);
@@ -379,16 +373,29 @@ async function page_historique(sport) {
 
 		}
 	}
+	const divPagination = document.createElement("div");
+	divPagination.classList.add("swiper-pagination");
+	divPagination.classList.add("pagin");
+
+	swiperSport.appendChild(divPagination);
 
 	const swiperSportInstance = new Swiper('.Swiper2', {
 		direction: 'horizontal',
-		loop: true,
+		//loop: true,
 		mousewheel: true,
-		slidesPerView: 2,
+		//touch: true,
+		slidesPerView: 3,
+		//centeredSlides: true,
+		slidesOffsetBefore: 28, 
+    	slidesOffsetAfter: 28, 
+		pagination: {
+			el: ".swiper-pagination",
+			clickable: true,
+		},
 	});
 
 	console.log("Nouvelle instance de swiperSportInstance créée.");
-
+	
 	const listeAthletes = {}
 	
 	try {
@@ -412,6 +419,7 @@ async function page_historique(sport) {
 	const divTitleAthlete = document.createElement("div");
 	divTitleAthlete.id = "divTitleAthlete";
 	divTitleAthlete.style.position = "sticky";
+	divTitleAthlete.style.paddingTop = "5vh";
 
 	const titleAthlete = document.createElement("h1");
 	titleAthlete.classList.add("title");
@@ -421,7 +429,6 @@ async function page_historique(sport) {
 
 	divTitleAthlete.appendChild(titleAthlete);
 	blank.appendChild(divTitleAthlete);
-
 
 	// const divNomAthlete = document.createElement("div");
 	// divNomAthlete.id = "divNomAthlete";
@@ -445,6 +452,10 @@ async function page_historique(sport) {
 
 		const divImgAthlete = document.createElement("div");
 		divImgAthlete.id = "divImgAthlete";
+		divImgAthlete.style.cursor = "pointer";
+		divImgAthlete.onclick = () => {
+			page_athlete(uniqueAthlete);
+		}
 
 		const imgAthlete = document.createElement("img");
 
@@ -454,6 +465,7 @@ async function page_historique(sport) {
 
 		const nomAthlete = document.createElement("h1");
 		nomAthlete.style.color = "white";
+		nomAthlete.style.borderTop = "1px solid black";
 
 		imgAthlete.src = uniqueAthlete.illustration;
     	imgAthlete.alt = uniqueAthleteName;
@@ -487,6 +499,11 @@ async function page_historique(sport) {
 
 			const divImgAthlete = document.createElement("div");
 			divImgAthlete.id = "divImgAthlete";
+			divImgAthlete.style.cursor = "pointer";
+
+			divImgAthlete.onclick = () => {
+				page_athlete(athlete);
+			}
 
 			const imgAthlete = document.createElement("img");
 
@@ -496,6 +513,7 @@ async function page_historique(sport) {
 
 			const nomAthlete = document.createElement("h1");
 			nomAthlete.style.color = "white";
+			nomAthlete.style.borderTop = "1px solid black";
 
 			imgAthlete.src = athlete.illustration;
 			imgAthlete.alt = athleteName;
@@ -542,7 +560,7 @@ const myModal = new bootstrap.Modal('#modal')
 const phone = document.getElementById("phone");
 document.getElementById("menu-modal").onclick = () =>{
 	myModal.show();
-	phone.style.filter = "blur(4px)"
+	phone.style.filter = "blur(1px)"
 
 	myModal._element.addEventListener('hidden.bs.modal', () => {
         phone.style.filter = "";
@@ -551,6 +569,30 @@ document.getElementById("menu-modal").onclick = () =>{
 
 document.getElementById("retour-modal").onclick = () =>{
 	myModal.hide();
+}
+
+document.getElementById("actu").onclick = () => {
+	myModal.hide();
+	page_actualite();
+}
+
+document.getElementById("credits").onclick = () => {
+	myModal.hide();
+	page_credits();
+}
+
+function page_actualite() {
+
+	const blank = document.querySelector("#blank");
+	blank.innerHTML = "";
+
+}
+
+function page_credits() {
+
+	const blank = document.querySelector("#blank");
+	blank.innerHTML = "";
+
 }
 
 //const modal = document.getElementById("modal");modal.addEventListener()

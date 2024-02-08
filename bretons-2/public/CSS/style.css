@@ -148,6 +148,9 @@ footer {
     margin-bottom:2rem;
     background-color: white;
 }
+#actu, #credits {
+    cursor: pointer;
+}
 
 .fade-out {
     transition: opacity 1s ease; 
@@ -161,7 +164,7 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.9); /* Fond semi-transparent */
+    /* background-color: rgba(0, 0, 0, 0.9); Fond semi-transparent */
   }
   
 /* Style carousel page sport */
@@ -169,6 +172,17 @@ footer {
 .swiper {
     width: 100%;
     height: 100%;
+}
+
+.swiper-button-next {
+    padding-right: 5vw!important;
+    color: rgba(20, 20, 86, 0.8)!important;
+    
+}
+
+.swiper-button-prev {
+    padding-left: 5vw!important;
+    color: rgba(20, 20, 86, 0.8)!important;
 }
 
 .mySwiper {
@@ -188,6 +202,18 @@ footer {
     width: 100%;
     height: 100%;
   }
+
+  .swiper-slide:nth-child(2n) {
+    width: 40%;
+  }
+
+  .swiper-slide:nth-child(3n) {
+    width: 20%;
+  }
+
+ .pagin{
+    position: unset !important;
+ }
 
 .swiper-slide div {
     /* Assurez-vous que la div interne n'introduit pas de marges ou de largeurs indésirables */
@@ -216,4 +242,3 @@ button:focus, button:active {
     padding-top: 4%;
 }
   
-
