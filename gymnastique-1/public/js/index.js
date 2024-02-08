@@ -39,3 +39,20 @@ setTimeout(() => {
   // Init first slide
   initSlideIntro();
 }, 1000);
+function boingOnClick(element){
+  anime({
+    targets: element,
+    scale: 1.2,
+    easing: "easeInOutQuad",
+    duration: 160,
+    loop: false,
+  });
+  setTimeout(function () {
+    anime({
+      targets: element,
+      scale: 1,
+      easing: "easeInOutQuad",
+      duration: 160,
+      loop: false
+  })}, 160 ); 
+}

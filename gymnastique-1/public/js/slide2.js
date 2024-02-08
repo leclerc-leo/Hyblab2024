@@ -2,6 +2,39 @@
 
 // async init function (because of the awaits on fetches)
 const initSlide2 = async function (popupId, objectId) {
+
+  // TELEPHONE VIDEO QUIZZ
+  const buttons = document.getElementsByClassName("btn_quiz")
+  for(var i=0; i<buttons.length; i++){
+    var button=buttons[i];
+    button.addEventListener('click', selectAnswer);
+  }
+  function selectAnswer(e) {
+    const selectedButton = e.target;
+    boingOnClick(selectedButton);
+    if (selectedButton.id=="answer"){
+      selectedButton.classList.add('correct');
+      setTimeout(()=>{
+        anime({target:"#explication_quizz",display: "block",easing: "easeIn", duration: 200});
+        var phone_popup = document.getElementById("popup_tel");
+        phone_popup.classList.remove("show");
+        setTimeout(function () {
+          phone_popup.style.display = "none";
+        }, 300);
+        var answer_popup = document.getElementById("quizz_end_popup");
+        answer_popup.style.display = "block";
+        setTimeout(function () {
+          answer_popup.classList.add("show");
+        }, 20);
+      },100)
+        //
+      //console.log("DING ! Bonne réponse !!!");
+    }
+    else{
+      selectedButton.classList.add('wrong');
+      //console.log("mauvaise réponse");
+    }
+  }
   // Get logo element
   const bag = document.querySelector("#bag");
   const fleche = document.querySelector("#fleche");
@@ -105,6 +138,7 @@ const initSlide2 = async function (popupId, objectId) {
   document.addEventListener("click", (evt) => {
     clickOutsidePopup(popupId, evt);
   });
+  
 };
 const showPopup = (name, objID) => {
   const popup = document.getElementById(name);

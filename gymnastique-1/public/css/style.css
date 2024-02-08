@@ -431,6 +431,49 @@ main > section {
   background-repeat: no-repeat;
   background-size: 100%;
 }
+#source_video {
+  font-size: 50% !important;
+  position: relative;
+  top: -20%;
+  text-decoration: none;
+  font-weight: 600;
+  font-style: italic;
+  color: #000;
+}
+
+#quizz_end_popup {
+  display:none;
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  top: 5%;
+  left: 5%;
+  background-image: url("../img/pop-53.svg");
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  /* background-color: rgb(255, 177, 68); */
+  z-index: 3;
+  overflow: hidden;
+  border-radius: 20px;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.3s ease-in-out;
+}
+#quizz_end_popup h2 {
+  color:#386f9c;
+  margin: 0.1em 0.1em;
+}
+
+#quizz_end_popup img {
+  position: relative;
+  left: 15%;
+  max-width: 75%;
+}
+#explication_quizz_p{
+  margin: 1em 1em;
+  font-size: small;
+}
 
 /* CSS for the last popup : billet */
 #second-slide .popup-billet {
