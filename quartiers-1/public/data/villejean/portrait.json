@@ -99,7 +99,7 @@
         "speaker": "guide",
         "type": "bubble",
         "choicesLabel": [],
-        "content": ["C’est Régine Komokoli qui a créé le collectif Kuné : Faire ensemble à Villejean, qui est un réseau d’auto-défense pour lutter contre les violences faites aux femmes.","Régine est conseillère départementale déléguée à la protection maternelle et infantile, à la petite enfance et à la parentalité d'Ille-et-Vilaine.","photo d’elle"],
+        "content": ["C’est Régine Komokoli qui a créé le collectif Kuné : Faire ensemble à Villejean, qui est un réseau d’auto-défense pour lutter contre les violences faites aux femmes.","Régine est conseillère départementale déléguée à la protection maternelle et infantile, à la petite enfance et à la parentalité d'Ille-et-Vilaine.","${image_begin}reginekomokoli.jpg${image_end}"],
         "next": ["QuestionFin"]
     },
 
