@@ -56,6 +56,7 @@ function VideoPlayer({ id }: { id: string }) {
             <>
             <SwipeUp onSwipeUp={handleSwipeUp} />
             <Article 
+          id={eventData.IdEvent.toString()}
           title={athlete.Athlete}
           subtitle={eventData.Sport}
           content={athlete.Article}

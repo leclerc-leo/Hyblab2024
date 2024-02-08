@@ -29,4 +29,11 @@
     margin-top: 20px; /* Space between text and image */
     border-radius: 10px; /* Rounded corners for the image */
   }
-  
+  .Lastline{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .inversedColor{
+      filter: invert(100%) grayscale(100%); 
+  }

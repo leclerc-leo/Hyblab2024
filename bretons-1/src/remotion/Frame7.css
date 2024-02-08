@@ -206,7 +206,12 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    align-items: center;
+}
+.flagFrame7,
+.flag_2_Frame7,
+.flag_3_Frame7,
+.flag_4_Frame7 {
+  margin-top: 10px;
 }
 
 
@@ -276,4 +281,8 @@
     font-weight: 400;
     margin-left: 20px; 
 }
+
+.RecEliminate {
+    background-color: #EB5059;
+  }
 

@@ -23,9 +23,9 @@ const getSexe = (sexe: string) => {
 const getImage = (sport: string) => {
   switch (sport) {
     case "Cyclisme":
-      return "_velo.svg_"
+      return "_Cyclisme.svg_"
     default:
-      return ""
+      return "Voile.svg_"
   }
 }
 

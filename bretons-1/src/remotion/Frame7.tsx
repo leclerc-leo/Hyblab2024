@@ -3,7 +3,7 @@ import './Frame7.css';
 import { Podium } from '../components/type';
 
 
-export const Frame7: React.FC<{ athlete: string, podium: Podium[], gain:string}> = ({ athlete, podium, gain }) => {
+export const Frame7: React.FC<{ athlete: string, podium: Podium[], gain: string }> = ({ athlete, podium, gain }) => {
     // Fonction pour obtenir le src de l'image du drapeau basé sur le pays
     const [_, setIsLoading] = useState(true);
     useEffect(() => {
@@ -54,27 +54,32 @@ export const Frame7: React.FC<{ athlete: string, podium: Podium[], gain:string}>
                     const highlightClass = athlete === entry.Nom ? "highlight" : "";
 
                     return (
-                        <div key={index} className={`${rectangleClass} ${highlightClass}`}>
-                            <div className={infoFrameClass}>
-                                <span className={nameFrameClass}>{entry.Nom}</span>
-                                <div className='middletext'>
-                                    <span className={timeFrameClass}>{getScoreLabel(entry.Score)}{entry.Score}</span>
-                                    <div className={flagFrameClass}>
-                                        <img src={getFlagSrc(entry.Pays)} alt={entry.Pays} className={flagFrameClass} />
-                                        <span className={countryFrameClass}>{entry.Pays}</span>
+                        <>
+                            <div
+                                key={index}
+                                className={`${rectangleClass} ${highlightClass} ${gain === "" && entry.Nom === athlete ? 'RecEliminate' : ''}`}
+                            >
+                                <div className={infoFrameClass}>
+                                    <span className={nameFrameClass}>{entry.Nom}</span>
+                                    <div className='middletext'>
+                                        <span className={timeFrameClass}>{getScoreLabel(entry.Score)}{entry.Score}</span>
+                                        <div className={flagFrameClass}>
+                                            <img src={getFlagSrc(entry.Pays)} alt={entry.Pays} className={flagFrameClass} />
+                                            <span className={countryFrameClass}>{entry.Pays}</span>
+                                        </div>
                                     </div>
+                                    {gain === "" && entry.Nom === athlete && (
+                                        <img className='QualifieBW' src={`/bretons-1/img/EliminateBW.svg`} alt='Eliminate' />
+                                    )}
+                                    {entry.Nom !== athlete && (
+                                        <img className='QualifieBW' src='/bretons-1/img/QualifieBW.svg' alt='Qualification' />
+                                    )}
                                 </div>
-                                {gain === "" && entry.Nom === athlete && (
-                                    <img className='QualifieBW' src={`/bretons-1/img/Eliminate.svg`} alt='Eliminate' />
-                                )}
-                                {entry.Nom !== athlete && (
-                                    <img className='QualifieBW' src='/bretons-1/img/QualifieBW.svg' alt='Qualification' />
-                                )}
                             </div>
-                        </div>
+                        </>
                     );
-                })}
-            </div>
+                })};
+            </div >
         </div >
     );
 
