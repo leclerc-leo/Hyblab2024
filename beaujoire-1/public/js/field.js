@@ -5,6 +5,21 @@ let isCaptainSelected = false;
 let selectedPlayerId;
 let updatePlayerElement;
 let playersData;
+const images = [
+	"img/animations/attaquant-fond-gris.gif",
+	"img/animations/milieu-fond-gris.gif",
+	"img/animations/defence-fond-gris.gif",
+	"img/animations/gardien-fond-gris.gif",
+	"img/animations/coach-fond-gris.gif",
+];
+
+images.forEach((image) => {
+	const link = document.createElement("link");
+	link.rel = "preload";
+	link.href = image;
+	link.as = "image";
+	document.head.appendChild(link);
+});
 
 window.onload = fetch("./data/DataBase.json")
 	.then((response) => response.json())
