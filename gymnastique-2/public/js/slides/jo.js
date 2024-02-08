@@ -1,9 +1,9 @@
 const cards = Array.from(document.querySelectorAll('.jo-card-container'));
 
 cards.forEach(card => {
-    card.addEventListener('click', () => {
-        const others = cards.filter(c => c !== card);
+    const others = cards.filter(c => c !== card);
 
+    card.addEventListener('click', () => {
         others.forEach(c => {
             c.classList.toggle("hidden");
         });

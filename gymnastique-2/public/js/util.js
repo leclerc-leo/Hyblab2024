@@ -42,6 +42,8 @@ const move_background = (x, b = false) => {
 };
 
 const handle_orientation = (event) => { 
+    //console.log(event);
+
     const y = Math.min(event.gamma, 90) + 90;
     const maxs = {
         'high': 30,
@@ -51,6 +53,8 @@ const handle_orientation = (event) => {
 
     for (const [key, max] of Object.entries(maxs)) {
         document.querySelectorAll(`.background-move-${key}`).forEach( element => {
+            // take the parent element 
+            element = element.parentElement;
             element.style.left = `${(max * y) / 180 - max}px`;
         });
     }

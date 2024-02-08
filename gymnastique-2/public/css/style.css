@@ -38,7 +38,7 @@
 }
 
 .swiper-pagination-bullet::before{
-    --swiper-pagination-bullet-size: 50%;
+    --swiper-pagination-bullet-size: 35%;
     content: '';
     position: absolute;
     bottom: 20%;
@@ -55,7 +55,7 @@
 }
 
 .swiper-pagination-bullet-active::before{
-    --swiper-pagination-bullet-size: 50%;
+    --swiper-pagination-bullet-size: 35%;
     background-color: white;
 }
 
@@ -81,7 +81,7 @@ header{
 }
 
 #titre{
-    background: linear-gradient(rgba(255, 216, 179, 0.4) 0%, rgba(255, 216, 179, 0.4) 90%, rgba(255, 216, 179, 0.1) 100%);
+    background: radial-gradient(closest-side, rgba(255, 217, 179, 0.6) 0, rgba(255, 217, 179, 0.6) 50%, rgba(255, 217, 179, 0) 100%);
 }
 
 header > * {
@@ -195,7 +195,7 @@ header > * {
     height: 5vh;
     padding: 4vh;
     border-radius: 50%;
-    background: /* #e47e5d from 0 to 50 then gradualy transparent */ radial-gradient(circle at 50% 50%, #e47e5d 0%, #e47e5d 50%, transparent 55%);
+    background: /* #e47e5d from 0 to 50 then gradualy transparent */ radial-gradient(circle at 50% 50%, #e47e5d 0%, #e47e5d 50%, transparent 50%);
 
     cursor: pointer;
 }
@@ -276,7 +276,6 @@ span{
 /* Format des pages */
 #histoire-page, #jo-page, #credits-page{
     text-align: center;
-    padding: 0 10px;
 }
 
 #histoire-page h1, #jo-page h1, #credits-page h1{
@@ -403,10 +402,10 @@ svg.image-histoire, svg.image-jo{
 }
 #palmares-page .card-front-palmares-titre{
     margin: 2% 0 2% 0;
+    color: #FFD8B3;
 }
 #palmares-page .card-palmares-titre{
     margin: 2% 0 2% 0;
-    color: #E47754;
 }
 
 #credits-chemin1{
@@ -467,7 +466,7 @@ svg.image-histoire, svg.image-jo{
     top: 0;
     background-color: rgba(255, 216, 179, 0.9);
     margin-bottom: 10px;
-    padding-top: 10px;
+    padding-top: 40px;
 }
 
 #jo-contenu {
@@ -481,6 +480,22 @@ svg.image-histoire, svg.image-jo{
 .jo-card-container {
     perspective: 800px;
     margin: 0% 10% 3% 10%;
+}
+
+/* add a cross to the top right of the card */
+.jo-card-container.actif::before, .jo-card-container.actif::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    width: 20px;
+    height: 3px;
+    background-color: #E47754;
+    transform: rotate(45deg);
+}
+
+.jo-card-container.actif::after {
+    transform: rotate(-45deg);
 }
 
 .jo-card {
@@ -632,6 +647,6 @@ svg.image-histoire, svg.image-jo{
     border-radius: 10px;
     transition: transform 0.3s ease-in-out;
     padding: 2% 10%;
-    text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.2);
+    text-shadow: none;
     color: white;
 }

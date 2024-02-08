@@ -51,8 +51,6 @@ categories_buttons.forEach( button => {
         const category = button.id.split('-')[0];
 
         const block = document.querySelector(`#${category}-page`);
-        console.log(button)
-        console.log(block)
         if (block == null) { /* Principalement pour les pages des boutons qui ne sont pas encore implémentés */
             console.log('Le bloc pour le bouton ' + button.id + ' n\'existe pas');
             return;
