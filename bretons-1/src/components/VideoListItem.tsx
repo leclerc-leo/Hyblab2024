@@ -4,7 +4,24 @@ import { FavoriteButton } from './Fav_nav';
 import athleteData from '../data/Athlete.json';
 import { Athlete, Video, VideoListItemProps } from './type';
 import EventData from '../data/Event.json';
-import { EventDataItem } from './type';  
+import { EventDataItem } from './type'; 
+import { useNavigate } from 'react-router-dom'; 
+
+const determinerTexteTitre = (sexe: string, gain: string) => {
+  const suffixeGenre = (sexe === 'F') ? 'e' : '';
+  switch (gain) {
+    case "Or":
+      return "décroche l'or ";
+    case "Argent":
+      return "décroche l'argent ";
+    case "Bronze":
+      return "décroche le bronze";
+    case "Qualifie":
+      return `qualifié${suffixeGenre} pour la finale`
+    case "":
+      return `non qualifié${suffixeGenre} pour la finale`;
+  }
+};
 
 const allAthletesData = athleteData.Athlete.reduce((allAthletes: Athlete[], athletesArray: Athlete[]) => {
   return allAthletes.concat(athletesArray);
@@ -18,14 +35,14 @@ const athleteVideosData = allAthletesData.map((athlete: Athlete) => {
 
   const videosForAthlete = athleteEvents.map((event: EventDataItem) => ({
     id: event.IdEvent.toString(),
-    title: event.Athlete,
     sport: event.Sport,
-    epreuve:"",
+    epreuve:event.Epreuve,
     gain: event.Gain,
-    text: event.Performance,
-    subtitle: event.Epreuve,
+    title: event.Athlete,
+    subtitle: event.Gain,
     srcPhoto: athlete.Photo,
-    description: event.Performance,
+    description: athlete.Sexe,
+    text: "",
   }));
 
   return videosForAthlete;
@@ -37,7 +54,6 @@ type FavoriteVideosManagerProps = {
 
 const FavoriteVideosManager: React.FC<FavoriteVideosManagerProps> = ({ videoId }) => {
   const [isFavorited, setIsFavorited] = useState(false);
-
   useEffect(() => {
     const favoritesFromStorage = JSON.parse(localStorage.getItem('favorites') || '[]');
     setIsFavorited(favoritesFromStorage.includes(videoId));
@@ -63,14 +79,19 @@ const FavoriteVideosManager: React.FC<FavoriteVideosManagerProps> = ({ videoId }
 };
 
 function VideoListItem({ video }: VideoListItemProps) {
+  const navigate = useNavigate();
+  const handlePlayClick = (id: string) => {
+    console.log(`Image "${id}" cliquée !`);
+    navigate('/bretons-1/VideoPlayer', { state: { id: id } })
+  };
   return (
-    <div className="video-list-item">
+    <div className="video-list-item" onClick={() => handlePlayClick(video.id)}>
       <img src={video.srcPhoto} alt={video.title} />
       <div className="video-content">
         <div className="video-info">
           <h4>{video.title}</h4>
-          <h5>{video.subtitle}</h5>
-          <p>{video.text}</p>
+          <p className='psanspadding'>{determinerTexteTitre(video.description, video.subtitle)}</p>
+          <p> en {video.epreuve} ! </p>
         </div>
       </div>
       <FavoriteVideosManager videoId={video.id} />
