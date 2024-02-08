@@ -331,6 +331,10 @@ svg.image-histoire, svg.image-jo{
     margin-bottom: 20px;
 }
 
+#credits-header {
+    padding-top: 30px;
+}
+
 #histoire-header > img {
     padding: 10px;
 }
