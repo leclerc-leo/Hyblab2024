@@ -223,11 +223,10 @@ document.addEventListener("DOMContentLoaded", () => {
 			);
 		}
 	});
-	/*
+
 	document.addEventListener("click", () => {
 		document.querySelector("#back-sound").play();
 	});
-	*/
 
 	document
 		.querySelector(".dropdown")
