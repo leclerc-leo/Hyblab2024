@@ -2,13 +2,15 @@
 const recapPage = function () {
 
   function getInitialZoomLevel() {
-    var width = window.innerWidth;
+    const width = window.innerWidth;
     if (width <= 480) {
         return 13; // Zoom level for mobile devices
     } else if (width <= 768) {
         return 14; // Zoom level for tablets
-    } else {
+    } else if (width <= 1024) {
         return 15; // Zoom level for desktop
+    } else{
+        return 16; // Zoom level for large desktop
     }
   }
 
@@ -18,8 +20,11 @@ const recapPage = function () {
         return 50; // Icon size for mobile devices
     } else if (width <= 768) {
         return 60; // Icon size for tablets
-    } else {
-        return 70; // Icon size for desktop
+    } else if (width <= 1024) {
+        return 80; // Icon size for desktop
+    }
+    else{
+        return 90; // Icon size for large desktop
     }
   }
 
