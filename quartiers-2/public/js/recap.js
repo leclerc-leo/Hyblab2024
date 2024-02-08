@@ -83,7 +83,7 @@ const recapPage = function () {
     "</div>"
   );
 
-  L.marker([48.10717800781931, -1.6726050662616248 ], {icon: joachim}).addTo(map).bindPopup(
+  L.marker([48.115947950372146, -1.6472464900580122  ], {icon: joachim}).addTo(map).bindPopup(
     "<div><h3>Joachim</h3><img src='https://i.ibb.co/7KB7V4G/joachim.png' alt='Joachim Image'></div>" +
     "<div>" +
       "<h3>4 Rue du Bois Perrin</h3>" +
@@ -99,7 +99,7 @@ const recapPage = function () {
     "</div>"
   );
 
-  L.marker([48.10855480875185, -1.6518949960950546 ], {icon: christophe}).addTo(map).bindPopup(
+  L.marker([48.107792538952154, -1.651956317965408 ], {icon: christophe}).addTo(map).bindPopup(
     "<div><h3>Christophe</h3><img src='https://i.ibb.co/zb3pV07/christophe.png' alt='Christophe Image'></div>" +
     "<div>" +
       "<h3>30-32 Bd Villebois Mareuil</h3>" +
