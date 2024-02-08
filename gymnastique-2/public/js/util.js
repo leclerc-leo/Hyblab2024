@@ -26,7 +26,6 @@ const handle_return = (swiper,swiper_controls, page_controls, return_button) => 
 };
 
 const remove_listeners = id => {
-    console.log(id);
     const el = document.querySelector(`${id}`),
             elClone = el.cloneNode(true);
     el.parentNode.replaceChild(elClone, el);

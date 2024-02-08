@@ -23,9 +23,6 @@ swiper.on('progress', () => {
 
 swiper.on("slideChange", function () {
     switch( swiper.activeIndex ) {
-        case 1:
-            init_accueil(swiper);
-            break;
         case 0:
             init_past(swiper);
             break;
@@ -46,10 +43,7 @@ var swiperJournee = new Swiper('#swiper_journee', {
 
 });
 
-
-
 move_background(50);
-init_accueil(swiper);
 
 const categories_buttons = document.querySelectorAll('.category-button'); // les boutons permettant d'accéder aux informations
 const swiper_controls = document.querySelector('.swiper-controls'); // les boutons qui permettent de changer de slides + la pagination
