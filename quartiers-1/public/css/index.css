@@ -235,7 +235,7 @@ h1{
 #map svg{
     position: relative;
     top: 30%;
-    height: 60%;
+    height: 70%;
     width: auto;
     left: 50%;
     transform: translateX(-50%);
@@ -265,8 +265,9 @@ h1{
 
 #nuage3{
     animation: animCloud3 30s ease-in-out infinite;
-    bottom: 40%;
+    bottom: 33%;
     scale: 0.6 0.55;
+    z-index: 2;
 }
 
 #nuage4{
@@ -433,10 +434,10 @@ h1{
     height: 20px;
     border-bottom: 4px solid;
     border-right: 4px solid;
-    border-radius: 4px;
-    color: #333;
+    color: #292C5E;
     cursor: pointer;
     animation: jumpInfinite 1.5s infinite;
+    -webkit-tap-highlight-color: transparent;
 }
 #previous{
     left: 12%;
