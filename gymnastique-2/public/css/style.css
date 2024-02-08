@@ -495,9 +495,6 @@ svg.image-histoire, svg.image-jo{
     top:23%;
     left:30%;
     text-align: center;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
 }
 
 #description_journee{
@@ -507,11 +504,6 @@ svg.image-histoire, svg.image-jo{
     top: 75%;
     left: 13%;
     text-align: center;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    color: #482e48;
-    font-size: 16px;
 }
 
 #journee_1_svg{
@@ -559,7 +551,6 @@ svg.image-histoire, svg.image-jo{
     height: 32%;
     top: 33%;
     border-radius: 22px;
-
 }
 
 #journee_type{
@@ -570,9 +561,6 @@ svg.image-histoire, svg.image-jo{
     left: 50%;
     transform: translate(-50%, 0);    
     text-align: center;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
 }
 
 #description_journee{
@@ -582,12 +570,7 @@ svg.image-histoire, svg.image-jo{
     top: 75%;
     left: 13%;
     text-align: center;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    color: #482e48;
-    font-size: 16px;
-    font-family: Inter;
+    color: #482E49;
 }
 
 #barre_navigation_journee {
@@ -604,9 +587,6 @@ svg.image-histoire, svg.image-jo{
 #categorie_journee{
     padding: 10px 10px;
     text-align: center;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
 }
 
 #jo-header {
