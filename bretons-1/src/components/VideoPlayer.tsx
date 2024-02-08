@@ -1,4 +1,3 @@
-import './VideoPlayer.css';
 import { useState, useEffect } from 'react';
 import { Player } from "@remotion/player";
 import { MyVideo } from "../remotion/Root";
@@ -21,19 +20,21 @@ function VideoPlayer({ id }: { id: string }) {
     if(athlete == undefined || eventData == undefined) {
       return (<></>);
     }
-    // set 
+
     useEffect(() => {
         const timer = setTimeout(() => {
         setAllowSwipe(true);
         }, 20000); // 20 seconds
 
-        return () => clearTimeout(timer); // clear the timer 
-    }, []); // An empty dependency array means that this effect will only run once when the component is loaded.
+        return () => clearTimeout(timer);
+    }, []);
 
     const handleSwipeUp = () => {
         if (allowSwipe) {  
         }
     };
+
+    const durationInFrames = eventData.Gain === "" || eventData.Gain === "Qualifie" ? 1740 : 1980;
     return (
         <div id='VideoPlayer'>
             <div className="head">
@@ -42,7 +43,7 @@ function VideoPlayer({ id }: { id: string }) {
             <Player
                 component={MyVideo}
                 inputProps={{ id: id }}
-                durationInFrames={1980}
+                durationInFrames={durationInFrames}
                 compositionWidth={1080}
                 compositionHeight={1920}
                 fps={60}
@@ -63,7 +64,6 @@ function VideoPlayer({ id }: { id: string }) {
         />
             </>
           )
-          
         )}
     </div>
     );

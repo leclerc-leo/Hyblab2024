@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import './Article.css';
 import { FavoriteButton } from './Fav_nav';
 import ShareMenu from './ShareMenu';
+import { useNavigate } from 'react-router';
 
 interface ArticleProps {
   id: string;
@@ -13,10 +14,16 @@ interface ArticleProps {
 const Article: React.FC<ArticleProps> = ({ id, title, subtitle, content }) => {
   const [isFavorited, setIsFavorited] = useState(false);
   const [favoriteButtonId] = useState(id);
+  const navigate = useNavigate();
+  
   useEffect(() => {
     const favoritesFromStorage = JSON.parse(localStorage.getItem('favorites') || '[]');
     setIsFavorited(favoritesFromStorage.includes(id));
   }, [id]);
+
+  const handleBackClick = () => {
+    navigate('/bretons-1')
+  };
 
   const handleFavoriteClick = () => {
     const updatedIsFavorited = !isFavorited;
@@ -33,7 +40,7 @@ const Article: React.FC<ArticleProps> = ({ id, title, subtitle, content }) => {
       <h2 className="article-subtitle">{subtitle}</h2>
       <p className="article-content">{content}</p>
       <div className='Lastline'>
-        <button>Retour</button>
+        <button onClick={() => handleBackClick()}>Retour</button>
         <div className='inversedColor'>
           <FavoriteButton
             isFavorited={isFavorited}
