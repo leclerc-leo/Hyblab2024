@@ -14,6 +14,10 @@
 			<div class="logo-container"></div>
 			<div class="buttons">
 				<button id="blason" title="blason"></button>
+				<button id="capitaine" class="green" title="captain">
+					c
+					<div id="cap-bar"></div>
+				</button>
 				<button
 					class="player-clickable"
 					id="entraineur"
@@ -128,7 +132,7 @@
 				</div>
 			</div>
 			<div class="bottom-btn">
-				<a href="selection.html"
+				<a id="redac" href="selection.html"
 					><button class="gm-btn gb-shutter">
 						LES 11 DE LA R&Eacute;DACTION
 					</button>
@@ -154,6 +158,15 @@
 					<br />
 					<span class="green">CAPITAINE</span>
 				</h1>
+				<div class="bottom-btn" id="flip-btn">
+					<button
+						class="round-btn"
+						id="close-bio"
+						title="close"
+						onclick="closeCaptainOverlay()">
+						<img src="./img/close.svg" alt="close" />
+					</button>
+				</div>
 			</div>
 			<div class="bio-overlay" style="display: none">
 				<h2>Titre de la bio</h2>

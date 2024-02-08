@@ -24,15 +24,29 @@ function initizalizePage() {
 		} else {
 			playerElement.textContent = playerName;
 		}
-		const playerNames = document.querySelectorAll(".player-name");
-		playerNames.forEach((playerName) => {
+		if (player.POSTE !== "ENTRAÎNEUR" && player.NUMÉRO !== undefined) {
+			const playerNameElem = playerElement.querySelector(".player-name");
+			const overflow =
+				playerElement.scrollWidth - playerNameElem.clientWidth;
+			if (overflow > 0) {
+				playerNameElem.style.transform = `translateX(-${
+					overflow / 2
+				}px)`;
+			}
+		}
+
+		selectedPlayerId = null;
+	};
+
+	const playerNames = document.querySelectorAll(".player-name");
+	playerNames.forEach((playerName) => {
+		if (player.POSTE !== "ENTRAÎNEUR" && player.NUMÉRO !== undefined) {
 			const overflow = playerName.scrollWidth - playerName.clientWidth;
 			if (overflow > 0) {
 				playerName.style.transform = `translateX(-${overflow / 2}px)`;
 			}
-		});
-		selectedPlayerId = null;
-	};
+		}
+	});
 
 	const urlParams = new URLSearchParams(window.location.search);
 	const playersParam = urlParams.get("players");
@@ -56,7 +70,7 @@ function initizalizePage() {
 			if (playerElement && playerName !== "") {
 				updatePlayerElement(playerElement, playerName);
 			} else {
-				console.log(`No element found with id ${playerId}`);
+				console.log(`No player found for id ${playerId}`);
 			}
 		});
 	} else if (storedPlayers) {
@@ -70,7 +84,7 @@ function initizalizePage() {
 			if (playerElement && playerName !== "") {
 				updatePlayerElement(playerElement, playerName);
 			} else {
-				console.log(`No element found with id ${playerId}`);
+				console.log(`No player found for id ${playerId}`);
 			}
 		}
 	}
@@ -218,13 +232,9 @@ function areAllPlayersSelected() {
 }
 
 function handlePlayerClick(event) {
-	console.log("Clicked event:", event);
-	console.log("Clicked target:", event.target);
 	const playerElement = event.target.closest(".player-clickable");
 	if (playerElement) {
 		selectedPlayerId = playerElement.id;
-		console.log(`Selected player: ${selectedPlayerId}`);
-
 		// Add player animation class
 		playerElement.classList.add("player-animation");
 
@@ -246,16 +256,12 @@ function showCarousel(id) {
 	const filteredPlayers = playersData.filter(
 		(player) => player.POSTE === poste
 	);
-	console.log(
-		`Found ${filteredPlayers.length} players for position ${poste}`
-	);
 
 	const carousel = document.querySelector(".carousel");
 	carousel.innerHTML = "";
 
 	filteredPlayers.forEach((player) => {
 		const carouselItemHTML = createCarouselItem(player);
-		console.log(`Created carousel item: ${carouselItemHTML}`);
 		carousel.appendChild(carouselItemHTML);
 	});
 
@@ -289,8 +295,9 @@ function handleValidateButtonClick() {
 	const selectedPlayer = document.querySelector(".carousel-item.focused");
 	const selectedPlayerName =
 		selectedPlayer.querySelector("#name").textContent;
-	console.log(selectedPlayerName);
-	console.log(selectedPlayerId);
+	console.log(
+		`Selected player for position ${selectedPlayerId}: ${selectedPlayerName}`
+	);
 	//Add the player to the list of selected players
 	players[selectedPlayerId] = selectedPlayerName;
 	//Save the list of selected players to local storage
@@ -312,16 +319,28 @@ function handleValidateButtonClick() {
 		console.log("Tous les joueurs ont été sélectionnés");
 		document.querySelector("#share").style.display = "flex";
 		document.querySelector("#captain").style.display = "flex";
+		document.getElementById("statistiques").style.display = "inline-block";
+		document.getElementById("redac").style =
+			"margin:0 ; transform: translateX(0)";
+		document.getElementById("capitaine").style.display = "inline-block";
+		document.getElementById("capitaine").style.animationName =
+			"cap-bar-down";
+		document.getElementById("capitaine").style.display = "inline-block";
+		document
+			.getElementById("capitaine")
+			.addEventListener("click", handleCaptainClick);
 		setTimeout(() => {
 			document.addEventListener("click", function () {
 				document.querySelector("#captain").style.display = "none";
 			});
+			setTimeout(() => {
+				document.querySelector("#captain").style.display = "none";
+			}, 5000);
 		}, 1000);
 	}
 }
 
 function getPositionFromId(id) {
-	console.log(`Getting position from id: ${id}`); // Log the input
 	const element = document.getElementById(id);
 	if (!element) {
 		console.log(`No element found with id ${id}`);
@@ -370,7 +389,6 @@ function getPositionFromId(id) {
 		default:
 			position = "";
 	}
-	console.log(`Position for id ${id} is ${position}`); // Log the result
 	return position;
 }
 
@@ -430,7 +448,6 @@ function createCarouselItem(player) {
 	}
 
 	let carte = player.CARTE;
-	console.log(carte);
 	carouselItem.innerHTML = `
 	<div class="flip-container">
 		<div class="flipper">
@@ -1159,11 +1176,33 @@ function handleCompareScroll() {
 	carouselItems[validFocusedIndex].classList.add("focus");
 }
 
-function handleCaptain() {}
+function handleCaptainClick(event) {
+	const cap_btn = event.target.closest("#capitaine");
+	const cap_bar = cap_btn.querySelector("#cap-bar");
+	if (cap_btn) {
+		if (
+			cap_bar.style.animationName === "cap-bar-down" ||
+			cap_bar.style.animationName === ""
+		) {
+			cap_bar.style.animationName = "cap-bar-up";
+		}
+	} else {
+		console.log("captain button not found");
+	}
+}
 
 if (areAllPlayersSelected()) {
 	console.log("Tous les joueurs ont été sélectionnés");
 	document.querySelector("#share").style.display = "flex";
+	document.getElementById("statistiques").style.display = "inline-block";
+	document.getElementById("redac").style =
+		"margin:0 ; transform: translateX(0)";
+	document.getElementById("capitaine").style.display = "inline-block";
+	document.getElementById("capitaine").style.animationName = "cap-bar-down";
+	document.getElementById("capitaine").style.display = "inline-block";
+	document
+		.getElementById("capitaine")
+		.addEventListener("click", handleCaptainClick);
 }
 
 function closeCompareCarousel() {
@@ -1180,4 +1219,8 @@ function closeCarouselOverlay() {
 
 function closeBioOverlay() {
 	document.querySelector(".bio-overlay").style.display = "none";
+}
+
+function closeCaptainOverlay() {
+	document.querySelector("#captain").style.display = "none";
 }

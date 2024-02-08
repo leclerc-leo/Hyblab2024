@@ -318,6 +318,12 @@ body {
 #statistiques {
 	border: solid 2px white;
 	background-color: transparent;
+	display: none;
+}
+
+#redac {
+	margin-left: 50%;
+	transform: translateX(-58%);
 }
 
 .gb-shutter:active {
@@ -331,15 +337,16 @@ body {
 }
 
 #blason,
-#maillot {
-	display: inline-block;
-	padding: 18px;
+#maillot,
+#capitaine {
+	position: relative;
 	border-radius: 50%;
 	background-color: #ffffff;
-	color: #1e1e28;
 	margin-bottom: 10px;
 	border: none;
 	box-shadow: 3px 3px 0 var(--gb-52);
+	aspect-ratio: 1;
+	overflow: hidden;
 }
 
 #blason:active,
@@ -348,10 +355,58 @@ body {
 	color: #ffffff;
 }
 
+#cap-bar {
+	position: absolute;
+	top: 0;
+	right: 10%;
+	height: 100%;
+	width: 13%;
+	background-color: #00a55a;
+	transform-origin: top;
+	transform: scaleY(0);
+	animation: 0.5s ease forwards;
+	animation-name: cap-bar-down;
+}
+
+.cap {
+	position: absolute;
+	top: -30%;
+	right: -30%;
+	padding: 20%;
+	aspect-ratio: 1;
+	background: white;
+	border-radius: 50%;
+	color: #00a55a;
+	font-weight: bolder;
+	font-size: 1.4em;
+	text-align: center;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+@keyframes cap-bar-down {
+	0% {
+		transform: scaleY(0);
+	}
+	100% {
+		transform: scaleY(1);
+	}
+}
+
+@keyframes cap-bar-up {
+	0% {
+		transform: scaleY(1);
+	}
+	100% {
+		transform: scaleY(0);
+	}
+}
+
 #entraineur {
-	display: inline-block;
-	padding: 12px 35px;
-	font-size: 16px;
+	padding: 0 2em;
+	font-size: 1.1em;
 	border-radius: 50px;
 	background-color: #ffffff;
 	color: var(--gb-51);
@@ -361,17 +416,16 @@ body {
 	box-shadow: 3px 3px 0 var(--gb-52);
 }
 
-#blason {
-	margin-right: 15px;
-}
-
-#maillot {
-	margin-left: 15px;
-}
-
 #entraineur:active {
 	background-color: var(--gb-51);
 	color: #ffffff;
+}
+
+#capitaine {
+	font-size: 1.4em;
+	font-weight: bolder;
+	font-family: Industry;
+	display: none;
 }
 
 .buttons {
@@ -379,8 +433,13 @@ body {
 	flex-direction: row;
 	align-items: center;
 	width: 85%;
+	height: 5.5%;
 	justify-content: space-between;
 	margin-bottom: 2%;
+}
+
+.buttons > * {
+	height: 100%;
 }
 
 :root {
@@ -388,19 +447,25 @@ body {
 	--gb-52: #1e1e28;
 }
 
-#captain,
-#intro {
+#captain {
 	position: fixed;
 	top: 0;
 	left: 0;
-	display: none;
+	z-index: 10;
 	width: 100vw;
 	height: 100vh;
-	background-color: hsla(240, 14%, 14%, 0.995);
-	text-align: center;
+	display: none;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	z-index: 10;
+	text-align: center;
+	background-color: hsla(240, 14%, 14%, 0.995);
+}
+
+#captain > .bottom-btn {
+	position: fixed;
+	bottom: 5%;
+	left: 5%;
 }
 
 /*Bio Overlay*/
