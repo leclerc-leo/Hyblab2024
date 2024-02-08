@@ -1,5 +1,7 @@
 "use strict";
 
+let isPopupOpen = false;
+
 // async init function (because of the awaits on fetches)
 const initSlide2 = async function (popupId, objectId) {
 
@@ -141,6 +143,9 @@ const initSlide2 = async function (popupId, objectId) {
   
 };
 const showPopup = (name, objID) => {
+  if (isPopupOpen) return;
+  isPopupOpen = true;
+
   if (name!="popup_quizz_end"){
     const popup = document.getElementById(name);
   popup.style.display = "block";
@@ -159,6 +164,7 @@ const showPopup = (name, objID) => {
 };
 
 const closePopup = (name) => {
+  isPopupOpen=false;
   const popup = document.getElementById(name);
   popup.classList.remove("show");
   setTimeout(() => {
