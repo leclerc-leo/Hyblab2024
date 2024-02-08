@@ -1,0 +1,38 @@
+/* ShareMenu.css */
+
+.burgershare-menu {
+  position: relative;
+}
+
+.ShareLogo {
+  cursor: pointer;
+  width: 47.015px;
+  height: 34.855px;
+  position: relative;
+  margin-left: 150%;
+  margin-right: 20%;
+}
+
+.menushare {
+  position: absolute;
+  top: -140%;
+  right: -200%;
+  background-color: #333;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 8px;
+  z-index: 10;
+}
+
+.menu a {
+  display: block;
+  color: #333;
+  text-decoration: none;
+  padding: 8px;
+  transition: background-color 0.3s;
+}
+
+.menu a:hover {
+  background-color: #f5f5f5;
+}

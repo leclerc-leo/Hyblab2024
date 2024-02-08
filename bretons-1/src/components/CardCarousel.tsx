@@ -7,6 +7,7 @@ import athleteData from '../data/Athlete.json';
 import { Carousel } from 'react-bootstrap';
 import { Athlete, VideoListItemProps, EventDataItem } from './type';
 import EventData from '../data/Event.json';
+import ShareMenu from './ShareMenu';
 
 const determinerTexteTitre = (sexe: string, gain: string) => {
   const suffixeGenre = (sexe === 'F') ? 'e' : '';
@@ -99,12 +100,7 @@ function CardCarousel({ video }: VideoListItemProps) {
                 onClick={handleFavoriteClick}
                 buttonId={favoriteButtonId}
               />
-            <img
-              className="ShareLogo"
-              src="/bretons-1/img/Share_logo.svg"
-              alt="Share"
-              onClick={() => handleImageClick('ShareLogo')}
-            />
+            <ShareMenu/>
         </div>
       </div>
       <img
