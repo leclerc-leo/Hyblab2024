@@ -131,9 +131,11 @@ let players = JSON.parse(localStorage.getItem("players")) || {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
+	/*
 	document.querySelectorAll(".player-clickable").forEach((player) => {
 		player.addEventListener("click", handlePlayerClick);
 	});
+	*/
 
 	document.querySelector("#back-overlay").addEventListener("click", () => {
 		document.querySelectorAll(".carousel-item").forEach((item) => {
@@ -166,12 +168,13 @@ document.addEventListener("DOMContentLoaded", () => {
 	document
 		.querySelectorAll(".player.player-clickable.forward")
 		.forEach((player) => {
-			player.addEventListener("click", () => {
+			player.addEventListener("click", (event) => {
 				if (!(!isCaptainSelected && areAllPlayersSelected())) {
 					animatePlayer(
 						"attaquant-gif",
 						"img/animations/attaquant-fond-gris.gif",
-						1200
+						1200,
+						event
 					);
 				}
 			});
@@ -179,12 +182,13 @@ document.addEventListener("DOMContentLoaded", () => {
 	document
 		.querySelectorAll(".player.player-clickable.midfielder")
 		.forEach((player) => {
-			player.addEventListener("click", () => {
+			player.addEventListener("click", (event) => {
 				if (!(!isCaptainSelected && areAllPlayersSelected())) {
 					animatePlayer(
 						"milieu-gif",
 						"img/animations/milieu-fond-gris.gif",
-						1020
+						1020,
+						event
 					);
 				}
 			});
@@ -193,33 +197,36 @@ document.addEventListener("DOMContentLoaded", () => {
 	document
 		.querySelectorAll(".player.player-clickable.defender")
 		.forEach((player) => {
-			player.addEventListener("click", () => {
+			player.addEventListener("click", (event) => {
 				if (!(!isCaptainSelected && areAllPlayersSelected())) {
 					animatePlayer(
 						"defenseur-gif",
 						"img/animations/defence-fond-gris.gif",
-						1100
+						1100,
+						event
 					);
 				}
 			});
 		});
 
-	document.querySelector("#goalkeeper").addEventListener("click", () => {
+	document.querySelector("#goalkeeper").addEventListener("click", (event) => {
 		if (!(!isCaptainSelected && areAllPlayersSelected())) {
 			animatePlayer(
 				"gardien-gif",
 				"img/animations/gardien-fond-gris.gif",
-				1360
+				1360,
+				event
 			);
 		}
 	});
 
-	document.querySelector("#entraineur").addEventListener("click", () => {
+	document.querySelector("#entraineur").addEventListener("click", (event) => {
 		if (!(!isCaptainSelected && areAllPlayersSelected())) {
 			animatePlayer(
 				"coach-gif",
 				"img/animations/coach-fond-gris.gif",
-				1360
+				1360,
+				event
 			);
 		}
 	});
@@ -238,7 +245,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		});
 });
 
-function animatePlayer(elementId, imgSrc, timeoutDuration) {
+function animatePlayer(elementId, imgSrc, timeoutDuration, event) {
 	const element = document.getElementById(elementId);
 	const imgElement = element.querySelector("img");
 
@@ -250,9 +257,15 @@ function animatePlayer(elementId, imgSrc, timeoutDuration) {
 
 		setTimeout(() => {
 			element.querySelector("audio").play();
+			handlePlayerClick({
+				target: document.getElementById(
+					event.target.closest(".player-clickable").id
+				),
+			});
 		}, 10);
 		setTimeout(() => {
 			element.style.opacity = "0";
+
 			setTimeout(() => {
 				element.style.display = "none";
 				imgElement.src = "";
@@ -1232,7 +1245,6 @@ function handleCaptainClick(event) {
 	const cap_bar = cap_btn.querySelector("#cap-bar");
 	if (cap_btn) {
 		document.querySelectorAll(".player-clickable").forEach((player) => {
-			player.removeEventListener("click", handlePlayerClick);
 			player.addEventListener("click", (event) => {
 				handleCaptainSelect(
 					event.target.closest(".player-clickable").id
@@ -1258,7 +1270,6 @@ function handleCaptainSelect(id) {
 	localStorage.setItem("captain", id);
 	document.querySelectorAll(".player-clickable").forEach((player) => {
 		player.removeEventListener("click", handleCaptainClick);
-		player.addEventListener("click", handlePlayerClick);
 	});
 }
 
