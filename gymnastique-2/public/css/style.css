@@ -14,6 +14,18 @@
     font-size: 0;
 }
 
+#swiper_journee{
+    width: 100%;
+    height:100%;
+    position: absolute;
+}
+
+#swiper_journee{
+    width: 100%;
+    height:100%;
+    position: absolute;
+}
+
 .swiper-pagination-bullets.swiper-pagination-horizontal {
     --swiper-pagination-bottom: 0px;
 }
@@ -459,6 +471,148 @@ svg.image-histoire, svg.image-jo{
     width: 20%;
     height: auto;
     vertical-align: middle;
+}
+
+#journee_1_svg{
+    position: absolute;
+    left: 60%;
+    width: 40%;
+    height: 21%;
+}
+
+#journee_2_svg{
+    position: absolute;
+    left: 60%;
+    width: 40%;
+    height: 21%;
+}
+
+#Kaylia_Nemour_journee{
+    position: absolute;
+    left: 30%;
+    width: 40%;
+    height: 30%;
+}
+
+#journee_type{
+    position: absolute;
+    width: 40%;
+    height: 30%;
+    top:23%;
+    left:30%;
+    text-align: center;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+#description_journee{
+    position: absolute;
+    width: 70%;
+    height: 30%;
+    top: 75%;
+    left: 13%;
+    text-align: center;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: #482e48;
+    font-size: 16px;
+}
+
+#journee_1_svg{
+    position: absolute;
+    left: 60%;
+    width: 40%;
+    height: 21%;
+}
+
+#journee_2_svg{
+    position: absolute;
+    left: -2%;
+    width: 50%;
+    height: 17%;
+}
+
+#journee_3_svg{
+    position: absolute;
+    left:69%;
+    width: 40%;
+    height: 23%;
+    top:-2%;
+}
+
+#journee_4_svg{
+    position: absolute;
+    left: 60%;
+    width: 40%;
+    height: 21%;
+    top: -3%;
+}
+
+#Kaylia_Nemour_journee{
+    position: absolute;
+    left: 30%;
+    width: 40%;
+    height: 30%;
+}
+
+#journee_img{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: auto;
+    height: 32%;
+    top: 33%;
+    border-radius: 22px;
+
+}
+
+#journee_type{
+    position: absolute;
+    width: 40%;
+    height: 30%;
+    top:23%;
+    left: 50%;
+    transform: translate(-50%, 0);    
+    text-align: center;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+#description_journee{
+    position: absolute;
+    width: 70%;
+    height: 30%;
+    top: 75%;
+    left: 13%;
+    text-align: center;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: #482e48;
+    font-size: 16px;
+    font-family: Inter;
+}
+
+#barre_navigation_journee {
+    position: absolute;
+    top: 70%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly; 
+    flex : 1;
+}
+#categorie_journee{
+    padding: 10px 10px;
+    text-align: center;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
 #jo-header {

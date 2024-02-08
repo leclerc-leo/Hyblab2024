@@ -34,6 +34,19 @@ swiper.on("slideChange", function () {
             break;
     }
 });
+var swiperJournee = new Swiper('#swiper_journee', {
+    direction: "horizontal",
+    loop: false,
+    mousewheel: true,
+    navigation: {
+        enabled: false,
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    }
+
+});
+
+
 
 move_background(50);
 init_accueil(swiper);
@@ -73,6 +86,20 @@ categories_buttons.forEach( button => {
         return_button.id = `${category}-return`;
 
         swiper.disable(); // pour éviter de changer de slide lors d'un scroll et d'autoriser le scroll sur la page
+    });
+});
+
+const fleche_gauche = document.querySelectorAll('#fleche_gauche'); 
+fleche_gauche.forEach( fleche => {
+    fleche.addEventListener('click', () => {
+        swiperJournee.slidePrev(); 
+    });
+});
+
+const fleche_droite = document.querySelectorAll('#fleche_droite'); 
+fleche_droite.forEach( fleche => {
+    fleche.addEventListener('click', () => {
+        swiperJournee.slideNext(); 
     });
 });
 
