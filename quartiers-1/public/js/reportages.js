@@ -13,3 +13,11 @@ setTimeout(() => {
         easing: 'easeOutQuad',
     });
 }, 100);
+
+var animation = lottie.loadAnimation({ 
+    container: document.getElementById('animation'), 
+    renderer: 'svg', 
+    loop: false, 
+    autoplay: true, 
+    path: 'animation/villejean_ville.json' 
+});
