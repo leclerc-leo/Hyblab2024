@@ -1,5 +1,7 @@
 <style> 
 
+  /* This is only here to make it avoid shifting the content because of the delay in loading the css file */
+
   body{
     background-color: black;
     color: white;
@@ -83,4 +85,32 @@
     font-family: "Metropolis";
     src: url("css/Metropolis Font family/Metropolis-Regular.otf") format("opentype");
   }
+
+  .loading-anim{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1) 80%);
+    z-index: 10000;
+  }
 </style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function(){
+    // every 100ms make it gradually disappear until it is completely transparent
+    let loadingAnim = document.querySelector(".loading-anim");
+    let percent = 100;
+    let interval = setInterval(function(){
+      percent -= 1;
+      loadingAnim.style.background = `radial-gradient(rgba(0, 0, 0, ${percent / 100}), rgba(0, 0, 0, ${percent / 100}) 80%)`;
+      if(percent <= 0){
+        clearInterval(interval);
+        loadingAnim.style.display = "none";
+      }
+    }, 5);
+  });
+</script>
+
+<div class="loading-anim"></div>
