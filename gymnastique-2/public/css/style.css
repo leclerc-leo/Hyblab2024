@@ -636,8 +636,10 @@ svg.image-histoire, svg.image-jo{
 }
 
 .jo-card-container {
-    perspective: 800px;
+    position: relative;
     margin: 0% 10% 3% 10%;
+    transition: max-height 0.2s ease-in-out;
+    max-height: 50%;
 }
 
 /* add a cross to the top right of the card */
