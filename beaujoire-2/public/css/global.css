@@ -58,16 +58,13 @@
   width: 0.5em;
 }
 
-@media only screen and (max-width: 320px) {
-
+@media only screen and (max-width: 500px) {
   #return {
-      left:0.5em;
+    left:0.5em;
   }
 
-  #return-img {
-    width: 0.3em;
-  }
 }
+
 
 /* -------------- Info Button -------------- */
 #info {
@@ -80,15 +77,12 @@
   width: 0.5em;
 }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 500px) {
 
-  #return {
+  #info {
     right:0.5em;
   }
 
-  #return-img {
-    width: 0.3em;
-  }
 }
 /* -------------- Info Pop-Up -------------- */
 .popup-info{
@@ -134,8 +128,21 @@
 
 .popup-info p{
   font-size: 0.2em ;
-  text-align: justify;
+  text-align: center;
   
+}
+
+@media only screen and (max-width: 1000px){
+  .popup-info{
+    width:50%;
+    padding: 20px;
+  }
+}
+
+@media only screen and (max-width: 550px){
+  .popup-info{
+    width:75%;
+  }
 }
 
 /* ---------- Important media queries for easy responsive content :-) ----------------- */
