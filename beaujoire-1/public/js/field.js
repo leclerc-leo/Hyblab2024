@@ -5,21 +5,6 @@ let isCaptainSelected = false;
 let selectedPlayerId;
 let updatePlayerElement;
 let playersData;
-const images = [
-	"img/animations/attaquant-fond-gris.gif",
-	"img/animations/milieu-fond-gris.gif",
-	"img/animations/defence-fond-gris.gif",
-	"img/animations/gardien-fond-gris.gif",
-	"img/animations/coach-fond-gris.gif",
-];
-
-images.forEach((image) => {
-	const link = document.createElement("link");
-	link.rel = "preload";
-	link.href = image;
-	link.as = "image";
-	document.head.appendChild(link);
-});
 
 window.onload = fetch("./data/DataBase.json")
 	.then((response) => response.json())
@@ -127,6 +112,31 @@ function initizalizePage() {
 				console.log(`No player found for id ${playerId}`);
 			}
 		}
+		const captain = localStorage.getItem("captain");
+		if (captain) {
+			handleCaptainSelect(captain);
+		}
+		document.querySelector("#share").style.display = "flex";
+		document.getElementById("statistiques").style.display = "inline-block";
+		document.getElementById("redac").style =
+			"margin:0 ; transform: translateX(0)";
+		document.getElementById("capitaine").style.display = "inline-block";
+		document.getElementById("capitaine").style.animationName =
+			"cap-bar-down";
+		document.getElementById("capitaine").style.display = "inline-block";
+		document
+			.getElementById("capitaine")
+			.addEventListener("click", handleCaptainClick);
+
+		setInterval(() => {
+			if (isCaptainSelected) {
+				document.querySelector("#cap-bar").style.animationName =
+					"cap-bar-down";
+			} else {
+				document.querySelector("#cap-bar").style.animationName =
+					"cap-bar-up";
+			}
+		}, 100);
 	}
 }
 
@@ -149,8 +159,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	/*
 	document.querySelectorAll(".player-clickable").forEach((player) => {
 		player.addEventListener("click", handlePlayerClick);
-	});
-	*/
+	});*/
 
 	document.querySelector("#back-overlay").addEventListener("click", () => {
 		document.querySelectorAll(".carousel-item").forEach((item) => {
@@ -253,7 +262,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	document
 		.querySelector(".dropdown")
 		.querySelector("img")
-		.addEventListener("click", () => {
+		.addEventListener("click", (event) => {
 			document.querySelectorAll("audio").forEach((audio) => {
 				audio.muted = !audio.muted;
 			});
@@ -265,7 +274,6 @@ function animatePlayer(elementId, imgSrc, timeoutDuration, event) {
 	const imgElement = element.querySelector("img");
 
 	imgElement.src = imgSrc;
-
 	imgElement.onload = function () {
 		element.style.display = "flex";
 		element.style.opacity = "1";
@@ -280,12 +288,11 @@ function animatePlayer(elementId, imgSrc, timeoutDuration, event) {
 		}, 10);
 		setTimeout(() => {
 			element.style.opacity = "0";
-
 			setTimeout(() => {
 				element.style.display = "none";
 				imgElement.src = "";
 			}, 200);
-		}, timeoutDuration + 20);
+		}, timeoutDuration - 20);
 	};
 }
 
