@@ -323,7 +323,7 @@ document.addEventListener("DOMContentLoaded", () => {
 					});
 
 					// Send the updated stats back to the server
-					fetch("./public/updateStats", {
+					fetch("./updateStats", {
 						method: "POST",
 						headers: {
 							"Content-Type": "application/json",
@@ -335,6 +335,11 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 	}, 5000);
 });
+
+fetch("http://localhost:8080/test")
+	.then((response) => response.text())
+	.then((data) => console.log(data))
+	.catch((error) => console.error("Error:", error));
 
 function animatePlayer(elementId, imgSrc, timeoutDuration, event) {
 	const element = document.getElementById(elementId);
