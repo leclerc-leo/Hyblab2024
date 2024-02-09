@@ -6,7 +6,7 @@ setTimeout(() => {
     //Vérifie si le cookie first anim pour savoir si l'animation doit se jouer
     if(window.sessionStorage.getItem("first-anim") != "faux"){
         anime({
-            delay: 7000,
+            delay: 8000,
             targets: '#accueil',
             opacity: '0',
             'z-index' : -1,
