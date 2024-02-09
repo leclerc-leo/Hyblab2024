@@ -227,13 +227,20 @@ body {
 }
 
 .player-selection {
-    color: green; /* Assuming the text is white */
-    font-family: Arial, sans-serif; /* You can change this to match the font in the image */
-    font-size: 18px; /* Adjust the size as needed */
-    padding: 5px; /* Adjust padding to match your design */
-    text-align: center; /* Centers the text inside the div */
-    border-radius: 5px; /* Optional: if you want rounded corners */
+	color: #00a55a;
+	font-size: 38px;
+	text-align: center;
+	font-family: Industry;
+	font-weight: bolder;
   }
+  .des-joueurs {
+	color: white;
+	  font-size: 38px;
+	  text-align: center;
+	  font-family: Industry;
+	  font-weight: bolder;
+	  line-height: 7px;
+	  }
 
 
 
