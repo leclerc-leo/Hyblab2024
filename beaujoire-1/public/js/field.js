@@ -323,7 +323,7 @@ document.addEventListener("DOMContentLoaded", () => {
 					});
 
 					// Send the updated stats back to the server
-					fetch("./updateStats", {
+					fetch("./public/updateStats", {
 						method: "POST",
 						headers: {
 							"Content-Type": "application/json",
