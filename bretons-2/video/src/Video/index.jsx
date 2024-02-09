@@ -19,6 +19,7 @@ export const Video = ({
 	scoreFr,
 	scoreAd,
 	annecdoteMatch,
+	athlete,
 	annecdoteAthl,
 	annecdoteCompet
 }) => {
@@ -36,10 +37,12 @@ export const Video = ({
 			[0, 1],
 			tab // number of pixel the logo moves up
 		);
-	};	
+	};
 
 	return (
+		
 		<AbsoluteFill style={{backgroundColor: 'black'}}>
+			
 			<div id='background'>	
 
 				<div class='main-stay'>
@@ -47,13 +50,20 @@ export const Video = ({
 					<Sequence name='Stick element' style={{justifyContent:'center'}} durationInFrames={(duration_frame*2)+15}>
 						<div style={{transform: `translateY(${funcinterpolate(duration_frame,[0, -100])}px) scale(${funcinterpolate(duration_frame,[1, 0.3])})`}}  class="line"></div>
 					</Sequence>
+					<Sequence name='Ball fall' from={(duration_frame + 15)} durationInFrames={(duration_frame + 15)*4-15}>
+						<Img class="imgBall" src={staticFile(discipline+'_ball.svg')} style={{ transform: `translateY(${interpolate(useCurrentFrame() - (duration_frame + 15),[0, 15, 25, 33, 40, 50, 55 , 60], [-100, 1100, 975, 1100, 1050, 1100, 1075, 1100],{extrapolateRight: "clamp",})}px) rotate(${interpolate(useCurrentFrame() - (duration_frame + 15),[0, 60, 60*2, 60*3,60*4, 60*5, 60*6, 60*7, 60*8], [0, 0, 360, 360*2, 360*3, 360*4, 360*5, 360*6,360*7],{extrapolateRight: "clamp",})}deg)`,opacity: interpolate(useCurrentFrame() - (duration_frame + 15), [(duration_frame + 15)*4-30, (duration_frame + 15)*4-15], [1, 0])}}/>
+					</Sequence>
+					<Sequence name = 'imgage Athlete' from={(duration_frame + 15)*2} durationInFrames={(duration_frame + 15)*2+50}>
+                        <Img class="imgAthl" src= {staticFile(`${athlete.replace(' ','')}.png`)} style={{transform: `translateX(${interpolate(useCurrentFrame() - (duration_frame + 15)*2,[0,40,100,140,210,250],[700,350,350,-100,-100,-550],{ extrapolateRight :"clamp", extrapolateLeft :"clamp" })}px)`,opacity : interpolate(useCurrentFrame()-(duration_frame + 15), [320,340],  [1,0])}}/>
+                    </Sequence>
+
 				</div>
 
 				{/* ---------- FIRST PAGE ---------- */}
 				<Sequence name='First page' durationInFrames={duration_frame}>
 					<div class='main main-first'>
 						<div class="title">
-							Résultats <br /> du {discipline} <br /> breton
+							Les <span style={{color:'#eecc70'}}>Bretons</span>  <br /> ont <span style={{color:'#eecc70'}}>gagné</span>  <br /> au <span style={{color:'#eecc70'}}>{discipline} !</span> 
 						</div>
 						<div class="icone">
 							<Img src={staticFile("picto_bretagne.svg")} />
@@ -69,22 +79,20 @@ export const Video = ({
 				<Sequence name='Seconde page' from={duration_frame + 15} durationInFrames={duration_frame}>
 					<div style={{opacity : interpolate(useCurrentFrame()-(duration_frame + 15), [10, 30,duration_frame-10,duration_frame], [0,1,1,0])}} class='main main-second'>
 						<div class="tour">{tour}</div>
-						<div class="iconeEquipe">
-							<div style={{backgroundImage:`url(${staticFile("Handball_France.png")})`}}></div>
-							<div style={{backgroundImage:`url(${staticFile("Handball_Norvege.png")})`}}></div>
-						</div>
 						<div class="equipe">
-							France <span style={{ margin: '0 55px' }}>VS</span> {adversaire}
+							<span class="nomEquipe">France</span>
+							<span style={{ margin: '0 55px' }}>VS</span>
+							<span class="nomEquipe">{adversaire}</span>
 						</div>
 						<div class="score">
-							<span>{Math.round(Math.min(scoreFr,(useCurrentFrame()-114)/1.5))}</span>
+							<span>{Math.round(Math.min(scoreFr,(useCurrentFrame()-114)/(50/scoreFr)))}</span>
 							/ 
-							<span>{Math.round(Math.min(scoreAd,(useCurrentFrame()-114)/1.5))}</span>
+							<span>{Math.round(Math.min(scoreAd,(useCurrentFrame()-114)/(50/scoreAd)))}</span>
 						</div>
 						<div class="bol">
 							<Img src= {staticFile("picto_bol.svg")}  />			
 						</div>
-						<div class="annecdoteMatch"> 
+						<div class="annecdoteMatch" style={{ opacity: interpolate(useCurrentFrame() - ((duration_frame + 50	)), [0, 20], [0, 1]) }}> 
 							{annecdoteMatch}
 						</div>						
 					</div>
@@ -94,32 +102,50 @@ export const Video = ({
 				<Sequence name='Third page' from={(duration_frame + 15)*2} durationInFrames={duration_frame}>
 					<div style={{opacity : interpolate(useCurrentFrame()-((duration_frame + 15)*2), [0, 20,duration_frame-10,duration_frame], [0,1,1,0])}} class='main main-third'>
 							<div class="nomAthl">
-								Avec comme<br/>athèle breton <br/>
-								<span>Romain Lagarde</span>
+								Avec comme<br/>athèle breton <br/><span>
+								{
+								athlete.split(' ').map((t, i) => {
+												const delay = i * 10;
+												const frame = useCurrentFrame();
+
+												return (<div style={{
+														transform: `scale(${
+															interpolate(
+																(useCurrentFrame()-((duration_frame + 15)*2)-25) -delay,
+																[0, 10],
+																[0,1],
+																{
+																	extrapolateRight: 'clamp',
+																	extrapolateLeft: 'clamp'
+																}
+															)
+														})`
+													}}>{t}</div>);
+											})}
+								</span>
+								{/* Romain Lagarde */}
 								<Img class="icone" src= {staticFile("triskel.svg")}  />	
 							</div>
-							<Img class="imgAthl" src= {staticFile("RomainLagarde.png")}  />	
 					</div>
 				</Sequence>
 
 				{/* ---------- FOURTH PAGE ---------- */}
 				<Sequence name='Fourth page' from={(duration_frame + 15)*3} durationInFrames={duration_frame}>
 					<div style={{opacity : interpolate(useCurrentFrame()-((duration_frame + 15)*3), [0, 20,duration_frame-10,duration_frame], [0,1,1,0])}} class='main main-fourth'>
-						<div class="title">ANECDOTE SUR L'ATHLÈTE :</div>
+						<div class="title">Pour l'anecdote,</div>
 						<div class="annecdote">
 							{annecdoteAthl}
-							<Img class="icone" src={staticFile("spot.svg")} placeholder="failed to load" />
 						</div>
 					</div>
 				</Sequence>
 
 				{/* ---------- FITH PAGE ---------- */}
 				<Sequence name='Fith page' from={(duration_frame + 15)*4} durationInFrames={duration_frame}>
-					<div style={{opacity : interpolate(useCurrentFrame()-((duration_frame + 15)*4), [0, 20,duration_frame-10,duration_frame], [0,1,1,0])}} class='main main-fourth'>
-						<div class="title">COMPETITION :</div>
+					<div style={{opacity : interpolate(useCurrentFrame()-((duration_frame + 15)*4), [0, 20,duration_frame-10,duration_frame], [0,1,1,0])}} class='main main-fith'>
+						<div class="title">Dans cette compétition,</div>
 						<div class="annecdote">
 							{annecdoteCompet}
-							<Img class="icone" src={staticFile("medaille.svg")} placeholder="failed to load" />
+							<Img style={{transform: ` rotateZ(${interpolate(useCurrentFrame()-((duration_frame + 15)*4),[0, 25,50,75,100],[0, -10,0,10,0],{extrapolateRight: 'clamp',extrapolateLeft: 'clamp'})}deg)`}} class="icone" src={staticFile("medaille.svg")} placeholder="failed to load" />
 						</div>
 					</div>
 				</Sequence>
@@ -145,7 +171,7 @@ export const Video = ({
 
 
                 <div id="footer">
-                    <p>letelegramme-des-scores.fr</p>
+                    <p>letelegramme.fr</p>
                 </div>
             </div>
 		</AbsoluteFill>

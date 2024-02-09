@@ -1,0 +1,38 @@
+[
+    {
+      "Sport": "Handball",
+      "Sexe": "Homme",
+      "Anecdote": [
+        "Les Bleus ont composté leur billet pour les Jeux Olympiques (en remportant la première place )lors du tournoi qualificatif de Montpellier.",
+        "Ce sont les huitièmes JO de l'Équipe de France, depuis (la folle expédition des « Bronzés » à Barcelone en) 1992.",
+        "Les joueurs ont participé au mondial en Égypte en 2021,où ils ont fini 4ème."
+      ]
+    },
+    {
+      "Sport": "Handball",
+      "Sexe": "Femme",
+      "Anecdote":[
+        "L'équipe des Bleues est portée par le Brest Handball Club : cinq joueuses y évoluent.",
+        "Les Bleues ont été qualifiées directement pour ces JO, (grâce à leur victoire face à la Russie) lors du championnat d'Europe 2018.",
+        "Lors du Mondial 2019, qui se déroulait au Japon, l'équipe de Francene dépasse pas la phase préliminaire, (et finit seulement à la 13ème place.)"
+      ]
+    },
+    {
+      "Sport": "Volley",
+      "Sexe": "Homme",
+      "Anecdote": [
+        "L'équipe de France de volley participe à ses 5ème JO, (où elle n'a jamais obtenu mieux qu'une 8ème place en 1988.)",
+        "Depuis l'arrivée de Laurent Tillie, les Bleus ont glanés leurs premiers titres avec une victoire à l'Euro en 2015,( et deux Ligues Mondiales, en 2015 et 2017.)",
+        "Les Bleus se sont qualifiés grâce à leur victoire au tournoide qualification européen (en janvier 2020 en Allemagne.)"
+        ]
+      },
+    {
+      "Sport": "Football",
+      "Sexe": "Homme",
+      "Annecdote": [
+            "L'équipe de France Olympique de football participe à ses premiers JO depuis 1996.",
+            "La dernière et unique victoire des Bleusremonte à 1984, aux Jeux de Los Angeles.",
+            "Les joueurs de Sylvain Ripoll se sont qualifiés pour les Jeux de Tokyo grâce à leur parcours jusqu'en demi-finale de l'Euro Espoirs 2019."
+        ]
+    }
+]

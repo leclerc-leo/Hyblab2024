@@ -70,12 +70,25 @@
     border: 2px solid white;
 }
 
+.main-stay .imgBall{
+    width: 20%;
+    position: absolute;
+    right: 25px;
+    z-index: 2;
+}
+
+.main-stay .imgAthl{
+    position: absolute;
+    width: 80%;
+    bottom: 0;
+}
+
 /* ========== First page ========== */
 
 .main-first .title{
     position: absolute;
     top: 450px;
-    color: #eecc70;
+    color: white;
     text-align: center;
     font-family: 'Antonio';
     font-weight: bold;
@@ -112,41 +125,20 @@
     position: absolute;
 }
 
-.main-second .iconeEquipe{
-    position: absolute;
-    top: 325px;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-
-.main-second .iconeEquipe div{
-    width: 150px;
-    height: 150px;
-    background-color: white;
-    margin: 0 65px;
-    border-radius: 50%;
-    background-size: 60% 60%;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-}
-
 .main-second .score{
     position: absolute;
-    top: 525px;
+    top: 452px;
     font-family: 'Antonio';
     font-size: 75px;
     color: white;
-    font-weight: bold;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 65%;
 }
 
 .main-second .score span{
-    font-size: 150px;
+    font-size: 200px;
 }
 
 .main-second .score span:first-of-type{
@@ -154,17 +146,19 @@
 }
 
 .main-second .equipe{
-    font-size: 28px;
-    text-align: center;
+    font-size: 50px;
     color: white;
-    top: 500px;
+    top: 350px;
     position: absolute;
-    font-family: 'Golos Text';
+    font-family: 'Antonio';
     text-transform: uppercase;
 }
 
-.main-second .equipe span{
-    margin: 0px 55px;
+.main-second .equipe .nomEquipe{
+    color: #181652;
+    background-color: white;
+    padding: 0 25px 5px;
+
 }
 
 .main-second .bol{
@@ -202,6 +196,11 @@
     font-weight: bold;
     text-transform: uppercase;
     font-family: 'Antonio';
+    display: flex;
+}
+
+.main-third .nomAthl div{
+    margin-right: 25px;
 }
 
 .main-third .icone{
@@ -209,44 +208,57 @@
     padding-top: 25px;
 }
 
-.main-third .imgAthl{
-    position: absolute;
-    width: 80%;
-    bottom: 0;
-    right: -154px;
-}
-
 /* ========== Fourth page ========== */
 
 .main-fourth .title{
-    left: 50px;
+    left: 275px;
+    right : 40px;
     font-size: 60px;
     color: #FBCB5D;
-    font-family: 'Antonio';
+    font-family: 'Golos Text';
     position: absolute;
     top: 300px;
-    font-weight: bold;
 }
 
-.main-fourth .annecdote{
-    width: 80%;
-    font-size: 65px;
+.main-fourth .annecdote {
+    width: 60%;
+    font-size: 60px;
     color: white;
     font-family: 'Golos Text';
     position: absolute;
-    left: 50px;
-    top: 380px;
+    left: 275px;
+    top: 440px;
     display: flex;
     flex-direction: column;
 }
 
-.main-fourth .icone{
+/* ========== Fith page ========== */
+
+.main-fith .title{
+    left: 50px;
+    font-size: 60px;
+    color: #FBCB5D;
+    font-family: 'Golos Text';
+    position: absolute;
+    top: 300px;
+}
+
+.main-fith .annecdote{
+    width: 80%;
+    font-size: 60px;
+    color: white;
+    font-family: 'Golos Text';
+    position: absolute;
+    left: 50px;
+    top: 450px;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-fith .icone{
     width: 100px;
     padding-top: 25px;
 }
-
-/* ========== Fith page ========== */
-
 
 
 /* ========== Final page ========== */
