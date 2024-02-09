@@ -16,22 +16,22 @@ window.onload = fetch("./data/DataBase.json")
 
 function initializePage() {
 	const maillotButton = document.getElementById("maillot");
-    const blasonButton = document.getElementById("blason");
+	const blasonButton = document.getElementById("blason");
 
-    const selectedMaillot = localStorage.getItem("selectedMaillot");
-    const selectedBlason = localStorage.getItem("selectedBlason");
-	console.log("Selected Maillot:", selectedMaillot); 
-    console.log("Selected Blason:", selectedBlason); 
+	const selectedMaillot = localStorage.getItem("selectedMaillot");
+	const selectedBlason = localStorage.getItem("selectedBlason");
+	console.log("Selected Maillot:", selectedMaillot);
+	console.log("Selected Blason:", selectedBlason);
 
-    if (selectedMaillot) {
+	if (selectedMaillot) {
 		console.log("test");
-        maillotButton.style.backgroundImage = `url(${selectedMaillot})`;
-    }
-	
-    if (selectedBlason) {
+		maillotButton.style.backgroundImage = `url(${selectedMaillot})`;
+	}
+
+	if (selectedBlason) {
 		console.log("test2");
-        blasonButton.style.backgroundImage = `url(${selectedBlason})`;
-    }
+		blasonButton.style.backgroundImage = `url(${selectedBlason})`;
+	}
 	updatePlayerElement = function (playerElement, playerName) {
 		const player = playersData.find((player) => player.NOM === playerName);
 		if (player.POSTE !== "ENTRAÎNEUR" && player.NUMÉRO !== undefined) {
@@ -301,6 +301,38 @@ document.addEventListener("DOMContentLoaded", () => {
 				audio.muted = !audio.muted;
 			});
 		});
+
+	const saveStats = setInterval(() => {
+		if (
+			areAllPlayersSelected() &&
+			isCaptainSelected &&
+			!isCaptainBeingSelected
+		) {
+			fetch("./data/Stats.json")
+				.then((response) => response.json())
+				.then((stats) => {
+					Object.keys(players).forEach((position) => {
+						const playerName = players[position];
+						if (playerName !== "") {
+							if (stats[playerName] !== undefined) {
+								stats[playerName]++;
+							} else {
+								stats[playerName] = 1;
+							}
+						}
+					});
+
+					// Send the updated stats back to the server
+					fetch("./updateStats", {
+						method: "POST",
+						headers: {
+							"Content-Type": "application/json",
+						},
+						body: JSON.stringify(stats),
+					});
+				});
+		}
+	}, 5000);
 });
 
 function animatePlayer(elementId, imgSrc, timeoutDuration, event) {
