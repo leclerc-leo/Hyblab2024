@@ -7,21 +7,22 @@ import QualifieSVG from '../assets/img/Qualifie.svg';
 import EliminateSVG from '../assets/img/Eliminate.svg'
 import { useEffect, useState } from 'react';
 
-const determinerTexteTitre = (sexe: string, gain: string) => {
+const determinerTexteTitre = (sexe: string, gain: string, text: string) => {
   const suffixeGenre = (sexe === 'F') ? 'e' : '';
   switch (gain) {
     case "Or":
-      return "décroche l'or !";
+      return `${text} décroche l'or !`;
     case "Argent":
-      return "décroche l'argent !";
+      return `${text} décroche l'argent !`;
     case "Bronze":
-      return "décroche le bronze !";
+      return `${text} décroche le bronze !`;
     case "Qualifie":
-      return `qualifié${suffixeGenre} en finale !`
+      return `${text} \n est qualifié${suffixeGenre} en finale !`;
     case "":
-      return `non finaliste`;
+      return `${text} est non qualifié${suffixeGenre} en finale.`;
   }
 };
+
 
 
 const determinerImageMedaille = (gain: string) => {
@@ -42,7 +43,7 @@ const determinerImageMedaille = (gain: string) => {
 
 export const Frame1: React.FC<{ text: string, sexe: string, gain: string, rang: number, sous_titre: string, image: string }> = ({ text,sexe,  gain, sous_titre, image, }) => {
 
-  const titreAdapte = determinerTexteTitre(sexe, gain);
+  const titreAdapte = determinerTexteTitre(sexe, gain, text);
   const cheminImageMedaille = determinerImageMedaille(gain);
   const [_, setIsLoading] = useState(true);
   useEffect(() => {
@@ -56,9 +57,9 @@ export const Frame1: React.FC<{ text: string, sexe: string, gain: string, rang: 
   }, []);
   return (
     <>
-      <div className='animationOut'>
+      {/* <div className='animationOut'>
         <img className='medailleTransition' src={determinerImageMedaille(gain)}></img>
-      </div>
+      </div> */}
       <div className="animationAgrandissement" style={{
         height: '100%',
         width: '100%',
@@ -75,7 +76,6 @@ export const Frame1: React.FC<{ text: string, sexe: string, gain: string, rang: 
           <img src={cheminImageMedaille} alt="Médaille" style={{ position: 'absolute', top: '40vh', left: '17vh', width: '150px', height: '168px' }} />
         )}
       </div>
-      <h1 className="golos-text-frame1 titre_frame1" style={{ fontSize: "11vh", bottom: '50vh' }}>{text}</h1>
       <h1 className="golos-text-frame1 titre_frame1 " style={{ fontSize: "11vh", bottom: '37vh' }}>{titreAdapte}</h1>
       <h3 className="golos-text-frame1 sous-titre_frame1" style={{ fontSize: "5vh", bottom: '30vh' }}>{sous_titre}</h3>
     </>
