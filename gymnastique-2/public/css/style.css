@@ -14,7 +14,7 @@
     font-size: 0;
 }
 
-#swiper_journee{
+#swiper_journee, #swiper_mouvement{
     width: 100%;
     height:100%;
     position: absolute;
@@ -497,7 +497,7 @@ svg.image-histoire, svg.image-jo{
     text-align: center;
 }
 
-#description_journee{
+#description_journee, .description_mouvement{
     position: absolute;
     width: 70%;
     height: 30%;
@@ -505,22 +505,26 @@ svg.image-histoire, svg.image-jo{
     left: 13%;
     text-align: center;
 }
-
-#journee_1_svg{
+.description_mouvement{
+    left: 0;
+    top:72%;
+    width:90%
+}
+#journee_1_svg,#mouvement_1_svg{
     position: absolute;
     left: 60%;
     width: 40%;
     height: 21%;
 }
 
-#journee_2_svg{
+#journee_2_svg,#mouvement_2_svg{
     position: absolute;
     left: -2%;
     width: 50%;
     height: 17%;
 }
 
-#journee_3_svg{
+#journee_3_svg,#mouvement_3_svg{
     position: absolute;
     left:69%;
     width: 40%;
@@ -536,7 +540,7 @@ svg.image-histoire, svg.image-jo{
     top: -3%;
 }
 
-#Kaylia_Nemour_journee{
+#Kaylia_Nemour_journee,.Kaylia_Nemour_mouvement{
     position: absolute;
     left: 30%;
     width: 40%;
@@ -553,7 +557,7 @@ svg.image-histoire, svg.image-jo{
     border-radius: 22px;
 }
 
-#journee_type{
+#journee_type,.mouvement_type{
     position: absolute;
     width: 40%;
     height: 30%;
@@ -573,7 +577,7 @@ svg.image-histoire, svg.image-jo{
     color: #482E49;
 }
 
-#barre_navigation_journee {
+#barre_navigation_journee, .barre_navigation_mouvement {
     position: absolute;
     top: 70%; 
     left: 50%; 
@@ -584,10 +588,10 @@ svg.image-histoire, svg.image-jo{
     justify-content: space-evenly; 
     flex : 1;
 }
-#categorie_journee{
+#categorie_journee, .categorie_mouvement{
     padding: 10px 10px;
     text-align: center;
-}
+}d
 
 #jo-header {
     position:sticky;
@@ -673,34 +677,24 @@ svg.image-histoire, svg.image-jo{
     margin-bottom: 10px;
 }
 
-
-#mouvement-header{
-    position:sticky;
-    top: 0;
-    padding-top: 10px;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-#mouvement-header > img {
-    padding: 10px;
-}
-
 .image-titre{
     max-width: 40%;
 }
 #mouvement-video{
-    width: 60%;
-    height: 60%;
+    width: 50%;
+    height: 41%;
+    position: absolute;
+    top: 30%;
+    /* right: 50%; */
+    left: 25%;
+}
+.categorie_mouvement{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 #twitter-widget-0{
     border-radius: 10%;
-}
-
-
-#mouvement-contenu{
-    width: 100%;
-    height: 60%;
 }
 .page-container{
     margin-top: 10%;
@@ -710,33 +704,8 @@ svg.image-histoire, svg.image-jo{
     justify-content: center;
     text-align: center;
 }
-#mouvement-page .svg-boucle{
-    position: absolute;
-}
-#mouvement-page #mouvement-contenue-titre{
-    display: flex;
-    justify-content: center;
-}
-#mouvement-page #mouvement-contenue-titre-texte{
-    margin: 0 5%;
-    width: 40%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
-#mouvement-page #mouv-chemin-1{
-    right : 0;
-    top :0;
-    transform: rotateY(180deg) ;
-}
-#mouvement-page #mouv-chemin-2{
-    left : 0;
-    top : 0;
-}
-#mouvement-page .mouv-button{
-    font-size: 3vh;
-}
+
 #mouvement-page .mouvActif {
     animation: fadeIn 0.5s;
     -webkit-animation: fadeIn 0.5s;
