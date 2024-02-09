@@ -11,6 +11,9 @@
 /* 
  * Optional: Makes the sample page fill the window. 
  */
+#container {
+    background-color: #F8E8DB;
+}
 
 #main_recap{
   position: absolute;
