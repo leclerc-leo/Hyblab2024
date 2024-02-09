@@ -13,7 +13,7 @@ export default function Home() {
                     </div>
                     <div className='main_app'>
                         <div className="app">
-                            <div className="Carousel">
+                        <div className="Carousel">
                                 <ControlledCarousel />
                             </div>
                         </div>

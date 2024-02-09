@@ -29,26 +29,28 @@ const allAthletesData = athleteData.Athlete.reduce((allAthletes: Athlete[], athl
   return allAthletes.concat(athletesArray);
 }, []);
 
-const athleteVideosData = allAthletesData.map((athlete: Athlete) => {
-  const allEventsData: EventDataItem[] = (EventData.Event.flat() as EventDataItem[]);
+const athleteVideosData = allAthletesData
+  .map((athlete: Athlete) => {
+    const allEventsData: EventDataItem[] = (EventData.Event.flat() as EventDataItem[]);
 
+    const athleteEvents = allEventsData.filter((event: EventDataItem) => event.Athlete === athlete.Athlete);
 
-  const athleteEvents = allEventsData.filter((event: EventDataItem) => event.Athlete === athlete.Athlete);
+    const videosForAthlete = athleteEvents.map((event: EventDataItem) => ({
+      id: event.IdEvent.toString(),
+      sport: event.Sport,
+      epreuve: event.Epreuve,
+      gain: event.Gain,
+      title: event.Athlete,
+      subtitle: event.Gain,
+      srcPhoto: athlete.Photo,
+      description: athlete.Sexe,
+      text: "",
+    }));
 
-  const videosForAthlete = athleteEvents.map((event: EventDataItem) => ({
-    id: event.IdEvent.toString(),
-    sport: event.Sport,
-    epreuve: event.Epreuve,
-    gain: event.Gain,
-    title: event.Athlete,
-    subtitle: event.Gain,
-    srcPhoto: athlete.Photo,
-    description: athlete.Sexe,
-    text: "",
-  }));
-
-  return videosForAthlete;
-}).flat();
+    return videosForAthlete;
+  })
+  .flat()
+  .sort((a, b) => parseInt(a.id) - parseInt(b.id)); 
 
 function CardCarousel({ video }: VideoListItemProps) {
   const [isFavorited, setIsFavorited] = useState(false);
@@ -123,13 +125,14 @@ function CardCarousel({ video }: VideoListItemProps) {
 
 function ControlledCarousel() {
   const [videosData] = useState(athleteVideosData);
-  const last4Videos = videosData.slice(-4).reverse(); // Get the last 4 videos and reverse the order
+
+  const last4Videos = videosData.slice(-4).reverse();
 
   return (
     <Carousel className="carousel_main" indicators={true} controls={false}>
       {last4Videos.map(video => (
         <Carousel.Item key={video.id}>
-          <CardCarousel key={video.id} video={video} />
+          <CardCarousel video={video} />
         </Carousel.Item>
       ))}
     </Carousel>

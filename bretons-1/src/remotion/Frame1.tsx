@@ -62,7 +62,7 @@ export const Frame1: React.FC<{ text: string, sexe: string, gain: string, rang: 
       </div> */}
       <div className="animationAgrandissement" style={{
         height: '100%',
-        width: '100%',
+        width: '120%',
         backgroundImage: `url(${image})`,
         objectFit: 'cover',
         objectPosition: 'center center',
@@ -70,10 +70,9 @@ export const Frame1: React.FC<{ text: string, sexe: string, gain: string, rang: 
         backgroundRepeat: 'no-repeat',
         position: 'relative',
         transform: 'scale(1)',
-        backgroundSize: '1080px 1920px',
       }}>
         {cheminImageMedaille && (
-          <img src={cheminImageMedaille} alt="Médaille" style={{ position: 'absolute', top: '40vh', left: '17vh', width: '150px', height: '168px' }} />
+          <img src={cheminImageMedaille} alt="Médaille" style={{ position: 'absolute', top: '40vh', left: '30vh', width: '150px', height: '168px' }} />
         )}
       </div>
       <h1 className="golos-text-frame1 titre_frame1 " style={{ fontSize: "11vh", bottom: '37vh' }}>{titreAdapte}</h1>

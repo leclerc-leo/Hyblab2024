@@ -1,67 +1,67 @@
-@import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap');
-
-.golos-text-frame1 {
-    font-family: 'Golos Text';
-    font-optical-sizing: auto;
-    font-style: normal;
-  }
-  
-  .titre_frame1 {
-    font-weight: 700;
-    color: #ffffff;
-    position: absolute;
-    width: 100%;
-    text-align: left;
-    margin-left: 95px;
+.animationAgrandissement {
+  height: 100vh;
+  width: 100vw;
+  background-image: url(${image});
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
 }
 
-  .sous-titre_frame1 {
-    font-weight: 500;
-    color: #ffffff;
-    position: absolute;
-    width: 100%;
-    text-align: left;
-    line-height: normal;
-    margin-left: 95px;
-
-  }
-
-  .animationAgrandissement::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 40%; 
-    bottom: 0;
-    left: 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
-    pointer-events: none;
-    border-radius: 2%;
+.animationAgrandissement::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 40%;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+  pointer-events: none;
+  border-radius: 2%;
 }
-    
+
+.content {
+  position: relative;
+  z-index: 1; /* Pour placer le contenu au-dessus du pseudo-élément ::after */
+}
+
 @keyframes agrandirBackground {
-    from {
+  from {
       transform: scale(1);
-    }
-    to {
+  }
+  to {
       transform: scale(1.2);
-    }
   }
-  
-  .animationAgrandissement {
-    animation: agrandirBackground 5s infinite alternate;
-  }
-  
-  .animationOut {
-    transition: transform 2s ease-in-out;
-    width: 100%;
-    background-color: white;
-    z-index: 5;
-    padding-top: 250vh;
-    height: 300vh;
-    position: absolute;
-    top: -400vh;
-  }
-  .medailleTransition {
-    width: 100%;
-  }
-  
+}
+
+.animationAgrandissement {
+  animation: agrandirBackground 5s infinite alternate;
+}
+
+/* Vos styles Golos Text */
+.golos-text-frame1 {
+  font-family: 'Golos Text';
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.titre_frame1 {
+  font-weight: 700;
+  color: #ffffff;
+  position: absolute;
+  width: 100%;
+  text-align: left;
+  margin-left: 30px;
+}
+
+.sous-titre_frame1 {
+  font-weight: 500;
+  color: #ffffff;
+  position: absolute;
+  width: 100%;
+  text-align: left;
+  line-height: normal;
+  margin-left: 95px;
+}
+
+/* Ajoutez d'autres styles au besoin */

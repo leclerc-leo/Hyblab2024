@@ -1,0 +1,39 @@
+{
+    "IdEvent": 5,
+    "Athlete": "_____",
+    "Sport": "____",
+    "Epreuve": "____",
+    "Epreuve__1": "____",
+    "Rang": 0,
+    "Gain": "___",
+    "Olympiade": "Paris 2024",
+    "Résultat (temps /points)": "1h30'52''0",
+    "Podium (nom + résultat)": [
+      {
+        "Place": "1",
+        "Nom": "Julie Bresset",
+        "Pays": "France",
+        "Score": "1h30'52''0"
+      },
+      {
+        "Place": "2",
+        "Nom": "Dirk Kaiser",
+        "Pays": "Allemand",
+        "Score": "1h31'54'00"
+      },
+      {
+        "Place": "3",
+        "Nom": "Cedrick A. Schultz",
+        "Pays": "Etat-Unis",
+        "Score": "1h32'00''0"
+      },
+      {
+        "Place": "4",
+        "Nom": "Elizabeth Yegorova",
+        "Pays": "Russie",
+        "Score": "1h32'33''0"
+      }
+    ],
+    "Nombre de médailles françaises": "10e médaille française au décompte total quand elle gagne"
+  }
+  
