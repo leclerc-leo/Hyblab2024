@@ -10,10 +10,27 @@ window.onload = fetch("./data/DataBase.json")
 	.then((response) => response.json())
 	.then((players) => {
 		playersData = players;
-		initizalizePage();
+		initializePage();
 	});
 
-function initizalizePage() {
+function initializePage() {
+	const maillotButton = document.getElementById("maillot");
+    const blasonButton = document.getElementById("blason");
+
+    const selectedMaillot = localStorage.getItem("selectedMaillot");
+    const selectedBlason = localStorage.getItem("selectedBlason");
+	console.log("Selected Maillot:", selectedMaillot); 
+    console.log("Selected Blason:", selectedBlason); 
+
+    if (selectedMaillot) {
+		console.log("test");
+        maillotButton.style.backgroundImage = `url(${selectedMaillot})`;
+    }
+	
+    if (selectedBlason) {
+		console.log("test2");
+        blasonButton.style.backgroundImage = `url(${selectedBlason})`;
+    }
 	updatePlayerElement = function (playerElement, playerName) {
 		const player = playersData.find((player) => player.NOM === playerName);
 		if (player.POSTE !== "ENTRAÎNEUR" && player.NUMÉRO !== undefined) {

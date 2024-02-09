@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", function () {
   let selectedSecondImageIndex = null; // Pour stocker l'indice de l'image sélectionnée du second carrousel
   const navigationButtons1 = document.querySelectorAll(".button-container1 .button");
 
-
   // Fonction pour afficher le popup du premier carrousel
   // Fonction pour afficher le popup du premier carrousel
   function showPopup() {
@@ -101,6 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       alert("Veuillez sélectionner une image.");
     }
+    localStorage.setItem("selectedMaillot", slides[selectedImageIndex].querySelector("img").src);
   });
 
   //    Fonctions du second carrousel
@@ -152,6 +152,8 @@ document.addEventListener("DOMContentLoaded", function () {
         secondSlides.forEach((s) => s.classList.remove("selected")); // Désélectionner les autres
         slide.classList.add("selected"); // Sélectionner le slide cliqué
         selectedSecondImageIndex = index; // Mettre �  jour l'index sélectionné
+        localStorage.setItem("selectedBlason", secondSlides[selectedSecondImageIndex].querySelector("img").src);
+        console.log("selectedBlason :", localStorage.getItem("selectedBlason"));
       }
     });
   });

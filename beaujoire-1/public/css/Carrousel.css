@@ -212,14 +212,14 @@
   background-color: #1e1e28;
   border: none;
   border-radius: 50%;
-  width: 12vw;
-  height: 12vw;
-  position: absolute;
+  width: 10.5vw;
+  height: 10.5vw;
+  position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
-  top: -85vw;
-  left: -12vw;
+  top: 5px;
+  left: 10px;
 }
 
 .bottom-btn {
@@ -374,3 +374,4 @@
 .second-item:not(.active) .button-container .button {
   display: none;
 }
+
