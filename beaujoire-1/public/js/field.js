@@ -336,7 +336,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	}, 5000);
 });
 
-fetch("http://localhost:8080/test")
+fetch("/test")
 	.then((response) => response.text())
 	.then((data) => console.log(data))
 	.catch((error) => console.error("Error:", error));
