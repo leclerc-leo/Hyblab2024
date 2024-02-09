@@ -142,18 +142,28 @@ body {
 
 /* shutter */
 .gb-shutter {
-	border: 2px solid var(--gb-52);
-	box-shadow: 3px 3px 0 var(--gb-52);
-	font-size: 14px;
-	font-weight: 100;
-	overflow: hidden;
-	color: var(--gb-51);
-	background: var(--gb-52);
-	font-family: Bebas Neue;
-	margin: 0 5% 5% 5%;
-	display: inline-block; 
-
+    border: 5px solid var(--gb-52);
+    box-shadow: 3px 3px 0 var(--gb-52);
+    font-size: 18px;
+    font-weight: 100;
+    overflow: hidden;
+    color: var(--gb-51);
+    background: var(--gb-52);
+    font-family: 'Bebas Neue', sans-serif;
+    margin: 5% 5% 5% 5%;
+	margin-right: 15px;
+    display: inline-block;
+    white-space: nowrap;
+    box-sizing: border-box;
+    width: 150px; /* Si vous voulez que les boutons soient de la même largeur */
+    height: 35px; /* Si vous voulez que les boutons soient de la même hauteur */
+    line-height: 35px; /* Cette valeur doit correspondre à la hauteur pour un alignement vertical parfait */
+    text-align: center; /* Pour centrer le texte horizontalement */
 }
+
+/* Retirez la classe .bouton-stat si elle n'est pas nécessaire */
+/* Si elle est nécessaire, assurez-vous qu'elle ne contient que les styles pertinents */
+
 
 .gb-shutter:active {
 	background-color: var(--gb-51);
