@@ -7,6 +7,8 @@ let selectedPlayerId;
 let updatePlayerElement;
 let playersData;
 
+window.addEventListener("onBeforeUnload", saveStats);
+
 window.onload = fetch("./data/DataBase.json")
 	.then((response) => response.json())
 	.then((players) => {
@@ -174,12 +176,18 @@ let players = JSON.parse(localStorage.getItem("players")) || {
 	"defender-3": "",
 };
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
 	/*
 	document.querySelectorAll(".player-clickable").forEach((player) => {
 		player.addEventListener("click", handlePlayerClick);
 	});*/
-
+	document
+		.querySelector("#statistiques")
+		.addEventListener("click", async (event) => {
+			event.preventDefault();
+			await saveStats();
+			window.location.href = "./statistique.html";
+		});
 	document.querySelector("#back-overlay").addEventListener("click", () => {
 		document.querySelectorAll(".carousel-item").forEach((item) => {
 			item.classList.remove("selected");
@@ -301,45 +309,47 @@ document.addEventListener("DOMContentLoaded", () => {
 				audio.muted = !audio.muted;
 			});
 		});
-
-	const saveStats = setInterval(() => {
-		if (
-			areAllPlayersSelected() &&
-			isCaptainSelected &&
-			!isCaptainBeingSelected
-		) {
-			fetch("./data/Stats.json")
-				.then((response) => response.json())
-				.then((stats) => {
-					Object.keys(players).forEach((position) => {
-						const playerName = players[position];
-						if (playerName !== "") {
-							if (stats[playerName] !== undefined) {
-								stats[playerName]++;
-							} else {
-								stats[playerName] = 1;
-							}
-						}
-					});
-
-					// Send the updated stats back to the server
-					fetch("./updateStats", {
-						method: "POST",
-						headers: {
-							"Content-Type": "application/json",
-						},
-						body: JSON.stringify(stats),
-					});
-					clearInterval(saveStats);
-				});
-		}
-	}, 5000);
 });
 
-fetch("/test")
+fetch("api/test")
 	.then((response) => response.text())
 	.then((data) => console.log(data))
 	.catch((error) => console.error("Error:", error));
+
+function saveStats() {
+	if (
+		areAllPlayersSelected() &&
+		isCaptainSelected &&
+		!isCaptainBeingSelected
+	) {
+		fetch("./data/Stats.json")
+			.then((response) => response.json())
+			.then((stats) => {
+				console.log("Stats:", stats);
+				console.log("Players:", players);
+				Object.values(players).forEach((player) => {
+					if (stats[player] !== undefined) {
+						stats[player]++;
+					} else {
+						// Handle the case where the player doesn't exist in the stats object
+						console.log(`Player ${player} not found in stats.`);
+					}
+				});
+				console.log("Updated Stats:", stats);
+
+				// Send the updated stats back to the server
+				fetch("api/updateStats", {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify(stats),
+				});
+				clearInterval(saveStats);
+			})
+			.catch((error) => console.error("Error fetching stats:", error));
+	}
+}
 
 function animatePlayer(elementId, imgSrc, timeoutDuration, event) {
 	const element = document.getElementById(elementId);
