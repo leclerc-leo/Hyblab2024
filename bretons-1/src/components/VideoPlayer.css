@@ -19,3 +19,7 @@
 #VideoPlayer > div.head > div > nav {
     background-color: transparent !important;
 }
+
+.bg-body-tertiary{
+    background-color:unset
+}

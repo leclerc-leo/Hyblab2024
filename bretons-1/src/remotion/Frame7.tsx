@@ -71,6 +71,9 @@ export const Frame7: React.FC<{ athlete: string, podium: Podium[], gain: string 
                                     {gain === "" && entry.Nom === athlete && (
                                         <img className='QualifieBW' src={`/bretons-1/img/EliminateBW.svg`} alt='Eliminate' />
                                     )}
+                                    {gain === "Qualifie" && entry.Nom === athlete && (
+                                        <img className='QualifieBW' src={`/bretons-1/img/QualifieBW.svg`} alt='Qualifie' />
+                                    )}
                                     {entry.Nom !== athlete && (
                                         <img className='QualifieBW' src='/bretons-1/img/QualifieBW.svg' alt='Qualification' />
                                     )}

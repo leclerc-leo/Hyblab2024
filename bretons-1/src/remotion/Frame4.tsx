@@ -25,7 +25,7 @@ const getImage = (sport: string) => {
     case "Cyclisme":
       return "_Cyclisme.svg_"
     default:
-      return "Voile.svg_"
+      return "_Voile.svg_"
   }
 }
 
