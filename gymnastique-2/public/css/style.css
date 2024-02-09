@@ -14,6 +14,18 @@
     font-size: 0;
 }
 
+#swiper_journee, #swiper_mouvement{
+    width: 100%;
+    height:100%;
+    position: absolute;
+}
+
+#swiper_journee{
+    width: 100%;
+    height:100%;
+    position: absolute;
+}
+
 .swiper-pagination-bullets.swiper-pagination-horizontal {
     --swiper-pagination-bottom: 0px;
 }
@@ -38,7 +50,7 @@
 }
 
 .swiper-pagination-bullet::before{
-    --swiper-pagination-bullet-size: 50%;
+    --swiper-pagination-bullet-size: 35%;
     content: '';
     position: absolute;
     bottom: 20%;
@@ -55,7 +67,7 @@
 }
 
 .swiper-pagination-bullet-active::before{
-    --swiper-pagination-bullet-size: 50%;
+    --swiper-pagination-bullet-size: 35%;
     background-color: white;
 }
 
@@ -81,7 +93,7 @@ header{
 }
 
 #titre{
-    background: linear-gradient(rgba(255, 216, 179, 0.4) 0%, rgba(255, 216, 179, 0.4) 90%, rgba(255, 216, 179, 0.1) 100%);
+    background: radial-gradient(closest-side, rgba(255, 217, 179, 0.6) 0, rgba(255, 217, 179, 0.6) 50%, rgba(255, 217, 179, 0) 100%);
 }
 
 header > * {
@@ -193,28 +205,18 @@ header > * {
 
     width: 5vh;
     height: 5vh;
-    padding: 4vh;
-    border-radius: 50%;
-    background: /* #e47e5d from 0 to 50 then gradualy transparent */ radial-gradient(circle at 50% 50%, #e47e5d 0%, #e47e5d 50%, transparent 55%);
+    padding: 2.5vh;
+    margin-bottom: 1vh;
 
     cursor: pointer;
 }
 
-.return-button::before, .return-button::after{
-    content: '';
+.return-button img{
     position: absolute;
-    border-radius: 5px;
-    width: 5.5vh;
-    height: 0.7vh;
-    min-height: 2px;
-    background: #ffd8b3;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(45deg);
-}
-
-.return-button::after{
-    transform: translate(-50%, -50%) rotate(-45deg);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 
 .credits-button {
@@ -276,7 +278,6 @@ span{
 /* Format des pages */
 #histoire-page, #jo-page, #credits-page{
     text-align: center;
-    padding: 0 10px;
 }
 
 #histoire-page h1, #jo-page h1, #credits-page h1{
@@ -318,6 +319,10 @@ svg.image-histoire, svg.image-jo{
     padding-top: 10px;
     background-color: rgba(255, 216, 179, 0.9);
     margin-bottom: 20px;
+}
+
+#credits-header {
+    padding-top: 30px;
 }
 
 #histoire-header > img {
@@ -403,10 +408,10 @@ svg.image-histoire, svg.image-jo{
 }
 #palmares-page .card-front-palmares-titre{
     margin: 2% 0 2% 0;
+    color: #FFD8B3;
 }
 #palmares-page .card-palmares-titre{
     margin: 2% 0 2% 0;
-    color: #E47754;
 }
 
 #credits-chemin1{
@@ -462,12 +467,138 @@ svg.image-histoire, svg.image-jo{
     vertical-align: middle;
 }
 
+#journee_1_svg{
+    position: absolute;
+    left: 60%;
+    width: 40%;
+    height: 21%;
+}
+
+#journee_2_svg{
+    position: absolute;
+    left: 60%;
+    width: 40%;
+    height: 21%;
+}
+
+#Kaylia_Nemour_journee{
+    position: absolute;
+    left: 30%;
+    width: 40%;
+    height: 30%;
+}
+
+#journee_type{
+    position: absolute;
+    width: 40%;
+    height: 30%;
+    top:23%;
+    left:30%;
+    text-align: center;
+}
+
+#description_journee, .description_mouvement{
+    position: absolute;
+    width: 70%;
+    height: 30%;
+    top: 75%;
+    left: 13%;
+    text-align: center;
+}
+.description_mouvement{
+    left: 0;
+    top:72%;
+    width:90%
+}
+#journee_1_svg,#mouvement_1_svg{
+    position: absolute;
+    left: 60%;
+    width: 40%;
+    height: 21%;
+}
+
+#journee_2_svg,#mouvement_2_svg{
+    position: absolute;
+    left: -2%;
+    width: 50%;
+    height: 17%;
+}
+
+#journee_3_svg,#mouvement_3_svg{
+    position: absolute;
+    left:69%;
+    width: 40%;
+    height: 23%;
+    top:-2%;
+}
+
+#journee_4_svg{
+    position: absolute;
+    left: 60%;
+    width: 40%;
+    height: 21%;
+    top: -3%;
+}
+
+#Kaylia_Nemour_journee,.Kaylia_Nemour_mouvement{
+    position: absolute;
+    left: 30%;
+    width: 40%;
+    height: 30%;
+}
+
+#journee_img{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: auto;
+    height: 32%;
+    top: 33%;
+    border-radius: 22px;
+}
+
+#journee_type,.mouvement_type{
+    position: absolute;
+    width: 40%;
+    height: 30%;
+    top:23%;
+    left: 50%;
+    transform: translate(-50%, 0);    
+    text-align: center;
+}
+
+#description_journee{
+    position: absolute;
+    width: 70%;
+    height: 30%;
+    top: 75%;
+    left: 13%;
+    text-align: center;
+    color: #482E49;
+}
+
+#barre_navigation_journee, .barre_navigation_mouvement {
+    position: absolute;
+    top: 70%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly; 
+    flex : 1;
+}
+#categorie_journee, .categorie_mouvement{
+    padding: 10px 10px;
+    text-align: center;
+}d
+
 #jo-header {
     position:sticky;
     top: 0;
     background-color: rgba(255, 216, 179, 0.9);
     margin-bottom: 10px;
-    padding-top: 10px;
+    padding-top: 40px;
 }
 
 #jo-contenu {
@@ -479,8 +610,26 @@ svg.image-histoire, svg.image-jo{
 }
 
 .jo-card-container {
-    perspective: 800px;
+    position: relative;
     margin: 0% 10% 3% 10%;
+    transition: max-height 0.2s ease-in-out;
+    max-height: 50%;
+}
+
+/* add a cross to the top right of the card */
+.jo-card-container.actif::before, .jo-card-container.actif::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    width: 20px;
+    height: 3px;
+    background-color: #E47754;
+    transform: rotate(45deg);
+}
+
+.jo-card-container.actif::after {
+    transform: rotate(-45deg);
 }
 
 .jo-card {
@@ -528,34 +677,24 @@ svg.image-histoire, svg.image-jo{
     margin-bottom: 10px;
 }
 
-
-#mouvement-header{
-    position:sticky;
-    top: 0;
-    padding-top: 10px;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-#mouvement-header > img {
-    padding: 10px;
-}
-
 .image-titre{
     max-width: 40%;
 }
 #mouvement-video{
-    width: 60%;
-    height: 60%;
+    width: 50%;
+    height: 41%;
+    position: absolute;
+    top: 30%;
+    /* right: 50%; */
+    left: 25%;
+}
+.categorie_mouvement{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 #twitter-widget-0{
     border-radius: 10%;
-}
-
-
-#mouvement-contenu{
-    width: 80%;
-    height: 60%;
 }
 .page-container{
     margin-top: 10%;
@@ -565,34 +704,8 @@ svg.image-histoire, svg.image-jo{
     justify-content: center;
     text-align: center;
 }
-#mouvement-page .svg-boucle{
-    position: absolute;
-}
-#mouvement-page #mouvement-contenue-titre{
-    display: flex;
-    justify-content: center;
-    margin: 5% 0;
-}
-#mouvement-page #mouvement-contenue-titre-texte{
-    margin: 0 5%;
-    width: 40%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
-#mouvement-page #mouv-chemin-1{
-    right : 0;
-    top :0;
-    transform: rotateY(180deg) ;
-}
-#mouvement-page #mouv-chemin-2{
-    left : 0;
-    top : 0;
-}
-#mouvement-page .mouv-button{
-    font-size: 3vh;
-}
+
 #mouvement-page .mouvActif {
     animation: fadeIn 0.5s;
     -webkit-animation: fadeIn 0.5s;
@@ -624,4 +737,14 @@ svg.image-histoire, svg.image-jo{
 @-ms-keyframes fadeIn {
     0% { opacity: 0; }
     100% { opacity: 1; }
+}
+
+#credits-button h1{
+    background-color: #E47754;
+    border: 3px solid #FFD8B3;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+    padding: 2% 10%;
+    text-shadow: none;
+    color: white;
 }

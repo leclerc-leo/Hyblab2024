@@ -23,9 +23,6 @@ swiper.on('progress', () => {
 
 swiper.on("slideChange", function () {
     switch( swiper.activeIndex ) {
-        case 1:
-            init_accueil(swiper);
-            break;
         case 0:
             init_past(swiper);
             break;
@@ -34,9 +31,19 @@ swiper.on("slideChange", function () {
             break;
     }
 });
+var swiperJournee = new Swiper('#swiper_journee', {
+    direction: "horizontal",
+    loop: false,
+    mousewheel: true,
+    navigation: {
+        enabled: false,
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    }
+
+});
 
 move_background(50);
-init_accueil(swiper);
 
 const categories_buttons = document.querySelectorAll('.category-button'); // les boutons permettant d'accéder aux informations
 const swiper_controls = document.querySelector('.swiper-controls'); // les boutons qui permettent de changer de slides + la pagination
@@ -51,8 +58,6 @@ categories_buttons.forEach( button => {
         const category = button.id.split('-')[0];
 
         const block = document.querySelector(`#${category}-page`);
-        console.log(button)
-        console.log(block)
         if (block == null) { /* Principalement pour les pages des boutons qui ne sont pas encore implémentés */
             console.log('Le bloc pour le bouton ' + button.id + ' n\'existe pas');
             return;
@@ -75,6 +80,20 @@ categories_buttons.forEach( button => {
         return_button.id = `${category}-return`;
 
         swiper.disable(); // pour éviter de changer de slide lors d'un scroll et d'autoriser le scroll sur la page
+    });
+});
+
+const fleche_gauche = document.querySelectorAll('#fleche_gauche'); 
+fleche_gauche.forEach( fleche => {
+    fleche.addEventListener('click', () => {
+        swiperJournee.slidePrev(); 
+    });
+});
+
+const fleche_droite = document.querySelectorAll('#fleche_droite'); 
+fleche_droite.forEach( fleche => {
+    fleche.addEventListener('click', () => {
+        swiperJournee.slideNext(); 
     });
 });
 
