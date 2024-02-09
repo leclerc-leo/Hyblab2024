@@ -1,11 +1,10 @@
-// list.js
-
 // get the temporary votes :
 votesTmp =  JSON.parse(localStorage.getItem('votes'));
 
 document.addEventListener('DOMContentLoaded', function () {
-  const positions = ['Gardien', 'Arrière droit', 'Arriere gauche', 'Défenseur central 1'];
-
+  /*const positions = ['Gardien', 'Arrière droit', 'Arriere gauche', 'Défenseur central 1'];*/
+  
+  const positions = ['Gardien', 'Arrière droit', 'Arriere gauche', 'Défenseur central 1', 'Défenseur central 2', 'Milieu défensif','Milieu gauche','Milieu offensif','Attaquant 1','Milieu droit', 'Attaquant 2', 'Sélectionneur'];
   const playerLists = [
     [
       { id: 1 , name: 'Player 1', photo: 'img/ndoram.jpg' },
@@ -63,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
       playerBox.innerHTML = `
         <img src="${player.photo}" >
         <p>${player.name}</p>
-        <button class="down-slider"></button>
+        <button class="down-slider" data-type="downslide"></button>
         <button class="heart-button" data-type="heart"></button>
       `;
 
@@ -73,124 +72,129 @@ document.addEventListener('DOMContentLoaded', function () {
 
       const heartButton = playerBox.querySelector('.heart-button');
       heartButton.addEventListener('click', () => {toggleHeart(heartButton, player.id ,positionId);});
+
+      const downslider = playerBox.querySelector('.down-slider');
+      downslider.addEventListener('click', () => {downSlide( downslider, playerBox );});
     });
   }
 
-  function downSlide(playerBox){
-    const imagePlayer = playerBox.children[0];
-    const name = playerBox.children[1];
-    const heart = playerBox.children[2];
-    const slider = playerBox.children[3];
-  
-    imagePlayer.style["display"] = "none";
-    name.style["display"] = "none";
-    heart.style["display"] = "none";
-    slider.style["display"] = "none";
+  function downSlide(button, playerBox){
+    if (button.dataset.type === 'downslide') {
+      const imagePlayer = playerBox.children[0];
+      const name = playerBox.children[1];
+      const heart = playerBox.children[2];
+      const slider = playerBox.children[3];
+    
+      imagePlayer.style["display"] = "none";
+      name.style["display"] = "none";
+      heart.style["display"] = "none";
+      slider.style["display"] = "none";
 
-    try {
-      const backgroundText = document.createElement("div");
-      backgroundText.className = "background-text";
-      backgroundText.textContent = "FC Nantes  FC Nantes  FC Nantes  FC Nantes";
+      try {
+        const backgroundText = document.createElement("div");
+        backgroundText.className = "background-text";
+        backgroundText.textContent = "FC Nantes  FC Nantes  FC Nantes  FC Nantes";
 
-      const avatar = document.createElement("img");
-      avatar.src = "./img/players/Player-photo.png";
-      avatar.alt = "Player Image";
-      avatar.className = "avatar";
+        const avatar = document.createElement("img");
+        avatar.src = "./img/players/Player-photo.png";
+        avatar.alt = "Player Image";
+        avatar.className = "avatar";
 
-      const overlayFirstname = document.createElement("div");
-      overlayFirstname.className = "overlay-firstname";
-      overlayFirstname.textContent = "Firstname";
+        const overlayFirstname = document.createElement("div");
+        overlayFirstname.className = "overlay-firstname";
+        overlayFirstname.textContent = "Firstname";
 
-      const lastname = document.createElement("div");
-      lastname.className = "lastname";
-      lastname.textContent = "Lastname";
+        const lastname = document.createElement("div");
+        lastname.className = "lastname";
+        lastname.textContent = "Lastname";
 
-      const fullname = document.createElement("div");
-      fullname.className = "fullname";
-      fullname.appendChild(overlayFirstname);
-      fullname.appendChild(lastname);
+        const fullname = document.createElement("div");
+        fullname.className = "fullname";
+        fullname.appendChild(overlayFirstname);
+        fullname.appendChild(lastname);
 
-      const closeButton = document.createElement("img");
-      closeButton.src = "./img/bio-icons/fleche-haut.svg";
-      const displayBio = document.createElement("div");
-      displayBio.className = "display-bio";
-      displayBio.appendChild(closeButton);
+        const closeButton = document.createElement("img");
+        closeButton.src = "./img/bio-icons/fleche-haut.svg";
+        const displayBio = document.createElement("div");
+        displayBio.className = "display-bio";
+        displayBio.appendChild(closeButton);
 
-      const field = document.createElement("img");
-      field.src = "./img/bio-icons/selection.svg";
-      const nbMatchs = document.createElement("p");
-      nbMatchs.textContent = "100 matchs";
-      const infos1 = document.createElement("div");
-      infos1.className = "infos";
-      infos1.appendChild(field);
-      infos1.appendChild(nbMatchs);
+        const field = document.createElement("img");
+        field.src = "./img/bio-icons/selection.svg";
+        const nbMatchs = document.createElement("p");
+        nbMatchs.textContent = "100 matchs";
+        const infos1 = document.createElement("div");
+        infos1.className = "infos";
+        infos1.appendChild(field);
+        infos1.appendChild(nbMatchs);
 
-      const flag1 = document.createElement("img");
-      flag1.src = "./img/bio-icons/flags/flag-france.png";
-      const flag2 = document.createElement("img");
-      flag2.src = "./img/bio-icons/flags/flag-burkina-faso.png";
-      const flags = document.createElement("div");
-      flags.className = "flags";
-      flags.appendChild(flag1);
-      flags.appendChild(flag2);
-      const countries = document.createElement("p");
-      countries.textContent = "PAYS1/PAYS2"
-      const infos2 = document.createElement("div");
-      infos2.className = "infos";
-      infos2.appendChild(flags);
-      infos2.appendChild(countries);
+        const flag1 = document.createElement("img");
+        flag1.src = "./img/bio-icons/flags/flag-france.png";
+        const flag2 = document.createElement("img");
+        flag2.src = "./img/bio-icons/flags/flag-burkina-faso.png";
+        const flags = document.createElement("div");
+        flags.className = "flags";
+        flags.appendChild(flag1);
+        flags.appendChild(flag2);
+        const countries = document.createElement("p");
+        countries.textContent = "PAYS1/PAYS2"
+        const infos2 = document.createElement("div");
+        infos2.className = "infos";
+        infos2.appendChild(flags);
+        infos2.appendChild(countries);
 
-      const likeButton = document.createElement("img");
-      likeButton.src = "./img/bio-icons/coeur-01.svg";
-      const like = document.createElement("div");
-      like.className = "like";
-      like.appendChild(likeButton);
+        const likeButton = document.createElement("img");
+        likeButton.src = "./img/bio-icons/coeur-01.svg";
+        const like = document.createElement("div");
+        like.className = "like";
+        like.appendChild(likeButton);
 
-      const logoFCN = document.createElement("img");
-      logoFCN.src = "./img/bio-icons/club-icon/FCNANTES-2019.svg";
-      const yearInClub = document.createElement("p");
-      yearInClub.textContent = "2024";
-      const infos3 = document.createElement("div");
-      infos3.className = "infos";
-      infos3.appendChild(logoFCN);
-      infos3.appendChild(yearInClub);
+        const logoFCN = document.createElement("img");
+        logoFCN.src = "./img/bio-icons/club-icon/FCNANTES-2019.svg";
+        const yearInClub = document.createElement("p");
+        yearInClub.textContent = "2024";
+        const infos3 = document.createElement("div");
+        infos3.className = "infos";
+        infos3.appendChild(logoFCN);
+        infos3.appendChild(yearInClub);
 
-      const role = document.createElement("img");
-      role.src = "./img/bio-icons/arret.svg";
-      const score = document.createElement("p");
-      score.textContent = "20 buts";
-      const infos4 = document.createElement("div");
-      infos4.className = "infos";
-      infos4.appendChild(role);
-      infos4.appendChild(score);
+        const role = document.createElement("img");
+        role.src = "./img/bio-icons/arret.svg";
+        const score = document.createElement("p");
+        score.textContent = "20 buts";
+        const infos4 = document.createElement("div");
+        infos4.className = "infos";
+        infos4.appendChild(role);
+        infos4.appendChild(score);
 
-      const icons = document.createElement("div");
-      icons.className = "icons";
-      icons.appendChild(infos1);
-      icons.appendChild(infos2);
-      icons.appendChild(like);
-      icons.appendChild(infos3);
-      icons.appendChild(infos4);
+        const icons = document.createElement("div");
+        icons.className = "icons";
+        icons.appendChild(infos1);
+        icons.appendChild(infos2);
+        icons.appendChild(like);
+        icons.appendChild(infos3);
+        icons.appendChild(infos4);
 
-      const iconsText = document.createElement("div");
-      iconsText.className = "icons-text";
-      iconsText.textContent = 
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-      
-      playerBox.className = "bio-player";
-      playerBox.appendChild(backgroundText);
-      playerBox.appendChild(avatar);
-      playerBox.appendChild(fullname);
-      playerBox.appendChild(displayBio);
-      playerBox.appendChild(icons);
-      playerBox.appendChild(iconsText)
-    } catch (error) {
-      console.error(error);
-    } 
+        const iconsText = document.createElement("div");
+        iconsText.className = "icons-text";
+        iconsText.textContent = 
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        
+        playerBox.className = "bio-player";
+        playerBox.appendChild(backgroundText);
+        playerBox.appendChild(avatar);
+        playerBox.appendChild(fullname);
+        playerBox.appendChild(displayBio);
+        playerBox.appendChild(icons);
+        playerBox.appendChild(iconsText)
+      } catch (error) {
+        console.error(error);
+      } 
+    }
   };
 
   function updatePositions(currentIndex) {

@@ -3,14 +3,14 @@
 /* Reset some default styles */
 
 body{
-  overflow: hidden;
   background-color: black;
-
+  height: 100%;
 }
   /* Container for the entire content */
 #container {
   position: fixed;
   height: 100%;
+  width: 100%;
   padding: 0%;
   background-color: var(--bg-green);
   margin-left: calc((100vw - 100 * 3vh / 4) / 2);
@@ -18,28 +18,37 @@ body{
   overflow: hidden;
   }
 
+  .player-swiper-container {
+    height: 75%;
+    width: 100%;
+    position: absolute;
+  }
   /* Styling for the player boxes */
   .player-list {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
+    height: 100%;
     margin-top: -2%;
+    position: relative;
   }
   
   .player-box {
-    border: 0.04em solid var(--yellow); /* Border styling */
-    border-radius: 0.2em; /* Rounded corners */
-    overflow: hidden; /* Ensure content doesn't overflow */
+    border: 0.04em solid var(--yellow);
+    border-radius: 0.2em;
+    overflow: hidden;
     margin: 1%;
-    width: 60vmin; /* Adjust the width as needed */
-    max-width: 100%; /* Adjust the maximum width as needed */
-    display: flex; /* Use flexbox for layout */
+    margin-left: 5%;
+    margin-right: 5%;
+    width: -webkit-fill-available;
+    max-width: 103%;
+    display: flex;
+    height: -webkit-fill-available;
   }
   
   .player-box img {
-    margin-top: 3%;
-    margin-bottom: 3%;
+    margin-top: 5%;
     margin-left: 5%;
     width: 0.7em;
     height: 0.7em;
@@ -50,7 +59,7 @@ body{
   
   .player-box p {
     flex: 1;
-    padding: 1.1em;
+    margin-top: 7%;
     text-align: center;
     color: white;
     font-family: "Abolition";
@@ -89,9 +98,10 @@ body{
   /* Styling for the footer */
   .fixed-footer{
     text-align: center;
-    position: relative; 
-    margin-top: 6%;
-    height:20%;
+    position: absolute;
+    /* margin-top: 2%; */
+    width: 100%;
+    bottom: 0;
   }
   .background-paper{
     background-image: url('../img/Footer_papier.svg');
@@ -100,7 +110,7 @@ body{
     position: absolute;
     right: inherit;
     width: 100%;
-    height: 100%;
+    height:100%;
     transform-origin: top;
     z-index: -1;
   }
@@ -115,9 +125,15 @@ body{
   font-family: "Abolition";
   font-size: 25%;
   border-radius: 1.25em;
-  width: 40%;
-  margin-top: 10%;
-  transition: all 0.5s ease-in-out ;
+  width: 36%;
+  transition: all 0.5s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-top: 9%;
+  margin-left: 24%;
+  margin-bottom: 5%;
 }
 
 #retour:hover{
@@ -133,7 +149,7 @@ body{
   position: relative; /* Make it a positioned container */
   margin-left: 5%;
   margin-right: 5%;
-  margin-top: -2%;
+  margin-top: -4%;
 }
 
 /* Styling for the fixed light gray line */
@@ -145,8 +161,6 @@ body{
   margin-top: -5%;
   margin-left: 10%;
   margin-right: 10%;
-  
-
 }
 
 /* Styling for the yellow segment under the current position */
@@ -187,28 +201,47 @@ body{
 }
 
 
-
+/* Fill the whole viewport when its aspect ratio is between 9/16 and 3/4 */
 @media screen and (max-aspect-ratio: 3/4) {
-  p{
-      margin: 0;
+  #container{
+      margin-left: 0; /* reset margin-left */
+      width: 100vw; /* content is full width (and full height because of the default rule for container height */
   }
+
+
+  p {
+      margin: 0 ;
+      font-size: calc(100 * 0.3vw / 5);
+      color: var(--yellow);
+      text-align: center;
+  }
+
 
 }
 
 /* The content is displayed at 9/16 If the aspect ratio is higher that 9/16  */ 
 @media screen and (max-aspect-ratio: 9/16) {
-  p{
-      margin: 0;
+  #container{
+      margin-left: 0; /* reset left margin */
+      width: 100vw;   /* content is full width */
+      margin-top: calc(-50 * 16vw / 9); /* move the content half the height to the top */
+      top:50%; /* then center it ! */
+      height: calc(100 * 16vw / 9); /* adjust height so that aspect ratio is 9/16 */
   }
+
+  p {
+      margin: 0 ;
+      color: var(--yellow);
+      text-align: center;
+  }
+  
 }
 
-
-
-
-
-
-
-
-
+/* Adjust height for smaller viewports */
+@media screen and (max-width: 250px) {
+  .player-list{
+    height: 80%; /* Adjust the value based on your needs */
+  }
+}
 
 
