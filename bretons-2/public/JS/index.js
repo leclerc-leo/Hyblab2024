@@ -444,6 +444,8 @@ async function page_historique(sport) {
 		
 		const uniqueAthleteName = Object.keys(listeAthletes)[0];
 		const uniqueAthlete = listeAthletes[uniqueAthleteName];
+		uniqueAthlete.nom = uniqueAthleteName
+
 
 		const imagesContainer = document.createElement("div");
 		imagesContainer.style.display = "flex";
@@ -483,7 +485,7 @@ async function page_historique(sport) {
 		blank.appendChild(divImgAthlete);
 
 		divNomAthlete.onclick = () => {
-			page_athlete(uniqueAthlete);
+			page_athlete(uniqueAthlete,listeAthletes , isFirtAthlete);
 		}
 
 	} else {
@@ -491,6 +493,8 @@ async function page_historique(sport) {
 
 		for (const athleteName in listeAthletes) {
 			const athlete = listeAthletes[athleteName];
+			athlete.nom = athleteName
+			
 
 			const imagesContainer = document.createElement("div");
 			imagesContainer.style.display = "flex";
@@ -531,30 +535,150 @@ async function page_historique(sport) {
 			blank.appendChild(divImgAthlete);
 
 			divNomAthlete.onclick = () => {
-				page_athlete(athlete);
+				page_athlete(athlete, listeAthletes , isFirtAthlete);
 			}
 		}
 		
 	}
-	
+
 }
 
-function page_athlete(athlete) {
+function page_athlete(athlete,listeAthletes, isFirtAthlete) {
+    const blank = document.querySelector("#blank");
+    blank.innerHTML = ""; // clear
 
-	const blank = document.querySelector("#blank");
-	blank.innerHTML = ""; // clear
-	// blank.style.height = "100%";
+    const retour = document.createElement("img");
+    retour.src = "./Image/bouton-back.svg";
+    retour.alt = "retour";
+    retour.id = "retour";
+    retour.onclick = () => {
+        page_sport();
+    }
 
-	const retour = document.createElement("img");
-	retour.src = "./Image/bouton-back.svg";
-	retour.alt = "retour";
-	retour.id = "retour";
-	retour.onclick = () => {
-		page_sport();
+		
+		console.log(athlete)
+    
+    blank.appendChild(retour);
+
+    // Création des éléments pour afficher les détails de l'athlète
+    const divDetails = document.createElement("div");
+    divDetails.classList.add("details-athlete");
+
+    const imgAthlete = document.createElement("img");
+    imgAthlete.src = athlete.photo;
+    imgAthlete.alt = athlete.nom;
+		imgAthlete.className = "img_at_pg_at"
+		const imgdiv = document.createElement("div");
+		imgdiv.className = "img_div_pg_at"
+		imgdiv.appendChild(imgAthlete)
+
+    const nomAthlete = document.createElement("h2");
+    nomAthlete.textContent = athlete.nom.split(" ")[0];
+		nomAthlete.style = "font-size:58px"
+		const prenomAthlete = document.createElement("h2");
+    prenomAthlete.textContent = athlete.nom.split(" ")[1];
+		prenomAthlete.style = "color:red;font-size:58px"
+
+		const ele_fleche = document.createElement("img");
+		ele_fleche.src = "./Image/fleche-3.svg"
+		ele_fleche.className = "ele_fleche"
+		const ele_sardine = document.createElement("img");
+		ele_sardine.src = "./Image/sardine.svg"
+		ele_sardine.className = "ele_sardine"
+
+
+		const nomdiv = document.createElement("div");
+		nomdiv.className = "nom_div_pg_at"
+		nomdiv.appendChild(nomAthlete)
+		nomdiv.appendChild(prenomAthlete)
+		nomdiv.appendChild(ele_fleche)
+		nomdiv.appendChild(ele_sardine)
+
+		
+
+    const ageAthlete = document.createElement("p");
+    ageAthlete.textContent = `Âge : ${athlete.age}`;
+
+    const lieuNaissance = document.createElement("p");
+    lieuNaissance.textContent = `Lieu de naissance : ${athlete.lieuDeNaissance}`;
+
+    const disciplineAthlete = document.createElement("p");
+    disciplineAthlete.textContent = `Discipline : ${athlete.discipline}`;
+
+		const img_post = document.createElement("img")
+		img_post.src = "./Image/poste.svg"
+		img_post.style = "width:30px;float:left;margin-right:20px"
+    const posteAthlete = document.createElement("p");
+    posteAthlete.textContent = `Poste : ${athlete.poste}`;
+		const div_post = document.createElement("div")
+		div_post.className = "box_p_c"
+		div_post.appendChild(img_post)
+		div_post.appendChild(posteAthlete)
+		
+		const img_club = document.createElement("img")
+		img_club.src = "./Image/club.svg"
+		img_club.style = "width:30px;float:left;margin-right:20px"
+    const clubAthlete = document.createElement("p");
+    clubAthlete.textContent = `Club : ${athlete.club}`;
+		const div_club = document.createElement("div")
+		div_club.className = "box_p_c"
+		div_club.appendChild(img_club)
+		div_club.appendChild(clubAthlete)
+
+		
+
+    const bioAthlete = document.createElement("p");
+    bioAthlete.textContent = athlete.bio;
+
+		const txtdiv = document.createElement("div");
+		txtdiv.className = "text_pg_at"
+		txtdiv.appendChild(ageAthlete);
+    txtdiv.appendChild(lieuNaissance);
+    txtdiv.appendChild(disciplineAthlete);
+		const txtdiv2 = document.createElement("div");
+		txtdiv2.className = "text2_pg_at"
+		txtdiv2.appendChild(div_post);
+    txtdiv2.appendChild(div_club);
+		const txtdiv3 = document.createElement("div");
+		txtdiv3.className = "text3_pg_at"
+    txtdiv3.appendChild(bioAthlete);
+
+
+		divDetails.appendChild(nomdiv);
+    divDetails.appendChild(imgdiv);
+		divDetails.appendChild(txtdiv);
+		divDetails.appendChild(txtdiv2);
+		divDetails.appendChild(txtdiv3);
+
+    
+    blank.appendChild(divDetails);
+
+	const nextAthleteDiv = document.createElement("div");
+	const listeAthletesArray = Object.values(listeAthletes);
+	const currentIndex = listeAthletesArray.findIndex(item => item.nom === athlete.nom);
+	const nextIndex = (currentIndex + 1) % listeAthletesArray.length;
+	const nextAthlete = listeAthletesArray[nextIndex];
+	if (isFirtAthlete){
+		nextAthleteDiv.textContent = `SUIVANT : ${nextAthlete.nom}`;
+	} 
+
+	else{
+		nextAthleteDiv.textContent = `PRECEDENT : ${nextAthlete.nom}`;
 	}
+	 nextAthleteDiv.classList.add("next-athlete-div");
+	 nextAthleteDiv.addEventListener("click", () => {
+        page_athlete(nextAthlete, listeAthletes, !isFirtAthlete);
 
-	blank.appendChild(retour);
+    });
+	 
+	 blank.appendChild(nextAthleteDiv);
+
+	console.log("AYMEN");
+	console.log(athlete);
+	console.log(listeAthletes);
 }
+
+const isFirtAthlete= true;
 
 const myModal = new bootstrap.Modal('#modal')
 const phone = document.getElementById("phone");
@@ -566,6 +690,7 @@ document.getElementById("menu-modal").onclick = () =>{
         phone.style.filter = "";
     });
 }
+
 
 document.getElementById("retour-modal").onclick = () =>{
 	myModal.hide();
@@ -596,4 +721,6 @@ function page_credits() {
 }
 
 //const modal = document.getElementById("modal");modal.addEventListener()
-page_accueil();
+page_historique("Handball");
+
+
