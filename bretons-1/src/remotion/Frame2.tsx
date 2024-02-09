@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import './Frame2.css';
-import top1Svg from '/img/top1.svg';
+import top1_b_Svg from '/img/top1_b.svg';
+import top1_w_Svg from '/img/top1_w.svg';
 import frSvg from '/img/fr.svg';
-import top2Svg from '/img/top2.svg';
+import top2_b_Svg from '/img/top2_b.svg';
+import top2_w_Svg from '/img/top2_w.svg';
 import allemagneSvg from '/img/allemagne.svg';
-import top3Svg from '/img/top3.svg';
+import top3_b_Svg from '/img/top3_b.svg';
+import top3_w_Svg from '/img/top3_w.svg';
 import AngleterreSvg from '/img/Angleterre.svg';
 import DanemarkSvg from '/img/Danemark.svg';
 import Pays_BasSvg from '/img/Pays-Bas.svg';
@@ -13,7 +16,7 @@ import SuedeSvg from '/img/Suede.svg';
 import { Podium } from '../components/type';
 
   
-  export const Frame2: React.FC<{athlete:string, podium: Podium[] }> = ({ athlete, podium }) => {
+  export const Frame2: React.FC<{athlete:string, rang: number,resultat : string,  podium: Podium[] }> = ({ athlete,rang,resultat, podium }) => {
     // Fonction pour obtenir le src de l'image du drapeau basé sur le pays
     const [_, setIsLoading] = useState(true);
     useEffect(() => {
@@ -45,13 +48,23 @@ import { Podium } from '../components/type';
           }
     };
 
-    const getPlace = (Place: string) => {
-        switch (Place) {
-            case '1': return top1Svg;
-            case '2': return top2Svg;
-            case '3': return top3Svg;
+    const getPlace = (Place: string, Nom:string) => {
+        if (Nom == athlete){
+          switch (Place) {
+            case '1': return top1_b_Svg;
+            case '2': return top2_b_Svg;
+            case '3': return top3_b_Svg;
             default: return '';
           }
+        }
+        else{
+        switch (Place) {
+            case '1': return top1_w_Svg;
+            case '2': return top2_w_Svg;
+            case '3': return top3_w_Svg;
+            default: return '';
+          }
+        }
     };
 
     const getScoreLabel = (Score : string) => {
@@ -61,7 +74,7 @@ import { Podium } from '../components/type';
   
     return (
       <div className="frame2Container">
-        <div className="titreFrame2">Elle gagne avec 1 minute d'avance</div>
+        <div className="titreFrame2">{athlete} termine {rang}e avec {resultat}</div>
         {podium.slice(0, 3).map((entry: Podium, index: number) => {
           const rectangleClass = index === 0 ? "rectangleYellowFrame2" : index === 1 ? "rectangleBlueFrame2" : "rectangleRedFrame2";
           const infoFrameClass = index === 0 ? "infoFrame2" : index === 1 ? "infoFrame2_2" : "infoFrame3_2";
@@ -70,17 +83,19 @@ import { Podium } from '../components/type';
           const nameFrameClass = index === 0 ? "nameFrame2" : index === 1 ? "name_2_Frame2" : "name_3_Frame2";
           const timeFrameClass = index === 0 ? "timeFrame2" : index === 1 ? "time_2_Frame2" : "time_3_Frame2";
           const countryFrameClass = index === 0 ? "countryFrame2" : index === 1 ? "country_2_Frame2" : "country_3_Frame2";
-          const highlightClass = athlete === entry.Nom ? "highlight" : "";
-
+          const highlightClass = athlete === entry.Nom ? "highlight_" : "";
+          const colorClass = athlete === entry.Nom ? "color_" : "";
           return (
               <div key={index} className={`${rectangleClass} ${highlightClass}`}>
-              <img src={getPlace(entry.Place)} alt={`Top ${index + 1}`} className={numberCircleFrameClass} />
-              <div className={infoFrameClass}>
-                <span className={nameFrameClass}>{entry.Nom}</span>
-                <span className={timeFrameClass}>{getScoreLabel(entry.Score)}{entry.Score}</span>
-                <div className={flagFrameClass}>
-                  <img src={getFlagSrc(entry.Pays)} alt={entry.Pays} className={flagFrameClass} />
-                  <span className={countryFrameClass}>{entry.Pays}</span>
+                <div className="containerFrame2">
+                  <img src={getPlace(entry.Place,entry.Nom)} alt={`Top ${index + 1}`} className={numberCircleFrameClass} />
+                  <div className={`${infoFrameClass} ${colorClass}`}>
+                    <span className={nameFrameClass}>{entry.Nom}</span>
+                    <span className={timeFrameClass}>{getScoreLabel(entry.Score)}{entry.Score}</span>
+                    <div className={flagFrameClass}>
+                      <img src={getFlagSrc(entry.Pays)} alt={entry.Pays} className={flagFrameClass} />
+                      <span className={countryFrameClass}>{entry.Pays}</span>
+                  </div>
                 </div>
               </div>
             </div>
