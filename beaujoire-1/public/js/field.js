@@ -330,7 +330,7 @@ document.addEventListener("DOMContentLoaded", () => {
 						},
 						body: JSON.stringify(stats),
 					});
-					unsetInterval(saveStats);
+					clearInterval(saveStats);
 				});
 		}
 	}, 5000);
