@@ -19,7 +19,7 @@ const determinerTexteTitre = (sexe: string, gain: string) => {
     case "Qualifie":
       return `qualifié${suffixeGenre} en finale !`
     case "":
-      return `non qualifié${suffixeGenre} pour la finale`;
+      return `non finaliste`;
   }
 };
 
@@ -76,7 +76,7 @@ export const Frame1: React.FC<{ text: string, sexe: string, gain: string, rang: 
         )}
       </div>
       <h1 className="golos-text-frame1 titre_frame1" style={{ fontSize: "11vh", bottom: '50vh' }}>{text}</h1>
-      <h1 className="golos-text-frame1 titre_frame1" style={{ fontSize: "11vh", bottom: '37vh' }}>{titreAdapte}</h1>
+      <h1 className="golos-text-frame1 titre_frame1 " style={{ fontSize: "11vh", bottom: '37vh' }}>{titreAdapte}</h1>
       <h3 className="golos-text-frame1 sous-titre_frame1" style={{ fontSize: "5vh", bottom: '30vh' }}>{sous_titre}</h3>
     </>
   );
