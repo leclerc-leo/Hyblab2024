@@ -343,7 +343,6 @@ function saveStats() {
 					},
 					body: JSON.stringify(stats),
 				});
-				clearInterval(saveStats);
 			})
 			.catch((error) => console.error("Error fetching stats:", error));
 	}
