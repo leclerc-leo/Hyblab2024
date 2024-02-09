@@ -13,9 +13,5 @@ app.get("/topic", function (req, res) {
 	res.json({ topic: topic });
 });
 
-app.listen(5500, () => {
-	console.log("Server is running on port 5500");
-});
-
 // Export our API
 module.exports = app;
