@@ -38,13 +38,6 @@ body {
     width: 2em;
   }
 
-.return-button {
-  position: absolute;
-  top: 3%;
-  left: 5%;
-  width: 0.5em;
-  z-index: 2;
-}
 
 #page-content {
   width: 100%;
@@ -440,7 +433,7 @@ h2 {
 @media only screen and (max-width: 900px) {
 
   .content{
-    margin-bottom: 50%;
+    margin-bottom: 30%;
   }
 
   h2 {
@@ -448,11 +441,11 @@ h2 {
   }
 
   h4 {
-    font-size:0.2em !important;
+    font-size:0.3em !important;
   }
 
   p {
-    font-size: 0.1em !important;
+    font-size: 0.15em !important;
   }
 
   .content-2-subtitle{
@@ -466,12 +459,9 @@ h2 {
   .title{
     width : 1.5em;
   }
-  .return-button{
-    width:0.4em;
-  }
 
   .content{
-    margin-bottom: 70%;
+    margin-bottom: 30%;
   }
 
   .players {
@@ -487,7 +477,7 @@ h2 {
 @media only screen and (max-width: 675px) {
 
   .content{
-    margin-bottom: 100%;
+    margin-bottom: 20%;
   }
   .content-2-subtitle {
     bottom: -0.5em;
@@ -519,13 +509,12 @@ h2 {
     padding: 0.5em 1em;
   }
 
-  .content{
-    margin-bottom: 130%;
-  }
+
 }
 
 @media only screen and (max-width: 500px) {
-  .content{
-    margin-bottom: 160%;
+  .content-2-subtitle {
+    bottom: -2.5em;
   }
+
 }
