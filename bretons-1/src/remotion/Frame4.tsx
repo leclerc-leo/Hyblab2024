@@ -91,22 +91,20 @@ export const Frame4: React.FC<{ Gentilé: string, gain: string, Epreuve: string,
           <>
             <p className='animatedtext bold'>Prouesse !</p>
             <br></br>
-            <p className='animatedtext bold'>{sexe === 'F' ? 'La' : 'Le'} {Gentilé} se {Epreuve_1}</p>
+            <p className='animatedtext'>{sexe === 'F' ? 'La' : 'Le'} {Gentilé} se {Epreuve_1}</p>
           </>
         ) : gain === '' ? (
           <>
-            <p className='animatedtext bold'>{sexe === 'F' ? 'La' : 'Le'} {Gentilé} n'est {Epreuve_1} </p>
+            <p className='animatedtext'>{sexe === 'F' ? 'La' : 'Le'} {Gentilé} n'est {Epreuve_1} </p>
           </>
         ) : (
           <>
             <p className='animatedtext bold'>Prouesse !</p>
             <br></br>
-            <p className='animatedtext bold'>{sexe === 'F' ? 'La' : 'Le'} {Gentilé} remporte la </p>
-            <p className='animatedtext'>{rangToMedaille(gain)}</p>
+            <p className='animatedtext'>{sexe === 'F' ? 'La' : 'Le'} {Gentilé} remporte la {rangToMedaille(gain)}</p>
           </>
         )}
-        <p className='animatedtext'> en </p>
-        <p className='animatedtext bold'>{Epreuve} {getSexe(sexe)} {getImage(Sport)}</p>
+        <p className='animatedtext'> en {Epreuve} {getSexe(sexe)} {getImage(Sport)}</p>
       </div>
       <img className='LogoRed' src='/bretons-1/img/logoFrame2Red.svg'></img>
     </div>

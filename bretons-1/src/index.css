@@ -84,3 +84,7 @@ body {
 .carousel-caption p {
   font-size: 1em;
 }
+
+#VideoPlayer > div.head > div > nav {
+  background-color: transparent !important;
+}
