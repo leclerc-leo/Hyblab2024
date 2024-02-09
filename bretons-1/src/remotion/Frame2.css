@@ -28,42 +28,37 @@
     flex-direction: column;
     align-items: center;
     position: relative;
-    border: 10px solid #25283D;
     left: -277vw;
     transition: left 1s ease-in-out;
 }
-.appear {
-    left: 0 !important;
+.containerFrame2{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
 }
 
-.infoFrame2 {
-    color: #25283D;
-    font-family: "Golos Text";
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    margin: 0; 
-    text-align: center; 
+.appear {
+    left: 0 !important;
 }
 
 .numberCircleFrame2 {
     width: 180px; 
     height: auto; 
-    position: absolute;
-    left: 30px;
-    top: 50%;
-    transform: translateY(-50%);
+    margin-top: 20px;
 }
 
 .infoFrame2 {
-    color: #25283D;
+    color: white;
     font-family: "Golos Text";
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-left: 220px;
     margin-top: 15px;
+    margin-left: 25px;
 }
+
+
 
 .nameFrame2 {
     font-size: 68px;
@@ -76,10 +71,10 @@
     line-height: 30px;
 }
 .flagFrame2 {
-    padding-top: 0px;
+    padding-top: 10px;
 }
 .flagFrame2 img { 
-    width: 90px; 
+    width: 80px; 
     height: auto;
 }
 
@@ -88,7 +83,8 @@
     font-size: 45px;
     font-style: normal;
     font-weight: 400;
-    padding-top: 25px;
+    padding-top: 10px;
+    padding-left: 10px;
 }
 
 .rectangleBlueFrame2{
@@ -159,7 +155,7 @@
 }
 
 .infoFrame3_2 {
-    color: white;
+    color : white;
     font-family: "Golos Text";
     display: flex;
     flex-direction: column;
@@ -182,7 +178,7 @@
     padding-top: 10px;
 }
 .flag_3_Frame2 img { 
-    width: 50px; 
+    width: 70px; 
     height: auto;
 }
 
@@ -197,10 +193,16 @@
 
 .country_3_Frame2 {
     position: absolute;
-    padding-top: 1px; 
+    padding-top: 8px; 
     font-size: 40px;
     font-style: normal;
     font-weight: 400;
-    margin-left: 20px; 
+    margin-left: 15px; 
 }
 
+.highlight_ {
+    border: 12px solid #25283D; 
+}
+.color_{
+    color: #25283D;
+}

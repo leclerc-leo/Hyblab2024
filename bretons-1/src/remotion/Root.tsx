@@ -39,7 +39,7 @@ export const MyVideo: React.FC<MyVideoProps> = ({ id }) => {
         )}
       {showFrame6 && (
         <Sequence from={720} durationInFrames={360}>
-          <Frame2 athlete={athlete.Athlete}  podium={eventData["Podium (nom + résultat)"] as Podium[]} />
+          <Frame2 athlete={athlete.Athlete} rang={eventData.Rang} resultat={eventData["Résultat (temps /points)"]}  podium={eventData["Podium (nom + résultat)"] as Podium[]} />
         </Sequence>
         )}
       <Sequence from={1080} durationInFrames={360}>
