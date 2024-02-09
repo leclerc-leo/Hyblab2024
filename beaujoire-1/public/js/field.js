@@ -333,8 +333,9 @@ function saveStats() {
 						console.log(`Player ${player} not found in stats.`);
 					}
 				});
+				localStorage.setItem("stats", JSON.stringify(stats));
 				console.log("Updated Stats:", stats);
-
+				console.log("Stats saved to local storage");
 				// Send the updated stats back to the server
 				fetch("api/updateStats", {
 					method: "POST",
