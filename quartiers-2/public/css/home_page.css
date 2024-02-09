@@ -13,7 +13,7 @@
 #page-accueil header{
     text-align: center;
     width: 100%;
-    top: 3%;
+    top: 2%;
     position: absolute;
     font-size: 35%;
     z-index: 2;
@@ -34,7 +34,7 @@
     padding: 1px;
     font-size: 25%;
     bottom : max(15%, 6.2em);
-    background-color: #FCF3ECB7;
+    background-color: #F8E8DBB7;
 }
 
 
