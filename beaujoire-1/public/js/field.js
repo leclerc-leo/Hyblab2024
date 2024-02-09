@@ -1401,22 +1401,3 @@ function closeBioOverlay() {
 function closeCaptainOverlay() {
 	document.querySelector("#captain").style.display = "none";
 }
-
-document.addEventListener('DOMContentLoaded', function () {
-	fetch('Stats.json')
-	  .then(response => response.json())
-	  .then(data => {
-		for (let player in data) {
-		  const selectionCount = data[player];
-		  const playerBar = document.getElementById(`${player}-bar`);
-		  if (playerBar) {
-			const barScore = playerBar.querySelector('.bar-score');
-			// Exemple : ajustez cette logique pour définir la largeur en fonction du pourcentage
-			barScore.style.width = `${selectionCount }%`;
-			barScore.textContent = `${selectionCount }%`; // Afficher le pourcentage dans la barre
-		  }
-		}
-	  })
-	  .catch(error => console.error('Erreur lors du chargement des données:', error));
-  });
-  
