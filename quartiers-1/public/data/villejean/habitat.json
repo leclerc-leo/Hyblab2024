@@ -54,7 +54,7 @@
         "content": ["Eh bien la ville de Rennes et ses partenaires vont engager à partir de 2024-2025 un ensemble d’actions ciblées sur la dalle Kennedy et ses abords","L’idée étant d’améliorer sa qualité urbaine. Au total, ce sont 1600 logements qui seront concernés par des réhabilitations dans le quartier."],
         "next": ["Choix3"]
     },
-
+ 
     "Choix3": {
         "speaker": "user",
         "type": "choice",
