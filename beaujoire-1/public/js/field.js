@@ -7,8 +7,6 @@ let selectedPlayerId;
 let updatePlayerElement;
 let playersData;
 
-window.addEventListener("onBeforeUnload", saveStats);
-
 window.onload = fetch("./data/DataBase.json")
 	.then((response) => response.json())
 	.then((players) => {
