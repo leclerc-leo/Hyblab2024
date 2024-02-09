@@ -2,6 +2,7 @@
 
 let isAnyItemFlipped = false;
 let isCaptainSelected = false;
+let isCaptainBeingSelected = false;
 let selectedPlayerId;
 let updatePlayerElement;
 let playersData;
@@ -129,6 +130,32 @@ function initializePage() {
 				console.log(`No player found for id ${playerId}`);
 			}
 		}
+		const captain = localStorage.getItem("captain");
+		if (captain) {
+			isCaptainBeingSelected = true;
+			handleCaptainSelect(captain);
+		}
+		document.querySelector("#share").style.display = "flex";
+		document.getElementById("statistiques").style.display = "inline-block";
+		document.getElementById("redac").style =
+			"margin:0 ; transform: translateX(0)";
+		document.getElementById("capitaine").style.display = "inline-block";
+		document.getElementById("capitaine").style.animationName =
+			"cap-bar-down";
+		document.getElementById("capitaine").style.display = "inline-block";
+		document
+			.getElementById("capitaine")
+			.addEventListener("click", handleCaptainClick);
+
+		setInterval(() => {
+			if (isCaptainSelected) {
+				document.querySelector("#cap-bar").style.animationName =
+					"cap-bar-down";
+			} else {
+				document.querySelector("#cap-bar").style.animationName =
+					"cap-bar-up";
+			}
+		}, 100);
 	}
 }
 
@@ -148,9 +175,10 @@ let players = JSON.parse(localStorage.getItem("players")) || {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
+	/*
 	document.querySelectorAll(".player-clickable").forEach((player) => {
 		player.addEventListener("click", handlePlayerClick);
-	});
+	});*/
 
 	document.querySelector("#back-overlay").addEventListener("click", () => {
 		document.querySelectorAll(".carousel-item").forEach((item) => {
@@ -183,12 +211,16 @@ document.addEventListener("DOMContentLoaded", () => {
 	document
 		.querySelectorAll(".player.player-clickable.forward")
 		.forEach((player) => {
-			player.addEventListener("click", () => {
-				if (!(!isCaptainSelected && areAllPlayersSelected())) {
+			player.addEventListener("click", (event) => {
+				if (
+					!(!isCaptainSelected && areAllPlayersSelected()) &&
+					!isCaptainBeingSelected
+				) {
 					animatePlayer(
 						"attaquant-gif",
 						"img/animations/attaquant-fond-gris.gif",
-						1200
+						1200,
+						event
 					);
 				}
 			});
@@ -196,12 +228,16 @@ document.addEventListener("DOMContentLoaded", () => {
 	document
 		.querySelectorAll(".player.player-clickable.midfielder")
 		.forEach((player) => {
-			player.addEventListener("click", () => {
-				if (!(!isCaptainSelected && areAllPlayersSelected())) {
+			player.addEventListener("click", (event) => {
+				if (
+					!(!isCaptainSelected && areAllPlayersSelected()) &&
+					!isCaptainBeingSelected
+				) {
 					animatePlayer(
 						"milieu-gif",
 						"img/animations/milieu-fond-gris.gif",
-						1020
+						1020,
+						event
 					);
 				}
 			});
@@ -210,33 +246,45 @@ document.addEventListener("DOMContentLoaded", () => {
 	document
 		.querySelectorAll(".player.player-clickable.defender")
 		.forEach((player) => {
-			player.addEventListener("click", () => {
-				if (!(!isCaptainSelected && areAllPlayersSelected())) {
+			player.addEventListener("click", (event) => {
+				if (
+					!(!isCaptainSelected && areAllPlayersSelected()) &&
+					!isCaptainBeingSelected
+				) {
 					animatePlayer(
 						"defenseur-gif",
 						"img/animations/defence-fond-gris.gif",
-						1100
+						1100,
+						event
 					);
 				}
 			});
 		});
 
-	document.querySelector("#goalkeeper").addEventListener("click", () => {
-		if (!(!isCaptainSelected && areAllPlayersSelected())) {
+	document.querySelector("#goalkeeper").addEventListener("click", (event) => {
+		if (
+			!(!isCaptainSelected && areAllPlayersSelected()) &&
+			!isCaptainBeingSelected
+		) {
 			animatePlayer(
 				"gardien-gif",
 				"img/animations/gardien-fond-gris.gif",
-				1360
+				1360,
+				event
 			);
 		}
 	});
 
-	document.querySelector("#entraineur").addEventListener("click", () => {
-		if (!(!isCaptainSelected && areAllPlayersSelected())) {
+	document.querySelector("#entraineur").addEventListener("click", (event) => {
+		if (
+			!(!isCaptainSelected && areAllPlayersSelected()) &&
+			!isCaptainBeingSelected
+		) {
 			animatePlayer(
 				"coach-gif",
 				"img/animations/coach-fond-gris.gif",
-				1360
+				1360,
+				event
 			);
 		}
 	});
@@ -248,25 +296,29 @@ document.addEventListener("DOMContentLoaded", () => {
 	document
 		.querySelector(".dropdown")
 		.querySelector("img")
-		.addEventListener("click", () => {
+		.addEventListener("click", (event) => {
 			document.querySelectorAll("audio").forEach((audio) => {
 				audio.muted = !audio.muted;
 			});
 		});
 });
 
-function animatePlayer(elementId, imgSrc, timeoutDuration) {
+function animatePlayer(elementId, imgSrc, timeoutDuration, event) {
 	const element = document.getElementById(elementId);
 	const imgElement = element.querySelector("img");
 
 	imgElement.src = imgSrc;
-
 	imgElement.onload = function () {
 		element.style.display = "flex";
 		element.style.opacity = "1";
 
 		setTimeout(() => {
 			element.querySelector("audio").play();
+			handlePlayerClick({
+				target: document.getElementById(
+					event.target.closest(".player-clickable").id
+				),
+			});
 		}, 10);
 		setTimeout(() => {
 			element.style.opacity = "0";
@@ -274,7 +326,7 @@ function animatePlayer(elementId, imgSrc, timeoutDuration) {
 				element.style.display = "none";
 				imgElement.src = "";
 			}, 200);
-		}, timeoutDuration + 20);
+		}, timeoutDuration - 20);
 	};
 }
 
@@ -376,7 +428,6 @@ function handleValidateButtonClick() {
 	if (areAllPlayersSelected()) {
 		console.log("Tous les joueurs ont été sélectionnés");
 		document.querySelector("#share").style.display = "flex";
-		document.querySelector("#captain").style.display = "flex";
 		document.getElementById("statistiques").style.display = "inline-block";
 		document.getElementById("redac").style =
 			"margin:0 ; transform: translateX(0)";
@@ -387,6 +438,10 @@ function handleValidateButtonClick() {
 		document
 			.getElementById("capitaine")
 			.addEventListener("click", handleCaptainClick);
+		if (!isCaptainSelected) {
+			document.querySelector("#captain").style.display = "flex";
+			handleCaptainClick();
+		}
 		setTimeout(() => {
 			document.addEventListener("click", function () {
 				document.querySelector("#captain").style.display = "none";
@@ -1237,7 +1292,8 @@ function handleCompareScroll() {
 	carouselItems[validFocusedIndex].classList.add("focus");
 }
 
-function handleCaptainClick(event) {
+function handleCaptainClick() {
+	isCaptainBeingSelected = true;
 	if (isCaptainSelected) {
 		const capElements = document.querySelectorAll(".cap");
 		capElements.forEach((element) => {
@@ -1245,11 +1301,10 @@ function handleCaptainClick(event) {
 		});
 		isCaptainSelected = false;
 	}
-	const cap_btn = event.target.closest("#capitaine");
+	const cap_btn = document.querySelector("#capitaine");
 	const cap_bar = cap_btn.querySelector("#cap-bar");
 	if (cap_btn) {
 		document.querySelectorAll(".player-clickable").forEach((player) => {
-			player.removeEventListener("click", handlePlayerClick);
 			player.addEventListener("click", (event) => {
 				handleCaptainSelect(
 					event.target.closest(".player-clickable").id
@@ -1262,21 +1317,23 @@ function handleCaptainClick(event) {
 }
 
 function handleCaptainSelect(id) {
-	const selectedPlayer = id;
-	const selectedPlayerElement = document.getElementById(selectedPlayer);
-	const captain = document.createElement("div");
-	captain.classList.add("cap");
-	captain.innerHTML = `
+	if (isCaptainBeingSelected) {
+		const selectedPlayer = id;
+		const selectedPlayerElement = document.getElementById(selectedPlayer);
+		const captain = document.createElement("div");
+		captain.classList.add("cap");
+		captain.innerHTML = `
 		c
 	`;
-	selectedPlayerElement.appendChild(captain);
-	selectedPlayerElement.classList.add("captain");
-	isCaptainSelected = true;
-	localStorage.setItem("captain", id);
-	document.querySelectorAll(".player-clickable").forEach((player) => {
-		player.removeEventListener("click", handleCaptainClick);
-		player.addEventListener("click", handlePlayerClick);
-	});
+		selectedPlayerElement.appendChild(captain);
+		selectedPlayerElement.classList.add("captain");
+		isCaptainSelected = true;
+		localStorage.setItem("captain", id);
+		document.querySelectorAll(".player-clickable").forEach((player) => {
+			player.removeEventListener("click", handleCaptainClick);
+		});
+		isCaptainBeingSelected = false;
+	}
 }
 
 function closeCompareCarousel() {
