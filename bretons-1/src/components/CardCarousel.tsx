@@ -102,7 +102,7 @@ function CardCarousel({ video }: VideoListItemProps) {
             onClick={handleFavoriteClick}
             buttonId={favoriteButtonId}
           />
-          <ShareMenu />
+          <ShareMenu video={video} />
         </div>
       </div>
       <img

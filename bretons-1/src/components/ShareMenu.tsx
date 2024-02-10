@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './ShareMenu.css';
+import {VideoListItemProps} from './type';
 
 interface ShareButtonProps {
   onShareClick: () => void;
@@ -14,21 +15,30 @@ const ShareButton: React.FC<ShareButtonProps> = ({ onShareClick }) => (
   />
 );
 
-const ShareMenu: React.FC = () => {
+interface ShareMenuProps {
+  video: VideoListItemProps['video'];
+}
+
+const ShareMenu: React.FC<ShareMenuProps> = ({ video }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  const shareText = `Vibrez avec ${video.title} aux JO ! 🏅🔥 #JO2024 #BretagneFière`;
+  const encodedShareText = encodeURIComponent(shareText);
+  const videoPlayerUrl = `https://hyblab.polytech.univ-nantes.fr/bretons-1/VideoPlayer/${video.id}`;
+  const twitterShareLink = `https://twitter.com/intent/tweet?url=${videoPlayerUrl}&text=${encodedShareText}`;
+  const facebookShareLink = `https://www.facebook.com/sharer/sharer.php?u=${videoPlayerUrl}`;
 
   return (
     <div className="burgershare-menu">
       <ShareButton onShareClick={toggleMenu} />
       {isOpen && (
         <div className="menushare">
-          <a href="https://twitter.com/intent/tweet?url=https://hyblab.polytech.univ-nantes.fr/bretons-1/&text=Test">Twitter </a>
-          <a href="https://www.facebook.com/sharer/sharer.php?u=https://hyblab.polytech.univ-nantes.fr/bretons-1/">Facebook</a>
+          <a href={twitterShareLink} target="_blank" rel="noopener noreferrer">Twitter</a>
+          <a href={facebookShareLink} target="_blank" rel="noopener noreferrer">Facebook</a>
         </div>
       )}
     </div>
