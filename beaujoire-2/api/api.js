@@ -20,6 +20,7 @@ app.get('/api/players/:position', function (req, res) {
   dataUtils.getPlayersByPosition(position, (players) => {
     res.json({ 'players': players, 'position': position });
   });
+
 });
 
 
