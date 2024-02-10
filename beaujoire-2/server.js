@@ -11,13 +11,13 @@ const app = express();
 
 let db = require('./public/data/dbutils');
 
-db.selectPlayer(65);
+/*db.selectPlayer(65);
 db.vote("test", [2, 2, 2, 1, 1, 2, 2, 1, 4, 3, 1, 2]);
 db.vote("test2", [2, 2, 2, 1, 1, 2, 3, 1, 4, 3, 1, 2]);
 db.vote("test3", [2, 4, 2, 1, 3, 2, 2, 1, 4, 3, 1, 2]);
 db.selectVotes();
 db.getStats(7, 1);
-db.getTop(5);
+db.getTop(5);*/
 
 // Load and register our REST API
 const api = require('./api/api');

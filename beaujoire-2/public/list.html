@@ -19,42 +19,20 @@
   <div id="container">
     <div class="player-swiper-container">
       <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <div class="position-preview" id="positionPreview1"></div>
-          <div class="current-position-segment"></div>
-          <div class="position-line"></div>
-          <div class="player-list" id="playerList1">
-            <!-- Player boxes for list 1 will be dynamically added here -->
-          </div>
-        </div>
-
-        <div class="swiper-slide">
-          <div class="position-preview" id="positionPreview2"></div>
-          <div class="current-position-segment"></div>
-          <div class="position-line"></div>
-          <div class="player-list" id="playerList2">
-            <!-- Player boxes for list 2 will be dynamically added here -->
-          </div>
-        </div>
-
-        <div class="swiper-slide">
-          <div class="position-preview" id="positionPreview3"></div>
-          <div class="current-position-segment"></div>
-          <div class="position-line"></div>
-          <div class="player-list" id="playerList3">
-            <!-- Player boxes for list 3 will be dynamically added here -->
-          </div>
-        </div>
-
-        <div class="swiper-slide">
-          <div class="position-preview" id="positionPreview4"></div>
-          <div class="current-position-segment"></div>
-          <div class="position-line"></div>
-          <div class="player-list" id="playerList4">
-            <!-- Player boxes for list 4 will be dynamically added here -->
-          </div>
-        </div>
-
+        <script>
+                  for (let i = 1; i <= 12; i++) {
+                    document.write(`
+                      <div class="swiper-slide" id="slide${i}">
+                        <div class="position-preview" id="positionPreview${i}"></div>
+                        <div class="current-position-segment"></div>
+                        <div class="position-line"></div>
+                        <div class="player-list" id="playerList${i}">
+                          <!-- Player boxes for list ${i} will be dynamically added here -->
+                        </div>
+                      </div>
+                    `);
+                  }
+        </script>
       </div>
     </div>
 

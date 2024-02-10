@@ -42,7 +42,7 @@ body{
     margin-left: 5%;
     margin-right: 5%;
     width: -webkit-fill-available;
-    max-width: 103%;
+    max-width: 100%;
     display: flex;
     height: -webkit-fill-available;
   }
@@ -59,7 +59,7 @@ body{
   
   .player-box p {
     flex: 1;
-    margin-top: 7%;
+    margin-top: 4%;
     text-align: center;
     color: white;
     font-family: "Abolition";
@@ -181,10 +181,10 @@ body{
   text-align: center;
   color: var(--yellow);
   font-family: 'Abolition';
-  font-size: 27%;
+  font-size: 32%;
   line-height: 4em;
   height: 5%;
-  margin: 0 4%;
+  margin: 0 1%;
   transition: background-color 0.3s ease;
 }
 
