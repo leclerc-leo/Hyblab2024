@@ -170,14 +170,16 @@ function handleCaptainSelect(id) {
 	}
 }
 
-// Fonction pour filtrer les statistiques avec le joueur dans players
 function filterStatsWithPlayer(stats, players) {
-	const filteredStats = {};
+	// Convertir l'objet players en un tableau de noms de joueurs
+	let playerNames = Object.values(players);
+	let filteredStats = {};
 	Object.keys(stats).forEach((player) => {
-		if (players.hasOwnProperty(player)) {
+		if (playerNames.includes(player)) {
 			filteredStats[player] = stats[player];
 		}
 	});
+	console.log("filteredStats:", filteredStats);
 	return filteredStats;
 }
 
@@ -199,31 +201,32 @@ function computeStatsPerPosition(stats, playersData) {
 	return statsPerPosition;
 }
 
-// Cette fonction calcule le pourcentage des votes pour chaque joueur
+// Cette fonction calcule le pourc	tage des votes pour chaque joueur
 // et met à jour l'élément HTML pour afficher ce pourcentage.
 function updateVotePercentages() {
 	const totalVotesPerPosition = computeStatsPerPosition(stats, playersData);
-	const playerPercentages = {}; // stocke le pourcentage des votes pour chaque joueur
-
-	// Calculez le pourcenatges des votes pour chaque joueur sélectionné
+	const playerPercentages = {};
+	// Calculez le pourcentage des votes pour chaque joueur
 	for (const player in filterStats) {
 		const playerVotes = filterStats[player];
 		const playerData = playersData.find(
 			(playerData) => playerData.NOM === player
 		);
-		if (playerData) {
-			const playerPosition = playerData.POSTE;
-			const totalVotes = totalVotesPerPosition[playerPosition];
-			playerPercentages[player] = (playerVotes / totalVotes) * 100;
-		}
+		const playerPosition = playerData.POSTE;
+		const totalVotesForPosition = totalVotesPerPosition[playerPosition];
+		const playerPercentage = (playerVotes / totalVotesForPosition) * 100;
+		playerPercentages[player] = playerPercentage;
 	}
-
 	// Mettez à jour l'élément HTML pour chaque joueur avec le pourcentage de votes
 	for (const player in playerPercentages) {
 		// Get the id of the player from the player name
 		const playerElementId = Object.keys(players).find(
 			(key) => players[key] === player
 		);
+		if (!playerElementId || playerElementId === "entraineur") {
+			console.log(`No player found for name ${player}`);
+			continue;
+		}
 		const playerElement = document.getElementById(playerElementId);
 		if (playerElement) {
 			const percentageDisplay =
