@@ -1,26 +1,4 @@
 // Fonction pour incrémenter la sélection
-let stats;
-window.onload = async function () {
-	await fetch("./data/DataBase.json")
-		.then((response) => response.json())
-		.then((players) => {
-			playersData = players;
-			initializePage();
-		})
-		.catch((error) => {
-			console.error("Erreur : fetching DataBase.json", error);
-		});
-
-	await fetch("./data/Stats.json")
-		.then((response) => response.json())
-		.then((data) => {
-			stats = filterStatsWithPlayer(data, players);
-			console.log(stats);
-		})
-		.catch((error) => {
-			console.error("Erreur : fetching Stats.json", error);
-		});
-};
 function incrementerSelection(idJoueur) {
 	var joueur = document.getElementById(idJoueur);
 	var count = parseInt(joueur.getAttribute("data-selection-count")) + 1;
@@ -39,7 +17,6 @@ function mettreAJourStatistiques(idJoueur, count) {
 }
 
 // Vous devrez créer une fonction pour calculer le total des sélections
-function calculerTotalSelections() {}
 
 let isAnyItemFlipped = false;
 let isCaptainSelected = false;
@@ -190,63 +167,41 @@ function handleCaptainSelect(id) {
 	}
 }
 
+// Fonction pour filtrer les statistiques avec le joueur dans players
 function filterStatsWithPlayer(stats, players) {
-	// Convertir l'objet players en un tableau de noms de joueurs
-	let playerNames = Object.values(players);
-	let filteredStats = {};
+	const filteredStats = {};
 	Object.keys(stats).forEach((player) => {
-		if (playerNames.includes(player)) {
+		if (players.hasOwnProperty(player)) {
 			filteredStats[player] = stats[player];
 		}
 	});
-	console.log("filteredStats:", filteredStats);
 	return filteredStats;
 }
-
-function computeStatsPerPosition(stats, playersData) {
-	const statsPerPosition = {};
-	Object.keys(stats).forEach((player) => {
-		const playerData = playersData.find(
-			(playerData) => playerData.NOM === player
-		);
-		if (playerData) {
-			const playerPosition = playerData.POSTE;
-			if (!statsPerPosition[playerPosition]) {
-				statsPerPosition[playerPosition] = 0;
-			}
-			statsPerPosition[playerPosition] += stats[player];
-		}
-	});
-
-	return statsPerPosition;
-}
-
-// Cette fonction calcule le pourc	tage des votes pour chaque joueur
+// Cette fonction calcule le pourcentage des votes pour chaque joueur
 // et met à jour l'élément HTML pour afficher ce pourcentage.
 function updateVotePercentages() {
-	const totalVotesPerPosition = computeStatsPerPosition(stats, playersData);
-	const playerPercentages = {};
-	// Calculez le pourcentage des votes pour chaque joueur
-	for (const player in filterStats) {
-		const playerVotes = filterStats[player];
-		const playerData = playersData.find(
-			(playerData) => playerData.NOM === player
-		);
-		const playerPosition = playerData.POSTE;
-		const totalVotesForPosition = totalVotesPerPosition[playerPosition];
-		const playerPercentage = (playerVotes / totalVotesForPosition) * 100;
-		playerPercentages[player] = playerPercentage;
+	const totalVotesPerPosition = {}; // stocke le total des votes pour chaque poste
+	const playerPercentages = {}; // stocke le pourcentage des votes pour chaque joueur
+
+	// Calculez le total des votes pour chaque poste
+	for (const player in stats) {
+		const position = player.split("-")[1]; // suppose que le nom du joueur contient le poste, séparé par un tiret
+		if (!totalVotesPerPosition[position]) {
+			totalVotesPerPosition[position] = 0;
+		}
+		totalVotesPerPosition[position] += stats[player];
 	}
+
+	// Calculez le pourcentage des votes pour chaque joueur
+	for (const player in stats) {
+		const position = player.split("-")[1]; // suppose que le nom du joueur contient le poste, séparé par un tiret
+		playerPercentages[player] =
+			(stats[player] / totalVotesPerPosition[position]) * 100;
+	}
+
 	// Mettez à jour l'élément HTML pour chaque joueur avec le pourcentage de votes
 	for (const player in playerPercentages) {
-		// Get the id of the player from the player name
-		const playerElementId = Object.keys(players).find(
-			(key) => players[key] === player
-		);
-		if (!playerElementId || playerElementId === "entraineur") {
-			console.log(`No player found for name ${player}`);
-			continue;
-		}
+		const playerElementId = player.toLowerCase(); // l'ID de l'élément HTML correspondant au joueur
 		const playerElement = document.getElementById(playerElementId);
 		if (playerElement) {
 			const percentageDisplay =

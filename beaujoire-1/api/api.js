@@ -1,6 +1,5 @@
 "use strict";
 
-const fs = require("fs");
 const app = require("express")();
 const path = require("path");
 
@@ -12,27 +11,6 @@ app.get("/topic", function (req, res) {
 	topic = path.basename(path.join(__dirname, "/.."));
 	// Send it as a JSON object
 	res.json({ topic: topic });
-});
-
-app.use(require("express").json());
-
-app.post("/updateStats", (req, res) => {
-	console.log("Received a POST request to /beaujoire-1/updateStats");
-	console.log("Request body:", req.body);
-	const filePath = path.resolve(__dirname, "../public/data/Stats.json");
-	console.log("Writing to file:", filePath);
-	fs.writeFile(filePath, JSON.stringify(req.body), (err) => {
-		if (err) {
-			console.error("Error writing file:", err);
-			res.status(500).send(`Error writing file: ${err.message}`);
-		} else {
-			res.status(200).send("Successfully wrote file");
-		}
-	});
-});
-
-app.get("/test", (req, res) => {
-	res.send("This is a test route. Server routing is working!");
 });
 
 // Export our API
