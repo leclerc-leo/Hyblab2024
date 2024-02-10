@@ -88,3 +88,15 @@
   border: none;
   box-shadow: 3px 3px 0 var(--gb-52);
 }
+
+.heart-button {
+	position: absolute; 
+	bottom: 20px; 
+	left: 120px;
+	font-size: 24px; 
+	color: rgb(211, 203, 203); 
+	background: none; 
+	border: none; 
+	cursor: pointer; 
+	z-index: 10; 
+  }
