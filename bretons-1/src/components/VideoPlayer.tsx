@@ -48,7 +48,6 @@ function VideoPlayer({ id }: { id: string }) {
                 compositionHeight={1920}
                 fps={60}
                 style={{ width: "100%", height: "100%", position: "absolute", top: "0%",objectFit: "cover", }}
-                controls
                 autoPlay
                 loop
             />
