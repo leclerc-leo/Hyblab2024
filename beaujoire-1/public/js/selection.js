@@ -22,3 +22,26 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+  // Votre code Swiper existant ici
+
+  var heartButtons = document.querySelectorAll('.heart-button');
+
+  // Fonction pour désactiver tous les cœurs
+  function deactivateAllHearts() {
+    heartButtons.forEach(function(button) {
+      button.style.color = 'black';
+    });
+  }
+
+  // Ajoutez un écouteur d'événements pour tous les boutons cœur
+  heartButtons.forEach(function(button) {
+    button.addEventListener('click', function() {
+      // Désactiver tous les cœurs
+      deactivateAllHearts();
+      // Activer le cœur cliqué
+      this.style.color = 'yellow';
+    });
+  });
+});
