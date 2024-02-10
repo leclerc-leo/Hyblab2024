@@ -75,7 +75,7 @@
         "speaker": "guide",
         "type": "bubble",
         "choicesLabel": [],
-        "content": ["Une des associations omniprésente de la maison de quartier de Villejean est le collectif Kuné! Si tu veux en apprendre plus sur celui-ci et t'immerger dans la vie de quartier, je te propose de regarder cette vidéo :","${video_begin}https://www.youtube.com/embed/4wR5ubwNarE?si=bT3NZbn262FIpfp2&start=43&end=191&controls=0${video_end}"],
+        "content": ["Une des associations omniprésente de la maison de quartier de Villejean est le collectif Kuné! Si tu veux en apprendre plus sur celui-ci et t'immerger dans la vie de quartier, je te propose de regarder cette vidéo :","${video_begin}https://www.youtube.com/embed/4wR5ubwNarE?si=bT3NZbn262FIpfp2&start=43&end=191&controls=0${video_end}","D'ailleurs, tu peux retrouver tous les reportages ${lien_video_begin}ici${lien_video_end}."],
         "next": ["Reponse4"]
     },
 

@@ -54,7 +54,9 @@ function addBubble(speaker, contents) {
         "${video_begin}": "<iframe class=\"videos\" src=\"",
         "${video_end}": "\" title=\"YouTube video player\" frameborder=\"0\"></iframe>",
         "${image_begin}": "<img class=\"conversation_image\" src=\"img/images_conversation/" + quartier.toLocaleLowerCase() + "/",
-        "${image_end}": "\">"
+        "${image_end}": "\">",
+        "${lien_video_begin}": "<a class=\"lien-conv\" href=\"./reportages\">",
+        "${lien_video_end}": "</a>"
     }
 
     if (speaker == "user") {
@@ -377,7 +379,7 @@ let quartier = sessionStorage.getItem("quartier");
 // Initialisation de variables
 let data;
 let conversation = $(".conversation");
-let topic = "bienvenue";
+let topic = sessionStorage.getItem("topic");
 let nextTopic = "bienvenue";
 let time = 0;
 let lastBubble = {"content": []};
@@ -447,6 +449,7 @@ setTimeout(() => {
     } else {
         reloadConversation();
     }
+    console.log(sessionStorage.getItem("save") == null, !quartier_dispo[quartier])
     guide_coucou_animation.stop();
     guide_coucou_animation.play();
 }, 1000);

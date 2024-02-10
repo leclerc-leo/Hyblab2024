@@ -99,7 +99,7 @@
         "speaker": "guide",
         "type": "bubble",
         "choicesLabel": [],
-        "content": ["Bonne réponse !","Et au-delà de la pratique sportive, certains ont fait de l’intégration l’une de leurs missions. Parmi eux, il y a le Melting Potes, un club de football ⚽ qui intègre les jeunes du quartier par le sport.","Si tu veux t’entraîner avec eux, c’est par ici !","${video_begin}https://www.youtube.com/embed/4wR5ubwNarE?si=bT3NZbn262FIpfp2&start=379&end=486&controls=0${video_end}"],
+        "content": ["Bonne réponse !","Et au-delà de la pratique sportive, certains ont fait de l’intégration l’une de leurs missions. Parmi eux, il y a le Melting Potes, un club de football ⚽ qui intègre les jeunes du quartier par le sport.","Si tu veux t’entraîner avec eux, c’est par ici !","${video_begin}https://www.youtube.com/embed/4wR5ubwNarE?si=bT3NZbn262FIpfp2&start=379&end=486&controls=0${video_end}","D'ailleurs, tu peux retrouver tous les reportages ${lien_video_begin}ici${lien_video_end}."],
         "next": ["QuestionFin"]
     },
 
@@ -107,7 +107,7 @@
         "speaker": "guide",
         "type": "bubble",
         "choicesLabel": [],
-        "content": ["Pas loin ! Il y en a 67.","Et au-delà de la pratique sportive, certains ont fait de l’intégration l’une de leurs missions. Parmi eux, il y a le Melting Potes, un club de football ⚽ qui intègre les jeunes du quartier par le sport.","Si tu veux t’entraîner avec eux, c’est par ici !","${video_begin}https://www.youtube.com/embed/4wR5ubwNarE?si=bT3NZbn262FIpfp2&start=379&end=486&controls=0${video_end}"],
+        "content": ["Pas loin ! Il y en a 67.","Et au-delà de la pratique sportive, certains ont fait de l’intégration l’une de leurs missions. Parmi eux, il y a le Melting Potes, un club de football ⚽ qui intègre les jeunes du quartier par le sport.","Si tu veux t’entraîner avec eux, c’est par ici !","${video_begin}https://www.youtube.com/embed/4wR5ubwNarE?si=bT3NZbn262FIpfp2&start=379&end=486&controls=0${video_end}","D'ailleurs, tu peux retrouver tous les reportages ${lien_video_begin}ici${lien_video_end}."],
         "next": ["QuestionFin"]
     },
 

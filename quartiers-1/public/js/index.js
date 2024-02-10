@@ -83,6 +83,8 @@ document.querySelector("#next").addEventListener("click", function() {
 document.querySelector("#see-quartier").addEventListener("click", function() {
     console.log("Go to" + swiper.realIndex);
     sessionStorage.setItem("quartier", document.querySelector('path[data-no_slide="' + swiper.realIndex + '"]').id);
+    sessionStorage.setItem("topic", "bienvenue");
+
     window.location.href = "/quartiers-1/quartiers";
 });
 

@@ -15,9 +15,22 @@ setTimeout(() => {
 }, 100);
 
 var animation = lottie.loadAnimation({ 
-    container: document.getElementById('animation'), 
+    container: document.getElementById('background-animation'), 
     renderer: 'svg', 
     loop: false, 
     autoplay: true, 
-    path: 'animation/villejean_ville.json' 
+    path: 'animation/animation_villejean.json' 
+});
+
+// Ajout des event listener sur les boutons de thème du menu burger
+document.querySelectorAll(".topicButton").forEach(button => {
+    button.addEventListener("click", function(event) {
+        sessionStorage.setItem("quartier", "villejean");
+        sessionStorage.setItem("topic", event.target.dataset.topic);
+        sessionStorage.removeItem("save");
+        sessionStorage.removeItem("saveExist");
+
+
+        window.location.href = "/quartiers-1/quartiers";
+    });
 });

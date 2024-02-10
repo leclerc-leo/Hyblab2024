@@ -226,7 +226,11 @@ h1{
     color: #292C5E;
     background-color: white;
 }
-
+.lien-conv{
+    display: inline;
+    white-space: nowrap;
+    color: #292C5E;
+}
 .conversation ul{
     list-style: none;
 }
@@ -261,7 +265,7 @@ h1{
 }
 .cont_guide, .cont_user{
     position: relative;
-    display: flex;
+    /*display: flex;*/
     flex-direction: column;
     color: white;
     padding: 0.65em;

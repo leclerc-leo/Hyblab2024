@@ -109,14 +109,16 @@ h6{
 }
 /*-------- End of Drawing ----------*/
 
-/*-------- animation ----------*/
+/*-------- Animation ----------*/
 
-#animation {
+#background-animation{
     position: absolute;
-    top: 12%;
+    bottom: 0;
+    height: auto;
+    width: 102%;
+    transform: translateX(-2%) translateY(4%);
 }
-
-/*-------- End of aniation ----------*/
+/*-------- End of Animation ----------*/
 
 
 
