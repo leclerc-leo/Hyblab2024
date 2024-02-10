@@ -263,7 +263,7 @@
   text-align: center;
   font-family: Industry;
   font-weight: bolder;
-  padding-top: 15%;
+  padding-top: 12%;
   background-color: #000;
 }
 
@@ -374,4 +374,3 @@
 .second-item:not(.active) .button-container .button {
   display: none;
 }
-

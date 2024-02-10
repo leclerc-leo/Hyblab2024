@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // R√©cup√©rez les √©l√©ments du premier carrousel
-  const openPopupButton = document.getElementById("mid-choose");
+  // RÈcupÈrez les ÈlÈments du premier carrousel
   const closePopupButton = document.getElementById("close-popup");
   const confirmSelectionButton = document.getElementById("confirm-selection");
   const popupOverlay = document.getElementById("popup-overlay");
@@ -8,16 +7,15 @@ document.addEventListener("DOMContentLoaded", function () {
   const navigationButtons = document.querySelectorAll(".button-container .button");
 
   let current = 0; // Index actuel du slide
-  let selectedImageIndex = null; // Index de l'image s√©lectionn√©e
+  let selectedImageIndex = null; // Index de l'image sÈlectionnÈe
 
-  // R√©cup√©rez les √©l√©ments du deuxi√®me carrousel
+  // RÈcupÈrez les ÈlÈments du deuxiËme carrousel
   const secondPopupOverlay = document.getElementById("second-popup-overlay");
   const secondSlides = document.querySelectorAll(".second-item");
   let currentSecond = 0; // Index actuel pour le second carrousel
-  let selectedSecondImageIndex = null; // Pour stocker l'indice de l'image s√©lectionn√©e du second carrousel
+  let selectedSecondImageIndex = null; // Pour stocker l'indice de l'image sÈlectionnÈe du second carrousel
   const navigationButtons1 = document.querySelectorAll(".button-container1 .button");
 
-  // Fonction pour afficher le popup du premier carrousel
   // Fonction pour afficher le popup du premier carrousel
   function showPopup() {
     var popupText = document.getElementById("popup-text");
@@ -32,21 +30,20 @@ document.addEventListener("DOMContentLoaded", function () {
     popupOverlay.style.display = "none";
   }
 
-  // Fonction pour mettre √  jour le premier carrousel
-  // Fonction pour mettre √  jour le premier carrousel
+  // Fonction pour mettre ù  jour le premier carrousel
   const updateCarousel = (index) => {
-    // Supprime les classes 'active', 'prev' et 'next' de tous les √©l√©ments de la liste 'slides'
+    // Supprime les classes 'active', 'prev' et 'next' de tous les ÈlÈments de la liste 'slides'
     slides.forEach((slide, idx) => {
       slide.classList.remove("active", "prev", "next");
     });
 
-    current = index; // Met √  jour l'index actuel
+    current = index; // Met ù  jour l'index actuel
 
-    // Calcule l'indice pr√©c√©dent et suivant en fonction de l'index actuel
+    // Calcule l'indice prÈcÈdent et suivant en fonction de l'index actuel
     let prevIndex = current - 1 < 0 ? slides.length - 1 : current - 1;
     let nextIndex = current + 1 >= slides.length ? 0 : current + 1;
 
-    // Ajoute la classe 'active' √  l'√©l√©ment actuel, 'prev' √  l'√©l√©ment pr√©c√©dent et 'next' √  l'√©l√©ment suivant
+    // Ajoute la classe 'active' ù  l'ÈlÈment actuel, 'prev' ù  l'ÈlÈment prÈcÈdent et 'next' ù  l'ÈlÈment suivant
     slides[current].classList.add("active");
     slides[prevIndex].classList.add("prev");
     slides[nextIndex].classList.add("next");
@@ -56,56 +53,55 @@ document.addEventListener("DOMContentLoaded", function () {
     next = current + 1 >= slides.length ? 0 : current + 1;
   };
 
-  // Fonctions pour aller au slide pr√©c√©dent ou suivant du premier carrousel
+  // Fonctions pour aller au slide prÈcÈdent ou suivant du premier carrousel
   const gotoPrev = () => updateCarousel(current > 0 ? current - 1 : slides.length - 1);
   const gotoNext = () => updateCarousel(current < slides.length - 1 ? current + 1 : 0);
 
-  // Attacher les √©v√©nements 'click' aux boutons du premier carrousel
-  openPopupButton.addEventListener("click", showPopup);
+  showPopup();
   //closePopupButton.addEventListener('click', hidePopup);
   navigationButtons.forEach((button, index) => {
     button.addEventListener("click", index === 0 ? gotoPrev : gotoNext);
   });
 
-  // Ajoutez un √©couteur d'√©v√©nements √  chaque image du premier carrousel pour la s√©lectionner lorsque cliqu√©e
+  // Ajoutez un Ècouteur d'ÈvÈnements ù  chaque image du premier carrousel pour la sÈlectionner lorsque cliquÈe
   slides.forEach((slide, index) => {
     slide.addEventListener("click", function () {
       if (index === current) {
         // Seulement si l'image est le slide actif
-        slides.forEach((s) => s.classList.remove("selected")); // D√©s√©lectionner les autres
-        slide.classList.add("selected"); // S√©lectionner le slide cliqu√©
-        selectedImageIndex = index; // Mettre √  jour l'index s√©lectionn√©
+        slides.forEach((s) => s.classList.remove("selected")); // DÈsÈlectionner les autres
+        slide.classList.add("selected"); // SÈlectionner le slide cliquÈ
+        selectedImageIndex = index; // Mettre ù  jour l'index sÈlectionnÈ
       }
     });
   });
 
-  // Ajoutez un √©couteur d'√©v√©nements √  chaque image du premier carrousel pour la s√©lectionner lorsque cliqu√©e
+  // Ajoutez un Ècouteur d'ÈvÈnements ù  chaque image du premier carrousel pour la sÈlectionner lorsque cliquÈe
   slides.forEach((slide, index) => {
     slide.addEventListener("click", function () {
       if (index === current) {
         // Seulement si l'image est le slide actif
-        slides.forEach((s) => s.classList.remove("selected")); // D√©s√©lectionner les autres
-        slide.classList.add("selected"); // S√©lectionner le slide cliqu√©
-        selectedImageIndex = index; // Mettre √  jour l'index s√©lectionn√©
+        slides.forEach((s) => s.classList.remove("selected")); // DÈsÈlectionner les autres
+        slide.classList.add("selected"); // SÈlectionner le slide cliquÈ
+        selectedImageIndex = index; // Mettre ù  jour l'index sÈlectionnÈ
       }
     });
   });
 
-  // Attacher l'√©v√©nement 'click' au bouton de validation du premier carrousel pour ouvrir le deuxi√®me carrousel
+  // Attacher l'ÈvÈnement 'click' au bouton de validation du premier carrousel pour ouvrir le deuxiËme carrousel
   confirmSelectionButton.addEventListener("click", function () {
     if (selectedImageIndex !== null) {
-      console.log("L‚Äôutilisateur a s√©lectionn√© l‚Äôimage num√©ro:", selectedImageIndex);
+      console.log("Líutilisateur a sÈlectionnÈ líimage numÈro:", selectedImageIndex);
       hidePopup();
       showSecondPopup();
     } else {
-      alert("Veuillez s√©lectionner une image.");
+      alert("Veuillez sÈlectionner une image.");
     }
     localStorage.setItem("selectedMaillot", slides[selectedImageIndex].querySelector("img").src);
   });
 
   //    Fonctions du second carrousel
 
-  // Fonction pour afficher le popup du deuxi√®me carrousel
+  // Fonction pour afficher le popup du deuxiËme carrousel
   function showSecondPopup() {
     var popupText1 = document.getElementById("second-popup-text");
     popupText1.innerHTML = "CHOISIS TON <br /><span class='maillot-text'>BLASON</span>";
@@ -114,18 +110,18 @@ document.addEventListener("DOMContentLoaded", function () {
     updateSecondCarousel(currentSecond);
   }
 
-  // Fonction pour cacher le popup du deuxi√®me carrousel
+  // Fonction pour cacher le popup du deuxiËme carrousel
   function hideSecondPopup() {
     secondPopupOverlay.style.display = "none";
   }
 
-  // Fonction pour mettre √  jour le deuxi√®me carrousel
+  // Fonction pour mettre ù  jour le deuxiËme carrousel
   const updateSecondCarousel = (index) => {
     secondSlides.forEach((slide, idx) => {
       slide.classList.remove("active", "prev", "next");
     });
 
-    currentSecond = index; // Utiliser currentSecond pour le deuxi√®me carrousel
+    currentSecond = index; // Utiliser currentSecond pour le deuxiËme carrousel
 
     let prevIndex = currentSecond - 1 < 0 ? secondSlides.length - 1 : currentSecond - 1;
     let nextIndex = currentSecond + 1 >= secondSlides.length ? 0 : currentSecond + 1;
@@ -144,14 +140,14 @@ document.addEventListener("DOMContentLoaded", function () {
     button.addEventListener("click", index === 0 ? gotoPrev1 : gotoNext1);
   });
 
-  // Ajoutez un √©couteur d'√©v√©nements √  chaque image du deuxi√®me carrousel pour la s√©lectionner lorsque cliqu√©e
+  // Ajoutez un Ècouteur d'ÈvÈnements ù  chaque image du deuxiËme carrousel pour la sÈlectionner lorsque cliquÈe
   secondSlides.forEach((slide, index) => {
     slide.addEventListener("click", function () {
       if (index === currentSecond) {
         // Seulement si l'image est le slide actif
-        secondSlides.forEach((s) => s.classList.remove("selected")); // D√©s√©lectionner les autres
-        slide.classList.add("selected"); // S√©lectionner le slide cliqu√©
-        selectedSecondImageIndex = index; // Mettre √  jour l'index s√©lectionn√©
+        secondSlides.forEach((s) => s.classList.remove("selected")); // DÈsÈlectionner les autres
+        slide.classList.add("selected"); // SÈlectionner le slide cliquÈ
+        selectedSecondImageIndex = index; // Mettre ù  jour l'index sÈlectionnÈ
         localStorage.setItem("selectedBlason", secondSlides[selectedSecondImageIndex].querySelector("img").src);
         console.log("selectedBlason :", localStorage.getItem("selectedBlason"));
       }
