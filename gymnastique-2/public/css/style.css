@@ -354,7 +354,7 @@ svg.image-histoire, svg.image-jo{
 
 }
 #palmares-page .card-container {
-    width: 80vw;
+    width: 30vw;
     height: 18vh;
     perspective: 90vw;
     margin: 2.5% 10% 2.5% 10%;
@@ -384,17 +384,19 @@ svg.image-histoire, svg.image-jo{
     z-index: 1;
 
 }
-/*
+
 #palmares-page #card-afrique{
     position: absolute;
+    top:25vh;
 }
 #palmares-page #card-mondiaux{
     top : 65vh;
     position: absolute;
 }
 #palmares-page #card-inter{
+    top : 45vh;
     position: absolute;
-}*/
+}
 
 #palmares-page .card-front,
 #palmares-page .card-back {
