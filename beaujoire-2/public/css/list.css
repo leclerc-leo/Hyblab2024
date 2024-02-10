@@ -41,10 +41,10 @@ body{
     margin: 1%;
     margin-left: 5%;
     margin-right: 5%;
-    width: -webkit-fill-available;
+    width: 85%;
     max-width: 100%;
     display: flex;
-    height: -webkit-fill-available;
+    height: 100%;
   }
   
   .player-box img {

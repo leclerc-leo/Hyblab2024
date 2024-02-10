@@ -2,7 +2,7 @@
 
 let votesTmp = JSON.parse(localStorage.getItem('votes'));
 
-//checks if the votes have been done
+/*checks if the votes have been done
 for (let i = 1; i <= 12; i++) {
   if(votesTmp[i] === 0 ) {
     allVotes = false ;
