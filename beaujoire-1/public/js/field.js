@@ -38,7 +38,7 @@ function initializePage() {
 		if (player.POSTE !== "ENTRAÎNEUR" && player.NUMÉRO !== undefined) {
 			playerElement.setAttribute("data-number", player.NUMÉRO);
 			playerElement.innerHTML = `
-				<img src="./img/jersey.svg" alt="jersey" />
+
 				<p class="player-name">${playerName}</p>
 			`;
 		} else {

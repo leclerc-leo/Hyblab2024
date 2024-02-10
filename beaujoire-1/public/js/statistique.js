@@ -14,7 +14,7 @@ window.onload = async function () {
 	await fetch("./data/Stats.json")
 		.then((response) => response.json())
 		.then((data) => {
-			stats = data;
+			stats = filterStatsWithPlayer(data, players);
 			console.log(stats);
 		})
 		.catch((error) => {
@@ -39,17 +39,7 @@ function mettreAJourStatistiques(idJoueur, count) {
 }
 
 // Vous devrez créer une fonction pour calculer le total des sélections
-async function calculerTotalSelections() {
-	await fetch("./data/Stats.json")
-		.then((response) => response.json())
-		.then((data) => {
-			stats = data;
-		})
-		.catch((error) => {
-			console.error("Erreur :", error);
-		});
-	return 100; // Retournez la valeur totale des sélections
-}
+function calculerTotalSelections() {}
 
 let isAnyItemFlipped = false;
 let isCaptainSelected = false;
@@ -79,14 +69,17 @@ function initializePage() {
 	}
 	updatePlayerElement = function (playerElement, playerName) {
 		const player = playersData.find((player) => player.NOM === playerName);
+		console.log(player.POSTE);
 		if (player.POSTE !== "ENTRAÎNEUR" && player.NUMÉRO !== undefined) {
 			playerElement.setAttribute("data-number", player.NUMÉRO);
 			playerElement.innerHTML = `
-				<img src="./img/jersey.svg" alt="jersey" />
-				<p class="player-name">${playerName}</p>
-			`;
+		 	<img src="./img/jersey.svg" alt="jersey" />				<p class="player-name">${playerName}</p>
+		 	`;
 		} else {
-			playerElement.textContent = playerName;
+			playerElement.innerHTML = `
+		 	<img src="./img/jersey.svg" alt="jersey" />
+		 	<p class="player-name">${playerName}</p>
+		 	`;
 		}
 		selectedPlayerId = null;
 	};
@@ -161,3 +154,58 @@ let players = JSON.parse(localStorage.getItem("players")) || {
 	"defender-2": "",
 	"defender-3": "",
 };
+
+function handleCaptainClick() {
+	isCaptainBeingSelected = true;
+	if (isCaptainSelected) {
+		const capElements = document.querySelectorAll(".cap");
+		capElements.forEach((element) => {
+			element.remove();
+		});
+		isCaptainSelected = false;
+	}
+	const cap_btn = document.querySelector("#capitaine");
+	const cap_bar = cap_btn.querySelector("#cap-bar");
+	if (cap_btn) {
+		document.querySelectorAll(".player-clickable").forEach((player) => {
+			player.addEventListener("click", (event) => {
+				handleCaptainSelect(
+					event.target.closest(".player-clickable").id
+				);
+			});
+		});
+	} else {
+		console.log("captain button not found");
+	}
+}
+
+function handleCaptainSelect(id) {
+	if (isCaptainBeingSelected) {
+		const selectedPlayer = id;
+		const selectedPlayerElement = document.getElementById(selectedPlayer);
+		const captain = document.createElement("div");
+		captain.classList.add("cap");
+		captain.innerHTML = `
+		c
+	`;
+		selectedPlayerElement.appendChild(captain);
+		selectedPlayerElement.classList.add("captain");
+		isCaptainSelected = true;
+		localStorage.setItem("captain", id);
+		document.querySelectorAll(".player-clickable").forEach((player) => {
+			player.removeEventListener("click", handleCaptainClick);
+		});
+		isCaptainBeingSelected = false;
+	}
+}
+
+// Fonction pour filtrer les statistiques avec le joueur dans players
+function filterStatsWithPlayer(stats, players) {
+	const filteredStats = {};
+	Object.keys(stats).forEach((player) => {
+		if (players.hasOwnProperty(player)) {
+			filteredStats[player] = stats[player];
+		}
+	});
+	return filteredStats;
+}

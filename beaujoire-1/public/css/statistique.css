@@ -11,6 +11,14 @@
 	visibility: hidden;
 }
 
+#entraineur {
+	padding: 0;
+	font-size: 0;
+	border-radius: 0;
+	background-color: transparent;
+	border: none;
+}
+
 #blason,
 #maillot {
 	position: relative;
@@ -144,7 +152,7 @@
 	top: 96%;
 	left: 4%;
 }
-#Entraineur-bar {
+#entraineur-bar {
 	top: 21%;
 	left: 55%;
 }
