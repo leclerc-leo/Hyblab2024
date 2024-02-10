@@ -33,6 +33,24 @@ dataUtils.selectPlayer = function(idPlayer){
     });
 }
 
+dataUtils.getPlayersByPosition = function(position, callback) {
+    const query = `
+      SELECT id, nom, prenom, photo
+      FROM Joueurs
+      WHERE poste = (
+        SELECT id FROM Postes WHERE nom = ?
+      )`;
+  
+    db.all(query, [position], (err, players) => {
+      if (err) {
+        console.error('Error fetching players:', err);
+        callback([]);
+      } else {
+        callback(players);
+      }
+    });
+  }
+
 /* enregistrer le vote final d'un utilisateur.
 params :
     - token : le token de la connexion sur laquelle a été fait le vote

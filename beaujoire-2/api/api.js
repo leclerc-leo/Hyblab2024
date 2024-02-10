@@ -13,6 +13,15 @@ app.get('/topic', function ( req, res ) {
     res.json({'topic':topic});
 } );
 
+// Modify the endpoint to use the asynchronous function
+app.get('/api/players/:position', function (req, res) {
+  const position = req.params.position;
+  
+  dataUtils.getPlayersByPosition(position, (players) => {
+    res.json({ 'players': players, 'position': position });
+  });
+});
+
 
 // Export our API
 module.exports = app;

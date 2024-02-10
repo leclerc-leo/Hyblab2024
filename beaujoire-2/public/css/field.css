@@ -108,14 +108,20 @@ body{
 
 .field-jersey {
     position: absolute;
-    width: 10%;
-    transform: translate(-50%, -50%);
+    width: 30%;
+    transform: translate(-69%, -50%);
 }
 
 .field-jersey-img{
     width:160%;
 }
 
+
+
+
+.field-jersey-anim {
+    transform: scale(1);
+}
 /*** For vote in progress ***/
 
 .voted {
@@ -155,7 +161,7 @@ body{
 /* Postes spécifiques */
 #poste-1 { /* Gardien */
     top: 90%;
-    left: 46%;
+    left: 49%;
     width: 15%;
 }
 
@@ -212,7 +218,7 @@ body{
 #poste-12 { /* Sélectionneur */
     width: 14%;
     top: 12%;
-    left: 47%;
+    left: 49%;
 }
 
 
