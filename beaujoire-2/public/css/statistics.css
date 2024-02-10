@@ -6,90 +6,69 @@ body{
     font-family: sans-serif;
 }
 
+#container {
+    position: fixed;
+    height: 100%;
+    padding: 0%;
+    background-color: var(--bg-green);
+    margin-left: calc((100vw - 100 * 3vh / 4) / 2);
+    width: calc(100 * 3vh / 4);
+    overflow: hidden;
+}
 
-#footer {
+#return {
+    left : 5% ;
+    cursor: pointer;
+    z-index: 3;
+}
+
+ #partage {
+    font-family: 'Abolition';
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    bottom: 0;
-    height: 12.5%;
-    max-height: 5em;
-    width: 100%;
-    gap: 0.3em;
-}
-    #archives, #statistiques {
-        font-family: 'Abolition';
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 70px;
-        color: var(--yellow);
-        background-color: transparent;
-        border: solid 3px var(--yellow);
-        z-index: 3;
-        transition: all 0.5s ease-in-out ;
-        
-    }
+    border-radius: 50px;
+    color: var(--yellow);
+    background-color: var(--bg-green);
+    border: solid 3px var(--yellow);
+    z-index: 3;
+    transition: all 0.5s ease-in-out ;
 
-#statistiques.disabled {
-    opacity: 0.5 ;
-    cursor: default;
 }
 
-#statistiques {
-        text-transform: uppercase;
-        text-decoration: none ;
-        font-size: 0.40em;
-        padding: 0.30em;
-        width:7em;
-    }
+#partage {
+    text-transform: uppercase;
+    font-size: 0.30em;
+    padding: 0.3em;
+    width:10em;
+}
 
-    #archives {
-        width: 0.40em;
-        height: 0.40em;
-        padding: 0.15em;
-    }
+#partage:hover{
+    cursor: pointer;
+    background-color: var(--yellow);
+    color: var(--green);
+}
 
-    #archives-svg {
-        color: var(--yellow);
-    }
-
-
-    #archives.disabled {
-        opacity: 0.5 ;
-        cursor: default;
-    }
-
-    #archives.enabled:hover, #statistiques.enabled:hover{
-        cursor: pointer;
-        background-color: var(--yellow);
-        color: var(--green);
-    }
-
-    #archives.enabled:hover #archives-svg {
-        cursor: pointer;
-        color: var(--green);
-        transition: all 1s ease-in-out;
-    }
-
+#share-svg {
+    padding-right: 0.5em;
+    padding-left: 0.4em ;
+}
 
 #logo {
     position: absolute;
     top: -4%;
     left: 50%;
-    transform: translate(-50%,-50%) rotate(-15deg);
+    transform: translate(23%,-5%) rotate(-23deg);
     width:50%;
     z-index:1;
 }
 
-#field {
-    background-color: var(--bg-green);
+#field1 , #field2 {
+background-color: var(--bg-green);
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100%;
+    height : 200% ;
 }
 
 
@@ -98,15 +77,19 @@ body{
     height: 100%;
 }
 
-#field-jersey-container {
-    position: absolute;
-    display: flex;
+.team-field-container {
+    position: relative;
+    display: block;
     align-items: center;
-    height: 75%;
+    justify-content: center;
+    height: 60%;
+    width: 60%;
+    margin-top : 1% ;
+    margin-bottom : 5% ;
 }
 
 
-.field-jersey {
+.field-player {
     position: absolute;
     width: 10%;
     transform: translate(-50%, -50%);
@@ -148,7 +131,6 @@ body{
     text-align: center;
     padding-left : 25% ;
 }
-
 
 /*** For vote in progress ***/
 
@@ -216,64 +198,93 @@ body{
 }
 
 
-/************* Popup card *****************/
-.popup{
-    background-color: var(--bg-green);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 400px ;
-    height: 300px;
-    padding: 30px 40px;
+/* Styling for the position preview */
+.team-preview {
+    display: flex;
+    align-items: center;
+    position: relative; /* Make it a positioned container */
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: -2%;
+}
+
+/* Styling for the fixed light gray line */
+.team-line {
+    height: 1%;
+    background-color: rgba(211, 211, 211, 0.8);;
+    width: 68%; /* Take the full width of the position preview */
     position: absolute;
-    transform: translate(-50%,-50%);
-    left: 50%;
-    top: 50%;
-    border-radius: 8px;
-    font-family: 'Abolition';
-    color: var(--yellow);
-    display: none;
+    margin-top: -5%;
+    margin-left: 17%;
+    margin-right: 10%;
+    border-radius : 5px ;
+}
+
+/* Styling for the yellow segment under the current position */
+.current-team-segment {
+    width: 35%;
+    height: 1%;
+    background-color: var(--yellow);
+    position: absolute;
+    margin-top: -5%;
+    transition: width 0.3s ease;
+    z-index: 1;
+    border-radius : 5px ;
+}
+
+#currentLine1 {
+    left: 15%;
+}
+
+#currentLine2 {
+    left: 52%;
+}
+/* Styling for the current, previous, and next positions */
+.header-preview-box {
+    flex: 1;
     text-align: center;
-    z-index: 4;
-    overflow : scroll;
-
-}
-
-.popup::-webkit-scrollbar {
-    width: 0;
-}
-
-.popup button{
-    display: block;
-    margin:  0 0 -20px auto;
-    background-color: transparent;
     color: var(--yellow);
-    border: none;
-    outline: none;
-    cursor: pointer;
+    font-family: 'Abolition';
+    font-size: 38%;
+    line-height: 3.5em;
+    height: 5%;
+    margin: 0 4%;
+    transition: background-color 0.3s ease;
 }
 
-.popup button img {
-    width: 6.5vmin;
-    display: block;
+.prev,
+.next {
+    color: rgba(211, 211, 211, 0.8);
+    font-size: 30%;
+    transition: transform 0.3s ease; /* Add smooth transition for position changes */
 }
 
-.popup #archives-popup {
-    width: 10vmin;
+.prev.current,
+.next.current {
+    transform: scale(4); /* Example: Move to the left and slightly scale */
 }
 
-.popup p{
-    font-size: 6.5vmin ;
-    
+/* Styling for the footer */
+#footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    height: 12.5%;
+    max-height: 5em;
+    width: 100%;
+    gap: 0.3em;
+    background-color: var(--bg-green);
 }
-
-  /************* Popup card *****************/
-
 /* ---------- Important media queries for easy responsive content :-) ----------------- */
 /* Whatever the device used, the content will be displayed full width and height if      */
 /* the aspect ratio is between 3/4 and 9/16. If not it is locked to either 3/4 or 9/16  */
 
 /* When the aspect ratio is smaller that 3/4, display a 3/4 content */
 #container{
-    position: fixed; /* To set the size of the container to 100% of the visible viewport height AND for absolute positioning of child elements*/ 
+    position: fixed; /* To set the size of the container to 100% of the visible viewport height AND for absolute positioning of child elements*/
     height: 100%;   /* even on mobile devices with url or navigation bars */
     margin-left: calc((100vw - 100 * 3vh / 4) / 2); /* Add black bands on left and right */
     width: calc(100 * 3vh / 4); /* Force 3/4 aspect ratio */
@@ -288,7 +299,7 @@ body{
 
     .popup{
         width: calc(100 * 6vw / 9);
-        height: calc(100 * 5vw / 9);
+        height: calc(100 * 4vw / 9);
         color: var(--yellow);
         text-align: center;
     }
@@ -300,10 +311,15 @@ body{
         text-align: center;
     }
 
+    .team-field-container {
+        height: calc(100 * 3.2% / 5);
+        width: calc(100 * 3.2% / 5);
+        margin-top : calc(1.5 * 3vw) ;
+    }
 
 }
 
-/* The content is displayed at 9/16 If the aspect ratio is higher that 9/16  */ 
+/* The content is displayed at 9/16 If the aspect ratio is higher that 9/16  */
 @media screen and (max-aspect-ratio: 9/16) {
     #container{
         margin-left: 0; /* reset left margin */
@@ -318,7 +334,7 @@ body{
         height: calc(100 * 4.5vw / 9);
         color: var(--yellow);
         text-align: center;
-        
+
     }
 
     p {
@@ -326,15 +342,11 @@ body{
         color: var(--yellow);
         text-align: center;
     }
-    
-}
 
-/*Gestion de la police lorsque l'écran est très petit*/
-@media only screen and (max-width: 400px) {
-
-    #archives-svg {
-        width: 0.4em;
-        height: 0.4em;
+    .team-field-container {
+        height: calc(100 * 4.5% / 5);
+        width: calc(100 * 4.5% / 5);
+        margin-top : calc(1.5 *3.5%) ;
     }
 }
 

@@ -14,5 +14,8 @@
     "sqlite3": "^5.1.7"
   },
   "author": "MPDS",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "cookie-parser": "^1.4.6"
+  }
 }

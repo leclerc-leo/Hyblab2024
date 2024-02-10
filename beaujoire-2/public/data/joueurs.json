@@ -30,7 +30,7 @@
     "arrets": 61,
     "photo": "/",
     "citation": "/",
-    "biographie": "/"
+    "biographie": "Rémy Riou signe sa première licence à 6 ans, à Saint-Cyr-au-Mont-d’Or.. Après un tournoi, il intègre finalement l’Olympique lyonnais, pour ne plus le quitter jusqu’à ses 19 ans. C’est suite à un concours de circonstances que le joueur se retrouve en équipe première, et s’impose comme le plus jeune gardien de Ligue 1. Mais il n’hésite pas à descendre d’une division pour s’engager avec le FC Nantes pour la saison 2012-2013. Il participe à la remontée du club en Ligue 1, et s’inscrit comme une “valeur sûre”, selon les termes d’Elie Baup, aussi bien dans les vestiaires que sur le terrain : “C’est un joueur très fiable sur lequel on peut s’appuyer”. Lors de la saison 2015-2016, il devient capitaine du FC Nantes suite au départ d’Olivier Veigneau. Depuis 2024, il évolue comme gardien de but au Paris FC."
   },
   {
     "nom": "Landreau",
@@ -115,7 +115,7 @@
     "arrets": "NULL",
     "photo": "/",
     "citation": "/",
-    "biographie": "/"},
+    "biographie": "commence sa carrière avec son frère jumeau Rafael dans le clu brésilien de Fluminense.Il se distingue en prenant le capitanat de l’équipe du Brésil U17 lors du mondial 2007. Est remarqué par le recruteur de Manchester United Les Kershaw, lors d’un tournoi junior à Hong Kong en 2005. Le club le recrute par la suite en janvier 2008. En janvier 2014, il est transféré au club gallois à Cardiff City, et le 22 août 2016, il s’engage pour deux années avec Middlesbrough FC, club promu en Premier League. \nLe 18 juillet 2018, il s’engage pour trois saisons avec le FC Nantes. A l’occasion de son premier match avec le FC Nantes, il affronte son jumeau pour la première fois de sa carrière à Lyon. Le Brésilien retourne dans son pays d’origine en signant le 10 janvier 2023 pour Grêmio"},
   {
     "nom": "Dubois",
     "prenom": "Léo",
@@ -165,7 +165,7 @@
     "arrets": "NULL",
     "photo": "/",
     "citation": "/",
-    "biographie": "/"},
+    "biographie": "Trois fois champion de France avec Nantes (1977, 1980 et 1983) et vainqueur de la Coupe de France en 1979, cet arrière latéral au style caractéristique, féru de contre-attaques et de grands espaces, possédait un talent un peu particulier : “Il imitait très, très bien le sifflet de l'arbitre et, parfois, le jeu s'arrêtait. Il lui arrivait de couper des actions qui pouvaient devenir dangereuses !”, se souvenait son ancien coéquipier, Thierry Tusseau, en 2018, dans un entretien à L’Equipe"},
   {
     "nom": "Tusseau",
     "prenom": "Thierry",
@@ -181,7 +181,7 @@
     "arrets": "NULL",
     "photo": "/",
     "citation": "/",
-    "biographie": "/"},
+    "biographie": "Formé au FC Nantes, Thierry Tusseau remporte avec le club le championnat de France en 1977, 1980 et 1983, ainsi que la Coupe de France en 1979. En 1983, il s’engage aux Girondins de Bordeaux et gagne avec eux le championnat en 1984 et 1985, ainsi que la coupe de France 1986. Il termine sa carrière en 1991 au Stade de Reims, avec à son palmarès vingt-deux sélections en équipe de France et une victoire au Championnat d’Europe des Nations en 1985.\n"},
   {
     "nom": "Pignol",
     "prenom": "Christophe",
@@ -199,22 +199,6 @@
     "citation": "/",
     "biographie": "Arrivé chez les Canaris en 1993, Christophe Pignol connaît la grande époque nantaise. Il remporte le titre de champion de France en 1995 et atteint la demi-finale de la ligue des champions l’année suivante. Sa vie bascule en 2001 lorsqu’il apprend qu’il est atteint d’une leucémie. Une fois guéri, il crée l’Association Christophe Pignol, pour aider les patients atteints de cette maladie."
   },
-  {
-    "nom": "Silva",
-    "prenom": "Mario",
-    "age": 46,
-    "naissance": "24/04/1977",
-    "nationalite1": 5,
-    "nationalite2": "NULL",
-    "poste": 3,
-    "annéeDébut": 2000,
-    "annéeFin": 20001,
-    "selections": 26,
-    "buts": 1,
-    "arrets": "NULL",
-    "photo": "/",
-    "citation": "/",
-    "biographie": "/"},
   {
     "nom": "Bonalair",
     "prenom": "Thierry",
@@ -284,22 +268,6 @@
     "biographie": "Formé au FC Nantes, le défenseur central est devenu une figure mythique du football français. Il a rejoint la Jonelière grâce à son demi-frère Seth Adonkor qui était lui-même un joueur phare du club ligérien. Vainqueur deux fois de suite de la Ligue des Champions, Champion d’Europe et Champion du monde, Desailly a l’un des plus beaux palmarès du football français."
   },
   {
-    "nom": "Carlos",
-    "prenom": "Diego",
-    "age": 30,
-    "naissance": "15/03/1993",
-    "nationalite1": 16,
-    "nationalite2": 19,
-    "poste": 4,
-    "annéeDébut": 2016,
-    "annéeFin": 2019,
-    "selections": 108,
-    "buts": 4,
-    "arrets": "NULL",
-    "photo": "/",
-    "citation": "/",
-    "biographie": "/"},
-  {
     "nom": "Naybet",
     "prenom": "Noureddine",
     "age": 53,
@@ -365,7 +333,7 @@
     "arrets": "NULL",
     "photo": "/",
     "citation": "/",
-    "biographie": "/"},
+    "biographie": "Issu du centre de formation du FC Nantes, Laurent Guyot y reste pendant treize saisons en tant que professionnel. Champion de France en 1995, il quitte le club trois ans plus tard, avant de retrouver les jeunes des Jaunes-et-Verts, avec lesquels il commene une carrière d’entraîneur en 2005. Depuis 2021, il est entraîneur d’Annecy.\n"},
   {
     "nom": "Pallois",
     "prenom": "Nicolas",
@@ -381,7 +349,7 @@
     "arrets": "NULL",
     "photo": "/",
     "citation": "/",
-    "biographie": "/"},
+    "biographie": "Pilier actuel de la Maison jaune, Nicolas Pallois comptabilise déjà plus de 200 matchs avec les Canaris, en sept saisons. Passé par le centre de formation du Stade Malherbe de Caen, le Normand a explosé en 2010 lors de l’épopée de Quevilly en Coupe de France, qui a atteint la demi-finale de la compétition avant de céder face au Paris Saint-Germain. Relevant systématiquement son short sur le terrain, il justifie cette originalité par le fait que la couture est trop basse et que cela le gêne pour courir et écarter les jambes.\n"},
   {
     "nom": "Yepes",
     "prenom": "Mario",
@@ -417,22 +385,6 @@
     "biographie": "Formé au FC Nantes, le défenseur central est devenu une figure mythique du football français. Il a rejoint la Jonelière grâce à son demi-frère Seth Adonkor qui était lui-même un joueur phare du club ligérien. Vainqueur deux fois de suite de la Ligue des Champions, Champion d’Europe et Champion du monde, Desailly a l’un des plus beaux palmarès du football français."
   },
   {
-    "nom": "Carlos",
-    "prenom": "Diego",
-    "age": 30,
-    "naissance": "15/03/1993",
-    "nationalite1": 16,
-    "nationalite2": 19,
-    "poste": 5,
-    "annéeDébut": 2016,
-    "annéeFin": 2019,
-    "selections": 108,
-    "buts": 4,
-    "arrets": "NULL",
-    "photo": "/",
-    "citation": "/",
-    "biographie": "/"},
-  {
     "nom": "Naybet",
     "prenom": "Noureddine",
     "age": 53,
@@ -498,7 +450,7 @@
     "arrets": "NULL",
     "photo": "/",
     "citation": "/",
-    "biographie": "/"},
+    "biographie": "Issu du centre de formation du FC Nantes, Laurent Guyot y reste pendant treize saisons en tant que professionnel. Champion de France en 1995, il quitte le club trois ans plus tard, avant de retrouver les jeunes des Jaunes-et-Verts, avec lesquels il commene une carrière d’entraîneur en 2005. Depuis 2021, il est entraîneur d’Annecy.\n"},
   {
     "nom": "Pallois",
     "prenom": "Nicolas",
@@ -514,7 +466,7 @@
     "arrets": "NULL",
     "photo": "/",
     "citation": "/",
-    "biographie": "/"},
+    "biographie": "Pilier actuel de la Maison jaune, Nicolas Pallois comptabilise déjà plus de 200 matchs avec les Canaris, en sept saisons. Passé par le centre de formation du Stade Malherbe de Caen, le Normand a explosé en 2010 lors de l’épopée de Quevilly en Coupe de France, qui a atteint la demi-finale de la compétition avant de céder face au Paris Saint-Germain. Relevant systématiquement son short sur le terrain, il justifie cette originalité par le fait que la couture est trop basse et que cela le gêne pour courir et écarter les jambes.\n"},
   {
     "nom": "Yepes",
     "prenom": "Mario",
@@ -547,7 +499,7 @@
     "arrets": "NULL",
     "photo": "/",
     "citation": "/",
-    "biographie": "/"},
+    "biographie": "C’est certainement le gars le plus drôle que je connaisse. Quand il est parti, ça envoie”, dit de lui son ancien coéquipier Hassan Ahamada. Le discret milieu de terrain s’impose comme un pilier de la génération dorée du début des années 2000 : vainqueur de la Coupe de France en 2000, du championnat et du Trophée des champions en 2001. Sa carrière avec les Canaris s’achève sur une finale de Coupe de la Ligue perdue aux tirs aux buts contre Sochaux. "},
   {
     "nom": "Ferri",
     "prenom": "Jean-Michel",
@@ -563,7 +515,7 @@
     "arrets": "NULL",
     "photo": "/",
     "citation": "/",
-    "biographie": "/"},
+    "biographie": "Pur produit de la Jonelière, le centre de formation du FC Nantes, il s’impose comme un joueur emblématique de l’équipe conduite par Jean-Claude Suaudeau, championne de France en 1995. C’est son seul titre avec les Canaris. La saison suivante, il dispute la demi-finale de la Ligue des champions contre la Juventus Turin, soldée par une victoire au match retour à la Beaujoire (3-2) après une défaite à l’aller (0-2)."},
   {
     "nom": "Deschamps",
     "prenom": "Didier",
@@ -596,7 +548,7 @@
     "arrets": "NULL",
     "photo": "/",
     "citation": "/",
-    "biographie": "/"},
+    "biographie": "Surnommé le “Cheval fou”, Christian Karembeu est un milieu de terrain rugueux, qui se démarque par son impact physique, sa tonicité et ses qualités de récupérateur. Il est un acteur majeur de l’épopée qui conduit le FC Nantes au titre de champion de France en 1995. En équipe de France, il remporte la Coupe du monde 1998 et l’Euro 2000. En-dehors des terrains, le Néo-Calédonien est aussi connu pour son mariage avec la mannequin slovaque Adriana Sklenaříková"},
   {
     "nom": "Savinaud",
     "prenom": "Nicolas",
@@ -796,7 +748,7 @@
     "arrets": "NULL",
     "photo": "/",
     "citation": "/",
-    "biographie": "/"},
+    "biographie": "Arrivé au FC Nantes en 2000 après des passages en Suisse, en Angleterre et en Turquie, l’international roumain (70 sélections, 25 buts) y remporte le championnat de France et le Trophée des champions en 2001. Il compte aussi une finale de Coupe de la Ligue perdue en 2004. “Pour moi, c’est l’endroit où je me suis senti le mieux. C’était extraordinaire et je suis convaincu que j’étais fait pour le club, autant que le FC Nantes était fait pour moi”, dira-t-il après son passage chez les Canaris."},
   {
     "nom": "Kolo Muani",
     "prenom": "Ramdal",
@@ -812,7 +764,7 @@
     "arrets": "NULL",
     "photo": "/",
     "citation": "/",
-    "biographie": "/"},
+    "biographie": "Son tir détourné par le pied gauche du gardien argentin Emiliano Martinez, en finale du Mondial 2022, aura hanté les nuits de millions de supporters. Mais “RKM”, c’est aussi treize buts et six passes décisives avec les Canaris lors de la saison 2021-2022, celle de son éclosion, ponctuée par la victoire en Coupe de France. Après une année en Allemagne, à l’Eintracht Francfort, il retrouve le championnat de France en s’engageant avec le Paris-Saint-Germain pour la saison 2023-2024."},
   {
     "nom": "Djordjevic",
     "prenom": "Filip",
@@ -828,7 +780,7 @@
     "arrets": "NULL",
     "photo": "/",
     "citation": "/",
-    "biographie": "/"},
+    "biographie": "Débarqué de Belgrade en prêt, à l’hiver 2008, le Serbe inscrit sept buts dès ses premiers mois chez les Canaris et permet au club de retrouver la Ligue 1, mais ne parvient pas à l’y maintenir la saison suivante. Doté d’un bon jeu de tête, il se révèle surtout lors de la saison 2012-2013, à l’issue de laquelle le FC Nantes est promu en Ligue 1, et devient le “serial buteur” de la Beaujoire. En mars 2014, il signe un contrat avec la Lazio Rome (Italie) et, blessé, refuse de jouer les derniers matchs du championnat, laissant à son histoire en Jaune et Vert un goût d’inachevé."},
   {
     "nom": "Sala",
     "prenom": "Emiliano",
@@ -994,7 +946,7 @@
     "arrets": "NULL",
     "photo": "/",
     "citation": "/",
-    "biographie": "/"},
+    "biographie": "Avec plus de 600 matches pour les Jaune et Vert, Loïc Amisse a su rester fidèle au club de sa ville natale. Réputé pour sa pointe de vitesse et sa qualité de centre, c’est avec les Canaris que l’attaquant de poche (1,66 m) a glané tous les titres de son palmarès : trois fois champion de France (1977, 1980, 1983), vainqueur de la Coupe de France (1979), demi-finaliste de la Coupe d’Europe des vainqueurs de coupes en 1980 contre le Valence CF. Après sa retraite, il se reconvertit entraîneur et emmène son club de cœur jusqu’en finale de la Coupe de France en 2004.\n"},
   {
     "nom": "N'Doram",
     "prenom": "Japhet",
@@ -1027,7 +979,7 @@
     "arrets": "NULL",
     "photo": "/",
     "citation": "/",
-    "biographie": "/"},
+    "biographie": "L'historique “Coco” et le FC Nantes, c’est une histoire d’amour qui débute en 1960 : le natif de Cholet (Maine-et-Loire) y évolue neuf saisons comme milieu défensif, ponctuées par les deux premiers titres de champion de France du club (1965 et 1966). Mais c’est surtout comme entraîneur qu’il marque l’histoire en deux actes (1982-1988 et 1991-1997), avec à la clé deux championnats de France, deux finales de Coupe de France, une demi-finale de Ligue des champions, et le lancement de Didier Deschamps, Marcel Desailly ou Mickaël Landreau. À tel point que le groupe de punk-rock nantais Justine lui a consacré une chanson !\n"},
   {
     "nom": "Der Zakarian",
     "prenom": "Michel",
