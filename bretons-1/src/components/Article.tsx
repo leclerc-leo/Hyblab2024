@@ -55,7 +55,7 @@ const Article: React.FC<ArticleProps> = ({ id, title, subtitle, content }) => {
             />
           </div>
           <div className='inversedColor'>
-            <ShareMenu />
+            <ShareMenu id={id} title={title} />
           </div>
         </div>
       </div >
