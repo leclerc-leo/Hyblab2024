@@ -57,9 +57,9 @@ export const Frame1: React.FC<{ text: string, sexe: string, gain: string, rang: 
   }, []);
   return (
     <>
-      {/* <div className='animationOut'>
+       <div className='animationOut'>
         <img className='medailleTransition' src={determinerImageMedaille(gain)}></img>
-      </div> */}
+      </div>
       <div className="animationAgrandissement" style={{
         height: '100%',
         width: '120%',
