@@ -19,10 +19,11 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 
-    function updateTeamContent(teamId) {
+    function updateTeamContent(teamId,currentIndex) {
         const teamContainer = document.getElementById(teamId);
         teamContainer.innerHTML = '';
 
+        let majeur = (currentIndex === 1) ? 'majeur' : '';
         /* Change the content of the next team here */
 
             const teamField = document.createElement('div');
@@ -30,23 +31,21 @@ document.addEventListener('DOMContentLoaded', function () {
         teamField.innerHTML = `
         <img src="./img/field/field.svg" id="field-img" alt="field">
                         <img id="logo" class="field-jersey-img" src="./img/field/LOGO_APPLI.svg">
-
-                        <div class="field-player" id="poste-1" ><div class="">
-                        <img src="" alt="">
-</div>
-                        <img class="field-jersey-img" src="./img/animation/gants_1.gif"></div>
-                        <div class="field-player" id="poste-2"><img class="field-jersey-img" src="./img/field/jerseys/joueur-2.svg"></div>
-                        <div class="field-player" id="poste-3"><img class="field-jersey-img" src="./img/field/jerseys/joueur-3.svg"></div>
-                        <div class="field-player" id="poste-4"><img class="field-jersey-img" src="./img/field/jerseys/joueur-4.svg"></div>
-                        <div class="field-player" id="poste-5"><img class="field-jersey-img" src="./img/field/jerseys/joueur-5.svg"></div>
-                        <div class="field-player" id="poste-6"><img class="field-jersey-img" src="./img/field/jerseys/joueur-6.svg"></div>
-                        <div class="field-player" id="poste-7"><img class="field-jersey-img" src="./img/field/jerseys/joueur-7.svg"></div>
-                        <div class="field-player" id="poste-8" ><img class="field-jersey-img" src="./img/field/jerseys/joueur-8.svg"></div>
-                        <div class="field-player" id="poste-9"><img class="field-jersey-img" src="./img/field/jerseys/joueur-9.svg"></div>
-                        <div class="field-player" id="poste-10"><img class="field-jersey-img" src="./img/field/jerseys/joueur-10.svg"></div>
-                        <div class="field-player" id="poste-11" ><img class="field-jersey-img" src="./img/field/jerseys/joueur-11.svg"></div>
-                        <div class="field-player" id="poste-12" ><img class="field-jersey-img" src="./img/animation/cravate.gif"></div>
-      `;
+        
+                        <div class="field-player" id="poste-1"><div class="player-box"><p> 10% </p><img class="player-img ${majeur}" src="./img/players/placeholder-img.jpg" ><p>R.RIOU</p></div></div>
+                        <div class="field-player" id="poste-2"><div class="player-box"><p> 10% </p><img class="player-img ${majeur}" src="./img/players/placeholder-img.jpg" ><p>R.RIOU</p></div></div>
+                        <div class="field-player" id="poste-3"><div class="player-box"><p> 10% </p><img class="player-img ${majeur}" src="./img/players/placeholder-img.jpg" ><p>R.RIOU</p></div></div>
+                        <div class="field-player" id="poste-4"><div class="player-box"><p> 10% </p><img class="player-img ${majeur}" src="./img/players/placeholder-img.jpg" ><p>R.RIOU</p></div></div>
+                        <div class="field-player" id="poste-5"><div class="player-box"><p> 10% </p><img class="player-img ${majeur}" src="./img/players/placeholder-img.jpg" ><p>R.RIOU</p></div></div>
+                        <div class="field-player" id="poste-6"><div class="player-box"><p> 10% </p><img class="player-img ${majeur}" src="./img/players/placeholder-img.jpg" ><p>R.RIOU</p></div></div>
+                        <div class="field-player" id="poste-7"><div class="player-box"><p> 10% </p><img class="player-img ${majeur}" src="./img/players/placeholder-img.jpg" ><p>R.RIOU</p></div></div>
+                        <div class="field-player" id="poste-8" ><div class="player-box"><p> 10% </p><img class="player-img ${majeur}" src="./img/players/placeholder-img.jpg" ><p>R.RIOU</p></div></div>
+                        <div class="field-player" id="poste-9"><div class="player-box"><p> 10% </p><img class="player-img ${majeur}" src="./img/players/placeholder-img.jpg" ><p>R.RIOU</p></div></div>
+                        <div class="field-player" id="poste-10"><div class="player-box"><p> 10% </p><img class="player-img ${majeur}" src="./img/players/placeholder-img.jpg" ><p>R.RIOU</p></div></div>
+                        <div class="field-player" id="poste-11"><div class="player-box"><p> 10% </p><img class="player-img ${majeur}" src="./img/players/placeholder-img.jpg" ><p>R.RIOU</p></div></div>
+                        <div class="field-player" id="poste-12"><div class="player-box"><p> 10% </p><img class="player-img ${majeur}" src="./img/players/placeholder-img.jpg" ><p>R.RIOU</p></div></div>
+            
+`;
             teamContainer.appendChild(teamField);
     }
 
@@ -84,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     function updateContent(currentIndex) {
-        updateTeamContent(`field${currentIndex + 1}`)
+        updateTeamContent(`field${currentIndex + 1}`,currentIndex)
         updateHeader(currentIndex);
     }
 

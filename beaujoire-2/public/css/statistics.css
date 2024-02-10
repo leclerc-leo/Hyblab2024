@@ -95,36 +95,33 @@ background-color: var(--bg-green);
     transform: translate(-50%, -50%);
 }
 
+.player-box {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
 .field-jersey-img{
     width:160%;
 }
 
-/*** For vote in progress ***/
-
-.voted {
-    cursor: default;
-    text-decoration: none;
+.majeur {
+    border: 3.5px solid var(--yellow);
 }
-.player-voted {
-    margin-left: 25% ;
-
-}
+/*** Players photos ***/
 
 .player-img {
-    width : 120% ;
+    height: 7vmin;
+    width: 7vmin;
+    border-radius :8px ;
     display: block;
+    margin-left: 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
-.player-img-box {
-    height: 11vw;
-    width: 11vw;
-    border-radius :1.5vw ;
-    overflow: hidden;
-}
-
-.player-voted p {
-    font-size : 25% ;
-    font-weight : lighter;
+.player-box p {
+    font-size : 20% ;
+    font-weight : 50;
     line-height: 1;
     font-family : 'Abolition';
     color : white;
@@ -132,69 +129,69 @@ background-color: var(--bg-green);
     padding-left : 25% ;
 }
 
-/*** For vote in progress ***/
+/*** Players photos ***/
 
 /* Postes spécifiques */
 #poste-1 { /* Gardien */
-    top: 90%;
-    left: 46%;
+    top: 87%;
+    left: 45%;
     width: 15%;
 }
 
 #poste-2 { /* Arrière latéral droit */
-    top: 62%;
-    left: 12%;
+    top: 58%;
+    left: 8%;
 }
 
 #poste-3 { /* Arrière latéral gauche */
-    top: 62%;
-    left: 84%;
+    top: 58%;
+    left: 80%;
 }
 
 #poste-4 { /* Défenseur central 1 */
-    top: 73%;
-    left: 34%;
+    top: 70%;
+    left: 28%;
 }
 
 #poste-5 { /* Défenseur central 2 */
-    top: 73%;
-    left: 62%;
+    top: 70%;
+    left: 59%;
 }
 
 #poste-6 { /* Milieu défensif */
-    top: 50%;
-    left: 34%;
+    top: 47%;
+    left: 28%;
 }
 
 #poste-7 { /* Milieu gauche */
-    top: 38%;
-    left: 12%;
+    top: 35%;
+    left: 8%;
 }
 
 #poste-8 { /* Milieu offensif */
-    top: 50%;
-    left: 62%;
+    top: 47%;
+    left: 59%;
 }
 
 #poste-9 { /* Attaquant 1 */
-    top: 26%;
-    left: 34%;
+    top: 24%;
+    left: 28%;
 }
 
 #poste-10 { /* Milieu droit */
-    top: 38%;
-    left: 84%;
+    top: 35%;
+    left: 80%;
 }
 
 #poste-11 { /* Attaquant 2 */
-    top: 26%;
-    left: 62%;
+    top: 24%;
+    left: 59%;
 }
 
 #poste-12 { /* Sélectionneur */
     width: 14%;
-    top: 12%;
-    left: 47%;
+    top: 8%;
+    left: 45%;
 }
 
 
@@ -290,18 +287,14 @@ background-color: var(--bg-green);
     width: calc(100 * 3vh / 4); /* Force 3/4 aspect ratio */
 }
 
+@media screen and (max-aspect-ratio: 3 / 4) {
+p { margin: 0 ;}
+}
 /* Fill the whole viewport when its aspect ratio is between 9/16 and 3/4 */
-@media screen and (max-aspect-ratio: 3/4) {
+@media screen and (max-aspect-ratio: 5/7) {
     #container{
         margin-left: 0; /* reset margin-left */
         width: 100vw; /* content is full width (and full height because of the default rule for container height */
-    }
-
-    .popup{
-        width: calc(100 * 6vw / 9);
-        height: calc(100 * 4vw / 9);
-        color: var(--yellow);
-        text-align: center;
     }
 
     p {
@@ -311,12 +304,105 @@ background-color: var(--bg-green);
         text-align: center;
     }
 
-    .team-field-container {
-        height: calc(100 * 3.2% / 5);
-        width: calc(100 * 3.2% / 5);
-        margin-top : calc(1.5 * 3vw) ;
+    .player-box p {
+        font-size : 20% ;
+        font-weight : 50;
+        line-height: 1;
+        font-family : 'Abolition';
+        color : white;
+        text-align: center;
+        padding-left : 25% ;
     }
 
+
+    .team-field-container {
+        height: calc(100 * 3.5% / 5);
+        width: calc(100 * 3.5% / 5);
+        margin-top : calc(1.5 *3%) ;
+    }
+
+    .player-img {
+        height: 9vmin;
+        width: 9vmin;
+        border-radius :10px ;
+        display: block;
+        margin-left: 15px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .field-player {
+        position: absolute;
+        width: 15%;
+        transform: translate(-50%, -50%);
+    }
+
+    /* Postes spécifiques */
+    #poste-1 { /* Gardien */
+        top: 87%;
+        left: 49%;
+        width: 15%;
+    }
+
+    #poste-2 { /* Arrière latéral droit */
+        top: 58%;
+        left: 13%;
+    }
+
+    #poste-3 { /* Arrière latéral gauche */
+        top: 58%;
+        left: 85%;
+    }
+
+    #poste-4 { /* Défenseur central 1 */
+        top: 70%;
+        left: 33%;
+    }
+
+    #poste-5 { /* Défenseur central 2 */
+        top: 70%;
+        left: 64%;
+    }
+
+    #poste-6 { /* Milieu défensif */
+        top: 47%;
+        left: 34%;
+    }
+
+    #poste-7 { /* Milieu gauche */
+        top: 35%;
+        left: 13%;
+    }
+
+    #poste-8 { /* Milieu offensif */
+        top: 47%;
+        left: 64%;
+    }
+
+    #poste-9 { /* Attaquant 1 */
+        top: 24%;
+        left: 33%;
+    }
+
+    #poste-10 { /* Milieu droit */
+        top: 35%;
+        left: 85%;
+    }
+
+    #poste-11 { /* Attaquant 2 */
+        top: 24%;
+        left: 64%;
+    }
+
+    #poste-12 { /* Sélectionneur */
+        width: 14%;
+        top: 8%;
+        left: 48%;
+    }
+
+    .majeur {
+        border: 7px solid var(--yellow);
+    }
 }
 
 /* The content is displayed at 9/16 If the aspect ratio is higher that 9/16  */
@@ -329,24 +415,44 @@ background-color: var(--bg-green);
         height: calc(100 * 16vw / 9); /* adjust height so that aspect ratio is 9/16 */
     }
 
-    .popup{
-        width: calc(100 * 7vw / 9);
-        height: calc(100 * 4.5vw / 9);
-        color: var(--yellow);
-        text-align: center;
-
-    }
-
     p {
         margin: 0 ;
         color: var(--yellow);
         text-align: center;
     }
 
+    .player-box p {
+        font-size : 20% ;
+        font-weight : 50;
+        line-height: 1;
+        font-family : 'Abolition';
+        color : white;
+        text-align: center;
+        padding-left : 25% ;
+    }
+
+
     .team-field-container {
-        height: calc(100 * 4.5% / 5);
-        width: calc(100 * 4.5% / 5);
+        height: calc(100 * 4% / 5);
+        width: calc(100 * 4% / 5);
         margin-top : calc(1.5 *3.5%) ;
     }
-}
+
+    .player-img {
+        height: 9vmin;
+        width: 9vmin;
+        border-radius :10px ;
+        display: block;
+        margin-left: 15px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .field-player {
+        position: absolute;
+        width: 15%;
+        transform: translate(-50%, -50%);
+    }
+
+    }
 
