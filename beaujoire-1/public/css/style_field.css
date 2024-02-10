@@ -41,10 +41,19 @@ body {
 	object-fit: contain;
 }
 
-#main {
+#main,
+#main1 {
 	text-align: center;
 	font-family: Industry;
 	font-weight: bolder;
+}
+
+#main1 {
+	width: 80%;
+}
+
+#main1 > .big-title {
+	font-size: 1rem;
 }
 
 .green {
@@ -52,11 +61,11 @@ body {
 }
 
 .big-title {
-	font-size: calc(max(8vh, 8vw));
+	font-size: 3.5rem;
 }
 
 .small-title {
-	font-size: calc(max(5vh, 5vw));
+	font-size: 1.5rem;
 }
 
 .choose {
@@ -129,16 +138,24 @@ body {
 }
 
 #intro > h1 {
-	font-size: 50px;
+	font-size: 2.7rem;
+	letter-spacing: 0.1rem;
+}
+
+#intro > p {
+	font-family: Bebas Neue;
+	font-weight: lighter;
 }
 
 #intro > * {
 	margin: 5%;
+	width: 80%;
 }
 
 #intro-btn {
 	font-size: 20px;
 	border: solid 2px oldlace;
+	width: 55%;
 }
 
 /* For computers */

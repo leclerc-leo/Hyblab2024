@@ -7,6 +7,7 @@ let isCaptainBeingSelected = false;
 let selectedPlayerId;
 let updatePlayerElement;
 let playersData;
+let isFirstCall = true;
 
 window.onload = fetch("./data/DataBase.json")
 	.then((response) => response.json())
@@ -36,7 +37,7 @@ function initializePage() {
 		if (player.POSTE !== "ENTRAÎNEUR" && player.NUMÉRO !== undefined) {
 			playerElement.setAttribute("data-number", player.NUMÉRO);
 			playerElement.innerHTML = `
-				<img src="./img/jersey.svg" alt="jersey" />
+
 				<p class="player-name">${playerName}</p>
 			`;
 		} else {
@@ -175,11 +176,18 @@ let players = JSON.parse(localStorage.getItem("players")) || {
 	"defender-3": "",
 };
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
 	/*
 	document.querySelectorAll(".player-clickable").forEach((player) => {
 		player.addEventListener("click", handlePlayerClick);
 	});*/
+	document
+		.querySelector("#statistiques")
+		.addEventListener("click", async (event) => {
+			event.preventDefault();
+			await saveStats();
+			window.location.href = "./statistique.html";
+		});
 
 	const selectedImageButton = document.getElementById("maillot");
 
@@ -230,7 +238,7 @@ document.addEventListener("DOMContentLoaded", () => {
 					animatePlayer(
 						"attaquant-gif",
 						"img/animations/attaquant-fond-gris.gif",
-						1200,
+						1250,
 						event
 					);
 				}
@@ -247,7 +255,7 @@ document.addEventListener("DOMContentLoaded", () => {
 					animatePlayer(
 						"milieu-gif",
 						"img/animations/milieu-fond-gris.gif",
-						1020,
+						1080,
 						event
 					);
 				}
@@ -312,45 +320,47 @@ document.addEventListener("DOMContentLoaded", () => {
 				audio.muted = !audio.muted;
 			});
 		});
-
-	const saveStats = setInterval(() => {
-		if (
-			areAllPlayersSelected() &&
-			isCaptainSelected &&
-			!isCaptainBeingSelected
-		) {
-			fetch("./data/Stats.json")
-				.then((response) => response.json())
-				.then((stats) => {
-					Object.keys(players).forEach((position) => {
-						const playerName = players[position];
-						if (playerName !== "") {
-							if (stats[playerName] !== undefined) {
-								stats[playerName]++;
-							} else {
-								stats[playerName] = 1;
-							}
-						}
-					});
-
-					// Send the updated stats back to the server
-					fetch("./updateStats", {
-						method: "POST",
-						headers: {
-							"Content-Type": "application/json",
-						},
-						body: JSON.stringify(stats),
-					});
-					clearInterval(saveStats);
-				});
-		}
-	}, 5000);
 });
 
-fetch("/test")
+fetch("api/test")
 	.then((response) => response.text())
 	.then((data) => console.log(data))
 	.catch((error) => console.error("Error:", error));
+
+function saveStats() {
+	if (
+		areAllPlayersSelected() &&
+		isCaptainSelected &&
+		!isCaptainBeingSelected
+	) {
+		fetch("./data/Stats.json")
+			.then((response) => response.json())
+			.then((stats) => {
+				console.log("Stats:", stats);
+				console.log("Players:", players);
+				Object.values(players).forEach((player) => {
+					if (stats[player] !== undefined) {
+						stats[player]++;
+					} else {
+						// Handle the case where the player doesn't exist in the stats object
+						console.log(`Player ${player} not found in stats.`);
+					}
+				});
+				localStorage.setItem("stats", JSON.stringify(stats));
+				console.log("Updated Stats:", stats);
+				console.log("Stats saved to local storage");
+				// Send the updated stats back to the server
+				fetch("api/updateStats", {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify(stats),
+				});
+			})
+			.catch((error) => console.error("Error fetching stats:", error));
+	}
+}
 
 function animatePlayer(elementId, imgSrc, timeoutDuration, event) {
 	const element = document.getElementById(elementId);
@@ -360,9 +370,8 @@ function animatePlayer(elementId, imgSrc, timeoutDuration, event) {
 	imgElement.onload = function () {
 		element.style.display = "flex";
 		element.style.opacity = "1";
-
+		element.querySelector("audio").play();
 		setTimeout(() => {
-			element.querySelector("audio").play();
 			handlePlayerClick({
 				target: document.getElementById(
 					event.target.closest(".player-clickable").id
@@ -610,8 +619,81 @@ function createCarouselItem(player) {
 	}
 
 	let carte = player.CARTE;
-	carouselItem.innerHTML = `
+	if (player.POSTE == "ENTRAÎNEUR") {
+		carouselItem.innerHTML = `
 	<div class="flip-container">
+		<div class="flipper">
+			<!-- Recto -->
+			<div class="front">
+				<img class="carte-img" src="img/cartes/${player.CARTE}.webp" alt="Photo de ${player.NOM}" />
+				<h1 id="name" style="display: none">${player.NOM}</h1>
+			</div>
+			<!-- Verso -->
+			<div class="back">
+				<div>
+					<img class="carte-img" src="img/back_card.svg" alt="Bio de ${player.NOM}" />
+					<div>
+						<p class="back-title">${player.NOM}</p>
+						<p class="back-text">${player.DOS}</p>
+					</div>
+				</div>
+				<div class="bottom-btn" id="flip-btn">
+					<button class="round-btn" id="back-overlay" title="close">
+						<img src="./img/close.svg" alt="close" />
+					</button>
+					<button class="gm-btn gb-shutter" id="bio-btn">
+						Biographie
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<button class="gm-btn gb-shutter" id="validate-button">
+	Sélectionner
+	</button>
+	<div class="carousel-grid">
+		<div class="carousel-matchs">
+			<p class="stat-score green">${player.MATCHS}</p>
+			<div class="flex-row">
+				<div class="bar-container">
+					<div id="bar1" class="bar"></div>
+				</div>
+				<div class="bar-container">
+					<div id="bar2" class="bar"></div>
+				</div>
+				<div class="bar-container">
+					<div id="bar3" class="bar"></div>
+				</div>
+			</div>
+			<p class="stat-name"><span class="green">NOMBRE DE</span> MATCHS </p>
+		</div>
+		<div class="carousel-coupes">
+			<div class= coupes-score>
+				<p class="stat-score green">${player.champ_fr}</p>
+				<p class="stat-score green">${player.tr_champ}</p>
+				<p class="stat-score green">${player.cp_fr}</p>
+				<p class="stat-score green">${player.lig_champ}</p>
+			</div>
+			<div class="flex-row">
+				<div class="cp-col">
+					${champ_fr}
+				</div>
+				<div class="cp-col">
+					${tr_champ}
+				</div>
+				<div class="cp-col">
+					${cp_fr}
+				</div>
+				<div class="cp-col">
+					${lig_champ}
+				</div>
+			</div>
+			<p class="stat-name"><span class="green">NOMBRE DE</span> COUPES </p>
+		</div>
+	</div>
+    `;
+	} else {
+		carouselItem.innerHTML = `<div class="flip-container">
 		<div class="flipper">
 			<!-- Recto -->
 			<div class="front">
@@ -717,42 +799,47 @@ function createCarouselItem(player) {
 			<p class="stat-name"><span class="green">TAILLE EN</span> M </p>
 		</div>
 	</div>
-    `;
+	`;
+	}
+
 	const matchs = player.MATCHS; // Remplacez ceci par le nombre de matchs du joueur
 
 	const bar1 = carouselItem.querySelector("#bar1");
 	const bar2 = carouselItem.querySelector("#bar2");
 	const bar3 = carouselItem.querySelector("#bar3");
-	const bar4 = carouselItem.querySelector("#bar4");
-	const bar5 = carouselItem.querySelector("#bar5");
-	const bar6 = carouselItem.querySelector("#bar6");
-	const bar7 = carouselItem.querySelector("#bar7");
-	const bar8 = carouselItem.querySelector("#bar8");
-	const circle1 = carouselItem.querySelector("#circle1");
-	const circle2 = carouselItem.querySelector("#circle2");
-	const circle3 = carouselItem.querySelector("#circle3");
+	if (!(player.POSTE == "ENTRAÎNEUR")) {
+		const bar4 = carouselItem.querySelector("#bar4");
+		const bar5 = carouselItem.querySelector("#bar5");
+		const bar6 = carouselItem.querySelector("#bar6");
+		const bar7 = carouselItem.querySelector("#bar7");
+		const bar8 = carouselItem.querySelector("#bar8");
+		const circle1 = carouselItem.querySelector("#circle1");
+		const circle2 = carouselItem.querySelector("#circle2");
+		const circle3 = carouselItem.querySelector("#circle3");
 
-	circle1.style.backgroundColor = player.BUTS >= 1 ? "#00a55a" : "white";
-	circle2.style.backgroundColor = player.BUTS >= 30 ? "#00a55a" : "white";
-	circle3.style.backgroundColor = player.BUTS >= 70 ? "#00a55a" : "white";
-
-	if (player.POSTE == "GARDIEN") {
 		circle1.style.backgroundColor = player.BUTS >= 1 ? "#00a55a" : "white";
-		circle2.style.backgroundColor =
-			player.BUTS >= 100 ? "#00a55a" : "white";
-		circle3.style.backgroundColor =
-			player.BUTS >= 200 ? "#00a55a" : "white";
+		circle2.style.backgroundColor = player.BUTS >= 30 ? "#00a55a" : "white";
+		circle3.style.backgroundColor = player.BUTS >= 70 ? "#00a55a" : "white";
+
+		if (player.POSTE == "GARDIEN") {
+			circle1.style.backgroundColor =
+				player.BUTS >= 1 ? "#00a55a" : "white";
+			circle2.style.backgroundColor =
+				player.BUTS >= 100 ? "#00a55a" : "white";
+			circle3.style.backgroundColor =
+				player.BUTS >= 200 ? "#00a55a" : "white";
+		}
+
+		bar4.style.backgroundColor = player.TAILLE >= 1.5 ? "#00a55a" : "white";
+		bar5.style.backgroundColor = player.TAILLE >= 1.6 ? "#00a55a" : "white";
+		bar6.style.backgroundColor = player.TAILLE >= 1.7 ? "#00a55a" : "white";
+		bar7.style.backgroundColor = player.TAILLE >= 1.8 ? "#00a55a" : "white";
+		bar8.style.backgroundColor = player.TAILLE >= 1.9 ? "#00a55a" : "white";
 	}
 
 	bar1.style.backgroundColor = matchs >= 36 ? "#00a55a" : "white";
 	bar2.style.backgroundColor = matchs >= 200 ? "#00a55a" : "white";
 	bar3.style.backgroundColor = matchs >= 400 ? "#00a55a" : "white";
-
-	bar4.style.backgroundColor = player.TAILLE >= 1.5 ? "#00a55a" : "white";
-	bar5.style.backgroundColor = player.TAILLE >= 1.6 ? "#00a55a" : "white";
-	bar6.style.backgroundColor = player.TAILLE >= 1.7 ? "#00a55a" : "white";
-	bar7.style.backgroundColor = player.TAILLE >= 1.8 ? "#00a55a" : "white";
-	bar8.style.backgroundColor = player.TAILLE >= 1.9 ? "#00a55a" : "white";
 
 	let flip_container = carouselItem.querySelector(".flip-container");
 	let sides = Array.from(carouselItem.querySelector(".flipper").children);
@@ -1382,6 +1469,10 @@ function handleCaptainSelect(id) {
 			player.removeEventListener("click", handleCaptainClick);
 		});
 		isCaptainBeingSelected = false;
+		if (isFirstCall) {
+			isFirstCall = false;
+			document.querySelector("#fufu").play();
+		}
 	}
 }
 
