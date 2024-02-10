@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './ShareMenu.css';
-import {VideoListItemProps} from './type';
 
 interface ShareButtonProps {
   onShareClick: () => void;
@@ -16,19 +15,20 @@ const ShareButton: React.FC<ShareButtonProps> = ({ onShareClick }) => (
 );
 
 interface ShareMenuProps {
-  video: VideoListItemProps['video'];
+  id: string;
+  title: string;
 }
 
-const ShareMenu: React.FC<ShareMenuProps> = ({ video }) => {
+const ShareMenu: React.FC<ShareMenuProps> = ({ id, title }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
-  const shareText = `Vibrez avec ${video.title} aux JO ! 🏅🔥 #JO2024 #BretagneFière`;
+  const shareText = `Vibrez avec ${title} aux JO ! 🏅🔥 #JO2024 #BretagneFière`;
   const encodedShareText = encodeURIComponent(shareText);
-  const videoPlayerUrl = `https://hyblab.polytech.univ-nantes.fr/bretons-1/VideoPlayer/${video.id}`;
+  const videoPlayerUrl = `https://hyblab.polytech.univ-nantes.fr/bretons-1/VideoPlayer/${id}`;
   const twitterShareLink = `https://twitter.com/intent/tweet?url=${videoPlayerUrl}&text=${encodedShareText}`;
   const facebookShareLink = `https://www.facebook.com/sharer/sharer.php?u=${videoPlayerUrl}`;
 
