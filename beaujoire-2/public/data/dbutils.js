@@ -1,4 +1,4 @@
-const db = require('./dbinit');
+db = require('./dbinit');
 const dataUtils = {};
 
 /* récuperer toutes les infos d'un joueur pour la page de joueur.
@@ -105,4 +105,4 @@ dataUtils.getTop = function(idPoste){
 
 dataUtils.db = db;
 
-module.exports = dataUtils;
+module.exports = dataUtils ;

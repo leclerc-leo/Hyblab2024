@@ -1,7 +1,8 @@
+//import dataUtils from '../data/dataUtils.mjs';
 
-votesTmp = JSON.parse(localStorage.getItem('votes'));
+let votesTmp = JSON.parse(localStorage.getItem('votes'));
 console.log(votesTmp);
-var allVotes = true;
+let allVotes = true;
 
 
 /*for (let i = 1; i <= 12; i++) {
@@ -14,14 +15,21 @@ var allVotes = true;
 /************* Archives *************/
 function checkVotes() {
   const archivesButton = document.getElementById('archives');
+  const statisticsButton = document.getElementById('statistiques');
   if (allVotes) {
     archivesButton.classList.remove("disabled");
+    statisticsButton.classList.remove("disabled");
     archivesButton.classList.add("enabled");
+    statisticsButton.classList.add("enabled");
     archivesButton.href = "/beaujoire-2/archives";
+    statisticsButton.href = "/beaujoire-2/statistics";
   } else {
     archivesButton.classList.remove("enabled");
+    statisticsButton.classList.remove("enabled");
     archivesButton.classList.add("disabled");
+    statisticsButton.classList.add("disabled");
     archivesButton.href = "javascript: void(0)";
+    statisticsButton.href = "javascript: void(0)";
   }
 }
 
@@ -134,7 +142,14 @@ function checkprogress() {
 
 checkprogress();
 
-
 /************* Vote progression display  **************/
 
+/************* Finalize votes  **************/
+document.getElementById('statistiques').addEventListener('click',() => {
+  // Access the sessionToken passed from the server
+  const sessionToken = globals.getSessionToken();
+  dataUtils.vote(sessionToken, votesTmp);
+  // TODO : redirect
+})
+/************* Finalize votes  **************/
 

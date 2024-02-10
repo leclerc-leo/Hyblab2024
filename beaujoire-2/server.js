@@ -5,11 +5,13 @@
 // Load usefull expressjs and nodejs objects / modules
 const express = require('express');
 const path = require('path');
+const cookieParser = require('cookie-parser');
 
 // Create our application
 const app = express();
+app.use(cookieParser());
 
-let db = require('./public/data/dbutils');
+let db = require('./public/data/dbutils.js');
 
 /*db.selectPlayer(65);
 db.vote("test", [2, 2, 2, 1, 1, 2, 2, 1, 4, 3, 1, 2]);
@@ -29,15 +31,35 @@ app.use(express.static(path.join(__dirname, '../__common-logos__')));
 
 app.set('view engine', 'html');
 
+// Set the session token :
+function generateRandomToken(length) {
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let token = '';
+
+    for (let i = 0; i < length; i++) {
+        const randomIndex = Math.floor(Math.random() * characters.length);
+        token += characters.charAt(randomIndex);
+    }
+
+    return token;
+}
+
 // You can then add whatever routing code you need
 
 const ui = express.Router();
 ui.get('/', (req, res) => {
+    const token = generateRandomToken(10);
+    // Set the cookie in the response
+    res.cookie('sessionToken', token, { maxAge: 900000, httpOnly: true });
+
     res.redirect('./home');
 });
 
 ui.get('/home', async (req, res) => {
+    // Retrieve the token from the 'sessionToken' cookie
+    const sessionToken = req.cookies.sessionToken;
     res.sendFile(path.join(__dirname, 'public/home.html'), {
+        sessionToken,
         locals: {
             pageName: 'Home'
         }
@@ -45,7 +67,10 @@ ui.get('/home', async (req, res) => {
 });
 
 ui.get('/field', async (req, res) => {
+    // Retrieve the token from the 'sessionToken' cookie
+    const sessionToken = req.cookies.sessionToken;
     res.sendFile(path.join(__dirname, 'public/field.html'), {
+        sessionToken,
         locals: {
             pageName: 'Field'
         }
@@ -53,7 +78,10 @@ ui.get('/field', async (req, res) => {
 });
 
 ui.get('/list', async (req, res) => {
+    // Retrieve the token from the 'sessionToken' cookie
+    const sessionToken = req.cookies.sessionToken;
     res.sendFile(path.join(__dirname, 'public/list.html'), {
+        sessionToken,
         locals: {
             pageName: 'List of players'
         }
@@ -61,10 +89,23 @@ ui.get('/list', async (req, res) => {
 });
 
 ui.get('/archives', async (req, res) => {
-
+// Retrieve the token from the 'sessionToken' cookie
+    const sessionToken = req.cookies.sessionToken;
     res.sendFile(path.join(__dirname, 'public/archives.html'), {
+        sessionToken,
         locals: {
             pageName: 'Archives'
+        }
+    });
+});
+
+ui.get('/statistics', async (req, res) => {
+// Retrieve the token from the 'sessionToken' cookie
+    const sessionToken = req.cookies.sessionToken;
+    res.sendFile(path.join(__dirname, 'public/statistics.html'), {
+        sessionToken,
+        locals: {
+            pageName: 'Statistics'
         }
     });
 });

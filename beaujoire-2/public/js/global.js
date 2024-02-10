@@ -8,4 +8,18 @@ if (!(localStorage.getItem('votes'))){
     localStorage.setItem('votes', JSON.stringify(votesTmp));
 }
 
-/********** Table de votes tomporaire ****************/
+/********** Global functions ****************/
+
+const globals = {} ;
+// Function to retrieve the session token from cookies
+globals.getSessionToken = function() {
+    const cookies = document.cookie.split(';');
+    for (const cookie of cookies) {
+        const [name, value] = cookie.trim().split('=');
+        if (name === 'sessionToken') {
+            return value;
+        }
+    }
+    return null;
+}
+
