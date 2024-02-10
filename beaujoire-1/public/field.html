@@ -13,6 +13,7 @@
     <div class="container">
       <div class="logo-container"></div>
       <div class="buttons">
+        <!-- c'est ici que faut le lien nan ? -->
         <a href="carrousel.html">
           <button id="maillot" class="selected-maillot-button" title="maillot"></button>
         </a>
@@ -31,44 +32,6 @@
         <div class="player-card">
           <!-- Goalkeeper -->
           <div class="player player-clickable goalkeeper" id="goalkeeper" style="top: 90%; left: 50%"></div>
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width initial-scale=1.0" />
-		<title>Le 11 de légende</title>
-		<link rel="icon" href="img/logo.svg" />
-		<link rel="stylesheet" href="./css/style2.css" />
-		<link rel="stylesheet" href="https://use.typekit.net/tor7tnx.css" />
-		<script src="https://cdn.jsdelivr.net/npm/interactjs@1.10.11/dist/interact.min.js"></script>
-	</head>
-	<body>
-		<div class="container">
-			<div class="logo-container"></div>
-			<div class="buttons">
-				<button id="maillot" title="maillot"></button>
-				<button id="capitaine" class="green" title="captain">
-					c
-					<div id="cap-bar"></div>
-				</button>
-				<button
-					class="player-clickable"
-					id="entraineur"
-					title="entraineur">
-					ENTRA&Icirc;NEUR
-				</button>
-				<button id="blason" title="blason"></button>
-			</div>
-			<div class="field">
-				<img
-					src="./img/field.svg"
-					alt="field"
-					width="100%"
-					height="100%" />
-				<div class="player-card">
-					<!-- Goalkeeper -->
-					<div
-						class="player player-clickable goalkeeper"
-						id="goalkeeper"
-						style="top: 90%; left: 50%"></div>
 
           <!-- Forward Line (3 players) -->
           <div class="player player-clickable forward" id="ailier-gauche" style="top: 21%; left: 20%" data-number=""></div>
@@ -80,274 +43,219 @@
           <div class="player player-clickable midfielder" id="midfielder-lead" style="top: 40%; left: 50%"></div>
           <div class="player player-clickable midfielder" id="midfielder-3" style="top: 48%; left: 75%"></div>
 
-					<!-- Defensive Line (4 players) -->
-					<div
-						class="player player-clickable defender"
-						id="arriere-gauche"
-						style="top: 67%; left: 15%"></div>
-					<div
-						class="player player-clickable defender"
-						id="defender-2"
-						style="top: 71%; left: 39%"></div>
-					<div
-						class="player player-clickable defender"
-						id="defender-3"
-						style="top: 71%; left: 61%"></div>
-					<div
-						class="player player-clickable defender"
-						id="arriere-droit"
-						style="top: 67%; left: 85%"></div>
-				</div>
-				<div
-					class="round-btn"
-					id="share"
-					title="share"
-					style="display: none">
-					<img src="./img/share.svg" alt="share" />
-				</div>
-			</div>
-			<div class="share-block">
-				<div class="share-block__bar"></div>
-				<p class="share-block__text">Partage ton 11</p>
-				<div class="share-icons">
-					<div class="share-icons__item">
-						<div class="img-container">
-							<img src="./img/insta.svg" alt="insta" />
-						</div>
-						<p class="social">Instagram</p>
-					</div>
-					<div class="share-icons__item">
-						<div class="img-container">
-							<img src="./img/facebook.svg" alt="fb" />
-						</div>
-						<p class="social">Facebook</p>
-					</div>
-					<div class="share-icons__item">
-						<div class="img-container">
-							<img src="./img/x.svg" alt="x" />
-						</div>
-						<p class="social">X</p>
-					</div>
-					<div class="share-icons__item">
-						<div class="img-container">
-							<img src="./img/youtube.svg" alt="youtube" />
-						</div>
-						<p class="social">Youtube</p>
-					</div>
-					<div class="share-icons__item">
-						<div class="img-container">
-							<img src="./img/bread.svg" alt="plus" />
-						</div>
-						<p class="social">Plus</p>
-					</div>
-				</div>
-			</div>
-			<div class="bottom-btn">
-				<a id="redac" href="selection.html"
-					><button class="gm-btn gb-shutter">
-						LES 11 DE LA R&Eacute;DACTION
-					</button>
-				</a>
-				<a href="statistique.html">
-					<button id="statistiques" class="gm-btn gb-shutter">
-						STATISTIQUES
-					</button>
-				</a>
-				<div class="settings">
-					<div class="round-btn" id="settings" title="settings">
-						<img src="./img/settings.svg" alt="settings" />
-					</div>
-					<div class="dropdown">
-						<p>i</p>
-						<img src="./img/sound.svg" alt="sound" />
-					</div>
-				</div>
-			</div>
-			<div id="captain">
-				<h1 id="main" class="big-title">
-					CHOISI TON
-					<br />
-					<span class="green">CAPITAINE</span>
-				</h1>
-				<div class="bottom-btn" id="flip-btn">
-					<button
-						class="round-btn"
-						id="close-bio"
-						title="close"
-						onclick="closeCaptainOverlay()">
-						<img src="./img/close.svg" alt="close" />
-					</button>
-				</div>
-			</div>
-			<div class="bio-overlay" style="display: none">
-				<h2>Titre de la bio</h2>
-				<p>Contenu de la bio ici.</p>
-				<div class="bottom-btn" id="flip-btn">
-					<button class="round-btn" id="close-bio" title="close">
-						<img src="./img/close.svg" alt="close" />
-					</button>
-				</div>
-			</div>
-			<div class="carousel-overlay">
-				<h1 id="poste-title" class="small-title green"></h1>
-				<div class="carousel">
-					<div class="carousel-item">Joueur 1</div>
-					<div class="carousel-item">Joueur 2</div>
-					<div class="carousel-item">Joueur 3</div>
-					<!-- Ajoutez plus d'éléments de carrousel ici -->
-				</div>
-				<div class="bottom-btn" id="carou-btn">
-					<button class="round-btn" id="back-overlay" title="close">
-						<img src="./img/back-btn.svg" alt="close" />
-					</button>
-					<button class="gm-btn gb-shutter" id="compare-btn">
-						Comparer
-					</button>
-				</div>
-			</div>
-			<div class="compare-overlay">
-				<div class="compare-titles">
-					<h1 id="compare-title" class="small-title green">
-						Statistiques
-					</h1>
-					<h2 id="compare-subtitle">POSTE</h2>
-				</div>
-				<div class="compare-players">
-					<div class="compare-item" id="f-player">
-						<img src="./img/compare.svg" alt="Joueur à comparer" />
-						<h1 id="name" style="display: none"></h1>
-						<button
-							class="gm-btn gb-shutter comparo"
-							id="validate-button">
-							Sélectionner
-						</button>
-					</div>
-					<div class="compare-item" id="c-player">
-						<img src="./img/compare.svg" alt="Joueur à comparer" />
-						<h1 id="name" style="display: none"></h1>
-						<button
-							class="gm-btn gb-shutter comparo"
-							id="validate-button">
-							Sélectionner
-						</button>
-					</div>
-				</div>
-				<div class="compare-grid">
-					<div class="compare-grid-item">
-						<p>MATCHS</p>
-						<div class="comparo-container" id="matchs-bar">
-							<div class="player1-bar">
-								<div class="bar-score">0</div>
-							</div>
-							<div class="player2-bar">
-								<div class="bar-score">0</div>
-							</div>
-						</div>
-					</div>
-					<div class="compare-grid-item">
-						<p>BUTS</p>
-						<div class="comparo-container" id="buts-bar">
-							<div class="player1-bar">
-								<div class="bar-score">0</div>
-							</div>
-							<div class="player2-bar">
-								<div class="bar-score">0</div>
-							</div>
-						</div>
-					</div>
-					<div class="compare-grid-item">
-						<p>COUPES</p>
-						<div class="comparo-container" id="coupes-bar">
-							<div class="player1-bar">
-								<div class="bar-score">0</div>
-							</div>
-							<div class="player2-bar">
-								<div class="bar-score">0</div>
-							</div>
-						</div>
-					</div>
-					<div class="compare-grid-item">
-						<p>TAILLE</p>
-						<div class="comparo-container" id="taille-bar">
-							<div class="player1-bar">
-								<div class="bar-score">0</div>
-							</div>
-							<div class="player2-bar">
-								<div class="bar-score">0</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<button
-					class="round-btn"
-					id="compare-back"
-					title="close"
-					onclick="closeCompareOverlay()">
-					<img src="./img/back-btn.svg" alt="close" />
-				</button>
-				<div id="compare-carousel">
-					<h1 id="poste-title" class="small-title green">Poste</h1>
-					<div id="cmp-carou">
-						<div class="carousel-item">Joueur 1</div>
-						<div class="carousel-item">Joueur 2</div>
-						<div class="carousel-item">Joueur 3</div>
-						<!-- Ajoutez plus d'éléments de carrousel ici -->
-					</div>
-					<div class="bottom-btn" id="compare-close">
-						<button
-							class="round-btn"
-							id="back-overlay"
-							title="close"
-							onclick="closeCompareCarousel()">
-							<img src="./img/close.svg" alt="close" />
-						</button>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="gif-container" id="attaquant-gif" style="display: none">
-			<audio class="audio">
-				<source
-					src="./img/soundDesign/attaquant-sound.mp3"
-					type="audio/mpeg" />
-			</audio>
-			<img src="" alt="Ataquant open gif" />
-		</div>
-		<div class="gif-container" id="milieu-gif" style="display: none">
-			<audio class="audio">
-				<source
-					src="./img/soundDesign/milieu-sound.mp3"
-					type="audio/mpeg" />
-			</audio>
-			<img src="" alt="Milieu open gif" />
-		</div>
-		<div class="gif-container" id="defenseur-gif" style="display: none">
-			<audio class="audio">
-				<source
-					src="./img/soundDesign/defence-sound.mp3"
-					type="audio/mpeg" />
-			</audio>
-			<img src="" alt="Defenseur open gif" />
-		</div>
-		<div class="gif-container" id="gardien-gif" style="display: none">
-			<audio class="audio">
-				<source
-					src="./img/soundDesign/gardien-sound.mp3"
-					type="audio/mpeg" />
-			</audio>
-			<img src="" alt="Gardien open gif" />
-		</div>
-		<div class="gif-container" id="coach-gif" style="display: none">
-			<audio class="audio">
-				<source
-					src="./img/soundDesign/coach-sound.mp3"
-					type="audio/mpeg" />
-			</audio>
-			<img src="" alt="Coach open gif" />
-		</div>
-		<audio class="audio" id="back-sound" autoplay loop>
-			<source src="./img/soundDesign/fond-sonore.mp3" type="audio/mpeg" />
-		</audio>
-	</body>
-	<script type="module" src="./js/field.js"></script>
+          <!-- Defensive Line (4 players) -->
+          <div class="player player-clickable defender" id="arriere-gauche" style="top: 67%; left: 15%"></div>
+          <div class="player player-clickable defender" id="defender-2" style="top: 71%; left: 39%"></div>
+          <div class="player player-clickable defender" id="defender-3" style="top: 71%; left: 61%"></div>
+          <div class="player player-clickable defender" id="arriere-droit" style="top: 67%; left: 85%"></div>
+        </div>
+        <div class="round-btn" id="share" title="share" style="display: none">
+          <img src="./img/share.svg" alt="share" />
+        </div>
+      </div>
+      <div class="share-block">
+        <div class="share-block__bar"></div>
+        <p class="share-block__text">Partage ton 11</p>
+        <div class="share-icons">
+          <div class="share-icons__item">
+            <div class="img-container">
+              <img src="./img/insta.svg" alt="insta" />
+            </div>
+            <p class="social">Instagram</p>
+          </div>
+          <div class="share-icons__item">
+            <div class="img-container">
+              <img src="./img/facebook.svg" alt="fb" />
+            </div>
+            <p class="social">Facebook</p>
+          </div>
+          <div class="share-icons__item">
+            <div class="img-container">
+              <img src="./img/x.svg" alt="x" />
+            </div>
+            <p class="social">X</p>
+          </div>
+          <div class="share-icons__item">
+            <div class="img-container">
+              <img src="./img/youtube.svg" alt="youtube" />
+            </div>
+            <p class="social">Youtube</p>
+          </div>
+          <div class="share-icons__item">
+            <div class="img-container">
+              <img src="./img/bread.svg" alt="plus" />
+            </div>
+            <p class="social">Plus</p>
+          </div>
+        </div>
+      </div>
+      <div class="bottom-btn">
+        <a id="redac" href="selection.html"><button class="gm-btn gb-shutter">LES 11 DE LA R&Eacute;DACTION</button> </a>
+        <a href="statistique.html">
+          <button id="statistiques" class="gm-btn gb-shutter">STATISTIQUES</button>
+        </a>
+        <div class="settings">
+          <div class="round-btn" id="settings" title="settings">
+            <img src="./img/settings.svg" alt="settings" />
+          </div>
+          <div class="dropdown">
+            <p>i</p>
+            <img src="./img/sound.svg" alt="sound" />
+          </div>
+        </div>
+      </div>
+      <div id="captain">
+        <h1 id="main" class="big-title">
+          CHOISI TON
+          <br />
+          <span class="green">CAPITAINE</span>
+        </h1>
+        <div class="bottom-btn" id="flip-btn">
+          <button class="round-btn" id="close-bio" title="close" onclick="closeCaptainOverlay()">
+            <img src="./img/close.svg" alt="close" />
+          </button>
+        </div>
+      </div>
+      <div class="bio-overlay" style="display: none">
+        <h2>Titre de la bio</h2>
+        <p>Contenu de la bio ici.</p>
+        <div class="bottom-btn" id="flip-btn">
+          <button class="round-btn" id="close-bio" title="close">
+            <img src="./img/close.svg" alt="close" />
+          </button>
+        </div>
+      </div>
+      <div class="carousel-overlay">
+        <h1 id="poste-title" class="small-title green"></h1>
+        <div class="carousel">
+          <div class="carousel-item">Joueur 1</div>
+          <div class="carousel-item">Joueur 2</div>
+          <div class="carousel-item">Joueur 3</div>
+          <!-- Ajoutez plus d'éléments de carrousel ici -->
+        </div>
+        <div class="bottom-btn" id="carou-btn">
+          <button class="round-btn" id="back-overlay" title="close">
+            <img src="./img/back-btn.svg" alt="close" />
+          </button>
+          <button class="gm-btn gb-shutter" id="compare-btn">Comparer</button>
+        </div>
+      </div>
+      <div class="compare-overlay">
+        <div class="compare-titles">
+          <h1 id="compare-title" class="small-title green">Statistiques</h1>
+          <h2 id="compare-subtitle">POSTE</h2>
+        </div>
+        <div class="compare-players">
+          <div class="compare-item" id="f-player">
+            <img src="./img/compare.svg" alt="Joueur à comparer" />
+            <h1 id="name" style="display: none"></h1>
+            <button class="gm-btn gb-shutter comparo" id="validate-button">Sélectionner</button>
+          </div>
+          <div class="compare-item" id="c-player">
+            <img src="./img/compare.svg" alt="Joueur à comparer" />
+            <h1 id="name" style="display: none"></h1>
+            <button class="gm-btn gb-shutter comparo" id="validate-button">Sélectionner</button>
+          </div>
+        </div>
+        <div class="compare-grid">
+          <div class="compare-grid-item">
+            <p>MATCHS</p>
+            <div class="comparo-container" id="matchs-bar">
+              <div class="player1-bar">
+                <div class="bar-score">0</div>
+              </div>
+              <div class="player2-bar">
+                <div class="bar-score">0</div>
+              </div>
+            </div>
+          </div>
+          <div class="compare-grid-item">
+            <p>BUTS</p>
+            <div class="comparo-container" id="buts-bar">
+              <div class="player1-bar">
+                <div class="bar-score">0</div>
+              </div>
+              <div class="player2-bar">
+                <div class="bar-score">0</div>
+              </div>
+            </div>
+          </div>
+          <div class="compare-grid-item">
+            <p>COUPES</p>
+            <div class="comparo-container" id="coupes-bar">
+              <div class="player1-bar">
+                <div class="bar-score">0</div>
+              </div>
+              <div class="player2-bar">
+                <div class="bar-score">0</div>
+              </div>
+            </div>
+          </div>
+          <div class="compare-grid-item">
+            <p>TAILLE</p>
+            <div class="comparo-container" id="taille-bar">
+              <div class="player1-bar">
+                <div class="bar-score">0</div>
+              </div>
+              <div class="player2-bar">
+                <div class="bar-score">0</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="round-btn" id="compare-back" title="close" onclick="closeCompareOverlay()">
+          <img src="./img/back-btn.svg" alt="close" />
+        </button>
+        <div id="compare-carousel">
+          <h1 id="poste-title" class="small-title green">Poste</h1>
+          <div id="cmp-carou">
+            <div class="carousel-item">Joueur 1</div>
+            <div class="carousel-item">Joueur 2</div>
+            <div class="carousel-item">Joueur 3</div>
+            <!-- Ajoutez plus d'éléments de carrousel ici -->
+          </div>
+          <div class="bottom-btn" id="compare-close">
+            <button class="round-btn" id="back-overlay" title="close" onclick="closeCompareCarousel()">
+              <img src="./img/close.svg" alt="close" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="gif-container" id="attaquant-gif" style="display: none">
+      <audio class="audio">
+        <source src="./img/soundDesign/attaquant-sound.mp3" type="audio/mpeg" />
+      </audio>
+      <img src="" alt="Ataquant open gif" />
+    </div>
+    <div class="gif-container" id="milieu-gif" style="display: none">
+      <audio class="audio">
+        <source src="./img/soundDesign/milieu-sound.mp3" type="audio/mpeg" />
+      </audio>
+      <img src="" alt="Milieu open gif" />
+    </div>
+    <div class="gif-container" id="defenseur-gif" style="display: none">
+      <audio class="audio">
+        <source src="./img/soundDesign/defence-sound.mp3" type="audio/mpeg" />
+      </audio>
+      <img src="" alt="Defenseur open gif" />
+    </div>
+    <div class="gif-container" id="gardien-gif" style="display: none">
+      <audio class="audio">
+        <source src="./img/soundDesign/gardien-sound.mp3" type="audio/mpeg" />
+      </audio>
+      <img src="" alt="Gardien open gif" />
+    </div>
+    <div class="gif-container" id="coach-gif" style="display: none">
+      <audio class="audio">
+        <source src="./img/soundDesign/coach-sound.mp3" type="audio/mpeg" />
+      </audio>
+      <img src="" alt="Coach open gif" />
+    </div>
+    <audio class="audio" id="back-sound" autoplay loop>
+      <source src="./img/soundDesign/fond-sonore.mp3" type="audio/mpeg" />
+    </audio>
+  </body>
+  <script type="module" src="./js/CarrouselReload.js"></script>
+  <script type="module" src="./js/field.js"></script>
 </html>

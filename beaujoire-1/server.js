@@ -18,6 +18,22 @@ app.use(express.static(path.join(__dirname, "../__common-logos__")));
 app.use(express.json());
 
 // You can then add whatever routing code you need
+app.post("/beaujoire-1/updateStats", (req, res) => {
+	console.log("Received a POST request to /beaujoire-1/updateStats");
+	console.log("Request body:", req.body);
+	fs.writeFile("./data/Stats.json", JSON.stringify(req.body), (err) => {
+		if (err) {
+			console.error(err);
+			res.status(500).send("Error writing file");
+		} else {
+			res.status(200).send("Successfully wrote file");
+		}
+	});
+});
+
+app.get("/test", (req, res) => {
+	res.send("This is a test route. Server routing is working!");
+});
 
 // This module is exported and served by the main server.js located
 // at the root of this set of projects. You can access it by lanching the main
