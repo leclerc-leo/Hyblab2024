@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Initialize Swiper for player lists
     teamSwiper = new Swiper('.team-swiper-container', {
-        loop: true,
+        loop: false,
     });
 
 

@@ -68,6 +68,7 @@ document.querySelector("#info").addEventListener("click", function () {
 
 /************* Vote progression display  **************/
 
+// <div class="player-box"><p> 10% </p><img class="player-img ${majeur}" src="./img/players/placeholder-img.jpg" ><p>R.RIOU</p></div>
 function checkprogress() {
   for (let i = 0; i < votesTmp.length; i++) {
     // Append the player-voted div to the field-jersey anchor
@@ -76,9 +77,6 @@ function checkprogress() {
       // Create the picture element
       const playerVotedDiv = document.createElement('div');
       playerVotedDiv.classList.add('player-voted');
-
-      const playerImgBoxDiv = document.createElement('div');
-      playerImgBoxDiv.classList.add('player-img-box');
 
       const playerImg = document.createElement('img');
       playerImg.classList.add('player-img');
@@ -90,8 +88,7 @@ function checkprogress() {
       playerName.textContent = 'R.RIOU';
 
       // Append elements to the player-voted div
-      playerImgBoxDiv.appendChild(playerImg);
-      playerVotedDiv.appendChild(playerImgBoxDiv);
+      playerVotedDiv.appendChild(playerImg);
       playerVotedDiv.appendChild(playerName);
 
 
