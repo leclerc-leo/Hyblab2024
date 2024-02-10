@@ -33,15 +33,13 @@ dataUtils.selectPlayer = function(idPlayer){
     });
 }
 
-dataUtils.getPlayersByPosition = function(position, callback) {
+dataUtils.getPlayersByPosition = function(positionId, callback) {
     const query = `
       SELECT id, nom, prenom, photo
       FROM Joueurs
-      WHERE poste = (
-        SELECT id FROM Postes WHERE nom = ?
-      )`;
+      WHERE poste = ?`;
   
-    db.all(query, [position], (err, players) => {
+    db.all(query, [positionId], (err, players) => {
       if (err) {
         console.error('Error fetching players:', err);
         callback([]);
@@ -49,7 +47,7 @@ dataUtils.getPlayersByPosition = function(position, callback) {
         callback(players);
       }
     });
-  }
+  };
 
 /* enregistrer le vote final d'un utilisateur.
 params :

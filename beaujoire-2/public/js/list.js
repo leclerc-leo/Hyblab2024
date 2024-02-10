@@ -1,58 +1,31 @@
 // get the temporary votes :
-votesTmp =  JSON.parse(localStorage.getItem('votes'));
+votesTmp = JSON.parse(localStorage.getItem('votes'));
 
 document.addEventListener('DOMContentLoaded', function () {
-  /*const positions = ['Gardien', 'Arrière droit', 'Arriere gauche', 'Défenseur central 1'];*/
-  
-  const positions = ['Gardien', 'Arrière droit', 'Arriere gauche', 'Défenseur central 1', 'Défenseur central 2', 'Milieu défensif','Milieu gauche','Milieu offensif','Attaquant 1','Milieu droit', 'Attaquant 2', 'Sélectionneur'];
-  const playerLists = [
-    [
-      { id: 1 , name: 'Player 1', photo: 'img/ndoram.jpg' },
-      { id: 2 ,name: 'Player 2', photo: 'img/ndoram.jpg' },
-      { id: 3 ,name: 'Player 3', photo: 'img/ndoram.jpg' },
-      { id: 4 ,name: 'Player 4', photo: 'img/ndoram.jpg' },
-      { id: 5 ,name: 'Player 5', photo: 'img/ndoram.jpg' },
-    ],
-    [
-      { id: 6 ,name: 'Player 6', photo: 'img/ndoram.jpg' },
-      { id: 7 ,name: 'Player 7', photo: 'img/ndoram.jpg' },
-      { id: 8 ,name: 'Player 8', photo: 'img/ndoram.jpg' },
-      { id: 9 ,name: 'Player 9', photo: 'img/ndoram.jpg' },
-      { id: 10 ,name: 'Player 10', photo: 'img/ndoram.jpg' },
-    ],
-    [
-      { id: 11 ,name: 'Player 1', photo: 'img/ndoram.jpg' },
-      { id: 12 ,name: 'Player 2', photo: 'img/ndoram.jpg' },
-      { id: 13 ,name: 'Player 3', photo: 'img/ndoram.jpg' },
-      { id: 14 ,name: 'Player 4', photo: 'img/ndoram.jpg' },
-      { id: 15 ,name: 'Player 5', photo: 'img/ndoram.jpg' },
-    ],
-    [
-      { id: 16 ,name: 'Player 6', photo: 'img/ndoram.jpg' },
-      { id: 17 ,name: 'Player 7', photo: 'img/ndoram.jpg' },
-      { id: 18 ,name: 'Player 8', photo: 'img/ndoram.jpg' },
-      { id: 19 ,name: 'Player 9', photo: 'img/ndoram.jpg' },
-      { id: 20 ,name: 'Player 10', photo: 'img/ndoram.jpg' },
-    ],
-    // Add more player lists as needed
-  ];
-
-
+  const positions = ['Gardien', 'Arrière droit', 'Arriere gauche', 'Défenseur central 1', 'Défenseur central 2', 'Milieu défensif', 'Milieu gauche', 'Milieu offensif', 'Attaquant 1', 'Milieu droit', 'Attaquant 2', 'Sélectionneur'];
   let playerSwiper;
 
-  // Initialize Swiper for player lists
-  playerSwiper = new Swiper('.player-swiper-container', {
-    loop: true,
-  });
+  async function getPlayersByPosition(positionId) {
+    try {
+      const response = await fetch(`/beaujoire-2/api/players/${positionId}`);
+      const data = await response.json();
+      return data.players;
+    } catch (error) {
+      console.error('Error fetching players:', error);
+      return [];
+    }
+  }
 
+  async function fetchData(positionId) {
+    try {
+      const players = await getPlayersByPosition(positionId);
+      updatePlayerListContent(`playerList${positionId}`, players, positionId);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  }
 
-  // Event handler for player swiper
-  playerSwiper.on('slideChange', function () {
-    updateContent(this.activeIndex);
-  });
-
-
-  function updatePlayerListContent(playerListId, players , positionId) {
+  function updatePlayerListContent(playerListId, players, positionId) {
     const playerListContainer = document.getElementById(playerListId);
     playerListContainer.innerHTML = '';
 
@@ -61,22 +34,74 @@ document.addEventListener('DOMContentLoaded', function () {
       playerBox.classList.add('player-box');
       playerBox.innerHTML = `
         <img src="${player.photo}" >
-        <p>${player.name}</p>
+        <p>${player.prenom} ${player.nom}</p>
         <button class="down-slider" data-type="downslide"></button>
         <button class="heart-button" data-type="heart"></button>
       `;
 
-         
       playerListContainer.appendChild(playerBox);
-      playerBox.addEventListener("click", () => downSlide(playerBox));  
+      playerBox.addEventListener("click", () => downSlide(playerBox));
 
       const heartButton = playerBox.querySelector('.heart-button');
-      heartButton.addEventListener('click', () => {toggleHeart(heartButton, player.id ,positionId);});
+      heartButton.addEventListener('click', () => { toggleHeart(heartButton, player.id, positionId); });
 
       const downslider = playerBox.querySelector('.down-slider');
-      downslider.addEventListener('click', () => {downSlide( downslider, playerBox );});
+      downslider.addEventListener('click', () => { downSlide(downslider, playerBox); });
     });
   }
+
+  function updatePositions(currentIndex) {
+    const positionPreviewContainer = document.getElementById(`positionPreview${currentIndex + 1}`);
+    positionPreviewContainer.innerHTML = '';
+
+    const currentPos = document.createElement('div');
+    currentPos.classList.add('position-preview-box', 'current');
+    currentPos.textContent = positions[currentIndex];
+
+    const prevIndex = (currentIndex - 1 + positions.length) % positions.length;
+    const nextIndex = (currentIndex + 1) % positions.length;
+
+    const prevPos = document.createElement('div');
+    prevPos.classList.add('position-preview-box', 'prev');
+    prevPos.textContent = positions[prevIndex];
+
+    const nextPos = document.createElement('div');
+    nextPos.classList.add('position-preview-box', 'next');
+    nextPos.textContent = positions[nextIndex];
+
+    positionPreviewContainer.appendChild(prevPos);
+    positionPreviewContainer.appendChild(currentPos);
+    positionPreviewContainer.appendChild(nextPos);
+  }
+
+  function handleSwiperEvents() {
+    let currentPositionIndex = 0;
+
+    playerSwiper = new Swiper('.player-swiper-container', {
+      loop: true,
+      on: {
+        slideChange: function () {
+          currentPositionIndex = this.activeIndex;
+          const newPositionId = currentPositionIndex + 1;
+          fetchData(newPositionId);
+          updatePositions(currentPositionIndex);
+        },
+      },
+    });
+
+    playerSwiper.on('slideChange', function () {
+      const newPositionId = this.activeIndex + 1;
+      fetchData(newPositionId);
+      updatePositions(this.activeIndex);
+    });
+
+    function updateContent(currentIndex) {
+      const newPositionId = currentIndex + 1;
+      fetchData(newPositionId);
+      updatePositions(currentIndex);
+    }
+  }
+
 
   function downSlide(button, playerBox){
     if (button.dataset.type === 'downslide') {
@@ -197,37 +222,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   };
 
-  function updatePositions(currentIndex) {
-    const positionPreviewContainer = document.getElementById(`positionPreview${currentIndex + 1}`);
-    positionPreviewContainer.innerHTML = '';
-  
-    const currentPos = document.createElement('div');
-    currentPos.classList.add('position-preview-box', 'current');
-    currentPos.textContent = positions[currentIndex];
-  
-    const prevIndex = (currentIndex - 1 + positions.length) % positions.length;
-    const nextIndex = (currentIndex + 1) % positions.length;
-  
-    const prevPos = document.createElement('div');
-    prevPos.classList.add('position-preview-box', 'prev');
-    prevPos.textContent = positions[prevIndex];
-  
-    const nextPos = document.createElement('div');
-    nextPos.classList.add('position-preview-box', 'next');
-    nextPos.textContent = positions[nextIndex];
-  
-    positionPreviewContainer.appendChild(prevPos);
-    positionPreviewContainer.appendChild(currentPos);
-    positionPreviewContainer.appendChild(nextPos);
-  }
-  
-  
 
-  function updateContent(currentIndex) {
-    updatePlayerListContent(`playerList${currentIndex + 1}`, playerLists[currentIndex] , currentIndex);
-    updatePositions(currentIndex);
-  }
-  
   function toggleVote(positionId,playerId){
     if (votesTmp[positionId] === 0)
     {
@@ -255,5 +250,30 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  updateContent(0);
+/*
+  async function getPlayersByPosition(positionId) {
+    try {
+      const response = await fetch(`/beaujoire-2/api/players/${positionId}`);
+      console.log('Full response:', response); // Log the full response
+      const data = await response.json();
+      console.log('Parsed JSON data:', data); // Log the parsed JSON data
+      return data.players;
+    } catch (error) {
+      console.error('Error fetching players:', error);
+      return [];
+    }
+  }
+  
+  // Define an async function to use 'await'
+  async function fetchData() {
+    const positionId = 1; // Replace with the desired position ID
+    const players = await getPlayersByPosition(positionId);
+    console.log(players);
+    // Handle the fetched players here
+  }
+  fetchData();*/
+
+  handleSwiperEvents();
+  updateContent(0); 
+
 });

@@ -2,6 +2,7 @@
 
 const app = require( 'express' )();
 const path = require('path');
+const dataUtils = require('../public/data/dbutils')
 
 // Sample endpoint that sends the partner's name
 app.get('/topic', function ( req, res ) {
@@ -14,11 +15,11 @@ app.get('/topic', function ( req, res ) {
 } );
 
 // Modify the endpoint to use the asynchronous function
-app.get('/api/players/:position', function (req, res) {
-  const position = req.params.position;
-  
-  dataUtils.getPlayersByPosition(position, (players) => {
-    res.json({ 'players': players, 'position': position });
+app.get('/players/:positionId', function (req, res) {
+  const positionId = req.params.positionId;
+
+  dataUtils.getPlayersByPosition(positionId, (players) => {
+    res.json({ 'players': players, 'positionId': positionId });
   });
 
 });
