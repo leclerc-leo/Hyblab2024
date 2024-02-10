@@ -159,7 +159,6 @@ function filterStatsWithPlayer(stats, players) {
 	let playerNames = Object.values(players);
 	let filteredStats = {};
 	Object.keys(stats).forEach((player) => {
-		console.log("player:", player);
 		if (playerNames.includes(player)) {
 			filteredStats[player] = stats[player];
 		}
@@ -218,6 +217,8 @@ function updateVotePercentages() {
 		}
 		const playerElement = document.getElementById(playerElementId);
 		if (playerElement) {
+			const barId = "#" + playerElementId + "-bar";
+			const barElem = document.querySelector(barId);
 			const percentageDisplay =
 				playerElement.querySelector(".vote-percentage");
 			if (!percentageDisplay) {
@@ -229,6 +230,12 @@ function updateVotePercentages() {
 			// Mettez à jour le pourcentage affiché
 			percentageDisplay.textContent =
 				playerPercentages[player].toFixed(2) + "%";
+			barElem.querySelector(
+				".player1-bar"
+			).style.width = `${playerPercentages[player]}%`;
+
+			barElem.querySelector(".player1-bar").style.animationName =
+				"scaleSide";
 		}
 	}
 }

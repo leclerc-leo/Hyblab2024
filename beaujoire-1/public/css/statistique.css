@@ -56,22 +56,12 @@
 }
 
 .player1-bar {
-	flex: 1;
 	position: relative;
 	height: 100%;
+	width: 0;
 	background-color: #00a55a;
-	border-radius: 20px 0 0 20px;
+	border-radius: 20px;
 	transform-origin: left center;
-	animation: scaleSide 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-}
-
-.player2-bar {
-	flex: 1;
-	position: relative;
-	height: 100%;
-	background-color: white;
-	border-radius: 0 20px 20px 0;
-	transform-origin: right center;
 	animation: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
