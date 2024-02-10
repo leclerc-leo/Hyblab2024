@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let currentPositionIndex = 0;
 
     playerSwiper = new Swiper('.player-swiper-container', {
-      loop: true,
+      loop: false,
       on: {
         slideChange: function () {
           currentPositionIndex = this.activeIndex;
@@ -94,14 +94,12 @@ document.addEventListener('DOMContentLoaded', function () {
       fetchData(newPositionId);
       updatePositions(this.activeIndex);
     });
-
-    function updateContent(currentIndex) {
-      const newPositionId = currentIndex + 1;
-      fetchData(newPositionId);
-      updatePositions(currentIndex);
-    }
   }
-
+  function updateContent(currentIndex) {
+    const newPositionId = currentIndex + 1;
+    fetchData(newPositionId);
+    updatePositions(currentIndex);
+  }
 
   function downSlide(button, playerBox){
     if (button.dataset.type === 'downslide') {
