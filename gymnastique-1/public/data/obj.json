@@ -10,7 +10,7 @@
   "cupcake": {
     "title": "Une pâtissière en or",
     "text": [
-      "L'autre passion de Kaylia est… la pâtisserie !",
+      "L'autre passion de Kaylia est… la pâtisserie ! Préparer des gâteaux lui permet de décompresser entre deux entraînements.",
       "Dans sa future vie, la vice-championne du monde aux barres se voit même devenir pâtissière, le même métier que son grand-père. À l'approche des JO, son entourage se régale plus qu'elle. « Je fais attention à ce que je mange, donc je ne les mange pas tous », explique la jeune fille."
     ],
     "picture": "img/cupcake.svg"
@@ -26,7 +26,8 @@
   "gourde": {
     "title": "Un chemin semé d'embûches",
     "text": [
-      "« Ce n'est pas toujours simple, il a fallu que Kaylia puisse être forte psychologiquement, notamment face à la situation compliquée qu'il y a eu avec la Fédération », explique sa maman. Des épisodes difficiles, Kaylia en a vécu plusieurs. Opérée en 2021 d'une ostéochondrite, une maladie qui touche les articulations, la gymnaste à dû arrêter les compétitions un an et demi. « C'est une jeune femme qui m'épate. Elle a surmonté tout cela avec beaucoup de force », poursuit Stéphanie Nemour. La sportive de haut niveau laisse parfois son justaucorps de côté pour lire, faire du shopping et voir ses amis."
+      "« Ce n'est pas toujours simple, il a fallu que Kaylia puisse être forte psychologiquement, notamment face à la situation compliquée qu'il y a eu avec la Fédération », explique sa maman.",
+       "Des épisodes difficiles, Kaylia en a vécu plusieurs. Opérée en 2021 d'une ostéochondrite, une maladie qui touche les articulations, la gymnaste à dû arrêter les compétitions un an et demi. « C'est une jeune femme qui m'épate. Elle a surmonté tout cela avec beaucoup de force », poursuit Stéphanie Nemour. La sportive de haut niveau laisse parfois son justaucorps de côté pour lire, faire du shopping et voir ses amis."
     ],
     "picture": "img/gourde.svg"
   },
