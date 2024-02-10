@@ -12,9 +12,11 @@
     <link href="https://fonts.cdnfonts.com/css/nexa-bold" rel="stylesheet"> <!-- Police Nexa -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.8/lottie.min.js"></script> 
     <script src="js/quartiers.js" defer></script>
     <script src="js/conversation.js" defer></script>
     <script src="js/menu.js" defer></script>
+    <script src="js/quartiers_animations.js" defer></script>
 </head>
 <body>
     <div id="container">
@@ -33,13 +35,13 @@
                 <ul class="undefinedElement">
                     <!-- # should be replaced by url later -->
                     <hr />
-                    <li><button class="topicButton" data-topic="portrait" onclick="">Portraits d'habitants</button></li>
+                    <li><button class="topicButton" data-topic="portrait" onclick="">Portrait d'habitant</button></li>
                     <hr />
-                    <li><button class="topicButton" data-topic="association" onclick="">Associations</button></li>
+                    <li><button class="topicButton" data-topic="culture" onclick="">Culture</button></li>
                     <hr />
                     <li><button class="topicButton" data-topic="habitat" onclick="">Habitat</button></li>
                     <hr />
-                    <li><button class="topicButton" data-topic="sport" onclick="">Sports</button></li>
+                    <li><button class="topicButton" data-topic="sport" onclick="">Sport</button></li>
                     <hr />
                     <li><button class="topicButton" data-topic="education" onclick="">Education</button></li>
                     <hr />
@@ -60,8 +62,7 @@
             <div class="drawing">
                 <h1 class="quartier-titre">Villejean</h1>
                 <div class="background-container">
-                    <!--<img class="empty" src="img/backgrounds/villejean/bienvenue.svg">-->
-                    <div class="" id="background-animation"></div> <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.8/lottie.min.js"></script> <script> var animation = lottie.loadAnimation({ container: document.getElementById('background-animation'), renderer: 'svg', loop: false, autoplay: true, path: 'animation/animation_villejean.json' }); </script>
+                    <!--<div class="" id="background-animation"></div>-->
                 </div>
 
                 <!-- create burger icon by span -->
@@ -74,11 +75,14 @@
                 </button>
             </div>
 
-            <div id="guide-chemin"></div>
+            <div id="guide-chemin">
+                <div class="guide" id="guide-coucou"></div>
+                <div class="guide empty" id="guide-walk"></div>
+            </div>
+
             <div id="villejean-conversation" class="conversation"></div>
 
-            <!-- <input type="button" value="Save" class="navigation-button save"> -->
-            <!-- <input type="button" value="Reload" class="navigation-button reload"> -->
+            <!--<input type="button" value="Test" class="navigation-button test">-->
         </section>
             
     </div>

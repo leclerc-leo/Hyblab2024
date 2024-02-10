@@ -2,6 +2,12 @@
 /* ------- that adapts content width and height so that aspect ratio  ----------- */
 /* ------- is kept between 9/16 a,d 3/4 (portait orientation)         ----------- */
 
+:root{
+    --drawing-size: 28%;
+    --guide-size: 8%;
+    --conversation-size: 64%;
+}
+
 /* Normalize margin and padding to ease elements positioning */
 *{
     padding:0;
@@ -55,7 +61,7 @@ h1{
 .drawing{
     position: relative;
     width: 100%;
-    height: 30%;
+    height: var(--drawing-size);
     font-size: 0.6em;
     background-color: #FBEFEB;
     color: #000000;
@@ -95,9 +101,9 @@ h1{
 }
 
 .drawing .background-container .out{
-    animation: translateAnimation2 2s; /* 1s est la durée de l'animation, ajustez selon vos besoins */
+    animation: backgroundOut 2s; /* 1s est la durée de l'animation, ajustez selon vos besoins */
 }
-@keyframes translateAnimation2 {
+@keyframes backgroundOut {
     from {
         transform: translateX(0%);
     }
@@ -105,7 +111,7 @@ h1{
         transform: translateX(-100%);
     }
 }
-.drawing .empty{
+.empty{
     visibility: hidden;
 }
 
@@ -117,17 +123,101 @@ h1{
 }
 #background-animation{
     position: absolute;
-    bottom: -0%;
+    bottom: 0;
     height: auto;
     width: 102%;
-    transform: translateY(4%);
+    transform: translateX(-2%) translateY(4%);
+}
+.drawing .background-container .animated_background_out{
+    animation: animatedBackgroundOut 2s;
+}
+@keyframes animatedBackgroundOut {
+    from {
+        transform: translateX(0%) translateY(4%);
+    }
+    to {
+        transform: translateX(-100%) translateY(4%);
+    }
 }
 /*-------- End of Drawing ----------*/
+
+/*-------- Guide ----------*/
+#guide-chemin{
+    position: relative;
+    height: var(--guide-size);
+    background-color: white;
+    box-shadow: 0px 4px 4px 0px #D3D3D3;
+    z-index: 4;
+}
+.topic-title{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 22%;
+    color: #292C5E;
+    font-size: 0.4em;
+}
+.title-in{
+    animation: titleApparition 2s ease-out;
+}
+@keyframes titleApparition {
+    from {
+        transform: translateX(40%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.title-out{
+    animation: titleOut 2s ease-out;
+}
+@keyframes titleOut {
+    from {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(-40%);
+        opacity: 0;
+    }
+}
+.guide{
+    animation: appartion 2s;
+}
+@keyframes appartion {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+#guide-coucou{
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    height: 175%;
+    width: auto;
+}
+#guide-walk{
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    height: 175%;
+    width: auto;
+}
+/*-------- End of Guide ----------*/
 
 /*-------- Conversation ----------*/
 .conversation{
     width: 100%;
-    height: 60%;
+    height: var(--conversation-size);
     overflow-y: auto;
     overflow-x: hidden;
     font-size: 0.25em;
@@ -139,12 +229,6 @@ h1{
 
 .conversation ul{
     list-style: none;
-}
-
-#guide-chemin{
-    position: relative;
-    height: 10%;
-    background-color: white;
 }
 .rp_guide{
     display: flex;
@@ -387,62 +471,6 @@ h1{
     outline: none
 }
 /*-------- End of Choice ----------*/
-
-/* -------------- Misc --------------*/
-.guide{
-    position: absolute;
-    height: 20%;
-    width: auto;
-    bottom: 77%;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.conversation-arrow-container {
-    position: absolute;
-    width: 100%;
-    bottom: 2%;
-}
-.conversation-arrow-down {
-    color: black;
-    position: absolute;
-    left: 91%;
-    width: 0.14em;
-    height: 0.14em;
-    border-bottom: 4px solid;
-    border-right: 4px solid;
-    border-radius: 4px;
-    transform: rotateZ(45deg);
-    cursor: pointer;
-    animation: jumpInfinite 1.5s infinite;
-}
-
-.navigation-button{
-    position: absolute;
-    transform: translateY(50%);
-    z-index: 3;
-    right: 0;
-}
-.more-info{
-    bottom: 40%;
-}
-.back-to-home{
-    top: 5%;
-}
-.go-to-map{
-    top: 5%;
-}
-.test{
-    top: 10%;
-}
-.reload{
-    top: 15%;
-}
-.save{
-    top: 20%;
-}
-/* -------------- End of Misc --------------*/
-
 
 /* -------------- Video player --------------*/
 .video-player {

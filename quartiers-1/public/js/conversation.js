@@ -1,5 +1,6 @@
 "use strict";
 
+// Fonction pour scroller automatiquement en bas de la conversation de manière lisse
 function scrollSmoothlyToBottom() {
     let div = $("#villejean-conversation");
 
@@ -8,6 +9,7 @@ function scrollSmoothlyToBottom() {
     }, 1000);
 };
 
+// Fonction principale pour traiter les bulles
 function treatBubble(bubbleJson) {
     if (lastBubble["type"] == "choice" || lastBubble["type"] == "topicChoice") {
         time += 2000;
@@ -40,6 +42,7 @@ function treatBubble(bubbleJson) {
     }, time);
 }
 
+// Fonction pour ajouter une bulle de dialogue guide ou utilisateur
 function addBubble(speaker, contents) {
     let container;
     let bubble;
@@ -104,6 +107,7 @@ function addBubble(speaker, contents) {
     }
 }
 
+// Fonction pour ajouter la bulle de nom
 function addNameBubble(bubbleJson) {
     let choiceBubblesContent = '<div class="choices anime_bottom"><label for="username_input">' + bubbleJson["choicesLabel"][0] + '<input type="text" id="username_input" class="input" name="username_input" required minlength="2" maxlength="20" size="10" onkeydown="saveUsername(event)"/> ! </label></div>';
     let placeholder = '<div class="choices-placeholder"><label for="placeholder_input">' + bubbleJson["choicesLabel"][0] + '<input type="text" id="placeholder_input" class="input" name="username_input" required minlength="2" maxlength="20" size="10" onkeydown="saveUsername(event)"/> ! </label></div>';
@@ -116,6 +120,7 @@ function addNameBubble(bubbleJson) {
     saveConversation();
 }
 
+// Fonction activée lorsque le nom est saisi
 function saveUsername(event){
     if (event.key === 'Enter' && document.querySelector(".conversation #username_input").value.length > 0) {
         user_name = document.querySelector(".conversation #username_input").value;
@@ -133,6 +138,7 @@ function saveUsername(event){
     }
 }
 
+// Fonction pour ajouter une bulle de choix
 function addChoiceBubble(bubbleJson) {
     let choiceBubblesContent = '<div class="choices anime_bottom">';
     let placeholder = '<div class="choices-placeholder">';
@@ -152,6 +158,7 @@ function addChoiceBubble(bubbleJson) {
     saveConversation();
 }
 
+// Fonction activée lorsque le choix est fait
 function choiceSelected(btnChoiceSelected){
     let textChoice = btnChoiceSelected.textContent || bouton.innerText; // get text content of the choiceBubble selected
 
@@ -167,6 +174,7 @@ function choiceSelected(btnChoiceSelected){
     conversationUnfold(lastBubble["next"][lastBubble["choicesLabel"].indexOf(textChoice)]);
 }
 
+// Fonction pour ajouter la bulle de choix de thème
 function addTopicBubble(bubbleJson) {
     let choiceBubblesContent = '<div class="choices anime_bottom">';
     let placeholder = '<div class="choices-placeholder">';
@@ -190,6 +198,7 @@ function addTopicBubble(bubbleJson) {
     saveConversation();
 }
 
+// Fonction activée lorsque le choix de thème est fait
 function topicSelected(btntopicSelected){
     let textChoice = btntopicSelected.textContent;
 
@@ -206,7 +215,7 @@ function topicSelected(btntopicSelected){
     conversationUnfold(lastBubble["next"][lastBubble["choicesLabel"].indexOf(textChoice)]);
 }
 
-
+// Fonction pour ajouter la bulle pour quitter le thème actuel et accéder au nouveau
 function addQuitBubble(bubbleJson) {
     let choiceBubblesContent = '<div class="choices anime_bottom">';
     let placeholder = '<div class="choices-placeholder">';
@@ -226,6 +235,7 @@ function addQuitBubble(bubbleJson) {
     saveConversation();
 }
 
+// Fonction activée lorsque on change de thème
 function changeTopic() {
     time = 0;
     lastBubble = {"content": []};
@@ -233,11 +243,13 @@ function changeTopic() {
 
     conversation.empty();
     backgroundTransition();
+    titleTransition();
     setTimeout(() => { 
         conversationUnfold("Debut");
     }, 1000);
 }
 
+// Sauvegarde de la conversation dans le cache
 function saveConversation() {
     save.user_name = user_name;
     save.quartier = quartier;
@@ -248,10 +260,12 @@ function saveConversation() {
     save.conversation = conversation.html();
 
     sessionStorage.setItem("save", JSON.stringify(save));
+    sessionStorage.setItem("saveExist", true);
 
     console.log("Saved");
 }
 
+// Chargement de la sauvegarde de la conversation
 async function reloadConversation() {
     
         save = JSON.parse(sessionStorage.getItem("save"));
@@ -266,8 +280,19 @@ async function reloadConversation() {
         let resp  = await fetch('./data/' + quartier.toLowerCase() + '/' + topic.toLowerCase() + '.json')
         data = await resp.json();
 
-        backgroundTransition();
+        // Ajout du fond
+        const new_img = document.createElement("img");
+        new_img.src = "img/backgrounds/" + quartier.toLocaleLowerCase() + "/" + topic + "." + extension;
+        document.querySelector(".background-container").appendChild(new_img);
 
+        // Ajout du titre
+        const new_title = document.createElement("h1");
+        new_title.innerHTML =  topic_dico[topic];
+        new_title.classList.add("topic-title");
+        new_title.classList.add("title-in");
+        document.querySelector("#guide-chemin").appendChild(new_title);
+
+        // On vide la conversation et on remet les bulles de la sauvegarde
         conversation.empty();
         conversation.append(save.conversation);
 
@@ -276,6 +301,7 @@ async function reloadConversation() {
         console.log("Reloaded ");
 }
 
+// Fonction pour lire le json et traiter les bulles à partir d'une certaine bulle
 async function conversationUnfold(nextID) {
     let resp  = await fetch('./data/' + quartier.toLowerCase() + '/' + topic.toLowerCase() + '.json')
     data = await resp.json();
@@ -300,6 +326,9 @@ async function conversationUnfold(nextID) {
         i++;
     }
 }
+// Liste des quartiers implémentés 
+// true = disponible
+// false = indisponible
 let quartier_dispo = {
     "villejean": true,
     "st_martin": false,
@@ -314,6 +343,19 @@ let quartier_dispo = {
     "brequigny": false,
     "le_blosne": false
 }
+
+// Correspondance entre le nom de code et le vrai nom des thèmes
+let topic_dico = {
+    "culture": "Culture",
+    "commerce": "Commerces",
+    "education": "Education",
+    "habitat": "Habitat",
+    "portrait": "Portrait",
+    "sport": "Sport",
+    "bienvenue": "Bienvenue"
+}
+
+// Correspondance entre le nom de code et le vrai nom des quartiers
 let quartier_dico = {
     "villejean": "Villejean",
     "st_martin": "Nord-St Martin",
@@ -327,10 +369,12 @@ let quartier_dico = {
     "francisco": "Francisco Ferrer-Vern-Poterie",
     "brequigny": "Bréquigny",
     "le_blosne": "Le Blosne",
-    "autres": "Indisponible"
+    "autres": "Indisponible",
 }
+// On récupère le nom du quartier sélectionné dans la carte
 let quartier = sessionStorage.getItem("quartier");
 
+// Initialisation de variables
 let data;
 let conversation = $(".conversation");
 let topic = "bienvenue";
@@ -341,14 +385,14 @@ let save = {};
 let extension = "svg";
 let canChange = true;
 
-// On regarde s'il y a déjà une sauvegarde
+// On regarde s'il y a déjà un user_name
 let user_name = sessionStorage.getItem("user_name");
 let start;
 if (user_name == null) {
     user_name = "Vous";
     start = "Debut";
 } else {
-    start = "Binvenue1";
+    start = "Bienvenue1";
 }
 
 // Si le quartier n'est pas encore implémenté
@@ -365,26 +409,18 @@ if (quartier_dispo[quartier] === false || quartier == undefined) {
     console.log("Indisponible");
 }
 
-// Si le quartier de la sauvegarde n'est pas bienvenue, on cache l'animation
-if (sessionStorage.getItem("save") !== null) {
-    if (sessionStorage.getItem("save").topic !== "bienvenue") {
-        const img = document.querySelector("#background-animation");
-        img.classList.add("empty");
-    }
+// Ajout du fond animé et du titre bienvenue si c'est la première fois qu'on vient
+if (sessionStorage.getItem("saveExist") === null) {
+    const new_img = document.createElement("div");
+    new_img.id = "background-animation";
+    document.querySelector(".background-container").appendChild(new_img);
+
+    const new_title = document.createElement("h1");
+    new_title.innerHTML =  topic_dico[topic];
+    new_title.classList.add("topic-title");
+    new_title.classList.add("title-in");
+    document.querySelector("#guide-chemin").appendChild(new_title);
 }
-
-// On attend un peu avant de lancer la conversation
-setTimeout(() => {
-    // Si c'est la première fois qu'on arrive, 
-    if (sessionStorage.getItem("save") == null || !quartier_dispo[quartier]) {
-        conversationUnfold(start);
-    // Sinon on recharge la sauvegarde
-    } else {
-        reloadConversation();
-    }
-}, 1000);
-
-
 
 // On met le nom du quartier dans les titres 
 document.querySelectorAll(".quartier-titre").forEach(element => {
@@ -402,3 +438,15 @@ document.querySelectorAll(".topicButton").forEach(button => {
     });
 });
 
+// On attend un peu avant de lancer la conversation
+setTimeout(() => {
+    // Si c'est la première fois qu'on arrive, 
+    if (sessionStorage.getItem("save") == null || !quartier_dispo[quartier]) {
+        conversationUnfold(start);
+    // Sinon on recharge la sauvegarde
+    } else {
+        reloadConversation();
+    }
+    guide_coucou_animation.stop();
+    guide_coucou_animation.play();
+}, 1000);
