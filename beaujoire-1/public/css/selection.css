@@ -93,3 +93,15 @@
 	color: white;
 	text-shadow: 2px 2px 0 #000;
 }
+
+.heart-button {
+	position: absolute; 
+	bottom: 110px; 
+	left: 120px;
+	font-size: 24px; 
+	color: rgb(173, 170, 170); 
+	background: none; 
+	border: none; 
+	cursor: pointer; 
+	z-index: 10; 
+  }
