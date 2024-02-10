@@ -89,6 +89,16 @@
 	border-radius: 20px;
 }
 
+.player {
+}
+
+.player-name {
+	position: absolute;
+	text-align: start;
+	top: 10%;
+	right: -105%;
+}
+
 #arriere-droit-bar {
 	top: 36%;
 	left: 55%;
