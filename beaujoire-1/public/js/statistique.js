@@ -132,10 +132,7 @@ function initializePage() {
 			}
 		}
 		const captain = localStorage.getItem("captain");
-		if (captain) {
-			isCaptainBeingSelected = true;
-			handleCaptainSelect(captain);
-		}
+		
 		document.getElementById("statistiques").style.display = "inline-block";
 		document.getElementById("redac").style =
 			"margin:0 ; transform: translateX(0)";
