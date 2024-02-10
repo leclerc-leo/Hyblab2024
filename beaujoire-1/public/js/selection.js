@@ -9,4 +9,16 @@ document.addEventListener("DOMContentLoaded", function () {
       clickable: true,
     },
   });
+
+  document.querySelector("#settings").addEventListener("click", () => {
+    const menu = document.querySelector(".dropdown");
+    if (
+      menu.style.animationName === "dropDownAnimation" ||
+      menu.style.animationName === ""
+    ) {
+      menu.style.animationName = "dropUpAnimation";
+    } else {
+      menu.style.animationName = "dropDownAnimation";
+    }
+  });
 });

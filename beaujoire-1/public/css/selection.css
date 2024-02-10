@@ -1,95 +1,90 @@
 @import "style2.css";
 
 :root {
-	--gb-50: #00a55a;
+  --gb-50: #00a55a;
 }
 
 .swiper-button-next,
 .swiper-button-prev {
-	background: none;
-	color: #00a55a !important;
-	fill: #00a55a !important;
+  background: none;
+  color: #00a55a !important;
+  fill: #00a55a !important;
 }
 
 .swiper-pagination-bullet {
-	display: none !important;
+  display: none !important;
+}
+.buttons {
+  justify-content: center;
+}
+
+.bottom-btn {
+  display: flex;
+  justify-content: space-between;
 }
 
 .container-terrain {
-	display: flex;
-	align-items: center;
-	height: 100dvh;
-	flex-direction: column;
-	align-content: center;
-	justify-content: space-evenly;
+  display: flex;
+  align-items: center;
+  height: 70dvh;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-evenly;
 }
 
 .textvote-container {
-	margin: 5%;
-	width: 100%;
-	height: 50px;
-	background-image: url("../img/textvote.svg");
-	background-repeat: no-repeat;
-	background-size: contain;
-	background-position: center;
+  margin: 5%;
+  height: 50px;
+  background-image: url("../img/textvote.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
 }
 
-.player {
-	background-image: url("../img/jersey.svg");
-}
-
-.player-name {
-	position: absolute;
-	bottom: -10px;
-	font-size: 12px;
-	left: 50%;
-	transform: translateX(-50%);
+.player-name-fixed {
+  position: absolute;
+  bottom: -10px;
+  font-size: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: bold;
 }
 
 .player-name-long {
-	position: absolute;
-	bottom: -23px;
-	font-size: 12px;
-	left: 50%;
-	transform: translateX(-50%);
-	font-weight: bold;
-}
-
-#writer {
-	display: inline-block;
-	padding: 7px 30px;
-	font-size: 12px;
-	border-radius: 10px;
-	background-color: #ffffff;
-	color: var(--gb-50);
-	font-weight: 800;
-	margin-bottom: 10px;
-	border: none;
-	box-shadow: 3px 3px 0 var(--gb-52);
-}
-
-#entraineur-choix {
-	display: inline-block;
-	padding: 12px 35px;
-	font-size: 16px;
-	border-radius: 30px;
-	background-color: #ffffff;
-	color: var(--gb-51);
-	font-weight: 800;
-	margin-bottom: 10px;
-	border: none;
-	box-shadow: 3px 3px 0 var(--gb-52);
+  position: absolute;
+  bottom: -23px;
+  font-size: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: bold;
 }
 
 .player {
-	background-image: url("../img/jersey.svg");
+  background-image: url("../img/jersey.svg");
 }
 
-.player > .player-name {
-	position: absolute;
-	bottom: 0;
-	align-self: center;
-	font-size: 20px;
-	color: white;
-	text-shadow: 2px 2px 0 #000;
+#writer {
+  display: inline-block;
+  padding: 7px 30px;
+  font-size: 12px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  color: var(--gb-50);
+  font-weight: 800;
+  margin-bottom: 10px;
+  border: none;
+  box-shadow: 3px 3px 0 var(--gb-52);
+}
+
+#entraineur-choix {
+  display: inline-block;
+  padding: 12px 35px;
+  font-size: 16px;
+  border-radius: 30px;
+  background-color: #ffffff;
+  color: var(--gb-51);
+  font-weight: 800;
+  margin-bottom: 10px;
+  border: none;
+  box-shadow: 3px 3px 0 var(--gb-52);
 }
