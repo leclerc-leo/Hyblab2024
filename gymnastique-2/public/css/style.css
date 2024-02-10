@@ -332,7 +332,9 @@ svg.image-histoire, svg.image-jo{
 .image-titre{
     max-width: 40%;
 }
-
+#palmares-page .smaller{
+    height: calc(6vh + 8px) !important;
+}
 #palmares-page .svg-boucle{
     position: absolute;
     top : 0;
@@ -354,13 +356,17 @@ svg.image-histoire, svg.image-jo{
 #palmares-page .card-container {
     width: 80vw;
     height: 18vh;
-    max-height: 10%;
-    max-width: 80%;
     perspective: 90vw;
     margin: 2.5% 10% 2.5% 10%;
+    transition: transform 1500ms;
 }
 #palmares-page .flipcard {
+    height: 80vh;
     transform: rotateY(180deg);
+}
+#palmares-page .smaller{
+    height: calc(5.3vh + 8px);
+
 }
 #palmares-page .doigt-gif ,#palmares-page .logo-retourner{
     position: absolute;
@@ -378,6 +384,17 @@ svg.image-histoire, svg.image-jo{
     z-index: 1;
 
 }
+/*
+#palmares-page #card-afrique{
+    position: absolute;
+}
+#palmares-page #card-mondiaux{
+    top : 65vh;
+    position: absolute;
+}
+#palmares-page #card-inter{
+    position: absolute;
+}*/
 
 #palmares-page .card-front,
 #palmares-page .card-back {
@@ -404,6 +421,10 @@ svg.image-histoire, svg.image-jo{
 #palmares-page .card-back {
     background-color: transparent;
     transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 30vh !important;
     align-items: center;
 }
 #palmares-page .card-front-palmares-titre{
