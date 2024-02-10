@@ -349,12 +349,7 @@ body {
 	overflow: hidden;
 }
 
-#blason {
-	background-size: 69%;
-	background-repeat: no-repeat;
-	background-position: center;
-}
-
+#blason,
 #maillot {
 	background-size: 69%;
 	background-repeat: no-repeat;

@@ -1,256 +1,50 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 
-* {
-	font-family: "Industry", "Bebas Neue Pro", sans-serif;
-	color: #ffffff;
-	min-width: 0;
-	min-height: 0;
+@import url("/beaujoire-1/public/css/style2.css");
+
+:root {
+	--gb-51: #fadc00;
+	--gb-52: #1e1e28;
 }
 
-body {
-	background-color: hsla(240, 14%, 14%, 0.9);
-	margin: 0;
-}
-
-.logo-container {
-	margin: 5%;
-	width: 100%;
-	height: 50px;
-	background-image: url("../img/logo.svg");
-	background-repeat: no-repeat;
-	background-size: contain;
-	background-position: center;
-}
-
-.container {
-	display: flex;
-	align-items: center;
-	height: 90dvh;
-	flex-direction: column;
-	align-content: center;
-	justify-content: space-between;
-}
-
-#main {
-	text-align: center;
-	font-family: Industry;
-	font-weight: bolder;
-}
-
-.green {
-	color: #00a55a;
-}
-
-.big-title {
-	font-size: calc(max(8vh, 8vw));
-}
-
-.small-title {
-	font-size: calc(max(5vh, 5vw));
-}
-
-.choose {
-	position: absolute;
-	font-size: 110px;
-	font-weight: semi-bold;
-	top: 50%;
-	left: 50%;
-	width: 115px;
-	height: 115px;
-	border-radius: 50%;
-	color: black;
-	transform: translate(-50%, -50%);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	padding-top: 26px;
-}
-
-.choose:hover {
-	transform-origin: left;
-	transform: scale(1.05) translate(-50%, -50%);
-	transition: transform 0.4s ease-in-out;
-}
-
-.bottom {
-	background-color: #1e1e28;
-}
-
-/* Vector */
-.field {
-	position: relative;
-	background-color: #1e1e28;
-	width: 85vw;
-	padding: 5% 3%;
-	border-radius: 20px;
-	aspect-ratio: 0.65;
-    margin-top: -50px; 
-}
-
-
-
-#footer {
-	display: flex;
-	align-self: flex-end;
-	flex-flow: row;
-	justify-content: space-around;
-	align-items: center;
-	width: 100%;
-	padding: 0 5%;
-}
-
-.gm-btn {
-	background: none;
-	border: none;
-	margin-top: 0;
-	font-size: 16px;
-	line-height: 24px;
-	transition: 0.3s;
-	cursor: pointer;
-	position: relative;
-	outline: none;
-}
-
-.back-btn {
-	background-color: #ffffff;
-	border: none;
-	border-radius: 50%;
-	width: 36px;
-	aspect-ratio: 1;
-	justify-self: flex-start;
-	display: flex;
-	align-content: center;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
-}
-
-#bottom-btn {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: space-between;
-	width: 95%;
-	position: relative;
-	padding: 10px;
-}
-
-#bio-btn {
-	left: -5%;
-	margin: auto;
-}
-
-/* shutter */
-.gb-shutter {
-	border: 5px solid var(--gb-52);
-    box-shadow: 3px 3px 0 var(--gb-52);
-    font-size: 18px;
-    font-weight: 100;
-    overflow: hidden;
-    color: var(--gb-51);
-    background: var(--gb-52);
-    font-family: 'Bebas Neue', sans-serif;
-    margin: 5% 5% 5% 5%;
-	margin-right: 15px;
-    display: inline-block;
-    white-space: nowrap;
-    box-sizing: border-box;
-    width: 150px; /* Si vous voulez que les boutons soient de la même largeur */
-    height: 35px; /* Si vous voulez que les boutons soient de la même hauteur */
-    line-height: 35px; /* Cette valeur doit correspondre à la hauteur pour un alignement vertical parfait */
-    text-align: center; /* Pour centrer le texte horizontalement */
-}
-
-.gb-shutter:active {
-	background-color: var(--gb-51);
-	color: var(--gb-52);
+.field > img {
+	visibility: hidden;
 }
 
 #blason,
 #maillot {
-	display: inline-block;
-	padding: 18px;
+	position: relative;
 	border-radius: 50%;
 	background-color: #ffffff;
-	color: #1e1e28;
-	margin-bottom: 10px;
+	margin-top: 5%;
 	border: none;
 	box-shadow: 3px 3px 0 var(--gb-52);
-}
-
-#blason:active,
-#maillot:active {
-	background-color: var(--gb-51);
-	color: #ffffff;
-}
-
-#entraineur {
-	display: inline-block;
-	padding: 12px 35px;
-	font-size: 16px;
-	border-radius: 50px;
-	background-color: #ffffff;
-	color: var(--gb-51);
-	font-weight: 800;
-	margin-bottom: 10px;
-	border: none;
-	box-shadow: 3px 3px 0 var(--gb-52);
-}
-
-#blason {
-	margin-right: 15px;
-}
-
-#maillot {
-	margin-left: 15px;
-}
-
-#entraineur:active {
-	background-color: var(--gb-51);
-	color: #ffffff;
+	aspect-ratio: 1;
+	overflow: hidden;
+	background-size: 69%;
+	background-repeat: no-repeat;
+	background-position: center;
 }
 
 .buttons {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-
-	margin-bottom: 2%;
+	width: 85%;
+	height: 5.5%;
+	justify-content: space-between;
+	margin-top: 5%;
 }
 
-:root {
-	--gb-51: #fadc00;
-	--gb-52: #1e1e28;
-}
-.player {
-	position: absolute;
-	background-image: url("../img/card.svg");
-	background-repeat: no-repeat;
-	background-size: contain;
-	transform: translate(-50%, -50%);
-	width: 45px;
-	height: 63px;
+.buttons > button {
+	transform: translateY(50%);
 }
 
-.player-selection {
-    color: #00a55a;
-	font-size: 38px;
+#selec-title {
+	margin: 2% auto;
+	font-size: 1.5em;
+	font-weight: bold;
 	text-align: center;
-	font-family: Industry;
-	font-weight: bolder;
-  }
-  .des-joueurs {
-	color: white;
-	  font-size: 38px;
-	  text-align: center;
-	  font-family: Industry;
-	  font-weight: bolder;
-	  line-height: 7px;
-	  }
-.buttons-container {
-	display: flex;
-	justify-content: center; /* Centrer horizontalement */
-	align-items: center; /* Centrer verticalement, si nécessaire */
 }
 
 .player1-bar {
@@ -264,13 +58,25 @@ body {
 }
 
 .player2-bar {
-	flex:1;
+	flex: 1;
 	position: relative;
 	height: 100%;
 	background-color: white;
 	border-radius: 0 20px 20px 0;
 	transform-origin: right center;
 	animation: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+#statistiques {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+#redac {
+	margin-left: 0;
+	transform: translateX(0);
 }
 
 .stat-player {
@@ -281,55 +87,54 @@ body {
 	background-color: black;
 	overflow: visible;
 	border-radius: 20px;
-	
-}
-#arriere-droit-bar{
-	top:36%; left: 55%;
-}
-#defender-3-bar{
-	top: 51%; left: 55%;
 }
 
-#defender-2-bar{
-	top: 66%; left: 55%;
+#arriere-droit-bar {
+	top: 36%;
+	left: 55%;
 }
-#arriere-gauche-bar{
-	top: 81%; left: 55%;
+#defender-3-bar {
+	top: 51%;
+	left: 55%;
 }
-#midfielder-3-bar{
-	top: 96%; left: 55%;
 
+#defender-2-bar {
+	top: 66%;
+	left: 55%;
 }
-#midfielder-lead-bar{
-	top: 21%; left: 4%;
+#arriere-gauche-bar {
+	top: 81%;
+	left: 55%;
 }
-#midfielder-1-bar{
-	top: 36%; left: 4%;
+#midfielder-3-bar {
+	top: 96%;
+	left: 55%;
 }
-#ailier-droit-bar{
-	top: 51%; left: 4%;
+#midfielder-lead-bar {
+	top: 21%;
+	left: 4%;
 }
-#attaquant-centre-bar{
-	top: 66%; left: 4%;
+#midfielder-1-bar {
+	top: 36%;
+	left: 4%;
+}
+#ailier-droit-bar {
+	top: 51%;
+	left: 4%;
+}
+#attaquant-centre-bar {
+	top: 66%;
+	left: 4%;
 }
 #ailier-gauche-bar {
-	top:81%; left: 4%;
+	top: 81%;
+	left: 4%;
 }
 #goalkeeper-bar {
-	top: 96%; left: 4%
+	top: 96%;
+	left: 4%;
 }
-#Entraineur-bar {top: 21%; left: 55%}
-
-
-@media screen and (min-width: 600px) {
-	.field {
-		max-height: 60vw;
-		max-width: 60vh;
-		transform-origin: center;
-		transform: rotate(-90deg) scale(1.2);
-		aspect-ratio: 0.000005;
-		padding: 5px 20px;
-	}
-
-
+#Entraineur-bar {
+	top: 21%;
+	left: 55%;
 }

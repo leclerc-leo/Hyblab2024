@@ -1,4 +1,5 @@
 // Fonction pour incrémenter la sélection
+let stats;
 function incrementerSelection(idJoueur) {
 	var joueur = document.getElementById(idJoueur);
 	var count = parseInt(joueur.getAttribute("data-selection-count")) + 1;
@@ -17,7 +18,14 @@ function mettreAJourStatistiques(idJoueur, count) {
 }
 
 // Vous devrez créer une fonction pour calculer le total des sélections
-function calculerTotalSelections() {
-	// Implémentez la logique pour calculer le total des sélections
+async function calculerTotalSelections() {
+	await fetch("./data/Stats.json")
+		.then((response) => response.json())
+		.then((data) => {
+			stats = data;
+		})
+		.catch((error) => {
+			console.error("Erreur :", error);
+		});
 	return 100; // Retournez la valeur totale des sélections
 }
