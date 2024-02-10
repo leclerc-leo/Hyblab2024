@@ -46,7 +46,7 @@ const Article: React.FC<ArticleProps> = ({ id, title, subtitle, content }) => {
         <p className="article-content">{content}</p>
         <img className='GuilleVerteinversed' src='/bretons-1/img/Logo_Guille_vert.svg'></img>
         <div className='Lastline'>
-          <button onClick={() => handleBackClick()}>Retour</button>
+          <button className='back' onClick={() => handleBackClick()}>Retour</button>
           <div className='inversedColor'>
             <FavoriteButton
               isFavorited={isFavorited}
