@@ -19,7 +19,6 @@
     height:100%;
     position: absolute;
 }
-
 #swiper_journee{
     width: 100%;
     height:100%;
@@ -355,17 +354,20 @@ svg.image-histoire, svg.image-jo{
 }
 #palmares-page .card-container {
     width: 80%;
-    height: 18vh;
+    height: 15%;
     perspective: 90vw;
     margin: 2.5% 10% 2.5% 10%;
     transition: transform 1500ms;
+}
+#palmares-page p {
+    font-size: calc(1.3vh + 8px);
 }
 #palmares-page .flipcard {
     height: 80vh;
     transform: rotateY(180deg);
 }
 #palmares-page .smaller{
-    height: calc(5.3vh + 8px);
+    height: calc(1.3vh + 8px);
 
 }
 #palmares-page .doigt-gif ,#palmares-page .logo-retourner{
@@ -387,14 +389,14 @@ svg.image-histoire, svg.image-jo{
 
 #palmares-page #card-afrique{
     position: absolute;
-    top:25vh;
+    top:25%;
 }
 #palmares-page #card-mondiaux{
-    top : 65vh;
+    top : 65%;
     position: absolute;
 }
 #palmares-page #card-inter{
-    top : 45vh;
+    top : 45%;
     position: absolute;
 }
 
@@ -708,6 +710,7 @@ svg.image-histoire, svg.image-jo{
     height: 41%;
     position: absolute;
     top: 30%;
+    z-index: 2;
     /* right: 50%; */
     left: 25%;
 }
