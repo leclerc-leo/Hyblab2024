@@ -130,7 +130,15 @@ body{
 }
 .player-voted {
     position: relative ;
-    left: 50%;
+    left: 63%;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+#poste-1 > .player-voted, #poste-12 > .player-voted {
+    position: relative ;
+    left: 0;
     display: table-cell;
     vertical-align: middle;
     text-align: center;
@@ -308,13 +316,11 @@ body{
     }
 
     .player-img {
-        height: 9vmin;
-        width: 9vmin;
+        height: 10vmin;
+        width: 10vmin;
         border-radius :10px ;
         display: block;
-        margin-left: 15px;
-        margin-top: 5px;
-        margin-bottom: 5px;
+        margin-left: 20%;
     }
 
     .player-voted p {
@@ -327,7 +333,10 @@ body{
         padding-left : 25% ;
     }
 
-
+    .player-voted {
+        position: relative ;
+        left: 100%;
+    }
 
 }
 
@@ -354,7 +363,12 @@ body{
         color: var(--yellow);
         text-align: center;
     }
-    
+
+    .player-voted {
+        position: relative ;
+        left: 140%;
+    }
+
 }
 
 /*Gestion de la police lorsque l'écran est très petit*/

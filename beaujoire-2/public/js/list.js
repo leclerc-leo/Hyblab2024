@@ -1,24 +1,15 @@
 // get the temporary votes :
-votesTmp = JSON.parse(localStorage.getItem('votes'));
+console.log(globals.tabVotes);
+
+let selectedHeartButton = null;
 
 document.addEventListener('DOMContentLoaded', function () {
   const positions = ['Gardien', 'Arrière droit', 'Arriere gauche', 'Défenseur central 1', 'Défenseur central 2', 'Milieu défensif', 'Milieu gauche', 'Milieu offensif', 'Attaquant 1', 'Milieu droit', 'Attaquant 2', 'Sélectionneur'];
   let playerSwiper;
 
-  async function getPlayersByPosition(positionId) {
-    try {
-      const response = await fetch(`/beaujoire-2/api/players/${positionId}`);
-      const data = await response.json();
-      return data.players;
-    } catch (error) {
-      console.error('Error fetching players:', error);
-      return [];
-    }
-  }
-
   async function fetchData(positionId) {
     try {
-      const players = await getPlayersByPosition(positionId);
+      const players = await globals.getPlayersByPosition(positionId);
       updatePlayerListContent(`playerList${positionId}`, players, positionId);
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -39,11 +30,16 @@ document.addEventListener('DOMContentLoaded', function () {
         <button class="heart-button" data-type="heart"></button>
       `;
 
+
       playerListContainer.appendChild(playerBox);
       playerBox.addEventListener("click", () => downSlide(playerBox));
 
       const heartButton = playerBox.querySelector('.heart-button');
       heartButton.addEventListener('click', () => { toggleHeart(heartButton, player.id, positionId); });
+      if (globals.tabVotes[positionId-1] === player.id){
+        heartButton.classList.add("pressed");
+        selectedHeartButton = heartButton ;
+      }
 
       const downslider = playerBox.querySelector('.down-slider');
       downslider.addEventListener('click', () => { downSlide(downslider, playerBox); });
@@ -222,32 +218,33 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   function toggleVote(positionId,playerId){
-    if (votesTmp[positionId] === 0)
+    if (globals.tabVotes[positionId-1] === 0)
     {
-      votesTmp[positionId] = playerId ;
+      globals.tabVotes[positionId-1] = playerId ;
     } else {
-      if (votesTmp[positionId] === playerId)
-            votesTmp[positionId] = 0 ;
+      if (globals.tabVotes[positionId-1] === playerId)
+        globals.tabVotes[positionId-1] = 0 ;
     }
   }
 
-  let selectedHeartButton = null;
   function toggleHeart(button,playerId ,positionId) {
+
     if (button.dataset.type === 'heart') {
       if (selectedHeartButton && selectedHeartButton !== button) {
         selectedHeartButton.classList.remove('pressed');
         // update temporary votes :
-        votesTmp[positionId] = 0 ;
+        globals.tabVotes[positionId-1] = 0 ;
       }
       // update temporary votes :
       toggleVote(positionId,playerId);
-      console.log(votesTmp);
-      localStorage.setItem('votes', JSON.stringify(votesTmp));
+      console.log(globals.tabVotes);
+      globals.updateVotes(globals.tabVotes);
       button.classList.toggle('pressed');
       selectedHeartButton = button;
     }
   }
 
+  
 /*
   async function getPlayersByPosition(positionId) {
     try {
@@ -272,6 +269,9 @@ document.addEventListener('DOMContentLoaded', function () {
   fetchData();*/
 
   handleSwiperEvents();
-  updateContent(0); 
+  updateContent(0);
+
+
+
 
 });
