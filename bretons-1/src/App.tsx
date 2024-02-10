@@ -11,7 +11,7 @@ export default function App() {
       <Routes>
         <Route path="bretons-1" element={<Home />} />
         <Route path="bretons-1/MySave" element={<MySave />} />
-        <Route path="bretons-1/VideoPlayer" element={<VideoPlayerPage />} />
+        <Route path="bretons-1/VideoPlayer/:id" element={<VideoPlayerPage />} />
         <Route path="bretons-1/Credits" element={<Credits />} />
       </Routes>
     </div>

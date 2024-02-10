@@ -81,8 +81,7 @@ const FavoriteVideosManager: React.FC<FavoriteVideosManagerProps> = ({ videoId }
 function VideoListItem({ video }: VideoListItemProps) {
   const navigate = useNavigate();
   const handlePlayClick = (id: string) => {
-    console.log(`Image "${id}" cliquée !`);
-    navigate('/bretons-1/VideoPlayer', { state: { id: id } })
+    navigate('/bretons-1/VideoPlayer/'+id);
   };
   return (
     <div className="video-list-item" onClick={() => handlePlayClick(video.id)}>

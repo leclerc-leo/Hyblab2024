@@ -67,8 +67,7 @@ function CardCarousel({ video }: VideoListItemProps) {
   };
 
   const handlePlayClick = (id: string) => {
-    console.log(`Image "${id}" cliquée !`);
-    navigate('VideoPlayer', { state: { id: id } })
+    navigate('/bretons-1/VideoPlayer/'+id);
   };
 
   const handleFavoriteClick = () => {
