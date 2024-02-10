@@ -116,12 +116,7 @@ function initializePage() {
 				console.log(`No player found for id ${playerId}`);
 			}
 		});
-		if (captainParam) {
-			handleCaptainSelect(captainParam);
-		}
-		document.getElementById("statistiques").style.display = "inline-block";
-		document.getElementById("redac").style =
-			"margin:0 ; transform: translateX(0)";
+		
 	} else if (storedPlayers) {
 		console.log("Players found in local storage");
 		// Iterate through each player from the local storage
