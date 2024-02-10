@@ -8,6 +8,7 @@ import athleteData from '../data/Athlete.json';
 import { Athlete, EventDataItem} from '../components/type';
 import EventData from '../data/Event.json';
 
+
 function VideoPlayer({ id }: { id: string }) {
     const [allowSwipe, setAllowSwipe] = useState(false);
     const allEventsData: EventDataItem[] = (EventData.Event.flat() as EventDataItem[]);
@@ -34,7 +35,7 @@ function VideoPlayer({ id }: { id: string }) {
         }
     };
 
-    const durationInFrames = eventData.Gain === "" || eventData.Gain === "Qualifie" ? 1740 : 1980;
+    const durationInFrames = eventData.Gain === "" || eventData.Gain === "Qualifie" ? 2040 : 2280;
     return (
         <div id='VideoPlayer' style={{overflow: 'hidden' }}>
             <div className="head">
