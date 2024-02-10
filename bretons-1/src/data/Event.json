@@ -5,11 +5,11 @@
       "Athlete": "Laëtitia Le Corguillé",
       "Sport": "Cyclisme",
       "Epreuve": "BMX",
-      "Epreuve__1": "qualifie pour la finale",
+      "Epreuve__1": "Finale",
       "Rang": 2,
-      "Gain": "Qualifie",
+      "Gain": "Argent",
       "Olympiade": "Pékin 2008",
-      "Résultat (temps /points)": "1ère en Demi-finale avec 4 pts",
+      "Résultat (temps /points)": "38s 042",
       "Podium (nom + résultat)": [
         {
           "Place": "1",
@@ -152,7 +152,7 @@
           "Score": "121"
         }
       ],
-      "Performance": "",
+      "Performance": "4 points",
       "Nombre de médailles françaises": ""
     }
   ]

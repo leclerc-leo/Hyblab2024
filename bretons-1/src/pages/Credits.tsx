@@ -12,7 +12,7 @@ const CreditPage = () => {
                     <div className="credit-container">
                         <div className="credit-logos">
                             <img src="/bretons-1/img/logos/logo-hyblab.png" alt="Logo hyblab" />
-                            <img src="/bretons-1/img/logos/Logo_du_Télégramme.png" alt="Logo Télégramme" />
+                            <img src="/bretons-1/img/logos/logo-telegramme.png" alt="Logo Télégramme" />
                             <img src="/bretons-1/img/logos/logo-ouestmedia.png" alt="Logo ouestmedia" />
                             <img src="/bretons-1/img/logos/logo-polytech.png" alt="Logo polytech" />
                             <img src="/bretons-1/img/logos/logo-agr.png" alt="Logo agr" />
