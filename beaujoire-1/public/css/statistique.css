@@ -97,9 +97,21 @@
 	border-radius: 20px;
 }
 
-.player {
-}
+.vote-percentage {
+	position: absolute;
+	 /* Cela positionne l'élément juste au-dessus de la barre */
+	right: -135%; /* Ajuster à droite */
+	bottom: 1%;
+	transform: translateY(-5px); /* Décaler légèrement vers le haut pour l'espacement */
+	padding: 5px;
+	color: #00a55a; /* Texte vert */ 
+	font-size: 0.8em; /* Petite taille de police */
+	border-radius: 3px; /* Bords arrondis */
+	font-weight: bold;
 
+  }
+  
+  
 .player-name {
 	position: absolute;
 	text-align: start;

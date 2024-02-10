@@ -109,12 +109,6 @@ function initializePage() {
 				console.log(`No player found for id ${playerId}`);
 			}
 		});
-		if (captainParam) {
-			handleCaptainSelect(captainParam);
-		}
-		document.getElementById("statistiques").style.display = "inline-block";
-		document.getElementById("redac").style =
-			"margin:0 ; transform: translateX(0)";
 	} else if (storedPlayers) {
 		console.log("Players found in local storage");
 		// Iterate through each player from the local storage
@@ -130,10 +124,7 @@ function initializePage() {
 			}
 		}
 		const captain = localStorage.getItem("captain");
-		if (captain) {
-			isCaptainBeingSelected = true;
-			handleCaptainSelect(captain);
-		}
+
 		document.getElementById("statistiques").style.display = "inline-block";
 		document.getElementById("redac").style =
 			"margin:0 ; transform: translateX(0)";
@@ -208,4 +199,45 @@ function filterStatsWithPlayer(stats, players) {
 		}
 	});
 	return filteredStats;
+}
+// Cette fonction calcule le pourcentage des votes pour chaque joueur
+// et met à jour l'élément HTML pour afficher ce pourcentage.
+function updateVotePercentages() {
+	const totalVotesPerPosition = {}; // stocke le total des votes pour chaque poste
+	const playerPercentages = {}; // stocke le pourcentage des votes pour chaque joueur
+
+	// Calculez le total des votes pour chaque poste
+	for (const player in stats) {
+		const position = player.split("-")[1]; // suppose que le nom du joueur contient le poste, séparé par un tiret
+		if (!totalVotesPerPosition[position]) {
+			totalVotesPerPosition[position] = 0;
+		}
+		totalVotesPerPosition[position] += stats[player];
+	}
+
+	// Calculez le pourcentage des votes pour chaque joueur
+	for (const player in stats) {
+		const position = player.split("-")[1]; // suppose que le nom du joueur contient le poste, séparé par un tiret
+		playerPercentages[player] =
+			(stats[player] / totalVotesPerPosition[position]) * 100;
+	}
+
+	// Mettez à jour l'élément HTML pour chaque joueur avec le pourcentage de votes
+	for (const player in playerPercentages) {
+		const playerElementId = player.toLowerCase(); // l'ID de l'élément HTML correspondant au joueur
+		const playerElement = document.getElementById(playerElementId);
+		if (playerElement) {
+			const percentageDisplay =
+				playerElement.querySelector(".vote-percentage");
+			if (!percentageDisplay) {
+				// Créez un nouvel élément pour afficher le pourcentage si ce n'est pas déjà fait
+				const newPercentageDisplay = document.createElement("div");
+				newPercentageDisplay.className = "vote-percentage";
+				playerElement.appendChild(newPercentageDisplay);
+			}
+			// Mettez à jour le pourcentage affiché
+			percentageDisplay.textContent =
+				playerPercentages[player].toFixed(2) + "%";
+		}
+	}
 }
