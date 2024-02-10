@@ -1,20 +1,25 @@
 // Fonction pour incrémenter la sélection
 let stats;
-let filterStats;
 window.onload = async function () {
-	await fetch("./data/Stats.json")
-		.then((response) => response.json())
-		.then((statis) => {
-			console.log("Stats:", statis);
-			stats = statis;
-			filterStats = filterStatsWithPlayer(statis, players);
-		});
 	await fetch("./data/DataBase.json")
 		.then((response) => response.json())
-		.then((data) => {
-			playersData = data;
+		.then((players) => {
+			playersData = players;
+			initializePage();
+		})
+		.catch((error) => {
+			console.error("Erreur : fetching DataBase.json", error);
 		});
-	initializePage();
+
+	await fetch("./data/Stats.json")
+		.then((response) => response.json())
+		.then((data) => {
+			stats = filterStatsWithPlayer(data, players);
+			console.log(stats);
+		})
+		.catch((error) => {
+			console.error("Erreur : fetching Stats.json", error);
+		});
 };
 function incrementerSelection(idJoueur) {
 	var joueur = document.getElementById(idJoueur);
@@ -67,25 +72,44 @@ function initializePage() {
 		console.log(player.POSTE);
 		if (player.POSTE !== "ENTRAÎNEUR" && player.NUMÉRO !== undefined) {
 			playerElement.setAttribute("data-number", player.NUMÉRO);
-			const playerElementdiv = `
-			<img src="./img/jersey.svg" alt="jersey" />
-		   <p class="player-name">${playerName}</p>
-			`;
-			playerElement.innerHTML =
-				playerElementdiv + playerElement.innerHTML;
+			playerElement.innerHTML = `
+		 	<img src="./img/jersey.svg" alt="jersey" />				<p class="player-name">${playerName}</p>
+		 	`;
 		} else {
-			const playerElementdiv = `
-			<img src="./img/jersey.svg" alt="jersey" />
-		   <p class="player-name">${playerName}</p>
-			`;
-			playerElement.innerHTML =
-				playerElementdiv + playerElement.innerHTML;
+			playerElement.innerHTML = `
+		 	<img src="./img/jersey.svg" alt="jersey" />
+		 	<p class="player-name">${playerName}</p>
+		 	`;
 		}
 		selectedPlayerId = null;
 	};
 
+	const urlParams = new URLSearchParams(window.location.search);
+	const playersParam = urlParams.get("players");
+	const captainParam = urlParams.get("captain");
+	console.log(`Captain parameter: ${captainParam}`);
+	console.log(`URL parameters: ${playersParam}`);
 	const storedPlayers = JSON.parse(localStorage.getItem("players"));
-	if (storedPlayers) {
+
+	if (playersParam !== null) {
+		const players = playersParam.split("&");
+		console.log(`Players from URL: ${players}`);
+		// Iterate through each player from the URL parameters
+		players.forEach((player) => {
+			let [playerId, playerName] = player.split("=");
+			playerId = decodeURIComponent(playerId);
+			playerName = decodeURIComponent(playerName);
+
+			// Retrieve the player element corresponding to the player's id
+			const playerElement = document.getElementById(playerId);
+			// Update the player information
+			if (playerElement && playerName !== "") {
+				updatePlayerElement(playerElement, playerName);
+			} else {
+				console.log(`No player found for id ${playerId}`);
+			}
+		});
+	} else if (storedPlayers) {
 		console.log("Players found in local storage");
 		// Iterate through each player from the local storage
 		for (const playerId in storedPlayers) {
@@ -104,11 +128,7 @@ function initializePage() {
 		document.getElementById("statistiques").style.display = "inline-block";
 		document.getElementById("redac").style =
 			"margin:0 ; transform: translateX(0)";
-	} else {
-		console.log("No players found in local storage");
 	}
-
-	updateVotePercentages();
 }
 
 let players = JSON.parse(localStorage.getItem("players")) || {

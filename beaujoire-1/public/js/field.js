@@ -1,5 +1,6 @@
 "use strict";
 
+
 let isAnyItemFlipped = false;
 let isCaptainSelected = false;
 let isCaptainBeingSelected = false;
@@ -25,12 +26,10 @@ function initializePage() {
 	console.log("Selected Blason:", selectedBlason);
 
 	if (selectedMaillot) {
-		console.log("test");
 		maillotButton.style.backgroundImage = `url(${selectedMaillot})`;
 	}
 
 	if (selectedBlason) {
-		console.log("test2");
 		blasonButton.style.backgroundImage = `url(${selectedBlason})`;
 	}
 	updatePlayerElement = function (playerElement, playerName) {
@@ -56,6 +55,8 @@ function initializePage() {
 		}
 
 		selectedPlayerId = null;
+
+
 	};
 
 	const playerNames = document.querySelectorAll(".player-name");
@@ -187,6 +188,17 @@ document.addEventListener("DOMContentLoaded", async () => {
 			await saveStats();
 			window.location.href = "./statistique.html";
 		});
+
+	const selectedImageButton = document.getElementById("maillot");
+
+	// Ajoutez un événement "click" au bouton d'image sélectionnée
+	selectedImageButton.addEventListener("click", function () {
+		// Affichez le carrousel en appelant la fonction showPopup
+		CarrouselReloadModule.updateMaillot("maillot");
+	});
+
+
+
 	document.querySelector("#back-overlay").addEventListener("click", () => {
 		document.querySelectorAll(".carousel-item").forEach((item) => {
 			item.classList.remove("selected");
