@@ -1,11 +1,9 @@
 //import dataUtils from '../data/dataUtils.mjs';
 
 let votesTmp = JSON.parse(localStorage.getItem('votes'));
-console.log(votesTmp);
-let allVotes = true;
 
-
-/*for (let i = 1; i <= 12; i++) {
+//checks if the votes have been done
+for (let i = 1; i <= 12; i++) {
   if(votesTmp[i] === 0 ) {
     allVotes = false ;
     break;
@@ -67,22 +65,6 @@ document.querySelector("#info").addEventListener("click", function () {
   document.getElementById('container').style.opacity = 0.7;
 });
 
-/************* Animations  **************/
-
-// Wait for the content to preload and display 1st slide
-// Here we simulate a loading time of one second
-setTimeout(() => {
-  // fade out the loader "slide"
-  // and send it to the back (z-index = -1)
-  anime({
-    delay: 0,
-    targets: '#loader',
-    opacity: '0',
-    'z-index': -1,
-    easing: 'easeOutQuad',
-  });
-}, 1000);
-/************* Animations  **************/
 
 /************* Vote progression display  **************/
 
@@ -129,13 +111,17 @@ function checkprogress() {
         if (i + 1 === 1) {
           jerseyImg.src = './img/animation/gants_1.gif';
         } else {
-          jerseyImg.src = `./img/field/jerseys/joueur-${i + 1}.svg`;
+          if(i+1 < 10) {
+            jerseyImg.src = `./img/animation/maillot-0${i + 1}.gif`;
+          } else {
+            jerseyImg.src = `./img/animation/maillot-${i + 1}.gif`;
+          }
         }
       }
       fieldJersey.replaceChild(jerseyImg, fieldJersey.firstChild)
       fieldJersey.classList.remove('voted');
       // Change the href attribute
-      fieldJersey.href = 'home';
+      fieldJersey.href = 'list';
     }
   }
 }
