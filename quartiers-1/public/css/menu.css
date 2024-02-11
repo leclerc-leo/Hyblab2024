@@ -55,12 +55,12 @@
     color: #111;
 }
 
-#mySidenav ul {
+#mySidenav ul{
     list-style-type: none;
     margin-bottom: 20%;
 }
 
-#mySidenav li{
+li{
     margin: 1% 0 1% 1%;
     color: #7D7DB5;
     display: flex;
@@ -86,14 +86,17 @@
 
 /* last ul */
 #mySidenavlastul{
+    list-style-type: none;
     padding-bottom: 40%;
 }
 
 #mySidenavlastul li::before{
-    display: none;
+    color: transparent;
 }
-#mySidenavlastul li{
-    margin: 1% 0 1% 10%;
+
+#mySidenavlastul a{
+    padding-top: 8px;
+    padding-bottom: 8px;;
 }
 /* Close btn */
 #closeBtn {

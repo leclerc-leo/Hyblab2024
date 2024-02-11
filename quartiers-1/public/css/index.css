@@ -178,18 +178,18 @@ h1{
 
 }
 #tuto-map{
-    left: 28%;
+    left: 25%;
     top: 20%;
     transform: translateX(-50%) translateY(-50%);
 }
 #tuto-swipe{
     right: 20%;
-    top: 62%;
+    top: 66%;
     transform: translateX(50%) translateY(-50%);
 }
 #tuto-button{
     left: 19%;
-    bottom: 15%;
+    bottom: 13%;
     transform: translateX(-50%) translateY(50%);
 }
 
@@ -199,18 +199,18 @@ h1{
     height: auto;
 }
 #tuto-map-fleche{
-    left: 25%;
-    top: 30%;
+    left: 24%;
+    top: 28%;
     transform: translateX(-50%) translateY(-50%) rotate(20deg);
 }
 #tuto-swipe-fleche{
     right: 23%;
-    top: 70%;
+    top: 72%;
     transform: translateX(50%) translateY(-50%) scaleX(-1) rotate(20deg);
 }
 #tuto-button-fleche{
-    left: 26%;
-    bottom: 7%;
+    left: 24%;
+    bottom: 8%;
     transform: translateX(-50%) translateY(50%) rotate(-15deg);
 }
 /* -------------- End of Tuto --------------*/
