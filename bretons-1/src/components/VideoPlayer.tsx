@@ -53,7 +53,6 @@ function VideoPlayer({ id }: { id: string }) {
                 fps={60}
                 style={{ width: "100%", height: "100%", position: "absolute", top: "0%",objectFit: "cover", }}
                 autoPlay
-                controls
                 loop
             />
             <div onClick={handleGoBack} style={{ position: 'absolute', bottom: '20px', left: '10px' }}>
