@@ -584,7 +584,7 @@ function getPositionFromId(id) {
 			position = "MILIEU OFF";
 			break;
 		case elementId.includes("midfielder-1"):
-			position = "MILIEU OFF D";
+			position = "MILIEU OFF G";
 			break;
 		case elementId.includes("midfielder-3"):
 			position = "MILIEU DÉF D";
