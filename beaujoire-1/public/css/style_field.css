@@ -124,12 +124,23 @@ body {
 	z-index: 10;
 }
 
+#intro {
+	background: linear-gradient(
+			hsla(240, 14%, 14%, 0) 0%,
+			hsla(240, 14%, 14%, 0.995) 30%,
+			hsla(240, 14%, 14%, 0.995) 100%
+		),
+		url("../img/beaujoire.jpg");
+	background-size: contain;
+}
+
 #gif > img {
 	width: 100%;
 }
 
 #intro > h1 {
 	font-size: 50px;
+	margin-bottom: 30%;
 }
 
 #intro > * {
