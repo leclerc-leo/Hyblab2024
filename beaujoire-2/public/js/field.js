@@ -1,8 +1,5 @@
 //import dataUtils from '../data/dataUtils.mjs';
 
-
-let votesTmp = JSON.parse(localStorage.getItem('votes'));
-
 /*checks if the votes have been done
 for (let i = 1; i <= 12; i++) {
   if(votesTmp[i] === 0 ) {
@@ -10,6 +7,12 @@ for (let i = 1; i <= 12; i++) {
     break;
   }
 }*/
+
+function redirectToPosition(positionId) {
+  const listUrl = `/beaujoire-2/list?position=${positionId}`;
+  window.location.href = listUrl;
+}
+
 
 console.log(globals.tabVotes);
 

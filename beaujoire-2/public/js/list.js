@@ -281,10 +281,8 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   fetchData();*/
 
+
   handleSwiperEvents();
   updateContent(0);
-
-
-
 
 });
