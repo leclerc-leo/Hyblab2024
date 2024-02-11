@@ -1,13 +1,6 @@
 
 console.log(globals.tabVotes);
-let sessionToken ;
-document.addEventListener('DOMContentLoaded', function () {
-  async function getSessionToken() {
-    sessionToken = await globals.getSessionToken();
-    console.log(sessionToken);
-  }
-  getSessionToken();
-});
+
 /************* Archives *************/
 function checkVotes() {
   const archivesButton = document.getElementById('archives');
@@ -153,8 +146,9 @@ checkprogress();
 
 /************* Finalize votes  **************/
 document.getElementById('statistiques').addEventListener('click',async () => {
+  await getSessionTokenValue();
   // Access the sessionToken passed from the server
-  globals.saveVotes(sessionToken, globals.tabVotes);
+  globals.saveVotes(globals.sessionToken, globals.tabVotes);
   window.location.href = '/beaujoire-2/statistics';
 
 })
