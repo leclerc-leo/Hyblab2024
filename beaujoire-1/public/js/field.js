@@ -7,6 +7,7 @@ let selectedPlayerId;
 let updatePlayerElement;
 let playersData;
 let isFirstCall = true;
+let cardJersey;
 
 window.onload = fetch("./data/DataBase.json")
 	.then((response) => response.json())
@@ -21,16 +22,15 @@ function initializePage() {
 
 	const selectedMaillot = localStorage.getItem("selectedMaillot");
 	const selectedBlason = localStorage.getItem("selectedBlason");
-	console.log("Selected Maillot:", selectedMaillot);
-	console.log("Selected Blason:", selectedBlason);
 
 	if (selectedMaillot) {
-		console.log("test");
+		console.log("selectedMaillot:", selectedMaillot);
 		maillotButton.style.backgroundImage = `url(${selectedMaillot})`;
+		updateCardJersey();
 	}
 
 	if (selectedBlason) {
-		console.log("test2");
+		console.log("selectedBlason:", selectedBlason);
 		blasonButton.style.backgroundImage = `url(${selectedBlason})`;
 	}
 	updatePlayerElement = function (playerElement, playerName) {
@@ -38,7 +38,7 @@ function initializePage() {
 		if (player.POSTE !== "ENTRAÎNEUR" && player.NUMÉRO !== undefined) {
 			playerElement.setAttribute("data-number", player.NUMÉRO);
 			playerElement.innerHTML = `
-				<img src="./img/jersey.svg" alt="jersey" />
+				<img src="./${localStorage.getItem("cardJersey")}" alt="jersey" />
 				<p class="player-name">${playerName}</p>
 			`;
 		} else {
@@ -175,6 +175,41 @@ let players = JSON.parse(localStorage.getItem("players")) || {
 	"defender-3": "",
 };
 
+function updateCardJersey() {
+	const selectedMaillot = localStorage.getItem("selectedMaillot");
+	// Divisez la chaîne en un tableau en utilisant le slash comme séparateur
+	const parts = selectedMaillot.split("/");
+	// Prenez le dernier élément du tableau, qui est le chemin relatif
+	let relativePath =
+		parts[parts.length - 3] +
+		"/" +
+		parts[parts.length - 2] +
+		"/" +
+		parts[parts.length - 1];
+	console.log("Relative path:", relativePath);
+	// Ajoutez le chemin relatif au chemin absolu de la page
+
+	switch (selectedMaillot) {
+		case "/img/maillot/maillot-00-01.png":
+			cardJersey = "img/cardJerseys/card_jersey00-01.svg";
+			break;
+		case "img/maillot/maillot-12-13.png":
+			cardJersey = "img/cardJerseys/card_jersey12-13.svg";
+			break;
+		case "img/maillot/maillot-21-22.png":
+			cardJersey = "img/cardJerseys/card_jersey21-22.svg";
+			break;
+		case "img/maillot/maillot-84-85.png":
+			cardJersey = "img/cardJerseys/card_jersey84-85.svg";
+			break;
+		case "img/maillot/maillot-94-95.png":
+			cardJersey = "img/cardJerseys/card_jersey94-95.svg";
+			break;
+		default:
+			cardJersey = "img/cardJerseys/card_jersey00-01.svg";
+	}
+	localStorage.setItem("cardJersey", cardJersey);
+}
 document.addEventListener("DOMContentLoaded", async () => {
 	/*
 	document.querySelectorAll(".player-clickable").forEach((player) => {
@@ -198,8 +233,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	document.querySelector("#close-bio").addEventListener("click", () => {
 		document.querySelector(".bio-overlay").style.display = "none";
 	});
-
-	document.querySelector("#settings").addEventListener("click", () => {
+	document.querySelector("#settings").addEventListener("click", (event) => {
 		const menu = document.querySelector(".dropdown");
 		if (
 			menu.style.animationName === "dropDownAnimation" ||
@@ -207,6 +241,16 @@ document.addEventListener("DOMContentLoaded", async () => {
 		) {
 			menu.style.animationName = "dropUpAnimation";
 		} else {
+			menu.style.animationName = "dropDownAnimation";
+		}
+		// Empêche l'événement de se propager au document
+		event.stopPropagation();
+	});
+
+	// Ajoute un écouteur d'événements au document pour cacher le menu lorsque vous cliquez ailleurs
+	document.addEventListener("click", () => {
+		const menu = document.querySelector(".dropdown");
+		if (menu.style.animationName === "dropUpAnimation") {
 			menu.style.animationName = "dropDownAnimation";
 		}
 	});
@@ -329,6 +373,9 @@ function saveStats() {
 				Object.values(players).forEach((player) => {
 					if (stats[player] !== undefined) {
 						stats[player]++;
+						console.log(
+							`Player ${player} stats updated: ${stats[player]}`
+						);
 					} else {
 						// Handle the case where the player doesn't exist in the stats object
 						console.log(`Player ${player} not found in stats.`);

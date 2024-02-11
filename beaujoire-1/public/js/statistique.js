@@ -52,14 +52,14 @@ function initializePage() {
 		if (player.POSTE !== "ENTRAÎNEUR" && player.NUMÉRO !== undefined) {
 			playerElement.setAttribute("data-number", player.NUMÉRO);
 			const playerElementdiv = `
-			<img src="./img/jersey.svg" alt="jersey" />
-		   <p class="player-name">${playerName}</p>
+			<img src="./${localStorage.getItem("cardJersey")}" alt="jersey" />
+				<p class="player-name">${playerName}</p>
 			`;
 			playerElement.innerHTML =
 				playerElementdiv + playerElement.innerHTML;
 		} else {
 			const playerElementdiv = `
-			<img src="./img/coach.svg" alt="jersey" />
+			<img src="./img/cardJerseys/card_coach.svg" alt="jersey" />
 		   <p class="player-name">${playerName}</p>
 			`;
 			playerElement.innerHTML =
@@ -211,7 +211,7 @@ function updateVotePercentages() {
 		const playerElementId = Object.keys(players).find(
 			(key) => players[key] === player
 		);
-		if (!playerElementId ) {
+		if (!playerElementId) {
 			console.log(`No player found for name ${player}`);
 			continue;
 		}

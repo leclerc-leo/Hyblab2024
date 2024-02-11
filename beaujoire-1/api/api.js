@@ -18,15 +18,19 @@ app.use(require("express").json());
 
 app.post("/updateStats", (req, res) => {
 	console.log("Received a POST request to /beaujoire-1/updateStats");
-	console.log("Request body:", req.body);
+	console.log("Content to write:", JSON.stringify(req.body));
 	const filePath = path.resolve(__dirname, "../public/data/Stats.json");
 	console.log("Writing to file:", filePath);
 	fs.writeFile(filePath, JSON.stringify(req.body), (err) => {
-		if (err) {
-			console.error("Error writing file:", err);
-			res.status(500).send(`Error writing file: ${err.message}`);
-		} else {
-			res.status(200).send("Successfully wrote file");
+		try {
+			if (err) {
+				console.error("Error writing file:", err);
+				res.status(500).send(`Error writing file: ${err.message}`);
+			} else {
+				res.status(200).send("Successfully wrote file");
+			}
+		} catch (error) {
+			console.error("Error in writeFile callback:", error);
 		}
 	});
 });
