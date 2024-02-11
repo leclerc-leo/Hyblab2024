@@ -6,10 +6,13 @@
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+
 
 // Create our application
 const app = express();
 app.use(cookieParser());
+app.use(bodyParser.json());
 
 let db = require('./public/data/dbutils.js');
 
