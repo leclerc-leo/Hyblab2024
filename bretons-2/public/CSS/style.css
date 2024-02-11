@@ -3,6 +3,7 @@
     padding: 0;
     font-family: 'Antonio', sans-serif;
     line-height : 90%;
+    scrollbar-width: none;
 }
 
 body {
@@ -237,9 +238,9 @@ footer {
     object-fit: cover;
   }
 
-/* removing blue outline from buttons */
-button:focus, button:active {
-   outline: none;
+button:focus,
+button:active {
+    outline: none;
 }
 
 #divTitleAthlete {
@@ -249,77 +250,115 @@ button:focus, button:active {
     justify-content: center;
     padding-top: 4%;
 }
-.ele_fleche{
-    width:60px;
+
+.ele_fleche {
+    width: 60px;
     transform: rotate(70deg);
     /* z-index: 2; */
-    display:flex;
+    display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin-top: -85px;
-    margin-left: 150px;
+    margin-top: -8%;
+    margin-left: 10%;
 }
-.ele_sardine{
-    width:80px;
+
+.ele_sardine {
+    width: 80px;
     transform: rotate(17deg);
     /* z-index: 2; */
-    display:flex;
+    display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin-top: -40px;
-    margin-left: 400px;
+    margin-top: -5%;
+    margin-left: 65%;
 }
-.nom_div_pg_at{
-    text-align: center; 
+
+.nom_div_pg_at {
+    display: flex;
+    text-align: center;
     width: 100%;
     margin-top: 30px;
     margin-bottom: 80px;
 }
-.img_div_pg_at{
 
-    text-align: center; 
+.img_div_pg_at {
+
+    text-align: center;
     width: 100%;
 }
+
 .img_at_pg_at {
-    width:70%;
+    width: 70%;
     margin: 0 auto;
 }
-.text_pg_at{
-    width: 80%;
-    margin-top:50px;
-    margin-left: 10%;
-    margin-right: 10%;
-    font-size: large;
+
+#bioAthlete {
+    line-height: 2.5vh;
 }
+
+.text_pg_at {
+    width: 80%;
+    margin-top: 25px;
+    margin-left: 15%;
+    margin-right: 10%;
+    font-size: 200%;
+}
+
 .text2_pg_at {
     margin-bottom: 30px;
     font-weight: bold;
     margin-top: 60px;
-    margin-left: 80px;
+    margin-left: 150px;
+    font-size: 200%;
 }
 
 .text3_pg_at {
     margin-bottom: 30px;
-    font-weight: bold;
     margin-top: 80px;
     text-align: center;
+    font-size: 200%;
+    margin-left: 10%;
+    margin-right: 10%;
+    line-height: 1.5;
 }
 
-.box_p_c{
+.box_p_c {
     margin-bottom: 30px;
     width: 90%;
     margin-left: 5%;
     font-weight: bold;
 }
 
-.next-athlete-div{
-    text-align: center; 
-    cursor:pointer; 
-    background-color : #141456;
-    color : white;
-    margin-left : 26% ; 
-    width : 50% ; 
-    font-size : 30px;  
+.next-athlete-div {
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    background-color: #141456;
+    color: white;
+    width: 80%;
+    height: 80%;
+    font-size: 43px;
+    margin-left: 25%;
+    width: 500px;
+    height: 60px;
+    margin-top: 100px;
+    padding-top: 8px;
+    transform: translateY(-80%);
+}
+
+
+.joueurword {
+    display: flex;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 15%;
+    font-size: 300%;
+}
+
+.img_cidrebolee {
+    width: 6%;
+    margin-left: 75%;
+    margin-top: -13%;
 }
 
 /* page crédit */
@@ -332,4 +371,3 @@ button:focus, button:active {
 .petitpoint {
     position: absolute!important;
 }
-  

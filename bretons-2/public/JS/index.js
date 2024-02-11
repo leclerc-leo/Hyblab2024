@@ -291,14 +291,9 @@ async function page_historique(sport) {
 
 		const slide = document.createElement("div");
 		slide.classList.add("swiper-slide");
-		// slide.style.height = "40%";
-		// //slide.style.width = "50%";
-		// slide.style.float = "left"
-		// slide.style.marginRight = "10px";
-		// slide.style.marginTop = "15vh";
-		// slide.style.backgroundColor = "#FBCB5D";
 
 		const video = document.createElement("video");
+		video.style.transformOrigin= 'center'
 
 		console.log(`Création de l'élément vidéo pour ${videoKey}`);
 	
@@ -309,12 +304,7 @@ async function page_historique(sport) {
 		div.style.alignItems = "center";
 		div.style.height = "100%";
 
-		// video.src = videos[${}];
-		// video.autoplay = true;
-		// video.controls = true;
 		video.controlsList = "nodownload";
-		// video.style.height = "100%";
-		// video.style.border = "0.5px solid black"; //à modifier ?
 
 		const sourceMP4 = document.createElement("source");
 		sourceMP4.src = videoPath;
@@ -326,6 +316,20 @@ async function page_historique(sport) {
 
 		video.appendChild(sourceMP4);
 		video.appendChild(sourceWebM);
+
+		const elementWidth = video.offsetWidth;
+		const elementHeight = video.offsetHeight;
+
+		// Récupérez les dimensions de la fenêtre du navigateur
+		const windowWidth = window.innerWidth;
+		const windowHeight = window.innerHeight;
+
+		// Calculez les valeurs de translation pour placer l'élément au centre
+		const translateX = (windowWidth) / 2;
+		const translateY = (windowHeight) / 2;
+
+		console.log(translateX,translateY)
+		console.log(windowHeight,windowWidth)
 
 		video.oncanplay = ()=>{
 			console.log(`La vidéo ${videoKey} est prête à être lue.`);
@@ -352,6 +356,10 @@ async function page_historique(sport) {
 
 			let isPlaying = false;
 
+			const vidéoModal = new bootstrap.Modal('#video-modal')
+			const modalBody = document.querySelector('.modal-body');
+
+
 			playButton.addEventListener("click", function () {
 				playButton.style.opacity = 1;
 
@@ -366,6 +374,7 @@ async function page_historique(sport) {
 					setTimeout(function () {
 						playButton.style.opacity = 0; 
 					}, 1000);
+
 				} else {
 					playButtonImage.src = "./Image/picto-button-video/play.svg"; 
 					video.pause();
@@ -492,7 +501,7 @@ async function page_historique(sport) {
 		divImgAthlete.id = "divImgAthlete";
 		divImgAthlete.style.cursor = "pointer";
 		divImgAthlete.onclick = () => {
-			page_athlete(uniqueAthlete);
+			page_athlete(uniqueAthlete, listeAthletes , isFirstAthlete);
 		}
 
 		const imgAthlete = document.createElement("img");
@@ -522,7 +531,7 @@ async function page_historique(sport) {
 		blank.appendChild(divImgAthlete);
 
 		divNomAthlete.onclick = () => {
-			page_athlete(uniqueAthlete,listeAthletes , isFirtAthlete);
+			page_athlete(uniqueAthlete, listeAthletes , isFirstAthlete);
 		}
 
 	} else {
@@ -542,8 +551,8 @@ async function page_historique(sport) {
 			divImgAthlete.id = "divImgAthlete";
 			divImgAthlete.style.cursor = "pointer";
 
-			divImgAthlete.onclick = () => {
-				page_athlete(athlete);
+			divImgAthlete.onclick = async () => {
+				page_athlete(athlete, listeAthletes , isFirstAthlete);
 			}
 
 			const imgAthlete = document.createElement("img");
@@ -572,8 +581,8 @@ async function page_historique(sport) {
 
 			blank.appendChild(divImgAthlete);
 
-			divNomAthlete.onclick = () => {
-				page_athlete(athlete, listeAthletes , isFirtAthlete);
+			divNomAthlete.onclick = async () => {
+				page_athlete(athlete, listeAthletes , isFirstAthlete);
 			}
 		}
 		
@@ -581,7 +590,8 @@ async function page_historique(sport) {
 
 }
 
-function page_athlete(athlete,listeAthletes, isFirtAthlete) {
+async function page_athlete(athlete,listeAthletes, isFirstAthlete) {
+	
     const blank = document.querySelector("#blank");
     blank.innerHTML = ""; // clear
 
@@ -603,33 +613,75 @@ function page_athlete(athlete,listeAthletes, isFirtAthlete) {
     const imgAthlete = document.createElement("img");
     imgAthlete.src = athlete.Photo;
     imgAthlete.alt = athlete.nom;
-		imgAthlete.className = "img_at_pg_at"
-		const imgdiv = document.createElement("div");
-		imgdiv.className = "img_div_pg_at"
-		imgdiv.appendChild(imgAthlete)
+	imgAthlete.className = "img_at_pg_at"
+	const imgdiv = document.createElement("div");
+	imgdiv.className = "img_div_pg_at"
+	imgdiv.appendChild(imgAthlete)
+
+	const nomContainer = document.createElement("div");
+	nomContainer.style.display = "flex";
+    nomContainer.style.alignItems = "center";
+	nomContainer.style.marginRight = "10vw";
 
     const nomAthlete = document.createElement("h2");
     nomAthlete.textContent = athlete.nom.split(" ")[0];
-		nomAthlete.style = "font-size:58px"
-		const prenomAthlete = document.createElement("h2");
+	nomAthlete.style.fontSize = "7vh";
+
+	const prenomAthlete = document.createElement("h2");
     prenomAthlete.textContent = athlete.nom.split(" ")[1];
-		prenomAthlete.style = "color:red;font-size:58px"
+	prenomAthlete.style = "color:red;font-size:7vh"
 
-		// const ele_fleche = document.createElement("img");
-		// ele_fleche.src = "./Image/fleche-3.svg"
-		// ele_fleche.className = "ele_fleche"
-		// const ele_sardine = document.createElement("img");
-		// ele_sardine.src = "./Image/sardine.svg"
-		// ele_sardine.className = "ele_sardine"
+	const prenomAthlete2 = document.createElement("h2");
+	prenomAthlete2.textContent = athlete.nom.split(" ")[2];
+	prenomAthlete2.style = "color:red;font-size:7vh"
+
+	const ele_fleche = document.createElement("img");
+	ele_fleche.src = "./Image/fleche-3.svg"
+	ele_fleche.className = "ele_fleche"
+	const ele_sardine = document.createElement("img");
+	ele_sardine.src = "./Image/sardine.svg"
+	ele_sardine.className = "ele_sardine"
+
+	nomContainer.appendChild(ele_fleche);
+	nomContainer.appendChild(nomAthlete);
+	nomContainer.appendChild(prenomAthlete);
+	nomContainer.appendChild(prenomAthlete2);
+	nomContainer.appendChild(ele_sardine);
 
 
-		const nomdiv = document.createElement("div");
-		nomdiv.className = "nom_div_pg_at"
-		nomdiv.appendChild(nomAthlete)
-		nomdiv.appendChild(prenomAthlete)
-		// nomdiv.appendChild(ele_fleche)
-		// nomdiv.appendChild(ele_sardine)
+	const nomdiv = document.createElement("div");
+	nomdiv.style.flexDirection = "column";
+	nomdiv.style.alignItems = "center";
+	nomdiv.style.paddingTop = "6vh";
+	nomdiv.style.paddingLeft = "4vw";
+	// nomdiv.style.display = "flex";
+    // nomdiv.style.alignItems = "center";
+	// nomdiv.style.marginRight = "10vw";
+	// nomdiv.className = "nom_div_pg_at"
+	nomdiv.appendChild(nomContainer)
+	// nomdiv.appendChild(nomAthlete)
+	// nomdiv.appendChild(prenomAthlete)
+	// nomdiv.appendChild(ele_fleche)
+	// nomdiv.appendChild(ele_sardine)
 
+	
+	const divJoueur = document.createElement("div");
+
+	const JOUEUR= document.createElement("h2");
+
+	if (athlete.genre == "Femme") {
+		JOUEUR.textContent = " LA JOUEUSE ";
+	}
+	else {
+		JOUEUR.textContent = " LE JOUEUR ";
+	}
+	JOUEUR.className = "joueurword"
+	divJoueur.appendChild(JOUEUR)
+
+	const img_joueur = document.createElement("img");
+	img_joueur.src = "./Image/cidre-bolee.svg"
+	img_joueur.className = "img_cidrebolee"
+	divJoueur.appendChild(img_joueur)
 		
 
     const ageAthlete = document.createElement("p");
@@ -641,59 +693,62 @@ function page_athlete(athlete,listeAthletes, isFirtAthlete) {
     const disciplineAthlete = document.createElement("p");
     disciplineAthlete.textContent = `Discipline : ${athlete.Sport}`;
 
-		const img_post = document.createElement("img")
-		img_post.src = "./Image/poste.svg"
-		img_post.style = "width:30px;float:left;margin-right:20px"
+	const img_post = document.createElement("img")
+	img_post.src = "./Image/poste.svg"
+	img_post.style = "width:30px;float:left;margin-right:20px"
     const posteAthlete = document.createElement("p");
-    posteAthlete.textContent = `Poste : ${athlete.poste}`;
-		const div_post = document.createElement("div")
-		div_post.className = "box_p_c"
-		div_post.appendChild(img_post)
-		div_post.appendChild(posteAthlete)
+    posteAthlete.textContent = `Poste : ${athlete.Poste}`;
+	const div_post = document.createElement("div")
+	div_post.className = "box_p_c"
+	div_post.appendChild(img_post)
+	div_post.appendChild(posteAthlete)
 		
-		const img_club = document.createElement("img")
-		img_club.src = "./Image/club.svg"
-		img_club.style = "width:30px;float:left;margin-right:20px"
+	const img_club = document.createElement("img")
+	img_club.src = "./Image/club.svg"
+	img_club.style = "width:30px;float:left;margin-right:20px"
     const clubAthlete = document.createElement("p");
     clubAthlete.textContent = `Club : ${athlete.Club}`;
-		const div_club = document.createElement("div")
-		div_club.className = "box_p_c"
-		div_club.appendChild(img_club)
-		div_club.appendChild(clubAthlete)
+	const div_club = document.createElement("div")
+	div_club.className = "box_p_c"
+	div_club.appendChild(img_club)
+	div_club.appendChild(clubAthlete)
 		
 
     const bioAthlete = document.createElement("p");
-    bioAthlete.textContent = athlete.bio;
+	bioAthlete.id = "bioAthlete";
+    bioAthlete.textContent = athlete.Biographie;
 
-		const txtdiv = document.createElement("div");
-		txtdiv.className = "text_pg_at"
-		txtdiv.appendChild(ageAthlete);
+	const txtdiv = document.createElement("div");
+	txtdiv.className = "text_pg_at"
+	txtdiv.appendChild(ageAthlete);
     txtdiv.appendChild(lieuNaissance);
     txtdiv.appendChild(disciplineAthlete);
-		const txtdiv2 = document.createElement("div");
-		txtdiv2.className = "text2_pg_at"
-		txtdiv2.appendChild(div_post);
+	const txtdiv2 = document.createElement("div");
+	txtdiv2.className = "text2_pg_at"
+	txtdiv2.appendChild(div_post);
     txtdiv2.appendChild(div_club);
-		const txtdiv3 = document.createElement("div");
-		txtdiv3.className = "text3_pg_at"
+	const txtdiv3 = document.createElement("div");
+	txtdiv3.className = "text3_pg_at"
     txtdiv3.appendChild(bioAthlete);
 
 
-		divDetails.appendChild(nomdiv);
+	divDetails.appendChild(nomdiv);
     divDetails.appendChild(imgdiv);
-		divDetails.appendChild(txtdiv);
-		divDetails.appendChild(txtdiv2);
-		divDetails.appendChild(txtdiv3);
+	divDetails.appendChild(divJoueur);
+	divDetails.appendChild(txtdiv);
+	divDetails.appendChild(txtdiv2);
+	divDetails.appendChild(txtdiv3);
 
     
     blank.appendChild(divDetails);
 
 	const nextAthleteDiv = document.createElement("div");
+	console.log(listeAthletes);
 	const listeAthletesArray = Object.values(listeAthletes);
 	const currentIndex = listeAthletesArray.findIndex(item => item.nom === athlete.nom);
 	const nextIndex = (currentIndex + 1) % listeAthletesArray.length;
 	const nextAthlete = listeAthletesArray[nextIndex];
-	if (isFirtAthlete){
+	if (isFirstAthlete){
 		nextAthleteDiv.textContent = `SUIVANT : ${nextAthlete.nom}`;
 	} 
 
@@ -702,18 +757,20 @@ function page_athlete(athlete,listeAthletes, isFirtAthlete) {
 	}
 	 nextAthleteDiv.classList.add("next-athlete-div");
 	 nextAthleteDiv.addEventListener("click", () => {
-        page_athlete(nextAthlete, listeAthletes, !isFirtAthlete);
+        page_athlete(nextAthlete, listeAthletes, !isFirstAthlete);
 
     });
 	 
-	 blank.appendChild(nextAthleteDiv);
+	blank.appendChild(nextAthleteDiv);
 
-	console.log("AYMEN");
 	console.log(athlete);
 	console.log(listeAthletes);
+	console.log(isFirstAthlete);
+	console.log(nextAthlete);
+	console.log(listeAthletesArray);
 }
 
-const isFirtAthlete= true;
+const isFirstAthlete= true;
 
 const myModal = new bootstrap.Modal('#modal')
 const phone = document.getElementById("phone");
@@ -999,6 +1056,8 @@ function page_credits() {
 
 	divSwipper.appendChild(divSwipperWrapper);
 
+	blank.appendChild(divSwipper);
+
 
 	["Nicolas","Salomé","Yeltaz","Kevin","Hugo","Isis","Hulduz","Titouan","Nathan","Aymen","Yiyang"].forEach(membre => {
 
@@ -1011,45 +1070,83 @@ function page_credits() {
 		div.style.justifyContent = "center";
 		div.style.alignItems = "center";
 		div.style.height = "100%";
+		div.style.gap = "4vh";
 
-		const iframe = document.createElement("iframe");
-		
-		iframe.setAttribute("frameborder", "0");
-		iframe.setAttribute("allowfullscreen", "");
+		const iframe = document.createElement("img");
+		iframe.style.objectFit = "cover";
+		iframe.style.cursor = "pointer";
+		iframe.style.display = "flex";
+		iframe.style.justifyContent = "center";
+		iframe.style.alignItems = "center";
+		iframe.style.paddingTop = "10vh";
+		iframe.style.width = "60vw";
 
 		switch (membre) {
 			case "Nicolas":
-				iframe.setAttribute("src", "Image/picto-members/nicolas-hyb.svg");
+				iframe.setAttribute("src", "./Image/picto-members/nicolas-hyb.svg");
+				iframe.onclick = () => {
+					window.location.href = "";
+				}
 				break;
 			case "Salomé":
-				iframe.setAttribute("src", "Image/picto-members/salome-hyb.svg");
+				iframe.setAttribute("src", "./Image/picto-members/salome-hyb.svg");
+				iframe.onclick = () => {
+					window.location.href = "";
+				}
 				break;
 			case "Yeltaz":
-				iframe.setAttribute("src", "Image/picto-members/yeltaz-hyb.svg");
+				iframe.setAttribute("src", "./Image/picto-members/yeltaz-hyb.svg");
+				iframe.onclick = () => {
+					window.location.href = "";
+				}
 				break;
 			case "Kevin":
-				iframe.setAttribute("src", "Image/picto-membres/kevin-hyb.svg");
+				iframe.setAttribute("src", "./Image/picto-members/kevin-hyb.svg");
+				iframe.onclick = () => {
+					window.location.href = "";
+				}
 				break;
 			case "Hugo":
-				iframe.setAttribute("src", "Image/picto-membres/hugo-hyb.svg");
+				iframe.setAttribute("src", "./Image/picto-members/hugo-hyb.svg");
+				iframe.onclick = () => {
+					window.location.href = "https://www.linkedin.com/in/hugo-laulan-71b187231/";
+				}
 				break;
 			case "Isis":
-				iframe.setAttribute("src", "Image/picto-membres/isis-hyb.svg");
+				// iframe.setAttribute("src", "./Image/picto-members/isis-hyb.svg");
+				// iframe.onclick = () => {
+				// 	window.location.href = "";
+				// }
 				break;
 			case "Hulduz":
-				iframe.setAttribute("src", "Image/picto-membres/hulduz-hyb.svg");
+				iframe.setAttribute("src", "./Image/picto-members/hulduz-hyb.svg");
+				iframe.onclick = () => {
+					window.location.href = "https://www.linkedin.com/in/hulduz-djanbekov-440318209/";
+				}
 				break;
 			case "Titouan":
-				iframe.setAttribute("src", "Image/picto-membres/titouan-hyb.svg");
+				iframe.setAttribute("src", "./Image/picto-members/titouan-hyb.svg");
+				iframe.onclick = () => {
+					window.location.href = "";
+				}
 				break;
 			case "Nathan":
-				iframe.setAttribute("src", "Image/picto-membres/nathan-hyb.svg");
+				iframe.setAttribute("src", "./Image/picto-members/nathan-hyb.svg");
+				iframe.onclick = () => {
+					window.location.href = "";
+				}
 				break;
 			case "Aymen":
-				iframe.setAttribute("src", "Image/picto-membres/aymen-hyb.svg");
+				iframe.setAttribute("src", "./Image/picto-members/aymen-hyb.svg");
+				iframe.onclick = () => {
+					window.location.href = "";
+				}
 				break;
 			case "Yiyang":
-				iframe.setAttribute("src", "Image/picto-membres/yiyang-hyb.svg");
+				// iframe.setAttribute("src", "./Image/picto-members/yiyang-hyb.svg");
+				// iframe.onclick = () => {
+				// 	window.location.href = "";
+				// }
 				break;
 			default:
 				break;
@@ -1079,18 +1176,23 @@ function page_credits() {
 		swiperpagination.classList.add("petitpoints");
 		divSwipper.appendChild(swiperpagination);
 
-		blank.appendChild(divSwipper);
+		const divNextButton = document.createElement("div");
+		divNextButton.classList.add("swiper-button-next");
+		const divPreviousButton = document.createElement("div");
+		divPreviousButton.classList.add("swiper-button-prev");
+
+		divSwipper.appendChild(divNextButton);
+		divSwipper.appendChild(divPreviousButton);
 
 		const swiper = new Swiper('.credswiper', {
 			// Optional parameters
 			direction: 'horizontal',
-			loop: true,
-		  
-			// If we need pagination
-			pagination: {
-			  el: '.swiper-pagination',
+			mousewheel: true,
+			navigation: {
+				nextEl: ".swiper-button-next",
+				prevEl: ".swiper-button-prev",
 			},
-		  });
+		});
 
 	});
 

@@ -2,14 +2,13 @@
     "Handball" : {
         "1" : "./Videos/match-Handball-1.mp4",
         "2" : "./Videos/match-Handball-2.mp4",
-        "3" : "./Videos/match-Handball-1.mp4",
-        "4" : "./Videos/match-Handball-2.mp4",
-        "5" : "./Videos/match-Handball-1.mp4",
-        "6" : "./Videos/match-Handball-2.mp4"
+        "3" : "./Videos/match-Handball-3.mp4"
     },
 
     "Football" : {
-
+        "1" : "./Videos/match-Football-1.mp4",
+        "2" : "./Videos/match-Football-2.mp4",
+        "3" : "./Videos/match-Football-3.mp4"
     },
 
     "Volleyball" : {
