@@ -149,8 +149,9 @@ checkprogress();
 document.getElementById('statistiques').addEventListener('click',() => {
   // Access the sessionToken passed from the server
   const sessionToken = globals.getSessionToken();
-  dataUtils.vote(sessionToken, votesTmp);
-  // TODO : redirect
+  globals.saveVotes(sessionToken, globals.tabVotes);
+  window.location.href = '/beaujoire-2/statistics';
+
 })
 /************* Finalize votes  **************/
 

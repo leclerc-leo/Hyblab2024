@@ -66,4 +66,51 @@ globals.getPlayersById = async function(playerId) {
     }
 }
 
-//globals.getVotedPlayers
+globals.saveVotes = async function(token, votes) {
+    try {
+        const response = await fetch('/beaujoire-2/api/saveVotes', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                token: token,
+                votes: votes,
+            }),
+        });
+
+        const data = await response.json();
+        return data.success; // Assuming the server responds with a success property
+    } catch (error) {
+        console.error('Error saving votes:', error);
+        return false;
+    }
+};
+
+globals.getPlayerStats = async function(playerId, positionId) {
+    try {
+        const response = await fetch(`/beaujoire-2/api/stats/${playerId}/${positionId}`);
+        const data = await response.json();
+        return data.player;
+    } catch (error) {
+        console.error('Error fetching player:', error);
+        return [];
+    }
+};
+
+globals.getTopPlayer = async function (positionId) {
+    try {
+        const response = await fetch(`/api/top/${positionId}`);
+        const data = await response.json();
+
+        if (data.success) {
+            return data.topPlayer;
+        } else {
+            console.error('Error:', data.error);
+            return null;
+        }
+    } catch (error) {
+        console.error('Error fetching top player:', error);
+        return null;
+    }
+};
