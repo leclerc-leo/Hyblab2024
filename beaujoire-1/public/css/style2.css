@@ -356,7 +356,6 @@ body {
   height: 100%;
 }
 
-
 #maillot {
   background-size: 69%;
   background-repeat: no-repeat;
@@ -1082,6 +1081,6 @@ h2 {
   }
 }
 
-.carrousel {
-  display: none;
+.link-to-carrousel {
+  padding-bottom: 2.8%;
 }
