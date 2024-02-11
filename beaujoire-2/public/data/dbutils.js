@@ -5,7 +5,7 @@ const dataUtils = {};
 params :
     - idPlayer : id du joueur dans la base de données
 */
-dataUtils.selectPlayer = function(idPlayer){
+dataUtils.selectPlayer = function(idPlayer, callback) {
     db.all(`
         SELECT
             nom,
@@ -28,10 +28,15 @@ dataUtils.selectPlayer = function(idPlayer){
         LEFT JOIN Nationalités N2 ON J.nationalité2 = N2.id
         JOIN Postes P On J.poste = P.id
         WHERE J.id = ?`, idPlayer, (err, rows) => {
-        if (err) console.error(err.message);
-        else console.log('selectPlayer(idPlayer = '+idPlayer+'): \n' , rows, '\n\n'); return rows;
+        if (err) {
+            console.error(err.message);
+            callback(err, null);
+        } else {
+            console.log('selectPlayer(idPlayer = ' + idPlayer + '): \n', rows, '\n\n');
+            callback(null, rows);
+        }
     });
-}
+};
 
 dataUtils.getPlayersByPosition = function(positionId, callback) {
     const query = `
@@ -54,14 +59,19 @@ params :
     - token : le token de la connexion sur laquelle a été fait le vote
     - votes : liste d'id de joueurs pour les 12 postes. Exemple : [4, 8, 11, 18, 20, 29, 33, 36, 44, 45, 56, 60]
 */
-dataUtils.vote = function(token, votes){
+dataUtils.vote = function (token, votes, callback) {
     db.run(`
         INSERT OR REPLACE INTO Votes
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`, [token, ...votes], (err, rows) => {
-        if (err) console.error(err.message);
-        else console.log('vote(token = ' + token + ', votes = ' + votes + '): success\n\n');
+        if (err) {
+            console.error(err.message);
+            callback(err);
+        } else {
+            console.log('vote(token = ' + token + ', votes = ' + votes + '): success\n\n');
+            callback(null);
+        }
     });
-}
+};
 
 // selectionner tous les votes.
 dataUtils.selectVotes = function (){
@@ -83,25 +93,66 @@ dataUtils.getStats = function(idPoste, idJoueur){
     });
 }
 
+/* récupérer le pourcentage de votes pour un joueur et poste donné et ses informations
+params:
+    - idPoste : id du poste
+    - idJoueur : id du joueur
+*/
+dataUtils.getPlayerStats = function(idPoste, idJoueur, callback) {
+    db.all(`
+        SELECT
+            J.id
+            J.nom,
+            J.prenom,
+            J.photo,
+            COUNT(*) * 100 / (SELECT COUNT(*) FROM Votes WHERE poste${idPoste} = ?) AS ratio
+        FROM Votes V
+        JOIN Joueurs J ON V.poste${idPoste} = J.id
+        WHERE V.poste${idPoste} = ? AND J.id = ?`,
+        [idJoueur, idJoueur, idJoueur],
+        (err, rows) => {
+            if (err) {
+                console.error(err.message);
+                callback(err, null);
+            } else {
+                console.log('getPlayerStats(idPoste = ' + idPoste + ', idJoueur = ' + idJoueur + '): \n', rows, '\n\n');
+                callback(null, rows);
+            }
+        }
+    );
+};
+
 /* récupérer le classement des joueurs pour un poste donné, triés par pourcentage de votes décroissant.
 params:
     - idPoste : id du poste
 */
-dataUtils.getTop = function(idPoste){
-    db.all(`
+dataUtils.getTop = function (idPoste, callback) {
+    db.all(
+        `
         SELECT
+            id,
             nom,
             prenom,
             photo,
-            COUNT(*)*100 / (SELECT COUNT(*) FROM Votes) AS ratio
+            COUNT(*) * 100 / (SELECT COUNT(*) FROM Votes WHERE poste${idPoste} = ?) AS ratio
         FROM Joueurs J
         JOIN Votes V ON V.poste${idPoste} = J.id
         GROUP BY J.id
-        ORDER BY ratio DESC`, (err, rows) => {
-        if (err) console.error(err.message);
-        else console.log('getTop(idPoste = ' + idPoste + '): \n', rows, '\n\n'); return rows;
-    });
-}
+        ORDER BY ratio DESC`,
+        [idPoste],
+        (err, rows) => {
+            if (err) {
+                console.error(err.message);
+                callback(err, null);
+            } else {
+                console.log('getTop(idPoste = ' + idPoste + '): \n', rows, '\n\n');
+                // Return the first row or null if there are no rows
+                const firstRow = rows.length > 0 ? rows[0] : null;
+                callback(null, firstRow);
+            }
+        }
+    );
+};
 
 dataUtils.db = db;
 

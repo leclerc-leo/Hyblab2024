@@ -26,6 +26,12 @@ app_names.forEach( function( element, index, array) {
 //	res.redirect('http://www.hyblab.fr/');
 //});
 
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    next();
+});
+
 
 // launch main server app
 
