@@ -57,9 +57,9 @@ body{
     object-fit: cover;
   }
   
-  .player-box p {
+  .name-desc p {
     flex: 1;
-    margin-top: 4%;
+    padding: 10% 10%;
     text-align: center;
     color: white;
     font-family: "Abolition";
@@ -87,12 +87,19 @@ body{
     cursor: pointer;
   }
 
-  .down-slider {
-    background: url("../img/fleche_correction.svg") no-repeat center center;
+  .name-desc{
+    padding: 0 10% 0 10%;
+    display: flex;
+    width: 50%;
+  }
+
+  .name-desc .down-slider {
+    background: url(../img/fleche_correction.svg) no-repeat center center;
     background-size: contain;
-    width: 4%;
+    width: 10%;
     border: none;
     cursor: pointer;
+    margin-left: -1%;
   }
   
   /* Styling for the footer */

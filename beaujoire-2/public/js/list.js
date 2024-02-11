@@ -34,8 +34,10 @@ document.addEventListener('DOMContentLoaded', function () {
       playerBox.classList.add('player-box');
       playerBox.innerHTML = `
         <img src="${player.photo}" >
+        <div class = "name-desc">
         <p>${player.prenom} ${player.nom}</p>
         <button class="down-slider" data-type="downslide"></button>
+        </div>
         <button class="heart-button" data-type="heart"></button>
       `;
 
@@ -104,9 +106,9 @@ document.addEventListener('DOMContentLoaded', function () {
   function downSlide(button, playerBox){
     if (button.dataset.type === 'downslide') {
       const imagePlayer = playerBox.children[0];
-      const name = playerBox.children[1];
+      const name = playerBox.children[1].children[0];
       const heart = playerBox.children[2];
-      const slider = playerBox.children[3];
+      const slider = playerBox.children[1].children[1];
     
       imagePlayer.style["display"] = "none";
       name.style["display"] = "none";

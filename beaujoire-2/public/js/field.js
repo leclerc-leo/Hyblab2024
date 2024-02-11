@@ -8,7 +8,7 @@ for (let i = 1; i <= 12; i++) {
     allVotes = false ;
     break;
   }
-}
+}*/
 
 /************* Archives *************/
 function checkVotes() {
