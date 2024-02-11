@@ -168,12 +168,12 @@ const homeStories = function () {
 
           setTimeout(() => {
             anime({
-                delay: 800,
+                delay: 1000,
                 targets: '#loader',
                 opacity: '0',
                 'z-index' : -1,
             });
-          }, 800);
+          }, 900);
 
           // on enlève le loader
           retour = document.querySelector('#back_button');
@@ -204,20 +204,20 @@ const homeStories = function () {
               });
           });
 
-          var leafletCSS = document.createElement('link');
+          const leafletCSS = document.createElement('link');
           leafletCSS.rel = 'stylesheet';
           leafletCSS.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
           leafletCSS.integrity = 'sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=';
           leafletCSS.crossOrigin = '';
 
           // Create new script element for Leaflet JS
-          var leafletJS = document.createElement('script');
+          const leafletJS = document.createElement('script');
           leafletJS.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
           leafletJS.integrity = 'sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=';
           leafletJS.crossOrigin = '';
 
           // Create new link element for recap CSS
-          var recapCSS = document.createElement('link');
+          const recapCSS = document.createElement('link');
           recapCSS.rel = 'stylesheet';
           recapCSS.type = 'text/css';
           recapCSS.href = './css/recap.css';
@@ -230,8 +230,7 @@ const homeStories = function () {
           // Execute the recapPage function after the Leaflet JS script has loaded and the CSS has been added
           leafletJS.onload = function() {
             // on attend 1 seconde
-            setTimeout((() => {}), 1000);
-            recapPage();
+            setTimeout((() => {recapPage()}), 2000);
           };
         });
     });
