@@ -178,8 +178,8 @@
     "ChoixTheme": {
         "speaker": "user",
         "type": "topicChoice",
-        "choicesLabel": ["Portrait", "Association", "Habitat", "Sport", "Education", "Commerce"],
-        "content": ["Les portraits de ${quartier}.", "Les associations à ${quartier}.", "L'habitat à ${quartier}.", "Le sport à ${quartier}.", "L'éducation à ${quartier}.", "Les commerces à ${quartier}."],
+        "choicesLabel": ["Portrait", "Culture", "Habitat", "Sport", "Education", "Commerce"],
+        "content": ["Les portraits de ${quartier}.", "La culture à ${quartier}.", "L'habitat à ${quartier}.", "Le sport à ${quartier}.", "L'éducation à ${quartier}.", "Les commerces à ${quartier}."],
         "next": ["GoLieu", "GoLieu", "GoLieu", "GoLieu", "GoLieu", "GoLieu"]
     },
 
@@ -201,7 +201,7 @@
 
     "Lieux": {
         "portrait": "à la maison de quartier de Villejean",
-        "association": "au centre Avicenne",
+        "culture": "au centre Avicenne",
         "habitat": "à la tour Bourbonnais",
         "sport": "au stade Robert-Poirier",
         "education": "au collège Rosa Parks",
