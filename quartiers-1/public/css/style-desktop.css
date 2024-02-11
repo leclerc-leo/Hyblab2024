@@ -187,12 +187,12 @@ body{
 }
 
 /* The content is displayed at 16/9 If the aspect ratio is higher that 16/9  */ 
-@media screen and (min-aspect-ratio: 16/9) {
+@media screen and (min-aspect-ratio: 18/9) {
     #container{
         margin-top: 0; /* reset top margin */
         height: 100vh;   /* content is full height */
-        margin-left: calc((100vw - (100 * 16vh / 9)) / 2); /* move the content half the height to the left */
-        width: calc(100 * 16vh / 9); /* adjust width so that aspect ratio is 9/16 */
+        margin-left: calc((100vw - (100 * 18vh / 9)) / 2); /* move the content half the height to the left */
+        width: calc(100 * 18vh / 9); /* adjust width so that aspect ratio is 9/16 */
     }
 
     /* We set a default font size here. It will be the base for all other font sizes */
