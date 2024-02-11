@@ -99,6 +99,16 @@ function initializePage() {
 	document.addEventListener("click", () => {
 		document.querySelector("#back-sound").play();
 	});
+
+	document
+		.querySelector(".dropdown")
+		.querySelector("img")
+		.addEventListener("click", (event) => {
+			document.querySelectorAll("audio").forEach((audio) => {
+				audio.muted = !audio.muted;
+			});
+		});
+
 	document.querySelector("#settings").addEventListener("click", (event) => {
 		const menu = document.querySelector(".dropdown");
 		if (
