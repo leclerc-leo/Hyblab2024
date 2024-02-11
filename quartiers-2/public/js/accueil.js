@@ -27,13 +27,13 @@ const initAccueil = function(){
 
             setTimeout(() => {
               anime({
-                  delay: 300,
+                  delay: 700,
                   targets: '#loader',
                   opacity: '0',
                   'z-index' : -1,
                   easing: 'easeInOutQuad',
               });
-            }, 300);
+            }, 700);
 
             homeStories();
           });
