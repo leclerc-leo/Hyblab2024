@@ -7,17 +7,17 @@ const initSlide2 = async function (popupId, objectId) {
 
   // TELEPHONE VIDEO QUIZZ
   const buttons = document.getElementsByClassName("btn_quiz")
-  for(var i=0; i<buttons.length; i++){
-    var button=buttons[i];
+  for (var i = 0; i < buttons.length; i++) {
+    var button = buttons[i];
     button.addEventListener('click', selectAnswer);
   }
   function selectAnswer(e) {
     const selectedButton = e.target;
     boingOnClick(selectedButton);
-    if (selectedButton.id=="answer"){
+    if (selectedButton.id == "answer") {
       selectedButton.classList.add('correct');
-      setTimeout(()=>{
-        anime({target:"#explication_quizz",display: "block",easing: "easeIn", duration: 200});
+      setTimeout(() => {
+        anime({ target: "#explication_quizz", display: "block", easing: "easeIn", duration: 200 });
         var phone_popup = document.getElementById("popup_tel");
         phone_popup.classList.remove("show");
         setTimeout(function () {
@@ -28,11 +28,11 @@ const initSlide2 = async function (popupId, objectId) {
         setTimeout(function () {
           answer_popup.classList.add("show");
         }, 20);
-      },100)
-        //
+      }, 100)
+      //
       //console.log("DING ! Bonne réponse !!!");
     }
-    else{
+    else {
       selectedButton.classList.add('wrong');
       //console.log("mauvaise réponse");
     }
@@ -102,14 +102,14 @@ const initSlide2 = async function (popupId, objectId) {
   });
 
   try {
-    const response = await fetch("data/obj.json");
+    const response = await fetch("data/second-slide.json");
     const data = await response.json();
 
     const objData = data[objectId];
     const title = document.querySelector(`#${popupId} #title-obj`);
     const img = document.querySelector(`#${popupId} #img-obj`);
     const textContainer = document.querySelector(`#${popupId} #text-container`);
-
+    
     title.textContent = objData.title || "PAS DE TITRE";
     img.src = objData.picture || "PAS D'IMAGE";
     textContainer.innerHTML = "";
@@ -128,6 +128,14 @@ const initSlide2 = async function (popupId, objectId) {
       paragraph.textContent = objData.text || "PAS DE TEXTE";
       textContainer.appendChild(paragraph);
     }
+    title.innerHTML = objData.title.split(" ").map((word, index, array) => {
+      if (index === array.length - 1) {
+        return `<span class="last-word-color">${word}</span>`;
+      } else {
+        return word;
+      }
+    }).join(" ");
+    
   } catch (error) {
     console.error("ERREUR JSON :", error);
   }
@@ -140,31 +148,31 @@ const initSlide2 = async function (popupId, objectId) {
   document.addEventListener("click", (evt) => {
     clickOutsidePopup(popupId, evt);
   });
-  
+
 };
 const showPopup = (name, objID) => {
   if (isPopupOpen) return;
   isPopupOpen = true;
 
-  if (name!="popup_quizz_end"){
+  if (name != "popup_quizz_end") {
     const popup = document.getElementById(name);
-  popup.style.display = "block";
-  setTimeout(() => {
-    popup.classList.add("show");
-  }, 20);
-  document.getElementById(objID).classList.add("clicked");
-  const svgElements = document.getElementsByTagName("svg");
-  for (let i = 0; i < svgElements.length; i++) {
-    if (svgElements[i].id != "Video_Phone_contour_svg"){
-      svgElements[i].classList.add("blured");
-      svgElements[i].style.transition = "filter 0.5s";
+    popup.style.display = "block";
+    setTimeout(() => {
+      popup.classList.add("show");
+    }, 20);
+    document.getElementById(objID).classList.add("clicked");
+    const svgElements = document.getElementsByTagName("svg");
+    for (let i = 0; i < svgElements.length; i++) {
+      if (svgElements[i].id != "Video_Phone_contour_svg") {
+        svgElements[i].classList.add("blured");
+        svgElements[i].style.transition = "filter 0.5s";
+      }
     }
-  }
   }
 };
 
 const closePopup = (name) => {
-  isPopupOpen=false;
+  isPopupOpen = false;
   const popup = document.getElementById(name);
   popup.classList.remove("show");
   setTimeout(() => {
