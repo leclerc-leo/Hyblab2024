@@ -362,7 +362,8 @@ async function saveStats() {
 	if (
 		areAllPlayersSelected() &&
 		isCaptainSelected &&
-		!isCaptainBeingSelected
+		!isCaptainBeingSelected &&
+		localStorage.getItem("statsSaved") !== "true"
 	) {
 		try {
 			const response = await fetch("./data/Stats.json");
@@ -388,12 +389,15 @@ async function saveStats() {
 			if (!updateResponse.ok) {
 				throw new Error("Error updating stats");
 			}
-			// Change the page after the stats have been updated
+			// Set the flag in localStorage to indicate that the stats have been saved
+			localStorage.setItem("statsSaved", "true");
 			window.location.href = "./statistique.html";
 		} catch (error) {
 			console.error("Error fetching stats:", error);
 		}
 	}
+	// Always redirect to the statistics page, regardless of whether the stats were saved
+	window.location.href = "./statistique.html";
 }
 function animatePlayer(elementId, imgSrc, timeoutDuration, event) {
 	const element = document.getElementById(elementId);
@@ -493,6 +497,7 @@ function showCarousel(id) {
 }
 
 function handleValidateButtonClick() {
+	localStorage.setItem("statsSaved", "false");
 	const selectedPlayer = document.querySelector(".carousel-item.focused");
 	const selectedPlayerName =
 		selectedPlayer.querySelector("#name").textContent;
