@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
     async function FetchPopularTeam() {
         for (let i = 0; i <= 11; i++) {
             let player = await globals.getTopPlayer(i + 1);
-            console.log(player);
+            //console.log(player);
             popularTeam.push(player);
         }
     }
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
         await getSessionTokenValue();
         if (currentIndex === 0) {
             for (let i = 0; i < 12; i++) {
-                console.log(globals.sessionToken);
+                //console.log(globals.sessionToken);
                 let player = await globals.getPlayerStats(globals.tabVotes[i], i + 1,globals.sessionToken);
                 console.log(player);
 
