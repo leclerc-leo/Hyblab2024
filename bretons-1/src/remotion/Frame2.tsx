@@ -94,18 +94,18 @@ import { Podium } from '../components/type';
           const flagFrameClass = index === 0 ? "flagFrame2" : index === 1 ? "flag_2_Frame2" : "flag_3_Frame2";
           const nameFrameClass = index === 0 ? "nameFrame2" : index === 1 ? "name_2_Frame2" : "name_3_Frame2";
           const timeFrameClass = index === 0 ? "timeFrame2" : index === 1 ? "time_2_Frame2" : "time_3_Frame2";
-          const ContainerClass = index === 0 || index === 1 ? "containerFrame2" : "";
           const countryFrameClass = index === 0 ? "countryFrame2" : index === 1 ? "country_2_Frame2" : "country_3_Frame2";
           const highlightClass = athlete === entry.Nom ? "highlight_" : "";
           const colorClass = athlete === entry.Nom ? "color_" : "";
+          const FlagClass = entry.Pays === "France" ? "adaptflag_" : "";
           return (
               <div key={index} className={`${rectangleClass} ${highlightClass}`}>
-                <div className={ContainerClass}>
+                <div className="containerFrame2">
                   <img src={getPlace(entry.Place,entry.Nom)} alt={`Top ${index + 1}`} className={numberCircleFrameClass} />
                   <div className={`${infoFrameClass} ${colorClass}`}>
                     <span className={nameFrameClass}>{entry.Nom}</span>
                     <span className={timeFrameClass}>{getScoreLabel(entry.Score)}{entry.Score}</span>
-                    <div className={flagFrameClass}>
+                    <div className={`flagFrame2 ${FlagClass}`}>
                       <img src={getFlagSrc(entry.Pays)} alt={entry.Pays} className={flagFrameClass} />
                       <span className={countryFrameClass}>{entry.Pays}</span>
                   </div>
