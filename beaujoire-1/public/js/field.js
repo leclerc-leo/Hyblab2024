@@ -6,7 +6,6 @@ let isCaptainBeingSelected = false;
 let selectedPlayerId;
 let updatePlayerElement;
 let playersData;
-let isFirstCall = true;
 let cardJersey;
 
 window.onload = fetch("./data/DataBase.json")
@@ -211,10 +210,11 @@ function updateCardJersey() {
 	localStorage.setItem("cardJersey", cardJersey);
 }
 document.addEventListener("DOMContentLoaded", async () => {
-	/*
-	document.querySelectorAll(".player-clickable").forEach((player) => {
-		player.addEventListener("click", handlePlayerClick);
-	});*/
+	if (localStorage.getItem("isFirstCall") === null) {
+		// Si ce n'est pas le cas, définissez-le sur "true"
+		localStorage.setItem("isFirstCall", "true");
+	}
+
 	document
 		.querySelector("#statistiques")
 		.addEventListener("click", async (event) => {
@@ -1502,8 +1502,8 @@ function handleCaptainSelect(id) {
 			player.removeEventListener("click", handleCaptainClick);
 		});
 		isCaptainBeingSelected = false;
-		if (isFirstCall) {
-			isFirstCall = false;
+		if (localStorage.getItem("isFirstCall") === "true") {
+			localStorage.setItem("isFirstCall", "false");
 			document.querySelector("#fufu").play();
 		}
 	}
