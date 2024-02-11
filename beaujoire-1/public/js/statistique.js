@@ -96,6 +96,30 @@ function initializePage() {
 	}
 
 	updateVotePercentages();
+	document.addEventListener("click", () => {
+		document.querySelector("#back-sound").play();
+	});
+	document.querySelector("#settings").addEventListener("click", (event) => {
+		const menu = document.querySelector(".dropdown");
+		if (
+			menu.style.animationName === "dropDownAnimation" ||
+			menu.style.animationName === ""
+		) {
+			menu.style.animationName = "dropUpAnimation";
+		} else {
+			menu.style.animationName = "dropDownAnimation";
+		}
+		// Empêche l'événement de se propager au document
+		event.stopPropagation();
+	});
+
+	// Ajoute un écouteur d'événements au document pour cacher le menu lorsque vous cliquez ailleurs
+	document.addEventListener("click", () => {
+		const menu = document.querySelector(".dropdown");
+		if (menu.style.animationName === "dropUpAnimation") {
+			menu.style.animationName = "dropDownAnimation";
+		}
+	});
 }
 
 let players = JSON.parse(localStorage.getItem("players")) || {
@@ -202,7 +226,9 @@ function updateVotePercentages() {
 		);
 		const playerPosition = playerData.POSTE;
 		const totalVotesForPosition = totalVotesPerPosition[playerPosition];
-		const playerPercentage = Math.round((playerVotes / totalVotesForPosition) * 100);
+		const playerPercentage = Math.round(
+			(playerVotes / totalVotesForPosition) * 100
+		);
 		playerPercentages[player] = playerPercentage;
 	}
 
@@ -231,8 +257,7 @@ function updateVotePercentages() {
 				playerElement.appendChild(newPercentageDisplay);
 			}
 			// Mettez à jour le pourcentage affiché
-			percentageDisplay.textContent =
-				playerPercentages[player] + "%";
+			percentageDisplay.textContent = playerPercentages[player] + "%";
 			barElem.querySelector(
 				".player1-bar"
 			).style.width = `${playerPercentages[player]}%`;

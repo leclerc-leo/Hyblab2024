@@ -26,8 +26,34 @@ document.addEventListener("DOMContentLoaded", function () {
 				currentlyLiked = likedComposition; // Mettre à jour la composition actuellement likée
 			}
 		}
+
+		updateRanking();
 	})();
 
+	document.addEventListener("click", () => {
+		document.querySelector("#back-sound").play();
+	});
+	document.querySelector("#settings").addEventListener("click", (event) => {
+		const menu = document.querySelector(".dropdown");
+		if (
+			menu.style.animationName === "dropDownAnimation" ||
+			menu.style.animationName === ""
+		) {
+			menu.style.animationName = "dropUpAnimation";
+		} else {
+			menu.style.animationName = "dropDownAnimation";
+		}
+		// Empêche l'événement de se propager au document
+		event.stopPropagation();
+	});
+
+	// Ajoute un écouteur d'événements au document pour cacher le menu lorsque vous cliquez ailleurs
+	document.addEventListener("click", () => {
+		const menu = document.querySelector(".dropdown");
+		if (menu.style.animationName === "dropUpAnimation") {
+			menu.style.animationName = "dropDownAnimation";
+		}
+	});
 	const heartButtons = document.querySelectorAll(".heart-button");
 
 	async function fetchInitialLikes() {
@@ -87,10 +113,21 @@ document.addEventListener("DOMContentLoaded", function () {
 			return likesB - likesA;
 		});
 
-		// Ajouter chaque composition et son nombre de likes à la liste de classement
-		sortedButtons.forEach((button) => {
-			const compositionId = button.getAttribute("data-composition-id");
-		});
+		// Ajouter les coupes de classement
+		const compo1 = sortedButtons[0].closest(".field");
+		const compo2 = sortedButtons[1].closest(".field");
+		const compo3 = sortedButtons[2].closest(".field");
+		const compo4 = sortedButtons[3].closest(".field");
+
+		compo1.querySelector(".tr").style.backgroundImage =
+			"url('img/medals/medal1.svg')";
+		compo2.querySelector(".tr").style.backgroundImage =
+			"url('img/medals/medal2.svg')";
+		compo3.querySelector(".tr").style.backgroundImage =
+			"url('img/medals/medal3.svg')";
+		compo4.querySelector(".tr").style.backgroundImage = "none";
+
+		console.log("Ranked compositions:", sortedButtons);
 	}
 
 	async function toggleLike(button) {
