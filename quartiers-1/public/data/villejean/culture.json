@@ -131,7 +131,7 @@
         "speaker": "guide",
         "type": "bubble",
         "choicesLabel": [],
-        "content": ["Si tu veux en savoir plus sur le centre Avicenne, c'est ici :","${video_begin}https://www.youtube.com/embed/4wR5ubwNarE?si=bT3NZbn262FIpfp2&start=296&end=378&controls=0${video_end}"],
+        "content": ["Si tu veux en savoir plus sur le centre Avicenne, c'est ici :","${video_begin}https://www.youtube.com/embed/4wR5ubwNarE?si=bT3NZbn262FIpfp2&start=296&end=378&controls=0${video_end}","D'ailleurs, tu peux retrouver tous les reportages ${lien_video_begin}ici${lien_video_end}."],
         "next": ["Reponse7"]
     },
 

@@ -60,7 +60,7 @@
     margin-bottom: 20%;
 }
 
-li{
+#mySidenav li{
     margin: 1% 0 1% 1%;
     color: #7D7DB5;
     display: flex;
