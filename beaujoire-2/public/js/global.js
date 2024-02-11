@@ -4,6 +4,8 @@
 
 const globals = {} ;
 
+globals.tabVotes = JSON.parse(localStorage.getItem('votes')) ;
+
 // Function to retrieve the session token from cookies
 globals.getSessionToken = async function() {
     try {
@@ -38,7 +40,6 @@ globals.updateVotes = function(votes){
     localStorage.setItem('votes', JSON.stringify(votes));
 }
 
-globals.tabVotes = JSON.parse(localStorage.getItem('votes')) ;
 
 /********** datafetch functions ****************/
 
