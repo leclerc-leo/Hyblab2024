@@ -1,14 +1,5 @@
 
 var popularTeam = [];
-window.addEventListener('load', function() {
-    function FetchPopularTeam(){
-      for (let i = 0; i <= 11; i++) {
-          let player = globals.getTopPlayer(i+1);
-          console.log(player);
-          popularTeam.push(player);
-      }
-    }
-});
 
 function isInPopularTeam(playerId){
     return popularTeam.some(player => player.id === playerId);
@@ -17,6 +8,13 @@ function isInPopularTeam(playerId){
 document.addEventListener('DOMContentLoaded', function () {
     const teams = ['Votre équipe', 'Équipe Majoritaire'];
 
+    async function FetchPopularTeam() {
+        for (let i = 0; i <= 11; i++) {
+            let player = await globals.getTopPlayer(i + 1);
+            console.log(player);
+            popularTeam.push(player);
+        }
+    }
 
     let teamSwiper;
 
@@ -32,11 +30,11 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 
-    function updateTeamContent(teamId, currentIndex) {
+    async function updateTeamContent(teamId, currentIndex) {
         const teamContainer = document.getElementById(teamId);
         teamContainer.innerHTML = '';
-
-        let majeur = (currentIndex === 1) ? 'majeur' : '';
+        await FetchPopularTeam();
+        /* let majeur = (currentIndex === 1) ? 'majeur' : ''; */
         /* Change the content of the next team here */
 
         const teamField = document.createElement('div');
@@ -46,70 +44,74 @@ document.addEventListener('DOMContentLoaded', function () {
         <img src="./img/field/field.svg" id="field-img" alt="field">
                         <img id="logo" class="field-jersey-img" src="./img/field/LOGO_APPLI.svg">`;
         // Mon équipe  :
-        if (currentIndex === 0){
-            for( let i = 0 ; i < 12 ; i++){
-                let player = globals.getPlayerStats(globals.tabVotes[i],i+1);
+        await getSessionTokenValue();
+        if (currentIndex === 0) {
+            for (let i = 0; i < 12; i++) {
+                console.log(globals.sessionToken);
+                let player = await globals.getPlayerStats(globals.tabVotes[i], i + 1,globals.sessionToken);
                 console.log(player);
+
+                let fieldPlayer = document.createElement('div');
+                fieldPlayer.setAttribute("id", `poste-${i + 1}`);
+                fieldPlayer.classList.add("field-player");
+
                 let playerBox = document.createElement('div');
-                playerBox.setAttribute("id",`poste-${i+1}`);
-                playerBox.classList.add("field-player");
+                playerBox.classList.add("player-box");
+
                 let playerStats = document.createElement('p');
-                playerStats.innerText=`${player[0].ratio}`;
+                playerStats.innerText = `${player[0].ratio}%`;
+
                 let imgPlayer = document.createElement('img');
-                imgPlayer.src =`${player[0].photo}`;
+                imgPlayer.src = `${player[0].photo}`;
+                imgPlayer.classList.add("player-img");
+
                 let playerName = document.createElement('p');
                 let firstLetter = player[0].prenom.charAt(0).toUpperCase();
-                playerName.innerText = `${firstLetter}.${player[0].name}`;
+                playerName.innerText = `${firstLetter}.${player[0].nom}`;
+
                 // one of the players is part of the popular team :
-                if (isInPopularTeam(player[0].id)){
+                if (isInPopularTeam(globals.tabVotes[i])) {
                     imgPlayer.classList.add('majeur');
                     playerStats.style.color = "#F7EF24";
                 }
                 playerBox.appendChild(playerStats);
                 playerBox.appendChild(imgPlayer);
                 playerBox.appendChild(playerName);
+                fieldPlayer.appendChild(playerBox)
                 // append to the div that contains all the players :
-                teamField.appendChild(playerBox);
+                teamField.appendChild(fieldPlayer);
             }
         } else {
             // L'équipe Majoritaire  :
-            for( let i = 0 ; i < 12 ; i++){
+            for (let i = 0; i < 12; i++) {
+
+                let fieldPlayer = document.createElement('div');
+                fieldPlayer.setAttribute("id", `poste-${i + 1}`);
+                fieldPlayer.classList.add("field-player");
+
                 let playerBox = document.createElement('div');
-                playerBox.setAttribute("id",`poste-${i+1}`);
-                playerBox.classList.add("field-player");
+                playerBox.classList.add("player-box");
+
+
                 let imgPlayer = document.createElement('img');
-                imgPlayer.src =`${popularTeam[i].photo}`;
+                imgPlayer.src = `${popularTeam[i].photo}`;
+                imgPlayer.classList.add("player-img");
+
                 let playerName = document.createElement('p');
                 let firstLetter = popularTeam[i].prenom.charAt(0).toUpperCase();
-                playerName.innerText = `${firstLetter}.${popularTeam[i].name}`;
+                playerName.innerText = `${firstLetter}.${popularTeam[i].nom}`;
+
                 imgPlayer.classList.add('majeur');
+
                 playerBox.appendChild(imgPlayer);
                 playerBox.appendChild(playerName);
+                fieldPlayer.appendChild(playerBox)
                 // append to the div that contains all the players :
-                teamField.appendChild(playerBox);
+                teamField.appendChild(fieldPlayer);
             }
         }
 
-           
-        teamField.innerHTML = `
-        <img src="./img/field/field.svg" id="field-img" alt="field">
-                        <img id="logo" class="field-jersey-img" src="./img/field/LOGO_APPLI.svg">
-        
-                        <div class="field-player" id="poste-1"><div class="player-box"><p> 10% </p><img class="player-img ${majeur}" src="./img/players/placeholder-img.jpg" ><p>R.RIOU</p></div></div>
-                        <div class="field-player" id="poste-2"><div class="player-box"><p> 10% </p><img class="player-img ${majeur}" src="./img/players/placeholder-img.jpg" ><p>R.RIOU</p></div></div>
-                        <div class="field-player" id="poste-3"><div class="player-box"><p> 10% </p><img class="player-img ${majeur}" src="./img/players/placeholder-img.jpg" ><p>R.RIOU</p></div></div>
-                        <div class="field-player" id="poste-4"><div class="player-box"><p> 10% </p><img class="player-img ${majeur}" src="./img/players/placeholder-img.jpg" ><p>R.RIOU</p></div></div>
-                        <div class="field-player" id="poste-5"><div class="player-box"><p> 10% </p><img class="player-img ${majeur}" src="./img/players/placeholder-img.jpg" ><p>R.RIOU</p></div></div>
-                        <div class="field-player" id="poste-6"><div class="player-box"><p> 10% </p><img class="player-img ${majeur}" src="./img/players/placeholder-img.jpg" ><p>R.RIOU</p></div></div>
-                        <div class="field-player" id="poste-7"><div class="player-box"><p> 10% </p><img class="player-img ${majeur}" src="./img/players/placeholder-img.jpg" ><p>R.RIOU</p></div></div>
-                        <div class="field-player" id="poste-8" ><div class="player-box"><p> 10% </p><img class="player-img ${majeur}" src="./img/players/placeholder-img.jpg" ><p>R.RIOU</p></div></div>
-                        <div class="field-player" id="poste-9"><div class="player-box"><p> 10% </p><img class="player-img ${majeur}" src="./img/players/placeholder-img.jpg" ><p>R.RIOU</p></div></div>
-                        <div class="field-player" id="poste-10"><div class="player-box"><p> 10% </p><img class="player-img ${majeur}" src="./img/players/placeholder-img.jpg" ><p>R.RIOU</p></div></div>
-                        <div class="field-player" id="poste-11"><div class="player-box"><p> 10% </p><img class="player-img ${majeur}" src="./img/players/placeholder-img.jpg" ><p>R.RIOU</p></div></div>
-                        <div class="field-player" id="poste-12"><div class="player-box"><p> 10% </p><img class="player-img ${majeur}" src="./img/players/placeholder-img.jpg" ><p>R.RIOU</p></div></div>
-            
-`;
-            teamContainer.appendChild(teamField);
+        teamContainer.appendChild(teamField);
     }
 
     function updateHeader(currentIndex) {

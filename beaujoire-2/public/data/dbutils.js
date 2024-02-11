@@ -6,6 +6,18 @@ params :
     - idPlayer : id du joueur dans la base de données
 */
 
+// selectionner tous les joueurs.
+dataUtils.selectPlayers = function (callback) {
+    db.all('SELECT * FROM Joueurs', (err, rows) => {
+        if (err) {
+            console.error(err.message);
+            callback(err, null);
+        } else {
+            console.log('selectPlayers(): \n', rows, '\n\n');
+            callback(null, rows);
+        }
+    });
+};
 
 dataUtils.selectPlayer = function(idPlayer, callback) {
     db.all(`
@@ -76,42 +88,59 @@ dataUtils.vote = function (token, votes, callback) {
 };
 
 // selectionner tous les votes.
-dataUtils.selectVotes = function (){
+dataUtils.selectVotes = function (callback) {
     db.all('SELECT * FROM Votes', (err, rows) => {
-        if (err) console.error(err.message);
-        else console.log('selectVotes(): \n', rows, '\n\n'); return rows;
+        if (err) {
+            console.error(err.message);
+            callback(err, null);
+        } else {
+            console.log('selectVotes(): \n', rows, '\n\n');
+            callback(null, rows);
+        }
     });
-}
-
+};
 /* récupérer le pourcentage de votes pour un joueur et poste donné
 params:
     - idPoste : id du poste
     - idJoueur : id du joueur
 */
-dataUtils.getStats = function(idPoste, idJoueur){
-    db.all(`SELECT COUNT(*)*100 / (SELECT COUNT(*) FROM Votes) AS ratio FROM Votes WHERE poste${idPoste} = ?`, idJoueur, (err, rows) => {
-        if (err) console.error(err.message);
-        else console.log('getStats(idPoste = ' + idPoste + ', idJoueur = ' + idJoueur + '): \n', rows, '\n\n'); return rows;
-    });
-}
+dataUtils.getStats = function (idPoste, idJoueur, callback) {
+    db.all(
+        `SELECT COUNT(*) * 100 / (SELECT COUNT(*) FROM Votes) AS ratio FROM Votes WHERE poste${idPoste} = ?`,
+        [idJoueur],
+        (err, rows) => {
+            if (err) {
+                console.error('Error in getStats:', err.message);
+                callback(err, null);
+            } else {
+                console.log(
+                    `getStats(idPoste = ${idPoste}, idJoueur = ${idJoueur}): \n`,
+                    rows,
+                    '\n\n'
+                );
+                callback(null, rows);
+            }
+        }
+    );
+};
+
 
 /* récupérer le pourcentage de votes pour un joueur et poste donné et ses informations
 params:
     - idPoste : id du poste
     - idJoueur : id du joueur
 */
-dataUtils.getPlayerStats = function(idPoste, idJoueur, callback) {
+dataUtils.getPlayerStats = function(idPoste, idJoueur, sessionToken , callback) {
     db.all(`
         SELECT
-            J.id
-            J.nom,
-            J.prenom,
-            J.photo,
+            nom,
+            prenom,
+            photo,
             COUNT(*) * 100 / (SELECT COUNT(*) FROM Votes WHERE poste${idPoste} = ?) AS ratio
         FROM Votes V
         JOIN Joueurs J ON V.poste${idPoste} = J.id
-        WHERE V.poste${idPoste} = ? AND J.id = ?`,
-        [idJoueur, idJoueur, idJoueur],
+        WHERE V.token = ?`,
+        [idJoueur, sessionToken],
         (err, rows) => {
             if (err) {
                 console.error(err.message);
@@ -131,26 +160,27 @@ params:
 dataUtils.getTop = function (idPoste, callback) {
     db.all(
         `
-        SELECT
-            id,
-            nom,
-            prenom,
-            photo,
-            COUNT(*) * 100 / (SELECT COUNT(*) FROM Votes WHERE poste${idPoste} = ?) AS ratio
-        FROM Joueurs J
-        JOIN Votes V ON V.poste${idPoste} = J.id
-        GROUP BY J.id
-        ORDER BY ratio DESC`,
-        [idPoste],
+            SELECT
+                id,
+                nom,
+                prenom,
+                photo,
+                COUNT(*) AS voteCount
+            FROM Joueurs J
+                     JOIN Votes V ON V.poste${idPoste} = J.id
+            GROUP BY J.id
+            ORDER BY voteCount DESC
+                LIMIT 1`,
+        [],
         (err, rows) => {
             if (err) {
-                console.error(err.message);
+                console.error('Error in getTop:', err.message);
                 callback(err, null);
             } else {
                 console.log('getTop(idPoste = ' + idPoste + '): \n', rows, '\n\n');
                 // Return the first row or null if there are no rows
-                const firstRow = rows.length > 0 ? rows[0] : null;
-                callback(null, firstRow);
+                const topPlayer = rows.length > 0 ? rows[0] : null;
+                callback(null, topPlayer);
             }
         }
     );

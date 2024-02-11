@@ -1,18 +1,13 @@
-//import dataUtils from '../data/dataUtils.mjs';
-
-
-let votesTmp = JSON.parse(localStorage.getItem('votes'));
-
-/*checks if the votes have been done
-for (let i = 1; i <= 12; i++) {
-  if(votesTmp[i] === 0 ) {
-    allVotes = false ;
-    break;
-  }
-}*/
 
 console.log(globals.tabVotes);
-
+let sessionToken ;
+document.addEventListener('DOMContentLoaded', function () {
+  async function getSessionToken() {
+    sessionToken = await globals.getSessionToken();
+    console.log(sessionToken);
+  }
+  getSessionToken();
+});
 /************* Archives *************/
 function checkVotes() {
   const archivesButton = document.getElementById('archives');
@@ -157,9 +152,8 @@ checkprogress();
 /************* Vote progression display  **************/
 
 /************* Finalize votes  **************/
-document.getElementById('statistiques').addEventListener('click',() => {
+document.getElementById('statistiques').addEventListener('click',async () => {
   // Access the sessionToken passed from the server
-  const sessionToken = globals.getSessionToken();
   globals.saveVotes(sessionToken, globals.tabVotes);
   window.location.href = '/beaujoire-2/statistics';
 
