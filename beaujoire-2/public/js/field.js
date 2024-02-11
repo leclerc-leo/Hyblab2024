@@ -1,5 +1,6 @@
 //import dataUtils from '../data/dataUtils.mjs';
 
+
 let votesTmp = JSON.parse(localStorage.getItem('votes'));
 
 /*checks if the votes have been done
@@ -10,11 +11,13 @@ for (let i = 1; i <= 12; i++) {
   }
 }*/
 
+console.log(globals.tabVotes);
+
 /************* Archives *************/
 function checkVotes() {
   const archivesButton = document.getElementById('archives');
   const statisticsButton = document.getElementById('statistiques');
-  if (allVotes) {
+  if (globals.checkAllVotes(globals.tabVotes)) {
     archivesButton.classList.remove("disabled");
     statisticsButton.classList.remove("disabled");
     archivesButton.classList.add("enabled");
@@ -36,13 +39,25 @@ checkVotes();
 
 /************* Pop up  **************/
 
-if (allVotes) {
+if (globals.checkAllVotes(globals.tabVotes)) {
 
   window.addEventListener("load", function () {
+
     setTimeout(
       function open(event) {
         document.querySelector(".popup").style.display = "block";
         document.getElementById('container').style.opacity = 0.7;
+        /************* confetti  **************/
+          // Pass in the id of an element
+          let confetti = new Confetti("popup-archive");
+          // Edit given parameters
+          confetti.setCount(75);
+          confetti.setSize(1);
+          confetti.setPower(25);
+          confetti.setFade(false);
+          confetti.destroyTarget(false);
+
+        /************* confetti  **************/
       },
       1000
     )
@@ -68,38 +83,49 @@ document.querySelector("#info").addEventListener("click", function () {
 
 /************* Vote progression display  **************/
 
+
+function updateVote(fieldJersey,player){
+  // Create the picture element
+  const playerVotedDiv = document.createElement('div');
+  playerVotedDiv.classList.add('player-voted');
+
+  const playerImg = document.createElement('img');
+  playerImg.classList.add('player-img');
+
+  playerImg.src = `${player[0].photo}`;
+
+  const playerName = document.createElement('p');
+  let firstLetter = player[0].prenom.charAt(0).toUpperCase();
+  playerName.textContent = `${firstLetter}.${player[0].nom}`;
+
+  // Append elements to the player-voted div
+  playerVotedDiv.appendChild(playerImg);
+  playerVotedDiv.appendChild(playerName);
+
+
+  fieldJersey.replaceChild(playerVotedDiv, fieldJersey.firstChild);
+
+  fieldJersey.classList.add('voted');
+  // Change the href attribute
+  fieldJersey.href = 'javascript:void(0)';
+}
+
+async function fetchPlayerData(fieldJersey,playerId) {
+  try {
+    const player = await globals.getPlayersById(playerId);
+    console.log(player[0].nom);
+    updateVote(fieldJersey,player);
+  } catch (error) {
+    console.error('Error fetching data:', error);
+  }
+}
+
 function checkprogress() {
-  for (let i = 0; i < votesTmp.length; i++) {
+  for (let i = 0; i < globals.tabVotes.length; i++) {
     // Append the player-voted div to the field-jersey anchor
     const fieldJersey = document.getElementById(`poste-${i + 1}`);
-    if (votesTmp[i] !== 0) {
-      // Create the picture element
-      const playerVotedDiv = document.createElement('div');
-      playerVotedDiv.classList.add('player-voted');
-
-      const playerImgBoxDiv = document.createElement('div');
-      playerImgBoxDiv.classList.add('player-img-box');
-
-      const playerImg = document.createElement('img');
-      playerImg.classList.add('player-img');
-
-      // TODO : link it to the database : image and name
-      playerImg.src = './img/players/Player-photo.png';
-
-      const playerName = document.createElement('p');
-      playerName.textContent = 'R.RIOU';
-
-      // Append elements to the player-voted div
-      playerImgBoxDiv.appendChild(playerImg);
-      playerVotedDiv.appendChild(playerImgBoxDiv);
-      playerVotedDiv.appendChild(playerName);
-
-
-      fieldJersey.replaceChild(playerVotedDiv, fieldJersey.firstChild);
-
-      fieldJersey.classList.add('voted');
-      // Change the href attribute
-      fieldJersey.href = 'javascript:void(0)';
+    if (globals.tabVotes[i] !== 0) {
+      fetchPlayerData(fieldJersey,globals.tabVotes[i]);
     } else {
       const jerseyImg = document.createElement('img');
       jerseyImg.classList.add('field-jersey-img');
@@ -138,4 +164,7 @@ document.getElementById('statistiques').addEventListener('click',() => {
   // TODO : redirect
 })
 /************* Finalize votes  **************/
+
+
+
 

@@ -24,6 +24,20 @@ app.get('/players/:positionId', function (req, res) {
 
 });
 
+// Get player content by id
+app.get('/player/:playerId', function (req, res) {
+    const playerId = req.params.playerId;
+
+    dataUtils.selectPlayer(playerId, (err, playerContent) => {
+        if (err) {
+            console.error(err.message);
+            res.status(500).json({ error: 'Internal Server Error' });
+        } else {
+            res.json({ 'player': playerContent });
+        }
+    });
+
+});
 
 // Export our API
 module.exports = app;

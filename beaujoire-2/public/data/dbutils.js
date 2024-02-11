@@ -5,7 +5,7 @@ const dataUtils = {};
 params :
     - idPlayer : id du joueur dans la base de données
 */
-dataUtils.selectPlayer = function(idPlayer){
+dataUtils.selectPlayer = function(idPlayer, callback) {
     db.all(`
         SELECT
             nom,
@@ -28,10 +28,15 @@ dataUtils.selectPlayer = function(idPlayer){
         LEFT JOIN Nationalités N2 ON J.nationalité2 = N2.id
         JOIN Postes P On J.poste = P.id
         WHERE J.id = ?`, idPlayer, (err, rows) => {
-        if (err) console.error(err.message);
-        else console.log('selectPlayer(idPlayer = '+idPlayer+'): \n' , rows, '\n\n'); return rows;
+        if (err) {
+            console.error(err.message);
+            callback(err, null);
+        } else {
+            console.log('selectPlayer(idPlayer = ' + idPlayer + '): \n', rows, '\n\n');
+            callback(null, rows);
+        }
     });
-}
+};
 
 dataUtils.getPlayersByPosition = function(positionId, callback) {
     const query = `
