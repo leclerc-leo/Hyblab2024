@@ -211,7 +211,7 @@ function updateVotePercentages() {
 		const playerElementId = Object.keys(players).find(
 			(key) => players[key] === player
 		);
-		if (!playerElementId || playerElementId === "entraineur") {
+		if (!playerElementId ) {
 			console.log(`No player found for name ${player}`);
 			continue;
 		}
