@@ -709,6 +709,8 @@ svg.image-histoire, svg.image-jo{
     width: 50%;
     height: 41%;
     position: absolute;
+    display: flex;
+    justify-content: center;
     top: 30%;
     z-index: 2;
     /* right: 50%; */
