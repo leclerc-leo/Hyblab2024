@@ -56,7 +56,8 @@ function addBubble(speaker, contents) {
         "${image_begin}": "<img class=\"conversation_image\" src=\"img/images_conversation/" + quartier.toLocaleLowerCase() + "/",
         "${image_end}": "\">",
         "${lien_video_begin}": "<a class=\"lien-conv\" href=\"./reportages\">",
-        "${lien_video_end}": "</a>"
+        "${lien_video_end}": "</a>",
+        "${lien_plus}": '<a href="./interview">En savoir plus ...</a>'
     }
 
     if (speaker == "user") {

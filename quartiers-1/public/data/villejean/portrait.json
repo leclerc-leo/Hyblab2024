@@ -59,7 +59,7 @@
         "speaker": "guide",
         "type": "bubble",
         "choicesLabel": [],
-        "content": ["C’est vrai et faux! Il y a entre 50 et 70 associations inscrites à la maison de quartier, mais si nous comptons, les associations partenaires, et les associations qui viennent régulièrement pour des événements.","La maison de quartier de Villejean à la plus grande capacité d’accueil de Bretagne avec une salle de spectacle, et des troupes de théâtre en résidence régulièrement."],
+        "content": ["C’est vrai! Il y a entre 50 et 70 associations inscrites à la maison de quartier, mais si nous comptons, les associations partenaires, et les associations qui viennent régulièrement pour des événements.","La maison de quartier de Villejean à la plus grande capacité d’accueil de Bretagne avec une salle de spectacle, et des troupes de théâtre en résidence régulièrement."],
         "next": ["Reponse3"]
     },
 
@@ -67,7 +67,7 @@
         "speaker": "guide",
         "type": "bubble",
         "choicesLabel": [],
-        "content": ["C’est vrai! Il y a entre 50 et 70 associations inscrites à la maison de quartier, mais si nous comptons, les associations partenaires, et les associations qui viennent régulièrement pour des événements il y en a beaucoup plus !","La maison de quartier de Villejean a la plus grande capacité d’accueil de Bretagne avec une salle de spectacle, et des troupes de théâtre en résidence régulièrement."],
+        "content": ["C’est proche! Il y a entre 50 et 70 associations inscrites à la maison de quartier, mais si nous comptons, les associations partenaires, et les associations qui viennent régulièrement pour des événements il y en a beaucoup plus !","La maison de quartier de Villejean a la plus grande capacité d’accueil de Bretagne avec une salle de spectacle, et des troupes de théâtre en résidence régulièrement."],
         "next": ["Reponse3"]
     },
 
@@ -99,7 +99,7 @@
         "speaker": "guide",
         "type": "bubble",
         "choicesLabel": [],
-        "content": ["C’est Régine Komokoli qui a créé le collectif Kuné : Faire ensemble à Villejean, qui est un réseau d’auto-défense pour lutter contre les violences faites aux femmes.","Régine est conseillère départementale déléguée à la protection maternelle et infantile, à la petite enfance et à la parentalité d'Ille-et-Vilaine.","${image_begin}reginekomokoli.jpg${image_end}"],
+        "content": ["C’est Régine Komokoli qui a créé le collectif Kuné : Faire ensemble à Villejean, qui est un réseau d’auto-défense pour lutter contre les violences faites aux femmes.","Régine est conseillère départementale déléguée à la protection maternelle et infantile, à la petite enfance et à la parentalité d'Ille-et-Vilaine.","${image_begin}reginekomokoli.jpg${image_end}","${lien_plus}"],
         "next": ["QuestionFin"]
     },
 

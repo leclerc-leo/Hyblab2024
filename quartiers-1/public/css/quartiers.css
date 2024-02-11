@@ -239,10 +239,8 @@ h1{
     flex-direction: column;
     margin: 10px 10% 10px 10px;
 }
-.rp_guide:first-child .name_guide{
-    text-indent: 50%;
-}
-.rp_guide:first-child .cont_guide:first-child{
+
+/* .rp_guide:first-child .cont_guide:first-child{
     border-top-left-radius: 0;
 }
 .rp_guide:first-child .cont_guide:last-child{
@@ -258,7 +256,7 @@ h1{
     left: 0;
     border: 0.65em solid;
     border-color: transparent transparent #E69973 #E69973;
-}
+} */
 .name_guide{
     display: flex;
     margin: 4%;
@@ -288,19 +286,31 @@ h1{
 .anime_bottom{
     animation: slideInBottom 1s;
 }
-.cont_guide:last-child{
+/* .cont_guide:last-child{
     border-bottom-left-radius: 0;
+} */
+.cont_guide:first-child{
+    border-top-left-radius: 0;
 }
 .cont_user:last-child{
     border-bottom-right-radius: 0;
 }
-.cont_guide:last-child::before {
-    content: '';
+/* .cont_guide:last-child::before {
+     content: '';
     position: absolute;
     bottom: -0.68em;
     left: 0;
     border: 0.65em solid;
-    border-color: #E69973 transparent transparent #E69973;
+    border-color: #E69973 transparent transparent #E69973;  
+}*/
+.cont_guide:first-child::before {
+    content: '';
+    position: absolute;
+    top: -0.68em;
+    left: 0;
+    border: 0.65em solid;
+    border-color: transparent transparent #E69973 #E69973;
+
 }
 .cont_user:last-child::before {
     content: '';
