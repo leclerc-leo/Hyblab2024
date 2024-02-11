@@ -92,7 +92,7 @@ main > section {
 
   #first-slide p {
     text-align: center;
-    width: 75%;
+    width: 80%;
     position: absolute;
     font-size: 29.5%;
     z-index: 2;
@@ -242,141 +242,140 @@ main > section {
 }
 
 @media screen and (max-aspect-ratio: 0.65) {
-#second-slide .popup-content h2 {
-  font-size: clamp(20%, 1em, 35%);
-  word-wrap: break-word;
-  max-width: 70%;
-  line-height: 1em;
-  position: relative;
-  text-align: left;
-  top: 5%;
-  right: 10%;
-}
-#img-obj {
-  position: absolute;
-  width: 30%;
-  right: 0%;
-  top: 0%;
-}
-#second-slide .popup-content p {
-  position: absolute;
-  width: 85%;
-  transform: translateX(-50%);
-  display: flex;
-  font-size: 25%;
-  color: #386f9c;
-  z-index: 3;
-}
+  #second-slide .popup-content h2 {
+    font-size: clamp(20%, 1em, 35%);
+    word-wrap: break-word;
+    max-width: 70%;
+    line-height: 1em;
+    position: relative;
+    text-align: left;
+    top: 5%;
+    right: 10%;
+  }
+  #img-obj {
+    position: absolute;
+    width: 30%;
+    right: 0%;
+    top: 0%;
+  }
+  #second-slide .popup-content p {
+    position: absolute;
+    width: 85%;
+    transform: translateX(-50%);
+    display: flex;
+    font-size: 25%;
+    color: #386f9c;
+    z-index: 3;
+  }
 
-#img-cupcake {
-  position: absolute;
-  max-width: 55%;
-  top: 32%;
-}
-#cupcake-p0 {
-  position: absolute;
-  top: 18% !important;
-  left: 50% !important;
-}
-#cupcake-p1 {
-  position: absolute;
-  top: 60% !important;
-  left: 50% !important;
-}
-#img-coupe {
-  position: absolute;
-  max-width: 55%;
-  top: 47%;
-}
-#coupe-p0 {
-  position: absolute;
-  top: 19% !important;
-  left: 50% !important;
-}
-#coupe-p1 {
-  position: absolute;
-  top: 70% !important;
-  left: 50% !important;
-}
-#img-medaille {
-  position: absolute;
-  max-width: 70%;
-  top: 47%;
-}
-#medaille-p0 {
-  position: absolute;
-  top: 18% !important;
-  left: 50% !important;
-}
-#img-manique {
-  position: absolute;
-  max-width: 55%;
-  top: 33%;
-}
-#manique-p0 {
-  position: absolute;
-  top: 19% !important;
-  left: 50% !important;
-}
-#manique-p1 {
-  position: absolute;
-  top: 60% !important;
-  left: 50% !important;
-}
-#img-photo{
-  position: absolute;
-  max-width: 55%;
-  top: 43%;
-}
-#photo-p0 {
-  position: absolute;
-  top: 19% !important;
-  left: 50% !important;
-}
-#photo-p1 {
-  position: absolute;
-  top: 67% !important;
-  left: 50% !important;
-}
-#img-algerie {
-  position: absolute;
-  max-width: 70%;
-  top: 35%;
-}
-#algerie-p0 {
-  position: absolute;
-  top: 18% !important;
-  left: 50% !important;
-}
-#algerie-p1 {
-  position: absolute;
-  top: 64% !important;
-  left: 50% !important;
-}
-#gourde-p0 {
-  position: absolute;
-  top: 18% !important;
-  left: 50% !important;
-}
-#gourde-p1 {
-  position: absolute;
-  top:42% !important;
-  left:50% ! important;
-}
+  #img-cupcake {
+    position: absolute;
+    max-width: 55%;
+    top: 32%;
+  }
+  #cupcake-p0 {
+    position: absolute;
+    top: 18% !important;
+    left: 50% !important;
+  }
+  #cupcake-p1 {
+    position: absolute;
+    top: 60% !important;
+    left: 50% !important;
+  }
+  #img-coupe {
+    position: absolute;
+    max-width: 55%;
+    top: 47%;
+  }
+  #coupe-p0 {
+    position: absolute;
+    top: 19% !important;
+    left: 50% !important;
+  }
+  #coupe-p1 {
+    position: absolute;
+    top: 70% !important;
+    left: 50% !important;
+  }
+  #img-medaille {
+    position: absolute;
+    max-width: 70%;
+    top: 47%;
+  }
+  #medaille-p0 {
+    position: absolute;
+    top: 18% !important;
+    left: 50% !important;
+  }
+  #img-manique {
+    position: absolute;
+    max-width: 55%;
+    top: 33%;
+  }
+  #manique-p0 {
+    position: absolute;
+    top: 19% !important;
+    left: 50% !important;
+  }
+  #manique-p1 {
+    position: absolute;
+    top: 60% !important;
+    left: 50% !important;
+  }
+  #img-photo {
+    position: absolute;
+    max-width: 55%;
+    top: 43%;
+  }
+  #photo-p0 {
+    position: absolute;
+    top: 19% !important;
+    left: 50% !important;
+  }
+  #photo-p1 {
+    position: absolute;
+    top: 67% !important;
+    left: 50% !important;
+  }
+  #img-algerie {
+    position: absolute;
+    max-width: 70%;
+    top: 35%;
+  }
+  #algerie-p0 {
+    position: absolute;
+    top: 18% !important;
+    left: 50% !important;
+  }
+  #algerie-p1 {
+    position: absolute;
+    top: 64% !important;
+    left: 50% !important;
+  }
+  #gourde-p0 {
+    position: absolute;
+    top: 18% !important;
+    left: 50% !important;
+  }
+  #gourde-p1 {
+    position: absolute;
+    top: 42% !important;
+    left: 50% !important;
+  }
 
-#close {
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  margin-top: 2em;
-  position: absolute;
-  bottom: 2%;
-  width: 27%;
-}
+  #close {
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 2em;
+    position: absolute;
+    bottom: 2%;
+    width: 27%;
+  }
 }
 @media screen and (min-aspect-ratio: 0.65) {
-
   #second-slide .popup-content h2 {
     font-size: clamp(20%, 1em, 35%);
     word-wrap: break-word;
@@ -402,7 +401,7 @@ main > section {
     color: #386f9c;
     z-index: 3;
   }
-  
+
   #img-cupcake {
     position: absolute;
     max-width: 55%;
@@ -458,7 +457,7 @@ main > section {
     top: 63% !important;
     left: 50% !important;
   }
-  #img-photo{
+  #img-photo {
     position: absolute;
     max-width: 55%;
     top: 38%;
@@ -495,8 +494,8 @@ main > section {
   }
   #gourde-p1 {
     position: absolute;
-    top:42% !important;
-    left:50% !important;
+    top: 42% !important;
+    left: 50% !important;
   }
   #close {
     color: #fff;
@@ -572,7 +571,6 @@ main > section {
   transform: scale(1);
 }
 
-
 #popup_tel {
   position: absolute;
   height: 80%;
@@ -596,7 +594,7 @@ main > section {
 }
 
 #popup_quizz_end {
-  display:none;
+  display: none;
   position: absolute;
   width: 90%;
   height: 60%;
@@ -615,7 +613,7 @@ main > section {
   transition: all 0.3s ease-in-out;
 }
 #popup_quizz_end h2 {
-  color:#386f9c;
+  color: #386f9c;
   font-family: "Poppins", sans-serif;
   text-align: center;
   margin: 0.1em 0.1em;
@@ -626,20 +624,20 @@ main > section {
   left: 11%;
   max-width: 80%;
 }
-#popup_quizz_end #close{
+#popup_quizz_end #close {
   position: absolute;
   left: 35%;
 }
-#explication_quizz_p{
+#explication_quizz_p {
   margin: 0em 1em 1em 1em;
   font-size: small;
   font-family: "Poppins";
   color: #386f9c;
 }
-#telephone-content{
+#telephone-content {
   padding: 1% 1% 1% 1%;
 }
-#telephone-content h2{
+#telephone-content h2 {
   top: 5%;
   font-size: 40%;
   position: fixed;
@@ -649,45 +647,43 @@ main > section {
   font-size: 60% !important;
   color: #386f9c;
   position: fixed;
-} 
-#phone_video{
-display: grid;
-grid-template-columns: 1% 98% 1%;
-grid-template-rows: 1% 198% 1%;
-top: 4%;
-position: relative;
-  
+}
+#phone_video {
+  display: grid;
+  grid-template-columns: 1% 98% 1%;
+  grid-template-rows: 1% 198% 1%;
+  top: 4%;
+  position: relative;
 }
 
-
-#telephone-content svg{
-top: -11%;
-/* left: -15%; */
-rotate: 75deg;
-scale: 1.05;
-overflow: hidden;
-pointer-events: none;
-grid-area: 2 / 2 / 2 / 2;
-position: relative;
-z-index: 1;
+#telephone-content svg {
+  top: -11%;
+  /* left: -15%; */
+  rotate: 75deg;
+  scale: 1.05;
+  overflow: hidden;
+  pointer-events: none;
+  grid-area: 2 / 2 / 2 / 2;
+  position: relative;
+  z-index: 1;
 }
 
-#telephone-content #nemour-quiz-video{
-top: 3.5%;
-height: 21.5%;
-width: 76%;
-left: 15%;
-z-index: 0;
-grid-area: 2 / 2 / 2 / 2;
-position: relative;
-pointer-events: none;
+#telephone-content #nemour-quiz-video {
+  top: 3.5%;
+  height: 21.5%;
+  width: 76%;
+  left: 15%;
+  z-index: 0;
+  grid-area: 2 / 2 / 2 / 2;
+  position: relative;
+  pointer-events: none;
 }
 
-#video_quizz{
+#video_quizz {
   top: 52.5%;
   position: fixed;
 }
-#video_quizz #question{
+#video_quizz #question {
   position: absolute;
   top: -16%;
   font-size: 30%;
@@ -712,7 +708,7 @@ pointer-events: none;
   grid-template-columns: repeat(2, auto);
   gap: 15px;
   margin: 18px 10px;
-} 
+}
 .btn_quiz {
   --hue: var(--hue-neutral);
   border: 1px solid hsl(var(--hue), 100%, 30%);
@@ -842,13 +838,16 @@ pointer-events: none;
   #second-slide .billet-content p {
     position: absolute;
     top: 44%;
-    left: 50%;
+    left: 49%;
     width: 75%;
     transform: translateX(-50%);
-    display: flex;
-    font-size: 35%;
+    font-size: 33%;
     color: #386f9c;
     z-index: 3;
+  }
+  #second-slide .billet-content p a {
+    color: #de9b94;
+    text-decoration: none;
   }
 
   #second-slide .billet-content #tete2 {
@@ -936,10 +935,14 @@ pointer-events: none;
     left: 50%;
     width: 70%;
     transform: translateX(-50%);
-    display: flex;
-    font-size: 33%;
+    font-size: 31%;
     color: #386f9c;
     z-index: 3;
+  }
+
+  #second-slide .billet-content p a {
+    color: #de9b94;
+    text-decoration: none;
   }
 
   #second-slide .billet-content #tete2 {
