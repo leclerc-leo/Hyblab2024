@@ -92,7 +92,10 @@ main{
     width: auto;
     z-index: 2000;
     position: absolute;
-    top: 8em;
+    top: 7em;
+    padding-top: 10%;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 #recap_button{

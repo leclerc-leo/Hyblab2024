@@ -7,7 +7,7 @@
 }
 
 #container{
-    background-color: #FCF3EC;
+    background-color: #F8E8DB;
 }
 
 main{
@@ -93,11 +93,6 @@ body{
     flex-direction: column;
 }
 
-#porteur_projet a:hover{
-    transform: scale(1.1);
-    transition: 0.5s;
-}
-
 /*les personnes avec les images et les noms, il s'adapte à la taille de l'écran*/
 #personnes{
     display: grid;
@@ -144,13 +139,6 @@ body{
     align-items: center;
     flex-direction: column;
 }
-
-.personne a:hover{
-    /*agrandir le lien */
-    transform: scale(1.1);
-    transition: 0.5s;
-}
-
 
 /*footer*/
 #bandeau {
