@@ -29,14 +29,14 @@ checkVotes();
 
 if (globals.checkAllVotes(globals.tabVotes)) {
 
-  window.addEventListener("load", function () {
+  window.addEventListener("load", async function () {
 
     setTimeout(
-      function open(event) {
-        document.querySelector(".popup").style.display = "block";
-        document.getElementById('container').style.opacity = 0.7;
-        /************* confetti  **************/
-          // Pass in the id of an element
+        function open(event) {
+          document.querySelector(".popup").style.display = "block";
+          document.getElementById('container').style.opacity = 0.7;
+          /************* confetti  **************/
+              // Pass in the id of an element
           let confetti = new Confetti("popup-archive");
           // Edit given parameters
           confetti.setCount(75);
@@ -45,10 +45,13 @@ if (globals.checkAllVotes(globals.tabVotes)) {
           confetti.setFade(false);
           confetti.destroyTarget(false);
 
-        /************* confetti  **************/
-      },
-      1000
+          /************* confetti  **************/
+        },
+        1000
     )
+
+    await getSessionTokenValue();
+
   });
 
   document.querySelector("#close").addEventListener("click", function () {
@@ -145,8 +148,7 @@ checkprogress();
 /************* Vote progression display  **************/
 
 /************* Finalize votes  **************/
-document.getElementById('statistiques').addEventListener('click',async () => {
-  await getSessionTokenValue();
+document.getElementById('statistiques').addEventListener('click', () => {
   // Access the sessionToken passed from the server
   globals.saveVotes(globals.sessionToken, globals.tabVotes);
   window.location.href = '/beaujoire-2/statistics';
