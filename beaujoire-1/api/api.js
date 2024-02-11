@@ -32,43 +32,32 @@ app.post("/updateStats", (req, res) => {
 });
 
 // Chemin vers le fichier Likes.json
-const likesFilePath = path.resolve(__dirname, './public/data/Likes.json'); // Ajustez le chemin selon votre structure de dossier
+const likesFilePath = path.resolve(__dirname, "../public/data/Likes.json"); // Ajustez le chemin selon votre structure de dossier
 
 // Route pour récupérer le nombre de likes
-app.get('/likes', (req, res) => {
-  fs.readFile(likesFilePath, (err, data) => {
-    if (err) {
-      return res.status(500).send('Erreur lors de la lecture du fichier.');
-    }
-    res.json(JSON.parse(data));
-  });
+app.get("/likes", (req, res) => {
+	fs.readFile(likesFilePath, (err, data) => {
+		if (err) {
+			return res
+				.status(500)
+				.send("Erreur lors de la lecture du fichier.");
+		}
+		res.json(JSON.parse(data));
+	});
 });
 
 // Route pour incrémenter le nombre de likes pour une composition spécifique
-app.post('/like', (req, res) => {
-  const compositionId = req.body.compositionId;
-  if (!compositionId) {
-    return res.status(400).send('ID de composition manquant.');
-  }
-
-  fs.readFile(likesFilePath, (err, data) => {
-    if (err) {
-      return res.status(500).send('Erreur lors de la lecture du fichier.');
-    }
-
-    const likes = JSON.parse(data);
-    if (typeof likes[compositionId] !== 'undefined') {
-      likes[compositionId]++;
-      fs.writeFile(likesFilePath, JSON.stringify(likes, null, 2), (err) => {
-        if (err) {
-          return res.status(500).send('Erreur lors de l\'écriture dans le fichier.');
-        }
-        res.json({ [compositionId]: likes[compositionId] });
-      });
-    } else {
-      res.status(404).send('Composition non trouvée.');
-    }
-  });
+app.post("/like", (req, res) => {
+	console.log("Request body:", req.body);
+	console.log("Writing to file:", likesFilePath);
+	fs.writeFile(likesFilePath, JSON.stringify(req.body), (err) => {
+		if (err) {
+			console.error("Error writing file:", err);
+			res.status(500).send(`Error writing file: ${err.message}`);
+		} else {
+			res.status(200).send("Successfully wrote file");
+		}
+	});
 });
 
 app.get("/test", (req, res) => {
