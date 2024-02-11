@@ -32,7 +32,7 @@
 	background-repeat: no-repeat;
 	background-position: center;
 	height: 67px;
-	width: 100px;
+	width: 115px;
 }
 
 .buttons {
@@ -94,13 +94,14 @@
 
 .vote-percentage {
 	position: absolute;
-	right: -155%;
+	right: -175%;
 	bottom: -10%;
 	padding: 5px;
 	color: #00a55a; /* Texte vert */
-	font-size: 1.1em; /* Petite taille de police */
+	font-size: 1.4em; /* Petite taille de police */
 	border-radius: 3px; /* Bords arrondis */
 	font-weight: bold;
+	line-height: 0.4;
 }
 
 .player-name {
