@@ -220,7 +220,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 		.addEventListener("click", async (event) => {
 			event.preventDefault();
 			await saveStats();
-			window.location.href = "./statistique.html";
 		});
 	document.querySelector("#back-overlay").addEventListener("click", () => {
 		document.querySelectorAll(".carousel-item").forEach((item) => {
@@ -359,44 +358,43 @@ fetch("api/test")
 	.then((data) => console.log(data))
 	.catch((error) => console.error("Error:", error));
 
-function saveStats() {
+async function saveStats() {
 	if (
 		areAllPlayersSelected() &&
 		isCaptainSelected &&
 		!isCaptainBeingSelected
 	) {
-		fetch("./data/Stats.json")
-			.then((response) => response.json())
-			.then((stats) => {
-				console.log("Stats:", stats);
-				console.log("Players:", players);
-				Object.values(players).forEach((player) => {
-					if (stats[player] !== undefined) {
-						stats[player]++;
-						console.log(
-							`Player ${player} stats updated: ${stats[player]}`
-						);
-					} else {
-						// Handle the case where the player doesn't exist in the stats object
-						console.log(`Player ${player} not found in stats.`);
-					}
-				});
-				localStorage.setItem("stats", JSON.stringify(stats));
-				console.log("Updated Stats:", stats);
-				console.log("Stats saved to local storage");
-				// Send the updated stats back to the server
-				fetch("api/updateStats", {
-					method: "POST",
-					headers: {
-						"Content-Type": "application/json",
-					},
-					body: JSON.stringify(stats),
-				});
-			})
-			.catch((error) => console.error("Error fetching stats:", error));
+		try {
+			const response = await fetch("./data/Stats.json");
+			const stats = await response.json();
+			Object.values(players).forEach((player) => {
+				if (stats[player] !== undefined) {
+					stats[player]++;
+				} else {
+					// Handle the case where the player doesn't exist in the stats object
+					console.log(`Player ${player} not found in stats.`);
+				}
+			});
+			localStorage.setItem("stats", JSON.stringify(stats));
+			console.log("Updated Stats:", stats);
+			// Send the updated stats back to the server
+			const updateResponse = await fetch("api/updateStats", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify(stats),
+			});
+			if (!updateResponse.ok) {
+				throw new Error("Error updating stats");
+			}
+			// Change the page after the stats have been updated
+			window.location.href = "./statistique.html";
+		} catch (error) {
+			console.error("Error fetching stats:", error);
+		}
 	}
 }
-
 function animatePlayer(elementId, imgSrc, timeoutDuration, event) {
 	const element = document.getElementById(elementId);
 	const imgElement = element.querySelector("img");
