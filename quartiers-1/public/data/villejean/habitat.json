@@ -99,7 +99,7 @@
         "speaker": "guide",
         "type": "bubble",
         "choicesLabel": [],
-        "content": ["Et non c’est 460€ par mois approximativement selon Ouest-France Immobilier.","Pour te donner une idée, pour une surface similaire, le loyer dans le centre de Rennes s’élève à 550€ par mois…"],
+        "content": ["Et non, c’est 460€ par mois approximativement selon Ouest-France Immobilier.","Pour te donner une idée, pour une surface similaire, le loyer dans le centre de Rennes s’élève à 550€ par mois…"],
         "next": ["Choix6"]
     },
 
@@ -107,7 +107,7 @@
         "speaker": "guide",
         "type": "bubble",
         "choicesLabel": [],
-        "content": ["Oui c'est bien 460€ par mois approximativement selon Ouest-France Immobilier.","Pour te donner une idée, pour une surface similaire, le loyer dans le centre de Rennes s’élève à 550€ par mois…"],
+        "content": ["Oui, c'est bien 460€ par mois approximativement selon Ouest-France Immobilier.","Pour te donner une idée, pour une surface similaire, le loyer dans le centre de Rennes s’élève à 550€ par mois…"],
         "next": ["Choix6"]
     },
 
@@ -154,8 +154,8 @@
     "Choix8": {
         "speaker": "user",
         "type": "choice",
-        "choicesLabel": ["Oui, je vois…"],
-        "content": ["Oui, je vois…"],
+        "choicesLabel": ["D'accord, je vois…"],
+        "content": ["D'accord, je vois…"],
         "next": ["Reponse8"]
     },
 
@@ -204,7 +204,7 @@
         "association": "au centre Avicenne",
         "habitat": "à la tour Bourbonnais",
         "sport": "au stade Robert-Poirier",
-        "education": "à Rosa Parks",
+        "education": "au collège Rosa Parks",
         "commerce": "au marché de Villejean"
     }
 }

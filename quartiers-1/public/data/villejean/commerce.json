@@ -19,7 +19,7 @@
         "speaker": "guide",
         "type": "bubble",
         "choicesLabel": [],
-        "content": ["Pas loin !","Le premier marché s’est tenu le 10 octobre 1968. Avant, les habitants devaient faire leur marché dans d’autres quartiers, comme Sainte-Thérèse, au sud de la gare.","Pas très pratique, non ? ☹️"],
+        "content": ["Et non !","Le premier marché s’est tenu le 10 octobre 1968. Avant, les habitants devaient faire leur marché dans d’autres quartiers, comme Sainte-Thérèse, au sud de la gare.","Pas très pratique, non ? ☹️"],
         "next": ["Reponse2"]
     },
     
@@ -51,7 +51,7 @@
         "speaker": "guide",
         "type": "bubble",
         "choicesLabel": [],
-        "content": ["C’est vrai qu’à l’origine, Villejean est un quartier résidentiel, construit pour accueillir les travailleurs venus s’installer en ville dans les années 1950.","Mais cela ne veut pas dire que le commerce y est inexistant. Le quartier dispose d’un centre commercial 🏪 rénové en 2010, pour 55 millions d’euros."],
+        "content": ["C’est vrai qu’à l’origine, Villejean est un quartier résidentiel, construit pour accueillir les travailleurs venus s’installer en ville dans les années 1950.","Mais cela ne veut pas dire que le commerce y est inexistant. Le quartier dispose d’un centre commercial 🏪 rénové en 2010, pour 55 millions d’euros !"],
         "next": ["Choix4"]
     },
 
@@ -75,7 +75,7 @@
         "speaker": "guide",
         "type": "bubble",
         "choicesLabel": [],
-        "content": ["Je te l’accorde, la vie nocturne de Villejean n’est pas très animée. Mais le centre-ville n’est pas si loin que ça.","Sais-tu combien de stations de métro 🚇 desservent le quartier ?"],
+        "content": ["Je te l’accorde, la vie nocturne de Villejean n’est pas très animée. Mais le centre-ville n’est pas si loin que ça.","À ce propos, sais-tu combien de stations de métro 🚇 desservent le quartier ?"],
         "next": ["Choix5"]
     },
 
@@ -180,7 +180,7 @@
         "association": "au centre Avicenne",
         "habitat": "à la tour Bourbonnais",
         "sport": "au stade Robert-Poirier",
-        "education": "à Rosa Parks",
+        "education": "au collège Rosa Parks",
         "commerce": "au marché de Villejean"
     }
 }

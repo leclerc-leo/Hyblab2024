@@ -10,7 +10,7 @@
     "Choix1": {
         "speaker": "user",
         "type": "choice",
-        "choicesLabel": ["J’ai un enfant", "Je n’ai pas d’enfant"],
+        "choicesLabel": ["J’ai des enfants", "Je n’ai pas d’enfant"],
         "content": ["J’aimerais inscrire mon fils en cinquième mais j’ai un peu peur. J’ai vu que l’indice de position sociale de l’établissement était le plus faible du département… Je ne me vois pas trop inscrire mon enfant dans le collège le plus défavorisé de l’Ille et Vilaine.", "Je n’ai pas d’enfant mais si jamais j’ai envie d’en avoir un, je veux être sûr.e qu’il/elle puisse aller à l’école dans le quartier…"],
         "next": ["ReponseChoix11", "ReponseChoix12"]
     },
@@ -36,14 +36,30 @@
         "type": "choice",
         "choicesLabel": ["Mais trop génial ça !","Je ne comprends pas","Mouais"],
         "content": ["Mais trop génial ça !","Je ne comprends pas trop. Qu’est-ce que cela veut dire ?","Mouais, il en faudra plus pour me convaincre."],
-        "next": ["Reponse2","Reponse2","Reponse2"]
+        "next": ["Reponse2A","Reponse2B","Reponse2C"]
     },
 
-    "Reponse2": {
+    "Reponse2A": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Oui, je suis d'accord, le label Cité éducative ouvre droit à des moyens supplémentaires, financiers et humains au quartier.","L'objectif étant, avec 400 000 euros 🤑 de dotation par an, de prendre en charge les enfants et jeunes du quartier de Villejean."],
+        "next": ["Choix3"]
+    },
+
+    "Reponse2B": {
         "speaker": "guide",
         "type": "bubble",
         "choicesLabel": [],
         "content": ["Concrètement, le label Cité éducative ouvre droit à des moyens supplémentaires, financiers et humains au quartier.","L'objectif étant, avec 400 000 euros 🤑 de dotation par an, de prendre en charge les enfants et jeunes du quartier de Villejean."],
+        "next": ["Choix3"]
+    },
+
+    "Reponse2C": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Le label Cité éducative ce n'est pas rien, celui-ci ouvre droit à des moyens supplémentaires, financiers et humains au quartier.","L'objectif étant, avec 400 000 euros 🤑 de dotation par an, de prendre en charge les enfants et jeunes du quartier de Villejean."],
         "next": ["Choix3"]
     },
 
@@ -75,7 +91,7 @@
         "speaker": "guide",
         "type": "bubble",
         "choicesLabel": [],
-        "content": ["Et non, il en existe 5 ! Comme l’association Mosaïque par exemple, qui depuis 2003, s’est lancée dans l’aide aux devoirs.","D’ailleurs, en 2023, ils ont aidé onze élèves à obtenir leur brevet des collèges 🧑‍🎓.","Bon je ne t’en dis pas plus, Natacha le raconte mieux que moi !","${video_begin}https://www.youtube.com/embed/4wR5ubwNarE?si=bT3NZbn262FIpfp2&start=43&end=191&controls=0${video_end}","D'ailleurs, tu peux retrouver tous les reportages ${lien_video_begin}ici${lien_video_end}."],
+        "content": ["Et non, c'est plus, il en existe 5 ! Comme l’association Mosaïque par exemple, qui depuis 2003, s’est lancée dans l’aide aux devoirs.","D’ailleurs, en 2023, ils ont aidé onze élèves à obtenir leur brevet des collèges 🧑‍🎓.","Bon je ne t’en dis pas plus, Natacha le raconte mieux que moi !","${video_begin}https://www.youtube.com/embed/4wR5ubwNarE?si=bT3NZbn262FIpfp2&start=43&end=191&controls=0${video_end}","D'ailleurs, tu peux retrouver tous les reportages ${lien_video_begin}ici${lien_video_end}."],
         "next": ["Reponse5"]
     },
 
@@ -132,7 +148,7 @@
         "association": "au centre Avicenne",
         "habitat": "à la tour Bourbonnais",
         "sport": "au stade Robert-Poirier",
-        "education": "à Rosa Parks",
+        "education": "au collège Rosa Parks",
         "commerce": "au marché de Villejean"
     }
 }

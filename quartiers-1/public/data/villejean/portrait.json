@@ -3,7 +3,7 @@
         "speaker": "guide",
         "type": "bubble",
         "choicesLabel": [],
-        "content": ["Bienvenue à la maison de quartier de Villejean ! Chaque semaine se réunissent des dizaines d’associations en ce lieu, c’est un endroit fort de la vie du quartier !","Ça te dirait d’y participer?"],
+        "content": ["Bienvenue à la maison de quartier de Villejean ! Chaque semaine se réunissent des dizaines d’associations en ce lieu, c’est un endroit fort de la vie du quartier !","Ça te dirait d’y participer ? 🎉"],
         "next": ["Choix1"]
     },
 
@@ -51,7 +51,7 @@
         "speaker": "guide",
         "type": "bubble",
         "choicesLabel": [],
-        "content": ["Pas exactement! Il y a entre 50 et 70 associations inscrites à la maison de quartier, mais si nous comptons, les associations partenaires, et les associations qui viennent régulièrement pour des événements il y en a beaucoup plus.","La maison de quartier de Villejean à la plus grande capacité d’accueil de Bretagne avec une salle de spectacle, et des troupes de théâtre en résidence régulièrement."],
+        "content": ["C'est plus ! Il y a entre 50 et 70 associations inscrites à la maison de quartier, mais si nous comptons, les associations partenaires, et les associations qui viennent régulièrement pour des événements il y en a beaucoup plus.","La maison de quartier de Villejean à la plus grande capacité d’accueil de Bretagne avec une salle de spectacle, et des troupes de théâtre en résidence régulièrement."],
         "next": ["Reponse3"]
     },
 
@@ -59,7 +59,7 @@
         "speaker": "guide",
         "type": "bubble",
         "choicesLabel": [],
-        "content": ["C’est vrai! Il y a entre 50 et 70 associations inscrites à la maison de quartier, mais si nous comptons, les associations partenaires, et les associations qui viennent régulièrement pour des événements.","La maison de quartier de Villejean à la plus grande capacité d’accueil de Bretagne avec une salle de spectacle, et des troupes de théâtre en résidence régulièrement."],
+        "content": ["C’est vrai ! Il y a entre 50 et 70 associations inscrites à la maison de quartier, mais si nous comptons, les associations partenaires, et les associations qui viennent régulièrement pour des événements.","La maison de quartier de Villejean à la plus grande capacité d’accueil de Bretagne avec une salle de spectacle, et des troupes de théâtre en résidence régulièrement."],
         "next": ["Reponse3"]
     },
 
@@ -67,7 +67,7 @@
         "speaker": "guide",
         "type": "bubble",
         "choicesLabel": [],
-        "content": ["C’est proche! Il y a entre 50 et 70 associations inscrites à la maison de quartier, mais si nous comptons, les associations partenaires, et les associations qui viennent régulièrement pour des événements il y en a beaucoup plus !","La maison de quartier de Villejean a la plus grande capacité d’accueil de Bretagne avec une salle de spectacle, et des troupes de théâtre en résidence régulièrement."],
+        "content": ["C’est proche ! Même s'il y a entre 50 et 70 associations inscrites à la maison de quartier, si nous comptons, les associations partenaires, et les associations qui viennent régulièrement pour des événements il y en a beaucoup plus !","La maison de quartier de Villejean a la plus grande capacité d’accueil de Bretagne avec une salle de spectacle, et des troupes de théâtre en résidence régulièrement."],
         "next": ["Reponse3"]
     },
 
@@ -140,7 +140,7 @@
         "association": "au centre Avicenne",
         "habitat": "à la tour Bourbonnais",
         "sport": "au stade Robert-Poirier",
-        "education": "à Rosa Parks",
+        "education": "au collège Rosa Parks",
         "commerce": "au marché de Villejean"
     }
 }
