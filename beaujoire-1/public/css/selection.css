@@ -22,6 +22,7 @@
 	flex-direction: column;
 	align-content: center;
 	justify-content: space-evenly;
+	overflow-y: hidden;
 }
 
 .textvote-container {
@@ -94,14 +95,48 @@
 	text-shadow: 2px 2px 0 #000;
 }
 
+@keyframes like {
+	0% {
+		transform: scale(1);
+		background-color: #ffffff;
+		color: #fadc00;
+	}
+	10% {
+		transform: scale(1.2);
+		background-color: #fadc00;
+		color: #ffffff;
+	}
+	90% {
+		transform: scale(1.2);
+		background-color: #fadc00;
+		color: #ffffff;
+	}
+	100% {
+		transform: scale(1);
+		background-color: #ffffff;
+		color: #fadc00;
+	}
+}
+
 .heart-button {
-	position: absolute; 
-	bottom: 110px; 
-	left: 120px;
-	font-size: 24px; 
-	color: rgb(173, 170, 170); 
-	background: none; 
-	border: none; 
-	cursor: pointer; 
-	z-index: 10; 
-  }
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	font-size: 24px;
+	border-radius: 50%;
+	color: rgb(173, 170, 170);
+	border: none;
+	cursor: pointer;
+	z-index: 10;
+	transform-origin: center;
+}
+
+.heart-button.like {
+	animation: 0.7s like ease-in-out;
+}
+
+.like-count {
+	position: absolute;
+	bottom: -100%;
+	font-size: 1em;
+}

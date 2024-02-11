@@ -130,6 +130,9 @@ document.addEventListener("DOMContentLoaded", function () {
 	heartButtons.forEach(function (button) {
 		button.addEventListener("click", function () {
 			toggleLike(this);
+			button.classList.remove("like");
+			void button.offsetWidth;
+			button.classList.add("like");
 		});
 	});
 });
