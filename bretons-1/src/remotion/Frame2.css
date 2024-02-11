@@ -67,12 +67,10 @@
     font-weight: 400;
     line-height: 30px;
 }
-.flagFrame2 {
-    margin-top: 10px;
-}
+
 .flagFrame2 img { 
-    width: 80px; 
-    height: auto;
+    width: 100px; 
+    position: relative;
 }
 
 .countryFrame2 {
@@ -80,8 +78,8 @@
     font-size: 45px;
     font-style: normal;
     font-weight: 400;
-    padding-top: 10px;
-    padding-left: 10px;
+    padding-top: 15px; 
+    margin-left: 10px; 
 }
 
 .rectangleBlueFrame2{
@@ -144,6 +142,8 @@
     flex-shrink: 0; 
     background: #FA8C5F;
     left: -222vw;
+    display: flex;
+    flex-direction: row;
     position: relative;
     transition: left 1s ease-in-out;
 }
@@ -154,8 +154,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-left: 210px;
-    margin-top: 35px;
+    margin-left: 25px;
 }
 
 .name_3_Frame2 {
@@ -164,7 +163,7 @@
 }
 
 .time_3_Frame2 {
-    font-size: 35px;
+    font-size: 37px;
     font-weight: 400;
     line-height: 30px;
 }
@@ -179,16 +178,12 @@
 .numberCircle_3_Frame2 {
     width: 150px; 
     height: auto; 
-    position: absolute;
-    transform: translateY(-50%);
-    margin-top: 100px;
-    margin-left: 25px;
 }
 
 .country_3_Frame2 {
     position: absolute;
-    padding-top: 8px; 
-    font-size: 40px;
+    margin-top: 20px; 
+    font-size: 45px;
     font-style: normal;
     font-weight: 400;
     margin-left: 15px; 
@@ -199,4 +194,13 @@
 }
 .color_{
     color: #25283D;
+}
+
+.adaptflag_ img{
+    margin-top: 10px;
+    width: 80px; 
+    position: relative;
+}
+.adaptflag_ span{
+
 }
