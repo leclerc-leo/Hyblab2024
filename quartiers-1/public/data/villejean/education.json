@@ -3,7 +3,7 @@
         "speaker": "guide",
         "type": "bubble",
         "choicesLabel": [],
-        "content": ["Nous voici devant Rosa Parks, l’unique collège du quartier 🏫.", "L’établissement accueille une section internationale britannique, une section bilingue anglais-arabe, une section sportive athlétisme ainsi que des sections ULIS et SEGPA.","Dis-moi, quelle est ta préoccupation concernant la scolarité ? As-tu des enfants ?"],
+        "content": ["Nous voici devant Rosa Parks, l’unique collège du quartier 🏫.", "${image_begin}education.jpg${image_end}","L’établissement accueille une section internationale britannique, une section bilingue anglais-arabe, une section sportive athlétisme ainsi que des sections ULIS et SEGPA.","Dis-moi, quelle est ta préoccupation concernant la scolarité ? As-tu des enfants ?"],
         "next": ["Choix1"]
     },
 

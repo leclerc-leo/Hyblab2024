@@ -19,7 +19,7 @@
         "speaker": "guide",
         "type": "bubble",
         "choicesLabel": [],
-        "content": ["Un petit rappel ne te fera pas de mal ! 😜","Le Centre Culturel Avicenne est un lieu emblématique au cœur de Villejean. C'est un espace dédié à la promotion de la culture arabe, de la tolérance et du dialogue interreligieux.","Tu y trouveras des opportunités pour enrichir ton esprit et t’engager avec la communauté.","Es-tu familier.ère avec l'origine du nom \"Avicenne\" et son importance dans l'histoire ? 📙"],
+        "content": ["Un petit rappel ne te fera pas de mal ! 😜","Le Centre Culturel Avicenne est un lieu emblématique au cœur de Villejean. C'est un espace dédié à la promotion de la culture arabe, de la tolérance et du dialogue interreligieux.","${image_begin}interculte.jpg${image_end}","Tu y trouveras des opportunités pour enrichir ton esprit et t’engager avec la communauté.","Es-tu familier.ère avec l'origine du nom \"Avicenne\" et son importance dans l'histoire ? 📙"],
         "next": ["Choix2"]
     },
     

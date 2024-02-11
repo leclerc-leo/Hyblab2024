@@ -3,7 +3,7 @@
         "speaker": "guide",
         "type": "bubble",
         "choicesLabel": [],
-        "content": ["Nous voilà arrivé au marché 🍎🍒🍅 !","Il a lieu chaque vendredi au pied des tours de la rue de Bourgogne. Il fait partie du paysage du quartier","D’ailleurs, sais-tu depuis quelle année il a lieu ?"],
+        "content": ["Nous voilà arrivé au marché 🍎🍒🍅 !","${image_begin}commerce.jpg${image_end}","Il a lieu chaque vendredi au pied des tours de la rue de Bourgogne. Il fait partie du paysage du quartier","D’ailleurs, sais-tu depuis quelle année il a lieu ?"],
         "next": ["Choix1"]
     },
 

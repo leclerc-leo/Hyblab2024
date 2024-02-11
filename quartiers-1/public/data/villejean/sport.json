@@ -3,7 +3,7 @@
         "speaker": "guide",
         "type": "bubble",
         "choicesLabel": [],
-        "content": ["Voici le stade Robert-Poirier ! C’est le stade d’athlétisme flambant neuf du quartier, inauguré en 2015, avec l’objectif, selon la ville de Rennes, d’offrir un équipement de pointe permettant d’accueillir des athlètes professionnels, amateurs et scolaires","Mais dis-moi, je te sens un peu inquièt.e ?"],
+        "content": ["Voici le stade Robert-Poirier ! C’est le stade d’athlétisme flambant neuf du quartier, inauguré en 2015, avec l’objectif, selon la ville de Rennes, d’offrir un équipement de pointe permettant d’accueillir des athlètes professionnels, amateurs et scolaires","${image_begin}sport.jpg${image_end}","Mais dis-moi, je te sens un peu inquièt.e ?"],
         "next": ["Choix1"]
     },
 

@@ -3,7 +3,7 @@
         "speaker": "guide",
         "type": "bubble",
         "choicesLabel": [],
-        "content": ["Bienvenue à la maison de quartier de Villejean ! Chaque semaine se réunissent des dizaines d’associations en ce lieu, c’est un endroit fort de la vie du quartier !","Ça te dirait d’y participer ? 🎉"],
+        "content": ["Bienvenue à la maison de quartier de Villejean ! Chaque semaine se réunissent des dizaines d’associations en ce lieu, c’est un endroit fort de la vie du quartier !","${image_begin}association.jpg${image_end}","Ça te dirait d’y participer ? 🎉"],
         "next": ["Choix1"]
     },
 

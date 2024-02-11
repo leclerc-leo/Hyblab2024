@@ -3,7 +3,7 @@
         "speaker": "guide",
         "type": "bubble",
         "choicesLabel": [],
-        "content": ["Nous voici devant la tour Bourbonnais 🏘️, à seulement quelques mètres de la station de métro JF Kennedy !","Oh je te sens inquiet.e, que se passe-t-il ?"],
+        "content": ["Nous voici devant la tour Bourbonnais 🏘️, à seulement quelques mètres de la station de métro JF Kennedy !","${image_begin}habitat.jpg${image_end}","Oh je te sens inquiet.e, que se passe-t-il ?"],
         "next": ["Choix1"]
     },
 
