@@ -1,7 +1,7 @@
 
 var popularTeam = [];
 
-function isInPopularTeam(playerId){
+function isInPopularTeam(playerId) {
     return popularTeam.some(player => player.id === playerId);
 }
 
@@ -164,10 +164,10 @@ const capture = async () => {
 
         // Création d'un canvas....
         const canvas = await html2canvas(elementToCapture);
-      
+
         // On en fait une image
         const imageDataUrl = canvas.toDataURL("image/png");
-        
+
         // Et on lance le téléchargement
         const link = document.createElement("a");
         link.href = imageDataUrl;
