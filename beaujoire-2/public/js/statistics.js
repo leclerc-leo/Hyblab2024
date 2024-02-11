@@ -44,11 +44,9 @@ document.addEventListener('DOMContentLoaded', function () {
         <img src="./img/field/field.svg" id="field-img" alt="field">
                         <img id="logo" class="field-jersey-img" src="./img/field/LOGO_APPLI.svg">`;
         // Mon équipe  :
-        await getSessionTokenValue();
         if (currentIndex === 0) {
             for (let i = 0; i < 12; i++) {
-                //console.log(globals.sessionToken);
-                let player = await globals.getPlayerStats(globals.tabVotes[i], i + 1,globals.sessionToken);
+                let player = await globals.getPlayerStats(globals.tabVotes[i], i + 1);
                 console.log(player);
 
                 let fieldPlayer = document.createElement('div');
@@ -59,15 +57,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 playerBox.classList.add("player-box");
 
                 let playerStats = document.createElement('p');
-                playerStats.innerText = `${player[0].ratio}%`;
+                playerStats.innerText = `${player.ratio}%`;
 
                 let imgPlayer = document.createElement('img');
-                imgPlayer.src = `${player[0].photo}`;
+                imgPlayer.src = `${player.photo}`;
                 imgPlayer.classList.add("player-img");
 
                 let playerName = document.createElement('p');
-                let firstLetter = player[0].prenom.charAt(0).toUpperCase();
-                playerName.innerText = `${firstLetter}.${player[0].nom}`;
+                let firstLetter = player.prenom.charAt(0).toUpperCase();
+                playerName.innerText = `${firstLetter}.${player.nom}`;
 
                 // one of the players is part of the popular team :
                 if (isInPopularTeam(globals.tabVotes[i])) {

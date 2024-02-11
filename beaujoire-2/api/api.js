@@ -79,12 +79,11 @@ app.get('/votes', function (req, res) {
     });
 });
 
-app.get('/stats/:playerId/:positionId/:sessionToken', function (req, res) {
+app.get('/stats/:playerId/:positionId', function (req, res) {
     const playerId = req.params.playerId;
     const positionId = req.params.positionId;
-    const token = req.params.sessionToken;
 
-    dataUtils.getPlayerStats(positionId, playerId, token ,(err, playerStats) => {
+    dataUtils.getPlayerStats(playerId,positionId ,(err, playerStats) => {
         if (err) {
             console.error(err.message);
             res.status(500).json({ error: 'Internal Server Error' });
@@ -110,7 +109,7 @@ app.get('/stats/ratio/:playerId/:positionId', function (req, res) {
     });
 });
 
-app.get('/stats/top/:positionId', (req, res) => {
+app.get('/top/:positionId', (req, res) => {
     const positionId = req.params.positionId;
 
     dataUtils.getTop(positionId, (err, topPlayer) => {
