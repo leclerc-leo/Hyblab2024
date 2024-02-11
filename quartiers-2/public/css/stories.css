@@ -10,8 +10,8 @@ main{
     left: 0;
     width: 100%;
     height: 100%;
-
 }
+
 /* code propre à la page */
 #main-title-stories {
     margin-top: 4vh;
@@ -35,6 +35,7 @@ main{
     height: 100% !important;
     z-index: 6;
 }
+
 #mainSwiperHomeStories div{
     display: flex;
     flex-direction: column;
@@ -43,6 +44,7 @@ main{
     width: 100%;
     height: 100%;
 }
+
 #mainSwiperHomeStories .devanture{
     width: 100%;
     height: auto;
@@ -71,7 +73,6 @@ main{
     width: 100%;
 }
 
-
 /* the slides and the loader should fill the whole 9:16 zone */
 .swiper-wrapper section{
     width: 100%;
@@ -96,6 +97,22 @@ main{
     padding-top: 10%;
     padding-left: 10%;
     padding-right: 10%;
+}
+
+.swiper-slide .devanture-slide .fleche{
+    z-index: 100000;
+    position: absolute;
+    top: 4em;
+    width: 15%;
+    right: 10%;
+}
+
+.swiper-slide .devanture-slide .fleche-moulins{
+    z-index: 100000;
+    position: absolute;
+    top: 3.5em;
+    width: 15%;
+    right: 10%;
 }
 
 #recap_button{
