@@ -146,7 +146,7 @@ h1{
     position: relative;
     height: var(--guide-size);
     background-color: white;
-    box-shadow: 0px 4px 4px 0px #D3D3D3;
+    box-shadow: 0px 3px 10px 0px black;
     z-index: 4;
 }
 .topic-title{
@@ -234,10 +234,7 @@ h1{
 .conversation ul{
     list-style: none;
 }
-.conversation img{
-    width: 50%;
-    height: auto;
-}
+
 .rp_guide{
     display: flex;
     flex-direction: column;
@@ -436,7 +433,7 @@ h1{
 }
 .conversation_image{
     position: relative;
-    width: 90%;
+    width: 100%;
     height: auto;
     margin: 5px;
     border-radius: 10px;
@@ -549,13 +546,13 @@ body{
 }
 
 /* The content is displayed at 9/16 If the aspect ratio is higher that 9/16  */ 
-@media screen and (max-aspect-ratio: 9/16) {
+@media screen and (max-aspect-ratio: 9/18) {
     #container{
         margin-left: 0; /* reset left margin */
         width: 100vw;   /* content is full width */
-        margin-top: calc(-50 * 16vw / 9); /* move the content half the height to the top */
+        margin-top: calc(-50 * 18vw / 9); /* move the content half the height to the top */
         top:50%; /* then center it ! */
-        height: calc(100 * 16vw / 9); /* adjust height so that aspect ratio is 9/16 */
+        height: calc(100 * 18vw / 9); /* adjust height so that aspect ratio is 9/16 */
     }
 
     /* We set a default font size here. It will be the base for all other font sizes */

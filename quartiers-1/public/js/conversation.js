@@ -53,11 +53,12 @@ function addBubble(speaker, contents) {
         "${lieu}": data["Lieux"][nextTopic],
         "${video_begin}": "<iframe class=\"videos\" src=\"",
         "${video_end}": "\" title=\"YouTube video player\" frameborder=\"0\"></iframe>",
-        "${image_begin}": "<img class=\"conversation_image\" src=\"img/images_conversation/" + quartier.toLocaleLowerCase() + "/",
-        "${image_end}": "\">",
+        "${image_begin}": "<div style='width:200px'><img class=\"conversation_image\" src=\"img/images_conversation/" + quartier.toLocaleLowerCase() + "/",
+        "${image_end}": "\"></div>",
         "${lien_video_begin}": "<a class=\"lien-conv\" href=\"./reportages\">",
         "${lien_video_end}": "</a>",
-        "${lien_plus}": '<a href="./interview">En savoir plus ...</a>'
+        "${lien_portrait_begin}": "<a class=\"lien-conv\" href=\"./interview\">",
+        "${lien_portrait_end}": "</a>"
     }
 
     if (speaker == "user") {
