@@ -71,10 +71,22 @@ import { Podium } from '../components/type';
       const isTime = /h|'|''|s/.test(Score);
       return isTime ? "Temps : " : "Score : ";
     };
-  
+
+    const getResultatLabel = (resultat: string) => {
+      const isTime = /h|'|''|\ds/.test(resultat);
+      const isPoints = /point(s)?/.test(resultat);
+      if (isTime) {
+        return "en " + resultat;
+      } else if (isPoints) {
+        return "avec " + resultat;
+      } else {
+        return resultat;
+      }
+    };
+
     return (
       <div className="frame2Container">
-        <div className="titreFrame2">{athlete} termine {rang}e avec {resultat}</div>
+        <div className="titreFrame2">{athlete} termine {rang}e {getResultatLabel(resultat)}</div>
         {podium.slice(0, 3).map((entry: Podium, index: number) => {
           const rectangleClass = index === 0 ? "rectangleYellowFrame2" : index === 1 ? "rectangleBlueFrame2" : "rectangleRedFrame2";
           const infoFrameClass = index === 0 ? "infoFrame2" : index === 1 ? "infoFrame2_2" : "infoFrame3_2";
