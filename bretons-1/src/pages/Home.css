@@ -5,13 +5,14 @@
   border-radius: 5%;
   padding: 0;
 }
-@media (max-height: 700px) {
+
+@media screen and (min-width: 368px) {
   .main_app .app {
-    width: 65%;
+    max-width: 237px; /* Limitez la largeur maximale de l'image à 367 pixels */
+    width: auto; /* Ajustez la largeur automatiquement en fonction de la hauteur */
   }
 }
-
-@media (min-width: 470px) {
+@media (max-height: 700px) {
   .main_app .app {
     width: 65%;
   }
@@ -68,4 +69,5 @@
 .app .carousel{
   margin-top: 0px;
 }
+
 
