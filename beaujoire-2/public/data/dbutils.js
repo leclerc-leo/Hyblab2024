@@ -33,7 +33,7 @@ dataUtils.selectPlayer = function(idPlayer, callback) {
             callback(err, null);
         } else {
             console.log('selectPlayer(idPlayer = ' + idPlayer + '): \n', rows, '\n\n');
-            callback(null, rows);
+            callback(null,rows);
         }
     });
 };
