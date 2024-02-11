@@ -188,25 +188,26 @@ function updateCardJersey() {
 	console.log("Relative path:", relativePath);
 	// Ajoutez le chemin relatif au chemin absolu de la page
 
-	switch (selectedMaillot) {
-		case "/img/maillot/maillot-00-01.png":
+	switch (relativePath) {
+		case "img/maillots/maillot-00-01.png":
 			cardJersey = "img/cardJerseys/card_jersey00-01.svg";
 			break;
-		case "img/maillot/maillot-12-13.png":
+		case "img/maillots/maillot-12-13.png":
 			cardJersey = "img/cardJerseys/card_jersey12-13.svg";
 			break;
-		case "img/maillot/maillot-21-22.png":
+		case "img/maillots/maillot-21-22.png":
 			cardJersey = "img/cardJerseys/card_jersey21-22.svg";
 			break;
-		case "img/maillot/maillot-84-85.png":
+		case "img/maillots/maillot-84-85.png":
 			cardJersey = "img/cardJerseys/card_jersey84-85.svg";
 			break;
-		case "img/maillot/maillot-94-95.png":
+		case "img/maillots/maillot-94-95.png":
 			cardJersey = "img/cardJerseys/card_jersey94-95.svg";
 			break;
 		default:
 			cardJersey = "img/cardJerseys/card_jersey00-01.svg";
 	}
+	console.log("Card Jersey:", cardJersey);
 	localStorage.setItem("cardJersey", cardJersey);
 }
 document.addEventListener("DOMContentLoaded", async () => {
