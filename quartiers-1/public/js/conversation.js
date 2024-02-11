@@ -57,7 +57,8 @@ function addBubble(speaker, contents) {
         "${image_end}": "\">",
         "${lien_video_begin}": "<a class=\"lien-conv\" href=\"./reportages\">",
         "${lien_video_end}": "</a>",
-        "${lien_plus}": '<a href="./interview">En savoir plus ...</a>'
+        "${lien_portrait_begin}": "<a class=\"lien-conv\" href=\"./interview\">",
+        "${lien_portrait_end}": "</a>"
     }
 
     if (speaker == "user") {
