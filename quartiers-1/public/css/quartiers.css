@@ -234,10 +234,7 @@ h1{
 .conversation ul{
     list-style: none;
 }
-.conversation img{
-    width: 50%;
-    height: auto;
-}
+
 .rp_guide{
     display: flex;
     flex-direction: column;
@@ -436,7 +433,7 @@ h1{
 }
 .conversation_image{
     position: relative;
-    width: 90%;
+    width: 100%;
     height: auto;
     margin: 5px;
     border-radius: 10px;
