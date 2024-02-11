@@ -37,7 +37,7 @@ import { Podium } from '../components/type';
     const getFlagSrc = (pays: string) => {
         switch (pays) {
             case 'France': return frSvg;
-            case 'Allemand': return allemagneSvg;
+            case 'Allemagne': return allemagneSvg;
             case 'Etat-Unis': return usSvg;
             case 'Angleterre': return AngleterreSvg;
             case 'Danemark': return DanemarkSvg;
