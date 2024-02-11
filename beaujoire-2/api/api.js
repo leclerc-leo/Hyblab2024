@@ -14,6 +14,18 @@ app.get('/topic', function ( req, res ) {
     res.json({'topic':topic});
 } );
 
+// get all players
+app.get('/players', function (req, res) {
+    dataUtils.selectPlayers((err, players) => {
+        if (err) {
+            console.error(err.message);
+            res.status(500).json({ error: 'Internal Server Error' });
+        } else {
+            console.log('all votes retrieved successfully.');
+            res.status(200).json({ success: true, 'players' : players });
+        }
+    });
+});
 // Modify the endpoint to use the asynchronous function
 app.get('/players/:positionId', function (req, res) {
   const positionId = req.params.positionId;
@@ -39,7 +51,7 @@ app.get('/player/:playerId', function (req, res) {
 
 });
 
-app.post('/saveVotes', function (req, res) {
+app.post('/votes/saveVotes', function (req, res) {
     const token = req.body.token;
     const votes = req.body.votes;
 
@@ -55,11 +67,24 @@ app.post('/saveVotes', function (req, res) {
     });
 });
 
-app.post('/stats/:playerId/:positionId', function (req, res) {
+app.get('/votes', function (req, res) {
+    dataUtils.selectVotes((err, votes) => {
+        if (err) {
+            console.error(err.message);
+            res.status(500).json({ error: 'Internal Server Error' });
+        } else {
+            console.log('all votes retrieved successfully.');
+            res.status(200).json({ success: true, 'votes' : votes });
+        }
+    });
+});
+
+app.get('/stats/:playerId/:positionId/:sessionToken', function (req, res) {
     const playerId = req.params.playerId;
     const positionId = req.params.positionId;
+    const token = req.params.sessionToken;
 
-    dataUtils.getPlayerStats(positionId, playerId, (err, playerStats) => {
+    dataUtils.getPlayerStats(positionId, playerId, token ,(err, playerStats) => {
         if (err) {
             console.error(err.message);
             res.status(500).json({ error: 'Internal Server Error' });
@@ -70,20 +95,44 @@ app.post('/stats/:playerId/:positionId', function (req, res) {
     });
 });
 
-app.get('/api/top/:positionId', (req, res) => {
+app.get('/stats/ratio/:playerId/:positionId', function (req, res) {
+    const playerId = req.params.playerId;
     const positionId = req.params.positionId;
 
-    dataUtils.getTop(positionId, (err, topPlayers) => {
+    dataUtils.getStats(positionId, playerId, (err, ratio) => {
         if (err) {
             console.error(err.message);
             res.status(500).json({ error: 'Internal Server Error' });
         } else {
-            console.log('Top players retrieved successfully.');
-            // If there is a first row, return it; otherwise, return an empty object
-            const responseData = firstRow ? { success: true, topPlayer: firstRow } : { success: true, topPlayer: {} };
-            res.status(200).json(responseData);
+            console.log('Player ratio retrieved successfully.');
+            res.status(200).json({ success: true, 'playerRatio' : ratio });
         }
     });
+});
+
+app.get('/stats/top/:positionId', (req, res) => {
+    const positionId = req.params.positionId;
+
+    dataUtils.getTop(positionId, (err, topPlayer) => {
+        if (err) {
+            console.error(err.message);
+            res.status(500).json({ error: 'Internal Server Error' });
+        } else {
+            console.log('Top player retrieved successfully.');
+            res.status(200).json({ success: true, 'topPlayer' : topPlayer });
+        }
+    });
+});
+
+app.get('/get-session-token', (req, res) => {
+    // Access session token from cookies
+    const sessionToken = req.cookies.sessionToken;
+    if (sessionToken) {
+        // Do something with the sessionToken
+        res.status(200).json({ 'sessionToken': sessionToken });
+    } else {
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
 });
 
 // Export our API
