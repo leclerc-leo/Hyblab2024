@@ -1,16 +1,16 @@
 
 var popularTeam = [];
-window.addEventListener('load', function() {
-    function FetchPopularTeam(){
-      for (let i = 0; i <= 11; i++) {
-          let player = globals.getTopPlayer(i+1);
-          console.log(player);
-          popularTeam.push(player);
-      }
+window.addEventListener('load', function () {
+    function FetchPopularTeam() {
+        for (let i = 0; i <= 11; i++) {
+            let player = globals.getTopPlayer(i + 1);
+            console.log(player);
+            popularTeam.push(player);
+        }
     }
 });
 
-function isInPopularTeam(playerId){
+function isInPopularTeam(playerId) {
     return popularTeam.some(player => player.id === playerId);
 }
 
@@ -46,22 +46,22 @@ document.addEventListener('DOMContentLoaded', function () {
         <img src="./img/field/field.svg" id="field-img" alt="field">
                         <img id="logo" class="field-jersey-img" src="./img/field/LOGO_APPLI.svg">`;
         // Mon équipe  :
-        if (currentIndex === 0){
-            for( let i = 0 ; i < 12 ; i++){
-                let player = globals.getPlayerStats(globals.tabVotes[i],i+1);
+        if (currentIndex === 0) {
+            for (let i = 0; i < 12; i++) {
+                let player = globals.getPlayerStats(globals.tabVotes[i], i + 1);
                 console.log(player);
                 let playerBox = document.createElement('div');
-                playerBox.setAttribute("id",`poste-${i+1}`);
+                playerBox.setAttribute("id", `poste-${i + 1}`);
                 playerBox.classList.add("field-player");
                 let playerStats = document.createElement('p');
-                playerStats.innerText=`${player[0].ratio}`;
+                playerStats.innerText = `${player[0].ratio}`;
                 let imgPlayer = document.createElement('img');
-                imgPlayer.src =`${player[0].photo}`;
+                imgPlayer.src = `${player[0].photo}`;
                 let playerName = document.createElement('p');
                 let firstLetter = player[0].prenom.charAt(0).toUpperCase();
                 playerName.innerText = `${firstLetter}.${player[0].name}`;
                 // one of the players is part of the popular team :
-                if (isInPopularTeam(player[0].id)){
+                if (isInPopularTeam(player[0].id)) {
                     imgPlayer.classList.add('majeur');
                     playerStats.style.color = "#F7EF24";
                 }
@@ -73,12 +73,12 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         } else {
             // L'équipe Majoritaire  :
-            for( let i = 0 ; i < 12 ; i++){
+            for (let i = 0; i < 12; i++) {
                 let playerBox = document.createElement('div');
-                playerBox.setAttribute("id",`poste-${i+1}`);
+                playerBox.setAttribute("id", `poste-${i + 1}`);
                 playerBox.classList.add("field-player");
                 let imgPlayer = document.createElement('img');
-                imgPlayer.src =`${popularTeam[i].photo}`;
+                imgPlayer.src = `${popularTeam[i].photo}`;
                 let playerName = document.createElement('p');
                 let firstLetter = popularTeam[i].prenom.charAt(0).toUpperCase();
                 playerName.innerText = `${firstLetter}.${popularTeam[i].name}`;
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
 
-           
+
         teamField.innerHTML = `
         <img src="./img/field/field.svg" id="field-img" alt="field">
                         <img id="logo" class="field-jersey-img" src="./img/field/LOGO_APPLI.svg">
@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         <div class="field-player" id="poste-12"><div class="player-box"><p> 10% </p><img class="player-img ${majeur}" src="./img/players/placeholder-img.jpg" ><p>R.RIOU</p></div></div>
             
 `;
-            teamContainer.appendChild(teamField);
+        teamContainer.appendChild(teamField);
     }
 
     function updateHeader(currentIndex) {
@@ -162,10 +162,10 @@ const capture = async () => {
 
         // Création d'un canvas....
         const canvas = await html2canvas(elementToCapture);
-      
+
         // On en fait une image
         const imageDataUrl = canvas.toDataURL("image/png");
-        
+
         // Et on lance le téléchargement
         const link = document.createElement("a");
         link.href = imageDataUrl;
