@@ -13,20 +13,49 @@ function page_accueil() {
 	divTitle.style.paddingTop = "6vh";
 	divTitle.style.paddingLeft = "4vw";
 
+	const imgPoingLeve = document.createElement("img");
+	imgPoingLeve.id = "imgPoingLeve";
+	imgPoingLeve.src = "./Image/Poing_leve.svg";
+	imgPoingLeve.style.width = "8vw";
+	imgPoingLeve.style.paddingRight = "3vw";
+	imgPoingLeve.style.rotate = "-20deg";
+
+	const imgPouceLeve = document.createElement("img");
+	imgPouceLeve.id = "imgPouceLeve";
+	imgPouceLeve.src = "./Image/Pouce_leve.svg";
+	imgPouceLeve.style.width = "9vw";
+	imgPouceLeve.style.paddingBottom = "6vh";
+	imgPouceLeve.style.paddingLeft = "4vw";
+	imgPouceLeve.style.rotate = "-30deg";
+
 	const title = document.createElement("h1");
 	title.style.fontSize = "9vh";
 	title.innerHTML = "supportez";
+
 	title.style.width = "87%";
+	title.style.textAlign = "center";
 	title.style.textTransform = "uppercase";
+
+	const titleContainer = document.createElement("div");
+    titleContainer.style.display = "flex";
+    titleContainer.style.alignItems = "center";
+	titleContainer.style.marginRight = "10vw";
+
+	titleContainer.appendChild(imgPoingLeve);
+	titleContainer.appendChild(title);
+	titleContainer.appendChild(imgPouceLeve);
 
 	const subtitle = document.createElement("h2");
 	subtitle.style.textTransform = "uppercase";
 	subtitle.innerHTML = "les athlètes bretons !";
+	subtitle.style.textAlign = "center";
+	subtitle.style.color = "#E20917";
+	subtitle.style.rotate = "-5deg";
 	subtitle.style.fontSize = "6vh";
 	subtitle.style.width = "87%";
 	subtitle.style.marginTop = "-10px";
 
-	divTitle.appendChild(title);
+	divTitle.appendChild(titleContainer);
 	divTitle.appendChild(subtitle);
 	
 	blank.appendChild(divTitle);
@@ -140,6 +169,12 @@ function page_sport(){
 		}
 
 		div.appendChild(iframe);
+
+		div.style.cursor = "pointer";
+
+		// iframe.onclick = async () => {
+		// 	await page_historique(sport);
+		// }
 
 		const button = document.createElement("button");
 		button.classList.add("btn");
@@ -399,14 +434,15 @@ async function page_historique(sport) {
 	const listeAthletes = {}
 	
 	try {
-	  const response = await fetch("./JSON/data.json");
+	  const response = await fetch("./JSON/Athlètes.json");
 	  if (!response.ok) {
 		throw new Error(`Erreur de réseau (statut ${response.status})`);
 	  }
   
 	  const data = await response.json();
+	  console.log(data);
 	  for (const [titleAthlete, athleteData] of Object.entries(data)) {
-		if (athleteData.discipline === sport) {
+		if (athleteData.Sport === sport) {
 			listeAthletes[titleAthlete] = athleteData;
 		  	console.log(athleteData); // pour tester
 		}
@@ -464,12 +500,13 @@ async function page_historique(sport) {
 		const divNomAthlete = document.createElement("div");
 		divNomAthlete.style.backgroundColor = "#141456";
 		divNomAthlete.style.cursor = "pointer";
+		divNomAthlete.style.marginBottom = "2vh";
 
 		const nomAthlete = document.createElement("h1");
 		nomAthlete.style.color = "white";
 		nomAthlete.style.borderTop = "1px solid black";
 
-		imgAthlete.src = uniqueAthlete.illustration;
+		imgAthlete.src = uniqueAthlete.Illustration;
     	imgAthlete.alt = uniqueAthleteName;
 
 		nomAthlete.innerHTML = `${uniqueAthleteName}`;
@@ -514,12 +551,13 @@ async function page_historique(sport) {
 			const divNomAthlete = document.createElement("div");
 			divNomAthlete.style.backgroundColor = "#141456";
 			divNomAthlete.style.cursor = "pointer";
+			divNomAthlete.style.marginBottom = "2vh";
 
 			const nomAthlete = document.createElement("h1");
 			nomAthlete.style.color = "white";
 			nomAthlete.style.borderTop = "1px solid black";
 
-			imgAthlete.src = athlete.illustration;
+			imgAthlete.src = athlete.Illustration;
 			imgAthlete.alt = athleteName;
 
 			nomAthlete.innerHTML = `${athleteName}`;
@@ -554,8 +592,6 @@ function page_athlete(athlete,listeAthletes, isFirtAthlete) {
     retour.onclick = () => {
         page_sport();
     }
-
-		
 		console.log(athlete)
     
     blank.appendChild(retour);
@@ -565,7 +601,7 @@ function page_athlete(athlete,listeAthletes, isFirtAthlete) {
     divDetails.classList.add("details-athlete");
 
     const imgAthlete = document.createElement("img");
-    imgAthlete.src = athlete.photo;
+    imgAthlete.src = athlete.Photo;
     imgAthlete.alt = athlete.nom;
 		imgAthlete.className = "img_at_pg_at"
 		const imgdiv = document.createElement("div");
@@ -579,31 +615,31 @@ function page_athlete(athlete,listeAthletes, isFirtAthlete) {
     prenomAthlete.textContent = athlete.nom.split(" ")[1];
 		prenomAthlete.style = "color:red;font-size:58px"
 
-		const ele_fleche = document.createElement("img");
-		ele_fleche.src = "./Image/fleche-3.svg"
-		ele_fleche.className = "ele_fleche"
-		const ele_sardine = document.createElement("img");
-		ele_sardine.src = "./Image/sardine.svg"
-		ele_sardine.className = "ele_sardine"
+		// const ele_fleche = document.createElement("img");
+		// ele_fleche.src = "./Image/fleche-3.svg"
+		// ele_fleche.className = "ele_fleche"
+		// const ele_sardine = document.createElement("img");
+		// ele_sardine.src = "./Image/sardine.svg"
+		// ele_sardine.className = "ele_sardine"
 
 
 		const nomdiv = document.createElement("div");
 		nomdiv.className = "nom_div_pg_at"
 		nomdiv.appendChild(nomAthlete)
 		nomdiv.appendChild(prenomAthlete)
-		nomdiv.appendChild(ele_fleche)
-		nomdiv.appendChild(ele_sardine)
+		// nomdiv.appendChild(ele_fleche)
+		// nomdiv.appendChild(ele_sardine)
 
 		
 
     const ageAthlete = document.createElement("p");
-    ageAthlete.textContent = `Âge : ${athlete.age}`;
+    ageAthlete.textContent = `Âge : ${athlete.Age}`;
 
     const lieuNaissance = document.createElement("p");
-    lieuNaissance.textContent = `Lieu de naissance : ${athlete.lieuDeNaissance}`;
+    lieuNaissance.textContent = `Ville d'origine : ${athlete.VilleOrigine}`;
 
     const disciplineAthlete = document.createElement("p");
-    disciplineAthlete.textContent = `Discipline : ${athlete.discipline}`;
+    disciplineAthlete.textContent = `Discipline : ${athlete.Sport}`;
 
 		const img_post = document.createElement("img")
 		img_post.src = "./Image/poste.svg"
@@ -619,12 +655,11 @@ function page_athlete(athlete,listeAthletes, isFirtAthlete) {
 		img_club.src = "./Image/club.svg"
 		img_club.style = "width:30px;float:left;margin-right:20px"
     const clubAthlete = document.createElement("p");
-    clubAthlete.textContent = `Club : ${athlete.club}`;
+    clubAthlete.textContent = `Club : ${athlete.Club}`;
 		const div_club = document.createElement("div")
 		div_club.className = "box_p_c"
 		div_club.appendChild(img_club)
 		div_club.appendChild(clubAthlete)
-
 		
 
     const bioAthlete = document.createElement("p");
@@ -706,10 +741,218 @@ document.getElementById("credits").onclick = () => {
 	page_credits();
 }
 
-function page_actualite() {
+async function fetchAndProcessActuData() {
+
+	const listeVideo = {}
+	
+	try {
+	  const response = await fetch("./JSON/actu.json");
+	  if (!response.ok) {
+		throw new Error(`Erreur de réseau (statut ${response.status})`);
+	  }
+  
+	  const data = await response.json();
+	  for (const [numero, videos] of Object.entries(data)) {
+		  listeVideo[numero] = videos;
+		  console.log(videos); // pour tester
+	  }
+	} catch (error) {
+	  console.error("Une erreur s'est produite lors de la récupération des vidéos :", error);
+	}
+	
+	return listeVideo
+}
+
+async function page_actualite() {
+
+	const listeVideoActu = await fetchAndProcessActuData();
+	console.log(listeVideoActu);
 
 	const blank = document.querySelector("#blank");
 	blank.innerHTML = "";
+
+	const retour = document.createElement("img");
+	retour.src = "./Image/bouton-back.svg";
+	retour.alt = "retour";
+	retour.id = "retour";
+	retour.onclick = () => {
+		page_accueil();
+	}
+
+	blank.appendChild(retour);
+
+	const divTitle = document.createElement("div");
+	divTitle.id = "divTitle";
+	divTitle.style.height = "20vh";
+
+	const title = document.createElement("h1");
+	title.id = "titleActualite";
+	title.innerHTML = `les actualités`;
+
+	//title.style.fontWeight = "bold";
+	title.style.zIndex = "2";
+	title.style.textTransform = "uppercase";
+
+	divTitle.appendChild(title);
+	blank.appendChild(divTitle);
+
+	const swiperActu = document.createElement("div");
+	swiperActu.classList.add("Swiper2");
+	swiperActu.style.height = "35vh !important";
+	swiperActu.style.top = "50% "; 
+    swiperActu.style.left = "50%"; 
+    swiperActu.style.transform = "translate(-2vw, 8vh)";
+
+
+
+	const swipperActuWrapper = document.createElement("div")
+	swipperActuWrapper.classList.add("swiper-wrapper")
+
+	swiperActu.appendChild(swipperActuWrapper);
+	blank.appendChild(swiperActu);
+
+	for (const [videoKey, videoPath] of Object.entries(listeVideoActu)) {
+		console.log(`Chargement de la vidéo ${videoKey} depuis ${videoPath}`);
+
+		const slide = document.createElement("div");
+		slide.classList.add("swiper-slide");
+		// slide.style.height = "40%";
+		// //slide.style.width = "50%";
+		// slide.style.float = "left"
+		// slide.style.marginRight = "10px";
+		// slide.style.marginTop = "15vh";
+		// slide.style.backgroundColor = "#FBCB5D";
+
+		const video = document.createElement("video");
+
+		console.log(`Création de l'élément vidéo pour ${videoKey}`);
+	
+		const div = document.createElement("div");
+		div.style.display = "flex";
+		div.style.flexDirection = "column";
+		div.style.justifyContent = "center";
+		div.style.alignItems = "center";
+		div.style.height = "100%";
+
+		// video.src = videos[${}];
+		// video.autoplay = true;
+		// video.controls = true;
+		video.controlsList = "nodownload";
+		video.style.height = "100%";
+
+		const sourceMP4 = document.createElement("source");
+		sourceMP4.src = videoPath;
+		sourceMP4.type = 'video/mp4';
+
+		const sourceWebM = document.createElement("source");
+		sourceWebM.src = videoPath.replace("mp4", ".webm");
+		sourceWebM.type = 'video/webm';
+
+		video.appendChild(sourceMP4);
+		video.appendChild(sourceWebM);
+
+		video.oncanplay = ()=>{
+			console.log(`La vidéo ${videoKey} est prête à être lue.`);
+			video.style.cursor = "pointer";
+			const playButton = document.createElement("button");
+			const playButtonImage = document.createElement("img");
+			playButtonImage.src = "./Image/picto-button-video/play.svg";
+			playButtonImage.alt = "Play"; 
+			playButton.appendChild(playButtonImage);
+
+			playButton.style.backgroundColor = "transparent";
+			playButton.style.border = "none";
+			playButton.style.cursor = "pointer";
+
+			playButtonImage.style.width = "30px"; 
+			playButtonImage.style.height = "30px";
+
+			playButton.style.border = "none"; 
+			playButton.style.cursor = "pointer"; 
+			playButton.style.position = "absolute"; 
+			playButton.style.top = "50%"; 
+			playButton.style.left = "50%"; 
+			playButton.style.transform = "translate(-50%, -50%)";
+
+			let isPlaying = false;
+
+			playButton.addEventListener("click", function () {
+				playButton.style.opacity = 1;
+
+				if (!isPlaying) {
+					video.play();
+					playButtonImage.src = "./Image/picto-button-video/pause.svg";
+
+					isPlaying = true;
+
+					playButton.classList.add("fade-out");
+
+					setTimeout(function () {
+						playButton.style.opacity = 0; 
+					}, 1000);
+				} else {
+					playButtonImage.src = "./Image/picto-button-video/play.svg"; 
+					video.pause();
+
+					isPlaying = false;
+				}
+			});
+
+			video.addEventListener("click", function () {
+				playButton.style.opacity = 1;
+
+				if (isPlaying) {
+					playButtonImage.src = "./Image/picto-button-video/play.svg"; 
+					video.pause();
+
+					isPlaying = false;
+				}
+				else {
+					playButtonImage.src = "./Image/picto-button-video/pause.svg"; 
+					video.play();
+
+					isPlaying = true;
+
+					playButton.classList.add("fade-out");
+			
+					setTimeout(function () {
+						playButton.style.opacity = 0; 
+					}, 1000);
+				}
+			});
+
+			video.appendChild(sourceMP4);
+			video.appendChild(sourceWebM);
+			div.appendChild(video);
+			div.appendChild(playButton);
+			slide.appendChild(div);
+			swipperActuWrapper.appendChild(slide);
+
+			console.log(`Vidéo ${videoKey} ajoutée à la page.`);
+
+		}
+	}
+
+	const divPagination = document.createElement("div");
+	divPagination.classList.add("swiper-pagination");
+	divPagination.classList.add("pagin");
+
+	swiperActu.appendChild(divPagination);
+
+	const swiperActuInstance = new Swiper('.Swiper2', {
+		direction: 'horizontal',
+		//loop: true,
+		mousewheel: true,
+		//touch: true,
+		slidesPerView: 3,
+		//centeredSlides: true,
+		slidesOffsetBefore: 28, 
+    	slidesOffsetAfter: 28, 
+		pagination: {
+			el: ".swiper-pagination",
+			clickable: true,
+		},
+	});
 
 }
 
@@ -718,9 +961,140 @@ function page_credits() {
 	const blank = document.querySelector("#blank");
 	blank.innerHTML = "";
 
+	const retour = document.createElement("img");
+	retour.src = "./Image/bouton-back.svg";
+	retour.alt = "retour";
+	retour.id = "retour";
+	retour.onclick = () => {
+		console.log("retour");
+		page_accueil();
+	}
+
+	blank.appendChild(retour);
+
+	const divTitle = document.createElement("div");
+	divTitle.id = "divTitle";
+
+	const title = document.createElement("h1");
+	title.classList.add("title");
+	title.innerHTML = "LES CRÉDITS \n<span style='font-size:6vh'!important> HYBLAB<span style='color:#E20917'> 2024<span><span>";
+	//title.style.fontWeight = "bold";
+	title.style.fontSize = "7vh";
+	title.style.zIndex = "2";
+	title.style.position = "absolute";
+
+
+	divTitle.appendChild(title);
+	blank.appendChild(divTitle);
+
+
+	
+	const divSwipper = document.createElement("div");
+	divSwipper.classList.add("credswiper");
+	divSwipper.classList.add("swiper");
+
+
+	const divSwipperWrapper = document.createElement("div");
+	divSwipperWrapper.classList.add("swiper-wrapper");
+
+	divSwipper.appendChild(divSwipperWrapper);
+
+
+	["Nicolas","Salomé","Yeltaz","Kevin","Hugo","Isis","Hulduz","Titouan","Nathan","Aymen","Yiyang"].forEach(membre => {
+
+		const slide = document.createElement("div");
+		slide.classList.add("swiper-slide");
+	
+		const div = document.createElement("div");
+		div.style.display = "flex";
+		div.style.flexDirection = "column";
+		div.style.justifyContent = "center";
+		div.style.alignItems = "center";
+		div.style.height = "100%";
+
+		const iframe = document.createElement("iframe");
+		
+		iframe.setAttribute("frameborder", "0");
+		iframe.setAttribute("allowfullscreen", "");
+
+		switch (membre) {
+			case "Nicolas":
+				iframe.setAttribute("src", "Image/picto-members/nicolas-hyb.svg");
+				break;
+			case "Salomé":
+				iframe.setAttribute("src", "Image/picto-members/salome-hyb.svg");
+				break;
+			case "Yeltaz":
+				iframe.setAttribute("src", "Image/picto-members/yeltaz-hyb.svg");
+				break;
+			case "Kevin":
+				iframe.setAttribute("src", "Image/picto-membres/kevin-hyb.svg");
+				break;
+			case "Hugo":
+				iframe.setAttribute("src", "Image/picto-membres/hugo-hyb.svg");
+				break;
+			case "Isis":
+				iframe.setAttribute("src", "Image/picto-membres/isis-hyb.svg");
+				break;
+			case "Hulduz":
+				iframe.setAttribute("src", "Image/picto-membres/hulduz-hyb.svg");
+				break;
+			case "Titouan":
+				iframe.setAttribute("src", "Image/picto-membres/titouan-hyb.svg");
+				break;
+			case "Nathan":
+				iframe.setAttribute("src", "Image/picto-membres/nathan-hyb.svg");
+				break;
+			case "Aymen":
+				iframe.setAttribute("src", "Image/picto-membres/aymen-hyb.svg");
+				break;
+			case "Yiyang":
+				iframe.setAttribute("src", "Image/picto-membres/yiyang-hyb.svg");
+				break;
+			default:
+				break;
+		}
+
+		div.appendChild(iframe);
+
+		const Nomsmembres = document.createElement("div");
+		Nomsmembres.style.color = "black";
+		Nomsmembres.style.fontFamily = "Antonio";
+		Nomsmembres.style.fontSize = "4vh";
+		Nomsmembres.style.fontWeight = "bold";
+		Nomsmembres.style.cursor = "pointer";
+		Nomsmembres.style.width = "100%";
+		Nomsmembres.style.textAlign = "center";
+		Nomsmembres.style.textTransform = "uppercase";
+		Nomsmembres.innerHTML = `${membre}`;
+
+		div.appendChild(Nomsmembres);
+	
+		slide.appendChild(div);
+	
+		divSwipperWrapper.appendChild(slide);
+
+		let swiperpagination = document.createElement("div");
+		swiperpagination.classList.add("swiper-pagination");
+		swiperpagination.classList.add("petitpoints");
+		divSwipper.appendChild(swiperpagination);
+
+		blank.appendChild(divSwipper);
+
+		const swiper = new Swiper('.credswiper', {
+			// Optional parameters
+			direction: 'horizontal',
+			loop: true,
+		  
+			// If we need pagination
+			pagination: {
+			  el: '.swiper-pagination',
+			},
+		  });
+
+	});
+
 }
 
 //const modal = document.getElementById("modal");modal.addEventListener()
-page_historique("Handball");
-
-
+page_accueil();

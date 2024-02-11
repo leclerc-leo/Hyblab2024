@@ -1,26 +1,27 @@
 {
     "Enzo Le Fée" : {
         "age" : 21,
+        "genre" : "H",
         "lieuDeNaissance" : "Lorient",
         "discipline" : "Football",
         "club" : "Stade Rennais",
         "poste" : "Milieu de terrain",
         "illustration" : "./Image/IllustrationsJoueurs/illu-enzo-lefee-hyb.svg",
-        "photo" : "https://cdn-apps.letelegramme.fr/files/outils/2023/05/LE-FEE-Enzo-PH2-6776.JPG",
-        "bio" : ""
+        "photo" : "https://cdn-apps.letelegramme.fr/files/outils/2023/05/LE-FEE-Enzo-PH2-6776.JPG"
     },
     "Pauline Coatanea" : {
         "age" : 30,
+        "genre" : "F",
         "lieuDeNaissance" : "Saint-Renan",
         "discipline" : "Handball",
         "club" : "Brest Bretagne Handball Club",
         "poste" : "",
         "illustration" : "./Image/IllustrationsJoueurs/illu-pauline-coatanéa-hyb.svg",
-        "photo" : "https://cdn-apps.letelegramme.fr/files/outils/2023/05/COATANEA-Pauline-PH2-6776.JPG",
-        "bio" : "La Renanaise faisait partie de l'aventure aux Jeux Olympiques de Tokyo, où les Bleues ont remporté leur premier titre olympique. Finaliste de la Ligue des champions avec Brest la même année, la Bretonne devra relever le défi de revenir au niveau à temps pour les Jeux de Paris après son congé maternité."
+        "photo" : "https://cdn-apps.letelegramme.fr/files/outils/2023/05/COATANEA-Pauline-PH2-6776.JPG"
     },
     "Romain Lagarde" : {
         "age" : 26,
+        "genre" : "H",
         "lieuDeNaissance" : "Lorient",
         "discipline" : "Handball",
         "club" : "Aix",
@@ -31,6 +32,7 @@
     },
     "Jenia Grebennikov" : {
         "age" : 33,
+        "genre" : "H",
         "lieuDeNaissance" : "Rennes",
         "discipline" : "Volley-ball",
         "club" : "Zenith St Pétersbourg",

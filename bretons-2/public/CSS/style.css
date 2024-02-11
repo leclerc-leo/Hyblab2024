@@ -25,7 +25,7 @@ nav {
 
 #menu-modal{
     position: absolute;
-    width: 8vh;
+    width: 7vh;
     height: 10%;
     padding-left: 2rem;
     cursor: pointer;
@@ -48,7 +48,7 @@ nav img {
     position: absolute;
     left: 5%;
     z-index: 3;
-    width: 3.5rem;
+    width: 5vh;
     cursor: pointer;
     top:12.5%;
 }
@@ -63,6 +63,14 @@ nav img {
 .title {
     width: 50%;
     text-align: center;
+    font-family: 'Antonio', sans-serif;
+    font-size: 6vh;
+    font-weight: 400;
+}
+#titleActualite {
+    width: 60%;
+    text-align: center;
+    padding-left: 8vw;
     font-family: 'Antonio', sans-serif;
     font-size: 6vh;
     font-weight: 400;
@@ -110,13 +118,13 @@ footer {
 
 .modal-dialog{
     margin:0!important;
+    max-width: 65% !important;
     width: 75%!important;
     height: 50%;
 }
 
 .modal-content{
     height: 100%;
-    padding-left: 1.5vh;
     font-weight: 600;
 }
 
@@ -125,13 +133,13 @@ footer {
     padding: 0!important;  
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly; 
+    justify-content: space-around; 
 }
 
 #modal-header{
-    padding-top: 2vh;
-    padding-left: 4vh;
-    padding-right: 4vh;
+    padding-top: 0;
+    padding-left: 4vw;
+    padding-right: 4vw;
     padding-bottom: 4vh;
     display: flex;
     justify-content: space-between;
@@ -142,10 +150,10 @@ footer {
 }
 
 .modal-activite{
-    padding-top : 1rem;
-    padding-left : 1rem;
-    padding-bottom : 1rem;
-    margin-bottom:2rem;
+    padding-top : 2vh;
+    padding-left : 1vw;
+    padding-bottom : 2vh;
+    margin-bottom:2vh;
     background-color: white;
 }
 #actu, #credits {
@@ -312,5 +320,16 @@ button:focus, button:active {
     margin-left : 26% ; 
     width : 50% ; 
     font-size : 30px;  
+}
+
+/* page crédit */
+
+.credswiper {
+    overflow-y : hidden;
+
+}
+
+.petitpoint {
+    position: absolute!important;
 }
   
