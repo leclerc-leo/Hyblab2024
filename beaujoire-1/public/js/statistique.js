@@ -84,7 +84,10 @@ function initializePage() {
 			}
 		}
 		const captain = localStorage.getItem("captain");
-
+		if (captain) {
+			isCaptainBeingSelected = true;
+			handleCaptainSelect(captain);
+		}
 		document.getElementById("statistiques").style.display = "inline-block";
 		document.getElementById("redac").style =
 			"margin:0 ; transform: translateX(0)";
@@ -113,7 +116,7 @@ let players = JSON.parse(localStorage.getItem("players")) || {
 function handleCaptainClick() {
 	isCaptainBeingSelected = true;
 	if (isCaptainSelected) {
-		const capElements = document.querySelectorAll(".cap");
+		const capElements = document.querySelectorAll(".capi");
 		capElements.forEach((element) => {
 			element.remove();
 		});
@@ -139,7 +142,7 @@ function handleCaptainSelect(id) {
 		const selectedPlayer = id;
 		const selectedPlayerElement = document.getElementById(selectedPlayer);
 		const captain = document.createElement("div");
-		captain.classList.add("cap");
+		captain.classList.add("capi");
 		captain.innerHTML = `
 		c
 	`;

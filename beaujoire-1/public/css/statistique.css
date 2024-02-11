@@ -161,3 +161,21 @@
 	top: 17%;
 	left: 55%;
 }
+
+.capi {
+	position: absolute;
+	top: -24%;
+	left: -30%;
+	padding: 20%;
+	aspect-ratio: 1;
+	background: white;
+	border-radius: 50%;
+	color: #00a55a;
+	font-weight: bolder;
+	font-size: 1.4em;
+	text-align: center;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
