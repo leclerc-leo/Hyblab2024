@@ -7,7 +7,7 @@ setTimeout(() => {
   // and send it to the back (z-index = -1)
   localStorage.clear();
   anime({
-    delay: 100,
+    delay: 6500,
     targets: '#motion',
     opacity: '0',
     'z-index' : -1,

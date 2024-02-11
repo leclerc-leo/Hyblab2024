@@ -101,7 +101,7 @@ main{
     z-index: 6;
     margin-top: 5%;
     width:100%;
-    background-color: #F8E8DB;
+    background-color: #FCF3EC;
     font-size: 20%;
     border-top: 2px solid black;
     cursor: pointer;
@@ -117,7 +117,7 @@ main{
     padding: 3%;
 }
 #recap_button div img{
-    width: 15%;
+    width: 10%;
 }
 #recap_button div p{
     color: black;
@@ -137,7 +137,6 @@ main{
     z-index: 6;
     margin-top: 5%;
     width:100%;
-    background-color: #F8E8DB;
     font-size: 20%;
     border-top: 2px solid black;
     cursor: pointer;
