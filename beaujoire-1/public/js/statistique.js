@@ -59,7 +59,7 @@ function initializePage() {
 				playerElementdiv + playerElement.innerHTML;
 		} else {
 			const playerElementdiv = `
-			<img src="./img/jersey.svg" alt="jersey" />
+			<img src="./img/coach.svg" alt="jersey" />
 		   <p class="player-name">${playerName}</p>
 			`;
 			playerElement.innerHTML =
