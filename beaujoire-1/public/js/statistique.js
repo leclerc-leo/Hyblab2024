@@ -202,7 +202,7 @@ function updateVotePercentages() {
 		);
 		const playerPosition = playerData.POSTE;
 		const totalVotesForPosition = totalVotesPerPosition[playerPosition];
-		const playerPercentage = (playerVotes / totalVotesForPosition) * 100;
+		const playerPercentage = Math.round((playerVotes / totalVotesForPosition) * 100);
 		playerPercentages[player] = playerPercentage;
 	}
 
@@ -232,7 +232,7 @@ function updateVotePercentages() {
 			}
 			// Mettez à jour le pourcentage affiché
 			percentageDisplay.textContent =
-				playerPercentages[player].toFixed(2) + "%";
+				playerPercentages[player] + "%";
 			barElem.querySelector(
 				".player1-bar"
 			).style.width = `${playerPercentages[player]}%`;
