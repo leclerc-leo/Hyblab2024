@@ -7,9 +7,20 @@ document.addEventListener('DOMContentLoaded', function () {
   const positions = ['Gardien', 'Arrière droit', 'Arriere gauche', 'Défenseur central 1', 'Défenseur central 2', 'Milieu défensif', 'Milieu gauche', 'Milieu offensif', 'Attaquant 1', 'Milieu droit', 'Attaquant 2', 'Sélectionneur'];
   let playerSwiper;
 
+  async function getPlayersByPosition(positionId) {
+    try {
+      const response = await fetch(`/beaujoire-2/api/players/${positionId}`);
+      const data = await response.json();
+      return data.players;
+    } catch (error) {
+      console.error('Error fetching players:', error);
+      return [];
+    }
+  }
+
   async function fetchData(positionId) {
     try {
-      const players = await globals.getPlayersByPosition(positionId);
+      const players = await getPlayersByPosition(positionId);
       updatePlayerListContent(`playerList${positionId}`, players, positionId);
     } catch (error) {
       console.error('Error fetching data:', error);
