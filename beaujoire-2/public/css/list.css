@@ -45,21 +45,22 @@ body{
     max-width: 100%;
     display: flex;
     height: 100%;
+    align-items: center;
+    justify-content: center;
   }
   
   .player-box img {
-    margin-top: 5%;
     margin-left: 5%;
-    width: 0.7em;
-    height: 0.7em;
+    width: 25%;
+    height: 85%;
     border-radius: 0.09em;
     max-width: 100%;
     object-fit: cover;
   }
   
-  .player-box p {
+  .name-desc p {
     flex: 1;
-    margin-top: 4%;
+    padding: 10% 10%;
     text-align: center;
     color: white;
     font-family: "Abolition";
@@ -69,11 +70,12 @@ body{
   .heart-button {
     background: url(../img/COEUR1.svg) no-repeat center center;
     background-size: contain;
-    width: 8%;
+    width: 10%;
     margin-right: 5%;
     margin-left: 9%;
     border: none;
     cursor: pointer;
+    height: 30%;
   }
   
   /* Styling for the pressed state of the heart button */
@@ -87,12 +89,19 @@ body{
     cursor: pointer;
   }
 
-  .down-slider {
-    background: url("../img/fleche_correction.svg") no-repeat center center;
+  .name-desc{
+    padding: 0 10% 0 10%;
+    display: flex;
+    width: 50%;
+  }
+
+  .name-desc .down-slider {
+    background: url(../img/fleche_correction.svg) no-repeat center center;
     background-size: contain;
-    width: 4%;
+    width: 10%;
     border: none;
     cursor: pointer;
+    margin-left: -1%;
   }
   
   /* Styling for the footer */

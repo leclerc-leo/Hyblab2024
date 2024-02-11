@@ -7,9 +7,20 @@ document.addEventListener('DOMContentLoaded', function () {
   const positions = ['Gardien', 'Arrière droit', 'Arriere gauche', 'Défenseur central 1', 'Défenseur central 2', 'Milieu défensif', 'Milieu gauche', 'Milieu offensif', 'Attaquant 1', 'Milieu droit', 'Attaquant 2', 'Sélectionneur'];
   let playerSwiper;
 
+  async function getPlayersByPosition(positionId) {
+    try {
+      const response = await fetch(`/beaujoire-2/api/players/${positionId}`);
+      const data = await response.json();
+      return data.players;
+    } catch (error) {
+      console.error('Error fetching players:', error);
+      return [];
+    }
+  }
+
   async function fetchData(positionId) {
     try {
-      const players = await globals.getPlayersByPosition(positionId);
+      const players = await getPlayersByPosition(positionId);
       updatePlayerListContent(`playerList${positionId}`, players, positionId);
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -25,8 +36,10 @@ document.addEventListener('DOMContentLoaded', function () {
       playerBox.classList.add('player-box');
       playerBox.innerHTML = `
         <img src="${player.photo}" >
+        <div class = "name-desc">
         <p>${player.prenom} ${player.nom}</p>
         <button class="down-slider" data-type="downslide"></button>
+        </div>
         <button class="heart-button" data-type="heart"></button>
       `;
 
@@ -100,9 +113,9 @@ document.addEventListener('DOMContentLoaded', function () {
   function downSlide(button, playerBox){
     if (button.dataset.type === 'downslide') {
       const imagePlayer = playerBox.children[0];
-      const name = playerBox.children[1];
+      const name = playerBox.children[1].children[0];
       const heart = playerBox.children[2];
-      const slider = playerBox.children[3];
+      const slider = playerBox.children[1].children[1];
     
       imagePlayer.style["display"] = "none";
       name.style["display"] = "none";

@@ -5,6 +5,8 @@ const dataUtils = {};
 params :
     - idPlayer : id du joueur dans la base de données
 */
+
+
 dataUtils.selectPlayer = function(idPlayer, callback) {
     db.all(`
         SELECT
@@ -33,7 +35,7 @@ dataUtils.selectPlayer = function(idPlayer, callback) {
             callback(err, null);
         } else {
             console.log('selectPlayer(idPlayer = ' + idPlayer + '): \n', rows, '\n\n');
-            callback(null, rows);
+            callback(null,rows);
         }
     });
 };
