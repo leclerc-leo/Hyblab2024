@@ -19,15 +19,16 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 
-    function updateTeamContent(teamId,currentIndex) {
+    function updateTeamContent(teamId, currentIndex) {
         const teamContainer = document.getElementById(teamId);
         teamContainer.innerHTML = '';
 
         let majeur = (currentIndex === 1) ? 'majeur' : '';
         /* Change the content of the next team here */
 
-            const teamField = document.createElement('div');
+        const teamField = document.createElement('div');
         teamField.classList.add('team-field-container');
+        teamField.id = "capturable";
         teamField.innerHTML = `
         <img src="./img/field/field.svg" id="field-img" alt="field">
                         <img id="logo" class="field-jersey-img" src="./img/field/LOGO_APPLI.svg">
@@ -46,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         <div class="field-player" id="poste-12"><div class="player-box"><p> 10% </p><img class="player-img ${majeur}" src="./img/players/placeholder-img.jpg" ><p>R.RIOU</p></div></div>
             
 `;
-            teamContainer.appendChild(teamField);
+        teamContainer.appendChild(teamField);
     }
 
     function updateHeader(currentIndex) {
@@ -73,19 +74,48 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         if (currentIndex === 1) {
-            teamPreviewContainer.appendChild(Header); }
-            teamPreviewContainer.appendChild(currentHeader);
-        if (currentIndex === 0){
-            teamPreviewContainer.appendChild(Header);}
+            teamPreviewContainer.appendChild(Header);
+        }
+        teamPreviewContainer.appendChild(currentHeader);
+        if (currentIndex === 0) {
+            teamPreviewContainer.appendChild(Header);
+        }
 
     }
 
 
 
     function updateContent(currentIndex) {
-        updateTeamContent(`field${currentIndex + 1}`,currentIndex)
+        updateTeamContent(`field${currentIndex + 1}`, currentIndex)
         updateHeader(currentIndex);
     }
 
     updateContent(0);
 });
+
+
+const capture = async () => {
+    try {
+        const elementToCapture = document.getElementById("field1");
+
+        // Création d'un canvas....
+        const canvas = await html2canvas(elementToCapture);
+      
+        // On en fait une image
+        const imageDataUrl = canvas.toDataURL("image/png");
+        
+        // Et on lance le téléchargement
+        const link = document.createElement("a");
+        link.href = imageDataUrl;
+        link.download = "screenshot.png";
+
+        // On crée un lien invisible que l'on clique avant de le supprimer
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    } catch (error) {
+        console.error("Error: ", error);
+    }
+};
+
+document.getElementById("partage").addEventListener("click", capture);
