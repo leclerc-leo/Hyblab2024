@@ -25,7 +25,7 @@
     flex-shrink: 0;
     background: #FACD5F;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     position: relative;
     left: -277vw;
     transition: left 1s ease-in-out;
@@ -54,7 +54,6 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-top: 15px;
     margin-left: 25px;
 }
 
@@ -69,7 +68,7 @@
     line-height: 30px;
 }
 .flagFrame2 {
-    padding-top: 10px;
+    margin-top: 10px;
 }
 .flagFrame2 img { 
     width: 80px; 
@@ -90,20 +89,17 @@
     height: 300px;
     background: #5F64FA; 
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
     position: relative;
     left: -249vw;
     transition: left 1s ease-in-out;
 }
 
+
 .numberCircleFrame_2_2 {
-    width: 175px; 
-    height: auto;
-    position: absolute;
-    left: 30px;
-    top: 50%;
-    transform: translateY(-50%);
+    width: 170px; 
+    height: auto; 
+    margin-top: 20px;
 }
 
 .infoFrame2_2 {
@@ -112,8 +108,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding-right: 80px;
-    margin-top: 25px;
+    margin-left: 25px;
 }
 
 .name_2_Frame2 {
@@ -122,23 +117,24 @@
 }
 
 .time_2_Frame2 {
-    font-size: 35px;
+    font-size: 40px;
     font-weight: 400;
     line-height: 30px;
 }
 
 .flag_2_Frame2 img { 
-    width: 90px; 
+    margin-top: 10px;
+    width: 80px; 
     position: relative;
 }
 
 .country_2_Frame2 {
     position: absolute;
-    padding-top: 28px; 
-    font-size: 40px;
+    padding-top: 15px; 
+    font-size: 45px;
     font-style: normal;
     font-weight: 400;
-    margin-left: 0px; 
+    margin-left: 10px; 
 }
 
 
