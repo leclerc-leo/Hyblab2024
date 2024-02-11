@@ -7,6 +7,18 @@ document.addEventListener('DOMContentLoaded', function () {
   const positions = ['Gardien', 'Arrière droit', 'Arriere gauche', 'Défenseur central 1', 'Défenseur central 2', 'Milieu défensif', 'Milieu gauche', 'Milieu offensif', 'Attaquant 1', 'Milieu droit', 'Attaquant 2', 'Sélectionneur'];
   let playerSwiper;
 
+  /** 
+    // Function to extract query parameters from the URL
+    function getQueryParam(name) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(name);
+    }
+  
+    // Retrieve the positionId from the query parameter
+    const positionId = getQueryParam('position');
+    console.log(positionId)
+**/
+
   async function getPlayersByPosition(positionId) {
     try {
       const response = await fetch(`/beaujoire-2/api/players/${positionId}`);
@@ -20,12 +32,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
   async function fetchData(positionId) {
     try {
+      console.log('Fetching data for position:', positionId);
       const players = await getPlayersByPosition(positionId);
       updatePlayerListContent(`playerList${positionId}`, players, positionId);
     } catch (error) {
       console.error('Error fetching data:', error);
     }
   }
+
 
   function updatePlayerListContent(playerListId, players, positionId) {
     const playerListContainer = document.getElementById(playerListId);
@@ -85,7 +99,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function handleSwiperEvents() {
     let currentPositionIndex = 0;
-
     playerSwiper = new Swiper('.player-swiper-container', {
       loop: false,
       on: {
@@ -103,6 +116,7 @@ document.addEventListener('DOMContentLoaded', function () {
       fetchData(newPositionId);
       updatePositions(this.activeIndex);
     });
+
   }
   function updateContent(currentIndex) {
     const newPositionId = currentIndex + 1;
@@ -257,32 +271,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  
-/*
-  async function getPlayersByPosition(positionId) {
-    try {
-      const response = await fetch(`/beaujoire-2/api/players/${positionId}`);
-      console.log('Full response:', response); // Log the full response
-      const data = await response.json();
-      console.log('Parsed JSON data:', data); // Log the parsed JSON data
-      return data.players;
-    } catch (error) {
-      console.error('Error fetching players:', error);
-      return [];
-    }
-  }
-  
-  // Define an async function to use 'await'
-  async function fetchData() {
-    const positionId = 1; // Replace with the desired position ID
-    const players = await getPlayersByPosition(positionId);
-    console.log(players);
-    // Handle the fetched players here
-  }
-  fetchData();*/
-
-
+  updateContent(0)
   handleSwiperEvents();
-  updateContent(0);
 
 });

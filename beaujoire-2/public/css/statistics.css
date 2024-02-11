@@ -135,63 +135,63 @@ background-color: var(--bg-green);
 #poste-1 { /* Gardien */
     top: 87%;
     left: 45%;
-    width: 15%;
+    width: 13%;
 }
 
 #poste-2 { /* Arrière latéral droit */
     top: 58%;
-    left: 8%;
+    left: 6%;
 }
 
 #poste-3 { /* Arrière latéral gauche */
     top: 58%;
-    left: 80%;
+    left: 78%;
 }
 
 #poste-4 { /* Défenseur central 1 */
     top: 70%;
-    left: 28%;
+    left: 26%;
 }
 
 #poste-5 { /* Défenseur central 2 */
     top: 70%;
-    left: 59%;
+    left: 57%;
 }
 
 #poste-6 { /* Milieu défensif */
     top: 47%;
-    left: 28%;
+    left: 26%;
 }
 
 #poste-7 { /* Milieu gauche */
     top: 35%;
-    left: 8%;
+    left: 6%;
 }
 
 #poste-8 { /* Milieu offensif */
     top: 47%;
-    left: 59%;
+    left: 57%;
 }
 
 #poste-9 { /* Attaquant 1 */
     top: 24%;
-    left: 28%;
+    left: 26%;
 }
 
 #poste-10 { /* Milieu droit */
     top: 35%;
-    left: 80%;
+    left: 78%;
 }
 
 #poste-11 { /* Attaquant 2 */
     top: 24%;
-    left: 59%;
+    left: 57%;
 }
 
 #poste-12 { /* Sélectionneur */
     width: 14%;
     top: 8%;
-    left: 45%;
+    left: 43%;
 }
 
 
@@ -289,6 +289,39 @@ background-color: var(--bg-green);
 
 @media screen and (max-aspect-ratio: 3 / 4) {
 p { margin: 0 ;}
+
+    .player-box p {
+        font-size : 20% ;
+        font-weight : 50;
+        line-height: 1;
+        font-family : 'Abolition';
+        color : white;
+        text-align: center;
+        padding-left : 0% ;
+    }
+
+
+    .team-field-container {
+        height: calc(100 * 3.5% / 5);
+        width: calc(100 * 3.5% / 5);
+        margin-top : calc(1.5 *3%) ;
+    }
+
+    .player-img {
+        height: 9vmin;
+        width: 9vmin;
+        border-radius :10px ;
+        display: block;
+        margin-left: 15px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .field-player {
+        position: absolute;
+        width: 15%;
+        transform: translate(-50%, -50%);
+    }
 }
 /* Fill the whole viewport when its aspect ratio is between 9/16 and 3/4 */
 @media screen and (max-aspect-ratio: 5/7) {
@@ -311,7 +344,7 @@ p { margin: 0 ;}
         font-family : 'Abolition';
         color : white;
         text-align: center;
-        padding-left : 25% ;
+        padding-left : 0% ;
     }
 
 
@@ -401,7 +434,7 @@ p { margin: 0 ;}
     }
 
     .majeur {
-        border: 7px solid var(--yellow);
+        border: 4.5px solid var(--yellow);
     }
 }
 
@@ -428,7 +461,7 @@ p { margin: 0 ;}
         font-family : 'Abolition';
         color : white;
         text-align: center;
-        padding-left : 25% ;
+        padding-left : 0% ;
     }
 
 

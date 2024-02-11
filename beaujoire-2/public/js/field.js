@@ -1,3 +1,4 @@
+
 //import dataUtils from '../data/dataUtils.mjs';
 
 /*checks if the votes have been done
@@ -8,14 +9,37 @@ for (let i = 1; i <= 12; i++) {
   }
 }*/
 
-function redirectToPosition(positionId) {
-  const listUrl = `/beaujoire-2/list?position=${positionId}`;
-  window.location.href = listUrl;
-}
 
 
 console.log(globals.tabVotes);
+let sessionToken ;
+document.addEventListener('DOMContentLoaded', function () {
+  async function getSessionToken() {
+    sessionToken = await globals.getSessionToken();
+    console.log(sessionToken);
+  }
+  getSessionToken();
 
+  function navigateToListPage(positionId) {
+    // Redirect to the list page with the positionId as a query parameter
+    window.location.href = `/beaujoire-2/list?position=${positionId}`;
+  }
+
+  function addClickEventToJerseys() {
+    // Add click event listeners to each jersey
+    for (let i = 1; i <= 12; i++) {
+      const jersey = document.getElementById(`poste-${i}`);
+      jersey.addEventListener('click', () => {
+        const positionId = i;
+        navigateToListPage(positionId);
+      });
+    }
+  }
+
+  // Call the function to add click events to jerseys
+  addClickEventToJerseys();
+
+});
 /************* Archives *************/
 function checkVotes() {
   const archivesButton = document.getElementById('archives');
@@ -160,9 +184,8 @@ checkprogress();
 /************* Vote progression display  **************/
 
 /************* Finalize votes  **************/
-document.getElementById('statistiques').addEventListener('click',() => {
+document.getElementById('statistiques').addEventListener('click',async () => {
   // Access the sessionToken passed from the server
-  const sessionToken = globals.getSessionToken();
   globals.saveVotes(sessionToken, globals.tabVotes);
   window.location.href = '/beaujoire-2/statistics';
 
