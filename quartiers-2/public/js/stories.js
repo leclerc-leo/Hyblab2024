@@ -227,9 +227,11 @@ const homeStories = function () {
           document.body.appendChild(leafletJS);
           document.body.appendChild(recapCSS);
 
-          // Execute the recapPage function after the Leaflet JS script has loaded
+          // Execute the recapPage function after the Leaflet JS script has loaded and the CSS has been added
           leafletJS.onload = function() {
-              recapPage();
+            // on attend 1 seconde
+            setTimeout((() => {}), 1000);
+            recapPage();
           };
         });
     });
