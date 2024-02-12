@@ -676,6 +676,7 @@ svg.image-histoire, svg.image-jo{
 .image-titre{
     max-width: 40%;
 }
+/*
 #mouvement-video{
     width: 50%;
     height: 41%;
@@ -684,8 +685,19 @@ svg.image-histoire, svg.image-jo{
     justify-content: center;
     top: 30%;
     z-index: 2;
-    /* right: 50%; */
     left: 25%;
+}
+*/
+#mouvement-video{
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 48%;
+    z-index: 2;
+    right: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(57.5%);
 }
 .categorie_mouvement{
     display: flex;
