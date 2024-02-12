@@ -1188,7 +1188,10 @@ svg {
 }
 
 .clicked {
+  -webkit-filter : brightness(0.5);
   filter: brightness(0.5);
+  -webkit-backdrop-filter: brightness(0.5);
+  backdrop-filter: brightness(0.5);
 }
 
 .blured {
