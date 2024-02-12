@@ -1,5 +1,5 @@
 import React from 'react';
-import videoPath from '/bretons-1/img/animation/Composition 1.mp4';
+import videoPath from '/img/animation/Composition 1.mp4';
 import './Frame8.css';
 
 
