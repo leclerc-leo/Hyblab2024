@@ -42,12 +42,14 @@ app.get('/player/:playerId', function (req, res) {
 
     dataUtils.selectPlayer(playerId, (err, playerContent) => {
         if (err) {
-            console.error(err.message);
+            console.error('Error in selectPlayer:', err);
             res.status(500).json({ error: 'Internal Server Error' });
         } else {
+            console.log('Player Content:', playerContent);
             res.json({ 'player': playerContent });
         }
     });
+
 
 });
 

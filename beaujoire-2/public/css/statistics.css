@@ -16,6 +16,14 @@ body{
     overflow: hidden;
 }
 
+
+/* the slides and the loader should fill the whole 9:16 zone */
+.swiper-wrapper section, #loader{
+    background-color: var(--green);
+    width: 100%;
+    height: 100%;
+}
+
 #return {
     left : 5% ;
     cursor: pointer;
@@ -374,67 +382,67 @@ p { margin: 0 ;}
     #poste-1 { /* Gardien */
         top: 87%;
         left: 49%;
-        width: 13%;
+        width: 14%;
     }
 
     #poste-2 { /* Arrière latéral droit */
         top: 58%;
-        left: 11%;
+        left: 12%;
     }
 
     #poste-3 { /* Arrière latéral gauche */
         top: 58%;
-        left: 83%;
+        left: 84%;
     }
 
     #poste-4 { /* Défenseur central 1 */
         top: 70%;
-        left: 31%;
+        left: 33%;
     }
 
     #poste-5 { /* Défenseur central 2 */
         top: 70%;
-        left: 62%;
+        left: 63%;
     }
 
     #poste-6 { /* Milieu défensif */
         top: 47%;
-        left: 32%;
+        left: 33%;
     }
 
     #poste-7 { /* Milieu gauche */
         top: 35%;
-        left: 11%;
+        left: 12%;
     }
 
     #poste-8 { /* Milieu offensif */
         top: 47%;
-        left: 62%;
+        left: 63%;
     }
 
     #poste-9 { /* Attaquant 1 */
         top: 24%;
-        left: 31%;
+        left: 32%;
     }
 
     #poste-10 { /* Milieu droit */
         top: 35%;
-        left: 83%;
+        left: 84%;
     }
 
     #poste-11 { /* Attaquant 2 */
         top: 24%;
-        left: 63%;
+        left: 64%;
     }
 
     #poste-12 { /* Sélectionneur */
         width: 14%;
         top: 8%;
-        left: 46%;
+        left: 48%;
     }
 
     .majeur {
-        border: 4.5px solid var(--yellow);
+        border: 4px solid var(--yellow);
     }
 }
 
@@ -485,6 +493,10 @@ p { margin: 0 ;}
         position: absolute;
         width: 15%;
         transform: translate(-50%, -50%);
+    }
+
+    .majeur {
+        border: 3px solid var(--yellow);
     }
 
     }

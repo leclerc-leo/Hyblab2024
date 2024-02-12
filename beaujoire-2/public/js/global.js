@@ -6,9 +6,11 @@ const globals = {} ;
 
 globals.tabVotes = JSON.parse(localStorage.getItem('votes')) ;
 
-if (globals.shown === undefined){
-    console.log("Here !");
-    globals.shown = false ;
+globals.shown = JSON.parse(localStorage.getItem('shown')) ;
+console.log(globals.shown)
+
+globals.setShown = function(value){
+    localStorage.setItem('shown', value.toString());
 }
 // Function to retrieve the session token from cookies
 globals.getSessionToken = async function() {
@@ -60,14 +62,31 @@ globals.getPlayersByPosition  = async function(positionId) {
 
 
 globals.getPlayersById = async function(playerId) {
-    try {
-        const response = await fetch(`/beaujoire-2/api/player/${playerId}`);
-        const data = await response.json();
-        return data.player;
-    } catch (error) {
-        console.error('Error fetching player:', error);
-        return [];
-    }
+    let retryCount = 10; // Number of retry attempts
+
+    do {
+        try {
+            const response = await fetch(`/beaujoire-2/api/player/${playerId}`);
+            const data = await response.json();
+
+            if (Object.keys(data.player).length !== 0) {
+                // Check if the response is not empty
+                return data.player;
+            }
+
+            // If the response is empty, log and retry
+            console.warn('Empty response received. Retrying...');
+        } catch (error) {
+            console.error('Error fetching player:', error);
+        }
+
+        // Decrement the retry count and wait for a short duration before retrying
+        retryCount--;
+        await new Promise(resolve => setTimeout(resolve, 1000));
+    } while (retryCount > 0);
+
+    console.error('Max retries reached. Unable to fetch non-empty player data.');
+    return null; // or handle accordingly
 }
 
 globals.saveVotes = async function(token, votes) {

@@ -12,6 +12,24 @@ for (let i = 1; i <= 12; i++) {
 
 
 console.log(globals.tabVotes);
+console.log(globals.shown);
+
+// Wait for the content to preload and display 1st slide
+// Here we simulate a loading time of one second
+setTimeout(() => {
+  // fade out the loader "slide"
+  // and send it to the back (z-index = -1)
+  anime({
+    delay: 100,
+    targets: '#loader',
+    opacity: '0',
+    'z-index' : -1,
+    easing: 'easeOutQuad',
+  });
+  // Init first slide
+}, 700);
+
+
 /************* Archives *************/
 function checkVotes() {
   const archivesButton = document.getElementById('archives');
@@ -60,6 +78,7 @@ if (globals.checkAllVotes(globals.tabVotes) && !(globals.shown)) {
         },
         1000
     )
+    globals.setShown(true);
     await getSessionTokenValue();
   });
 
@@ -84,36 +103,34 @@ document.querySelector("#info").addEventListener("click", function () {
 /************* Vote progression display  **************/
 
 
-function updateVote(fieldJersey,player){
-  // Create the picture element
-  const playerVotedDiv = document.createElement('div');
-  playerVotedDiv.classList.add('player-voted');
-
-  const playerImg = document.createElement('img');
-  playerImg.classList.add('player-img');
-
-  playerImg.src = `${player.photo}`;
-
-  const playerName = document.createElement('p');
-  let firstLetter = player.prenom.charAt(0).toUpperCase();
-  playerName.textContent = `${firstLetter}.${player.nom}`;
-
-  // Append elements to the player-voted div
-  playerVotedDiv.appendChild(playerImg);
-  playerVotedDiv.appendChild(playerName);
-
-
-  fieldJersey.replaceChild(playerVotedDiv, fieldJersey.firstChild);
-
-  fieldJersey.classList.add('voted');
-  // Change the href attribute
-  fieldJersey.href = 'javascript:void(0)';
-}
 
 async function fetchPlayerData(fieldJersey,playerId) {
   try {
-    const player = await globals.getPlayersById(playerId);
-    updateVote(fieldJersey,player);
+    await globals.getPlayersById(playerId).then( (player) => {
+      //update Vote :
+      // Create the picture element
+      const playerVotedDiv = document.createElement('div');
+      playerVotedDiv.classList.add('player-voted');
+
+      const playerImg = document.createElement('img');
+      playerImg.classList.add('player-img');
+
+      playerImg.src = `${player.photo}`;
+
+      const playerName = document.createElement('p');
+      let firstLetter = player.prenom.charAt(0).toUpperCase();
+      playerName.textContent = `${firstLetter}.${player.nom}`;
+
+      // Append elements to the player-voted div
+      playerVotedDiv.appendChild(playerImg);
+      playerVotedDiv.appendChild(playerName);
+
+      fieldJersey.replaceChild(playerVotedDiv, fieldJersey.firstChild);
+
+      fieldJersey.classList.add('voted');
+      // Change the href attribute
+      fieldJersey.href = 'javascript:void(0)';
+    });
   } catch (error) {
     console.error('Error fetching data:', error);
   }
@@ -146,7 +163,9 @@ document.addEventListener('DOMContentLoaded', async function () {
       fieldJersey.replaceChild(jerseyImg, fieldJersey.firstChild)
       fieldJersey.classList.remove('voted');
       // Change the href attribute
-      fieldJersey.href = 'list';
+      fieldJersey.href = 'list';/*
+      const swiper = document.querySelector('.player-swiper-container');
+      fieldJersey.addEventListener('click',function(){console.log("aledd: i+1");swiper.slideTo(i+1);});*/
     }
   }
 })
@@ -156,9 +175,10 @@ document.addEventListener('DOMContentLoaded', async function () {
 /************* Finalize votes  **************/
 document.getElementById('statistiques').addEventListener('click', () => {
   // Access the sessionToken passed from the server
-  globals.saveVotes(globals.sessionToken, globals.tabVotes);
-  window.location.href = '/beaujoire-2/statistics';
-
+  if (globals.checkAllVotes(globals.tabVotes) && !(globals.shown)){
+    globals.saveVotes(globals.sessionToken, globals.tabVotes);
+    window.location.href = '/beaujoire-2/statistics';
+  }
 })
 /************* Finalize votes  **************/
 

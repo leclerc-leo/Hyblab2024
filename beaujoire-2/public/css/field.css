@@ -6,6 +6,12 @@ body{
     font-family: sans-serif;
 }
 
+/* the slides and the loader should fill the whole 9:16 zone */
+.swiper-wrapper section, #loader{
+    background-color: var(--green);
+    width: 100%;
+    height: 100%;
+}
 
 #footer {
     display: flex;
@@ -130,7 +136,7 @@ body{
 }
 .player-voted {
     position: relative ;
-    left: 63%;
+    left: 59%;
     display: table-cell;
     vertical-align: middle;
     text-align: center;
@@ -367,6 +373,16 @@ body{
     .player-voted {
         position: relative ;
         left: 140%;
+    }
+
+    .player-img {
+        height: 10vmin;
+        width: 10vmin;
+        border-radius :10px ;
+        display: block;
+        margin-left: 15px;
+        margin-top: 5px;
+        margin-bottom: 5px;
     }
 
 }
