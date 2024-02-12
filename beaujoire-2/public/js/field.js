@@ -84,11 +84,11 @@ function updateVote(fieldJersey,player){
   const playerImg = document.createElement('img');
   playerImg.classList.add('player-img');
 
-  playerImg.src = `${player[0].photo}`;
+  playerImg.src = `${player.photo}`;
 
   const playerName = document.createElement('p');
-  let firstLetter = player[0].prenom.charAt(0).toUpperCase();
-  playerName.textContent = `${firstLetter}.${player[0].nom}`;
+  let firstLetter = player.prenom.charAt(0).toUpperCase();
+  playerName.textContent = `${firstLetter}.${player.nom}`;
 
   // Append elements to the player-voted div
   playerVotedDiv.appendChild(playerImg);
@@ -105,7 +105,7 @@ function updateVote(fieldJersey,player){
 async function fetchPlayerData(fieldJersey,playerId) {
   try {
     const player = await globals.getPlayersById(playerId);
-    console.log(player[0].nom);
+    console.log(player.nom);
     updateVote(fieldJersey,player);
   } catch (error) {
     console.error('Error fetching data:', error);

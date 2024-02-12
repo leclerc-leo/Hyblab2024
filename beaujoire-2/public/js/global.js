@@ -6,7 +6,8 @@ const globals = {} ;
 
 globals.tabVotes = JSON.parse(localStorage.getItem('votes')) ;
 
-if (!globals.shown){
+if (globals.shown === undefined){
+    console.log("Here !");
     globals.shown = false ;
 }
 // Function to retrieve the session token from cookies
