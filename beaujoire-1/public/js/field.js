@@ -1280,6 +1280,12 @@ function updateCompareOverlay(comparePlayer) {
 	const focusedPlayer = playersData.find(
 		(player) => player.NOM === focusedPlayerName
 	);
+	const compare_buts = document.querySelector("#compare-buts");
+	if (focusedPlayer.POSTE == "GARDIEN") {
+		compare_buts.textContent = "CLEANSHEET";
+	} else {
+		compare_buts.textContent = "BUTS";
+	}
 
 	//calculer total coupes
 	let focusedCoupes =
