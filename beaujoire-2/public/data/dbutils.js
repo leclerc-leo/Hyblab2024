@@ -22,6 +22,7 @@ dataUtils.selectPlayers = function (callback) {
 dataUtils.selectPlayer = function(idPlayer, callback) {
     db.get(`
         SELECT
+            J.id,
             nom,
             prenom,
             age,
