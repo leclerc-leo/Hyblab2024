@@ -204,6 +204,11 @@ h1{
     left: 5%;
     height: 175%;
     width: auto;
+    -webkit-position: absolute;
+    -webkit-bottom: 10%;
+    -webkit-left: 5%;
+    -webkit-height: 175%;
+    -webkit-width: auto;
 }
 #guide-walk{
     position: absolute;
@@ -211,6 +216,18 @@ h1{
     left: 5%;
     height: 175%;
     width: auto;
+}
+#guide-test{
+    position: absolute;
+    bottom: 10%;
+    right: 5%;
+    height: 200px;
+    width: auto;
+    -webkit-position: absolute;
+    -webkit-bottom: 10%;
+    -webkit-right: 5%;
+    -webkit-height: 200px;
+    -webkit-width: auto;
 }
 /*-------- End of Guide ----------*/
 
