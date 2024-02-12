@@ -83,6 +83,11 @@
     bottom: 0;
 }
 
+.main-stay .JeniaGrebennikov{
+    width: 100%;
+    left: -75px;
+}
+
 /* ========== First page ========== */
 
 .main-first .title{
@@ -161,7 +166,7 @@
 
 }
 
-.main-second .bol{
+.main-second .pictoMatch{
     width: 10%;
     bottom: 500px;
     position: absolute;

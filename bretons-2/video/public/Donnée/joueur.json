@@ -1,26 +1,27 @@
-{
-    "Romain Lagarde" : [
-            "le Lorientais de 30 ans a déjà  gagné le bronze aux derniers championnats du monde et d'Europe.",
-            "après des débuts à Nantes  avec qui il atteint la finale de la Ligue des Champions en 2018, Romain Lagarde a évolué deux saisons en Allemagne, avant de rejoindre le club d'Aix-en-Provence en 2021.",
-            "blessé à la cheville lors du tournoi qualificatif, son entraîneur Guillaume Gille explique qu'il a du \"s'adapter aux blessures\", mais que le joueur \"vient apporter sa polyvalence et sa qualité sur le poste\".",
-            "s'il est un pilier des Bleus depuis sa première sélection en 2017, Romain Lagarde n'a pour l'instant jamais remporté de médaille d'or avec les Bleus."
-        ],
-    "Pauline Coatanea" : [ 
-            "originaire de Saint-Renan (Finistère), Pauline Coatanéa fait ses gammes au Pôle Espoirs de Kerichen puis au centre de formation de l'Arvor 29, ancien nom du BBH.",
-            "lors de la saison 2017-2018, la joueuse bretonne Pauline Coatanéa est élue meilleure ailière droite du championnat de France.",
-            "en mars 2017, elle connaît sa première sélection en équipe de France face au Danemark, lors de la Golden League.",
-            "la bretonne sort d'une médaille d'argent avec les Bleuslors des derniers championnats d'Europe qui ont eu lieuau Danemark."
-        ],
-    "Enzo Le Fée" : [
-            "natif de Lorient, Enzo Le Fée rejoint les Merlus dès l'âge de 8 anspuis y signe son premier contrat pro en 2019",
-            "après avoir connu la montée avec Lorient, il fait ses débuts en Ligue 1 à 20 ans face à Strasbourg.",
-            "le Lorientais a fait ses débuts avec les Espoirs dans un match face à la Corée du Sud, et il va connaitre ses premiers JO.",
-            "Enzo Le Fée sort d'une saison complète au FC Lorient où il a contribué au maintien de son équipe dans l'élitegrâce à ses six passes décisives."
-        ],
-    "Jenia Grebennikov" : [
-        "natif de Rennes, il pratique conjointement le hockey sur glace et le volleyball dans sa jeunesse, avant de définitivement s'orienter versle volley, \"plus facile pour passer professionnel\" selon lui.",
-        "son père Boris Grebennikov est un ancien international soviétique de Volley, d'origine kazakhe. Il a été son coach à Rennes et l'a positonné en libéro en raison de sa taille.",
-        "considéré comme une référence à son poste, Jenia Grebennikov a notamment été élu meilleur libéro du championnat de france en 2011 et 2012, du championnat du monde en en 2014 ou des derniers JO en 2020.",
-        "malgré ses 1m88, Jenia Grebennikov est le deuxième plus petit joueur des Bleus derrière le passeur et capitaineBenjamin Toniutti."
-    ]
-}
+    {
+        "Romain Lagarde" : [
+                "le lorientais de 30 ans a déjà  gagné le bronze aux derniers championnats du monde et d'Europe.",
+                "Romain Lagarde a atteint la finale de la Ligue des Champions avec son club formateur : Nantes.",
+                "Le natif de Lorient a été formé au HBC Nantes avant de jouer 2 saisons en Allemagne, puis de rejoindre le PAUC.",
+                "blessé à la cheville lors du tournoi qualificatif, il a dû s'adapter aux blessures pour être prêt. ",
+                "pilier des Bleus depuis sa première sélection en 2017, Romain Lagarde est déterminé à remporter la médaille d'or."
+            ],
+        "Pauline Coatanea" : [ 
+                "originaire de Saint-Renan, elle fait ses gammes au Pôle Espoir de Kerichen puis au centre de formation de l'Arvor 29.",
+                "lors de la saison 2017-2018, la joueuse bretonne est élue meilleure ailière droite du Championnat de France.",
+                "en mars 2017, elle connaît sa première sélection en équipe de France face au Danemark.",
+                "elle sort d'une médaille d'argent avec les Bleus lors des derniers championnats d'Europe qui ont eu lieu au Danemark."
+            ],
+        "Enzo Le Fée" : [
+                "natif de Lorient, Enzo Le Fée rejoint les Merlus dès l'âge de 8 ans puis y signe son premier contrat pro en 2019",
+                "après avoir connu la montée avec Lorient, il fait ses débuts en Ligue 1 à 20 ans face à Strasbourg.",
+                "il a fait ses débuts avec les Espoirs dans un match face à la Corée du Sud, et il va connaitre ses premiers JO.",
+                "il sort d'une saison complète au FC Lorient où il a contribué au maintien de son équipe."
+            ],
+        "Jenia Grebennikov" : [
+                "natif de Rennes, il pratique conjointement le hockey sur glace et le volleyball dans sa jeunesse.",
+                "son père Boris Grebennikov est un ancien international soviétique de Volley, d'origine kazakhe.",
+                "considéré comme une référence à son poste, il a notamment été élu meilleur libéro.",
+                "malgré ses 1m88, il est le deuxième plus petit joueur des Bleus derrière le passeur et capitaine Benjamin Toniutti."
+            ]
+    }

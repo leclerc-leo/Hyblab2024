@@ -1,6 +1,5 @@
 import {Composition, staticFile} from 'remotion';
 import {HelloWorld} from './HelloWorld';
-import {Logo} from './HelloWorld/Logo';
 import {Video} from './Video';
 
 // Each <Composition> is an entry in the sidebar!
@@ -15,17 +14,16 @@ const calculateMetadata = async () => {
 	const dataJoueur = await fetch(staticFile('Donnée/joueur.json'));
 	const joueur = await dataJoueur.json();
 
-	let i = 0;
+	let i = match.length - 1; // Pour le dernier match
 
 	let intAnnecdoteJ = Math.floor(Math.random() * 4);
 	let intAnnecdoteE = Math.floor(Math.random() * 3);
+	let inpictoMatch = Math.floor(Math.random() * 2)+1;
+	let inpictoAthl = Math.floor(Math.random() * 2)+1;
+
 	let annecdoteMatch;
-	if (match[i].Victoire_Défaite === "V") {
-		annecdoteMatch = match[i].Anecdote_victoire;
-	}
-	else {
-		annecdoteMatch = match[i].Anecdote_défaite;
-	}
+	if (match[i].Victoire_Défaite === "V") annecdoteMatch = match[i].Anecdote_victoire;
+	else annecdoteMatch = match[i].Anecdote_défaite;
 
 	let annecdoteEquipe;
 	for (let e = 0; e < equipe.length; e++) {
@@ -46,6 +44,9 @@ const calculateMetadata = async () => {
 			annecdoteMatch : annecdoteMatch,
 			annecdoteAthl : joueur[match[i].Athlete][intAnnecdoteJ],
 			annecdoteCompet : annecdoteEquipe,
+			genre : match[i].Sexe,
+			pictoMatch : "pictoMatch"+inpictoMatch,
+			pictoAthl : "pictoAthl"+inpictoAthl,
 		},
 	};
 };
