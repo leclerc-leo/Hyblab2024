@@ -56,6 +56,7 @@ export const Frame4: React.FC<{ Gentilé: string, gain: string, Epreuve: string,
       elem!.style.visibility = 'visible';
       let stopImage: string = "";
       let start = false;
+      let decalageImage = 0;
       letters.forEach(function (letter, index_1) {
         if (letter == "_") {
           if (stopImage != "") {
@@ -64,7 +65,7 @@ export const Frame4: React.FC<{ Gentilé: string, gain: string, Epreuve: string,
             image.style.width = "110px";
             setTimeout(function () {
               elem?.appendChild(image);
-            }, delay_start + delay * index_1);
+            }, delay_start + delay * (index_1 - decalageImage));
             stopImage = "";
             start = false;
           } else {
@@ -73,10 +74,11 @@ export const Frame4: React.FC<{ Gentilé: string, gain: string, Epreuve: string,
         } else {
           if (start) {
             stopImage += letter;
+            decalageImage++;
           } else {
             setTimeout(function () {
               elem!.append(letter);
-            }, delay_start + delay * index_1);
+            }, delay_start + delay * (index_1 - decalageImage));
           }
         }
       });
