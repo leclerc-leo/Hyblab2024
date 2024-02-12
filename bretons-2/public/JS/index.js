@@ -99,7 +99,7 @@ function page_accueil() {
 
 	const imgDrapeau = document.createElement("img")
 	imgDrapeau.src = "./Image/drapeau.svg"
-	imgDrapeau.style.width = "30vw"
+	imgDrapeau.style.width = "20vw"
 
 	divDrapeau.appendChild(imgDrapeau)
 
@@ -108,11 +108,11 @@ function page_accueil() {
 	const divChaussure = document.createElement("div")
 	divChaussure.style.position = "absolute";
 	divChaussure.style.bottom = "12vh";
-	divChaussure.style.left = "70vw";
+	divChaussure.style.left = "50vw";
 
 	const imgChaussure = document.createElement("img")
 	imgChaussure.src = "./Image/chaussure.svg"
-	imgChaussure.style.width = "18vw"
+	imgChaussure.style.width = "14vw"
 
 	divChaussure.appendChild(imgChaussure)
 
