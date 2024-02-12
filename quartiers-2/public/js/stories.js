@@ -406,11 +406,11 @@ const homeStories = function () {
               document.activeElement.blur();
             });
           });
-          // Créer une instance de AudioPlayer pour chaque balise audio
-          document.querySelectorAll('.audio-player').forEach(audioPlayerElement => {
-              const audioElement = audioPlayerElement.querySelector('audio');
-              new AudioPlayer(audioElement, audioPlayerElement);
-          });
+        });
+        // Créer une instance de AudioPlayer pour chaque balise audio
+        document.querySelectorAll('.audio-player').forEach(audioPlayerElement => {
+            const audioElement = audioPlayerElement.querySelector('audio');
+            new AudioPlayer(audioElement, audioPlayerElement);
         });
       });
     }
