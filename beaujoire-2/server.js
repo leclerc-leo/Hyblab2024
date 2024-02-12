@@ -64,7 +64,7 @@ ui.get('/home', async (req, res) => {
     res.sendFile(path.join(__dirname, 'public/home.html'), {
         sessionToken,
         locals: {
-            pageName: 'Home'
+            pageName: 'Les Canards Rient'
         }
     });
 });

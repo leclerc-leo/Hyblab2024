@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const positions = ['Gardien', 'Arrière droit', 'Arriere gauche', 'Défenseur central 1', 'Défenseur central 2', 'Milieu défensif', 'Milieu gauche', 'Milieu offensif', 'Attaquant 1', 'Milieu droit', 'Attaquant 2', 'Sélectionneur'];
   let playerSwiper;
 
-  /** 
+  
     // Function to extract query parameters from the URL
     function getQueryParam(name) {
       const urlParams = new URLSearchParams(window.location.search);
@@ -15,11 +15,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   
     // Retrieve the positionId from the query parameter
-    const positionId = getQueryParam('position');
-    console.log(positionId)
-**/
+    const positionId = parseInt(getQueryParam('position')) -1;
+
 
   async function getPlayersByPosition(positionId) {
+    console.log(positionId);
     try {
       const response = await fetch(`/beaujoire-2/api/players/${positionId}`);
       const data = await response.json();
@@ -31,18 +31,22 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   async function fetchData(positionId) {
+    console.log('Fetching data for position:', positionId);
     try {
-      console.log('Fetching data for position:', positionId);
       const players = await getPlayersByPosition(positionId);
+      console.log(players);
       updatePlayerListContent(`playerList${positionId}`, players, positionId);
     } catch (error) {
       console.error('Error fetching data:', error);
     }
+
   }
 
 
   function updatePlayerListContent(playerListId, players, positionId) {
+    console.log(positionId);
     const playerListContainer = document.getElementById(playerListId);
+    if (playerListContainer) {
     playerListContainer.innerHTML = '';
 
     players.forEach((player) => {
@@ -70,7 +74,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
       const downslider = playerBox.querySelector('.down-slider');
       downslider.addEventListener('click', () => { downSlide(downslider, playerBox); });
-    });
+    });}
+    else {
+      console.error(`Element with ID ${playerListId} not found.`);
+    }
   }
 
   function updatePositions(currentIndex) {
@@ -98,9 +105,9 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function handleSwiperEvents() {
-    let currentPositionIndex = 0;
+    let currentPositionIndex = positionId ;
     playerSwiper = new Swiper('.player-swiper-container', {
-      loop: false,
+      loop: true,
       on: {
         slideChange: function () {
           currentPositionIndex = this.activeIndex;
@@ -117,11 +124,6 @@ document.addEventListener('DOMContentLoaded', function () {
       updatePositions(this.activeIndex);
     });
 
-  }
-  function updateContent(currentIndex) {
-    const newPositionId = currentIndex + 1;
-    fetchData(newPositionId);
-    updatePositions(currentIndex);
   }
 
   function downSlide(button, playerBox){
@@ -271,7 +273,15 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  updateContent(0)
+  /*function updateContent(currentIndex) {
+    console.log(currentIndex);
+    const newPositionId = currentIndex + 1;
+    fetchData(newPositionId);
+    updatePositions(currentIndex);
+  }
+  */
+
+  //updateContent(positionId)
   handleSwiperEvents();
 
 });
