@@ -1188,19 +1188,17 @@ svg {
 }
 
 .clicked {
-  -webkit-filter : brightness(0.5);
-  filter: brightness(0.5);
-  -webkit-backdrop-filter: brightness(0.5);
-  backdrop-filter: brightness(0.5);
-  -vendor-filter: brightness(0.5);
+  -webkit-filter : brightness(50%);
+  filter: brightness(50%);
+  -webkit-backdrop-filter: brightness(50%);
+  backdrop-filter: brightness(50%);
 }
 
 .blured {
-  -webkit-backdrop-filter: blur(20px) brightness(0.5);
-  -webkit-filter: blur(20px) brightness(0.5);
-  backdrop-filter: blur(20px) brightness(0.5);
-  filter : blur(20px) brightness(0.5);
-  -vendor-filter: blur(20px) brightness(0.5);
+  -webkit-backdrop-filter: blur(20px) brightness(50%);
+  -webkit-filter: blur(20px) brightness(50%);
+  backdrop-filter: blur(20px) brightness(50%);
+  filter : blur(20px) brightness(50%);
 }
 .last-word-blue {
   color: #386f9c;
