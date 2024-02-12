@@ -25,7 +25,7 @@ import { Podium } from '../components/type';
         switch (pays) {
             case 'France': return '/bretons-1/img/fr.svg';
             case 'Allemagne': return '/bretons-1/img/allemagne.svg';
-            case 'Etat-Unis': return '/bretons-1/img/USA.svg';
+            case 'États-Unis': return '/bretons-1/img/USA.svg';
             case 'Angleterre': return '/bretons-1/img/Angleterre.svg';
             case 'Danemark': return '/bretons-1/img/Danemark.svg';
             case 'Pays-Bas': return '/bretons-1/img/Pays-Bas.svg';
