@@ -108,7 +108,7 @@ function page_accueil() {
 	const divChaussure = document.createElement("div")
 	divChaussure.style.position = "absolute";
 	divChaussure.style.bottom = "12vh";
-	divChaussure.style.left = "50vw";
+	divChaussure.style.left = "70vw";
 
 	const imgChaussure = document.createElement("img")
 	imgChaussure.src = "./Image/chaussure.svg"
