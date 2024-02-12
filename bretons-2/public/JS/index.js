@@ -92,6 +92,32 @@ function page_accueil() {
 		page_sport();
 	}
 
+	const divDrapeau = document.createElement("div")
+	divDrapeau.style.position = "absolute";
+	divDrapeau.style.bottom = "15vh";
+	divDrapeau.style.left = "5vw";
+
+	const imgDrapeau = document.createElement("img")
+	imgDrapeau.src = "./Image/drapeau.svg"
+	imgDrapeau.style.width = "40vw"
+
+	divDrapeau.appendChild(imgDrapeau)
+
+	blank.appendChild(divDrapeau);
+
+	const divChaussure = document.createElement("div")
+	divChaussure.style.position = "absolute";
+	divChaussure.style.bottom = "15vh";
+	divChaussure.style.left = "70vw";
+
+	const imgChaussure = document.createElement("img")
+	imgChaussure.src = "./Image/chaussure.svg"
+	imgChaussure.style.width = "20vw"
+
+	divChaussure.appendChild(imgChaussure)
+
+	blank.appendChild(divChaussure);
+
 	divButton.appendChild(button);
 	blank.appendChild(divButton);
 }
@@ -365,6 +391,19 @@ async function page_historique(sport) {
 			playButtonImage.alt = "Play"; 
 			playButton.appendChild(playButtonImage);
 
+			const retour = document.createElement("img");
+            retour.src = "./Image/bouton-back.svg";
+            retour.alt = "retour";
+            retour.id = "retour";
+            retour.onclick = () => {
+                console.log("retour");
+                vidéoModal.hide();
+                fullS = false;
+                modalBodyVid.removeChild(video2);
+                modalBodyVid.removeChild(playButton);
+                modalBodyVid.removeChild(retour);
+            }
+
 			playButton.style.backgroundColor = "transparent";
 			playButton.style.border = "none";
 			playButton.style.cursor = "pointer";
@@ -380,6 +419,97 @@ async function page_historique(sport) {
 			playButton.style.transform = "translate(-50%, -50%)";
 
 			let isPlaying = false;
+            let fullS = false;
+
+			playButton.addEventListener("click", function () {
+				playButton.style.opacity = 1;
+
+				if (!isPlaying) {
+					if (!fullS){
+						modalBodyVid.style.zIndex=1051;
+						modalBodyVid.style.display = "flex";
+						modalBodyVid.style.position ="absolute";
+						modalBodyVid.style.backgroundColor = "transparent";
+						modalBodyVid.style.justifyContent = "center";
+						let video2 = video.cloneNode(true);
+						video2.style.marginLeft = "calc((100vw - 100 * 3vh / 5) / 2)";
+						video2.style.width ="calc(100 * 3vh / 5)";
+						retour.style.marginLeft = "calc((100vw - 100 * 3vh / 5) / 2)";
+						modalBodyVid.appendChild(video2);
+						modalBodyVid.appendChild(playButton);
+						modalBodyVid.appendChild(retour);
+						vidéoModal.show();
+						video2.play();
+						fullS = true;
+					}
+					playButtonImage.src = "./Image/picto-button-video/pause.svg";
+
+					isPlaying = true;
+
+					playButton.classList.add("fade-out");
+
+					setTimeout(function () {
+						playButton.style.opacity = 0; 
+					}, 1000);
+				} else {
+					playButtonImage.src = "./Image/picto-button-video/play.svg"; 
+					video.pause();
+					if (fullS){
+						video2.pause();
+					}
+
+					isPlaying = false;
+				}
+			});
+
+
+			video.addEventListener("click", function () {
+				playButton.style.opacity = 1;
+
+				if (isPlaying) {
+					playButtonImage.src = "./Image/picto-button-video/play.svg"; 
+					video.pause();
+					isPlaying = false;
+					if (fullS){
+						playButtonImage.src = "./Image/picto-button-video/play.svg"; 
+						video2.pause();
+						isPlaying = false;
+					}
+					
+				}
+				else {
+					playButtonImage.src = "./Image/picto-button-video/pause.svg"; 
+					if (!fullS){
+						modalBodyVid.style.zIndex=1051;
+						modalBodyVid.style.display = "flex";
+						modalBodyVid.style.position ="absolute";
+						modalBodyVid.style.backgroundColor = "transparent";
+						modalBodyVid.style.justifyContent = "center";
+						video.pause()
+						let video2 = video.cloneNode(true);
+						video2.style.marginLeft = "calc((100vw - 100 * 3vh / 5) / 2)";
+						video2.style.width ="calc(100 * 3vh / 5)";
+						retour.style.marginLeft = "calc((100vw - 100 * 3vh / 5) / 2)";
+						modalBodyVid.appendChild(video2);
+						modalBodyVid.appendChild(playButton);
+						modalBodyVid.appendChild(retour);
+						vidéoModal.show();
+						playButtonImage.src = "./Image/picto-button-video/pause.svg"; 
+						video2.play();
+						fullS = true;
+					}
+
+					isPlaying = true;
+
+					playButton.classList.add("fade-out");
+			
+					setTimeout(function () {
+						playButton.style.opacity = 0; 
+					}, 1000);
+				}
+			});
+
+            const modalBodyVid = document.getElementById("modalvideo");
 
 			const vidéoModal = new bootstrap.Modal('#video-modal')
 			const modalBody = document.querySelector('.modal-body');
@@ -435,7 +565,6 @@ async function page_historique(sport) {
 			video.appendChild(sourceWebM);
 			div.appendChild(video);
 			divPartage.appendChild(textPartage);
-			// divPartage.appendChild(imgPartage);
 			div.appendChild(divPartage);
 			div.appendChild(playButton);
 			slide.appendChild(div);
@@ -928,6 +1057,26 @@ async function page_actualite() {
 
 		const video = document.createElement("video");
 
+		const divPartage = document.createElement("div");
+		divPartage.style.display = "flex";
+		divPartage.style.justifyContent = "center";
+		divPartage.style.alignContent = "center";
+		divPartage.style.backgroundColor = "#141456";
+		divPartage.style.width = "15vw";
+		divPartage.style.cursor = "pointer";
+
+		const textPartage = document.createElement("p");
+		textPartage.innerHTML = "PARTAGER";
+		textPartage.style.marginTop = "1vh";
+		textPartage.style.fontSize = "2vh";
+		textPartage.style.color = "white";
+
+		divPartage.addEventListener('click', function(e) {
+			e.preventDefault();
+			var url = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(`Un nouveau résultat des Jeux Olympiques vient de tomber ! Regarde cette vidéo récapitulative : ` + `https://hyblab.polytech.univ-nantes.fr/bretons-2/${videoPath}`) + "%20via%20Le%20Télégramme%20Des%20Scores";
+			window.open(url, "Partage", "scrollbars=yes, width=640, top=0, left=0");
+		})
+
 		console.log(`Création de l'élément vidéo pour ${videoKey}`);
 	
 		const div = document.createElement("div");
@@ -1027,6 +1176,8 @@ async function page_actualite() {
 			video.appendChild(sourceMP4);
 			video.appendChild(sourceWebM);
 			div.appendChild(video);
+			divPartage.appendChild(textPartage);
+			div.appendChild(divPartage);
 			div.appendChild(playButton);
 			slide.appendChild(div);
 			swipperActuWrapper.appendChild(slide);
