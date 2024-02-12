@@ -277,3 +277,18 @@ function updateVotePercentages() {
 		}
 	}
 }
+
+window.addEventListener("load", function () {
+	let creditsButton = document.getElementById("credits");
+	let overlay = document.getElementById("credit-overlay");
+
+	creditsButton.addEventListener("click", function () {
+		overlay.style.display = "flex";
+	});
+
+	document
+		.getElementById("close-credits")
+		.addEventListener("click", function () {
+			overlay.style.display = "none";
+		});
+});
