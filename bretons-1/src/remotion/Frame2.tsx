@@ -1,18 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import './Frame2.css';
-import top1_b_Svg from '/img/top1_b.svg';
-import top1_w_Svg from '/img/top1_w.svg';
-import frSvg from '/img/fr.svg';
-import top2_b_Svg from '/img/top2_b.svg';
-import top2_w_Svg from '/img/top2_w.svg';
-import allemagneSvg from '/img/allemagne.svg';
-import top3_b_Svg from '/img/top3_b.svg';
-import top3_w_Svg from '/img/top3_w.svg';
-import AngleterreSvg from '/img/Angleterre.svg';
-import DanemarkSvg from '/img/Danemark.svg';
-import Pays_BasSvg from '/img/Pays-Bas.svg';
-import usSvg from '/img/USA.svg';
-import SuedeSvg from '/img/Suede.svg';
 import { Podium } from '../components/type';
 
   
@@ -36,14 +23,13 @@ import { Podium } from '../components/type';
     }, []);
     const getFlagSrc = (pays: string) => {
         switch (pays) {
-            case 'France': return frSvg;
-            case 'Allemagne': return allemagneSvg;
-            case 'Etat-Unis': return usSvg;
-            case 'Angleterre': return AngleterreSvg;
-            case 'Danemark': return DanemarkSvg;
-            case 'Pays-Bas': return Pays_BasSvg;
-            case 'Suede': return SuedeSvg;
-            // Ajoutez d'autres pays et leurs drapeaux ici
+            case 'France': return '/bretons-1/img/fr.svg';
+            case 'Allemagne': return '/bretons-1/img/allemagne.svg';
+            case 'Etat-Unis': return '/bretons-1/img/USA.svg';
+            case 'Angleterre': return '/bretons-1/img/Angleterre.svg';
+            case 'Danemark': return '/bretons-1/img/Danemark.svg';
+            case 'Pays-Bas': return '/bretons-1/img/Pays-Bas.svg';
+            case 'Suede': return '/bretons-1/img/Suede.svg';
             default: return ''; // Drapeau par défault
           }
     };
@@ -51,17 +37,17 @@ import { Podium } from '../components/type';
     const getPlace = (Place: string, Nom:string) => {
         if (Nom == athlete){
           switch (Place) {
-            case '1': return top1_b_Svg;
-            case '2': return top2_b_Svg;
-            case '3': return top3_b_Svg;
+            case '1': return '/bretons-1/img/top1_b.svg';
+            case '2': return '/bretons-1/img/top2_b.svg';
+            case '3': return '/bretons-1/img/top3_b.svg';
             default: return '';
           }
         }
         else{
         switch (Place) {
-            case '1': return top1_w_Svg;
-            case '2': return top2_w_Svg;
-            case '3': return top3_w_Svg;
+            case '1': return '/bretons-1/img/top1_w.svg';
+            case '2': return '/bretons-1/img/top2_w.svg';
+            case '3': return '/bretons-1/img/top3_w.svg';
             default: return '';
           }
         }
