@@ -177,4 +177,19 @@ document.addEventListener("DOMContentLoaded", function () {
 			}
 		}
 	}
+	function updateLikes(button, delta) {
+		const likeCountSpan = button.querySelector(".like-count");
+		let likes = parseInt(button.dataset.likes, 10) || 0;
+		likes += delta;
+		button.dataset.likes = likes; // Met à jour le nombre de likes dans l'attribut data-likes
+		likeCountSpan.textContent = likes; // Met à jour le texte pour afficher le nombre de likes
+
+		// Logique pour la mise à jour du localStorage
+		const compositionId = button.getAttribute("data-composition-id");
+		if (delta > 0) {
+			localStorage.setItem(compositionId, likes.toString()); // Incrémente le like
+		} else {
+			localStorage.removeItem(compositionId); // Décrémente le like
+		}
+	}
 });
