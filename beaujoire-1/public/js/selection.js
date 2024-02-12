@@ -10,93 +10,56 @@ document.addEventListener("DOMContentLoaded", async function () {
         },
     });
 
-    // Initialisation des likes basée sur les données locales et serveur
     await fetchInitialLikes();
-    highlightLikedComposition();
+    updateUIForLikedComposition();
 
-    document.querySelectorAll(".heart-button").forEach(button => {
+    const heartButtons = document.querySelectorAll(".heart-button");
+    heartButtons.forEach(function(button) {
         button.addEventListener('click', function() {
-            handleLikeClick(this);
+            toggleLike(this);
         });
     });
 });
 
 async function fetchInitialLikes() {
-    try {
-        const response = await fetch("./data/Likes.json");
-        const likes = await response.json();
-        document.querySelectorAll(".heart-button").forEach(button => {
-            const id = button.getAttribute("data-composition-id");
-            button.dataset.likes = likes[id] || 0;
-            button.querySelector(".like-count").textContent = likes[id] || 0;
-        });
-    } catch (error) {
-        console.error("Error loading likes:", error);
-    }
+    // Votre code existant pour charger les likes initiaux
 }
 
-function highlightLikedComposition() {
-    const likedCompositionId = localStorage.getItem("likedComposition");
-    if (likedCompositionId) {
-        const likedButton = document.querySelector(`.heart-button[data-composition-id="${likedCompositionId}"]`);
-        if (likedButton) {
-            likedButton.classList.add('liked');
-            const heartFilled = likedButton.querySelector('.heart-filled');
-            const heartOutline = likedButton.querySelector('.heart-outline');
-            heartFilled.style.display = 'block';
-            heartOutline.style.display = 'none';
+async function updateLikeCountOnServer(compositionId, newLikes) {
+    // Votre code existant pour mettre à jour le serveur
+}
+
+function updateUIForLikedComposition() {
+    let currentlyLiked = localStorage.getItem("likedComposition");
+    if (currentlyLiked) {
+        const button = document.querySelector(`.heart-button[data-composition-id="${currentlyLiked}"]`);
+        if (button) {
+            button.classList.add('liked'); // Marquez visuellement la composition comme aimée
         }
     }
 }
 
-async function handleLikeClick(clickedButton) {
-    const currentCompositionId = clickedButton.getAttribute("data-composition-id");
-    const previouslyLikedId = localStorage.getItem("likedComposition");
+function toggleLike(selectedButton) {
+    const selectedCompositionId = selectedButton.getAttribute('data-composition-id');
+    let currentlyLiked = localStorage.getItem("likedComposition");
 
-    if (previouslyLikedId === currentCompositionId) {
-        // User is unliking the currently liked composition
-        updateLikeState(clickedButton, false);
+    // Retirez le like si la même composition est cliquée à nouveau
+    if (currentlyLiked === selectedCompositionId) {
         localStorage.removeItem("likedComposition");
-        await updateLikeCountOnServer(currentCompositionId, -1);
+        selectedButton.classList.remove('liked');
+        updateLikeCountOnServer(selectedCompositionId, -1); // Décrémentez le like
     } else {
-        // Changing like to another composition
-        if (previouslyLikedId) {
-            const previouslyLikedButton = document.querySelector(`.heart-button[data-composition-id="${previouslyLikedId}"]`);
-            updateLikeState(previouslyLikedButton, false);
-            await updateLikeCountOnServer(previouslyLikedId, -1);
+        // Changez le like vers la nouvelle composition
+        if (currentlyLiked) {
+            const previouslyLikedButton = document.querySelector(`.heart-button[data-composition-id="${currentlyLiked}"]`);
+            previouslyLikedButton.classList.remove('liked');
+            updateLikeCountOnServer(currentlyLiked, -1); // Décrémente l'ancien like
         }
-        updateLikeState(clickedButton, true);
-        localStorage.setItem("likedComposition", currentCompositionId);
-        await updateLikeCountOnServer(currentCompositionId, 1);
-    }
-}
-
-function updateLikeState(button, isLiked) {
-    const heartFilled = button.querySelector('.heart-filled');
-    const heartOutline = button.querySelector('.heart-outline');
-    const likeCountSpan = button.querySelector('.like-count');
-    let likes = parseInt(button.dataset.likes, 10) || 0;
-
-    if (isLiked) {
-        heartFilled.style.display = 'block';
-        heartOutline.style.display = 'none';
-        button.classList.add('liked');
-        likes++;
-    } else {
-        heartFilled.style.display = 'none';
-        heartOutline.style.display = 'block';
-        button.classList.remove('liked');
-        likes = Math.max(likes - 1, 0);
+        selectedButton.classList.add('liked');
+        localStorage.setItem("likedComposition", selectedCompositionId);
+        updateLikeCountOnServer(selectedCompositionId, 1); // Incrémente le nouveau like
     }
 
-    button.dataset.likes = likes;
-    likeCountSpan.textContent = likes;
-}
-
-async function updateLikeCountOnServer(compositionId, delta) {
-    // Supposons que cette fonction envoie une requête au serveur pour mettre à jour le nombre de likes
-    // La logique exacte dépendra de votre API serveur
-    console.log(`Updating like count for ${compositionId}: ${delta}`);
-    // Exemple (à remplacer par votre logique d'appel API réelle):
-    // await fetch(`/api/likes/${compositionId}`, { method: 'POST', body: JSON.stringify({ delta }) });
+    // Assurez-vous de mettre à jour l'interface utilisateur en conséquence
+    // Ceci peut inclure l'ajustement du nombre de likes affichés, si votre UI le montre
 }
