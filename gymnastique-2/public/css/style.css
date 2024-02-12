@@ -14,12 +14,11 @@
     font-size: 0;
 }
 
-#swiper_journee{
+#swiper_journee, #swiper_mouvement{
     width: 100%;
     height:100%;
     position: absolute;
 }
-
 #swiper_journee{
     width: 100%;
     height:100%;
@@ -332,7 +331,9 @@ svg.image-histoire, svg.image-jo{
 .image-titre{
     max-width: 40%;
 }
-
+#palmares-page .smaller{
+    height: calc(6vh + 8px) !important;
+}
 #palmares-page .svg-boucle{
     position: absolute;
     top : 0;
@@ -352,15 +353,22 @@ svg.image-histoire, svg.image-jo{
 
 }
 #palmares-page .card-container {
-    width: 80vw;
-    height: 18vh;
-    max-height: 10%;
-    max-width: 80%;
+    width: 80%;
+    height: 15%;
     perspective: 90vw;
     margin: 2.5% 10% 2.5% 10%;
+    transition: transform 1500ms;
+}
+#palmares-page p {
+    font-size: calc(1.3vh + 8px);
 }
 #palmares-page .flipcard {
+    height: 80vh;
     transform: rotateY(180deg);
+}
+#palmares-page .smaller{
+    height: calc(1.3vh + 8px);
+
 }
 #palmares-page .doigt-gif ,#palmares-page .logo-retourner{
     position: absolute;
@@ -377,6 +385,19 @@ svg.image-histoire, svg.image-jo{
     transform-style: preserve-3d;
     z-index: 1;
 
+}
+
+#palmares-page #card-afrique{
+    position: absolute;
+    top:25%;
+}
+#palmares-page #card-mondiaux{
+    top : 65%;
+    position: absolute;
+}
+#palmares-page #card-inter{
+    top : 45%;
+    position: absolute;
 }
 
 #palmares-page .card-front,
@@ -404,6 +425,10 @@ svg.image-histoire, svg.image-jo{
 #palmares-page .card-back {
     background-color: transparent;
     transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 30vh !important;
     align-items: center;
 }
 #palmares-page .card-front-palmares-titre{
@@ -467,37 +492,8 @@ svg.image-histoire, svg.image-jo{
     vertical-align: middle;
 }
 
-#journee_1_svg{
-    position: absolute;
-    left: 60%;
-    width: 40%;
-    height: 21%;
-}
 
-#journee_2_svg{
-    position: absolute;
-    left: 60%;
-    width: 40%;
-    height: 21%;
-}
-
-#Kaylia_Nemour_journee{
-    position: absolute;
-    left: 30%;
-    width: 40%;
-    height: 30%;
-}
-
-#journee_type{
-    position: absolute;
-    width: 40%;
-    height: 30%;
-    top:23%;
-    left:30%;
-    text-align: center;
-}
-
-#description_journee{
+#description_journee, .description_mouvement{
     position: absolute;
     width: 70%;
     height: 30%;
@@ -505,22 +501,26 @@ svg.image-histoire, svg.image-jo{
     left: 13%;
     text-align: center;
 }
-
-#journee_1_svg{
+.description_mouvement{
+    left: 0;
+    top:72%;
+    width:90%
+}
+#journee_1_svg,#mouvement_1_svg{
     position: absolute;
     left: 60%;
     width: 40%;
     height: 21%;
 }
 
-#journee_2_svg{
+#journee_2_svg,#mouvement_2_svg{
     position: absolute;
     left: -2%;
     width: 50%;
     height: 17%;
 }
 
-#journee_3_svg{
+#journee_3_svg,#mouvement_3_svg{
     position: absolute;
     left:69%;
     width: 40%;
@@ -536,9 +536,10 @@ svg.image-histoire, svg.image-jo{
     top: -3%;
 }
 
-#Kaylia_Nemour_journee{
+#Kaylia_Nemour_journee,.Kaylia_Nemour_mouvement{
     position: absolute;
-    left: 30%;
+    left: 50%;
+    transform: translate(-50%, 0);
     width: 40%;
     height: 30%;
 }
@@ -553,9 +554,9 @@ svg.image-histoire, svg.image-jo{
     border-radius: 22px;
 }
 
-#journee_type{
+#journee_type,.mouvement_type{
     position: absolute;
-    width: 40%;
+    width: 60%;
     height: 30%;
     top:23%;
     left: 50%;
@@ -564,16 +565,15 @@ svg.image-histoire, svg.image-jo{
 }
 
 #description_journee{
-    position: absolute;
-    width: 70%;
-    height: 30%;
-    top: 75%;
-    left: 13%;
+    width : 76%;
+    top : 72%;
+    left: 50%;
+    transform: translate(-50%, 0);
     text-align: center;
     color: #482E49;
 }
 
-#barre_navigation_journee {
+#barre_navigation_journee, .barre_navigation_mouvement {
     position: absolute;
     top: 70%; 
     left: 50%; 
@@ -584,7 +584,7 @@ svg.image-histoire, svg.image-jo{
     justify-content: space-evenly; 
     flex : 1;
 }
-#categorie_journee{
+#categorie_journee, .categorie_mouvement{
     padding: 10px 10px;
     text-align: center;
 }
@@ -673,34 +673,27 @@ svg.image-histoire, svg.image-jo{
     margin-bottom: 10px;
 }
 
-
-#mouvement-header{
-    position:sticky;
-    top: 0;
-    padding-top: 10px;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-#mouvement-header > img {
-    padding: 10px;
-}
-
 .image-titre{
     max-width: 40%;
 }
 #mouvement-video{
-    width: 60%;
-    height: 60%;
+    width: 50%;
+    height: 41%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 30%;
+    z-index: 2;
+    /* right: 50%; */
+    left: 25%;
+}
+.categorie_mouvement{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 #twitter-widget-0{
     border-radius: 10%;
-}
-
-
-#mouvement-contenu{
-    width: 100%;
-    height: 60%;
 }
 .page-container{
     margin-top: 10%;
@@ -710,33 +703,8 @@ svg.image-histoire, svg.image-jo{
     justify-content: center;
     text-align: center;
 }
-#mouvement-page .svg-boucle{
-    position: absolute;
-}
-#mouvement-page #mouvement-contenue-titre{
-    display: flex;
-    justify-content: center;
-}
-#mouvement-page #mouvement-contenue-titre-texte{
-    margin: 0 5%;
-    width: 40%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
-#mouvement-page #mouv-chemin-1{
-    right : 0;
-    top :0;
-    transform: rotateY(180deg) ;
-}
-#mouvement-page #mouv-chemin-2{
-    left : 0;
-    top : 0;
-}
-#mouvement-page .mouv-button{
-    font-size: 3vh;
-}
+
 #mouvement-page .mouvActif {
     animation: fadeIn 0.5s;
     -webkit-animation: fadeIn 0.5s;
