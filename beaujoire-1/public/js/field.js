@@ -1530,3 +1530,17 @@ function closeBioOverlay() {
 function closeCaptainOverlay() {
 	document.querySelector("#captain").style.display = "none";
 }
+
+
+window.addEventListener('load', function() {
+    var creditsButton = document.getElementById('credits');
+    var overlay = document.getElementById('credit-overlay');
+
+    creditsButton.addEventListener('click', function () {
+        overlay.style.display = 'flex';
+    });
+
+    document.getElementById('close-credits').addEventListener('click', function () {
+        overlay.style.display = 'none';
+    });
+});
