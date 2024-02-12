@@ -24,12 +24,3 @@ let guide_walk_animation = lottie.loadAnimation({
     autoplay: false,
     path: 'animation/guide_walk.json'
 });
-
-// Animation du guide test
-let guide_test_animation = lottie.loadAnimation({
-    container: document.getElementById('guide-test'),
-    renderer: 'svg',
-    loop: true,
-    autoplay: true,
-    path: 'animation/guide_coucou.json'
-});
