@@ -47,7 +47,6 @@ document.addEventListener('DOMContentLoaded', function () {
         if (currentIndex === 0) {
             for (let i = 0; i < 12; i++) {
                 let player = await globals.getPlayerStats(globals.tabVotes[i], i + 1);
-                console.log(player);
 
                 let fieldPlayer = document.createElement('div');
                 fieldPlayer.setAttribute("id", `poste-${i + 1}`);

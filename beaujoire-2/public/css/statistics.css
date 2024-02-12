@@ -359,7 +359,7 @@ p { margin: 0 ;}
         width: 9vmin;
         border-radius :10px ;
         display: block;
-        margin-left: 15px;
+        margin-left: 10px;
         margin-top: 5px;
         margin-bottom: 5px;
     }
@@ -374,63 +374,63 @@ p { margin: 0 ;}
     #poste-1 { /* Gardien */
         top: 87%;
         left: 49%;
-        width: 15%;
+        width: 13%;
     }
 
     #poste-2 { /* Arrière latéral droit */
         top: 58%;
-        left: 13%;
+        left: 11%;
     }
 
     #poste-3 { /* Arrière latéral gauche */
         top: 58%;
-        left: 85%;
+        left: 83%;
     }
 
     #poste-4 { /* Défenseur central 1 */
         top: 70%;
-        left: 33%;
+        left: 31%;
     }
 
     #poste-5 { /* Défenseur central 2 */
         top: 70%;
-        left: 64%;
+        left: 62%;
     }
 
     #poste-6 { /* Milieu défensif */
         top: 47%;
-        left: 34%;
+        left: 32%;
     }
 
     #poste-7 { /* Milieu gauche */
         top: 35%;
-        left: 13%;
+        left: 11%;
     }
 
     #poste-8 { /* Milieu offensif */
         top: 47%;
-        left: 64%;
+        left: 62%;
     }
 
     #poste-9 { /* Attaquant 1 */
         top: 24%;
-        left: 33%;
+        left: 31%;
     }
 
     #poste-10 { /* Milieu droit */
         top: 35%;
-        left: 85%;
+        left: 83%;
     }
 
     #poste-11 { /* Attaquant 2 */
         top: 24%;
-        left: 64%;
+        left: 63%;
     }
 
     #poste-12 { /* Sélectionneur */
         width: 14%;
         top: 8%;
-        left: 48%;
+        left: 46%;
     }
 
     .majeur {
@@ -476,7 +476,7 @@ p { margin: 0 ;}
         width: 9vmin;
         border-radius :10px ;
         display: block;
-        margin-left: 15px;
+        margin-left: 10px;
         margin-top: 5px;
         margin-bottom: 5px;
     }

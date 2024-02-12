@@ -257,29 +257,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  
-/*
-  async function getPlayersByPosition(positionId) {
-    try {
-      const response = await fetch(`/beaujoire-2/api/players/${positionId}`);
-      console.log('Full response:', response); // Log the full response
-      const data = await response.json();
-      console.log('Parsed JSON data:', data); // Log the parsed JSON data
-      return data.players;
-    } catch (error) {
-      console.error('Error fetching players:', error);
-      return [];
-    }
-  }
-  
-  // Define an async function to use 'await'
-  async function fetchData() {
-    const positionId = 1; // Replace with the desired position ID
-    const players = await getPlayersByPosition(positionId);
-    console.log(players);
-    // Handle the fetched players here
-  }
-  fetchData();*/
 
   handleSwiperEvents();
   updateContent(0);
