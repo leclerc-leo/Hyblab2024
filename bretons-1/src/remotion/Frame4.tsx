@@ -14,7 +14,7 @@ const rangToMedaille = (gain: string) => {
 
 const getSexe = (sexe: string) => {
   if (sexe == "F") {
-    return "feminin"
+    return "féminin"
   } else {
     return "masculine"
   }
