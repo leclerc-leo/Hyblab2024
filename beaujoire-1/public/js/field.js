@@ -567,10 +567,10 @@ function getPositionFromId(id) {
 			position = "ENTRAÎNEUR";
 			break;
 		case elementId.includes("ailier-droit"):
-			position = "Ailier Droit";
+			position = "AILIER DROIT";
 			break;
 		case elementId.includes("ailier-gauche"):
-			position = "Ailier Gauche";
+			position = "AILIER GAUCHE";
 			break;
 		case elementId.includes("attaquant-centre"):
 			position = "AVANT CENTRE";
@@ -1535,16 +1535,17 @@ function closeCaptainOverlay() {
 	document.querySelector("#captain").style.display = "none";
 }
 
+window.addEventListener("load", function () {
+	var creditsButton = document.getElementById("credits");
+	var overlay = document.getElementById("credit-overlay");
 
-window.addEventListener('load', function() {
-    var creditsButton = document.getElementById('credits');
-    var overlay = document.getElementById('credit-overlay');
+	creditsButton.addEventListener("click", function () {
+		overlay.style.display = "flex";
+	});
 
-    creditsButton.addEventListener('click', function () {
-        overlay.style.display = 'flex';
-    });
-
-    document.getElementById('close-credits').addEventListener('click', function () {
-        overlay.style.display = 'none';
-    });
+	document
+		.getElementById("close-credits")
+		.addEventListener("click", function () {
+			overlay.style.display = "none";
+		});
 });
