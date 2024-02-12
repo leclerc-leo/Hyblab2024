@@ -35,4 +35,7 @@ const initSlideIntro = async function () {
     easing: "easeInOutQuad",
     duration: 300,
   });
+
+
+  down_arrow.addEventListener("click", function () {swiper.slideTo(1);})
 };

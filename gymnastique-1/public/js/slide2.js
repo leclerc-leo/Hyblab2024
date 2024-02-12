@@ -39,8 +39,8 @@ const initSlide2 = async function (popupId, objectId) {
   }
   // Get logo element
   const bag = document.querySelector("#bag");
-  const fleche = document.querySelector("#fleche");
-
+  const slide2_fleche = document.querySelector("#fleche");
+  slide2_fleche.addEventListener("click", function () {swiper.slideTo(2);})
   // (Re)set initial scale of logo
 
   function animateBag() {
@@ -65,7 +65,7 @@ const initSlide2 = async function (popupId, objectId) {
   });
 
   anime({
-    targets: fleche,
+    targets: slide2_fleche,
     translateY: [0, 25],
     direction: "alternate",
     loop: true,
