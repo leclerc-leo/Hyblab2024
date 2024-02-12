@@ -276,33 +276,33 @@ main > section {
   }
   #cupcake-p0 {
     position: absolute;
-    top: 18% !important;
+    top: 17% !important;
     left: 50% !important;
   }
   #cupcake-p1 {
     position: absolute;
-    top: 60% !important;
+    top: 62% !important;
     left: 50% !important;
   }
   #img-coupe {
     position: absolute;
-    max-width: 55%;
-    top: 47%;
+    max-width: 40%;
+    top: 52%;
   }
   #coupe-p0 {
     position: absolute;
-    top: 19% !important;
+    top: 21% !important;
     left: 50% !important;
   }
   #coupe-p1 {
     position: absolute;
-    top: 70% !important;
+    top: 69% !important;
     left: 50% !important;
   }
   #img-medaille {
     position: absolute;
     max-width: 70%;
-    top: 47%;
+    top: 50%;
   }
   #medaille-p0 {
     position: absolute;
@@ -1202,13 +1202,13 @@ svg {
 }
 .last-word-blue {
   color: #386f9c;
-  font-size: 1.5em;
-  line-height: 1.5em;
+  font-size: 1.4em;
+  line-height: 1.4em;
 }
 .last-word-red {
   color: #de9b94;
-  font-size: 1.5em;
-  line-height: 1.5em;
+  font-size: 1.4em;
+  line-height: 1.4em;
 
 
 }
