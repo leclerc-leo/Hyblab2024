@@ -1188,17 +1188,23 @@ svg {
 }
 
 .clicked {
-  filter: grayscale(100%);
-  -webkit-filter : grayscale(100%);
-  backdrop-filter: grayscale(100%);
-  -webkit-backdrop-filter: grayscale(100%);
+  -webkit-transform: translateZ(0);
+  -webkit-perspective: 1000;
+  -webkit-backface-visibility: hidden;
+  -webkit-filter: brightness(50%);
+  -webkit-backdrop-filter: brightness(50%);
+  transform: translateZ(0);
+  perspective: 1000;
+  backface-visibility: hidden;
+  filter: brightness(50%);
+  backdrop-filter: brightness(50%);
 }
 
 .blured {
-  backdrop-filter: blur(20px) grayscale(100%);
-  -webkit-backdrop-filter: blur(20px) grayscale(100%);
-  filter : blur(20px) grayscale(100%);
-  -webkit-filter: blur(20px) grayscale(100%);
+  backdrop-filter: blur(20px) brightness(50%);
+  -webkit-backdrop-filter: blur(20px) brightness(50%);
+  filter : blur(20px) brightness(50%);
+  -webkit-filter: blur(20px) brightness(50%);
 }
 .last-word-blue {
   color: #386f9c;
