@@ -350,13 +350,13 @@ let quartier_dispo = {
 
 // Correspondance entre le nom de code et le vrai nom des thèmes
 let topic_dico = {
-    "culture": "Culture",
-    "commerce": "Commerces",
-    "education": "Education",
-    "habitat": "Habitat",
-    "portrait": "Portrait",
-    "sport": "Sport",
-    "bienvenue": "Bienvenue"
+    "culture": "culture",
+    "commerce": "commerces",
+    "education": "éducation",
+    "habitat": "habitat",
+    "portrait": "portrait",
+    "sport": "sport",
+    "bienvenue": "bienvenue"
 }
 
 // Correspondance entre le nom de code et le vrai nom des quartiers

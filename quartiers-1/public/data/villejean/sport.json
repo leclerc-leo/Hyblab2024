@@ -66,8 +66,8 @@
     "Choix3": {
         "speaker": "user",
         "type": "choice",
-        "choicesLabel": ["L’athlétisme, c’est pas trop mon truc","Je crois que je vais changer d’avis…"],
-        "content": ["L’athlétisme, c’est pas trop mon truc.","Super ! Je crois que je vais changer d’avis…"],
+        "choicesLabel": ["L’athlétisme, c’est pas trop mon truc","Super ça !"],
+        "content": ["L’athlétisme, c’est pas trop mon truc.","Super ça !"],
         "next": ["Reponse31","Reponse32"]
     },
 
@@ -83,7 +83,7 @@
         "speaker": "guide",
         "type": "bubble",
         "choicesLabel": [],
-        "content": ["Tu vois, je te l’avais dit !","Et si tu cherches un club de sport pour démarrer ta nouvelle passion 🏈⚽, tu as l’embarras du choix.","À ton avis, combien y a-t-il d’associations sportives dans le quartier ?"],
+        "content": ["Et si tu cherches un club de sport pour démarrer ta nouvelle passion 🏈⚽, tu as l’embarras du choix.","À ton avis, combien y a-t-il d’associations sportives dans le quartier ?"],
         "next": ["Choix4"]
     },
 
