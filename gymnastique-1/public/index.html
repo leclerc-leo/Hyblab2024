@@ -21,6 +21,15 @@
 </head>
 
 <body>
+  <svg style="height:0;width:0;position:absolute;">
+    <filter id="dim">
+        <feComponentTransfer>
+            <feFuncR type="linear" slope="0.3"/>
+            <feFuncG type="linear" slope="0.3"/>
+            <feFuncB type="linear" slope="0.3"/>
+        </feComponentTransfer>
+    </filter>
+</svg>
   <!-- Le conteneur sert à vérouiller les proportions (aspect ratio) du contenu de la page (ici des slides) -->
   <div id="container">
     <!-- Le loader-->
@@ -543,14 +552,12 @@
               <a href="https://www.youtube.com/watch?v=HQIhIXo-OV4" id="source_video">Source: Fédération Internationale
                 de Gymnastique</a>
               <div id="video_quizz">
-                <div id="question">Retrouvez l'enchaînement du Nemour parmis ceux ci-dessous !</div>
+                <div id="question">Retrouvez le Nemour parmi les enchainements suivants !</div>
                 <div id="answer-buttons" class="btn-grid">
-                  <button class="btn_quiz">Stalder en avant en prises cubitales avec envol poisson à la suspension BS,
-                    suivi d'un demi tour</button>
-                  <button class="btn_quiz">Appui dorsal puis double vrille en réception labrador</button>
-                  <button class="btn_quiz" id="answer">Élan circulaire carpé libre en arrière avec contre mouvement et
-                    franchissement arrière tendu par-dessus barre supérieure</button>
-                  <button class="btn_quiz">Élan libre par-dessous barre et salto avant groupé avec 1½ tour</button>
+                  <button class="btn_quiz" id="answer">"Élan circulaire carpé libre en arrière avec contre mouvement et
+                    franchissement arrière tendu par-dessus barre supérieure"</button>
+                  <button class="btn_quiz" id="btn_quiz2">"Élan en avant en prises cubitales avec envol poisson à la suspension barre supérieure, suivi d'un demi-tour tendu"</button>
+                  <button class="btn_quiz" id="btn_quiz3">Grand tour en avant avec franchissement par-dessus barre supérieure, suivi d'un demi-salto groupé à la suspension barre supérieure</button>
                 </div>
               </div>
               <img src="img/bouton_retour.svg" alt="bouton retour" id="close" class="Retour" />
