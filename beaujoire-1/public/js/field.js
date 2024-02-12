@@ -1554,4 +1554,5 @@ window.addEventListener("load", function () {
 		.addEventListener("click", function () {
 			overlay.style.display = "none";
 		});
+	document.getElementById("fufu").volume = 0.75;
 });
