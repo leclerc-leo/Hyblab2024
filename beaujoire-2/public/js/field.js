@@ -79,31 +79,31 @@ document.querySelector("#info").addEventListener("click", function () {
 
 async function fetchPlayerData(fieldJersey,playerId) {
   try {
-    const player = await globals.getPlayersById(playerId);
-    //update Vote :
-    // Create the picture element
-    const playerVotedDiv = document.createElement('div');
-    playerVotedDiv.classList.add('player-voted');
+    await globals.getPlayersById(playerId).then( (player) => {
+      //update Vote :
+      // Create the picture element
+      const playerVotedDiv = document.createElement('div');
+      playerVotedDiv.classList.add('player-voted');
 
-    const playerImg = document.createElement('img');
-    playerImg.classList.add('player-img');
+      const playerImg = document.createElement('img');
+      playerImg.classList.add('player-img');
 
-    playerImg.src = `${player.photo}`;
+      playerImg.src = `${player.photo}`;
 
-    const playerName = document.createElement('p');
-    let firstLetter = player.prenom.charAt(0).toUpperCase();
-    playerName.textContent = `${firstLetter}.${player.nom}`;
+      const playerName = document.createElement('p');
+      let firstLetter = player.prenom.charAt(0).toUpperCase();
+      playerName.textContent = `${firstLetter}.${player.nom}`;
 
-    // Append elements to the player-voted div
-    playerVotedDiv.appendChild(playerImg);
-    playerVotedDiv.appendChild(playerName);
+      // Append elements to the player-voted div
+      playerVotedDiv.appendChild(playerImg);
+      playerVotedDiv.appendChild(playerName);
 
-    fieldJersey.replaceChild(playerVotedDiv, fieldJersey.firstChild);
+      fieldJersey.replaceChild(playerVotedDiv, fieldJersey.firstChild);
 
-    fieldJersey.classList.add('voted');
-    // Change the href attribute
-    fieldJersey.href = 'javascript:void(0)';
-
+      fieldJersey.classList.add('voted');
+      // Change the href attribute
+      fieldJersey.href = 'javascript:void(0)';
+    });
   } catch (error) {
     console.error('Error fetching data:', error);
   }
