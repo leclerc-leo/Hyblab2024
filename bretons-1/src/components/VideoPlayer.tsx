@@ -38,7 +38,7 @@ function VideoPlayer({ id }: { id: string }) {
       navigate("/bretons-1")
   };
 
-    const durationInFrames = eventData.Gain === "" || eventData.Gain === "Qualifie" ? 2040 : 2280;
+    const durationInFrames = eventData.Gain === "" || eventData.Gain === "Qualifie" ? 2340 : 2580;
     return (
         <div id='VideoPlayer' style={{overflow: 'hidden' }}>
             <div className="head">

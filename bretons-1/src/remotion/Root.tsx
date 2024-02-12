@@ -6,6 +6,7 @@ import { Frame4 } from "./Frame4";
 import { Frame5 } from "./Frame5";
 import { Frame6 } from "./Frame6";
 import { Frame7 } from "./Frame7";
+import { Frame8 } from "./Frame8";
 import athleteData from '../data/Athlete.json';
 import { Athlete, EventDataItem, Podium } from '../components/type';
 import EventData from '../data/Event.json';
@@ -34,14 +35,14 @@ export const MyVideo: React.FC<MyVideoProps> = ({ id }) => {
       </Sequence>
       {!showFrame6 && (
         <Sequence from={720} durationInFrames={360}>
-          <Frame7 athlete={athlete.Athlete} Sexe={athlete.Sexe}  epreuve={eventData.Epreuve} podium={eventData["Podium (nom + résultat)"] as Podium[]} gain={eventData.Gain} resultat={eventData["Résultat (temps /points)"]} performance={eventData.Performance}/>
+          <Frame7 athlete={athlete.Athlete} Sexe={athlete.Sexe} epreuve={eventData.Epreuve} podium={eventData["Podium (nom + résultat)"] as Podium[]} gain={eventData.Gain} resultat={eventData["Résultat (temps /points)"]} performance={eventData.Performance} />
         </Sequence>
-        )}
+      )}
       {showFrame6 && (
         <Sequence from={720} durationInFrames={360}>
-          <Frame2 athlete={athlete.Athlete} rang={eventData.Rang} resultat={eventData["Résultat (temps /points)"]}  podium={eventData["Podium (nom + résultat)"] as Podium[]} />
+          <Frame2 athlete={athlete.Athlete} rang={eventData.Rang} resultat={eventData["Résultat (temps /points)"]} podium={eventData["Podium (nom + résultat)"] as Podium[]} />
         </Sequence>
-        )}
+      )}
       <Sequence from={1080} durationInFrames={360}>
         <Frame3 text={athlete.Athlete}></Frame3>
       </Sequence>
@@ -49,10 +50,18 @@ export const MyVideo: React.FC<MyVideoProps> = ({ id }) => {
         <Frame5 nom={athlete.Athlete} age={athlete["Date de naissance"]} sexe={athlete.Sexe} sport={eventData.Sport} fun_fact={athlete["Fun fact"]} photo={athlete.Photo} record={athlete.Palmares} ville={athlete["Ville de naissance"]}></Frame5>
       </Sequence>
       {showFrame6 && (
-        <Sequence from={2040} durationInFrames={240}>
+        <><Sequence from={2040} durationInFrames={240}>
           <Frame6 sex={athlete.Sexe} />
+        </Sequence><Sequence from={2280} durationInFrames={300}>
+            <Frame8 />
+          </Sequence></>
+
+      )}
+      {!showFrame6 && (
+        <Sequence from={2040} durationInFrames={300}>
+          <Frame8 />
         </Sequence>
-        )}
+      )}
     </>
   );
 };
