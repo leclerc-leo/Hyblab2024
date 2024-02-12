@@ -502,9 +502,12 @@ svg.image-histoire, svg.image-jo{
     text-align: center;
 }
 .description_mouvement{
-    left: 0;
+    left: 50%;
+    right: 50%;
     top:72%;
-    width:90%
+    width:95%;
+    font-size: calc(1vh + 8px);
+    transform: translate(-50%,0);
 }
 #journee_1_svg,#mouvement_1_svg{
     position: absolute;
