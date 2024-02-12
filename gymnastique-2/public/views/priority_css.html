@@ -96,21 +96,22 @@
     z-index: 10000;
   }
 
-  #explorez::after, #explorez::before{
-    content: "<";
+  #explorez-left, #explorez-right{
     position: absolute;
+    color: white;
     top: 0;
     left: 5%;
     z-index: 10000;
+    padding: 20px;
+    transform: translateY(-20px)
   }
   #explorez{
       color: white;
       font-size: calc(1.3vh + 10px);
   }
-  #explorez::after{
+  #explorez-right{
     right: 5%;
     left: auto;
-    content: ">";
   }
 
   #texte-accueil{

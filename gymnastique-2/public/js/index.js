@@ -1,11 +1,11 @@
 const swiper = new Swiper("#mySwiper", {
     direction: "horizontal",
     mousewheel: true,
-    // navigation:{
-    //     enabled: true,
-    //     nextEl: '.swiper-button-next',
-    //     prevEl: '.swiper-button-prev',
-    // },
+    navigation:{
+        enabled: true,
+        nextEl: '#explorez-right',
+        prevEl: '#explorez-left',
+    },
     pagination: {
         el: ".swiper-pagination",
         clickable: true,
@@ -99,4 +99,4 @@ fleche_droite.forEach( fleche => {
 
 /* Pour le warning de dépréciation, voir https://stackoverflow.com/questions/51110881/use-of-deviceorientation-events-in-firefox-give-warning
 *  et https://developer.mozilla.org/en-US/docs/Web/API/Window/deviceorientation_event mais il semble que cela ne soit pas déprécié */
-// window.addEventListener("deviceorientation", handle_orientation);
+window.addEventListener("deviceorientation", handle_orientation);
