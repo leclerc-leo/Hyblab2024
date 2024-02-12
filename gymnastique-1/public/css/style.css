@@ -1426,10 +1426,16 @@ svg {
 }
 
 .clicked {
-  filter: brightness(50%);
-  -webkit-filter : brightness(50%);
-  backdrop-filter: brightness(50%);
+  -webkit-transform: translateZ(0);
+  -webkit-perspective: 1000;
+  -webkit-backface-visibility: hidden;
+  -webkit-filter: brightness(50%);
   -webkit-backdrop-filter: brightness(50%);
+  transform: translateZ(0);
+  perspective: 1000;
+  backface-visibility: hidden;
+  filter: brightness(50%);
+  backdrop-filter: brightness(50%);
 }
 
 .blured {

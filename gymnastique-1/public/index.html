@@ -22,6 +22,15 @@
 </head>
 
 <body>
+  <svg style="height:0;width:0;position:absolute;">
+    <filter id="dim">
+        <feComponentTransfer>
+            <feFuncR type="linear" slope="0.3"/>
+            <feFuncG type="linear" slope="0.3"/>
+            <feFuncB type="linear" slope="0.3"/>
+        </feComponentTransfer>
+    </filter>
+</svg>
   <!-- Le conteneur sert à vérouiller les proportions (aspect ratio) du contenu de la page (ici des slides) -->
   <div id="container">
     <!-- Le loader-->
