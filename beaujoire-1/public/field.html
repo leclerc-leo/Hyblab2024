@@ -237,7 +237,7 @@
 						</div>
 					</div>
 					<div class="compare-grid-item">
-						<p>BUTS</p>
+						<p id="compare-buts">BUTS</p>
 						<div class="comparo-container" id="buts-bar">
 							<div class="player1-bar">
 								<div class="bar-score">0</div>
@@ -285,6 +285,13 @@
 						<div class="carousel-item">Joueur 3</div>
 						<!-- Ajoutez plus d'éléments de carrousel ici -->
 					</div>
+					<script>
+						function closeCompareCarousel() {
+							document.querySelector(
+								"#compare-carousel"
+							).style.display = "none";
+						}
+					</script>
 					<div class="bottom-btn" id="compare-close">
 						<button
 							class="round-btn"
