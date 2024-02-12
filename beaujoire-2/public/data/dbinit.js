@@ -62,7 +62,7 @@ function insertPlayersFromJSON(jsonData) {
                 convertedAnneeFin,
                 parseInt(player.selections,10),
                 parseInt(convertedButs,10),
-                convertedArrets,
+                parseInt(convertedArrets,10),
                 convertedPhoto,
                 convertedCitation,
                 convertedBiographie
