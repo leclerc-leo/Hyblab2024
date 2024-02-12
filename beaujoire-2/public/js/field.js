@@ -76,36 +76,34 @@ document.querySelector("#info").addEventListener("click", function () {
 /************* Vote progression display  **************/
 
 
-function updateVote(fieldJersey,player){
-  // Create the picture element
-  const playerVotedDiv = document.createElement('div');
-  playerVotedDiv.classList.add('player-voted');
-
-  const playerImg = document.createElement('img');
-  playerImg.classList.add('player-img');
-
-  playerImg.src = `${player.photo}`;
-
-  const playerName = document.createElement('p');
-  let firstLetter = player.prenom.charAt(0).toUpperCase();
-  playerName.textContent = `${firstLetter}.${player.nom}`;
-
-  // Append elements to the player-voted div
-  playerVotedDiv.appendChild(playerImg);
-  playerVotedDiv.appendChild(playerName);
-
-
-  fieldJersey.replaceChild(playerVotedDiv, fieldJersey.firstChild);
-
-  fieldJersey.classList.add('voted');
-  // Change the href attribute
-  fieldJersey.href = 'javascript:void(0)';
-}
 
 async function fetchPlayerData(fieldJersey,playerId) {
   try {
     const player = await globals.getPlayersById(playerId);
-    updateVote(fieldJersey,player);
+    //update Vote :
+    // Create the picture element
+    const playerVotedDiv = document.createElement('div');
+    playerVotedDiv.classList.add('player-voted');
+
+    const playerImg = document.createElement('img');
+    playerImg.classList.add('player-img');
+
+    playerImg.src = `${player.photo}`;
+
+    const playerName = document.createElement('p');
+    let firstLetter = player.prenom.charAt(0).toUpperCase();
+    playerName.textContent = `${firstLetter}.${player.nom}`;
+
+    // Append elements to the player-voted div
+    playerVotedDiv.appendChild(playerImg);
+    playerVotedDiv.appendChild(playerName);
+
+    fieldJersey.replaceChild(playerVotedDiv, fieldJersey.firstChild);
+
+    fieldJersey.classList.add('voted');
+    // Change the href attribute
+    fieldJersey.href = 'javascript:void(0)';
+
   } catch (error) {
     console.error('Error fetching data:', error);
   }
