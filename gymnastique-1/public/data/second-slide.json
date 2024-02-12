@@ -54,11 +54,5 @@
     ],
     "picture": "img/photo.svg"
   },
-  "tel": {
-    "title": " ",
-    "text": [
-      " "
-    ],
-    "picture": " "
-  }
+  "tel": ""
 }

@@ -1317,7 +1317,8 @@ main > section {
 
 /* ---------- Positioning of logos on the last slide -------------------- */
 #bandeau {
-  width: 100%;
+  width: 85%;
+  left: 7%;
   position: absolute;
   top: 82.5%;
   font-size: 20%;
@@ -1332,7 +1333,7 @@ main > section {
 }
 
 #bandeau img {
-  height: 2.5em;
+  height: 2.2em;
 }
 
 #bandeau #hyblab {

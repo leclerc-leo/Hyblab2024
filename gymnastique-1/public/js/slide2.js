@@ -97,7 +97,6 @@ const initSlide2 = async function (popupId, objectId) {
   document.getElementById("popup-title").innerHTML = data1.title;
   document.getElementById("popup-subtitle").innerHTML = data1.subtitle;
   document.getElementById("popup-text").innerHTML = data1.texte;
-
   document.getElementById(objectId).addEventListener("click", (evt) => {
     showPopup(popupId, objectId);
   });
@@ -107,38 +106,41 @@ const initSlide2 = async function (popupId, objectId) {
     const data = await response.json();
 
     const objData = data[objectId];
-    const title = document.querySelector(`#${popupId} #title-obj`);
-    const img = document.querySelector(`#${popupId} #img-obj`);
-    const textContainer = document.querySelector(`#${popupId} #text-container`);
-    
-    title.textContent = objData.title || "PAS DE TITRE";
-    img.src = objData.picture || "PAS D'IMAGE";
-    textContainer.innerHTML = "";
-
-    if (objData.text && Array.isArray(objData.text)) {
-      objData.text.forEach((paragraphText, index) => {
+    if (objData != ""){
+      const title = document.querySelector(`#${popupId} #title-obj`);
+      const img = document.querySelector(`#${popupId} #img-obj`);
+      const textContainer = document.querySelector(`#${popupId} #text-container`);
+      
+      title.textContent = objData.title || "PAS DE TITRE";
+      img.src = objData.picture || "PAS D'IMAGE";
+      textContainer.innerHTML = "";
+  
+      if (objData.text && Array.isArray(objData.text)) {
+        objData.text.forEach((paragraphText, index) => {
+          const paragraph = document.createElement("p");
+          paragraph.classList.add("text-obj");
+          paragraph.textContent = paragraphText;
+          paragraph.setAttribute("id", `${objectId}-p${index}`);
+          textContainer.appendChild(paragraph);
+        });
+      } else {
         const paragraph = document.createElement("p");
         paragraph.classList.add("text-obj");
-        paragraph.textContent = paragraphText;
-        paragraph.setAttribute("id", `${objectId}-p${index}`);
+        paragraph.textContent = objData.text || "PAS DE TEXTE";
         textContainer.appendChild(paragraph);
-      });
-    } else {
-      const paragraph = document.createElement("p");
-      paragraph.classList.add("text-obj");
-      paragraph.textContent = objData.text || "PAS DE TEXTE";
-      textContainer.appendChild(paragraph);
-    }
-    title.innerHTML = objData.title.split(" ").map((word, index, array) => {
-      const randomNumber = Math.random();
-      if (index === array.length - 1 && randomNumber<0.5 ) {
-        return `<br><span class="last-word-blue">${word}</span></br>`;
-      } else if (index === array.length - 1 && randomNumber>=0.5) {
-          return `<br><span class="last-word-red">${word}</span></br>`;
-      }else {
-        return word;
       }
-    }).join(" ");
+      title.innerHTML = objData.title.split(" ").map((word, index, array) => {
+        const randomNumber = Math.random();
+        if (index === array.length - 1 && randomNumber<0.5 ) {
+          return `<br><span class="last-word-blue">${word}</span></br>`;
+        } else if (index === array.length - 1 && randomNumber>=0.5) {
+            return `<br><span class="last-word-red">${word}</span></br>`;
+        }else {
+          return word;
+        }
+      }).join(" ");
+
+    }
     
   } catch (error) {
     console.error("ERREUR JSON :", error);
