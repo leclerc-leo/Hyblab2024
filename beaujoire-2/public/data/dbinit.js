@@ -240,17 +240,20 @@ db.serialize(async () => {
             ('Marocain', 'MAR'),
             ('Colombien', 'COL');
         `);
-        // Read JSON file and insert players
-        try {
-            const data = await util.promisify(fs.readFile)(jsonFilePath, 'utf8');
-            const jsonData = JSON.parse(data);
-            await insertPlayersFromJSON(jsonData);
-            console.log('Data inserted successfully.');
-        } catch (error) {
-            console.error(error.message);
-        }
     }
 
+    // Read JSON file and insert players
+    try {
+        // Delete all records from the table
+        await util.promisify(db.run.bind(db))('DELETE FROM Joueurs');
+        // insert again
+        const data = await util.promisify(fs.readFile)(jsonFilePath, 'utf8');
+        const jsonData = JSON.parse(data);
+        await insertPlayersFromJSON(jsonData);
+        console.log('Data inserted successfully.');
+    } catch (error) {
+        console.error(error.message);
+    }
 
     db.all('SELECT * FROM Joueurs', (err, rows) => {
         if (err) console.error(err.message);

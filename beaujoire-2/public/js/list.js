@@ -155,7 +155,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const overlayFirstname = document.createElement("div");
         overlayFirstname.className = "overlay-firstname";
         overlayFirstname.textContent = `${player.prenom}`;
-        console.log(playerBox.dataset.prenom);
 
         const lastname = document.createElement("div");
         lastname.className = "lastname";
@@ -182,9 +181,9 @@ document.addEventListener('DOMContentLoaded', function () {
         infos1.appendChild(nbMatchs);
 
         const flag1 = document.createElement("img");
-        flag1.src = `./img/nationalite/${player.nationalité1}.svg`;
+        flag1.src = `./img/nationalities/${player.nationalité1}.svg`;
         const flag2 = document.createElement("img");
-        flag2.src = `./img/nationalite/${player.nationalité1}.svg`;
+        flag2.src = `./img/nationalities/${player.nationalité2}.svg`;
         const flags = document.createElement("div");
         flags.className = "flags";
         flags.appendChild(flag1);
@@ -234,12 +233,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const iconsText = document.createElement("div");
         iconsText.className = "icons-text";
-        iconsText.textContent = 
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        iconsText.textContent = `${player.biographie}`
         
         playerBox.className = "bio-player";
         playerBox.appendChild(backgroundText);
@@ -247,7 +241,9 @@ document.addEventListener('DOMContentLoaded', function () {
         playerBox.appendChild(fullname);
         playerBox.appendChild(displayBio);
         playerBox.appendChild(icons);
-        playerBox.appendChild(iconsText)
+        playerBox.appendChild(iconsText);
+
+        likeButton.addEventListener('click', () => { toggleHeart(likeButton, player.id, positionId); });
       } catch (error) {
         console.error(error);
       } 
@@ -281,6 +277,7 @@ document.addEventListener('DOMContentLoaded', function () {
       selectedHeartButton = button;
     }
   }
+
 
   /*function updateContent(currentIndex) {
     console.log(currentIndex);

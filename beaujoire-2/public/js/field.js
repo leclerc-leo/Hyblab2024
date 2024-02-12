@@ -38,7 +38,7 @@ checkVotes();
 
 /************* Pop up  **************/
 
-if (globals.checkAllVotes(globals.tabVotes)) {
+if (globals.checkAllVotes(globals.tabVotes) && !(globals.shown)) {
 
   window.addEventListener("load", async function () {
 
@@ -92,11 +92,11 @@ function updateVote(fieldJersey,player){
   const playerImg = document.createElement('img');
   playerImg.classList.add('player-img');
 
-  playerImg.src = `${player[0].photo}`;
+  playerImg.src = `${player.photo}`;
 
   const playerName = document.createElement('p');
-  let firstLetter = player[0].prenom.charAt(0).toUpperCase();
-  playerName.textContent = `${firstLetter}.${player[0].nom}`;
+  let firstLetter = player.prenom.charAt(0).toUpperCase();
+  playerName.textContent = `${firstLetter}.${player.nom}`;
 
   // Append elements to the player-voted div
   playerVotedDiv.appendChild(playerImg);
@@ -113,19 +113,18 @@ function updateVote(fieldJersey,player){
 async function fetchPlayerData(fieldJersey,playerId) {
   try {
     const player = await globals.getPlayersById(playerId);
-    console.log(player[0].nom);
     updateVote(fieldJersey,player);
   } catch (error) {
     console.error('Error fetching data:', error);
   }
 }
 
-function checkprogress() {
+document.addEventListener('DOMContentLoaded', async function () {
   for (let i = 0; i < globals.tabVotes.length; i++) {
     // Append the player-voted div to the field-jersey anchor
     const fieldJersey = document.getElementById(`poste-${i + 1}`);
     if (globals.tabVotes[i] !== 0) {
-      fetchPlayerData(fieldJersey,globals.tabVotes[i]);
+      await fetchPlayerData(fieldJersey, globals.tabVotes[i]);
     } else {
       const jerseyImg = document.createElement('img');
       jerseyImg.classList.add('field-jersey-img');
@@ -137,7 +136,7 @@ function checkprogress() {
         if (i + 1 === 1) {
           jerseyImg.src = './img/animation/gants_1.gif';
         } else {
-          if(i+1 < 10) {
+          if (i + 1 < 10) {
             jerseyImg.src = `./img/animation/maillot-0${i + 1}.gif`;
           } else {
             jerseyImg.src = `./img/animation/maillot-${i + 1}.gif`;
@@ -150,9 +149,7 @@ function checkprogress() {
       fieldJersey.href = 'list';
     }
   }
-}
-
-checkprogress();
+})
 
 /************* Vote progression display  **************/
 

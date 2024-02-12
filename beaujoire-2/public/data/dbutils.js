@@ -20,7 +20,7 @@ dataUtils.selectPlayers = function (callback) {
 };
 
 dataUtils.selectPlayer = function(idPlayer, callback) {
-    db.all(`
+    db.get(`
         SELECT
             nom,
             prenom,
