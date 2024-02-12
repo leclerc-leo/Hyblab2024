@@ -499,7 +499,7 @@
     {
         "NOM": "DA ROCHA",
         "CARTE": "fcn-28",
-        "POSTE": "Ailier Droit",
+        "POSTE": "AILIER DROIT",
         "NUMÉRO": 8,
         "DURÉE": "95-09",
         "MATCHS": 508,
@@ -516,7 +516,7 @@
     {
         "NOM": "MONTERRUBIO",
         "CARTE": "fcn-59",
-        "POSTE": "Ailier Droit",
+        "POSTE": "AILIER DROIT",
         "NUMÉRO": 18,
         "DURÉE": "96-01",
         "MATCHS": 118,
@@ -533,7 +533,7 @@
     {
         "NOM": "QUINT",
         "CARTE": "fcn-73",
-        "POSTE": "Ailier Droit",
+        "POSTE": "AILIER DROIT",
         "NUMÉRO": 14,
         "DURÉE": "2024-05-31T22:00:00.000Z",
         "MATCHS": 151,
@@ -550,7 +550,7 @@
     {
         "NOM": "BLAS",
         "CARTE": "fcn-74",
-        "POSTE": "Ailier Droit",
+        "POSTE": "AILIER DROIT",
         "NUMÉRO": 10,
         "DURÉE": "19-23",
         "MATCHS": 159,
@@ -567,7 +567,7 @@
     {
         "NOM": "C. LE ROUX",
         "CARTE": "fcn-72",
-        "POSTE": "Ailier Droit",
+        "POSTE": "AILIER DROIT",
         "NUMÉRO": 7,
         "DURÉE": "96-99",
         "MATCHS": 81,
@@ -830,7 +830,7 @@
     {
         "NOM": "AMISSE",
         "CARTE": "fcn-23",
-        "POSTE": "Ailier Gauche",
+        "POSTE": "AILIER GAUCHE",
         "NUMÉRO": 11,
         "DURÉE": "73-90",
         "MATCHS": 602,
@@ -847,7 +847,7 @@
     {
         "NOM": "LOKO",
         "CARTE": "fcn-22",
-        "POSTE": "Ailier Gauche",
+        "POSTE": "AILIER GAUCHE",
         "NUMÉRO": 11,
         "DURÉE": "88-95",
         "MATCHS": 209,
@@ -864,7 +864,7 @@
     {
         "NOM": "VAHIRUA",
         "CARTE": "fcn-40",
-        "POSTE": "Ailier Gauche",
+        "POSTE": "AILIER GAUCHE",
         "NUMÉRO": 19,
         "DURÉE": "98-04",
         "MATCHS": 148,
@@ -881,7 +881,7 @@
     {
         "NOM": "SIMON",
         "CARTE": "fcn-82",
-        "POSTE": "Ailier Gauche",
+        "POSTE": "AILIER GAUCHE",
         "NUMÉRO": 27,
         "DURÉE": "19- ...",
         "MATCHS": 166,
