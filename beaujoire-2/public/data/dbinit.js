@@ -45,6 +45,7 @@ function insertPlayersFromJSON(jsonData) {
             const convertedNaissance = player.naissance === '/' || player.naissance === 'NULL' ? null : convertDateFormat(player.naissance);
             const convertedAnneeFin = player.annéeFin === '/' || player.annéeFin === 'NULL' ? null : player.annéeFin;
             const convertedButs = player.buts === '/' || player.buts === 'NULL' ? null : player.buts;
+            const convertedArrets = player.arrets === '/' || player.arrets === 'NULL' ? null : player.arrets;
             const convertedPhoto = player.photo === '/' || player.photo === 'NULL' ? null : player.photo;
             const convertedCitation = player.citation === '/' || player.citation === 'NULL' ? null : player.citation;
             const convertedBiographie = player.biographie === '/' || player.biographie === 'NULL' ? null : player.biographie;
@@ -61,6 +62,7 @@ function insertPlayersFromJSON(jsonData) {
                 convertedAnneeFin,
                 parseInt(player.selections,10),
                 parseInt(convertedButs,10),
+                convertedArrets,
                 convertedPhoto,
                 convertedCitation,
                 convertedBiographie
