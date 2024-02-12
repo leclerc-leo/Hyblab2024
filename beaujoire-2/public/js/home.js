@@ -36,3 +36,11 @@ setTimeout(() => {
   // Init first slide
   initSlide1();
 }, 100);
+
+/********** Table de votes tomporaire ****************/
+var votesTmp = [];
+
+for (let i = 0; i <= 11; i++) {
+  votesTmp.push(0);
+}
+localStorage.setItem('votes', JSON.stringify(votesTmp));

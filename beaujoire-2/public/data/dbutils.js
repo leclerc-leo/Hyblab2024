@@ -54,7 +54,7 @@ dataUtils.selectPlayer = function(idPlayer, callback) {
 
 dataUtils.getPlayersByPosition = function(positionId, callback) {
     const query = `
-      SELECT id, nom, prenom, photo
+      SELECT *
       FROM Joueurs
       WHERE poste = ?`;
   
@@ -130,28 +130,34 @@ params:
     - idPoste : id du poste
     - idJoueur : id du joueur
 */
-dataUtils.getPlayerStats = function(idPoste, idJoueur, sessionToken , callback) {
-    db.all(`
+dataUtils.getPlayerStats = function(idJoueur, idPoste, callback) {
+    db.get(`
         SELECT
-            nom,
-            prenom,
-            photo,
-            COUNT(*) * 100 / (SELECT COUNT(*) FROM Votes WHERE poste${idPoste} = ?) AS ratio
+            J.nom,
+            J.prenom,
+            J.photo,
+            (COUNT(CASE WHEN V.poste${idPoste} = ? THEN 1 END) * 100) / (SELECT COUNT(*) FROM Votes) AS ratio
         FROM Votes V
         JOIN Joueurs J ON V.poste${idPoste} = J.id
-        WHERE V.token = ?`,
-        [idJoueur, sessionToken],
-        (err, rows) => {
+        WHERE J.id = ? `,
+        [idJoueur, idJoueur],
+        (err, row) => {
             if (err) {
                 console.error(err.message);
                 callback(err, null);
             } else {
-                console.log('getPlayerStats(idPoste = ' + idPoste + ', idJoueur = ' + idJoueur + '): \n', rows, '\n\n');
-                callback(null, rows);
+                console.log('getPlayerStats(idPoste = ' + idPoste + ', idJoueur = ' + idJoueur + '): \n', row, '\n\n');
+                callback(null, row);
             }
         }
     );
 };
+
+
+
+
+
+
 
 /* récupérer le classement des joueurs pour un poste donné, triés par pourcentage de votes décroissant.
 params:

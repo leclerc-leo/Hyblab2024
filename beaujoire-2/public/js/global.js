@@ -1,16 +1,10 @@
-/********** Table de votes tomporaire ****************/
-var votesTmp = [];
 
-for (let i = 0; i <= 11; i++) {
-    votesTmp.push(0);
-}
-if (!(localStorage.getItem('votes'))){
-    localStorage.setItem('votes', JSON.stringify(votesTmp));
-}
 
 /********** Global functions ****************/
 
 const globals = {} ;
+
+globals.tabVotes = JSON.parse(localStorage.getItem('votes')) ;
 
 // Function to retrieve the session token from cookies
 globals.getSessionToken = async function() {
@@ -46,7 +40,6 @@ globals.updateVotes = function(votes){
     localStorage.setItem('votes', JSON.stringify(votes));
 }
 
-globals.tabVotes = JSON.parse(localStorage.getItem('votes')) ;
 
 /********** datafetch functions ****************/
 
@@ -94,9 +87,9 @@ globals.saveVotes = async function(token, votes) {
     }
 };
 
-globals.getPlayerStats = async function(playerId, positionId , token) {
+globals.getPlayerStats = async function(playerId, positionId) {
     try {
-        const response = await fetch(`/beaujoire-2/api/stats/${playerId}/${positionId}/${token}`);
+        const response = await fetch(`/beaujoire-2/api/stats/${playerId}/${positionId}`);
         const data = await response.json();
         return data.player;
     } catch (error) {
@@ -107,7 +100,7 @@ globals.getPlayerStats = async function(playerId, positionId , token) {
 
 globals.getTopPlayer = async function (positionId) {
     try {
-        const response = await fetch(`/beaujoire-2/api/stats/top/${positionId}`);
+        const response = await fetch(`/beaujoire-2/api/top/${positionId}`);
         const data = await response.json();
 
         if (data.success) {

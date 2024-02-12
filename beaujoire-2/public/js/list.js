@@ -63,6 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
       playerListContainer.appendChild(playerBox);
+      playerBox.dataset.player = JSON.stringify(player);
       playerBox.addEventListener("click", () => downSlide(playerBox));
 
       const heartButton = playerBox.querySelector('.heart-button');
@@ -128,6 +129,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function downSlide(button, playerBox){
     if (button.dataset.type === 'downslide') {
+      const player = JSON.parse(playerBox.dataset.player);
+      console.log(player);
       const imagePlayer = playerBox.children[0];
       const name = playerBox.children[1].children[0];
       const heart = playerBox.children[2];
@@ -139,22 +142,24 @@ document.addEventListener('DOMContentLoaded', function () {
       slider.style["display"] = "none";
 
       try {
+        //const detailedPlayer =  globals.getPlayersById(playerId);
         const backgroundText = document.createElement("div");
         backgroundText.className = "background-text";
         backgroundText.textContent = "FC Nantes  FC Nantes  FC Nantes  FC Nantes";
 
         const avatar = document.createElement("img");
-        avatar.src = "./img/players/Player-photo.png";
+        avatar.src = player.photo;
         avatar.alt = "Player Image";
         avatar.className = "avatar";
 
         const overlayFirstname = document.createElement("div");
         overlayFirstname.className = "overlay-firstname";
-        overlayFirstname.textContent = "Firstname";
+        overlayFirstname.textContent = `${player.prenom}`;
+        console.log(playerBox.dataset.prenom);
 
         const lastname = document.createElement("div");
         lastname.className = "lastname";
-        lastname.textContent = "Lastname";
+        lastname.textContent = `${player.nom}`;
 
         const fullname = document.createElement("div");
         fullname.className = "fullname";
@@ -162,7 +167,7 @@ document.addEventListener('DOMContentLoaded', function () {
         fullname.appendChild(lastname);
 
         const closeButton = document.createElement("img");
-        closeButton.src = "./img/bio-icons/fleche-haut.svg";
+        closeButton.src = "./img/field/croix.svg";
         const displayBio = document.createElement("div");
         displayBio.className = "display-bio";
         displayBio.appendChild(closeButton);
@@ -170,16 +175,16 @@ document.addEventListener('DOMContentLoaded', function () {
         const field = document.createElement("img");
         field.src = "./img/bio-icons/selection.svg";
         const nbMatchs = document.createElement("p");
-        nbMatchs.textContent = "100 matchs";
+        nbMatchs.textContent = `${player.selections} séléctions`;
         const infos1 = document.createElement("div");
         infos1.className = "infos";
         infos1.appendChild(field);
         infos1.appendChild(nbMatchs);
 
         const flag1 = document.createElement("img");
-        flag1.src = "./img/bio-icons/flags/flag-france.png";
+        flag1.src = `./img/nationalite/${player.nationalité1}.svg`;
         const flag2 = document.createElement("img");
-        flag2.src = "./img/bio-icons/flags/flag-burkina-faso.png";
+        flag2.src = `./img/nationalite/${player.nationalité1}.svg`;
         const flags = document.createElement("div");
         flags.className = "flags";
         flags.appendChild(flag1);
@@ -192,7 +197,7 @@ document.addEventListener('DOMContentLoaded', function () {
         infos2.appendChild(countries);
 
         const likeButton = document.createElement("img");
-        likeButton.src = "./img/bio-icons/coeur-01.svg";
+        likeButton.src = "./img/COEUR1.svg";
         const like = document.createElement("div");
         like.className = "like";
         like.appendChild(likeButton);
@@ -205,16 +210,20 @@ document.addEventListener('DOMContentLoaded', function () {
         infos3.className = "infos";
         infos3.appendChild(logoFCN);
         infos3.appendChild(yearInClub);
-
-        const role = document.createElement("img");
-        role.src = "./img/bio-icons/arret.svg";
-        const score = document.createElement("p");
-        score.textContent = "20 buts";
+        let role = document.createElement("img");
+        let score = document.createElement("p");
+        if (player.poste === 1){
+            role.src = "./img/bio-icons/arret.svg";
+            score.textContent = `${player.arrets} arrêts`;
+        }
+        else if (player.poste < 12){
+            role.src = "./img/bio-icons/ballon.svg";
+            score.textContent = `${player.buts} buts`;
+        }
         const infos4 = document.createElement("div");
         infos4.className = "infos";
         infos4.appendChild(role);
         infos4.appendChild(score);
-
         const icons = document.createElement("div");
         icons.className = "icons";
         icons.appendChild(infos1);

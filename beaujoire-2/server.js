@@ -54,15 +54,12 @@ ui.get('/', (req, res) => {
     const token = generateRandomToken(10);
     // Set the cookie in the response
     res.cookie('sessionToken', token, { maxAge: 900000, httpOnly: true });
-
     res.redirect('./home');
 });
 
 ui.get('/home', async (req, res) => {
-    // Retrieve the token from the 'sessionToken' cookie
     const sessionToken = req.cookies.sessionToken;
     res.sendFile(path.join(__dirname, 'public/home.html'), {
-        sessionToken,
         locals: {
             pageName: 'Les Canards Rient'
         }
