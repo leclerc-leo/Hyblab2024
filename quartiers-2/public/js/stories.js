@@ -412,12 +412,6 @@ const homeStories = function () {
             const audioElement = audioPlayerElement.querySelector('audio');
             new AudioPlayer(audioElement, audioPlayerElement);
         });
-        // on lance et stop toutes les balises audio
-        document.querySelectorAll('audio').forEach(audio => {
-          audio.play().then(r => {console.log('audio played')}).catch(e => {console.log('audio not played')});
-          audio.pause();
-          console.log('audio paused')
-        });
       });
     }
 
