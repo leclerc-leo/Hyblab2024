@@ -84,7 +84,10 @@ function initializePage() {
 			}
 		}
 		const captain = localStorage.getItem("captain");
-
+		if (captain) {
+			isCaptainBeingSelected = true;
+			handleCaptainSelect(captain);
+		}
 		document.getElementById("statistiques").style.display = "inline-block";
 		document.getElementById("redac").style =
 			"margin:0 ; transform: translateX(0)";
@@ -93,6 +96,40 @@ function initializePage() {
 	}
 
 	updateVotePercentages();
+	document.addEventListener("click", () => {
+		document.querySelector("#back-sound").play();
+	});
+
+	document
+		.querySelector(".dropdown")
+		.querySelector("img")
+		.addEventListener("click", (event) => {
+			document.querySelectorAll("audio").forEach((audio) => {
+				audio.muted = !audio.muted;
+			});
+		});
+
+	document.querySelector("#settings").addEventListener("click", (event) => {
+		const menu = document.querySelector(".dropdown");
+		if (
+			menu.style.animationName === "dropDownAnimation" ||
+			menu.style.animationName === ""
+		) {
+			menu.style.animationName = "dropUpAnimation";
+		} else {
+			menu.style.animationName = "dropDownAnimation";
+		}
+		// Empêche l'événement de se propager au document
+		event.stopPropagation();
+	});
+
+	// Ajoute un écouteur d'événements au document pour cacher le menu lorsque vous cliquez ailleurs
+	document.addEventListener("click", () => {
+		const menu = document.querySelector(".dropdown");
+		if (menu.style.animationName === "dropUpAnimation") {
+			menu.style.animationName = "dropDownAnimation";
+		}
+	});
 }
 
 let players = JSON.parse(localStorage.getItem("players")) || {
@@ -113,7 +150,7 @@ let players = JSON.parse(localStorage.getItem("players")) || {
 function handleCaptainClick() {
 	isCaptainBeingSelected = true;
 	if (isCaptainSelected) {
-		const capElements = document.querySelectorAll(".cap");
+		const capElements = document.querySelectorAll(".capi");
 		capElements.forEach((element) => {
 			element.remove();
 		});
@@ -139,7 +176,7 @@ function handleCaptainSelect(id) {
 		const selectedPlayer = id;
 		const selectedPlayerElement = document.getElementById(selectedPlayer);
 		const captain = document.createElement("div");
-		captain.classList.add("cap");
+		captain.classList.add("capi");
 		captain.innerHTML = `
 		c
 	`;
@@ -199,7 +236,9 @@ function updateVotePercentages() {
 		);
 		const playerPosition = playerData.POSTE;
 		const totalVotesForPosition = totalVotesPerPosition[playerPosition];
-		const playerPercentage = (playerVotes / totalVotesForPosition) * 100;
+		const playerPercentage = Math.round(
+			(playerVotes / totalVotesForPosition) * 100
+		);
 		playerPercentages[player] = playerPercentage;
 	}
 
@@ -228,8 +267,7 @@ function updateVotePercentages() {
 				playerElement.appendChild(newPercentageDisplay);
 			}
 			// Mettez à jour le pourcentage affiché
-			percentageDisplay.textContent =
-				playerPercentages[player].toFixed(2) + "%";
+			percentageDisplay.textContent = playerPercentages[player] + "%";
 			barElem.querySelector(
 				".player1-bar"
 			).style.width = `${playerPercentages[player]}%`;

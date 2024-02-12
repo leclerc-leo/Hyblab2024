@@ -131,6 +131,3 @@ dist
 
 .DS_Store
 package-lock.json
-
-Stats.json
-Likes.json

@@ -6,7 +6,6 @@ let isCaptainBeingSelected = false;
 let selectedPlayerId;
 let updatePlayerElement;
 let playersData;
-let isFirstCall = true;
 let cardJersey;
 
 window.onload = fetch("./data/DataBase.json")
@@ -189,38 +188,39 @@ function updateCardJersey() {
 	console.log("Relative path:", relativePath);
 	// Ajoutez le chemin relatif au chemin absolu de la page
 
-	switch (selectedMaillot) {
-		case "/img/maillot/maillot-00-01.png":
+	switch (relativePath) {
+		case "img/maillots/maillot-00-01.png":
 			cardJersey = "img/cardJerseys/card_jersey00-01.svg";
 			break;
-		case "img/maillot/maillot-12-13.png":
+		case "img/maillots/maillot-12-13.png":
 			cardJersey = "img/cardJerseys/card_jersey12-13.svg";
 			break;
-		case "img/maillot/maillot-21-22.png":
+		case "img/maillots/maillot-21-22.png":
 			cardJersey = "img/cardJerseys/card_jersey21-22.svg";
 			break;
-		case "img/maillot/maillot-84-85.png":
+		case "img/maillots/maillot-84-85.png":
 			cardJersey = "img/cardJerseys/card_jersey84-85.svg";
 			break;
-		case "img/maillot/maillot-94-95.png":
+		case "img/maillots/maillot-94-95.png":
 			cardJersey = "img/cardJerseys/card_jersey94-95.svg";
 			break;
 		default:
 			cardJersey = "img/cardJerseys/card_jersey00-01.svg";
 	}
+	console.log("Card Jersey:", cardJersey);
 	localStorage.setItem("cardJersey", cardJersey);
 }
 document.addEventListener("DOMContentLoaded", async () => {
-	/*
-	document.querySelectorAll(".player-clickable").forEach((player) => {
-		player.addEventListener("click", handlePlayerClick);
-	});*/
+	if (localStorage.getItem("isFirstCall") === null) {
+		// Si ce n'est pas le cas, définissez-le sur "true"
+		localStorage.setItem("isFirstCall", "true");
+	}
+
 	document
 		.querySelector("#statistiques")
 		.addEventListener("click", async (event) => {
 			event.preventDefault();
 			await saveStats();
-			window.location.href = "./statistique.html";
 		});
 	document.querySelector("#back-overlay").addEventListener("click", () => {
 		document.querySelectorAll(".carousel-item").forEach((item) => {
@@ -359,44 +359,47 @@ fetch("api/test")
 	.then((data) => console.log(data))
 	.catch((error) => console.error("Error:", error));
 
-function saveStats() {
+async function saveStats() {
 	if (
 		areAllPlayersSelected() &&
 		isCaptainSelected &&
-		!isCaptainBeingSelected
+		!isCaptainBeingSelected &&
+		localStorage.getItem("statsSaved") !== "true"
 	) {
-		fetch("./data/Stats.json")
-			.then((response) => response.json())
-			.then((stats) => {
-				console.log("Stats:", stats);
-				console.log("Players:", players);
-				Object.values(players).forEach((player) => {
-					if (stats[player] !== undefined) {
-						stats[player]++;
-						console.log(
-							`Player ${player} stats updated: ${stats[player]}`
-						);
-					} else {
-						// Handle the case where the player doesn't exist in the stats object
-						console.log(`Player ${player} not found in stats.`);
-					}
-				});
-				localStorage.setItem("stats", JSON.stringify(stats));
-				console.log("Updated Stats:", stats);
-				console.log("Stats saved to local storage");
-				// Send the updated stats back to the server
-				fetch("api/updateStats", {
-					method: "POST",
-					headers: {
-						"Content-Type": "application/json",
-					},
-					body: JSON.stringify(stats),
-				});
-			})
-			.catch((error) => console.error("Error fetching stats:", error));
+		try {
+			const response = await fetch("./data/Stats.json");
+			const stats = await response.json();
+			Object.values(players).forEach((player) => {
+				if (stats[player] !== undefined) {
+					stats[player]++;
+				} else {
+					// Handle the case where the player doesn't exist in the stats object
+					console.log(`Player ${player} not found in stats.`);
+				}
+			});
+			localStorage.setItem("stats", JSON.stringify(stats));
+			console.log("Updated Stats:", stats);
+			// Send the updated stats back to the server
+			const updateResponse = await fetch("api/updateStats", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify(stats),
+			});
+			if (!updateResponse.ok) {
+				throw new Error("Error updating stats");
+			}
+			// Set the flag in localStorage to indicate that the stats have been saved
+			localStorage.setItem("statsSaved", "true");
+			window.location.href = "./statistique.html";
+		} catch (error) {
+			console.error("Error fetching stats:", error);
+		}
 	}
+	// Always redirect to the statistics page, regardless of whether the stats were saved
+	window.location.href = "./statistique.html";
 }
-
 function animatePlayer(elementId, imgSrc, timeoutDuration, event) {
 	const element = document.getElementById(elementId);
 	const imgElement = element.querySelector("img");
@@ -495,6 +498,7 @@ function showCarousel(id) {
 }
 
 function handleValidateButtonClick() {
+	localStorage.setItem("statsSaved", "false");
 	const selectedPlayer = document.querySelector(".carousel-item.focused");
 	const selectedPlayerName =
 		selectedPlayer.querySelector("#name").textContent;
@@ -563,10 +567,10 @@ function getPositionFromId(id) {
 			position = "ENTRAÎNEUR";
 			break;
 		case elementId.includes("ailier-droit"):
-			position = "MILIEU OFF D";
+			position = "Ailier Droit";
 			break;
 		case elementId.includes("ailier-gauche"):
-			position = "MILIEU OFF";
+			position = "Ailier Gauche";
 			break;
 		case elementId.includes("attaquant-centre"):
 			position = "AVANT CENTRE";
@@ -578,10 +582,10 @@ function getPositionFromId(id) {
 			position = "ARRIÈRE G";
 			break;
 		case elementId.includes("midfielder-lead"):
-			position = "ATTAQUANT";
+			position = "MILIEU OFF";
 			break;
 		case elementId.includes("midfielder-1"):
-			position = "MILIEU DÉF G";
+			position = "MILIEU OFF G";
 			break;
 		case elementId.includes("midfielder-3"):
 			position = "MILIEU DÉF D";
@@ -1504,8 +1508,8 @@ function handleCaptainSelect(id) {
 			player.removeEventListener("click", handleCaptainClick);
 		});
 		isCaptainBeingSelected = false;
-		if (isFirstCall) {
-			isFirstCall = false;
+		if (localStorage.getItem("isFirstCall") === "true") {
+			localStorage.setItem("isFirstCall", "false");
 			document.querySelector("#fufu").play();
 		}
 	}

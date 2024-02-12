@@ -499,7 +499,7 @@
     {
         "NOM": "DA ROCHA",
         "CARTE": "fcn-28",
-        "POSTE": "MILIEU DÉF G",
+        "POSTE": "Ailier Droit",
         "NUMÉRO": 8,
         "DURÉE": "95-09",
         "MATCHS": 508,
@@ -516,7 +516,7 @@
     {
         "NOM": "MONTERRUBIO",
         "CARTE": "fcn-59",
-        "POSTE": "MILIEU DÉF G",
+        "POSTE": "Ailier Droit",
         "NUMÉRO": 18,
         "DURÉE": "96-01",
         "MATCHS": 118,
@@ -533,7 +533,7 @@
     {
         "NOM": "QUINT",
         "CARTE": "fcn-73",
-        "POSTE": "MILIEU DÉF G",
+        "POSTE": "Ailier Droit",
         "NUMÉRO": 14,
         "DURÉE": "2024-05-31T22:00:00.000Z",
         "MATCHS": 151,
@@ -550,7 +550,7 @@
     {
         "NOM": "BLAS",
         "CARTE": "fcn-74",
-        "POSTE": "MILIEU DÉF G",
+        "POSTE": "Ailier Droit",
         "NUMÉRO": 10,
         "DURÉE": "19-23",
         "MATCHS": 159,
@@ -567,7 +567,7 @@
     {
         "NOM": "C. LE ROUX",
         "CARTE": "fcn-72",
-        "POSTE": "MILIEU DÉF G",
+        "POSTE": "Ailier Droit",
         "NUMÉRO": 7,
         "DURÉE": "96-99",
         "MATCHS": 81,
@@ -582,8 +582,8 @@
     },
     {
         "NOM": "PEDROS",
-        "CARTE": "fcn-78",
-        "POSTE": "MILIEU OFF D",
+        "CARTE": "fcn-75",
+        "POSTE": "MILIEU OFF G",
         "NUMÉRO": 8,
         "DURÉE": "90-96",
         "MATCHS": 184,
@@ -600,7 +600,7 @@
     {
         "NOM": "RONGIER",
         "CARTE": "fcn-38",
-        "POSTE": "MILIEU OFF D",
+        "POSTE": "MILIEU OFF G",
         "NUMÉRO": 28,
         "DURÉE": "14-19",
         "MATCHS": 135,
@@ -616,7 +616,7 @@
     {
         "NOM": "VERETOUT",
         "CARTE": "fcn-41",
-        "POSTE": "MILIEU OFF D",
+        "POSTE": "MILIEU OFF G",
         "NUMÉRO": 25,
         "DURÉE": "11-15",
         "MATCHS": 143,
@@ -632,7 +632,7 @@
     {
         "NOM": "CHIRIVELLA",
         "CARTE": "fcn-69",
-        "POSTE": "MILIEU OFF D",
+        "POSTE": "MILIEU OFF G",
         "NUMÉRO": 5,
         "DURÉE": "20-...",
         "MATCHS": 125,
@@ -649,7 +649,7 @@
     {
         "NOM": "TOULALAN",
         "CARTE": "fcn-78",
-        "POSTE": "MILIEU OFF D",
+        "POSTE": "MILIEU OFF G",
         "NUMÉRO": 17,
         "DURÉE": "2024-05-31T22:00:00.000Z",
         "MATCHS": 121,
@@ -830,7 +830,7 @@
     {
         "NOM": "AMISSE",
         "CARTE": "fcn-23",
-        "POSTE": "ATTAQUANT",
+        "POSTE": "Ailier Gauche",
         "NUMÉRO": 11,
         "DURÉE": "73-90",
         "MATCHS": 602,
@@ -847,7 +847,7 @@
     {
         "NOM": "LOKO",
         "CARTE": "fcn-22",
-        "POSTE": "ATTAQUANT",
+        "POSTE": "Ailier Gauche",
         "NUMÉRO": 11,
         "DURÉE": "88-95",
         "MATCHS": 209,
@@ -864,7 +864,7 @@
     {
         "NOM": "VAHIRUA",
         "CARTE": "fcn-40",
-        "POSTE": "ATTAQUANT",
+        "POSTE": "Ailier Gauche",
         "NUMÉRO": 19,
         "DURÉE": "98-04",
         "MATCHS": 148,
@@ -881,7 +881,7 @@
     {
         "NOM": "SIMON",
         "CARTE": "fcn-82",
-        "POSTE": "ATTAQUANT",
+        "POSTE": "Ailier Gauche",
         "NUMÉRO": 27,
         "DURÉE": "19- ...",
         "MATCHS": 166,

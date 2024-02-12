@@ -6,9 +6,10 @@ document.addEventListener("DOMContentLoaded", function () {
 		let gif = document.getElementById("gif").children[0];
 		gif.src = "./img/logo.gif";
 		gif.style.display = "flex";
-
-		setTimeout(function () {
-			document.getElementById("gif").style.display = "none";
-		}, 5040);
+		gif.onload = function () {
+			setTimeout(function () {
+				document.getElementById("gif").style.display = "none";
+			}, 5040);
+		};
 	});
 });

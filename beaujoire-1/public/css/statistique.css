@@ -31,8 +31,8 @@
 	background-size: 69%;
 	background-repeat: no-repeat;
 	background-position: center;
-	height: 67px;
-	width: 100px;
+	height: 45px;
+	width: 67px;
 }
 
 .buttons {
@@ -88,74 +88,95 @@
 	border-radius: 20px;
 }
 
+.player {
+	transform: translate(-50%, -63%) scale(0.8);
+}
+
 .vote-percentage {
 	position: absolute;
-	/* Cela positionne l'élément juste au-dessus de la barre */
-	right: -135%; /* Ajuster à droite */
-	bottom: 1%;
-	transform: translateY(
-		-5px
-	); /* Décaler légèrement vers le haut pour l'espacement */
+	right: -180%;
+	bottom: -10%;
 	padding: 5px;
 	color: #00a55a; /* Texte vert */
-	font-size: 0.8em; /* Petite taille de police */
+	font-size: 1.4em; /* Petite taille de police */
 	border-radius: 3px; /* Bords arrondis */
 	font-weight: bold;
+	line-height: 0.3;
 }
 
 .player-name {
 	position: absolute;
 	text-align: start;
+	white-space: nowrap;
 	top: 10%;
 	right: -105%;
+	font-size: 0.95em;
 }
 
 #arriere-droit-bar {
-	top: 36%;
+	top: 32%;
 	left: 55%;
 }
 #defender-3-bar {
-	top: 51%;
+	top: 47%;
 	left: 55%;
 }
 
 #defender-2-bar {
-	top: 66%;
+	top: 62%;
 	left: 55%;
 }
 #arriere-gauche-bar {
-	top: 81%;
+	top: 77%;
 	left: 55%;
 }
 #midfielder-3-bar {
-	top: 96%;
+	top: 92%;
 	left: 55%;
 }
 #midfielder-lead-bar {
-	top: 21%;
-	left: 4%;
+	top: 17%;
+	left: 8%;
 }
 #midfielder-1-bar {
-	top: 36%;
-	left: 4%;
+	top: 32%;
+	left: 8%;
 }
 #ailier-droit-bar {
-	top: 51%;
-	left: 4%;
+	top: 47%;
+	left: 8%;
 }
 #attaquant-centre-bar {
-	top: 66%;
-	left: 4%;
+	top: 62%;
+	left: 8%;
 }
 #ailier-gauche-bar {
-	top: 81%;
-	left: 4%;
+	top: 77%;
+	left: 8%;
 }
 #goalkeeper-bar {
-	top: 96%;
-	left: 4%;
+	top: 92%;
+	left: 8%;
 }
 #entraineur-bar {
-	top: 21%;
+	top: 17%;
 	left: 55%;
+}
+
+.capi {
+	position: absolute;
+	top: -24%;
+	left: -30%;
+	padding: 20%;
+	aspect-ratio: 1;
+	background: white;
+	border-radius: 50%;
+	color: #00a55a;
+	font-weight: bolder;
+	font-size: 1.4em;
+	text-align: center;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
 }

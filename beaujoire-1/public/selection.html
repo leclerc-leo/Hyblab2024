@@ -20,473 +20,481 @@
 		<script src="./js/selection.js"></script>
 	</head>
 	<body>
-		<div class="swiper-container">
-			<div class="swiper-wrapper">
-				<div class="swiper-slide">
-					<!-- Terrain de football 1 de la rédaction des sports -->
+		<div class="container">
+			<div class="textvote-container"></div>
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<!-- Terrain de football 1 de la rédaction des sports -->
+						<div class="container-terrain">
+							<div class="buttons">
+								<button
+									class="player-clickable"
+									id="entraineur-choix"
+									title="entraineur">
+									SUAUDEAU
+								</button>
+							</div>
+							<div class="field">
+								<div class="tr"></div>
+								<img
+									src="./img/field.svg"
+									alt="field"
+									width="100%"
+									height="100%" />
 
-					<div class="container-terrain">
-						<div class="textvote-container"></div>
-						<div class="buttons">
-							<button id="blason" title="blason"></button>
-							<button
-								class="player-clickable"
-								id="entraineur-choix"
-								title="entraineur">
-								SUAUDEAU
-							</button>
-							<button id="maillot" title="maillot"></button>
-						</div>
-						<div class="field">
-							<img
-								src="./img/field.svg"
-								alt="field"
-								width="100%"
-								height="100%" />
+								<div class="player-card">
+									<!-- Goalkeeper -->
+									<div
+										class="player player-clickable goalkeeper"
+										style="top: 90%; left: 50%"
+										data-number="1">
+										<div class="player-name">LANDREAU</div>
+									</div>
 
-							<div class="player-card">
-								<!-- Goalkeeper -->
-								<div
-									class="player player-clickable goalkeeper"
-									style="top: 90%; left: 50%"
-									data-number="1">
-									<div class="player-name">LANDREAU</div>
-								</div>
+									<!-- Forward Line (3 players) -->
+									<div
+										class="player player-clickable forward"
+										style="top: 21%; left: 20%"
+										data-number="11">
+										<div class="player-name">LOKO</div>
+									</div>
+									<div
+										class="player player-clickable forward"
+										style="top: 17%; left: 50%"
+										data-number="9">
+										<div class="player-name">
+											HALIHODZIC
+										</div>
+									</div>
+									<div
+										class="player player-clickable forward"
+										style="top: 21%; left: 80%"
+										data-number="8">
+										<div class="player-name-long">
+											DA ROCHA
+										</div>
+									</div>
 
-								<!-- Forward Line (3 players) -->
-								<div
-									class="player player-clickable forward"
-									style="top: 21%; left: 20%"
-									data-number="11">
-									<div class="player-name">LOKO</div>
-								</div>
-								<div
-									class="player player-clickable forward"
-									style="top: 17%; left: 50%"
-									data-number="9">
-									<div class="player-name">HALIHODZIC</div>
-								</div>
-								<div
-									class="player player-clickable forward"
-									style="top: 21%; left: 80%"
-									data-number="8">
-									<div class="player-name-long">DA ROCHA</div>
-								</div>
+									<!-- Midfield Line (3 players) -->
+									<div
+										class="player player-clickable midfielder"
+										style="top: 50%; left: 25%"
+										data-number="6">
+										<div class="player-name">
+											MAK&Eacute;L&Eacute;L&Eacute;
+										</div>
+									</div>
+									<div
+										class="player player-clickable midfielder"
+										style="top: 40%; left: 50%"
+										data-number="10">
+										<div class="player-name">N'DORAM</div>
+									</div>
+									<div
+										class="player player-clickable midfielder"
+										style="top: 50%; left: 75%"
+										data-number="17">
+										<div class="player-name">TOULALAN</div>
+									</div>
 
-								<!-- Midfield Line (3 players) -->
-								<div
-									class="player player-clickable midfielder"
-									style="top: 50%; left: 25%"
-									data-number="6">
-									<div class="player-name">
-										MAK&Eacute;L&Eacute;L&Eacute;
+									<!-- Defensive Line (4 players) -->
+									<div
+										class="player player-clickable defender"
+										style="top: 65%; left: 15%"
+										data-number="2">
+										<div class="player-name">AYACHE</div>
+									</div>
+									<div
+										class="player player-clickable defender"
+										style="top: 72%; left: 39%"
+										data-number="2">
+										<div class="player-name">FABBRI</div>
+									</div>
+									<div
+										class="player player-clickable defender"
+										style="top: 72%; left: 61%"
+										data-number="6">
+										<div class="player-name">YEPES</div>
+									</div>
+									<div
+										class="player player-clickable defender"
+										style="top: 65%; left: 85%"
+										data-number="6">
+										<div class="player-name">BOSSIS</div>
 									</div>
 								</div>
-								<div
-									class="player player-clickable midfielder"
-									style="top: 40%; left: 50%"
-									data-number="10">
-									<div class="player-name">N'DORAM</div>
-								</div>
-								<div
-									class="player player-clickable midfielder"
-									style="top: 50%; left: 75%"
-									data-number="17">
-									<div class="player-name">TOULALAN</div>
-								</div>
-
-								<!-- Defensive Line (4 players) -->
-								<div
-									class="player player-clickable defender"
-									style="top: 65%; left: 15%"
-									data-number="2">
-									<div class="player-name">AYACHE</div>
-								</div>
-								<div
-									class="player player-clickable defender"
-									style="top: 72%; left: 39%"
-									data-number="2">
-									<div class="player-name">FABBRI</div>
-								</div>
-								<div
-									class="player player-clickable defender"
-									style="top: 72%; left: 61%"
-									data-number="6">
-									<div class="player-name">YEPES</div>
-								</div>
-								<div
-									class="player player-clickable defender"
-									style="top: 65%; left: 85%"
-									data-number="6">
-									<div class="player-name">BOSSIS</div>
-								</div>
+								<button
+									class="heart-button round-btn"
+									data-composition-id="composition1">
+									♥ <span class="like-count"></span>
+								</button>
 							</div>
-						</div>
-						<button class="writer" id="writer">Julien Soyer</button>
-						<a href="field.html">
-							<button class="gm-btn gb-shutter">
-								TON 11 DE L&Eacute;GENDE
+							<button class="writer" id="writer">
+								Compo collective de la rédaction
 							</button>
-						</a>
+						</div>
 					</div>
-					<button
-						class="heart-button"
-						data-composition-id="composition1">
-						♥ <span class="like-count"></span>
-					</button>
+					<div class="swiper-slide">
+						<!-- Terrain de football 2 de Christophe Delacroix -->
+
+						<div class="container-terrain">
+							<div class="buttons">
+								<button
+									class="player-clickable"
+									id="entraineur-choix"
+									title="entraineur">
+									SUAUDEAU
+								</button>
+							</div>
+							<div class="field">
+								<div class="tr"></div>
+
+								<img
+									src="./img/field.svg"
+									alt="field"
+									width="100%"
+									height="100%" />
+
+								<div class="player-card">
+									<!-- Goalkeeper -->
+									<div
+										class="player player-clickable goalkeeper"
+										style="top: 90%; left: 50%"
+										data-number="1">
+										<div class="player-name">LANDREAU</div>
+									</div>
+
+									<!-- Forward Line (3 players) -->
+									<div
+										class="player player-clickable forward"
+										style="top: 21%; left: 20%"
+										data-number="11">
+										<div class="player-name">LOKO</div>
+									</div>
+									<div
+										class="player player-clickable forward"
+										style="top: 17%; left: 50%"
+										data-number="9">
+										<div class="player-name">MOLDOVAN</div>
+									</div>
+									<div
+										class="player player-clickable forward"
+										style="top: 21%; left: 80%"
+										data-number="8">
+										<div class="player-name-long">
+											DA ROCHA
+										</div>
+									</div>
+
+									<!-- Midfield Line (3 players) -->
+									<div
+										class="player player-clickable midfielder"
+										style="top: 50%; left: 25%"
+										data-number="6">
+										<div class="player-name">
+											MAK&Eacute;L&Eacute;L&Eacute;
+										</div>
+									</div>
+									<div
+										class="player player-clickable midfielder"
+										style="top: 40%; left: 50%"
+										data-number="10">
+										<div class="player-name">N'DORAM</div>
+									</div>
+									<div
+										class="player player-clickable midfielder"
+										style="top: 50%; left: 75%"
+										data-number="8">
+										<div class="player-name">PEDROS</div>
+									</div>
+
+									<!-- Defensive Line (4 players) -->
+									<div
+										class="player player-clickable defender"
+										style="top: 65%; left: 15%"
+										data-number="3">
+										<div class="player-name">PIGNOL</div>
+									</div>
+									<div
+										class="player player-clickable defender"
+										style="top: 72%; left: 39%"
+										data-number="2">
+										<div class="player-name">FABBRI</div>
+									</div>
+									<div
+										class="player player-clickable defender"
+										style="top: 72%; left: 61%"
+										data-number="6">
+										<div class="player-name">YEPES</div>
+									</div>
+									<div
+										class="player player-clickable defender"
+										style="top: 65%; left: 85%"
+										data-number="6">
+										<div class="player-name">BOSSIS</div>
+									</div>
+								</div>
+								<button
+									class="heart-button round-btn"
+									data-composition-id="composition2">
+									♥ <span class="like-count"></span>
+								</button>
+							</div>
+							<button class="writer" id="writer">
+								Christophe Delacroix
+							</button>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<!-- Terrain de football 3 de Jean-Marcel Boudard -->
+
+						<div class="container-terrain">
+							<div class="buttons">
+								<button
+									class="player-clickable"
+									id="entraineur-choix"
+									title="entraineur">
+									SUAUDEAU
+								</button>
+							</div>
+							<div class="field">
+								<div class="tr"></div>
+
+								<img
+									src="./img/field.svg"
+									alt="field"
+									width="100%"
+									height="100%" />
+
+								<div class="player-card">
+									<!-- Goalkeeper -->
+									<div
+										class="player player-clickable goalkeeper"
+										style="top: 90%; left: 50%"
+										data-number="1">
+										<div class="player-name">LANDREAU</div>
+									</div>
+
+									<!-- Forward Line (3 players) -->
+									<div
+										class="player player-clickable forward"
+										style="top: 21%; left: 20%"
+										data-number="11">
+										<div class="player-name">AMISSE</div>
+									</div>
+									<div
+										class="player player-clickable forward"
+										style="top: 17%; left: 50%"
+										data-number="9">
+										<div class="player-name-long">
+											KOLO MUANI
+										</div>
+									</div>
+									<div
+										class="player player-clickable forward"
+										style="top: 21%; left: 80%"
+										data-number="8">
+										<div class="player-name-long">
+											DA ROCHA
+										</div>
+									</div>
+
+									<!-- Midfield Line (3 players) -->
+									<div
+										class="player player-clickable midfielder"
+										style="top: 50%; left: 25%"
+										data-number="6">
+										<div class="player-name">ADONKOR</div>
+									</div>
+									<div
+										class="player player-clickable midfielder"
+										style="top: 40%; left: 50%"
+										data-number="10">
+										<div class="player-name">N'DORAM</div>
+									</div>
+									<div
+										class="player player-clickable midfielder"
+										style="top: 50%; left: 75%"
+										data-number="25">
+										<div class="player-name">VERETOUT</div>
+									</div>
+
+									<!-- Defensive Line (4 players) -->
+									<div
+										class="player player-clickable defender"
+										style="top: 65%; left: 15%"
+										data-number="2">
+										<div class="player-name">AYACHE</div>
+									</div>
+									<div
+										class="player player-clickable defender"
+										style="top: 72%; left: 39%"
+										data-number="8">
+										<div class="player-name">DESAILLY</div>
+									</div>
+									<div
+										class="player player-clickable defender"
+										style="top: 72%; left: 61%"
+										data-number="6">
+										<div class="player-name">YEPES</div>
+									</div>
+									<div
+										class="player player-clickable defender"
+										style="top: 65%; left: 85%"
+										data-number="6">
+										<div class="player-name">BOSSIS</div>
+									</div>
+								</div>
+								<button
+									class="heart-button round-btn"
+									data-composition-id="composition3">
+									♥ <span class="like-count"></span>
+								</button>
+							</div>
+							<button class="writer" id="writer">
+								Jean-Marcel Boudard
+							</button>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<!-- Terrain de football 4 de Loïc Folliot -->
+						<div class="container-terrain">
+							<div class="buttons">
+								<button
+									class="player-clickable"
+									id="entraineur-choix"
+									title="entraineur">
+									SUAUDEAU
+								</button>
+							</div>
+							<div class="field">
+								<div class="tr"></div>
+
+								<img
+									src="./img/field.svg"
+									alt="field"
+									width="100%"
+									height="100%" />
+
+								<div class="player-card">
+									<!-- Goalkeeper -->
+									<div
+										class="player player-clickable goalkeeper"
+										style="top: 90%; left: 50%"
+										data-number="1">
+										<div class="player-name-long">
+											BERTRAND-DEMANES
+										</div>
+									</div>
+
+									<!-- Forward Line (3 players) -->
+									<div
+										class="player player-clickable forward"
+										style="top: 21%; left: 20%"
+										data-number="11">
+										<div class="player-name">AMISSE</div>
+									</div>
+									<div
+										class="player player-clickable forward"
+										style="top: 17%; left: 50%"
+										data-number="9">
+										<div class="player-name">
+											HALIHODZIC
+										</div>
+									</div>
+									<div
+										class="player player-clickable forward"
+										style="top: 21%; left: 80%"
+										data-number="8">
+										<div class="player-name-long">
+											DA ROCHA
+										</div>
+									</div>
+
+									<!-- Midfield Line (3 players) -->
+									<div
+										class="player player-clickable midfielder"
+										style="top: 50%; left: 25%"
+										data-number="4">
+										<div class="player-name">KAREMBEU</div>
+									</div>
+									<div
+										class="player player-clickable midfielder"
+										style="top: 40%; left: 50%"
+										data-number="10">
+										<div class="player-name">N'DORAM</div>
+									</div>
+									<div
+										class="player player-clickable midfielder"
+										style="top: 50%; left: 75%"
+										data-number="17">
+										<div class="player-name">TOULALAN</div>
+									</div>
+
+									<!-- Defensive Line (4 players) -->
+									<div
+										class="player player-clickable defender"
+										style="top: 65%; left: 15%"
+										data-number="2">
+										<div class="player-name">AYACHE</div>
+									</div>
+									<div
+										class="player player-clickable defender"
+										style="top: 72%; left: 39%"
+										data-number="2">
+										<div class="player-name">FABBRI</div>
+									</div>
+									<div
+										class="player player-clickable defender"
+										style="top: 72%; left: 61%"
+										data-number="6">
+										<div class="player-name">YEPES</div>
+									</div>
+									<div
+										class="player player-clickable defender"
+										style="top: 65%; left: 85%"
+										data-number="6">
+										<div class="player-name">BOSSIS</div>
+									</div>
+								</div>
+								<button
+									class="heart-button round-btn"
+									data-composition-id="composition4">
+									♥ <span class="like-count"></span>
+								</button>
+							</div>
+							<button class="writer" id="writer">
+								Loïc Folliot
+							</button>
+						</div>
+					</div>
 				</div>
-				<div class="swiper-slide">
-					<!-- Terrain de football 2 de Christophe Delacroix -->
-
-					<div class="container-terrain">
-						<div class="textvote-container"></div>
-						<div class="buttons">
-							<button id="blason" title="blason"></button>
-							<button
-								class="player-clickable"
-								id="entraineur-choix"
-								title="entraineur">
-								SUAUDEAU
-							</button>
-							<button id="maillot" title="maillot"></button>
-						</div>
-						<div class="field">
-							<img
-								src="./img/field.svg"
-								alt="field"
-								width="100%"
-								height="100%" />
-
-							<div class="player-card">
-								<!-- Goalkeeper -->
-								<div
-									class="player player-clickable goalkeeper"
-									style="top: 90%; left: 50%"
-									data-number="1">
-									<div class="player-name">LANDREAU</div>
-								</div>
-
-								<!-- Forward Line (3 players) -->
-								<div
-									class="player player-clickable forward"
-									style="top: 21%; left: 20%"
-									data-number="11">
-									<div class="player-name">LOKO</div>
-								</div>
-								<div
-									class="player player-clickable forward"
-									style="top: 17%; left: 50%"
-									data-number="9">
-									<div class="player-name">MOLDOVAN</div>
-								</div>
-								<div
-									class="player player-clickable forward"
-									style="top: 21%; left: 80%"
-									data-number="8">
-									<div class="player-name-long">DA ROCHA</div>
-								</div>
-
-								<!-- Midfield Line (3 players) -->
-								<div
-									class="player player-clickable midfielder"
-									style="top: 50%; left: 25%"
-									data-number="6">
-									<div class="player-name">
-										MAK&Eacute;L&Eacute;L&Eacute;
-									</div>
-								</div>
-								<div
-									class="player player-clickable midfielder"
-									style="top: 40%; left: 50%"
-									data-number="10">
-									<div class="player-name">N'DORAM</div>
-								</div>
-								<div
-									class="player player-clickable midfielder"
-									style="top: 50%; left: 75%"
-									data-number="8">
-									<div class="player-name">PEDROS</div>
-								</div>
-
-								<!-- Defensive Line (4 players) -->
-								<div
-									class="player player-clickable defender"
-									style="top: 65%; left: 15%"
-									data-number="3">
-									<div class="player-name">PIGNOL</div>
-								</div>
-								<div
-									class="player player-clickable defender"
-									style="top: 72%; left: 39%"
-									data-number="2">
-									<div class="player-name">FABBRI</div>
-								</div>
-								<div
-									class="player player-clickable defender"
-									style="top: 72%; left: 61%"
-									data-number="6">
-									<div class="player-name">YEPES</div>
-								</div>
-								<div
-									class="player player-clickable defender"
-									style="top: 65%; left: 85%"
-									data-number="6">
-									<div class="player-name">BOSSIS</div>
-								</div>
-							</div>
-						</div>
-						<button class="writer" id="writer">
-							Christophe Delacroix
-						</button>
-						<a href="field.html">
-							<button class="gm-btn gb-shutter">
-								TON 11 DE L&Eacute;GENDE
-							</button>
-						</a>
-					</div>
-					<button
-						class="heart-button"
-						data-composition-id="composition2">
-						♥ <span class="like-count"></span>
+				<!-- Add Pagination -->
+				<div class="swiper-pagination"></div>
+				<!-- Add Navigation -->
+				<div class="swiper-button-next"></div>
+				<div class="swiper-button-prev"></div>
+			</div>
+			<div class="bottom-btn">
+				<a id="redac" href="field.html">
+					<button class="gm-btn gb-shutter">
+						TON 11 DE L&Eacute;GENDE
 					</button>
-				</div>
-				<div class="swiper-slide">
-					<!-- Terrain de football 3 de Jean-Marcel Boudard -->
-
-					<div class="container-terrain">
-						<div class="textvote-container"></div>
-						<div class="buttons">
-							<button id="blason" title="blason"></button>
-							<button
-								class="player-clickable"
-								id="entraineur-choix"
-								title="entraineur">
-								SUAUDEAU
-							</button>
-							<button id="maillot" title="maillot"></button>
-						</div>
-						<div class="field">
-							<img
-								src="./img/field.svg"
-								alt="field"
-								width="100%"
-								height="100%" />
-
-							<div class="player-card">
-								<!-- Goalkeeper -->
-								<div
-									class="player player-clickable goalkeeper"
-									style="top: 90%; left: 50%"
-									data-number="1">
-									<div class="player-name">LANDREAU</div>
-								</div>
-
-								<!-- Forward Line (3 players) -->
-								<div
-									class="player player-clickable forward"
-									style="top: 21%; left: 20%"
-									data-number="11">
-									<div class="player-name">AMISSE</div>
-								</div>
-								<div
-									class="player player-clickable forward"
-									style="top: 17%; left: 50%"
-									data-number="9">
-									<div class="player-name-long">
-										KOLO MUANI
-									</div>
-								</div>
-								<div
-									class="player player-clickable forward"
-									style="top: 21%; left: 80%"
-									data-number="8">
-									<div class="player-name-long">DA ROCHA</div>
-								</div>
-
-								<!-- Midfield Line (3 players) -->
-								<div
-									class="player player-clickable midfielder"
-									style="top: 50%; left: 25%"
-									data-number="6">
-									<div class="player-name">ADONKOR</div>
-								</div>
-								<div
-									class="player player-clickable midfielder"
-									style="top: 40%; left: 50%"
-									data-number="10">
-									<div class="player-name">N'DORAM</div>
-								</div>
-								<div
-									class="player player-clickable midfielder"
-									style="top: 50%; left: 75%"
-									data-number="25">
-									<div class="player-name">VERETOUT</div>
-								</div>
-
-								<!-- Defensive Line (4 players) -->
-								<div
-									class="player player-clickable defender"
-									style="top: 65%; left: 15%"
-									data-number="2">
-									<div class="player-name">AYACHE</div>
-								</div>
-								<div
-									class="player player-clickable defender"
-									style="top: 72%; left: 39%"
-									data-number="8">
-									<div class="player-name">DESAILLY</div>
-								</div>
-								<div
-									class="player player-clickable defender"
-									style="top: 72%; left: 61%"
-									data-number="6">
-									<div class="player-name">YEPES</div>
-								</div>
-								<div
-									class="player player-clickable defender"
-									style="top: 65%; left: 85%"
-									data-number="6">
-									<div class="player-name">BOSSIS</div>
-								</div>
-							</div>
-						</div>
-						<button class="writer" id="writer">
-							Jean-Marcel Boudard
-						</button>
-						<a href="field.html">
-							<button class="gm-btn gb-shutter">
-								TON 11 DE L&Eacute;GENDE
-							</button>
-						</a>
+				</a>
+				<div class="settings">
+					<div class="round-btn" id="settings" title="settings">
+						<img src="./img/settings.svg" alt="settings" />
 					</div>
-					<button
-						class="heart-button"
-						data-composition-id="composition3">
-						♥ <span class="like-count"></span>
-					</button>
-				</div>
-
-				<div class="swiper-slide">
-					<!-- Terrain de football 4 de Loïc Folliot -->
-					<div class="container-terrain">
-						<div class="textvote-container"></div>
-						<div class="buttons">
-							<button id="blason" title="blason">
-								<!--Maillot 84-85-->
-							</button>
-							<button
-								class="player-clickable"
-								id="entraineur-choix"
-								title="entraineur">
-								SUAUDEAU
-							</button>
-							<button id="maillot" title="maillot"></button>
-						</div>
-						<div class="field">
-							<img
-								src="./img/field.svg"
-								alt="field"
-								width="100%"
-								height="100%" />
-
-							<div class="player-card">
-								<!-- Goalkeeper -->
-								<div
-									class="player player-clickable goalkeeper"
-									style="top: 90%; left: 50%"
-									data-number="1">
-									<div class="player-name-long">
-										BERTRAND-DEMANES
-									</div>
-								</div>
-
-								<!-- Forward Line (3 players) -->
-								<div
-									class="player player-clickable forward"
-									style="top: 21%; left: 20%"
-									data-number="11">
-									<div class="player-name">AMISSE</div>
-								</div>
-								<div
-									class="player player-clickable forward"
-									style="top: 17%; left: 50%"
-									data-number="9">
-									<div class="player-name">HALIHODZIC</div>
-								</div>
-								<div
-									class="player player-clickable forward"
-									style="top: 21%; left: 80%"
-									data-number="8">
-									<div class="player-name-long">DA ROCHA</div>
-								</div>
-
-								<!-- Midfield Line (3 players) -->
-								<div
-									class="player player-clickable midfielder"
-									style="top: 50%; left: 25%"
-									data-number="4">
-									<div class="player-name">KAREMBEU</div>
-								</div>
-								<div
-									class="player player-clickable midfielder"
-									style="top: 40%; left: 50%"
-									data-number="10">
-									<div class="player-name">N'DORAM</div>
-								</div>
-								<div
-									class="player player-clickable midfielder"
-									style="top: 50%; left: 75%"
-									data-number="17">
-									<div class="player-name">TOULALAN</div>
-								</div>
-
-								<!-- Defensive Line (4 players) -->
-								<div
-									class="player player-clickable defender"
-									style="top: 65%; left: 15%"
-									data-number="2">
-									<div class="player-name">AYACHE</div>
-								</div>
-								<div
-									class="player player-clickable defender"
-									style="top: 72%; left: 39%"
-									data-number="2">
-									<div class="player-name">FABBRI</div>
-								</div>
-								<div
-									class="player player-clickable defender"
-									style="top: 72%; left: 61%"
-									data-number="6">
-									<div class="player-name">YEPES</div>
-								</div>
-								<div
-									class="player player-clickable defender"
-									style="top: 65%; left: 85%"
-									data-number="6">
-									<div class="player-name">BOSSIS</div>
-								</div>
-							</div>
-						</div>
-						<button class="writer" id="writer">Loïc Folliot</button>
-						<a href="field.html">
-							<button class="gm-btn gb-shutter">
-								TON 11 DE L&Eacute;GENDE
-							</button>
-						</a>
+					<div class="dropdown">
+						<p>i</p>
+						<img src="./img/sound.svg" alt="sound" />
 					</div>
-					<button
-						class="heart-button"
-						data-composition-id="composition4">
-						♥ <span class="like-count"></span>
-					</button>
 				</div>
 			</div>
-
-			<!-- Add Pagination -->
-			<div class="swiper-pagination"></div>
-			<!-- Add Navigation -->
-			<div class="swiper-button-next"></div>
-			<div class="swiper-button-prev"></div>
 		</div>
+		<audio class="audio" id="back-sound" autoplay loop>
+			<source src="./img/soundDesign/fond-sonore.mp3" type="audio/mpeg" />
+		</audio>
 	</body>
 </html>
