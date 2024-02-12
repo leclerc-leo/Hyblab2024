@@ -55,7 +55,7 @@ dataUtils.selectPlayer = function(idPlayer, callback) {
 
 dataUtils.getPlayersByPosition = function(positionId, callback) {
     const query = `
-      SELECT id, nom, prenom, photo
+      SELECT *
       FROM Joueurs
       WHERE poste = ?`;
   

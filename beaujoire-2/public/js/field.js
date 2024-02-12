@@ -1,6 +1,34 @@
 
+//import dataUtils from '../data/dataUtils.mjs';
+
+/*checks if the votes have been done
+for (let i = 1; i <= 12; i++) {
+  if(votesTmp[i] === 0 ) {
+    allVotes = false ;
+    break;
+  }
+}*/
+
+
+
 console.log(globals.tabVotes);
 console.log(globals.shown);
+
+// Wait for the content to preload and display 1st slide
+// Here we simulate a loading time of one second
+setTimeout(() => {
+  // fade out the loader "slide"
+  // and send it to the back (z-index = -1)
+  anime({
+    delay: 100,
+    targets: '#loader',
+    opacity: '0',
+    'z-index' : -1,
+    easing: 'easeOutQuad',
+  });
+  // Init first slide
+}, 700);
+
 
 /************* Archives *************/
 function checkVotes() {
@@ -52,7 +80,6 @@ if (globals.checkAllVotes(globals.tabVotes) && !(globals.shown)) {
     )
     globals.setShown(true);
     await getSessionTokenValue();
-
   });
 
   document.querySelector("#close").addEventListener("click", function () {

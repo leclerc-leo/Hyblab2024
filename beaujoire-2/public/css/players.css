@@ -14,7 +14,7 @@
 }*/
 
 .bio-player{
-  width: 6em;
+  width: 85%;
   margin: 0.28em auto;
   text-align: center;
   border: 3px solid var(--yellow);
@@ -25,9 +25,11 @@
   position: relative;
   z-index: -1;
   height: 0;
-  font-size: 2.1em;
+  font-size: 165%;
+  width: 100%;
   line-height: 0.9em;
   color: var(--green);
+  font-family: "Abolition";
 }
 
 .avatar{
@@ -36,8 +38,9 @@
   object-fit: contain;
 }
 
-.background-text, .fullname, .infos p {
+.fullname, .infos p {
   font-family: "Abolition";
+  color: white;
 }
 
 .overlay-firstname{
@@ -62,7 +65,9 @@
 }
 
 .display-bio img{
-  width: 0.6em;
+  width: 0.5em;
+  margin-right: 4%;
+  margin-bottom: 10%;
 }
 
 .icons{
@@ -83,7 +88,7 @@
   font-size: 0.33em;
   margin: inherit;
   text-align: inherit;
-  color: inherit;
+  color: white;
 }
 
 .flags > img{
@@ -102,6 +107,7 @@
   text-align: left;
   font-size: 0.27em;
   font-family: "Neue Haas Unica";
+  color: white;
 }
 
 /* Fill the whole viewport when its aspect ratio is between 9/16 and 3/4 */

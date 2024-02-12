@@ -32,6 +32,14 @@ body{
     height: 100%;
     margin-top: -2%;
     position: relative;
+    overflow-y: auto;
+    overflow-x: hidden ;
+  }
+  .player-box.expanded {
+    height: 45vh; 
+  }
+  .player-list::-webkit-scrollbar {
+    width: 0;
   }
   
   .player-box {
@@ -70,7 +78,7 @@ body{
   .heart-button {
     background: url(../img/COEUR1.svg) no-repeat center center;
     background-size: contain;
-    width: 10%;
+    width: 15%;
     margin-right: 5%;
     margin-left: 9%;
     border: none;
@@ -82,7 +90,8 @@ body{
   .heart-button.pressed{
     background: url("../img/COEUR2.svg") no-repeat center center;
     background-size: contain;
-    width: 8%;
+    width: 15%;
+    height: 30%;
     margin-right: 5%;
     margin-left: 9%;
     border: none;
