@@ -1,11 +1,11 @@
 const swiper = new Swiper("#mySwiper", {
     direction: "horizontal",
     mousewheel: true,
-    // navigation:{
-    //     enabled: true,
-    //     nextEl: '.swiper-button-next',
-    //     prevEl: '.swiper-button-prev',
-    // },
+    navigation:{
+        enabled: true,
+        nextEl: '#explorez-right',
+        prevEl: '#explorez-left',
+    },
     pagination: {
         el: ".swiper-pagination",
         clickable: true,
