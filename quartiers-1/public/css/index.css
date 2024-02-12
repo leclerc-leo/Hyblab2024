@@ -59,47 +59,6 @@ h1{
     }
 }
 
-#loader-text{
-    text-align: center;
-    font-size: 25%;
-    position: relative;
-    top: 45%;
-    width: 100%;
-    color: white
-}
-
-#loading-bar{
-    width: 50%;
-    height: 5px;
-    position: absolute;
-    border: 1px solid black;
-    overflow: hidden;
-    top: 65%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-}
-#loading-bar::after {
-    content: '';
-    width: 50%;
-    height: 5px;
-    background-color: black;
-    position: absolute;
-    top: 0;
-    left: 0;
-    box-sizing: border-box;
-    animation: animloader 2s linear infinite;
-}
-@keyframes animloader {
-    0% {
-        left: 0;
-        transform: translateX(-100%);
-    }
-    100% {
-        left: 100%;
-        transform: translateX(0%);
-    }
-}
-
 /* -------------- End of Loader --------------*/
 
 /* -------------- Accueil --------------*/
