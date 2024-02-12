@@ -162,17 +162,14 @@ document.addEventListener("DOMContentLoaded", function () {
 	let likes = parseInt(button.dataset.likes, 10) || 0;
 	likes += delta;
 	button.dataset.likes = likes; // Met à jour le nombre de likes dans l'attribut data-likes
-	likeCountSpan.textContent = likes; // Affiche le nombre mis à jour
+	likeCountSpan.textContent = likes; // Met à jour le texte pour afficher le nombre de likes
   
-	// Mise à jour du localStorage pour persister l'état liké
+	// Logique pour la mise à jour du localStorage
 	const compositionId = button.getAttribute('data-composition-id');
 	if (delta > 0) {
-	  localStorage.setItem(compositionId, likes.toString()); // Stocke le nombre actuel de likes
+	  localStorage.setItem(compositionId, likes.toString()); // Incrémente le like
 	} else {
-	  const storedLikes = parseInt(localStorage.getItem(compositionId), 10);
-	  if (storedLikes <= likes) {
-		localStorage.setItem(compositionId, likes.toString()); // Stocke le nombre actuel de likes
-	  }
+	  localStorage.removeItem(compositionId); // Décrémente le like
 	}
   }
   

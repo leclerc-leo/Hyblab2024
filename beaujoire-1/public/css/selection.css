@@ -131,19 +131,20 @@
 }
 .heart-button {
 	background-color: white; /* Définit l'arrière-plan du bouton en blanc */
-	border: none; /* Supprime la bordure, si vous n'en voulez pas */
-	outline: none; /* Supprime l'outline pour éviter l'effet de focus bleu par défaut sur les boutons */
-	cursor: pointer; /* Change le curseur en pointeur pour indiquer qu'il s'agit d'un élément cliquable */
-	
-	/* Ajoutez des propriétés supplémentaires pour ajuster la taille et l'espacement si nécessaire */
-	padding: 10px; /* Espacement intérieur, ajustez selon vos besoins */
-	border-radius: 50%; /* Rend le bouton circulaire, ajustez ou supprimez selon vos besoins */
-	
-	/* Centrez les images SVG à l'intérieur du bouton */
 	display: flex;
-	align-items: center;
-	justify-content: center;
+	flex-direction: column; /* Organise les éléments en colonne */
+	align-items: center; /* Centre les éléments horizontalement */
+	justify-content: center; /* Centre les éléments verticalement */
+	border: none;
+	cursor: pointer;
+	padding: 5px; /* Réduisez le padding pour diminuer la taille globale */
+	width: 50px; /* Définit une largeur fixe pour le bouton */
+	height: 50px; /* Définit une hauteur fixe pour le bouton, ajustez selon besoin */
+	border-radius: 50%; /* Assure que le bouton reste rond */
+	position: relative;
+	margin-bottom: 5px; /* Espacement entre le bouton et le compteur de likes */
   }
+  
   
   
 .heart-svg img::after {
@@ -157,11 +158,12 @@
 	height: auto;
 	display: block;
   }
-.heart-svg {
-	width: 24px; /* ou la taille désirée */
+  .heart-svg {
+	/* Taille des images SVG */
+	width: 24px;
 	height: auto;
-	display: block; /* Affiche seulement l'image visible */
   }
+  
   
   .heart-filled {
 	display: none; /* Cache initialement l'image du cœur plein */
@@ -173,12 +175,13 @@
 }
 
 .like-count {
-	position: absolute;
-	bottom: -100%;
-	font-size: 0.7em;
-	text-align: center;
-	width: 100%;
-}
+	position: absolute; /* Position absolue par rapport au bouton cœur */
+	top: 120%; /* Ajustez la position comme nécessaire */
+	left: 50%; /* Ajustez la position pour que le compteur apparaisse à droite du cœur */
+	transform: translate(-50%, -50%); /* Centre le texte */
+	/* ... autres styles ... */
+  }
+  
 
 .tr {
 	position: absolute;
