@@ -25,3 +25,13 @@ fleche_droite_mouv.forEach( fleche => {
         swiperMouvement.slideNext();
     });
 });
+window.onload = function() {
+    if(screen.width<800){
+        const vid = document.querySelector("#mouvement-video").style;
+        vid.transform = "translate(-50%,-50%) scale(57.5%)";
+    }
+    if(screen.height<1250){
+        const vid = document.querySelector("#mouvement-video").style;
+        vid.transform = "translate(-50%,-50%) scale(57.5%)";
+    }
+};
