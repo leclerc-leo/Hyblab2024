@@ -220,7 +220,7 @@ h1{
 #guide-test{
     position: absolute;
     bottom: 10%;
-    right: 5%;
+    right: 0;
     height: 200px;
     width: auto;
     -webkit-position: absolute;
