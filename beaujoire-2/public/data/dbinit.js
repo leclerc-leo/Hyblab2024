@@ -34,8 +34,8 @@ function convertDateFormat(dateString) {
 function insertPlayersFromJSON(jsonData) {
     return new Promise((resolve, reject) => {
         const insertStmt = db.prepare(`
-            INSERT INTO Joueurs(nom, prenom, age, naissance, nationalité1, nationalité2, poste, AnnéeDébut, AnnéeFin, selections, buts, photo, citation, biographie)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+            INSERT INTO Joueurs(nom, prenom, age, naissance, nationalité1, nationalité2, poste, AnnéeDébut, AnnéeFin, selections, buts, arrets, photo, citation, biographie)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
         `);
 
         let insertedCount = 0;
