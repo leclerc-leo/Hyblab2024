@@ -225,7 +225,7 @@ h1{
     width: auto;
     -webkit-position: absolute;
     -webkit-bottom: 10%;
-    -webkit-right: 5%;
+    -webkit-right: 0;
     -webkit-height: 200px;
     -webkit-width: auto;
 }
