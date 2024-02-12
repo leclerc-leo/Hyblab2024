@@ -62,7 +62,7 @@ globals.getPlayersByPosition  = async function(positionId) {
 
 
 globals.getPlayersById = async function(playerId) {
-    let retryCount = 5; // Number of retry attempts
+    let retryCount = 10; // Number of retry attempts
 
     do {
         try {
