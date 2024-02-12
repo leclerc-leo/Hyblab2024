@@ -1,7 +1,9 @@
 {
+  "Presentation": [
+{
     "IdEvent": 5,
     "Athlete": "_____",
-    "Sport": "____",
+    "Sport": "Cyclisme",
     "Epreuve": "____",
     "Epreuve__1": "____",
     "Rang": 0,
@@ -35,5 +37,45 @@
       }
     ],
     "Nombre de médailles françaises": "10e médaille française au décompte total quand elle gagne"
+  },
+  {
+    "IdEvent": 5,
+    "Athlete": "_____",
+    "Sport": "Voile",
+    "Epreuve": "____",
+    "Epreuve__1": "____",
+    "Rang": 0,
+    "Gain": "___",
+    "Olympiade": "Paris 2024",
+    "Résultat (temps /points)": "50 (points)",
+    "Podium (nom + résultat)": [
+      {
+        "Place": "1",
+        "Nom": "_____",
+        "Pays": "France",
+        "Score": "50"
+      },
+      {
+        "Place": "2",
+        "Nom": "Dirk Kaiser",
+        "Pays": "Allemand",
+        "Score": "57"
+      },
+      {
+        "Place": "3",
+        "Nom": "Cedrick A. Schultz",
+        "Pays": "Etat-Unis",
+        "Score": "70"
+      },
+      {
+        "Place": "4",
+        "Nom": "Elizabeth Yegorova",
+        "Pays": "Russie",
+        "Score":"81"
+      }
+    ],
+    "Nombre de médailles françaises": "10e médaille française au décompte total quand elle gagne"
   }
+]
+}
   
