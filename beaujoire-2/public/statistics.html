@@ -9,6 +9,7 @@
     <!-- CSS files -->
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/statistics.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/loadingio/loading.css@v2.0.0/dist/loading.css" />
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
@@ -24,6 +25,10 @@
 
 <!-- Le conteneur sert à verrouiller les proportions (aspect ratio) du contenu de la page (ici des slides) -->
 <div id="container">
+    <!-- Le loader-->
+    <section id="loader">
+        <div id="loader-img" class="ld ld-ring ld-cycle"></div>
+    </section>
     <!--Retour à la page précédente (field)-->
     <a id="return" href="/beaujoire-2/field"><img id="return-img" src="./img/field/bouton-retour.svg"></a>
     <div class="team-swiper-container">
