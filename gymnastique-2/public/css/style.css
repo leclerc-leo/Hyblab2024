@@ -492,35 +492,6 @@ svg.image-histoire, svg.image-jo{
     vertical-align: middle;
 }
 
-#journee_1_svg{
-    position: absolute;
-    left: 60%;
-    width: 40%;
-    height: 21%;
-}
-
-#journee_2_svg{
-    position: absolute;
-    left: 60%;
-    width: 40%;
-    height: 21%;
-}
-
-#Kaylia_Nemour_journee{
-    position: absolute;
-    left: 30%;
-    width: 40%;
-    height: 30%;
-}
-
-#journee_type{
-    position: absolute;
-    width: 40%;
-    height: 30%;
-    top:23%;
-    left:30%;
-    text-align: center;
-}
 
 #description_journee, .description_mouvement{
     position: absolute;
@@ -567,7 +538,8 @@ svg.image-histoire, svg.image-jo{
 
 #Kaylia_Nemour_journee,.Kaylia_Nemour_mouvement{
     position: absolute;
-    left: 30%;
+    left: 50%;
+    transform: translate(-50%, 0);
     width: 40%;
     height: 30%;
 }
@@ -584,7 +556,7 @@ svg.image-histoire, svg.image-jo{
 
 #journee_type,.mouvement_type{
     position: absolute;
-    width: 40%;
+    width: 60%;
     height: 30%;
     top:23%;
     left: 50%;
@@ -593,11 +565,10 @@ svg.image-histoire, svg.image-jo{
 }
 
 #description_journee{
-    position: absolute;
-    width: 70%;
-    height: 30%;
-    top: 75%;
-    left: 13%;
+    width : 76%;
+    top : 72%;
+    left: 50%;
+    transform: translate(-50%, 0);
     text-align: center;
     color: #482E49;
 }
@@ -616,7 +587,7 @@ svg.image-histoire, svg.image-jo{
 #categorie_journee, .categorie_mouvement{
     padding: 10px 10px;
     text-align: center;
-}d
+}
 
 #jo-header {
     position:sticky;
