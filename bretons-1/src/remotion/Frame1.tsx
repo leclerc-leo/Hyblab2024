@@ -19,7 +19,7 @@ const determinerTexteTitre = (sexe: string, gain: string, text: string) => {
     case "Qualifie":
       return `${text} \n est qualifié${suffixeGenre} en finale !`;
     case "":
-      return `${text} est non qualifié${suffixeGenre} en finale.`;
+      return `${text} non qualifié${suffixeGenre} en finale`;
   }
 };
 

@@ -40,7 +40,8 @@ export const Frame6: React.FC<{ sex: string }> = ({ sex }) => {
         </div>
       </div>
       <img src={Svg} alt="Compteur" className="svgCompteur" />
-      <h1 className="golos-text-frame6 titre_frame6" style={{ fontSize: "10vh", bottom: '178vh' }}>{pronom} ramène la 1ère médaille au clan Breton</h1>
+      <h1 className="golos-text-frame6 titre_frame6" style={{ fontSize: "10vh", bottom: '178vh', whiteSpace: 'pre-wrap' }}>{pronom} ramène une médaille suplémentaire
+        <br/>au clan Breton</h1>
     </>
   );
 };

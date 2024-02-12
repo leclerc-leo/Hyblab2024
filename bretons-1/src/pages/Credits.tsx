@@ -18,6 +18,7 @@ const CreditPage = () => {
                             <img src="/bretons-1/img/logos/logo-agr.png" alt="Logo agr" />
                             <img src="/bretons-1/img/logos/logo-journalistetours.png" alt="Logo journalistetours" />
                             <img src="/bretons-1/img/logos/logo-sciencespo.png" alt="Logo sciencespo" />
+                            <img src="/bretons-1/img/logos/CcOSI.png" alt="Logo CC OSI" />
                         </div>
                     </div>
                     {/* our names */}

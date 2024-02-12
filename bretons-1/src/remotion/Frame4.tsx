@@ -97,7 +97,7 @@ export const Frame4: React.FC<{ Gentilé: string, gain: string, Epreuve: string,
           </>
         ) : gain === '' ? (
           <>
-            <p className='animatedtext'>{sexe === 'F' ? 'La' : 'Le'} {Gentilé} n'est {Epreuve_1} </p>
+            <p className='animatedtext'>{sexe === 'F' ? 'La' : 'Le'} {Gentilé} n'a pas réussi à se qualifier pour la {Epreuve_1} </p>
           </>
         ) : (
           <>

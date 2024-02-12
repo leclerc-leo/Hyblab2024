@@ -59,7 +59,7 @@
         {
           "Place": "2",
           "Nom": "Sabine Spitz",
-          "Pays": "Allemand",
+          "Pays": "Allemagne",
           "Score": "1h31'54'00"
         },
         {
@@ -121,7 +121,7 @@
       "Athlete": "Marie Bolou",
       "Sport": "Voile",
       "Epreuve": "Laser radial",
-      "Epreuve__1": "pas finaliste",
+      "Epreuve__1": "Finale",
       "Rang": 11,
       "Gain": "",
       "Olympiade": "Tokyo 2020",

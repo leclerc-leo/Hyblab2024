@@ -37,7 +37,7 @@ const ShareMenu: React.FC<ShareMenuProps> = ({ id, title }) => {
       <ShareButton onShareClick={toggleMenu} />
       {isOpen && (
         <div className="menushare">
-          <a href={twitterShareLink} target="_blank" rel="noopener noreferrer">Twitter</a>
+          <a href={twitterShareLink} target="_blank" rel="noopener noreferrer">X(Twitter)</a>
           <a href={facebookShareLink} target="_blank" rel="noopener noreferrer">Facebook</a>
         </div>
       )}

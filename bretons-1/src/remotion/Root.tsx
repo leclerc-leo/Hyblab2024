@@ -45,11 +45,11 @@ export const MyVideo: React.FC<MyVideoProps> = ({ id }) => {
       <Sequence from={1080} durationInFrames={360}>
         <Frame3 text={athlete.Athlete}></Frame3>
       </Sequence>
-      <Sequence from={1440} durationInFrames={300}>
+      <Sequence from={1440} durationInFrames={600}>
         <Frame5 nom={athlete.Athlete} age={athlete["Date de naissance"]} sexe={athlete.Sexe} sport={eventData.Sport} fun_fact={athlete["Fun fact"]} photo={athlete.Photo} record={athlete.Palmares} ville={athlete["Ville de naissance"]}></Frame5>
       </Sequence>
       {showFrame6 && (
-        <Sequence from={1740} durationInFrames={240}>
+        <Sequence from={2040} durationInFrames={240}>
           <Frame6 sex={athlete.Sexe} />
         </Sequence>
         )}
