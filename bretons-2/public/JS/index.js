@@ -293,7 +293,32 @@ async function page_historique(sport) {
 		slide.classList.add("swiper-slide");
 
 		const video = document.createElement("video");
-		video.style.transformOrigin= 'center'
+		video.style.transformOrigin= 'center';
+		video.style.zIndex = "-2";
+
+		const divPartage = document.createElement("div");
+		divPartage.style.display = "flex";
+		divPartage.style.justifyContent = "center";
+		divPartage.style.alignContent = "center";
+		divPartage.style.backgroundColor = "#141456";
+		divPartage.style.width = "15vw";
+		divPartage.style.cursor = "pointer";
+
+		const textPartage = document.createElement("p");
+		textPartage.innerHTML = "PARTAGER";
+		textPartage.style.marginTop = "1vh";
+		textPartage.style.fontSize = "2vh";
+		textPartage.style.color = "white";
+
+		if(sport=="Volleyball"){
+			sport = "Volley";
+		}
+
+		divPartage.addEventListener('click', function(e) {
+			e.preventDefault();
+			var url = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(`Un nouveau résultat de nos ${sport.toLowerCase()}eurs bretons vient de tomber ! Regarde cette vidéo récapitulative : ` + `https://hyblab.polytech.univ-nantes.fr/bretons-2/${videoPath}`) + "%20via%20Le%20Télégramme%20Des%20Scores";
+			window.open(url, "Partage", "scrollbars=yes, width=640, top=0, left=0");
+		})
 
 		console.log(`Création de l'élément vidéo pour ${videoKey}`);
 	
@@ -409,6 +434,9 @@ async function page_historique(sport) {
 			video.appendChild(sourceMP4);
 			video.appendChild(sourceWebM);
 			div.appendChild(video);
+			divPartage.appendChild(textPartage);
+			// divPartage.appendChild(imgPartage);
+			div.appendChild(divPartage);
 			div.appendChild(playButton);
 			slide.appendChild(div);
 			swipperSportWrapper.appendChild(slide);
@@ -621,19 +649,20 @@ async function page_athlete(athlete,listeAthletes, isFirstAthlete) {
 	const nomContainer = document.createElement("div");
 	nomContainer.style.display = "flex";
     nomContainer.style.alignItems = "center";
+	nomContainer.style.justifyContent = "center";
 	nomContainer.style.marginRight = "10vw";
 
     const nomAthlete = document.createElement("h2");
     nomAthlete.textContent = athlete.nom.split(" ")[0];
-	nomAthlete.style.fontSize = "7vh";
+	nomAthlete.style.fontSize = "5vh";
 
 	const prenomAthlete = document.createElement("h2");
     prenomAthlete.textContent = athlete.nom.split(" ")[1];
-	prenomAthlete.style = "color:red;font-size:7vh"
+	prenomAthlete.style = "color:red;font-size:5vh"
 
 	const prenomAthlete2 = document.createElement("h2");
 	prenomAthlete2.textContent = athlete.nom.split(" ")[2];
-	prenomAthlete2.style = "color:red;font-size:7vh"
+	prenomAthlete2.style = "color:red;font-size:5vh"
 
 	const ele_fleche = document.createElement("img");
 	ele_fleche.src = "./Image/fleche-3.svg"
@@ -666,6 +695,9 @@ async function page_athlete(athlete,listeAthletes, isFirstAthlete) {
 
 	
 	const divJoueur = document.createElement("div");
+	divJoueur.style.display = "flex";
+	divJoueur.style.justifyContent = "space-between";
+	divJoueur.style.width = "85vw";
 
 	const JOUEUR= document.createElement("h2");
 
@@ -679,7 +711,7 @@ async function page_athlete(athlete,listeAthletes, isFirstAthlete) {
 	divJoueur.appendChild(JOUEUR)
 
 	const img_joueur = document.createElement("img");
-	img_joueur.src = "./Image/cidre-bolee.svg"
+	img_joueur.src = "./Image/bol.svg"
 	img_joueur.className = "img_cidrebolee"
 	divJoueur.appendChild(img_joueur)
 		
@@ -743,6 +775,10 @@ async function page_athlete(athlete,listeAthletes, isFirstAthlete) {
     blank.appendChild(divDetails);
 
 	const nextAthleteDiv = document.createElement("div");
+	nextAthleteDiv.style.width = "50vw";
+	nextAthleteDiv.style.height = "4vh";
+	nextAthleteDiv.style.fontSize = "2.5vh";
+	nextAthleteDiv.style.alignItems = "center";
 	console.log(listeAthletes);
 	const listeAthletesArray = Object.values(listeAthletes);
 	const currentIndex = listeAthletesArray.findIndex(item => item.nom === athlete.nom);
@@ -752,7 +788,7 @@ async function page_athlete(athlete,listeAthletes, isFirstAthlete) {
 		nextAthleteDiv.textContent = `SUIVANT : ${nextAthlete.nom}`;
 	} 
 
-	else{
+	else if(!isFirstAthlete){
 		nextAthleteDiv.textContent = `PRECEDENT : ${nextAthlete.nom}`;
 	}
 	 nextAthleteDiv.classList.add("next-athlete-div");
@@ -762,12 +798,6 @@ async function page_athlete(athlete,listeAthletes, isFirstAthlete) {
     });
 	 
 	blank.appendChild(nextAthleteDiv);
-
-	console.log(athlete);
-	console.log(listeAthletes);
-	console.log(isFirstAthlete);
-	console.log(nextAthlete);
-	console.log(listeAthletesArray);
 }
 
 const isFirstAthlete= true;
@@ -853,14 +883,30 @@ async function page_actualite() {
 	divTitle.appendChild(title);
 	blank.appendChild(divTitle);
 
+	const divExplication = document.createElement("div");
+	divExplication.style.display = "flex";
+	divExplication.style.justifyContent = "center";
+	divExplication.style.alignItems = "center";
+	divExplication.style.alignContent = "center";
+	divExplication.style.borderBottom = "solid 0.5vh #FFCE42"
+	divExplication.style.width = "90vw";
+	divExplication.style.paddingBottom = "2vh";
+	divExplication.style.margin = "auto";
+
+	const pExplication = document.createElement("p");
+	pExplication.style.fontSize = "4vh";
+	pExplication.style.textAlign = "center";
+	pExplication.innerHTML = "Retrouvez les dernières actualités liées à nos joueurs bretons ci-dessous : ";
+
+	divExplication.appendChild(pExplication);
+	blank.appendChild(divExplication);
+
 	const swiperActu = document.createElement("div");
 	swiperActu.classList.add("Swiper2");
 	swiperActu.style.height = "35vh !important";
 	swiperActu.style.top = "50% "; 
     swiperActu.style.left = "50%"; 
     swiperActu.style.transform = "translate(-2vw, 8vh)";
-
-
 
 	const swipperActuWrapper = document.createElement("div")
 	swipperActuWrapper.classList.add("swiper-wrapper")
@@ -1081,78 +1127,102 @@ function page_credits() {
 		iframe.style.paddingTop = "10vh";
 		iframe.style.width = "60vw";
 
+		const imgPicto = document.createElement("img");
+
+
 		switch (membre) {
 			case "Nicolas":
 				iframe.setAttribute("src", "./Image/picto-members/nicolas-hyb.svg");
+				imgPicto.setAttribute("src", "./Image/picto-credits/telegramme.png");
 				iframe.onclick = () => {
 					window.location.href = "";
 				}
 				break;
 			case "Salomé":
 				iframe.setAttribute("src", "./Image/picto-members/salome-hyb.svg");
+				imgPicto.setAttribute("src", "./Image/picto-credits/telegramme.png");
 				iframe.onclick = () => {
 					window.location.href = "";
 				}
 				break;
 			case "Yeltaz":
 				iframe.setAttribute("src", "./Image/picto-members/yeltaz-hyb.svg");
+				imgPicto.setAttribute("src", "./Image/picto-credits/agr.png");
+				imgPicto.style.width = "5vh";
 				iframe.onclick = () => {
 					window.location.href = "";
 				}
 				break;
 			case "Kevin":
 				iframe.setAttribute("src", "./Image/picto-members/kevin-hyb.svg");
+				imgPicto.setAttribute("src", "./Image/picto-credits/agr.png");
+				imgPicto.style.width = "5vh";
 				iframe.onclick = () => {
 					window.location.href = "";
 				}
 				break;
 			case "Hugo":
 				iframe.setAttribute("src", "./Image/picto-members/hugo-hyb.svg");
+				imgPicto.setAttribute("src", "./Image/picto-credits/epjt.jpg");
+				imgPicto.style.width = "5vh";
 				iframe.onclick = () => {
 					window.location.href = "https://www.linkedin.com/in/hugo-laulan-71b187231/";
 				}
 				break;
 			case "Isis":
-				// iframe.setAttribute("src", "./Image/picto-members/isis-hyb.svg");
-				// iframe.onclick = () => {
-				// 	window.location.href = "";
-				// }
+				iframe.setAttribute("src", "./Image/picto-members/isis-hyb.svg");
+				imgPicto.setAttribute("src", "./Image/picto-credits/science-po.png");
+				imgPicto.style.width = "8vh";
+				iframe.onclick = () => {
+					window.location.href = "";
+				}
 				break;
 			case "Hulduz":
 				iframe.setAttribute("src", "./Image/picto-members/hulduz-hyb.svg");
+				imgPicto.setAttribute("src", "./Image/picto-credits/polytech.png");
+				imgPicto.style.width = "8vh";
 				iframe.onclick = () => {
 					window.location.href = "https://www.linkedin.com/in/hulduz-djanbekov-440318209/";
 				}
 				break;
 			case "Titouan":
 				iframe.setAttribute("src", "./Image/picto-members/titouan-hyb.svg");
+				imgPicto.setAttribute("src", "./Image/picto-credits/polytech.png");
+				imgPicto.style.width = "8vh";
 				iframe.onclick = () => {
-					window.location.href = "";
+					window.location.href = "https://www.linkedin.com/in/titouan-bahon-83b66522b/";
 				}
 				break;
 			case "Nathan":
 				iframe.setAttribute("src", "./Image/picto-members/nathan-hyb.svg");
+				imgPicto.setAttribute("src", "./Image/picto-credits/polytech.png");
+				imgPicto.style.width = "8vh";
 				iframe.onclick = () => {
-					window.location.href = "";
+					window.location.href = "https://www.linkedin.com/in/nathan-gantier-023b7b231/";
 				}
 				break;
 			case "Aymen":
 				iframe.setAttribute("src", "./Image/picto-members/aymen-hyb.svg");
+				imgPicto.setAttribute("src", "./Image/picto-credits/polytech.png");
+				imgPicto.style.width = "8vh";
 				iframe.onclick = () => {
 					window.location.href = "";
 				}
 				break;
 			case "Yiyang":
-				// iframe.setAttribute("src", "./Image/picto-members/yiyang-hyb.svg");
-				// iframe.onclick = () => {
-				// 	window.location.href = "";
-				// }
+				iframe.setAttribute("src", "./Image/picto-members/yiyang-hyb.svg");
+				imgPicto.setAttribute("src", "./Image/picto-credits/polytech.png");
+				imgPicto.style.width = "8vh";
+				iframe.onclick = () => {
+					window.location.href = "https://www.linkedin.com/in/yiyang-shen-b21b872a2/";
+				}
 				break;
 			default:
 				break;
 		}
 
 		div.appendChild(iframe);
+		div.appendChild(imgPicto);
 
 		const Nomsmembres = document.createElement("div");
 		Nomsmembres.style.color = "black";
@@ -1170,11 +1240,6 @@ function page_credits() {
 		slide.appendChild(div);
 	
 		divSwipperWrapper.appendChild(slide);
-
-		let swiperpagination = document.createElement("div");
-		swiperpagination.classList.add("swiper-pagination");
-		swiperpagination.classList.add("petitpoints");
-		divSwipper.appendChild(swiperpagination);
 
 		const divNextButton = document.createElement("div");
 		divNextButton.classList.add("swiper-button-next");

@@ -12,6 +12,8 @@
     },
 
     "Volleyball" : {
-        
+        "1" : "./Videos/match-Volleyball-1.mp4",
+        "2" : "./Videos/match-Volleyball-2.mp4",
+        "3" : "./Videos/match-Volleyball-3.mp4"
     }
 }

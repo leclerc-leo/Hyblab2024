@@ -14,7 +14,7 @@
     "Anecdote-2": "Après des débuts à Nantes  avec qui il atteint la finale de la Ligue \ndes Champions en 2018, Romain Lagarde a évolué deux saisons \nen Allemagne, avant de rejoindre le club d'Aix-en-Provence en 2021.",
     "Anecdote-3": "Blessé à la cheville lors du tournoi qualificatif, \nson entraîneur Guillaume Gille explique qu'il a du \n\"s'adapter aux blessures\", mais que le joueur \n\"vient apporter sa polyvalence et sa qualité sur le poste\".",
     "Anecdote-4": "S'il est un pilier des Bleus depuis sa première sélection \nen 2017, Romain Lagarde n'a pour l'instant jamais \nremporté de médaille d'or avec les Bleus.",
-    "Biographie": "Un imposant Breton d’1 mètre 94 pour 95kg. Évoluant au poste d’arrière gauche au de demi-centre, le natif de Lorient débute le handball à l’âge de 9 ans dans le club de sa ville. Rapidement repéré, il intègre le centre de formation du HC Nantes, l’un des meilleurs clubs de France.  gé de 26 ans, il évolue au sein du Pays d’Aix UC, après une escapade de deux ans en Allemagne. Sélectionné pour la première fois en équipe de France en 2017, il est l’un des piliers des Bleus depuis plusieurs années."
+    "Biographie": "Un imposant Breton d’1 mètre 94 pour 95kg. Évoluant au poste d’arrière gauche au de demi-centre, le natif de Lorient débute le handball à l’âge de 9 ans dans le club de sa ville. Rapidement repéré, il intègre le centre de formation du HC Nantes, l’un des meilleurs clubs de France. Agé de 26 ans, il évolue au sein du Pays d’Aix UC, après une escapade de deux ans en Allemagne. Sélectionné pour la première fois en équipe de France en 2017, il est l’un des piliers des Bleus depuis plusieurs années."
   },
   "Pauline Coatanea" : {
     "Illustration" : "./Image/IllustrationsJoueurs/illu-pauline-coatanéa-hyb.svg",
@@ -35,7 +35,7 @@
   },
   "Enzo LeFée" : {
     "Illustration" : "./Image/IllustrationsJoueurs/illu-enzo-lefee-hyb.svg",
-    "Photo" : "https://cdn-apps.letelegramme.fr/files/outils/2023/05/LE-FEE-Enzo-PH2-6776.JPG",
+    "Photo" : "./Image/EnzoLeFée.jpg",
     "Genre": "Homme",
     "Date-de-naissance": "03/02/2000",
     "Age": "24 ans",
@@ -56,7 +56,7 @@
     "Genre": "Homme",
     "Date-de-naissance": "13/08/1990",
     "Age": "33 ans",
-    "Sport": "Volleyball",
+    "Sport": "Volley",
     "Poids": "85kg",
     "VilleOrigine": "Né à Rennes de parents Kazakhes",
     "Club": "Zénith St Pétersbourg",
