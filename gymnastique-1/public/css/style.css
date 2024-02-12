@@ -1192,6 +1192,7 @@ svg {
   filter: brightness(0.5);
   -webkit-backdrop-filter: brightness(0.5);
   backdrop-filter: brightness(0.5);
+  -vendor-filter: brightness(0.5);
 }
 
 .blured {
@@ -1199,6 +1200,7 @@ svg {
   -webkit-filter: blur(20px) brightness(0.5);
   backdrop-filter: blur(20px) brightness(0.5);
   filter : blur(20px) brightness(0.5);
+  -vendor-filter: blur(20px) brightness(0.5);
 }
 .last-word-blue {
   color: #386f9c;
