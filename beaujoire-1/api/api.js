@@ -18,7 +18,6 @@ app.use(require("express").json());
 
 app.post("/updateStats", (req, res) => {
 	console.log("Received a POST request to /beaujoire-1/updateStats");
-	console.log("Content to write:", JSON.stringify(req.body));
 	const filePath = path.resolve(__dirname, "../public/data/Stats.json");
 	console.log("Writing to file:", filePath);
 	fs.writeFile(filePath, JSON.stringify(req.body), (err) => {
@@ -52,7 +51,6 @@ app.get("/likes", (req, res) => {
 
 // Route pour incrémenter le nombre de likes pour une composition spécifique
 app.post("/like", (req, res) => {
-	console.log("Request body:", req.body);
 	console.log("Writing to file:", likesFilePath);
 	fs.writeFile(likesFilePath, JSON.stringify(req.body), (err) => {
 		if (err) {
