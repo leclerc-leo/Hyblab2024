@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
     async function FetchPopularTeam() {
         for (let i = 0; i <= 11; i++) {
             let player = await globals.getTopPlayer(i + 1);
-            console.log(player);
+            //console.log(player);
             popularTeam.push(player);
         }
     }
