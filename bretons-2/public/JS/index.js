@@ -105,7 +105,7 @@ function page_accueil() {
 
 	blank.appendChild(divDrapeau);
 
-	const divChaussure = document.createElement("div")
+	const divChaussure = document.createElement("div") 
 	divChaussure.style.position = "absolute";
 	divChaussure.style.bottom = "12vh";
 	divChaussure.style.left = "70vw";
