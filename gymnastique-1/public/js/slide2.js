@@ -129,9 +129,12 @@ const initSlide2 = async function (popupId, objectId) {
       textContainer.appendChild(paragraph);
     }
     title.innerHTML = objData.title.split(" ").map((word, index, array) => {
-      if (index === array.length - 1) {
-        return `<br><span class="last-word-color">${word}</span></br>`;
-      } else {
+      const randomNumber = Math.random();
+      if (index === array.length - 1 && randomNumber<0.5 ) {
+        return `<br><span class="last-word-blue">${word}</span></br>`;
+      } else if (index === array.length - 1 && randomNumber>=0.5) {
+          return `<br><span class="last-word-red">${word}</span></br>`;
+      }else {
         return word;
       }
     }).join(" ");
