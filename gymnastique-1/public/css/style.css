@@ -1462,3 +1462,11 @@ svg {
   width: 100%;
   background-color: #212425;
 }
+#sac_extend_background{
+  position: absolute;
+  transform: translate(-41%, -46.8%);
+  width: 100%;
+  scale: 1.8;
+  max-width: 300%;
+  background-color: #212425;
+}
