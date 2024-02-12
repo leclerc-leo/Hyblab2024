@@ -1542,8 +1542,8 @@ function closeCaptainOverlay() {
 }
 
 window.addEventListener("load", function () {
-	var creditsButton = document.getElementById("credits");
-	var overlay = document.getElementById("credit-overlay");
+	const creditsButton = document.getElementById("credits");
+	const overlay = document.getElementById("credit-overlay");
 
 	creditsButton.addEventListener("click", function () {
 		overlay.style.display = "flex";

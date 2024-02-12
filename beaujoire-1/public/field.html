@@ -155,6 +155,11 @@
 					</div>
 				</div>
 			</div>
+			<script>
+				function closeCaptainOverlay() {
+					document.querySelector("#captain").style.display = "none";
+				}
+			</script>
 			<div id="captain">
 				<h1 id="main" class="big-title">
 					CHOISI TON
@@ -171,11 +176,21 @@
 					</button>
 				</div>
 			</div>
+			<script>
+				function closeBioOverlay() {
+					document.querySelector(".bio-overlay").style.display =
+						"none";
+				}
+			</script>
 			<div class="bio-overlay" style="display: none">
 				<h2>Titre de la bio</h2>
 				<p>Contenu de la bio ici.</p>
 				<div class="bottom-btn" id="flip-btn">
-					<button class="round-btn" id="close-bio" title="close">
+					<button
+						class="round-btn"
+						id="close-bio"
+						title="close"
+						onclick="closeBioOverlay()">
 						<img src="./img/close.svg" alt="close" />
 					</button>
 				</div>
@@ -270,6 +285,13 @@
 						</div>
 					</div>
 				</div>
+				<script>
+					function closeCompareOverlayl() {
+						document.querySelector(
+							"#compare-overlay"
+						).style.display = "none";
+					}
+				</script>
 				<button
 					class="round-btn"
 					id="compare-back"

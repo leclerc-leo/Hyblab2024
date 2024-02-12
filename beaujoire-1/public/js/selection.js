@@ -11,6 +11,18 @@ document.addEventListener("DOMContentLoaded", function () {
 	});
 
 	let currentlyLiked;
+	const creditsButton = document.getElementById("credits");
+	const overlay = document.getElementById("credit-overlay");
+
+	creditsButton.addEventListener("click", function () {
+		overlay.style.display = "flex";
+	});
+
+	document
+		.getElementById("close-credits")
+		.addEventListener("click", function () {
+			overlay.style.display = "none";
+		});
 
 	(async function () {
 		await fetchInitialLikes();
