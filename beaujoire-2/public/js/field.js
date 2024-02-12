@@ -136,7 +136,9 @@ document.addEventListener('DOMContentLoaded', async function () {
       fieldJersey.replaceChild(jerseyImg, fieldJersey.firstChild)
       fieldJersey.classList.remove('voted');
       // Change the href attribute
-      fieldJersey.href = 'list';
+      fieldJersey.href = 'list';/*
+      const swiper = document.querySelector('.player-swiper-container');
+      fieldJersey.addEventListener('click',function(){console.log("aledd: i+1");swiper.slideTo(i+1);});*/
     }
   }
 })
@@ -146,9 +148,10 @@ document.addEventListener('DOMContentLoaded', async function () {
 /************* Finalize votes  **************/
 document.getElementById('statistiques').addEventListener('click', () => {
   // Access the sessionToken passed from the server
-  globals.saveVotes(globals.sessionToken, globals.tabVotes);
-  window.location.href = '/beaujoire-2/statistics';
-
+  if (globals.checkAllVotes(globals.tabVotes) && !(globals.shown)){
+    globals.saveVotes(globals.sessionToken, globals.tabVotes);
+    window.location.href = '/beaujoire-2/statistics';
+  }
 })
 /************* Finalize votes  **************/
 
