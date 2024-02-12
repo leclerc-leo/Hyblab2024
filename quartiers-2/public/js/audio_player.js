@@ -15,7 +15,8 @@ class AudioPlayer {
             this.progressBar.value = (this.audio.currentTime / this.audio.duration) * 100;
             this.currentTimeDisplay.textContent = this.formatTime(this.audio.currentTime);
         });
-        this.updateProgressBar();
+        this.togglePlayPause();
+        this.togglePlayPause();
     }
 
     togglePlayPause() {
