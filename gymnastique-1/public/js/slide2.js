@@ -163,7 +163,9 @@ const showPopup = (name, objID) => {
     setTimeout(() => {
       popup.classList.add("show");
     }, 20);
-    document.getElementById(objID).classList.add("clicked");
+    let element = document.getElementById(objID);
+    element.style.filter = "url(#dim)";
+
     const svgElements = document.getElementsByTagName("svg");
     for (let i = 0; i < svgElements.length; i++) {
       if (svgElements[i].id != "Video_Phone_contour_svg") {
