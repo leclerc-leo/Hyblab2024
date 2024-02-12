@@ -154,6 +154,44 @@
       ],
       "Performance": "4 points",
       "Nombre de médailles françaises": ""
+    },
+    {
+      "IdEvent": 5,
+      "Athlete": "Pierre Le Coq",
+      "Sport": "Voile",
+      "Epreuve": "Planche à voile",
+      "Epreuve__1": "qualifie en finale",
+      "Rang": 3,
+      "Gain": "Qualifie",
+      "Olympiade": "Paris 2024",
+      "Résultat (temps /points)": "50 (points)",
+      "Podium (nom + résultat)": [
+        {
+          "Place": "1",
+          "Nom": "Cedrick A. Schultz",
+          "Pays": "Etat-Unis",
+          "Score": "50"
+        },
+        {
+          "Place": "2",
+          "Nom": "Dirk Kaiser",
+          "Pays": "Allemangne",
+          "Score": "57"
+        },
+        {
+          "Place": "3",
+          "Nom": "Pierre Le Coq",
+          "Pays": "France",
+          "Score": "70"
+        },
+        {
+          "Place": "4",
+          "Nom": "Elizabeth Yegorova",
+          "Pays": "Russie",
+          "Score":"81"
+        }
+      ],
+      "Nombre de médailles françaises": "10e médaille française au décompte total quand elle gagne"
     }
   ]
 }
