@@ -94,12 +94,12 @@ function page_accueil() {
 
 	const divDrapeau = document.createElement("div")
 	divDrapeau.style.position = "absolute";
-	divDrapeau.style.bottom = "15vh";
+	divDrapeau.style.bottom = "12vh";
 	divDrapeau.style.left = "5vw";
 
 	const imgDrapeau = document.createElement("img")
 	imgDrapeau.src = "./Image/drapeau.svg"
-	imgDrapeau.style.width = "40vw"
+	imgDrapeau.style.width = "30vw"
 
 	divDrapeau.appendChild(imgDrapeau)
 
@@ -107,12 +107,12 @@ function page_accueil() {
 
 	const divChaussure = document.createElement("div")
 	divChaussure.style.position = "absolute";
-	divChaussure.style.bottom = "15vh";
+	divChaussure.style.bottom = "12vh";
 	divChaussure.style.left = "70vw";
 
 	const imgChaussure = document.createElement("img")
 	imgChaussure.src = "./Image/chaussure.svg"
-	imgChaussure.style.width = "20vw"
+	imgChaussure.style.width = "18vw"
 
 	divChaussure.appendChild(imgChaussure)
 
@@ -689,6 +689,8 @@ async function page_historique(sport) {
 
 		divNomAthlete.onclick = () => {
 			page_athlete(uniqueAthlete, listeAthletes , isFirstAthlete);
+			document.body.scrollTop = 0;
+			document.documentElement.scrollTop = 0; 
 		}
 
 	} else {
