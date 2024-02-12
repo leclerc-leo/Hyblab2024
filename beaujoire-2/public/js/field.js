@@ -50,7 +50,7 @@ if (globals.checkAllVotes(globals.tabVotes) && !(globals.shown)) {
         },
         1000
     )
-    globals.shown = true ;
+    globals.setShown(true);
     await getSessionTokenValue();
 
   });

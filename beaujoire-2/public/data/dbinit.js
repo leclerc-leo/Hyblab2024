@@ -248,6 +248,8 @@ db.serialize(async () => {
     try {
         // Delete all records from the table
         await util.promisify(db.run.bind(db))('DELETE FROM Joueurs');
+        // Reset the auto-increment value for the Joueurs table
+        db.run('DELETE FROM sqlite_sequence WHERE name="Joueurs"');
         // insert again
         const data = await util.promisify(fs.readFile)(jsonFilePath, 'utf8');
         const jsonData = JSON.parse(data);

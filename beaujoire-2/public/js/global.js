@@ -6,9 +6,11 @@ const globals = {} ;
 
 globals.tabVotes = JSON.parse(localStorage.getItem('votes')) ;
 
-if (globals.shown === undefined){
-    console.log("Here !");
-    globals.shown = false ;
+globals.shown = JSON.parse(localStorage.getItem('shown')) ;
+console.log(globals.shown)
+
+globals.setShown = function(value){
+    localStorage.setItem('shown', value.toString());
 }
 // Function to retrieve the session token from cookies
 globals.getSessionToken = async function() {

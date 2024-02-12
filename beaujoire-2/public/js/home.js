@@ -44,3 +44,7 @@ for (let i = 0; i <= 11; i++) {
   votesTmp.push(0);
 }
 localStorage.setItem('votes', JSON.stringify(votesTmp));
+
+// pop up
+localStorage.setItem('shown', false.toString());
+
