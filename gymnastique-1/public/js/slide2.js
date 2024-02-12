@@ -130,7 +130,7 @@ const initSlide2 = async function (popupId, objectId) {
     }
     title.innerHTML = objData.title.split(" ").map((word, index, array) => {
       if (index === array.length - 1) {
-        return `<span class="last-word-color">${word}</span>`;
+        return `<br><span class="last-word-color">${word}</span></br>`;
       } else {
         return word;
       }
