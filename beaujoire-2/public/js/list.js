@@ -83,8 +83,8 @@ document.addEventListener('DOMContentLoaded', function () {
     positionPreviewContainer.appendChild(nextPos);
   }
 
-  function handleSwiperEvents() {
-    let currentPositionIndex = 0;
+  function handleSwiperEvents(slideIndex) {
+    let currentPositionIndex = slideIndex;
 
     playerSwiper = new Swiper('.player-swiper-container', {
       loop: false,
@@ -258,10 +258,9 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
 
-  handleSwiperEvents();
+  var params = new URLSearchParams(window.location.search);
+  var slideIndex = params.get('slide');
+  console.log("index: "+slideIndex);
+  handleSwiperEvents(0);
   updateContent(0);
-
-
-
-
 });

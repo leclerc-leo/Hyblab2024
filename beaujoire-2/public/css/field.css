@@ -294,6 +294,11 @@ body{
     width: calc(100 * 3vh / 4); /* Force 3/4 aspect ratio */
 }
 
+#archives-svg{
+    width:0.45em;
+    height:0.45em;
+}
+
 /* Fill the whole viewport when its aspect ratio is between 9/16 and 3/4 */
 @media screen and (max-aspect-ratio: 3/4) {
     #container{
