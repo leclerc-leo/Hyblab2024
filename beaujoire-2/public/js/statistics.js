@@ -5,6 +5,21 @@ function isInPopularTeam(playerId) {
     return popularTeam.some(player => player.id === playerId);
 }
 
+// Wait for the content to preload and display 1st slide
+// Here we simulate a loading time of one second
+setTimeout(() => {
+    // fade out the loader "slide"
+    // and send it to the back (z-index = -1)
+    anime({
+        delay: 100,
+        targets: '#loader',
+        opacity: '0',
+        'z-index' : -1,
+        easing: 'easeOutQuad',
+    });
+}, 400);
+
+
 document.addEventListener('DOMContentLoaded', function () {
     const teams = ['Votre équipe', 'Équipe Majoritaire'];
 
@@ -47,7 +62,6 @@ document.addEventListener('DOMContentLoaded', function () {
         if (currentIndex === 0) {
             for (let i = 0; i < 12; i++) {
                 let player = await globals.getPlayerStats(globals.tabVotes[i], i + 1);
-                console.log(player);
 
                 let fieldPlayer = document.createElement('div');
                 fieldPlayer.setAttribute("id", `poste-${i + 1}`);

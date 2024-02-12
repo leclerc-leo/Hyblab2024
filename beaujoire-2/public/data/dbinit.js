@@ -34,8 +34,8 @@ function convertDateFormat(dateString) {
 function insertPlayersFromJSON(jsonData) {
     return new Promise((resolve, reject) => {
         const insertStmt = db.prepare(`
-            INSERT INTO Joueurs(nom, prenom, age, naissance, nationalité1, nationalité2, poste, AnnéeDébut, AnnéeFin, selections, buts, photo, citation, biographie)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+            INSERT INTO Joueurs(nom, prenom, age, naissance, nationalité1, nationalité2, poste, AnnéeDébut, AnnéeFin, selections, buts, arrets, photo, citation, biographie)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
         `);
 
         let insertedCount = 0;
@@ -45,6 +45,7 @@ function insertPlayersFromJSON(jsonData) {
             const convertedNaissance = player.naissance === '/' || player.naissance === 'NULL' ? null : convertDateFormat(player.naissance);
             const convertedAnneeFin = player.annéeFin === '/' || player.annéeFin === 'NULL' ? null : player.annéeFin;
             const convertedButs = player.buts === '/' || player.buts === 'NULL' ? null : player.buts;
+            const convertedArrets = player.arrets === '/' || player.arrets === 'NULL' ? null : player.arrets;
             const convertedPhoto = player.photo === '/' || player.photo === 'NULL' ? null : player.photo;
             const convertedCitation = player.citation === '/' || player.citation === 'NULL' ? null : player.citation;
             const convertedBiographie = player.biographie === '/' || player.biographie === 'NULL' ? null : player.biographie;
@@ -61,6 +62,7 @@ function insertPlayersFromJSON(jsonData) {
                 convertedAnneeFin,
                 parseInt(player.selections,10),
                 parseInt(convertedButs,10),
+                parseInt(convertedArrets,10),
                 convertedPhoto,
                 convertedCitation,
                 convertedBiographie
@@ -240,17 +242,22 @@ db.serialize(async () => {
             ('Marocain', 'MAR'),
             ('Colombien', 'COL');
         `);
-        // Read JSON file and insert players
-        try {
-            const data = await util.promisify(fs.readFile)(jsonFilePath, 'utf8');
-            const jsonData = JSON.parse(data);
-            await insertPlayersFromJSON(jsonData);
-            console.log('Data inserted successfully.');
-        } catch (error) {
-            console.error(error.message);
-        }
     }
 
+    // Read JSON file and insert players
+    try {
+        // Delete all records from the table
+        await util.promisify(db.run.bind(db))('DELETE FROM Joueurs');
+        // Reset the auto-increment value for the Joueurs table
+        db.run('DELETE FROM sqlite_sequence WHERE name="Joueurs"');
+        // insert again
+        const data = await util.promisify(fs.readFile)(jsonFilePath, 'utf8');
+        const jsonData = JSON.parse(data);
+        await insertPlayersFromJSON(jsonData);
+        console.log('Data inserted successfully.');
+    } catch (error) {
+        console.error(error.message);
+    }
 
     db.all('SELECT * FROM Joueurs', (err, rows) => {
         if (err) console.error(err.message);

@@ -1,5 +1,6 @@
 
 console.log(globals.tabVotes);
+console.log(globals.shown);
 
 /************* Archives *************/
 function checkVotes() {
@@ -27,7 +28,7 @@ checkVotes();
 
 /************* Pop up  **************/
 
-if (globals.checkAllVotes(globals.tabVotes)) {
+if (globals.checkAllVotes(globals.tabVotes) && !(globals.shown)) {
 
   window.addEventListener("load", async function () {
 
@@ -49,7 +50,7 @@ if (globals.checkAllVotes(globals.tabVotes)) {
         },
         1000
     )
-
+    globals.setShown(true);
     await getSessionTokenValue();
 
   });
@@ -75,48 +76,45 @@ document.querySelector("#info").addEventListener("click", function () {
 /************* Vote progression display  **************/
 
 
-function updateVote(fieldJersey,player){
-  // Create the picture element
-  const playerVotedDiv = document.createElement('div');
-  playerVotedDiv.classList.add('player-voted');
-
-  const playerImg = document.createElement('img');
-  playerImg.classList.add('player-img');
-
-  playerImg.src = `${player[0].photo}`;
-
-  const playerName = document.createElement('p');
-  let firstLetter = player[0].prenom.charAt(0).toUpperCase();
-  playerName.textContent = `${firstLetter}.${player[0].nom}`;
-
-  // Append elements to the player-voted div
-  playerVotedDiv.appendChild(playerImg);
-  playerVotedDiv.appendChild(playerName);
-
-
-  fieldJersey.replaceChild(playerVotedDiv, fieldJersey.firstChild);
-
-  fieldJersey.classList.add('voted');
-  // Change the href attribute
-  fieldJersey.href = 'javascript:void(0)';
-}
 
 async function fetchPlayerData(fieldJersey,playerId) {
   try {
     const player = await globals.getPlayersById(playerId);
-    console.log(player[0].nom);
-    updateVote(fieldJersey,player);
+    //update Vote :
+    // Create the picture element
+    const playerVotedDiv = document.createElement('div');
+    playerVotedDiv.classList.add('player-voted');
+
+    const playerImg = document.createElement('img');
+    playerImg.classList.add('player-img');
+
+    playerImg.src = `${player.photo}`;
+
+    const playerName = document.createElement('p');
+    let firstLetter = player.prenom.charAt(0).toUpperCase();
+    playerName.textContent = `${firstLetter}.${player.nom}`;
+
+    // Append elements to the player-voted div
+    playerVotedDiv.appendChild(playerImg);
+    playerVotedDiv.appendChild(playerName);
+
+    fieldJersey.replaceChild(playerVotedDiv, fieldJersey.firstChild);
+
+    fieldJersey.classList.add('voted');
+    // Change the href attribute
+    fieldJersey.href = 'javascript:void(0)';
+
   } catch (error) {
     console.error('Error fetching data:', error);
   }
 }
 
-function checkprogress() {
+document.addEventListener('DOMContentLoaded', async function () {
   for (let i = 0; i < globals.tabVotes.length; i++) {
     // Append the player-voted div to the field-jersey anchor
     const fieldJersey = document.getElementById(`poste-${i + 1}`);
     if (globals.tabVotes[i] !== 0) {
-      fetchPlayerData(fieldJersey,globals.tabVotes[i]);
+      await fetchPlayerData(fieldJersey, globals.tabVotes[i]);
     } else {
       const jerseyImg = document.createElement('img');
       jerseyImg.classList.add('field-jersey-img');
@@ -128,7 +126,7 @@ function checkprogress() {
         if (i + 1 === 1) {
           jerseyImg.src = './img/animation/gants_1.gif';
         } else {
-          if(i+1 < 10) {
+          if (i + 1 < 10) {
             jerseyImg.src = `./img/animation/maillot-0${i + 1}.gif`;
           } else {
             jerseyImg.src = `./img/animation/maillot-${i + 1}.gif`;
@@ -141,9 +139,7 @@ function checkprogress() {
       fieldJersey.href = 'list';
     }
   }
-}
-
-checkprogress();
+})
 
 /************* Vote progression display  **************/
 
