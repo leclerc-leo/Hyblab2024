@@ -32,6 +32,14 @@ body{
     height: 100%;
     margin-top: -2%;
     position: relative;
+    overflow-y: auto;
+    overflow-x: hidden ;
+  }
+  .player-box.expanded {
+    height: 45vh; 
+  }
+  .player-list::-webkit-scrollbar {
+    width: 0;
   }
   
   .player-box {
