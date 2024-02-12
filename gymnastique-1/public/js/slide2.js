@@ -200,6 +200,49 @@ const clickOutsidePopup = (name, event) => {
   }
 };
 
+const elements = [
+  "photo",
+  "algerie",
+  "medaille",
+  "coupe",
+  "cupcake",
+  "manique",
+  "gourde",
+  "tel",
+].map((id) => document.getElementById(id));
+let currentElement = null;
+let isShaking = false;
+
+function shakeElement() {
+  // If there's a current element shaking, return early
+  if (isShaking) {
+    return;
+  }
+
+  // Set the shaking flag
+  isShaking = true;
+
+  // If there's a current element, remove the shake class
+  if (currentElement) {
+    currentElement.classList.remove("shake");
+  }
+
+  // Randomly select a new element and add the shake class
+  currentElement = elements[Math.floor(Math.random() * elements.length)];
+  console.log(Math.floor(Math.random() * elements.length));
+  currentElement.classList.add("shake");
+
+  // Set a timeout to remove the shake class after the animation has completed
+  // and then shake a new element
+  setTimeout(() => {
+    currentElement.classList.remove("shake");
+    isShaking = false;
+    shakeElement();
+  }, 6000); // The duration of the shake animation plus the delay
+}
+
+shakeElement();
+
 // Utilisation de la fonction initSlide2 pour chaque objet dans le JSON
 initSlide2("popup_manique", "manique");
 initSlide2("popup_cupcake", "cupcake");
