@@ -151,6 +151,9 @@ footer {
 }
 
 .modal-activite{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding-top : 2vh;
     padding-left : 1vw;
     padding-bottom : 2vh;
@@ -252,7 +255,7 @@ button:active {
 }
 
 .ele_fleche {
-    width: 60px;
+    width: 8vw;
     transform: rotate(70deg);
     /* z-index: 2; */
     display: flex;
@@ -263,14 +266,14 @@ button:active {
 }
 
 .ele_sardine {
-    width: 80px;
+    width: 8vw;
     transform: rotate(17deg);
     /* z-index: 2; */
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     margin-top: -5%;
-    margin-left: 65%;
+    /* margin-left: 65%; */
 }
 
 .nom_div_pg_at {
@@ -282,7 +285,6 @@ button:active {
 }
 
 .img_div_pg_at {
-
     text-align: center;
     width: 100%;
 }
@@ -293,7 +295,7 @@ button:active {
 }
 
 #bioAthlete {
-    line-height: 2.5vh;
+    line-height: 5vh;
 }
 
 .text_pg_at {
@@ -305,10 +307,14 @@ button:active {
 }
 
 .text2_pg_at {
-    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* margin-bottom: 30px; */
     font-weight: bold;
-    margin-top: 60px;
-    margin-left: 150px;
+    margin-top: 5vh;
+    /* margin-left: 150px; */
     font-size: 200%;
 }
 
@@ -323,9 +329,10 @@ button:active {
 }
 
 .box_p_c {
-    margin-bottom: 30px;
-    width: 90%;
-    margin-left: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60vw;
     font-weight: bold;
 }
 
@@ -356,9 +363,9 @@ button:active {
 }
 
 .img_cidrebolee {
-    width: 6%;
-    margin-left: 75%;
-    margin-top: -13%;
+    width: 10vw;
+    margin-left: 10vw;
+    /* margin-top: 1vh; */
 }
 
 /* page crédit */
