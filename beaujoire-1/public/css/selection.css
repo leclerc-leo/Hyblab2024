@@ -134,39 +134,37 @@
 	border: none; /* Supprime la bordure, si vous n'en voulez pas */
 	outline: none; /* Supprime l'outline pour éviter l'effet de focus bleu par défaut sur les boutons */
 	cursor: pointer; /* Change le curseur en pointeur pour indiquer qu'il s'agit d'un élément cliquable */
-	
+
 	/* Ajoutez des propriétés supplémentaires pour ajuster la taille et l'espacement si nécessaire */
 	padding: 10px; /* Espacement intérieur, ajustez selon vos besoins */
 	border-radius: 50%; /* Rend le bouton circulaire, ajustez ou supprimez selon vos besoins */
-	
+
 	/* Centrez les images SVG à l'intérieur du bouton */
 	display: flex;
 	align-items: center;
 	justify-content: center;
-  }
-  
-  
+}
+
 .heart-svg img::after {
-	content: '';
+	content: "";
 	display: block;
 	visibility: hidden;
-  }
-  
+}
+
 .heart-svg img {
 	width: 100%;
 	height: auto;
 	display: block;
-  }
+}
 .heart-svg {
 	width: 24px; /* ou la taille désirée */
 	height: auto;
 	display: block; /* Affiche seulement l'image visible */
-  }
-  
-  .heart-filled {
+}
+
+.heart-filled {
 	display: none; /* Cache initialement l'image du cœur plein */
-  }
-  
+}
 
 .heart-button.like {
 	animation: 0.7s like ease-in-out;
