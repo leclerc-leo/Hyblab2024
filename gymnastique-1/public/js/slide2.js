@@ -46,8 +46,9 @@ const initSlide2 = async function (popupId, objectId) {
   function animateBag() {
     anime({
       targets: bag,
-      width: "130%",
-      top: "60%",
+      width: "200%",
+      left: "51%",
+      top: "16%",
       easing: "easeInOutQuad",
       duration: 100,
     });
