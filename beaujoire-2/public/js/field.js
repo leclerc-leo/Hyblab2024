@@ -1,5 +1,6 @@
 
 console.log(globals.tabVotes);
+console.log(globals.shown);
 
 /************* Archives *************/
 function checkVotes() {
@@ -27,7 +28,7 @@ checkVotes();
 
 /************* Pop up  **************/
 
-if (globals.checkAllVotes(globals.tabVotes)) {
+if (globals.checkAllVotes(globals.tabVotes) && !(globals.shown)) {
 
   window.addEventListener("load", async function () {
 
@@ -49,7 +50,7 @@ if (globals.checkAllVotes(globals.tabVotes)) {
         },
         1000
     )
-
+    globals.shown = true ;
     await getSessionTokenValue();
 
   });
