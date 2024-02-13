@@ -185,17 +185,56 @@ main > section{
 /* here we have a contraint on the height of the logos (not the width)     */
 /* so we cannot use % and use em (which are proportional to the size of the */
 /* slide because of body's font size rule at the end of this CSS           */
+
+
+
+.credits-box{
+    display: flex;
+    flex-direction: column;
+    z-index: 99;
+    text-align: center;
+    color:var(--green);
+    background-color: white;
+    width:100%;
+    gap:0.1em;
+    padding-top: 10px;
+}
+
+    .credits-title{
+        font-size: 0.6em;
+        text-transform: uppercase;
+        font-family: 'Abolition';
+        
+    }
+    .credits-subtitle {
+        font-size: 0.4em;
+        text-transform: uppercase;
+        font-family: 'Abolition';
+    }
+
+    .credits-box p {
+        font-size: 0.18em;
+        color: var(--green);
+        text-align:center;
+    }
+
+    @media only screen and (max-width: 500px) {
+        .credits-box p {
+            margin: 0;
+        }
+    }
+
 #bandeau {
     width:100%;
-    height: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
     background-color: white;
     display: flex;
-    position: absolute;
-    bottom: 0;
+
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap:0.5em;
+    gap:0.1em;
 }
 
 #bandeau > *  {
@@ -205,16 +244,16 @@ main > section{
     justify-content: center;
 }
     #hyblab {
-        height: 1.3em;
+        height: 0.8em;
     }
 
 .logo {
-    height: 0.7em;
+    height: 0.5em;
 }
 
 .logo-half {
     max-width:3em;
-    height: 1em;
+    height: 0.7em;
 }
 
 .logo-row {
