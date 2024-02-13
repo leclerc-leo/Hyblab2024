@@ -1,78 +1,904 @@
 <!doctype html>
-
 <html lang="fr">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-  <title>Hyblab 2023</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/loadingio/loading.css@v2.0.0/dist/loading.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <script src="js/slide1.js" defer></script>
-  <script src="js/slide2.js" defer></script>
-  <script src="js/index.js" defer></script>
-</head>
-<body>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+    />
+
+    <title>La Course Continue - Les Autres Possibles</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="js/drawer.js" defer></script>
+    <script src="js/slide1.js" defer></script>
+    <script src="js/slide2.js" defer></script>
+    <script src="js/slide3.js" defer></script>
+    <script src="js/slide4.js" defer></script>
+    <script src="js/slide5.js" defer></script>
+    <script src="js/slide6.js" defer></script>
+    <script src="js/slide7.js" defer></script>
+    <script src="js/slide8.js" defer></script>
+    <script src="js/slide9.js" defer></script>
+    <script src="js/slide10.js" defer></script>
+    <script src="js/index.js" defer></script>
+  </head>
+  <body>
     <!-- Le conteneur sert à vérouiller les proportions (aspect ratio) du contenu de la page (ici des slides) -->
     <div id="container">
-      <!-- Le loader-->
       <section id="loader">
-        <div id="loader-img" class="ld ld-ring ld-cycle"></div>
-        <p id="loader-text">Veuillez patienter...</p>
+        <img
+          id="logo-victoire-anime"
+          src="animations/slide1/logo-victoire-optimized.gif"
+          alt="Logo Victoire noir, anmimé"
+        />
       </section>
-      <div id="mySwiper" class="swiper">
+
+      <div id="mySwiper" class="swiper main-swiper">
         <!-- le main est aussi le conteneur des différents slides (contenus à chaque fois dans des sections-->
-        <main class = "swiper-wrapper">
-            <section id="first-slide" class="swiper-slide">
-                <header>
-                    <h1 id="titre">Welcome to</h1>
-                </header>
-                
-                <img src="img/logo_hyblab.png" id="logo-hyblab" alt="logo hyblab"></img>
+        <main class="swiper-wrapper">
+          <section id="slide1" class="swiper-slide">
+            <img
+              id="logo-victoire"
+              src="img/illustrations/slide1/logo-victoire.svg"
+              alt="Logo Victoire noir"
+            />
+            <header>
+              <h1>La Course Continue</h1>
+            </header>
 
+            <div class="swiper scroll-swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <p id="slide1-p1">
+                    Les femmes dans le sport, c’est d’abord l’histoire d’un
+                    <b>combat permanent</b>. Si aujourd’hui, on peut
+                    s’émerveiller devant les performances et médailles de nos
+                    athlètes préférées, c’est parce que de nombreuses femmes se
+                    sont battues avant elles pour y arriver.
+                  </p>
 
-                <!-- le footer sera rempli à partir de données lues dans un fichier Json-->
-                <footer>
-                  <p></p>
-                </footer>
-            </section>
-            <section id="second-slide" class="swiper-slide">
-                <header>
-                  <h1>This was...</h1>
-                </header>
-                <img id="img-fini" src="hyblab_2024.png">
-                <footer id="bandeau">
-                        <!-- Logo Hyblab -->
-                          <a href="http://www.hyblab.fr/"><img id="hyblab" src="logo_hyblab.png" alt="Hyblab DataSport"></a>
-                      
-                          <!-- Les organisateurs -->
-                          <ul>
-                            <li><a href="http://www.agrnantes.fr"><img src="ecoles/logo_agr.png" alt="AGR école de l'image"></a></li>
-                            <li><a href="https://epjt.fr/"><img src="ecoles/logo_epjt.svg" alt="Ecole publique de journalisme de Tours"></a></li>
-                            <li><a href="http://www.polytech.univ-nantes.fr/"><img src="ecoles/logo_polytech.png" alt="Polytech Nantes"></a></li>
-                            <li><a href="https://www.sciencespo-rennes.fr/"><img src="ecoles/logo_sciencespo.svg" alt="SciencesPo"></a></li>
-                            <!-- Les autres logos -->
-                          <ul>
-                            <li><a href="http://www.ouestmedialab.fr/"><img src="logo_oml.png" alt="Ouest Médialab"></a></li>
-                            <!-- Logos CC et opensource -->
-                            <li>
-                            <ul>
-                              <li class="stacked"><img id="cc" src="logo_cc.png" alt="Creative commons"></li>
-                              <li class="stacked"><img id="opensource" src="logo_opensource.png" alt="Open source"></li>
-                            </ul>
-                            </li>
-                            <!-- Logo de votre porteur de projet -->
-                            <li><a href="http://www.mon-porteur-de-projet.org"><img src="no-logo.png" alt="Logo de mon porteur de projet"></a></li>
-                            <!-- Partenaires institutionnels -->
-                            <li><a href="http://www.nantesmetropole.fr/"><img class="institutionnel" src="institutionnels/logo_nantesmetropole.png" alt="Nantes Métropole"></a></li>
-                          </ul>
-                </footer>
-            </section>
+                  <div id="slide1-img-container1">
+                    <img
+                      src="img/illustrations/slide1/blue-gloves.svg"
+                      id="blue-gloves"
+                      alt="Gants de boxe bleu"
+                    />
+                    <img
+                      src="img/illustrations/slide1/blue-bicycle.svg"
+                      id="blue-bicycle"
+                      alt="Vélo bleu"
+                    />
+                  </div>
+
+                  <p id="slide1-p2">
+                    Savais-tu que les femmes ont intégré certains sports de
+                    combat il y a moins de 50 ans&nbsp;?
+                  </p>
+
+                  <div id="slide1-img-container2">
+                    <img
+                      src="img/illustrations/slide1/blue-ice-skate.svg"
+                      id="blue-ice-skate"
+                      alt="Patin à glace bleu"
+                    />
+                    <img
+                      src="img/illustrations/slide1/blue-arc.svg"
+                      id="blue-arc"
+                      alt="Arc bleu"
+                    />
+                    <img
+                      src="img/illustrations/slide1/blue-rugby.svg"
+                      id="blue-rugby"
+                      alt="Ballon de rugby bleu"
+                    />
+                  </div>
+
+                  <p id="slide1-p3">
+                    Mais rassure-toi, les sportives sont bien décidées à ne pas
+                    rester sur le banc de touche. L’égalité femmes-hommes n’est
+                    pas encore la norme dans le milieu sportif, mais elle
+                    progresse&nbsp;!
+                    <b
+                      >Découvre les quelques évolutions marquantes de ces 24
+                      dernières années…</b
+                    >
+                  </p>
+
+                  <div id="slide1-img-container3">
+                    <img
+                      src="img/illustrations/slide1/blue-whistle.svg"
+                      id="blue-whistle"
+                      alt="Sifflet bleu"
+                    />
+                    <img
+                      src="img/illustrations/slide1/blue-target.svg"
+                      id="blue-target"
+                      alt="Cible de tir à l'arc bleu"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="slide2" class="swiper-slide">
+            <header>
+              <h1>Salut ! Moi c'est <span>Victoire</span></h1>
+            </header>
+
+            <p class="slide2-p1">
+              <span id="slide2-p1-left-quote" class="quote-span"></span
+              >Salut&nbsp;! Moi c’est Victoire&nbsp;! Je vais t’accompagner tout
+              au long de cette expérience. À travers cette
+              <b>plateforme interactive</b>, tu vas découvrir une partie de
+              l’exposition <b>“Sportives à la Une”</b> du magazine
+              <i>Les Autres Possibles</i>, consacrée aux femmes dans le sport.
+              Amuses-toi bien&nbsp;!<span
+                id="slide2-p1-right-quote"
+                class="quote-span"
+              ></span>
+            </p>
+
+            <img
+              src="animations/slide2/orange-victoire.gif"
+              id="orange-victoire"
+              alt="Animation Victoire en orange"
+            />
+          </section>
+
+          <section id="slide3" class="swiper-slide">
+            <header>
+              <h1>2006</h1>
+              <h2>Arrivée du plan de féminisation</h2>
+            </header>
+
+            <div class="swiper scroll-swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="overlay"></div>
+
+                  <p id="slide3-p1">
+                    <span id="slide3-p1-left-quote" class="quote-span"></span>Un
+                    plan de féminisation&nbsp;? Ces termes sont sûrement très
+                    vagues pour toi. Laisse-moi t’expliquer&nbsp;! Au départ, la
+                    majorité des sports ne prenait pas vraiment en compte le
+                    public féminin. C’est pourquoi, en 2006, le handball, le
+                    basket-ball, le cyclisme et le football s’engagent à créer
+                    un plan de féminisation dans leurs fédérations.<span
+                      id="slide3-p1-right-quote"
+                      class="quote-span"
+                    ></span>
+                  </p>
+                  <img
+                    src="animations/slide3/black-victoire.gif"
+                    id="black-victoire"
+                    alt="Animation Victoire en noir"
+                  />
+                  <p id="slide3-p2">
+                    <b
+                      >Tu te demandes peut-être quels sont les
+                      objectifs&nbsp;?</b
+                    >
+                    Il y en a plusieurs, mais le but principal est d’adapter la
+                    discipline sportive aux femmes et de faciliter l’accès des
+                    femmes aux postes à responsabilité. Mais ce plan ne devient
+                    <b>obligatoire qu’en 2013</b> pour tous les sports&nbsp;!
+                  </p>
+                  <img
+                    src="img/illustrations/slide3/pink-rugby.svg"
+                    id="pink-rugby"
+                    alt="Ballon de rugby rose"
+                  />
+
+                  <aside class="drawer-container">
+                    <div class="drawer">
+                      <p class="exemple">
+                        Exemple d’une femme active dans une fédération sportive
+                        féminine.
+                      </p>
+
+                      <div class="header-container">
+                        <header>
+                          <h1>Portrait</h1>
+                          <h2>Marilys Audran</h2>
+                        </header>
+                        <img
+                          class="photo-portrait"
+                          src="img/portraits/marilys-audran.png"
+                          alt="Photo portrait de Marilys Audran"
+                        />
+                      </div>
+
+                      <p class="drawer-p1">
+                        27 ans, présidente de l’association nantaise de rugby
+                        féminin (ANRF). Demie de mêlée dans l’équipe de l’ANRF.
+                      </p>
+                      <p class="drawer-p2">
+                        “Être joueuse de rugby, c’est une lutte au quotidien. En
+                        2005, des femmes courageuses ont décidé de créer leur
+                        propre club à Nantes&nbsp;: l’ANRF. Ça demande beaucoup
+                        de temps et d’énergie, mais on a notre liberté et notre
+                        indépendance.”
+                      </p>
+                      <p class="drawer-p3">
+                        Marilys a commencé le rugby grâce à ses professeurs
+                        d’EPS au collège. Très rapidement, ces derniers lui ont
+                        proposé d’intégrer la future section féminine de rugby,
+                        ce qu’elle a accepté.
+                      </p>
+
+                      <button class="drawer-button">
+                        <div class="half-line"></div>
+                        <img
+                          class="chevron"
+                          src="img/illustrations/slide3/pink-chevron.svg"
+                          alt="Chevron rose"
+                        />
+                        <div class="half-line"></div>
+                      </button>
+                    </div>
+                  </aside>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="slide4" class="swiper-slide">
+            <header>
+              <h1>2010</h1>
+              <h2>Création des Jeux Olympiques de la Jeunesse</h2>
+            </header>
+
+            <div class="swiper scroll-swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="overlay"></div>
+
+                  <p id="slide4-p1">
+                    <span id="slide4-p1-left-quote" class="quote-span"></span
+                    ><b
+                      >Les Jeux Olympiques de la jeunesse (JOJ), ça ne te dit
+                      peut-être pas grand chose&nbsp;?</b
+                    >
+                    C’est normal&nbsp;! Et pourtant, cette compétition s’est
+                    voulue
+                    <b>paritaire</b> avant les JO classiques. En 2020, par
+                    exemple, il y avait 940 sportifs et 940 sportives.<span
+                      id="slide4-p1-right-quote"
+                      class="quote-span"
+                    ></span>
+                  </p>
+                  <img
+                    src="animations/slide4/yellow-victoire.gif"
+                    id="yellow-victoire"
+                    alt="Animation Victoire en jaune"
+                  />
+                  <p id="slide4-p2">
+                    Les JOJ sont destinés aux jeunes athlètes d’élite, âgés de
+                    15 à 18 ans, et sont quasi-semblables aux Jeux Olympiques
+                    pour adultes.
+                  </p>
+                  <img
+                    src="img/illustrations/slide4/yellow-arc.svg"
+                    id="yellow-arc"
+                    alt="Arc jaune"
+                  />
+                  <p id="slide4-p3">
+                    Leur but est de rassembler des jeunes du monde entier autour
+                    de leurs passions, tout en intégrant une dimension éducative
+                    sur la protection des athlètes ou le travail sur la
+                    performance, par exemple. L’édition 2024 a lieu dans la
+                    province de Gangwon en Corée du Sud. Cette année aussi, les
+                    JOJ sont paritaires et deux nouvelles épreuves mixtes ont
+                    été ajoutées.
+                  </p>
+                  <img
+                    src="img/illustrations/slide4/yellow-target.svg"
+                    id="yellowTarget"
+                    alt="Cible de tir à l'arc jaune"
+                  />
+
+                  <aside class="drawer-container">
+                    <div class="drawer">
+                      <p class="exemple">
+                        Exemple d’une athlète préparant les Jeux Olympiques.
+                      </p>
+                      <div class="header-container">
+                        <header>
+                          <h1>Portrait</h1>
+                          <h2>Eva Cabrerizo</h2>
+                        </header>
+                        <img
+                          class="photo-portrait"
+                          src="img/portraits/eva-cabrerizo.png"
+                          alt="Photo portrait d'Eva Cabrerizo"
+                        />
+                      </div>
+
+                      <p class="drawer-p1">
+                        19 ans, membre du Pôle Espoir de tir à l’arc.
+                      </p>
+                      <p class="drawer-p2">
+                        “Rentrer au Pôle Espoir, ça a été ma plus belle
+                        victoire. Le mental, c’est l’une des choses les plus
+                        dures à gérer. Une compétition, c’est stressant. J’ai
+                        parfois été découragée. Le but ultime, ce sont les Jeux
+                        Olympiques. Ça fait rêver.”
+                      </p>
+                      <p class="drawer-p3">
+                        L’amour d’Eva pour les cibles et l’arc a commencé
+                        lorsqu’elle avait 6 ans. Lorsqu’elle a eu l'occasion,
+                        elle a tout fait pour intégrer un des Pôle Espoir les
+                        plus réputés en France. Pendant 3 ans, elle a pu
+                        bénéficier d’un cursus sur mesure.
+                      </p>
+
+                      <button class="drawer-button">
+                        <div class="half-line"></div>
+                        <img
+                          class="chevron"
+                          src="img/illustrations/slide4/yellow-chevron.svg"
+                          alt="Chevron jaune"
+                        />
+                        <div class="half-line"></div>
+                      </button>
+                    </div>
+                  </aside>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="slide5" class="swiper-slide">
+            <header>
+              <h1>2012</h1>
+              <h2>Première femme de l’UFC</h2>
+            </header>
+
+            <div class="swiper scroll-swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="overlay"></div>
+
+                  <p id="slide5-p1">
+                    <span id="slide5-p1-left-quote" class="quote-span"></span
+                    ><b
+                      >Savais-tu que la première catégorie féminine d’Arts
+                      Martiaux Mixtes (MMA) a été créée il y a 12 ans&nbsp;?</b
+                    >
+                    C’est la catégorie “poids coqs féminins”. La première
+                    championne de cette division s’appelle <b>Ronda Rousey</b>,
+                    une catcheuse américaine originaire de Californie.<span
+                      id="slide5-p1-right-quote"
+                      class="quote-span"
+                    ></span>
+                  </p>
+                  <img
+                    src="animations/slide5/red-victoire.gif"
+                    id="red-victoire"
+                    alt="Animation Victoire en rouge"
+                  />
+                  <p id="slide5-p2">
+                    En 2013, elle a affronté Liz Carmouche pour la première
+                    ceinture féminine de l’UFC, l’organisation américaine de
+                    MMA. On parle ici de la
+                    <b>première confrontation féminine</b> de MMA du pays&nbsp;!
+                    Du côté de la France, il a fallu attendre encore un peu, car
+                    c’est en 2021 que <b>Manon Fiorot</b> devient la première
+                    française à remporter ce championnat.
+                  </p>
+                  <img
+                    src="img/illustrations/slide5/red-gloves.svg"
+                    id="red-gloves"
+                    alt="Gants de boxe rouge"
+                  />
+
+                  <aside class="drawer-container">
+                    <div class="drawer">
+                      <p class="exemple">
+                        Exemple d’une femme évoluant dans un sport de combat.
+                      </p>
+
+                      <div class="header-container">
+                        <header>
+                          <h1>Portrait</h1>
+                          <h2>Tévi Say</h2>
+                        </header>
+                        <img
+                          class="photo-portrait"
+                          src="img/portraits/tevi-say.png"
+                          alt="Photo portrait de Tévi Say"
+                        />
+                      </div>
+
+                      <p class="drawer-p1">
+                        47 ans, pionnière du MMA en France et fondatrice du club
+                        de combat MMA Girls.
+                      </p>
+                      <p class="drawer-p2">
+                        “J'ai créé la section MMA Girls à Paris, puis à Nantes.
+                        Ce sport, c’est une excuse pour donner envie aux femmes
+                        d’utiliser leurs corps autrement. Au MMA, mon corps
+                        n’est pas un fardeau, quelque chose que je dois
+                        protéger, mon corps devient un outil, voire une arme.”
+                      </p>
+                      <p class="drawer-p3">
+                        C’est à 23 ans que Tévi se passionne pour le MMA, ce
+                        sport de combat qui lui offre une grande liberté
+                        d’expression. Aujourd’hui coach dans son club de combat,
+                        elle a été la première française à combattre en MMA.
+                      </p>
+
+                      <button class="drawer-button">
+                        <div class="half-line"></div>
+                        <img
+                          class="chevron"
+                          src="img/illustrations/slide5/red-chevron.svg"
+                          alt="Chevron rouge"
+                        />
+                        <div class="half-line"></div>
+                      </button>
+                    </div>
+                  </aside>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="slide6" class="swiper-slide">
+            <header>
+              <h1>2019 - 2020</h1>
+              <h2>Libération de la parole</h2>
+            </header>
+
+            <div class="swiper scroll-swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="overlay"></div>
+
+                  <p id="slide6-p1">
+                    <span id="slide6-p1-left-quote" class="quote-span"></span
+                    ><b>Oups, je triche un peu en te donnant deux dates… </b
+                    >C’est parce que depuis quelques années, la parole se libère
+                    sur les agressions que les femmes subissent dans le monde du
+                    sport.<span
+                      id="slide6-p1-right-quote"
+                      class="quote-span"
+                    ></span>
+                  </p>
+                  <img
+                    src="animations/slide6/purple-victoire.gif"
+                    id="purple-victoire"
+                    alt="Animation Victoire en violet"
+                  />
+                  <p id="slide6-p2">
+                    D’abord, c’est grâce à une enquête du média Disclose en
+                    2019, qui révèle que de nombreuses affaires de violences
+                    sexistes et sexuelles (VSS) ont été étouffées, et les
+                    agresseurs protégés.
+                  </p>
+                  <img
+                    src="img/illustrations/slide6/purple-ice-skate-up.svg"
+                    id="purple-ice-skate-up"
+                    alt="Patin à glace violet"
+                  />
+                  <p id="slide6-p3">
+                    Tu te rends compte, les femmes doivent se battre pour
+                    intégrer le milieu du sport, et en plus elles n’y sont même
+                    pas en sécurité&nbsp;! Heureusement, le mouvement
+                    <i>#MeToo</i> a généré une vague de témoignages de sportives
+                    qui a <b>permis de briser le tabou</b>. Victime ou témoin de
+                    violences&nbsp;? Il existe un numéro d’écoute et
+                    d’information, le 3919. En cas d’urgence, appelez le 17.
+                  </p>
+                  <img
+                    src="img/illustrations/slide6/purple-ice-skate-down.svg"
+                    id="purple-ice-skate-down"
+                    alt="Patin à glace violet"
+                  />
+
+                  <aside class="drawer-container">
+                    <div class="drawer">
+                      <p class="exemple">
+                        Exemple d’une femme évoluant dans un sport présentant
+                        des violences sexuelles.
+                      </p>
+
+                      <div class="header-container">
+                        <header>
+                          <h1>Portrait</h1>
+                          <h2>Christèle Bellet</h2>
+                        </header>
+                        <img
+                          class="photo-portrait"
+                          src="img/portraits/christele-bellet.png"
+                          alt="Photo portrait de Christèle Bellet"
+                        />
+                      </div>
+
+                      <p class="drawer-p1">
+                        59 ans, entraîneure de patinage artistique depuis plus
+                        de 40 ans.
+                      </p>
+                      <p class="drawer-p2">
+                        “En tant qu'élève, certains profs ont la main baladeuse
+                        mais tu ne t’en rends pas compte. Dans ce sport, on a
+                        besoin de te toucher pour te replacer, d’un point de vue
+                        technique. Aujourd’hui, tous les membres du club ont
+                        suivi une formation obligatoire pour être sensibilisé à
+                        ces violences sexistes et sexuelles qui arrivent dans
+                        n’importe quel sport.”
+                      </p>
+                      <p class="drawer-p3">
+                        Christèle a tout d’abord commencé sa carrière sur la
+                        glace en tant que patineuse. Mais très vite, elle s’est
+                        rendue compte que ce qu’elle voulait faire c’était
+                        amener les enfants à progresser.
+                      </p>
+
+                      <button class="drawer-button">
+                        <div class="half-line"></div>
+                        <img
+                          class="chevron"
+                          src="img/illustrations/slide6/purple-chevron.svg"
+                          alt="Chevron violet"
+                        />
+                        <div class="half-line"></div>
+                      </button>
+                    </div>
+                  </aside>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="slide7" class="swiper-slide">
+            <header>
+              <h1>2022</h1>
+              <h2>(retour du) Tour de France féminin</h2>
+            </header>
+
+            <div class="swiper scroll-swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="overlay"></div>
+
+                  <p id="slide7-p1">
+                    <span id="slide7-p1-left-quote" class="quote-span"></span
+                    ><b
+                      >Bonne nouvelle, les femmes reviennent dans la
+                      course&nbsp;! Alors qu’il avait disparu en 2010 par manque
+                      de financement, le Tour de France féminin a fait son grand
+                      retour il y a deux ans</b
+                    >. Et oui, dès qu’il faut parler argent, on a la fâcheuse
+                    tendance de sacrifier le sport féminin avant le sport
+                    masculin.<span
+                      id="slide7-p1-right-quote"
+                      class="quote-span"
+                    ></span>
+                  </p>
+                  <img
+                    src="animations/slide7/green-victoire1.gif"
+                    id="green-victoire1"
+                    alt="Animation Victoire en vert"
+                  />
+                  <p id="slide7-p2">
+                    En tout cas, c’est
+                    <b>une étape importante pour le cyclisme féminin</b>, au
+                    sens propre comme figuré, car les coureuses vont gagner de
+                    la visibilité et des sponsors. Par contre, il y a encore du
+                    chemin à faire sur <b>l’égalité des récompenses</b>&nbsp;:
+                    la vainqueure gagne 50&nbsp;000&nbsp;€, c’est cinq fois
+                    moins que le maillot jaune masculin…
+                  </p>
+                  <div id="green-bike-container">
+                    <img
+                      src="img/illustrations/slide7/green-bike.svg"
+                      id="green-bike"
+                      alt="Vélo vert"
+                    />
+                  </div>
+
+                  <aside class="drawer-container">
+                    <div class="drawer">
+                      <p class="exemple">
+                        Exemple d’une femme évoluant dans le cyclisme.
+                      </p>
+
+                      <div class="header-container">
+                        <header>
+                          <h1>Portrait</h1>
+                          <h2>Chloé Michel</h2>
+                        </header>
+                        <img
+                          class="photo-portrait"
+                          src="img/portraits/chloe-michel.png"
+                          alt="Photo portrait de Chloé Michel"
+                        />
+                      </div>
+
+                      <p class="drawer-p1">
+                        27 ans, manageuse de Team Elles (Pays de la Loire).
+                      </p>
+                      <p class="drawer-p2">
+                        “L’objectif de Team Elles est d’amener nos cyclistes au
+                        plus haut niveau, pourquoi pas jusqu’au Tour de France
+                        féminin. J’accompagne les filles dans un triple
+                        projet&nbsp;: sportif, social et scolaire. Certaines de
+                        nos cyclistes sont déjà passées dans des équipes
+                        professionnelles.”
+                      </p>
+                      <p class="drawer-p3">
+                        Ancienne pratiquante de roller, Chloé a rejoint le
+                        milieu des deux-roues en 2021. Elle a intégré la Team
+                        Elles, une association pour le cyclisme féminin, où elle
+                        forme 10 jeunes filles à devenir des cyclistes de haut
+                        niveau.
+                      </p>
+
+                      <button class="drawer-button">
+                        <div class="half-line"></div>
+                        <img
+                          class="chevron"
+                          src="img/illustrations/shared/green-chevron.svg"
+                          alt="Chevron vert"
+                        />
+                        <div class="half-line"></div>
+                      </button>
+                    </div>
+                  </aside>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="slide8" class="swiper-slide">
+            <header>
+              <h1>2022*</h1>
+              <h2>Une femme arbitre en Coupe du Monde masculine</h2>
+            </header>
+
+            <div class="swiper scroll-swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="overlay"></div>
+
+                  <p id="slide8-p1">
+                    <span id="slide8-p1-left-quote" class="quote-span"></span
+                    ><b
+                      >Une femme arbitre, une compétition internationale
+                      masculine</b
+                    >. Cela ne te paraît peut-être pas dérangeant et pourtant ce
+                    n’est qu’en 2022 lors de la Coupe du Monde au Qatar, qu’une
+                    femme (et française en plus) est désignée comme arbitre
+                    centrale. C’est lors du match Allemagne&nbsp;-&nbsp;Costa
+                    Rica que <b>Stéphanie Frappart</b> a pu écrire
+                    l’histoire.<span
+                      id="slide8-p1-right-quote"
+                      class="quote-span"
+                    ></span>
+                  </p>
+                  <img
+                    src="animations/slide8/green-victoire2.gif"
+                    id="green-victoire2"
+                    alt="Animation Victoire en vert"
+                  />
+                  <p id="slide8-p2">
+                    Son nom ne t’est sûrement pas familier. Elle a pourtant une
+                    carrière impressionnante&nbsp;!
+                  </p>
+
+                  <img
+                    src="img/illustrations/slide8/green-hat.svg"
+                    id="green-hat"
+                    alt="Casquette verte"
+                  />
+                  <p id="slide8-p3">
+                    Elle a été, par exemple, la
+                    <b
+                      >première femme à arbitrer en Ligue 1 masculine ou en
+                      Ligue des champions</b
+                    >. Mais la présence de femme reste très exceptionnelle…
+                    Aujourd’hui, elles ne représentent que 4&nbsp;% de
+                    l’effectif des arbitres en France. C’est vraiment très
+                    peu&nbsp;!
+                  </p>
+                  <img
+                    src="img/illustrations/slide8/green-whistle.svg"
+                    id="green-whistle"
+                    alt="Sifflet vert"
+                  />
+
+                  <aside class="drawer-container">
+                    <div class="drawer">
+                      <p class="exemple">
+                        Exemple d’une athlète préparant les Jeux Olympiques.
+                      </p>
+
+                      <div class="header-container">
+                        <header>
+                          <h1>Portrait</h1>
+                          <h2>Clémentine Dubreil</h2>
+                        </header>
+                        <img
+                          class="photo-portrait"
+                          src="img/portraits/clementine-dubreuil.png"
+                          alt="Photo portrait de Clémentine Dubreuil"
+                        />
+                      </div>
+
+                      <p class="drawer-p1">
+                        35 ans, arbitre internationale de football et licenciée
+                        au FC Saint-Sébastien-sur-Loire
+                      </p>
+                      <p class="drawer-p2">
+                        “Le foot féminin a énormément évolué ces dernières
+                        années. Ça a toujours été technique, ça l’est encore
+                        davantage. Certains matchs de foot féminin vont être
+                        encore plus impressionnants que des matchs de foot
+                        masculin et vice-versa. Ça ne dépend que du match et pas
+                        de sexe.”
+                      </p>
+                      <p class="drawer-p3">
+                        Depuis toute petite, Clémentine est passionnée de foot.
+                        Préférant vite le drapeau au ballon, elle arbitre
+                        aujourd’hui des matchs nationaux et internationaux, de
+                        PSG-Lyon à Portugal-Japon.
+                      </p>
+
+                      <button class="drawer-button">
+                        <div class="half-line"></div>
+                        <img
+                          class="chevron"
+                          src="img/illustrations/shared/green-chevron.svg"
+                          alt="Chevron vert"
+                        />
+                        <div class="half-line"></div>
+                      </button>
+                    </div>
+                  </aside>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="slide9" class="swiper-slide">
+            <header>
+              <h1>Ligne d'arrivée</h1>
+            </header>
+            <p id="slide9-p1">
+              <span id="slide9-p1-left-quote" class="quote-span"></span>Et
+              voilà&nbsp;! Tu as fait le tour de quelques
+              <b>grandes évolutions</b> de ces dernières années&nbsp;! J’espère
+              que tu as pu apprendre plein de nouvelles choses et découvrir
+              toutes ces femmes inspirantes.
+            </p>
+            <p id="slide9-p2">
+              Les portraits des sportives que tu viens de découvrir ont été
+              réalisés en 2023 par des jeunes de 10 à 25 ans qui ont participé à
+              la création de
+              <a
+                href="https://lesautrespossibles.fr/expo-femmes-sport/"
+                target="_blank"
+                ><b>l’exposition “Sportives à la Une”</b></a
+              >
+              avec <b><i>Les Autres Possibles</i></b
+              >.<span id="slide9-p2-right-quote" class="quote-span"></span>
+            </p>
+            <p id="slide9-p3">À bientôt&nbsp;!</p>
+            <img
+              src="animations/slide9/victoire-hand.gif"
+              id="victoire-hand"
+              alt="Animation main Victoire"
+            />
+          </section>
+
+          <section id="slide10" class="swiper-slide" style="height: 600px">
+            <header>
+              <h1>Crédits</h1>
+            </header>
+            <div class="column-principal">
+              <div class="row-principal">
+                <div class="left-column">
+                  <div>
+                    <a href="https://lesautrespossibles.fr/"
+                      ><img
+                        src="img/credits/lap.svg"
+                        id="LAP"
+                        alt="Logo de Les Autres Possibles"
+                    /></a>
+                    <p></p>
+                  </div>
+                  <div>
+                    <a href="https://www.ouestmedialab.fr/"
+                      ><img
+                        src="img/credits/ouestmedialab.svg"
+                        id="OML"
+                        alt="Logo de Ouest Medialab"
+                    /></a>
+                  </div>
+                  <div>
+                    <a href="https://epjt.fr/"
+                      ><img
+                        src="img/credits/epjt.svg"
+                        id="EPJT"
+                        alt="Logo de l'EPJT"
+                    /></a>
+                    <p>Annabelle&nbsp;Boos</p>
+                  </div>
+                  <div>
+                    <a href="https://www.sciencespo-rennes.fr/"
+                      ><img
+                        src="img/credits/sciencespo.svg"
+                        id="sciencepo"
+                        alt="Logo de SciencesPo"
+                    /></a>
+                    <p>Laurine&nbsp;Le&nbsp;Goff</p>
+                  </div>
+                </div>
+                <div class="right-column">
+                  <div>
+                    <a href="https://polytech.univ-nantes.fr/"
+                      ><img
+                        src="img/credits/polytech.svg"
+                        id="Polytech"
+                        alt="Logo de Polytech"
+                    /></a>
+                    <p>
+                      Rania&nbsp;Abdelkhaleq<br />
+                      Yann&nbsp;Salmon<br />
+                      Léo&nbsp;Brigardis<br />
+                      Wafa&nbsp;Harir<br />
+                      Tom&nbsp;Rintz
+                    </p>
+                  </div>
+                  <div>
+                    <a href="http://www.agrnantes.fr"
+                      ><img
+                        src="img/credits/agr.svg"
+                        id="AGR"
+                        alt="Logo de l'AGR"
+                    /></a>
+                    <p>
+                      Léa&nbsp;Sautejeau <br />
+                      Alex&nbsp;Desnoë
+                    </p>
+                  </div>
+                  <div>
+                    <a href="https://metropole.nantes.fr/"
+                      ><img
+                        src="img/credits/nantes-metropole.svg"
+                        id="nantes-metropole"
+                        alt="Logo de Nantes Métropole"
+                    /></a>
+                  </div>
+                </div>
+              </div>
+              <div class="logohylab">
+                <a href="http://www.hyblab.fr/"
+                  ><img
+                    src="img/credits/hyblab.svg"
+                    id="HYBLAB"
+                    alt="Logo d'Hyblab"
+                /></a>
+              </div>
+              <footer class="logocredit">
+                <img src="img/credits/cc.svg" id="cc" alt="Logo crédits" />
+              </footer>
+            </div>
+          </section>
         </main>
+
         <div class="swiper-pagination"></div>
+      </div>
     </div>
-  </div>
-</body>
+  </body>
 </html>
