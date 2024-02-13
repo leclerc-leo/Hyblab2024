@@ -6,6 +6,12 @@ body{
     font-family: sans-serif;
 }
 
+/* the slides and the loader should fill the whole 9:16 zone */
+.swiper-wrapper section, #loader{
+    background-color: var(--green);
+    width: 100%;
+    height: 100%;
+}
 
 #footer {
     display: flex;
@@ -292,6 +298,11 @@ body{
     height: 100%;   /* even on mobile devices with url or navigation bars */
     margin-left: calc((100vw - 100 * 3vh / 4) / 2); /* Add black bands on left and right */
     width: calc(100 * 3vh / 4); /* Force 3/4 aspect ratio */
+}
+
+#archives-svg{
+    width:0.45em;
+    height:0.45em;
 }
 
 /* Fill the whole viewport when its aspect ratio is between 9/16 and 3/4 */

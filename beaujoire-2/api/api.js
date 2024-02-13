@@ -15,7 +15,7 @@ app.get('/topic', function ( req, res ) {
 } );
 
 // get all players
-app.get('/players', function (req, res) {
+app.get('/allplayers', function (req, res) {
     dataUtils.selectPlayers((err, players) => {
         if (err) {
             console.error(err.message);

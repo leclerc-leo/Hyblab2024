@@ -61,7 +61,7 @@ ui.get('/home', async (req, res) => {
     const sessionToken = req.cookies.sessionToken;
     res.sendFile(path.join(__dirname, 'public/home.html'), {
         locals: {
-            pageName: 'Home'
+            pageName: 'Les Canards Rient'
         }
     });
 });
