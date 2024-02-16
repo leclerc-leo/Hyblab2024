@@ -1,207 +1,979 @@
-/* ------- Important ! Please at least keep the last part of this CSS ----------- */
-/* ------- that adapts content width and height so that aspect ratio  ----------- */
-/* ------- is kept between 9/16 a,d 3/4 (portait orientation)         ----------- */
+/* ========================================================================== */
+/* FONT FACES */
+/* ========================================================================== */
+@font-face {
+  font-family: "Gopher Regular";
+  src: url("../fonts/Gopher/Gopher-Regular.otf");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Gopher Bold";
+  src: url("../fonts/Gopher/Gopher-Bold.otf");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Helvetica Light";
+  src: url("../fonts/Helvetica/HelveticaNeue-Light.otf");
+  font-weight: 300;
+}
+
+/* ========================================================================== */
+/* GLOBAL */
+/* ========================================================================== */
+:root {
+  /* Color palette */
+  --background-color: #f7f7f7;
+  --orange: #ff871e;
+  --light-grey: #e8dfdf;
+  --purple: #554595;
+  --red: #dc1e19;
+  --yellow: #ebc015;
+  --black: #000000;
+  --white: #ffffff;
+  --pink: #ec6ea6;
+  --blue: #5bc5f2;
+  --green: #49b070;
+
+  /* Viewport height and width (minus the black borders) */
+  --vh: 100vh;
+  --vw: calc(100 * 3vh / 4);
+
+  /* Else */
+  --drawer-height: calc(0.8 * var(--vh));
+  --drawer-width: calc(100% - 60px);
+  --drawer-button-width: 30px;
+}
 
 /* Normalize margin and padding to ease elements positioning */
-*{
-    padding:0;
-    margin:0;
+* {
+  padding: 0;
+  margin: 0;
 }
 
-body{
-    background-color: black;
-    color: white;
-    overflow: hidden;   /* to avoid slider bugs on some browsers */
-    font-family: sans-serif;
+body {
+  background-color: var(--black);
+  font-family: sans-serif;
 }
 
-/* -------------- Loader --------------*/
-#loader{
-    z-index: 2;
-    position:absolute;
+#container {
+  background-color: var(--background-color);
 }
 
-#loader-img{
-    top:40%;
-    left:40%;
-    position: absolute;
+header {
+  padding: 15px 20px 5px 20px;
 }
 
-#loader-text{
-    text-align: center;
-    font-size: 25%;
-    position: absolute;
-    top:60%;
-    width: 100%
-}
-/* -------------- End of Loader --------------*/
-
-/* Swiper slider. Need to fill the container */
-#mySwiper{
-    width: 100%;
-    height:100%;
-    position: absolute;
+h1 {
+  font-size: 28px;
+  font-family: "Gopher Bold";
+  line-height: 35px;
+  text-align: center;
 }
 
-/* white navigation bullets */
-.swiper-pagination-bullet-active {
-    background-color: white !important;
+h2 {
+  font-size: 22px;
+  font-family: "Gopher Regular";
+  line-height: 22px;
+  text-align: center;
+  color: var(--black);
 }
 
-/* the slides and the loader should fill the whole 9:16 zone */
-.swiper-wrapper section, #loader{
-    background-color: dodgerblue;
-    width: 100%;
-    height: 100%;
+h3 {
+  text-align: center;
+  font-family: "Helvetica Light";
+  font-size: 13px;
+  line-height: 15px;
+  font-style: italic;
+  font-weight: 300;
 }
 
-/* Most of the elements in this demo are absolute positioned with percentages */
-#first-slide header, #second-slide header{
-    text-align: center;
-    width: 100%;
-    top: 10%;
-    position: absolute;
-    font-size: 30%;
-    z-index: 2;
+p {
+  font-family: "Helvetica Light";
+  font-size: 15px;
+  line-height: 19px;
+  text-align: center;
+  padding: 0px 50px;
 }
 
-#logo-hyblab{
-    text-align: center;
-    width: 50%;
-    left: 50%; /* center the logo, in interaction with the negative margin-left */
-    top: 50%;
-    margin-left:-25%; /* this is half the width */
-    margin-top:calc(-7.5% * 9 / 16 ); /* margins are relative to the element width... :-( */
-    position: absolute;
-    font-size: 50%;
-    z-index: 2;
-    cursor: pointer;
+/* ========================================================================== */
+/* SWIPER */
+/* ========================================================================== */
+.swiper {
+  width: 100%;
+  height: 100%;
 }
 
-/* Last slide image is centered */
-#img-fini{
-    width: 70%;
-    left: 50%; /* center the logo, in interaction with the negative margin-left */
-    top: 40%;
-    position: absolute;
-    margin-left:-35%; /* this is half the width */
-    margin-top:calc(-25% * 9 / 16 ); /* margins are relative to the element width... :-( */
+section.swiper-slide {
+  display: flex;
+  flex-direction: column;
 }
 
-main > section{
-    background-image: url('../img/background.svg');
-    background-size: 100% auto; /* background is full width and height is proportional to width */
-    background-position: bottom; /* background is bottom aligned */
+.scroll-swiper {
+  flex-grow: 1;
 }
 
-/* Footer of last slide is at the bottom and content is centered */
-#first-slide footer{
-    bottom: 5%;
-    position: absolute;
-    box-sizing: border-box; /* So that padding is not added to width (and width: 100% works) */
-    width: 100%; /* could also use  width: calc(100% - 2em) if not using box-sizing */
-    font-size: 20%;
-    text-align: center;
-    padding: 1em;
-    background-color: rgba(0, 0, 0, 0.5);
+.scroll-swiper .swiper-slide {
+  position: relative;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  height: auto;
+  padding: 0px 0px 24px 0px;
+  overflow: hidden;
 }
 
+.swiper-pagination {
+  --swiper-pagination-right: auto;
+  --swiper-pagination-left: 0px;
+  --swiper-pagination-bullet-size: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 15px;
+  width: 30px;
+}
 
-/* ---------- Positioning of logos on the last slide -------------------- */
-/* here we have a contraint on the height of the logos (not the width)     */
-/* so we cannot use % and use em (which are proportional to the size of the */
-/* slide because of body's font size rule at the end of this CSS           */
-#bandeau {
-    width:100%;
-    position: absolute;
-    bottom: 0;
-    background-color: white;
-    font-size: 20%;
-  }
+/* ========================================================================== */
+/* SLIDE 1 */
+/* ========================================================================== */
+#slide1 header {
+  padding-top: 24px;
+}
 
-  #bandeau li{
-    list-style-type: none;
-    display: inline-block;
-    vertical-align: middle;
-    margin: 0 0.5em;
-  }
+#slide1 header h1 {
+  color: var(--blue);
+}
 
-  #bandeau img{
-    height: 2.5em;
-  }
+#slide1-p1 {
+  width: 260px;
+  margin: 19px auto 0;
+}
 
-  #bandeau #hyblab{
-    margin: 1em auto;
-    height: 3em;
-    display: block;
-  }
+#logo-victoire {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  width: 103px;
+}
 
-  #bandeau #cc, #bandeau #opensource
-  {
-    height: 1em;
-  }
+#slide1-img-container1 {
+  width: 100%;
+  height: calc(350.467px + 100px);
+  position: relative;
+}
 
-  #bandeau .stacked{
-    display:block;
-  }
+#blue-gloves {
+  position: absolute;
+  margin: 24px 0 0 35px;
+  top: 0;
+  left: 0;
+}
 
-  #bandeau ul{
-    text-align: center;
-    padding: 0 0;
-    margin: 0.5em auto;
-  }
+#blue-bicycle {
+  position: absolute;
+  top: 100px;
+  right: 0;
+}
 
-  #bandeau .institutionnel
-  {
-    height: 2em;
-  }
+#slide1-p2 {
+  color: var(--blue);
+  font-size: 22px;
+  width: 300px;
+  margin: 4rem auto;
+}
 
-/* ---------- Important media queries for easy responsive content :-) ----------------- */
+#slide1-img-container2 {
+  width: 100%;
+  height: calc(169px + 300px);
+  position: relative;
+}
+
+#blue-ice-skate {
+  position: absolute;
+  margin: 0 0 0 35px;
+  top: 0;
+  left: 0;
+}
+
+#blue-arc {
+  position: absolute;
+  top: 80px;
+  right: 0;
+}
+
+#blue-rugby {
+  position: absolute;
+  top: 300px;
+  left: 100px;
+}
+
+#slide1-p3 {
+  width: 260px;
+  margin: auto;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+#slide1-img-container3 {
+  width: 100%;
+  height: 293px;
+  position: relative;
+}
+
+#blue-whistle {
+  position: absolute;
+  margin: 0 0 0 35px;
+  top: 0;
+  left: 0;
+}
+
+#blue-target {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+/* ========================================================================== */
+/* SLIDE 2 */
+/* ========================================================================== */
+#slide2 {
+  position: relative;
+  overflow: hidden;
+}
+
+#orange-victoire {
+  width: 100%;
+  position: absolute;
+  top: 210px;
+}
+
+#slide2 header h1 {
+  color: var(--black);
+}
+
+#slide2 header h1 span {
+  color: var(--orange);
+}
+
+#slide2 p {
+  width: 260px;
+  margin: 20px auto 0;
+}
+
+#slide2-p1-left-quote:before {
+  content: url("../img/illustrations/slide2/left-orange-quote.svg");
+  bottom: 2px;
+  right: 8px;
+  position: absolute;
+  display: inline-block;
+  width: 25px;
+  height: 22px;
+}
+
+#slide2-p1-right-quote:before {
+  content: url("../img/illustrations/slide2/right-orange-quote.svg");
+  top: 0;
+  left: 8px;
+  position: absolute;
+  display: inline-block;
+  width: 25px;
+  height: 22px;
+}
+
+/* ========================================================================== */
+/* SLIDE 3 */
+/* ========================================================================== */
+#slide3 header h1 {
+  color: var(--pink);
+}
+
+#slide3-p1 {
+  width: 260px;
+  margin: 20px auto 0;
+}
+
+#slide3-p1-left-quote:before {
+  content: url("../img/illustrations/slide3/left-pink-quote.svg");
+  bottom: 2px;
+  right: 8px;
+  position: absolute;
+  display: inline-block;
+  width: 25px;
+  height: 22px;
+}
+
+#slide3-p1-right-quote:before {
+  content: url("../img/illustrations/slide3/right-pink-quote.svg");
+  top: 0;
+  left: 8px;
+  position: absolute;
+  display: inline-block;
+  width: 25px;
+  height: 22px;
+}
+
+#slide3-p2 {
+  width: 260px;
+  margin: 0 auto;
+}
+
+#black-victoire {
+  width: 80%;
+  display: block;
+  margin: 16px auto;
+}
+
+#pink-rugby {
+  display: block;
+  margin: 0 auto;
+}
+
+#slide3 .drawer-button .half-line {
+  background-color: var(--pink);
+}
+
+/* ========================================================================== */
+/* SLIDE 4 */
+/* ========================================================================== */
+#slide4 header h1 {
+  color: var(--yellow);
+}
+
+#slide4-p1 {
+  width: 260px;
+  margin: 20px auto 0;
+}
+
+#slide4-p1-left-quote:before {
+  content: url("../img/illustrations/slide4/left-yellow-quote.svg");
+  bottom: 2px;
+  right: 8px;
+  position: absolute;
+  display: inline-block;
+  width: 25px;
+  height: 22px;
+}
+
+#slide4-p1-right-quote:before {
+  content: url("../img/illustrations/slide4/right-yellow-quote.svg");
+  top: 0;
+  left: 8px;
+  position: absolute;
+  display: inline-block;
+  width: 25px;
+  height: 22px;
+}
+
+#slide4-p2 {
+  color: var(--yellow);
+  font-size: 22px;
+  width: 300px;
+  margin: 4rem auto;
+}
+
+#slide4-p3 {
+  width: 260px;
+  margin: 20px auto;
+}
+
+#yellow-victoire {
+  width: 80%;
+  display: block;
+  margin: 16px auto;
+}
+
+#yellow-arc {
+  margin: 0 0 0 35px;
+}
+
+#slide4 .drawer-button .half-line {
+  background-color: var(--yellow);
+}
+
+/* ========================================================================== */
+/* SLIDE 5 */
+/* ========================================================================== */
+#slide5 header h1 {
+  color: var(--red);
+}
+
+#slide5 .tevi {
+  position: relative;
+  align-content: center;
+}
+
+#red-victoire {
+  width: 80%;
+  display: block;
+  margin: 16px auto;
+}
+
+#slide5-p1 {
+  width: 260px;
+  margin: 20px auto 0;
+}
+
+#slide5-p1-left-quote:before {
+  content: url("../img/illustrations/slide5/left-red-quote.svg");
+  bottom: 2px;
+  right: 8px;
+  position: absolute;
+  display: inline-block;
+  width: 25px;
+  height: 22px;
+}
+
+#slide5-p1-right-quote:before {
+  content: url("../img/illustrations/slide5/right-red-quote.svg");
+  top: 0;
+  left: 8px;
+  position: absolute;
+  display: inline-block;
+  width: 25px;
+  height: 22px;
+}
+
+#red-victoire {
+  width: 80%;
+  display: block;
+  margin: 16px auto;
+}
+
+#slide5-p2 {
+  width: 260px;
+  margin: 20px auto;
+}
+
+#red-gloves {
+  display: block;
+  margin: 0 auto;
+}
+
+#slide5 .drawer-button .half-line {
+  background-color: var(--red);
+}
+
+/* ========================================================================== */
+/* SLIDE 6 */
+/* ========================================================================== */
+#slide6 header h1 {
+  color: var(--purple);
+}
+
+#purple-victoire {
+  width: 80%;
+  display: block;
+  margin: 16px auto;
+}
+
+#slide6-p1 {
+  width: 260px;
+  margin: 20px auto 0;
+}
+
+#slide6-p1-left-quote:before {
+  content: url("../img/illustrations/slide6/left-purple-quote.svg");
+  bottom: 2px;
+  right: 8px;
+  position: absolute;
+  display: inline-block;
+  width: 25px;
+  height: 22px;
+}
+
+#slide6-p1-right-quote:before {
+  content: url("../img/illustrations/slide6/right-purple-quote.svg");
+  top: 0;
+  left: 8px;
+  position: absolute;
+  display: inline-block;
+  width: 25px;
+  height: 22px;
+}
+
+#slide6-p2,
+#slide6-p3 {
+  width: 260px;
+  margin: 16px auto;
+}
+
+#purple-ice-skate-up,
+#purple-ice-skate-down {
+  display: block;
+  margin: 0 auto;
+}
+
+#slide6 .drawer-button .half-line {
+  background-color: var(--purple);
+}
+
+/* ========================================================================== */
+/* SLIDE 7 */
+/* ========================================================================== */
+#slide7 header h1 {
+  color: var(--green);
+}
+
+#green-victoire1 {
+  width: 80%;
+  display: block;
+  margin: 16px auto;
+}
+
+#slide7-p1 {
+  width: 260px;
+  margin: 20px auto 0;
+}
+
+#slide7-p1-left-quote:before {
+  content: url("../img/illustrations/slide7/left-green-quote.svg");
+  bottom: 2px;
+  right: 8px;
+  position: absolute;
+  display: inline-block;
+  width: 25px;
+  height: 22px;
+}
+
+#slide7-p1-right-quote:before {
+  content: url("../img/illustrations/slide7/right-green-quote.svg");
+  top: 0;
+  left: 8px;
+  position: absolute;
+  display: inline-block;
+  width: 25px;
+  height: 22px;
+}
+
+#green-victoire {
+  width: 80%;
+  display: block;
+  margin: 16px auto;
+}
+
+#slide7-p2 {
+  width: 260px;
+  margin: 16px auto;
+}
+
+#green-bike-container {
+  position: relative;
+  width: 100%;
+  height: 376px;
+}
+
+#green-bike {
+  position: absolute;
+  display: block;
+  bottom: -24px;
+}
+
+#slide7 .drawer-button .half-line {
+  background-color: var(--green);
+}
+
+/* ========================================================================== */
+/* SLIDE 8 */
+/* ========================================================================== */
+#slide8 header h1 {
+  color: var(--green);
+}
+
+#green-victoire2 {
+  width: 80%;
+  display: block;
+  margin: 16px auto 0;
+}
+
+#slide8-p1 {
+  width: 260px;
+  margin: 20px auto 0;
+}
+
+#slide8-p1-left-quote:before {
+  content: url("../img/illustrations/slide8/left-green-quote.svg");
+  bottom: 2px;
+  right: 8px;
+  position: absolute;
+  display: inline-block;
+  width: 25px;
+  height: 22px;
+}
+
+#slide8-p1-right-quote:before {
+  content: url("../img/illustrations/slide8/right-green-quote.svg");
+  top: 0;
+  left: 8px;
+  position: absolute;
+  display: inline-block;
+  width: 25px;
+  height: 22px;
+}
+
+#slide8-p2 {
+  color: var(--green);
+  font-size: 22px;
+  margin: 4rem auto;
+}
+
+#green-hat {
+  display: block;
+  margin: 0 0 24px 35px;
+}
+
+#slide8-p3 {
+  width: 260px;
+  margin: 0 auto;
+}
+
+#green-whistle {
+  display: block;
+  margin: 0 0 0 35px;
+}
+
+#slide8 .drawer-button .half-line {
+  background-color: var(--green);
+}
+
+/* ========================================================================== */
+/* SLIDE 9 */
+/* ========================================================================== */
+#slide9 header h1 {
+  color: var(--orange);
+}
+
+#slide9-p1 {
+  width: 260px;
+  margin: 20px auto 16px;
+}
+
+#slide9-p2 {
+  width: 260px;
+  margin: 0 auto;
+}
+
+#slide9-p1-left-quote:before {
+  content: url("../img/illustrations/slide9/left-orange-quote.svg");
+  bottom: 2px;
+  right: 8px;
+  position: absolute;
+  display: inline-block;
+  width: 25px;
+  height: 22px;
+}
+
+#slide9-p2-right-quote:before {
+  content: url("../img/illustrations/slide9/right-orange-quote.svg");
+  top: 0;
+  left: 8px;
+  position: absolute;
+  display: inline-block;
+  width: 25px;
+  height: 22px;
+}
+
+#slide9-p3 {
+  color: var(--orange);
+  text-align: center;
+  font-size: 22px;
+  line-height: 28px;
+  padding-top: 20px;
+}
+
+#victoire-hand {
+  width: 80%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+/* ========================================================================== */
+/* SLIDE 10 */
+/* ========================================================================== */
+#slide10 header h1 {
+  color: var(--black);
+}
+
+#slide10 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.column-principal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 86%;
+  align-items: left;
+  align-items: center;
+}
+
+.left-column,
+.right-column {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: stretch; /* Ajout de cette ligne pour étirer les éléments à la même hauteur */
+}
+
+.left-column {
+  float: left;
+  align-items: center;
+  /*align-items: flex-start;*/
+  width: 50%;
+}
+
+.right-column {
+  float: right;
+  justify-content: flex-end;
+  align-items: center;
+  /*align-items: flex-end;*/
+  width: 50%;
+}
+
+.left-column div,
+.right-column div {
+  text-align: center;
+  position: relative;
+}
+
+.logohylab {
+  display: inline-block;
+}
+
+.row-principal {
+  display: inline-block;
+}
+
+.logocredit {
+  display: inline-block;
+}
+
+#slide10 img {
+  max-width: 100%;
+  height: auto;
+}
+
+#slide10 p {
+  text-align: center;
+  font-size: 15px;
+  font-family: Helvetica;
+  padding: 0px 20px;
+}
+
+/* ========================================================================== */
+/* QUOTES */
+/* ========================================================================== */
+.quote-span {
+  position: relative;
+}
+
+/* ========================================================================== */
+/* DRAWER */
+/* ========================================================================== */
+.drawer-container {
+  position: absolute;
+  bottom: 30px;
+  left: 60px;
+  height: var(--drawer-height);
+  width: var(--drawer-width);
+}
+
+.drawer {
+  position: absolute;
+  left: 100%;
+  height: 100%;
+  width: 100%;
+  background-color: var(--white);
+  z-index: 20;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  padding: 4% 8% 25% 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.drawer-button {
+  position: absolute;
+  right: 100%;
+  width: var(--drawer-button-width);
+  top: 0;
+  bottom: 0;
+  border: none;
+  border-radius: 10px 0px 0px 10px;
+  box-shadow: -4px 0 1px rgba(0, 0, 0, 0.05);
+  background-color: var(--white);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.drawer-button .half-line {
+  width: 4px;
+  height: 85px;
+}
+
+.drawer .exemple {
+  padding: 0;
+  margin: 0 0 10px 0;
+  font-style: italic;
+}
+
+.drawer .header-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0 0 10px 0;
+}
+
+.drawer header {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+
+.drawer h1 {
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.drawer h2 {
+  padding: 0;
+  text-align: left;
+  font-size: medium;
+}
+
+.drawer .photo-portrait {
+  display: block;
+  border-radius: 10px;
+}
+
+.drawer p {
+  padding: 0;
+  margin: 0 0 10px 0;
+}
+
+.drawer-p2 {
+  padding: 0;
+  margin: 0;
+  font-style: italic;
+  font-weight: bold;
+}
+
+/* Bon article pour comprendre comment z-index marche: */
+/* https://philipwalton.com/articles/what-no-one-told-you-about-z-index/ */
+.overlay {
+  position: absolute;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* ========================================================================== */
+/* LOADER */
+/* ========================================================================== */
+/* Source: https://cssloaders.github.io/ */
+#loader {
+  z-index: 2;
+  position: absolute;
+  background-color: var(--background-color);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#logo-victoire-anime {
+  display: block;
+  width: 103px;
+}
+
+/* ========================================================================== */
+/* CREDITS */
+/* ========================================================================== */
+#nantes-metropole {
+  width: 110px;
+}
+
+/* ========================================================================== */
+/* MEDIA QUERIES */
+/* ========================================================================== */
 /* Whatever the device used, the content will be displayed full width and height if      */
 /* the aspect ratio is between 3/4 and 9/16. If not it is locked to either 3/4 or 9/16  */
 
 /* When the aspect ratio is smaller that 3/4, display a 3/4 content */
-#container{
-    position: fixed; /* To set the size of the container to 100% of the visible viewport height AND for absolute positioning of child elements*/ 
-    height: 100%;   /* even on mobile devices with url or navigation bars */
-    margin-left: calc((100vw - 100 * 3vh / 4) / 2); /* Add black bands on left and right */
-    width: calc(100 * 3vh / 4); /* Force 3/4 aspect ratio */
+#container {
+  position: fixed; /* To set the size of the container to 100% of the visible viewport height AND for absolute positioning of child elements*/
+  height: var(--vh); /* even on mobile devices with url or navigation bars */
+  margin-left: calc(
+    (100vw - var(--vw)) / 2
+  ); /* Add black bands on left and right */
+  width: var(--vw); /* Force 3/4 aspect ratio */
 }
 
 /* We set a default font size here. It will be the base for all other font sizes */
 /* Here the font size is proportional to content width */
-body{
-    font-size: calc(15vh * 3 / 4);
+body {
+  font-size: calc(15vh * 3 / 4);
 }
 
 /* Fill the whole viewport when its aspect ratio is between 9/16 and 3/4 */
 @media screen and (max-aspect-ratio: 3/4) {
-    #container{
-        margin-left: 0; /* reset margin-left */
-        width: 100vw; /* content is full width (and full height because of the default rule for container height */
-    }
+  :root {
+    --vh: 100vh;
+    --vw: 100vw;
+  }
 
-    /* We set a default font size here. It will be the base for all other font sizes */
-    /* Here the font size is proportional to content width */
-    body{
-        font-size: 15vw;
-    }
+  #container {
+    margin-left: 0; /* reset margin-left */
+    width: var(
+      --vw
+    ); /* content is full width (and full height because of the default rule for container height */
+  }
+
+  /* We set a default font size here. It will be the base for all other font sizes */
+  /* Here the font size is proportional to content width */
+  body {
+    font-size: 15vw;
+  }
 }
 
-/* The content is displayed at 9/16 If the aspect ratio is higher that 9/16  */ 
+/* The content is displayed at 9/16 If the aspect ratio is higher that 9/16  */
 @media screen and (max-aspect-ratio: 9/16) {
-    #container{
-        margin-left: 0; /* reset left margin */
-        width: 100vw;   /* content is full width */
-        margin-top: calc(-50 * 16vw / 9); /* move the content half the height to the top */
-        top:50%; /* then center it ! */
-        height: calc(100 * 16vw / 9); /* adjust height so that aspect ratio is 9/16 */
-    }
+  :root {
+    --vh: calc(100 * 16vw / 9);
+    --vw: 100vw;
+  }
 
-    /* We set a default font size here. It will be the base for all other font sizes */
-    /* Here the font size is proportional to content width */
-    body{
-        font-size: 15vw;
-    }
+  #container {
+    margin-left: 0; /* reset left margin */
+    width: var(--vw); /* content is full width */
+    margin-top: calc(
+      -1 * var(--vh) / 2
+    ); /* move the content half the height to the top */
+    top: 50%; /* then center it ! */
+    height: var(--vh); /* adjust height so that aspect ratio is 9/16 */
+  }
+
+  /* We set a default font size here. It will be the base for all other font sizes */
+  /* Here the font size is proportional to content width */
+  body {
+    font-size: 15vw;
+  }
 }
-

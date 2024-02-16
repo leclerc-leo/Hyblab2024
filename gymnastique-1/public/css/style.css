@@ -2,206 +2,1488 @@
 /* ------- that adapts content width and height so that aspect ratio  ----------- */
 /* ------- is kept between 9/16 a,d 3/4 (portait orientation)         ----------- */
 
+/* Color palette */
+/* -------------- Main colors --------------*/
+/* 
+--noir: #212425;
+--blanc #e5dfca;
+--rouge #d85f45;
+--bleu #386f9c;
+--rose #de9b94;
+--vert #677f63;
+*/
+
 /* Normalize margin and padding to ease elements positioning */
-*{
-    padding:0;
-    margin:0;
+* {
+  padding: 0;
+  margin: 0;
 }
 
-body{
-    background-color: black;
-    color: white;
-    overflow: hidden;   /* to avoid slider bugs on some browsers */
-    font-family: sans-serif;
+body {
+  background-color: black;
+  color: rgb(0, 0, 0);
+  overflow: hidden; /* to avoid slider bugs on some browsers */
+  font-family: "Poppins", sans-serif;
+}
+
+main > section {
+  background-color: white;
+  background-size: 100% auto; /* background is full width and height is proportional to width */
+  background-position: bottom; /* background is bottom aligned */
 }
 
 /* -------------- Loader --------------*/
-#loader{
-    z-index: 2;
-    position:absolute;
+#loader {
+  z-index: 2;
+  position: absolute;
 }
 
-#loader-img{
-    top:40%;
-    left:40%;
-    position: absolute;
+#loader-img {
+  top: 40%;
+  left: 40%;
+  position: absolute;
+  color: black;
 }
 
-#loader-text{
-    text-align: center;
-    font-size: 25%;
-    position: absolute;
-    top:60%;
-    width: 100%
+#loader-text {
+  text-align: center;
+  font-size: 25%;
+  position: absolute;
+  top: 60%;
+  width: 100%;
+  color: black;
 }
 /* -------------- End of Loader --------------*/
 
 /* Swiper slider. Need to fill the container */
-#mySwiper{
-    width: 100%;
-    height:100%;
-    position: absolute;
+#mySwiper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
 }
 
 /* white navigation bullets */
 .swiper-pagination-bullet-active {
-    background-color: white !important;
+  background-color: #386f9c !important;
+  width: 10%;
 }
 
 /* the slides and the loader should fill the whole 9:16 zone */
-.swiper-wrapper section, #loader{
-    background-color: dodgerblue;
-    width: 100%;
-    height: 100%;
+.swiper-wrapper section,
+#loader {
+  background-color: white;
+  width: 100%;
+  height: 100%;
 }
 
-/* Most of the elements in this demo are absolute positioned with percentages */
-#first-slide header, #second-slide header{
-    text-align: center;
-    width: 100%;
-    top: 10%;
+/* ---------- First slide -------------------- */
+#first-slide {
+  /* change background color to red (defined in the color palette) */
+  background-color: #e5dfca;
+  overflow: hidden;
+}
+
+@media screen and (max-aspect-ratio: 0.65) {
+  #first-slide header {
+    width: 63%;
     position: absolute;
-    font-size: 30%;
-    z-index: 2;
-}
+    left: 30%;
+    top: 3%;
+  }
 
-#logo-hyblab{
+  #first-slide p {
     text-align: center;
-    width: 50%;
-    left: 50%; /* center the logo, in interaction with the negative margin-left */
+    width: 80%;
+    position: absolute;
+    font-size: 29.5%;
+    z-index: 2;
+    color: #e5dfca;
+    top: 49.6%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  #first-slide .txt_background {
+    position: absolute;
+    width: 93%;
+    z-index: 1;
     top: 50%;
-    margin-left:-25%; /* this is half the width */
-    margin-top:calc(-7.5% * 9 / 16 ); /* margins are relative to the element width... :-( */
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  #first-slide .arrow {
     position: absolute;
-    font-size: 50%;
+    top: 76%;
     z-index: 2;
-    cursor: pointer;
-}
+    width: 30%;
+    height: 30%;
+  }
 
-/* Last slide image is centered */
-#img-fini{
-    width: 70%;
-    left: 50%; /* center the logo, in interaction with the negative margin-left */
-    top: 40%;
+  #first-slide .bag {
     position: absolute;
-    margin-left:-35%; /* this is half the width */
-    margin-top:calc(-25% * 9 / 16 ); /* margins are relative to the element width... :-( */
-}
+    height: auto;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 
-main > section{
-    background-image: url('../img/background.svg');
-    background-size: 100% auto; /* background is full width and height is proportional to width */
-    background-position: bottom; /* background is bottom aligned */
-}
-
-/* Footer of last slide is at the bottom and content is centered */
-#first-slide footer{
-    bottom: 5%;
+  #first-slide .tete {
     position: absolute;
-    box-sizing: border-box; /* So that padding is not added to width (and width: 100% works) */
-    width: 100%; /* could also use  width: calc(100% - 2em) if not using box-sizing */
-    font-size: 20%;
+    height: auto;
+    width: 30%;
+    top: 7%;
+    left: 12%;
+    transform: translateX(-50%);
+    z-index: 2;
+    rotate: -10deg;
+  }
+}
+
+@media screen and (min-aspect-ratio: 0.65) {
+  #first-slide header {
+    width: 50%;
+    position: absolute;
+    left: 40%;
+    top: 3%;
+  }
+
+  #first-slide p {
     text-align: center;
-    padding: 1em;
-    background-color: rgba(0, 0, 0, 0.5);
+    width: 71%;
+    position: absolute;
+    font-size: 26.5%;
+    z-index: 2;
+    color: #e5dfca;
+    top: 49.6%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  #first-slide .txt_background {
+    position: absolute;
+    width: 87%;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  #first-slide .arrow {
+    position: absolute;
+    top: 76%;
+    z-index: 2;
+    width: 30%;
+    height: 30%;
+  }
+
+  #first-slide .bag {
+    position: absolute;
+    height: auto;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  #first-slide .tete {
+    position: absolute;
+    height: auto;
+    width: 29%;
+    top: 2%;
+    left: 13%;
+    transform: translateX(-50%);
+    z-index: 2;
+    rotate: -10deg;
+  }
 }
 
+/* ---------- Second slide -------------------- */
+#second-slide header,
+#second-slide header {
+  text-align: center;
+  width: 100%;
+  top: 10%;
+  position: absolute;
+  font-size: 30%;
+  z-index: 2;
+}
+
+#second-slide {
+  background-color: rgb(86, 86, 86);
+  overflow: hidden;
+}
+
+/* CSS for ALL the other popups */
+#second-slide .popup {
+  display: none;
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  top: 5%;
+  left: 5%;
+  z-index: 3;
+  overflow: hidden;
+  /* border-radius: 20px; */
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.3s ease-in-out;
+}
+#second-slide .popup.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+#second-slide .popup-content {
+  /* background-color: rgb(255, 177, 68); */
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  font-family: "Poppins";
+}
+
+@media screen and (max-aspect-ratio: 0.65) {
+  #second-slide .popup-content h2 {
+    font-size: clamp(20%, 1em, 35%);
+    word-wrap: break-word;
+    text-transform: uppercase;
+    max-width: 70%;
+    line-height: 1em;
+    position: relative;
+    text-align: left;
+    top: 5%;
+    right: 10%;
+  }
+  #img-obj {
+    position: absolute;
+    width: 30%;
+    right: 0%;
+    top: 0%;
+  }
+  #second-slide .popup-content p {
+    position: absolute;
+    width: 85%;
+    transform: translateX(-50%);
+    display: flex;
+    font-size: 25%;
+    color: #386f9c;
+    z-index: 3;
+  }
+
+  #img-cupcake {
+    position: absolute;
+    max-width: 55%;
+    top: 32%;
+  }
+  #cupcake-p0 {
+    position: absolute;
+    top: 17% !important;
+    left: 50% !important;
+  }
+  #cupcake-p1 {
+    position: absolute;
+    top: 62% !important;
+    left: 50% !important;
+  }
+  #img-coupe {
+    position: absolute;
+    max-width: 40%;
+    top: 52%;
+  }
+  #coupe-p0 {
+    position: absolute;
+    top: 21% !important;
+    left: 50% !important;
+  }
+  #coupe-p1 {
+    position: absolute;
+    top: 69% !important;
+    left: 50% !important;
+  }
+  #img-medaille {
+    position: absolute;
+    max-width: 70%;
+    top: 50%;
+  }
+  #medaille-p0 {
+    position: absolute;
+    top: 18% !important;
+    left: 50% !important;
+  }
+  #img-manique {
+    position: absolute;
+    max-width: 55%;
+    top: 33%;
+  }
+  #manique-p0 {
+    position: absolute;
+    top: 19% !important;
+    left: 50% !important;
+  }
+  #manique-p1 {
+    position: absolute;
+    top: 60% !important;
+    left: 50% !important;
+  }
+  #img-photo {
+    position: absolute;
+    max-width: 55%;
+    top: 43%;
+  }
+  #photo-p0 {
+    position: absolute;
+    top: 19% !important;
+    left: 50% !important;
+  }
+  #photo-p1 {
+    position: absolute;
+    top: 67% !important;
+    left: 50% !important;
+  }
+  #img-algerie {
+    position: absolute;
+    max-width: 70%;
+    top: 35%;
+  }
+  #algerie-p0 {
+    position: absolute;
+    top: 18% !important;
+    left: 50% !important;
+  }
+  #algerie-p1 {
+    position: absolute;
+    top: 64% !important;
+    left: 50% !important;
+  }
+  #gourde-p0 {
+    position: absolute;
+    top: 18% !important;
+    left: 50% !important;
+  }
+  #gourde-p1 {
+    position: absolute;
+    top: 42% !important;
+    left: 50% !important;
+  }
+
+  #close {
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 2em;
+    position: absolute;
+    bottom: 2%;
+    width: 27%;
+  }
+}
+@media screen and (min-aspect-ratio: 0.65) {
+  #second-slide .popup-content h2 {
+    font-size: clamp(20%, 1em, 35%);
+    text-transform: uppercase;
+    word-wrap: break-word;
+    max-width: 70%;
+    line-height: 1em;
+    position: relative;
+    text-align: left;
+    top: 5%;
+    right: 10%;
+  }
+  #img-obj {
+    position: absolute;
+    width: 27%;
+    right: 0%;
+    top: -3%;
+  }
+  #second-slide .popup-content p {
+    position: absolute;
+    width: 85%;
+    transform: translateX(-50%);
+    display: flex;
+    font-size: 20%;
+    color: #386f9c;
+    z-index: 3;
+  }
+
+  #img-cupcake {
+    position: absolute;
+    max-width: 55%;
+    top: 30%;
+  }
+  #cupcake-p0 {
+    position: absolute;
+    top: 18% !important;
+    left: 50% !important;
+  }
+  #cupcake-p1 {
+    position: absolute;
+    top: 67% !important;
+    left: 50% !important;
+  }
+  #img-coupe {
+    position: absolute;
+    max-width: 55%;
+    top: 46%;
+  }
+  #coupe-p0 {
+    position: absolute;
+    top: 20% !important;
+    left: 50% !important;
+  }
+  #coupe-p1 {
+    position: absolute;
+    top: 73% !important;
+    left: 50% !important;
+  }
+  #img-medaille {
+    position: absolute;
+    max-width: 70%;
+    top: 47%;
+  }
+  #medaille-p0 {
+    position: absolute;
+    top: 18% !important;
+    left: 50% !important;
+  }
+  #img-manique {
+    position: absolute;
+    max-width: 55%;
+    top: 30%;
+  }
+  #manique-p0 {
+    position: absolute;
+    top: 19% !important;
+    left: 50% !important;
+  }
+  #manique-p1 {
+    position: absolute;
+    top: 63% !important;
+    left: 50% !important;
+  }
+  #img-photo {
+    position: absolute;
+    max-width: 55%;
+    top: 38%;
+  }
+  #photo-p0 {
+    position: absolute;
+    top: 19% !important;
+    left: 50% !important;
+  }
+  #photo-p1 {
+    position: absolute;
+    top: 68% !important;
+    left: 50% !important;
+  }
+  #img-algerie {
+    position: absolute;
+    max-width: 70%;
+    top: 30%;
+  }
+  #algerie-p0 {
+    position: absolute;
+    top: 18% !important;
+    left: 50% !important;
+  }
+  #algerie-p1 {
+    position: absolute;
+    top: 68% !important;
+    left: 50% !important;
+  }
+  #gourde-p0 {
+    position: absolute;
+    top: 21% !important;
+    left: 50% !important;
+  }
+  #gourde-p1 {
+    position: absolute;
+    top: 42% !important;
+    left: 50% !important;
+  }
+  #close {
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 2em;
+    position: absolute;
+    bottom: 2%;
+    width: 27%;
+  }
+}
+
+#popup_gourde {
+  position: absolute;
+  background-image: url("../img/pop-48.svg");
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+#popup_manique {
+  position: absolute;
+  background-image: url("../img/pop-55.svg");
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+#popup_cupcake {
+  position: absolute;
+  background-image: url("../img/pop-54.svg");
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+#popup_coupe {
+  position: absolute;
+  background-image: url("../img/pop-53.svg");
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+#popup_medaille {
+  position: absolute;
+  background-image: url("../img/pop-52.svg");
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+#popup_algerie {
+  position: absolute;
+  background-image: url("../img/pop-51.svg");
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+#popup_photo {
+  position: absolute;
+  background-image: url("../img/pop-50.svg");
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+:root {
+  --hue-neutral: 200;
+  --hue-wrong: 0;
+  --hue-correct: 145;
+  --noir: #212425;
+  --blanc: #e5dfca;
+  --rouge: #d85f45;
+  --bleu: #386f9c;
+  --rose: #de9b94;
+  --vert: #677f63;
+}
+
+
+/*TELEPHONE OBJET -------------------------------------------------------*/
+
+#second-slide .show {
+  opacity: 1;
+  transform: scale(1);
+}
+@media screen and (max-aspect-ratio: 0.65) {
+  #popup_tel {
+    position: absolute;
+    height: 80%;
+    background-image: url("../img/pop-49.svg");
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+  #source_video {
+    margin: 0.2em;
+    position: absolute;
+    width: max-content;
+    top: 46%;
+    left: 48%;
+    transform: translateX(-50%);
+    display: flex;
+    font-size: 20%;
+    color: #386f9c;
+    text-decoration: none;
+    font-weight: 600;
+    font-style: italic;
+  }
+
+  #popup_quizz_end {
+    display: none;
+    position: absolute;
+    width: 90%;
+    height: 64%;
+    top: 20%;
+    left: 5%;
+    background-image: url("../img/pop-53.svg");
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    /* background-color: rgb(255, 177, 68); */
+    z-index: 3;
+    overflow: hidden;
+    /* border-radius: 20px; */
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.3s ease-in-out;
+  }
+  #popup_quizz_end h2 {
+    color: #386f9c;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    font-size: 50% !important;
+    margin: 0.1em 0.1em;
+  }
+
+  #quizz_end_img {
+    position: relative;
+    /* left: 11%; */
+    margin: 0 auto;
+    display: block;
+    padding-bottom: 3%;
+    max-width: 80%;
+    max-height: 40%;
+  }
+  #popup_quizz_end #close {
+    position: absolute;
+    left: 35%;
+  }
+  #explication_quizz_p {
+    margin: 0em 1em 1em 1em;
+    font-size: 20%;
+    font-family: "Poppins";
+    color: #386f9c;
+  }
+  #telephone-content {
+    padding: 1% 1% 1% 1%;
+  }
+  #telephone-content h2 {
+    top: 5%;
+    font-size: 40%;
+    position: fixed;
+  }
+  #telephone-content .impact_title {
+    top: 10%;
+    font-size: 60% !important;
+    color: #386f9c;
+    position: fixed;
+  }
+  #phone_video {
+    display: grid;
+    grid-template-columns: 1% 98% 1%;
+    grid-template-rows: 1% 198% 1%;
+    top: 3%;
+    /* width: -webkit-fill-available; */
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+  }
+
+  #telephone-content svg {
+    top: -11%;
+    /* left: -15%; */
+    rotate: 75deg;
+    scale: 1.05;
+    overflow: hidden;
+    pointer-events: none;
+    grid-area: 2 / 2 / 2 / 2;
+    position: relative;
+    z-index: 1;
+  }
+
+  #telephone-content #nemour-quiz-video {
+    top: 3.5%;
+    height: 21.5%;
+    width: 76%;
+    left: 15%;
+    z-index: 0;
+    grid-area: 2 / 2 / 2 / 2;
+    position: relative;
+    pointer-events: none;
+  }
+
+  #video_quizz {
+    top: 50.5%;
+    position: fixed;
+  }
+  #video_quizz #question {
+    position: relative;
+    /* top: -16%; */
+    text-align: center;
+    font-size: 28%;
+    font-weight: 700;
+    padding-bottom: 1%;
+  }
+
+  .btn-grid {
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+    gap: 3%;
+    margin: 1% 2% 3% 0.1%;
+  }
+
+  .btn_quiz {
+    --hue: var(--hue-neutral);
+    border: 0px solid hsl(var(--hue), 100%, 30%);
+    background-color: #ffffff00;
+    background-image: url(../img/slide2/bouton_quiz1.svg);
+    background-position: 0%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* border-radius: 5px; */
+    min-width: 100%;
+    padding: 0.5% 2%;
+    font-family: "Poppins", sans-serif;
+    text-align: left;
+    font-size: 20.5%;
+    color: white;
+    outline: none;
+  }
+
+  #btn_quiz2{
+    background-image: url("../img/slide2/bouton_quiz2.svg");;
+  }
+
+  #btn_quiz2:hover{
+    background-image: url("../img/slide2/bouton_quiz2_border.svg");;
+  }
+
+  #btn_quiz3{
+    background-image: url("../img/slide2/bouton_quiz3.svg");;
+  }
+
+  #btn_quiz3:hover{
+    background-image: url("../img/slide2/bouton_quiz3_border.svg");;
+  }
+
+
+  .btn_quiz:hover {
+    /* border-color: black; */
+    background-image: url("../img/slide2/bouton_quiz1_border.svg");
+  }
+
+  .btn_quiz.correct {
+    /* background-color: #66bd57; */
+    color: black;
+    background-image: url("../img/slide2/bouton_quiz1_correct.svg");
+  }
+
+  #btn_quiz2.wrong {
+    /* background-color: #d85f45; */
+    background-image: url("../img/slide2/bouton_quiz2_wrong.svg") ;
+  }
+
+  #btn_quiz3.wrong {
+    /* background-color: #d85f45; */
+    background-image: url("../img/slide2/bouton_quiz3_wrong.svg") ;
+  }
+}
+
+@media screen and (min-aspect-ratio: 0.65) {
+  #popup_tel {
+    position: absolute;
+    height: 80%;
+    background-image: url("../img/pop-49.svg");
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+  #source_video {
+    margin: 0.2em;
+    position: absolute;
+    width: max-content;
+    top: 47%;
+    left: 48%;
+    transform: translateX(-50%);
+    display: flex;
+    font-size: 16%;
+    color: #386f9c;
+    text-decoration: none;
+    font-weight: 600;
+    font-style: italic;
+  }
+
+  #popup_quizz_end {
+    display: none;
+    position: absolute;
+    width: 90%;
+    height: 64%;
+    top: 20%;
+    left: 5%;
+    background-image: url("../img/pop-53.svg");
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    /* background-color: rgb(255, 177, 68); */
+    z-index: 3;
+    overflow: hidden;
+    /* border-radius: 20px; */
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.3s ease-in-out;
+  }
+  #popup_quizz_end h2 {
+    color: #386f9c;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    font-size: 50% !important;
+    margin: 0.1em 0.1em;
+  }
+
+  #quizz_end_img {
+    position: relative;
+    /* left: 11%; */
+    margin: 0 auto;
+    display: block;
+    padding-bottom: 3%;
+    max-width: 80%;
+    max-height: 40%;
+  }
+  #popup_quizz_end #close {
+    position: absolute;
+    left: 35%;
+  }
+  #explication_quizz_p {
+    margin: 0em 1em 1em 1em;
+    font-size: 20%;
+    font-family: "Poppins";
+    color: #386f9c;
+  }
+  #telephone-content {
+    padding: 1% 1% 1% 1%;
+  }
+  #telephone-content h2 {
+    top: 5%;
+    font-size: 40%;
+    position: fixed;
+  }
+  #telephone-content .impact_title {
+    top: 10%;
+    font-size: 60% !important;
+    color: #386f9c;
+    position: fixed;
+  }
+  #phone_video {
+    display: grid;
+    grid-template-columns: 1% 98% 1%;
+    grid-template-rows: 1% 198% 1%;
+    top: 2%;
+    /* width: -webkit-fill-available; */
+    width: 85%;
+    max-width: 100%;
+    position: relative;
+  }
+
+  #telephone-content svg {
+    top: -11%;
+    /* left: -15%; */
+    rotate: 75deg;
+    scale: 1.05;
+    overflow: hidden;
+    pointer-events: none;
+    grid-area: 2 / 2 / 2 / 2;
+    position: relative;
+    z-index: 1;
+  }
+
+  #telephone-content #nemour-quiz-video {
+    top: 3.5%;
+    height: 21.5%;
+    width: 76%;
+    left: 15%;
+    z-index: 0;
+    grid-area: 2 / 2 / 2 / 2;
+    position: relative;
+    pointer-events: none;
+  }
+
+  #video_quizz {
+    top: 52.5%;
+    position: fixed;
+  }
+  #video_quizz #question {
+    position: relative;
+    /* top: -16%; */
+    text-align: center;
+    font-size: 23%;
+    font-weight: 700;
+    padding-bottom: 1%;
+  }
+
+  .btn-grid {
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+    gap: 3%;
+    margin: 0% 2% 3% 0.1%;
+  }
+
+  .btn_quiz {
+    --hue: var(--hue-neutral);
+    border: 0px solid hsl(var(--hue), 100%, 30%);
+    background-color: #ffffff00;
+    background-image: url(../img/slide2/bouton_quiz1.svg);
+    background-position: 0%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* border-radius: 5px; */
+    min-width: 100%;
+    padding: 0.5% 2%;
+    font-family: "Poppins", sans-serif;
+    text-align: left;
+    font-size: 17.5%;
+    color: white;
+    outline: none;
+  }
+
+  #btn_quiz2{
+    background-image: url("../img/slide2/bouton_quiz2.svg");;
+  }
+
+  #btn_quiz2:hover{
+    background-image: url("../img/slide2/bouton_quiz2_border.svg");;
+  }
+
+  #btn_quiz3{
+    background-image: url("../img/slide2/bouton_quiz3.svg");;
+  }
+
+  #btn_quiz3:hover{
+    background-image: url("../img/slide2/bouton_quiz3_border.svg");;
+  }
+
+
+  .btn_quiz:hover {
+    /* border-color: black; */
+    background-image: url("../img/slide2/bouton_quiz1_border.svg");
+  }
+
+  .btn_quiz.correct {
+    /* background-color: #66bd57; */
+    color: black;
+    background-image: url("../img/slide2/bouton_quiz1_correct.svg");
+  }
+
+  #btn_quiz2.wrong {
+    /* background-color: #d85f45; */
+    background-image: url("../img/slide2/bouton_quiz2_wrong.svg") ;
+  }
+
+  #btn_quiz3.wrong {
+    /* background-color: #d85f45; */
+    background-image: url("../img/slide2/bouton_quiz3_wrong.svg") ;
+  }
+}
+/* CSS for the last popup : billet */
+#second-slide .popup-billet {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #386f9c;
+  z-index: 3;
+  overflow: hidden;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.3s ease-in-out;
+}
+
+#second-slide .popup-billet.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+#second-slide .billet-content {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+}
+
+@media screen and (max-aspect-ratio: 0.65) {
+  #second-slide .billet-content h2 {
+    position: absolute;
+    top: 7%;
+    left: 5%;
+    font-size: 90%;
+    color: #de9b94;
+  }
+
+  #second-slide .billet-content h3 {
+    position: absolute;
+    top: 3%;
+    left: 5.1%;
+    font-size: 50%;
+    color: white;
+    font-weight: 500;
+  }
+
+  #second-slide .billet-content #billet {
+    width: 62%;
+    position: absolute;
+    top: 18%;
+    left: 31%;
+    display: flex;
+  }
+
+  #second-slide .billet-content #bouton-retour {
+    position: absolute;
+    top: 92%;
+    left: 50%;
+    width: 27%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    display: flex;
+  }
+
+  #second-slide .billet-content #fleche {
+    position: absolute;
+    top: 84.3%;
+    left: 8.1%;
+    width: 17%;
+    display: flex;
+  }
+
+  #second-slide .billet-content #facebook {
+    position: absolute;
+    top: 82.3%;
+    left: 60.1%;
+    width: 12%;
+    display: flex;
+  }
+
+  #second-slide .billet-content #instagram {
+    position: absolute;
+    top: 82.3%;
+    left: 76.1%;
+    width: 12%;
+    display: flex;
+  }
+
+  #second-slide .billet-content #cadre {
+    position: absolute;
+    top: 41%;
+    left: 50%;
+    width: 80%;
+    transform: translateX(-50%);
+    display: flex;
+  }
+
+  #second-slide .billet-content p {
+    position: absolute;
+    top: 44%;
+    left: 49%;
+    width: 75%;
+    transform: translateX(-50%);
+    font-size: 33%;
+    color: #386f9c;
+    z-index: 3;
+  }
+  #second-slide .billet-content p a {
+    color: #de9b94;
+    text-decoration: none;
+  }
+
+  #second-slide .billet-content #tete2 {
+    position: absolute;
+    top: 20%;
+    left: 0%;
+    width: 30%;
+  }
+}
+
+/* for screen over the 0.65 aspect ratio */
+@media screen and (min-aspect-ratio: 0.65) {
+  #second-slide .billet-content h2 {
+    position: absolute;
+    top: 6.5%;
+    left: 5%;
+    font-size: 80%;
+    color: #de9b94;
+  }
+
+  #second-slide .billet-content h3 {
+    position: absolute;
+    top: 3%;
+    left: 5.1%;
+    font-size: 45%;
+    color: white;
+    font-weight: 500;
+  }
+
+  #second-slide .billet-content #billet {
+    width: 52%;
+    position: absolute;
+    top: 17.5%;
+    left: 39%;
+    display: flex;
+  }
+
+  #second-slide .billet-content #bouton-retour {
+    position: absolute;
+    top: 92%;
+    left: 50%;
+    width: 27%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    display: flex;
+  }
+
+  #second-slide .billet-content #fleche {
+    position: absolute;
+    top: 86.3%;
+    left: 8.1%;
+    width: 12%;
+    display: flex;
+  }
+
+  #second-slide .billet-content #facebook {
+    position: absolute;
+    top: 89.3%;
+    left: 70.1%;
+    width: 12%;
+    display: flex;
+  }
+
+  #second-slide .billet-content #instagram {
+    position: absolute;
+    top: 89.3%;
+    left: 85.1%;
+    width: 12%;
+    display: flex;
+  }
+
+  #second-slide .billet-content #cadre {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    width: auto;
+    height: 47%;
+    transform: translateX(-50%);
+    display: flex;
+  }
+
+  #second-slide .billet-content p {
+    position: absolute;
+    top: 44%;
+    left: 50%;
+    width: 70%;
+    transform: translateX(-50%);
+    font-size: 31%;
+    color: #386f9c;
+    z-index: 3;
+  }
+
+  #second-slide .billet-content p a {
+    color: #de9b94;
+    text-decoration: none;
+  }
+
+  #second-slide .billet-content #tete2 {
+    position: absolute;
+    top: 18%;
+    left: 2%;
+    width: 27%;
+  }
+}
+
+#second-slide .close:hover,
+#second-slide .close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* ---------- Third slide -------------------- */
+#third-slide {
+  background-color: #de9b94;
+}
+
+#third-slide .cadre-credit img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+#third-slide .hyblab {
+  position: absolute;
+  width: 80%;
+  left: 50%;
+  top: 8.5%;
+  z-index: 3;
+  transform: translate(-50%, -50%);
+}
+
+#third-slide #annee {
+  font-family: "Bebas Neue", cursive;
+  color: #de9b94;
+  font-size: 100%;
+  position: absolute;
+  left: 52%;
+  top: 18.7%;
+  z-index: 3;
+  transform: translate(-50%, -50%);
+  font-weight: 500;
+  height: 10%;
+  width: 30%;
+}
+
+#third-slide h3 {
+  font-size: 30%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  font-weight: 700;
+  color: white;
+}
+
+#third-slide #porteur {
+  top: 25.5%;
+}
+
+#third-slide #redac {
+  top: 32.5%;
+  left: 49%;
+}
+
+#third-slide #graph {
+  top: 43.5%;
+}
+
+#third-slide #prod {
+  top: 54.3%;
+}
+
+#third-slide p {
+  font-size: 31%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  color: white;
+}
+
+#third-slide #nom_porteur {
+  top: 29.1%;
+}
+
+#third-slide #redac1 {
+  top: 36.1%;
+}
+
+#third-slide #redac2 {
+  top: 39.7%;
+}
+
+#third-slide #graph1 {
+  top: 47.1%;
+}
+
+#third-slide #graph2 {
+  top: 50.8%;
+}
+
+#third-slide #prod1 {
+  top: 58.1%;
+}
+
+#third-slide #prod2 {
+  top: 61.8%; /* 58.1% + 3.7% */
+}
+
+#third-slide #prod3 {
+  top: 65.5%; /* 61.8% + 3.7% */
+}
+
+#third-slide #prod4 {
+  top: 69.2%; /* 65.5% + 3.7% */
+}
+
+#third-slide #prod5 {
+  top: 72.9%; /* 69.2% + 3.7% */
+}
+
+#third-slide #prod6 {
+  top: 76.6%; /* 72.9% + 3.7% */
+}
 
 /* ---------- Positioning of logos on the last slide -------------------- */
-/* here we have a contraint on the height of the logos (not the width)     */
-/* so we cannot use % and use em (which are proportional to the size of the */
-/* slide because of body's font size rule at the end of this CSS           */
 #bandeau {
-    width:100%;
-    position: absolute;
-    bottom: 0;
-    background-color: white;
-    font-size: 20%;
-  }
+  width: 85%;
+  left: 7%;
+  position: absolute;
+  top: 82.5%;
+  font-size: 20%;
+  z-index: 3;
+}
 
-  #bandeau li{
-    list-style-type: none;
-    display: inline-block;
-    vertical-align: middle;
-    margin: 0 0.5em;
-  }
+#bandeau li {
+  list-style-type: none;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 0.5em;
+}
 
-  #bandeau img{
-    height: 2.5em;
-  }
+#bandeau img {
+  height: 2.2em;
+}
 
-  #bandeau #hyblab{
-    margin: 1em auto;
-    height: 3em;
-    display: block;
-  }
+#bandeau #hyblab {
+  margin: 1em auto;
+  height: 3em;
+  display: block;
+}
 
-  #bandeau #cc, #bandeau #opensource
-  {
-    height: 1em;
-  }
+#bandeau #cc,
+#bandeau #opensource {
+  height: 1em;
+}
 
-  #bandeau .stacked{
-    display:block;
-  }
+#bandeau .stacked {
+  display: block;
+}
 
-  #bandeau ul{
-    text-align: center;
-    padding: 0 0;
-    margin: 0.5em auto;
-  }
+#bandeau ul {
+  text-align: center;
+  padding: 0 0;
+  margin: 0.5em auto;
+}
 
-  #bandeau .institutionnel
-  {
-    height: 2em;
-  }
+#bandeau .institutionnel {
+  height: 2em;
+}
 
 /* ---------- Important media queries for easy responsive content :-) ----------------- */
 /* Whatever the device used, the content will be displayed full width and height if      */
 /* the aspect ratio is between 3/4 and 9/16. If not it is locked to either 3/4 or 9/16  */
 
 /* When the aspect ratio is smaller that 3/4, display a 3/4 content */
-#container{
-    position: fixed; /* To set the size of the container to 100% of the visible viewport height AND for absolute positioning of child elements*/ 
-    height: 100%;   /* even on mobile devices with url or navigation bars */
-    margin-left: calc((100vw - 100 * 3vh / 4) / 2); /* Add black bands on left and right */
-    width: calc(100 * 3vh / 4); /* Force 3/4 aspect ratio */
+#container {
+  position: fixed; /* To set the size of the container to 100% of the visible viewport height AND for absolute positioning of child elements*/
+  height: 100%; /* even on mobile devices with url or navigation bars */
+  margin-left: calc(
+    (100vw - 100 * 3vh / 4) / 2
+  ); /* Add black bands on left and right */
+  width: calc(100 * 3vh / 4); /* Force 3/4 aspect ratio */
 }
 
 /* We set a default font size here. It will be the base for all other font sizes */
 /* Here the font size is proportional to content width */
-body{
-    font-size: calc(15vh * 3 / 4);
+body {
+  font-size: calc(15vh * 3 / 4);
 }
 
 /* Fill the whole viewport when its aspect ratio is between 9/16 and 3/4 */
 @media screen and (max-aspect-ratio: 3/4) {
-    #container{
-        margin-left: 0; /* reset margin-left */
-        width: 100vw; /* content is full width (and full height because of the default rule for container height */
-    }
+  #container {
+    margin-left: 0; /* reset margin-left */
+    width: 100vw; /* content is full width (and full height because of the default rule for container height */
+  }
 
-    /* We set a default font size here. It will be the base for all other font sizes */
-    /* Here the font size is proportional to content width */
-    body{
-        font-size: 15vw;
-    }
+  /* We set a default font size here. It will be the base for all other font sizes */
+  /* Here the font size is proportional to content width */
+  body {
+    font-size: 15vw;
+  }
 }
 
-/* The content is displayed at 9/16 If the aspect ratio is higher that 9/16  */ 
+/* The content is displayed at 9/16 If the aspect ratio is higher that 9/16  */
 @media screen and (max-aspect-ratio: 9/16) {
-    #container{
-        margin-left: 0; /* reset left margin */
-        width: 100vw;   /* content is full width */
-        margin-top: calc(-50 * 16vw / 9); /* move the content half the height to the top */
-        top:50%; /* then center it ! */
-        height: calc(100 * 16vw / 9); /* adjust height so that aspect ratio is 9/16 */
+  #container {
+    margin-left: 0; /* reset left margin */
+    width: 100vw; /* content is full width */
+    margin-top: calc(
+      -50 * 16vw / 9
+    ); /* move the content half the height to the top */
+    top: 50%; /* then center it ! */
+    height: calc(
+      100 * 16vw / 9
+    ); /* adjust height so that aspect ratio is 9/16 */
+    body {
+      font-size: 15vw;
     }
+    #second-slide h2 {
+      font-size: 0.4em;
+    }
+  }
 
-    /* We set a default font size here. It will be the base for all other font sizes */
-    /* Here the font size is proportional to content width */
-    body{
-        font-size: 15vw;
-    }
+  /* We set a default font size here. It will be the base for all other font sizes */
+  /* Here the font size is proportional to content width */
+  body {
+    font-size: 15vw;
+  }
+}
+svg {
+  max-height: 100vh;
+  width: unset;
 }
 
+.clicked {
+  -webkit-transform: translateZ(0);
+  -webkit-perspective: 1000;
+  -webkit-backface-visibility: hidden;
+  -webkit-filter: brightness(50%);
+  -webkit-backdrop-filter: brightness(50%);
+  transform: translateZ(0);
+  perspective: 1000;
+  backface-visibility: hidden;
+  filter: brightness(50%);
+  backdrop-filter: brightness(50%);
+}
+
+.blured {
+  backdrop-filter: blur(20px) brightness(50%);
+  -webkit-backdrop-filter: blur(20px) brightness(50%);
+  filter : blur(20px) brightness(50%);
+  -webkit-filter: blur(20px) brightness(50%);
+}
+.last-word-blue {
+  color: #386f9c;
+  font-size: 1.4em;
+  line-height: 1.4em;
+}
+.last-word-red {
+  color: #de9b94;
+  font-size: 1.4em;
+  line-height: 1.4em;
+}
+#sacsvg{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  background-color: #212425;
+}
+#sac_extend_background{
+  position: absolute;
+  transform: translate(-41%, -46.8%);
+  width: 100%;
+  scale: 1.8;
+  max-width: 300%;
+  background-color: #212425;
+}
+
+@keyframes shake {
+  0% { transform: translate(0.2px, 0.2px) rotate(0deg); }
+  20% { transform: translate(-0.2px, -0.3px) rotate(-0.2deg); }
+  40% { transform: translate(-0.5px, 0px) rotate(0.2deg); }
+  60% { transform: translate(0.5px, 0.3px) rotate(0deg); }
+  80% { transform: translate(-0.2px, -0.3px) rotate(0.2deg); }
+  100% { transform: translate(0.2px, -0.3px) rotate(-0.2deg); }
+}
+
+.shake {
+  animation: shake 1s;
+  animation-iteration-count: 1;
+}
