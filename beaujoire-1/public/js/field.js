@@ -669,9 +669,9 @@ function createCarouselItem(player) {
 			</div>
 			<!-- Verso -->
 			<div class="back">
-				<div>
-					<img class="carte-img" src="img/back_card.svg" alt="Bio de ${player.NOM}" />
-					<div>
+				<div class="back-card">
+					<img src="img/back_card.svg" alt="Bio de ${player.NOM}" />
+					<div class="fun-container">
 						<p class="back-title">${player.NOM}</p>
 						<p class="back-text">${player.DOS}</p>
 					</div>
@@ -741,9 +741,9 @@ function createCarouselItem(player) {
 			</div>
 			<!-- Verso -->
 			<div class="back">
-				<div>
-					<img class="carte-img" src="img/back_card.svg" alt="Bio de ${player.NOM}" />
-					<div>
+				<div class="back-card">
+					<img src="img/back_card.svg" alt="Bio de ${player.NOM}" />
+					<div class="fun-container">
 						<p class="back-title">${player.NOM}</p>
 						<p class="back-text">${player.DOS}</p>
 					</div>
@@ -880,8 +880,8 @@ function createCarouselItem(player) {
 	bar2.style.backgroundColor = matchs >= 200 ? "#00a55a" : "white";
 	bar3.style.backgroundColor = matchs >= 400 ? "#00a55a" : "white";
 
-	let flip_container = carouselItem.querySelector(".flip-container");
-	let sides = Array.from(carouselItem.querySelector(".flipper").children);
+	const flip_container = carouselItem.querySelector(".flip-container");
+	const sides = Array.from(carouselItem.querySelector(".flipper").children);
 	sides.forEach((side) => {
 		side.addEventListener("click", (e) => {
 			if (e.target.id !== "bio-btn") {
@@ -894,8 +894,18 @@ function createCarouselItem(player) {
 		.addEventListener("click", () => {
 			handleValidateButtonClick();
 		});
-
-	let bioBtn = carouselItem.querySelector("#bio-btn");
+	const back_card = carouselItem.querySelector(".back-card");
+	const imgCard = back_card.querySelector("img");
+	imgCard.onload = function () {
+		const imgWidth = imgCard.width;
+		const imgHeight = imgCard.height;
+		console.log("Image width:", imgWidth);
+		console.log("Image height:", imgHeight);
+		const backText = carouselItem.querySelector(".fun-container");
+		backText.style.width = `${imgWidth}px`;
+		backText.style.height = `${imgHeight}px`;
+	};
+	const bioBtn = carouselItem.querySelector("#bio-btn");
 	if (bioBtn) {
 		bioBtn.addEventListener("click", () => {
 			const bio = document.querySelector(".bio-overlay");
