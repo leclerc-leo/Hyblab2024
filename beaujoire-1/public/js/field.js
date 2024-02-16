@@ -255,6 +255,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 		}
 	});
 
+	document.querySelector(".dropdown").addEventListener("click", (event) => {
+		event.stopPropagation();
+	});
+
 	document.querySelector("#compare-btn").addEventListener("click", () => {
 		handleCompareClick();
 	});
@@ -351,6 +355,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 			document.querySelectorAll("audio").forEach((audio) => {
 				audio.muted = !audio.muted;
 			});
+			const icon = event.target;
+			icon.src = icon.src.includes("no_sound")
+				? "img/sound.svg"
+				: "img/no_sound.svg";
 		});
 });
 
