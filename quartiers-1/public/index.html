@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
     <title>Hyblab 2023</title>
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/menu.css"> 
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/loadingio/loading.css@v2.0.0/dist/loading.css" />
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'> <!-- Police Google -->
@@ -14,9 +15,11 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.8/lottie.min.js"></script> <!--Pour le fonctionnement de l'animation du logo-->
     <script src="js/index.js" defer></script>
+    <script src="js/menu.js" defer></script>
 </head>
 <body>
     <div id="container">
+        <!-- Animation d'accueil -->
         <section id="accueil">
             <div id="animation-logo"></div>
             <div class="p_container">
@@ -29,7 +32,7 @@
             <img id="accueil_dessin" src="img/accueil_img.svg">
         </section>
 
-
+        <!-- Aide -->
         <section id="tuto">
             <p class="tuto-text" id="tuto-map">Clique pour sélectionner<br>un quartier...</p>
             <img class="tuto-fleche" id="tuto-map-fleche" src="img/tuto_arrow.png">
@@ -41,6 +44,20 @@
             <img class="tuto-fleche" id="tuto-button-fleche" src="img/tuto_arrow.png">
         </section>
 
+        <!-- Sidenav -->
+        <div id="mySidenav" class="sidenav">
+            <div id="mySidenav-header">
+                <button id="closeBtn" onclick="closeNav()"></button>
+                <h1 class="quartier-titre">Bienvenue</h1>
+            </div>
+            <ul id="mySidenavlastul">
+                <hr />
+                <li class="undefinedElement"><a href="#" onclick="goToCredits();">Crédits</a></li>
+                <hr />
+            </ul>
+        </div>
+
+        <!-- Carte -->
         <div id="map">
             <img src="img/nuage.svg" class="nuage" id="nuage1">
             <img src="img/nuage.svg" class="nuage" id="nuage2">
@@ -73,6 +90,7 @@
             </svg>                
         </div>
 
+        <!-- Swiper quartiers -->
         <div id="quartiers-swiper" class="swiper">
             <main class = "swiper-wrapper">
                 <section id="villejean" class="swiper-slide quartier-preview">
@@ -128,6 +146,14 @@
             <div id="next" class="navigation-button"></div>
         </div>
 
+        <!-- Boutons -->
+        <button id="openBtn" onclick="openNav()">
+            <span class="burger-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+        </button>
         <input type="button" value="?" id="tuto-open" >
         <input type="button" value="Allons-y !" id="see-quartier" >
     </div>

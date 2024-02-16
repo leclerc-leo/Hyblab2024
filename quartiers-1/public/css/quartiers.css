@@ -73,7 +73,7 @@ h1{
     color: #292C5E;
     text-align: center;
     font-size: 1em;
-    z-index: 3;
+    z-index: 2;
     /*animation: translateFromLeft 2s;*/
 }
 @keyframes translateFromLeft {

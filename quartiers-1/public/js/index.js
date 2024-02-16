@@ -118,3 +118,8 @@ var animation = lottie.loadAnimation({
     autoplay: true, 
     path: 'animation/logo_trouve_ton_quartier.json'
  }); 
+
+ function goToCredits() {
+    sessionStorage.setItem("comeFrom", "index");
+    window.location.href = "/quartiers-1/credits";
+}

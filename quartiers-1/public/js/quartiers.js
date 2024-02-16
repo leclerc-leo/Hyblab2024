@@ -63,3 +63,9 @@ function titleTransition() {
         old_title.remove();
     }, 2000);
 }
+
+function goToCredits() {
+    sessionStorage.setItem("comeFrom", "quartiers");
+
+    window.location.href = "/quartiers-1/credits";
+}
