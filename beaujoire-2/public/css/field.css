@@ -1,0 +1,413 @@
+
+body{
+    background-color: black;
+    color: white;
+    overflow: hidden;   /* to avoid slider bugs on some browsers */
+    font-family: sans-serif;
+}
+
+/* the slides and the loader should fill the whole 9:16 zone */
+.swiper-wrapper section, #loader{
+    background-color: var(--green);
+    width: 100%;
+    height: 100%;
+}
+
+#footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    height: 12.5%;
+    max-height: 5em;
+    width: 100%;
+    gap: 0.3em;
+}
+    #archives, #statistiques {
+        font-family: 'Abolition';
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 70px;
+        color: var(--yellow);
+        background-color: transparent;
+        border: solid 3px var(--yellow);
+        z-index: 3;
+        transition: all 0.5s ease-in-out ;
+        
+    }
+
+#statistiques.disabled {
+    opacity: 0.5 ;
+    cursor: default;
+}
+
+#statistiques {
+        text-transform: uppercase;
+        text-decoration: none ;
+        font-size: 0.40em;
+        padding: 0.30em;
+        width:7em;
+    }
+
+    #archives {
+        width: 0.40em;
+        height: 0.40em;
+        padding: 0.15em;
+    }
+
+    #archives-svg {
+        color: var(--yellow);
+    }
+
+
+    #archives.disabled {
+        opacity: 0.5 ;
+        cursor: default;
+    }
+
+    #archives.enabled:hover, #statistiques.enabled:hover{
+        cursor: pointer;
+        background-color: var(--yellow);
+        color: var(--green);
+    }
+
+    #archives.enabled:hover #archives-svg {
+        cursor: pointer;
+        color: var(--green);
+        transition: all 1s ease-in-out;
+    }
+
+
+#logo {
+    position: absolute;
+    top: -4%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotate(-15deg);
+    width:50%;
+    z-index:1;
+}
+
+#field {
+    background-color: var(--bg-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+
+#field-img {
+    width: 100%;
+    height: 100%;
+}
+
+#field-jersey-container {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    height: 75%;
+}
+
+
+.field-jersey {
+    position: absolute;
+    width: 30%;
+    transform: translate(-69%, -50%);
+}
+
+.field-jersey-img{
+    width:160%;
+}
+
+
+
+
+.field-jersey-anim {
+    transform: scale(1);
+}
+/*** For vote in progress ***/
+
+.voted {
+    cursor: default;
+    text-decoration: none;
+}
+.player-voted {
+    position: relative ;
+    left: 59%;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+#poste-1 > .player-voted, #poste-12 > .player-voted {
+    position: relative ;
+    left: 0;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.player-img {
+    height: 7vmin;
+    width: 7vmin;
+    border-radius :8px ;
+    display: block;
+    margin-left: 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.player-voted p {
+    font-size : 20% ;
+    font-weight : 50;
+    line-height: 1;
+    font-family : 'Abolition';
+    color : white;
+    text-align: center;
+    padding-left : 25% ;
+}
+
+
+/*** For vote in progress ***/
+
+/* Postes spécifiques */
+#poste-1 { /* Gardien */
+    top: 90%;
+    left: 49%;
+    width: 15%;
+}
+
+#poste-2 { /* Arrière latéral droit */
+    top: 62%;
+    left: 12%;
+}
+
+#poste-3 { /* Arrière latéral gauche */
+    top: 62%;
+    left: 84%;
+}
+
+#poste-4 { /* Défenseur central 1 */
+    top: 73%;
+    left: 34%;
+}
+
+#poste-5 { /* Défenseur central 2 */
+    top: 73%;
+    left: 62%;
+}
+
+#poste-6 { /* Milieu défensif */
+    top: 50%;
+    left: 34%;
+}
+
+#poste-7 { /* Milieu gauche */
+    top: 38%;
+    left: 12%;
+}
+
+#poste-8 { /* Milieu offensif */
+    top: 50%;
+    left: 62%;
+}
+
+#poste-9 { /* Attaquant 1 */
+    top: 26%;
+    left: 34%;
+}
+
+#poste-10 { /* Milieu droit */
+    top: 38%;
+    left: 84%;
+}
+
+#poste-11 { /* Attaquant 2 */
+    top: 26%;
+    left: 62%;
+}
+
+#poste-12 { /* Sélectionneur */
+    width: 14%;
+    top: 12%;
+    left: 49%;
+}
+
+
+/************* Popup card *****************/
+.popup{
+    background-color: var(--bg-green);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 400px ;
+    height: 300px;
+    padding: 30px 40px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+    border-radius: 8px;
+    font-family: 'Abolition';
+    color: var(--yellow);
+    display: none;
+    text-align: center;
+    z-index: 4;
+    overflow : scroll;
+
+}
+
+.popup::-webkit-scrollbar {
+    width: 0;
+}
+
+.popup button{
+    display: block;
+    margin:  0 0 -20px auto;
+    background-color: transparent;
+    color: var(--yellow);
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.popup button img {
+    width: 6.5vmin;
+    display: block;
+}
+
+.popup #archives-popup {
+    width: 10vmin;
+}
+
+.popup p{
+    font-size: 6.5vmin ;
+    
+}
+
+  /************* Popup card *****************/
+
+/* ---------- Important media queries for easy responsive content :-) ----------------- */
+/* Whatever the device used, the content will be displayed full width and height if      */
+/* the aspect ratio is between 3/4 and 9/16. If not it is locked to either 3/4 or 9/16  */
+
+/* When the aspect ratio is smaller that 3/4, display a 3/4 content */
+#container{
+    position: fixed; /* To set the size of the container to 100% of the visible viewport height AND for absolute positioning of child elements*/ 
+    height: 100%;   /* even on mobile devices with url or navigation bars */
+    margin-left: calc((100vw - 100 * 3vh / 4) / 2); /* Add black bands on left and right */
+    width: calc(100 * 3vh / 4); /* Force 3/4 aspect ratio */
+}
+
+#archives-svg{
+    width:0.45em;
+    height:0.45em;
+}
+
+/* Fill the whole viewport when its aspect ratio is between 9/16 and 3/4 */
+@media screen and (max-aspect-ratio: 3/4) {
+    #container{
+        margin-left: 0; /* reset margin-left */
+        width: 100vw; /* content is full width (and full height because of the default rule for container height */
+    }
+
+    .popup{
+        width: calc(100 * 6vw / 9);
+        height: calc(100 * 5vw / 9);
+        color: var(--yellow);
+        text-align: center;
+    }
+
+    p {
+        margin: 0 ;
+        font-size: calc(100 * 0.3vw / 5);
+        color: var(--yellow);
+        text-align: center;
+    }
+
+    .player-img {
+        height: 10vmin;
+        width: 10vmin;
+        border-radius :10px ;
+        display: block;
+        margin-left: 20%;
+    }
+
+    .player-voted p {
+        font-size : 20% ;
+        font-weight : 50;
+        line-height: 1;
+        font-family : 'Abolition';
+        color : white;
+        text-align: center;
+        padding-left : 25% ;
+    }
+
+    .player-voted {
+        position: relative ;
+        left: 100%;
+    }
+
+}
+
+/* The content is displayed at 9/16 If the aspect ratio is higher that 9/16  */ 
+@media screen and (max-aspect-ratio: 9/16) {
+    #container{
+        margin-left: 0; /* reset left margin */
+        width: 100vw;   /* content is full width */
+        margin-top: calc(-50 * 16vw / 9); /* move the content half the height to the top */
+        top:50%; /* then center it ! */
+        height: calc(100 * 16vw / 9); /* adjust height so that aspect ratio is 9/16 */
+    }
+
+    .popup{
+        width: calc(100 * 7vw / 9);
+        height: calc(100 * 4.5vw / 9);
+        color: var(--yellow);
+        text-align: center;
+        
+    }
+
+    p {
+        margin: 0 ;
+        color: var(--yellow);
+        text-align: center;
+    }
+
+    .player-voted {
+        position: relative ;
+        left: 140%;
+    }
+
+    .player-img {
+        height: 10vmin;
+        width: 10vmin;
+        border-radius :10px ;
+        display: block;
+        margin-left: 15px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+}
+
+/*Gestion de la police lorsque l'écran est très petit*/
+@media only screen and (max-width: 400px) {
+
+    #archives-svg {
+        width: 0.4em;
+        height: 0.4em;
+    }
+
+    .player-img {
+        height: 9vmin;
+        width: 9vmin;
+        border-radius :10px ;
+        display: block;
+        margin-left: 15px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+}
+

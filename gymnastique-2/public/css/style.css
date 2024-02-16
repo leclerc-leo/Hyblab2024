@@ -6,202 +6,759 @@
 *{
     padding:0;
     margin:0;
+    min-width: 0;
+    min-height: 0;
 }
 
-body{
-    background-color: black;
-    color: white;
-    overflow: hidden;   /* to avoid slider bugs on some browsers */
-    font-family: sans-serif;
+.swiper-pagination{
+    font-size: 0;
 }
 
-/* -------------- Loader --------------*/
-#loader{
-    z-index: 2;
-    position:absolute;
-}
-
-#loader-img{
-    top:40%;
-    left:40%;
+#swiper_journee, #swiper_mouvement{
+    width: 100%;
+    height:100%;
     position: absolute;
 }
-
-#loader-text{
-    text-align: center;
-    font-size: 25%;
-    position: absolute;
-    top:60%;
-    width: 100%
-}
-/* -------------- End of Loader --------------*/
-
-/* Swiper slider. Need to fill the container */
-#mySwiper{
+#swiper_journee{
     width: 100%;
     height:100%;
     position: absolute;
 }
 
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+    --swiper-pagination-bottom: 0px;
+}
+
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet{
+    margin-bottom: 1%;
+}
+
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet-active{
+    margin-bottom: 0;
+}
+
+.swiper-pagination-bullet, .swiper-pagination-bullet::before {
+    position: relative;
+    --swiper-pagination-bullet-border-radius: 0;
+    --swiper-pagination-bullet-size: 10%;
+    width: var(--swiper-pagination-bullet-size);
+    padding-bottom: var(--swiper-pagination-bullet-size);
+    --swiper-pagination-bullet-inactive-opacity: 1;
+    --swiper-pagination-bullet-inactive-color: transparent;
+    background-color: transparent;
+}
+
+.swiper-pagination-bullet::before{
+    --swiper-pagination-bullet-size: 35%;
+    content: '';
+    position: absolute;
+    bottom: 20%;
+    transform: translate(-50%, 0);
+    border: 2px solid white;
+    border-radius: 50%;
+}
+
 /* white navigation bullets */
-.swiper-pagination-bullet-active {
-    background-color: white !important;
+.swiper-pagination-bullet-active, .swiper-pagination-bullet-active::before {
+    --swiper-pagination-bullet-size: 13%;
+    width: var(--swiper-pagination-bullet-size);
+    padding-bottom: var(--swiper-pagination-bullet-size);
+}
+
+.swiper-pagination-bullet-active::before{
+    --swiper-pagination-bullet-size: 35%;
+    background-color: white;
 }
 
 /* the slides and the loader should fill the whole 9:16 zone */
 .swiper-wrapper section, #loader{
-    background-color: dodgerblue;
     width: 100%;
     height: 100%;
 }
 
+.swiper-button-next, .swiper-button-prev{
+    --swiper-navigation-color: white;
+}
+
 /* Most of the elements in this demo are absolute positioned with percentages */
-#first-slide header, #second-slide header{
+header{
     text-align: center;
     width: 100%;
-    top: 10%;
+    padding-top: 3%;
+    padding-bottom: 2%;
     position: absolute;
-    font-size: 30%;
+    font-size: calc(1.5vh + 1.5vw);
     z-index: 2;
 }
 
-#logo-hyblab{
-    text-align: center;
-    width: 50%;
-    left: 50%; /* center the logo, in interaction with the negative margin-left */
-    top: 50%;
-    margin-left:-25%; /* this is half the width */
-    margin-top:calc(-7.5% * 9 / 16 ); /* margins are relative to the element width... :-( */
+#titre{
+    background: radial-gradient(closest-side, rgba(255, 217, 179, 0.6) 0, rgba(255, 217, 179, 0.6) 50%, rgba(255, 217, 179, 0) 100%);
+}
+
+header > * {
+    margin: 0 auto;
+}
+
+.background {
+    z-index: -2;
+    height: auto;
+    width: 250%;
     position: absolute;
-    font-size: 50%;
-    z-index: 2;
+    bottom: 0;
+    min-height: 100%;
+    transform: translate(-50%, 0%);
+    font-size: 0;
+}
+
+.background > *{
+    position: absolute; 
+    bottom: 0;
+}
+
+.background .container > div{
+    position: absolute;
+    bottom: 0;
+}
+
+.category-button{
+    position: absolute; 
+    width: 60%;
+    height: 0; 
+    padding: 30% 0;
+    transform: translate(-50%, 50%); 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 50%;
+    font-size: 40px;
+    text-align: center;
     cursor: pointer;
 }
 
-/* Last slide image is centered */
-#img-fini{
-    width: 70%;
-    left: 50%; /* center the logo, in interaction with the negative margin-left */
-    top: 40%;
+.growing {
+    animation: growing 2s infinite;
+}
+
+@keyframes growing {
+    0% {
+        transform: scale(1);
+        -webkit-transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+        -webkit-transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+        -webkit-transform: scale(1);
+    }
+}
+
+.category-page{
     position: absolute;
-    margin-left:-35%; /* this is half the width */
-    margin-top:calc(-25% * 9 / 16 ); /* margins are relative to the element width... :-( */
+    z-index: 99;
+    background-color: #FFD8B3;
+    color: black;
+    font-size: 18px;
+    padding: 10px 0;
+
+    transition: width 0.3s ease-in-out, 
+        height 0.3s ease-in-out, 
+        bottom 0.3s ease-in-out,
+        left 0.3s ease-in-out,
+        right 0.3s ease-in-out,
+        border-radius 0.3s ease-in-out,
+        opacity 0.3s ease-in-out;
 }
 
-main > section{
-    background-image: url('../img/background.svg');
-    background-size: 100% auto; /* background is full width and height is proportional to width */
-    background-position: bottom; /* background is bottom aligned */
+.category-page > p {
+    margin: 0 10px;
 }
 
-/* Footer of last slide is at the bottom and content is centered */
-#first-slide footer{
-    bottom: 5%;
-    position: absolute;
-    box-sizing: border-box; /* So that padding is not added to width (and width: 100% works) */
-    width: 100%; /* could also use  width: calc(100% - 2em) if not using box-sizing */
-    font-size: 20%;
-    text-align: center;
-    padding: 1em;
-    background-color: rgba(0, 0, 0, 0.5);
+.hidden{
+    display: none;
+    visibility: hidden;
 }
 
+.page-controls{
+    display: block;
+    z-index: 100; /* ne pas enlever autrement l'animation est cassée */
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+    position: relative; /* ne pas enlever */
+}
 
-/* ---------- Positioning of logos on the last slide -------------------- */
-/* here we have a contraint on the height of the logos (not the width)     */
-/* so we cannot use % and use em (which are proportional to the size of the */
-/* slide because of body's font size rule at the end of this CSS           */
-#bandeau {
-    width:100%;
+.page-controls.hidden {
+    opacity: 0;
+    display: block;
+}
+
+/* Bouton de navigation */
+.return-button{
     position: absolute;
     bottom: 0;
-    background-color: white;
-    font-size: 20%;
-  }
+    left: 0;
+    right: 0;
+    margin: auto;
 
-  #bandeau li{
-    list-style-type: none;
-    display: inline-block;
-    vertical-align: middle;
-    margin: 0 0.5em;
-  }
+    width: 5vh;
+    height: 5vh;
+    padding: 2.5vh;
+    margin-bottom: 1vh;
 
-  #bandeau img{
-    height: 2.5em;
-  }
+    cursor: pointer;
+}
 
-  #bandeau #hyblab{
-    margin: 1em auto;
-    height: 3em;
-    display: block;
-  }
+.return-button img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
 
-  #bandeau #cc, #bandeau #opensource
-  {
-    height: 1em;
-  }
+.credits-button {
+    position: absolute;
+    bottom: 10%;
+    right: 10px;
+    font-size: 60px;
+    text-shadow: 0 0 10px black;
+}
 
-  #bandeau .stacked{
-    display:block;
-  }
+.swiper-wrapper .credits{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
 
-  #bandeau ul{
+    transition: height 0.5s ease-in-out,
+        opacity 0.3s ease-in,
+        opacity 0.3s ease-out 0.2s;
+    color: black;
+    background-color: #FFD8B3;
+    overflow: scroll;
+}
+
+/* Format des titres */
+h1{
+    color: #482E49;
+    font-family: "Metropolis";
+    font-size: calc(2vh + 10px);
+}
+
+h2{
+    color: #482E49;
+    font-family: "Metropolis";
+    font-size: calc(1.5vh + 10px);
+}
+
+/* Format des textes */
+p{
+    color: #E47754;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: calc(1.3vh + 8px);
+    padding: 10px 30px;
+}
+
+li{
+    list-style: none;
+    color: #E47754;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: calc(1.3vh + 8px);
+    padding: 0 30px;
+}
+
+span{
+    font-weight: bold;
+}
+
+/* Format des pages */
+#histoire-page, #jo-page, #credits-page{
     text-align: center;
-    padding: 0 0;
-    margin: 0.5em auto;
-  }
-
-  #bandeau .institutionnel
-  {
-    height: 2em;
-  }
-
-/* ---------- Important media queries for easy responsive content :-) ----------------- */
-/* Whatever the device used, the content will be displayed full width and height if      */
-/* the aspect ratio is between 3/4 and 9/16. If not it is locked to either 3/4 or 9/16  */
-
-/* When the aspect ratio is smaller that 3/4, display a 3/4 content */
-#container{
-    position: fixed; /* To set the size of the container to 100% of the visible viewport height AND for absolute positioning of child elements*/ 
-    height: 100%;   /* even on mobile devices with url or navigation bars */
-    margin-left: calc((100vw - 100 * 3vh / 4) / 2); /* Add black bands on left and right */
-    width: calc(100 * 3vh / 4); /* Force 3/4 aspect ratio */
 }
 
-/* We set a default font size here. It will be the base for all other font sizes */
-/* Here the font size is proportional to content width */
-body{
-    font-size: calc(15vh * 3 / 4);
+#histoire-page h1, #jo-page h1, #credits-page h1{
+    margin: 10px 0;
 }
 
-/* Fill the whole viewport when its aspect ratio is between 9/16 and 3/4 */
-@media screen and (max-aspect-ratio: 3/4) {
-    #container{
-        margin-left: 0; /* reset margin-left */
-        width: 100vw; /* content is full width (and full height because of the default rule for container height */
-    }
-
-    /* We set a default font size here. It will be the base for all other font sizes */
-    /* Here the font size is proportional to content width */
-    body{
-        font-size: 15vw;
-    }
+#histoire-page h2, #credits-page h2{
+    margin: 20px 0;
 }
 
-/* The content is displayed at 9/16 If the aspect ratio is higher that 9/16  */ 
-@media screen and (max-aspect-ratio: 9/16) {
-    #container{
-        margin-left: 0; /* reset left margin */
-        width: 100vw;   /* content is full width */
-        margin-top: calc(-50 * 16vw / 9); /* move the content half the height to the top */
-        top:50%; /* then center it ! */
-        height: calc(100 * 16vw / 9); /* adjust height so that aspect ratio is 9/16 */
-    }
-
-    /* We set a default font size here. It will be the base for all other font sizes */
-    /* Here the font size is proportional to content width */
-    body{
-        font-size: 15vw;
-    }
+.image-histoire, .image-jo, .image-credits{
+    display: block;
+    margin: 0 auto;
+    width: 30%;
+    max-width: 40%;
 }
 
+svg.image-histoire, svg.image-jo{
+    width: 20%;
+    max-width: 40%;
+}
+
+
+#chemin1{
+    margin-right: 20%;
+    width: 30%;
+    height: auto;
+    margin-bottom: -10%;
+}
+
+#chemin2{
+    width: 60%;
+    height: auto;
+}
+
+#histoire-header, #credits-header{
+    position:sticky;
+    top: 0;
+    padding-top: 10px;
+    background-color: rgba(255, 216, 179, 0.9);
+    margin-bottom: 20px;
+}
+
+#credits-header {
+    padding-top: 30px;
+}
+
+#histoire-header > img {
+    padding: 10px;
+}
+
+.image-titre{
+    max-width: 40%;
+}
+#palmares-page .smaller{
+    height: calc(6vh + 8px) !important;
+}
+#palmares-page .svg-boucle{
+    position: absolute;
+    top : 0;
+    width: 50%;
+}
+#palmares-page {
+    background-color: #FFD8B3;
+    font-family: "Krona_One variant0";
+}
+#palmares-page #titre-palmares {
+    margin: 2.5% auto 0 auto;
+}
+#palmares-page .image-titre{
+    margin-bottom: 5%;
+    width: 30%;
+    max-width: 40%;
+
+}
+#palmares-page .card-container {
+    width: 80%;
+    height: 15%;
+    perspective: 90vw;
+    margin: 2.5% 10% 2.5% 10%;
+    transition: transform 1500ms;
+}
+#palmares-page p {
+    font-size: calc(1.3vh + 8px);
+}
+#palmares-page .flipcard {
+    height: 80vh;
+    transform: rotateY(180deg);
+}
+#palmares-page .smaller{
+    height: calc(1.3vh + 8px);
+
+}
+#palmares-page .doigt-gif ,#palmares-page .logo-retourner{
+    position: absolute;
+    height: 20%;
+    z-index : 2;
+    right: 5%;
+    bottom: 10%;
+}
+#palmares-page .card {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    transition: transform 1500ms;
+    transform-style: preserve-3d;
+    z-index: 1;
+
+}
+
+#palmares-page #card-afrique{
+    position: absolute;
+    top:25%;
+}
+#palmares-page #card-mondiaux{
+    top : 65%;
+    position: absolute;
+}
+#palmares-page #card-inter{
+    top : 45%;
+    position: absolute;
+}
+
+#palmares-page .card-front,
+#palmares-page .card-back {
+    display: table;
+    width: 100%;
+    height: 100%;
+    border-style: solid;
+    border-color: #E47754;
+    position: absolute;
+    backface-visibility: hidden;
+    transform: rotateX(0deg);
+    border-radius: 10px;
+}
+
+#palmares-page .card-front {
+    background-color: #E47754;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color : #FFF9F9;
+}
+
+#palmares-page .card-back {
+    background-color: transparent;
+    transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 30vh !important;
+    align-items: center;
+}
+#palmares-page .card-front-palmares-titre{
+    margin: 2% 0 2% 0;
+    color: #FFD8B3;
+}
+#palmares-page .card-palmares-titre{
+    margin: 2% 0 2% 0;
+}
+
+#credits-chemin1{
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#credits-chemin2{
+    width: 18%;
+}
+
+#credits-chemin3{
+    width: 10%;
+}
+
+#credits-chemin4{
+    width: 12%;
+    position: absolute;
+    right: 20%;
+    margin-top: -10%;
+}
+
+.credits-list{
+    display: flex;
+    flex-direction: row;
+    margin: 0 30px;
+}
+
+.credits-list > li{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    margin: 0;
+    padding: 0;
+}
+
+.credits-list > li > .credits-list-content{
+    width: 90%;
+    margin: 0;
+    padding: 10px;
+    height: auto;
+}
+
+.credits-list-license{
+    margin: 0 auto;
+}
+
+.logo-licence{
+    width: 20%;
+    height: auto;
+    vertical-align: middle;
+}
+
+
+#description_journee, .description_mouvement{
+    position: absolute;
+    width: 70%;
+    height: 30%;
+    top: 75%;
+    left: 13%;
+    text-align: center;
+}
+.description_mouvement{
+    left: 50%;
+    right: 50%;
+    top:72%;
+    width:95%;
+    font-size: calc(1vh + 8px);
+    transform: translate(-50%,0);
+}
+#journee_1_svg,#mouvement_1_svg{
+    position: absolute;
+    left: 60%;
+    width: 40%;
+    height: 21%;
+}
+
+#journee_2_svg,#mouvement_2_svg{
+    position: absolute;
+    left: -2%;
+    width: 50%;
+    height: 17%;
+}
+
+#journee_3_svg,#mouvement_3_svg{
+    position: absolute;
+    left:69%;
+    width: 40%;
+    height: 23%;
+    top:-2%;
+}
+
+#journee_4_svg{
+    position: absolute;
+    left: 60%;
+    width: 40%;
+    height: 21%;
+    top: -3%;
+}
+
+#Kaylia_Nemour_journee,.Kaylia_Nemour_mouvement{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 40%;
+    height: 30%;
+}
+
+#journee_img{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: auto;
+    height: 32%;
+    top: 33%;
+    border-radius: 22px;
+}
+
+#journee_type,.mouvement_type{
+    position: absolute;
+    width: 60%;
+    height: 30%;
+    top:23%;
+    left: 50%;
+    transform: translate(-50%, 0);    
+    text-align: center;
+}
+
+#description_journee{
+    width : 76%;
+    top : 72%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    text-align: center;
+    color: #482E49;
+}
+
+#barre_navigation_journee, .barre_navigation_mouvement {
+    position: absolute;
+    top: 70%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly; 
+    flex : 1;
+}
+#categorie_journee, .categorie_mouvement{
+    padding: 10px 10px;
+    text-align: center;
+}
+
+#jo-header {
+    position:sticky;
+    top: 0;
+    background-color: rgba(255, 216, 179, 0.9);
+    margin-bottom: 10px;
+    padding-top: 40px;
+}
+
+#jo-contenu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 65vh;
+}
+
+.jo-card-container {
+    position: relative;
+    margin: 0% 10% 3% 10%;
+    transition: max-height 0.2s ease-in-out;
+    max-height: 50%;
+}
+
+/* add a cross to the top right of the card */
+.jo-card-container.actif::before, .jo-card-container.actif::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    width: 20px;
+    height: 3px;
+    background-color: #E47754;
+    transform: rotate(45deg);
+}
+
+.jo-card-container.actif::after {
+    transform: rotate(-45deg);
+}
+
+.jo-card {
+    display: table;
+    width: 370px;
+    height: 100px;
+    border-radius: 2rem;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.jo-card-titre, .jo-card-texte {
+    margin: 2% 0 2% 0;
+    padding: 2%;
+    color: rgba(255, 216, 179, 0.9);
+    border: #E47754 solid 1px ;
+    background-color: #E47754;
+    border-radius: 15px;
+    max-width: 80%;
+}
+
+.jo-card-titre {
+    position: absolute;
+    top: 20px;
+}
+
+.jo-card-texte {
+    position: absolute;
+    bottom: 15px;
+    opacity: 90%;
+}
+
+.actif {
+    max-height: 60vh;
+    height: 100%;
+}
+
+.actif .jo-card{
+    height: 100%;
+    margin-bottom: 10px;
+}
+
+.image-titre{
+    max-width: 40%;
+}
+/*
+#mouvement-video{
+    width: 50%;
+    height: 41%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 30%;
+    z-index: 2;
+    left: 25%;
+}
+*/
+#mouvement-video{
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 48%;
+    z-index: 2;
+    right: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.categorie_mouvement{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#twitter-widget-0{
+    border-radius: 10%;
+}
+.page-container{
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+#mouvement-page .mouvActif {
+    animation: fadeIn 0.5s;
+    -webkit-animation: fadeIn 0.5s;
+    -moz-animation: fadeIn 0.5s;
+    -o-animation: fadeIn 0.5s;
+    -ms-animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@-moz-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@-webkit-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@-o-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@-ms-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+#credits-button h1{
+    background-color: #E47754;
+    border: 3px solid #FFD8B3;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+    padding: 2% 10%;
+    text-shadow: none;
+    color: white;
+}

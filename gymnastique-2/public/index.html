@@ -1,78 +1,69 @@
 <!doctype html>
-
 <html lang="fr">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-  <title>Hyblab 2023</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/loadingio/loading.css@v2.0.0/dist/loading.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <script src="js/slide1.js" defer></script>
-  <script src="js/slide2.js" defer></script>
-  <script src="js/index.js" defer></script>
-</head>
+<%= head %>
 <body>
-    <!-- Le conteneur sert à vérouiller les proportions (aspect ratio) du contenu de la page (ici des slides) -->
-    <div id="container">
-      <!-- Le loader-->
-      <section id="loader">
-        <div id="loader-img" class="ld ld-ring ld-cycle"></div>
-        <p id="loader-text">Veuillez patienter...</p>
+
+  <%= priority_css %>
+
+  <div id="container">
+    <%= background %>
+      
+    <div id="mySwiper" class="swiper">
+      <main class = "swiper-wrapper">
+        <section class="swiper-slide">
+
+              <div style="position:absolute; bottom: 0;">
+                <img src="img/background/frame.jpg" alt="background" width="250%" style="opacity: 0; display: block;">
+
+                <div class="category-button" id="histoire-button" style="bottom: 20%; left: 25%;"></div>
+
+                <div class="category-button" id="palmares-button" style="bottom: 60%; left: 25%;"></div>
+
+                <div class="category-button" id="mouvement-buttom" style="bottom: 40%; left: 70%;"></div>
+
+              </div>
+              <%= histoire %>
+              <%= palmares %>
+              <%= mouvement %>
+          </section>
+          <section class="swiper-slide">
+
+            <div style="position:absolute; bottom: 0;">
+              <img src="img/background/frame.jpg" alt="background" width="250%" style="opacity: 0; display: block;">
+
+              <div style="position: absolute; bottom: 7%; right: 50%; transform: translateX(50%); text-align: center; width: 100%;">
+                <h1 style="width: 80%; margin: 0 auto;" id="explorez" class="">Explorez le gymnase</h1>
+                <p id="explorez-right">></p>
+                <p id="explorez-left"><</p>
+              </div>
+
+              <header id="titre" style="width: 100%; position: absolute; bottom: 60%; right: 50%; transform: translate(50%, 50%);">
+                <img src="img/logo merguez.svg" alt="logo" width="45%">
+                <br><br>
+                <h2 style="width: 80%;" id="texte-accueil">À 17 ans, la gymnaste d'Indre-et-Loire s'est qualifiée pour les Jeux olympiques de Paris 2024.</h2>
+              </header>
+            </div>
+
+          </section>
+          <section class="swiper-slide">
+
+            <div style="position:absolute; bottom: 0;">
+              <img src="img/background/frame.jpg" alt="background" width="250%" style="opacity: 0; display: block;">
+
+              <div class="category-button" id="jo-button" style="bottom: 65%; right: 50%; transform: translate(50%, 50%);"></div>
+
+              <div class="category-button" id="journee-button" style="bottom: 20%; right: 20%; transform: translate(50%, 50%);"></div>
+
+              <div class="category-button credits-button" id="credits-button" style="bottom: 10%; right: 75%; transform: translate(50%, 50%);"><h1>CRÉDITS</h1></div>
+            </div>
+            <%= jo %>
+            <%= journee %>
+            <%= credits %>
+
       </section>
-      <div id="mySwiper" class="swiper">
-        <!-- le main est aussi le conteneur des différents slides (contenus à chaque fois dans des sections-->
-        <main class = "swiper-wrapper">
-            <section id="first-slide" class="swiper-slide">
-                <header>
-                    <h1 id="titre">Welcome to</h1>
-                </header>
-                
-                <img src="img/logo_hyblab.png" id="logo-hyblab" alt="logo hyblab"></img>
-
-
-                <!-- le footer sera rempli à partir de données lues dans un fichier Json-->
-                <footer>
-                  <p></p>
-                </footer>
-            </section>
-            <section id="second-slide" class="swiper-slide">
-                <header>
-                  <h1>This was...</h1>
-                </header>
-                <img id="img-fini" src="hyblab_2024.png">
-                <footer id="bandeau">
-                        <!-- Logo Hyblab -->
-                          <a href="http://www.hyblab.fr/"><img id="hyblab" src="logo_hyblab.png" alt="Hyblab DataSport"></a>
-                      
-                          <!-- Les organisateurs -->
-                          <ul>
-                            <li><a href="http://www.agrnantes.fr"><img src="ecoles/logo_agr.png" alt="AGR école de l'image"></a></li>
-                            <li><a href="https://epjt.fr/"><img src="ecoles/logo_epjt.svg" alt="Ecole publique de journalisme de Tours"></a></li>
-                            <li><a href="http://www.polytech.univ-nantes.fr/"><img src="ecoles/logo_polytech.png" alt="Polytech Nantes"></a></li>
-                            <li><a href="https://www.sciencespo-rennes.fr/"><img src="ecoles/logo_sciencespo.svg" alt="SciencesPo"></a></li>
-                            <!-- Les autres logos -->
-                          <ul>
-                            <li><a href="http://www.ouestmedialab.fr/"><img src="logo_oml.png" alt="Ouest Médialab"></a></li>
-                            <!-- Logos CC et opensource -->
-                            <li>
-                            <ul>
-                              <li class="stacked"><img id="cc" src="logo_cc.png" alt="Creative commons"></li>
-                              <li class="stacked"><img id="opensource" src="logo_opensource.png" alt="Open source"></li>
-                            </ul>
-                            </li>
-                            <!-- Logo de votre porteur de projet -->
-                            <li><a href="http://www.mon-porteur-de-projet.org"><img src="no-logo.png" alt="Logo de mon porteur de projet"></a></li>
-                            <!-- Partenaires institutionnels -->
-                            <li><a href="http://www.nantesmetropole.fr/"><img class="institutionnel" src="institutionnels/logo_nantesmetropole.png" alt="Nantes Métropole"></a></li>
-                          </ul>
-                </footer>
-            </section>
-        </main>
-        <div class="swiper-pagination"></div>
-    </div>
+    </main>
+        
+    <%= controls %>
   </div>
 </body>
 </html>

@@ -1,20 +1,20 @@
 # Descriptif du projet
 
-Porteur de projet :
+Porteur de projet : Paul Vuillemin
 
-Sujet :
+Sujet : Gymnastique : Kaylia Nemour, quel est son parcours vers les JO ?
 
-Nom d'équipe :
+Nom d'équipe : Zamolodchikova
 
 Participants : 
 
-- AGR :
+- AGR : Martin Subileau, Augustin Chaillou
 
-- EPJT :
+- EPJT : Susie Bouyer
 
-- Polytech :  
+- Polytech :  Emilien L'Haridon, Ulysse Devincre, Gaétan Bou, Côme Roy, Lucas-Antoine Jeau, Anass Hariri
 
-- SciencesPo : 
+- SciencesPo : Camille Margerit
 
 
 

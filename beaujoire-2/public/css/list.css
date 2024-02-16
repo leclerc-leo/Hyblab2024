@@ -1,0 +1,265 @@
+/* styles.css */
+
+/* Reset some default styles */
+
+body{
+  background-color: black;
+  height: 100%;
+}
+  /* Container for the entire content */
+#container {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  padding: 0%;
+  background-color: var(--bg-green);
+  margin-left: calc((100vw - 100 * 3vh / 4) / 2);
+  width: calc(100 * 3vh / 4);
+  overflow: hidden;
+  }
+
+  .player-swiper-container {
+    height: 75%;
+    width: 100%;
+    position: absolute;
+  }
+  /* Styling for the player boxes */
+  .player-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin-top: -2%;
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden ;
+  }
+  .player-box.expanded {
+    height: 45vh; 
+  }
+  .player-list::-webkit-scrollbar {
+    width: 0;
+  }
+  
+  .player-box {
+    border: 0.04em solid var(--yellow);
+    border-radius: 0.2em;
+    overflow: hidden;
+    margin: 1%;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 85%;
+    max-width: 100%;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .player-box img {
+    margin-left: 5%;
+    width: 25%;
+    height: 85%;
+    border-radius: 0.09em;
+    max-width: 100%;
+    object-fit: cover;
+  }
+  
+  .name-desc p {
+    flex: 1;
+    padding: 10% 10%;
+    text-align: center;
+    color: white;
+    font-family: "Abolition";
+    font-size: 30%;
+  }
+  
+  .heart-button {
+    background: url(../img/COEUR1.svg) no-repeat center center;
+    background-size: contain;
+    width: 15%;
+    margin-right: 5%;
+    margin-left: 9%;
+    border: none;
+    cursor: pointer;
+    height: 30%;
+  }
+  
+  /* Styling for the pressed state of the heart button */
+  .heart-button.pressed{
+    background: url("../img/COEUR2.svg") no-repeat center center;
+    background-size: contain;
+    width: 15%;
+    height: 30%;
+    margin-right: 5%;
+    margin-left: 9%;
+    border: none;
+    cursor: pointer;
+  }
+
+  .name-desc{
+    padding: 0 10% 0 10%;
+    display: flex;
+    width: 50%;
+  }
+
+  .name-desc .down-slider {
+    background: url(../img/fleche_correction.svg) no-repeat center center;
+    background-size: contain;
+    width: 10%;
+    border: none;
+    cursor: pointer;
+    margin-left: -1%;
+  }
+  
+  /* Styling for the footer */
+  .fixed-footer{
+    text-align: center;
+    position: absolute;
+    /* margin-top: 2%; */
+    width: 100%;
+    bottom: 0;
+  }
+  .background-paper{
+    background-image: url('../img/Footer_papier.svg');
+    background-size: cover;
+    transform: scale(1.1);
+    position: absolute;
+    right: inherit;
+    width: 100%;
+    height:100%;
+    transform-origin: top;
+    z-index: -1;
+  }
+/* Styling for the "Retour au terrain" button */
+#retour {
+  background-color: var(--bg-green);
+  padding: 0.625em 1.25em;
+  border: 0.188em solid var(--yellow);
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--yellow);
+  font-family: "Abolition";
+  font-size: 25%;
+  border-radius: 1.25em;
+  width: 36%;
+  transition: all 0.5s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-top: 9%;
+  margin-left: 26.65%;
+  margin-bottom: 5%;
+}
+
+#retour:hover{
+  cursor: pointer;
+  background-color: var(--yellow);
+  color: var(--green);
+}
+
+/* Styling for the position preview */
+.position-preview {
+  display: flex;
+  align-items: center;
+  position: relative; /* Make it a positioned container */
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: -4%;
+}
+
+/* Styling for the fixed light gray line */
+.position-line {
+  height: 0.2%;
+  background-color: rgba(211, 211, 211, 0.8);;
+  width: 80%; /* Take the full width of the position preview */
+  position: absolute;
+  margin-top: -5%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+/* Styling for the yellow segment under the current position */
+.current-position-segment {
+  width: 30%;
+  height: 0.5%;
+  background-color: var(--yellow);
+  position: absolute;
+  margin-top: -5%;
+  transition: width 0.3s ease;
+  left: 35%;
+  z-index: 1;
+}
+
+/* Styling for the current, previous, and next positions */
+.position-preview-box {
+  flex: 1;
+  text-align: center;
+  color: var(--yellow);
+  font-family: 'Abolition';
+  font-size: 32%;
+  line-height: 4em;
+  height: 5%;
+  margin: 0 1%;
+  transition: background-color 0.3s ease;
+}
+
+.prev,
+.next {
+  color: rgba(211, 211, 211, 0.8);
+  font-size: 20%;
+  transition: transform 0.3s ease; /* Add smooth transition for position changes */
+}
+
+.prev.current,
+.next.current {
+  transform: scale(4); /* Example: Move to the left and slightly scale */
+}
+
+
+/* Fill the whole viewport when its aspect ratio is between 9/16 and 3/4 */
+@media screen and (max-aspect-ratio: 3/4) {
+  #container{
+      margin-left: 0; /* reset margin-left */
+      width: 100vw; /* content is full width (and full height because of the default rule for container height */
+  }
+
+
+  p {
+      margin: 0 ;
+      font-size: calc(100 * 0.3vw / 5);
+      color: var(--yellow);
+      text-align: center;
+  }
+
+
+}
+
+/* The content is displayed at 9/16 If the aspect ratio is higher that 9/16  */ 
+@media screen and (max-aspect-ratio: 9/16) {
+  #container{
+      margin-left: 0; /* reset left margin */
+      width: 100vw;   /* content is full width */
+      margin-top: calc(-50 * 16vw / 9); /* move the content half the height to the top */
+      top:50%; /* then center it ! */
+      height: calc(100 * 16vw / 9); /* adjust height so that aspect ratio is 9/16 */
+  }
+
+  p {
+      margin: 0 ;
+      color: var(--yellow);
+      text-align: center;
+  }
+  
+}
+
+/* Adjust height for smaller viewports */
+@media screen and (max-width: 250px) {
+  .player-list{
+    height: 80%; /* Adjust the value based on your needs */
+  }
+}
+
+
