@@ -1,0 +1,71 @@
+.container {
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.search-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Golos Text";
+  font-weight: bold;
+  font-size: 50px;
+  color: black;
+}
+
+@keyframes moveCursor {
+  0% {
+    top: 50%;
+    left: 80%;
+    opacity: 0;
+  }
+  1%{
+    top: 60%;
+    left: 30%;
+    opacity: 0;
+  }
+  25% {
+    top: 50%;
+    left: 50%;
+    opacity: 1;
+  }
+  50% {
+    top: 55%;
+    left: 70%;
+    opacity: 1;
+  }
+  80% {
+    top: 55%;
+    left: 70%;
+    opacity: 1;
+  }
+  100% {
+    top: 50%;
+    left: 80%;
+    opacity: 1;
+  }
+}
+
+.mouse-cursor {
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  background-image: '/bretons-1/img/souris3.png';
+  background-size: contain;
+  animation: moveCursor 6s;
+  animation-timing-function: ease-in-out;
+  z-index: 15;
+}
+
+#animatedtext { 
+  visibility:hidden;
+}

@@ -1,0 +1,130 @@
+<!doctype html>
+
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <title>Hyblab 2024</title>
+  <link rel="shortcut icon" type="image/ico" href="favicon.ico" />
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/loadingio/loading.css@v2.0.0/dist/loading.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="js/home_slide1.js"></script>
+  <script src="js/home_slide2.js" defer></script>
+  <script src="js/global.js" defer></script>
+  <script src="js/home.js" defer></script>
+</head>
+
+<body>
+  <!-- Le conteneur sert à verrouiller les proportions (aspect ratio) du contenu de la page (ici des slides) -->
+  <div id="container">
+    <!-- Le loader-->
+    <section id="loader">
+      <div id="loader-img" class="ld ld-ring ld-cycle"></div>
+    </section>
+    <div id="mySwiper" class="swiper">
+      <!-- le main est aussi le conteneur des différents slides (contenus à chaque fois dans des sections-->
+      <main class="swiper-wrapper">
+        <section id="first-slide" class="swiper-slide">
+          <header>
+            <h1 id="titre">Vous êtes</h1>
+            <h1 id="sous-titre">
+              <img src="img/accueil/FCNANTES-2019.svg" id="ecu" alt="Ecusson FC Nantes"></img>
+              Nantes
+            </h1>
+
+            <img src="img/accueil/TRAIT_FCN.svg" id="separateur" alt="separateur"></img>
+
+            <h2 id="accroche">La Beaujoire fête ses 40 ans
+              <img id="anim-40" src="img/accueil/40ANS_long.gif">
+              <img id="img-40"  src="img/accueil/40ANS.svg">
+              <br>Composez votre XI de légende
+            </h2>
+          </header>
+
+          <img src="img/accueil/bojoir_accueil_crop.png" id="logo-principal" alt="logo principal"></img>
+          <img src="img/accueil/Footer_accueil_papier.svg" id="acceuil_papier" alt="Acceuil papier"></img>
+          <!--<img src="img/LOGO_APPLI.svg" id="accueil_logo" alt="Acceuil Logo"></img>-->
+
+          <p id="chapo">
+            Formez votre équipe de légende, 
+            <br>(re)découvrez les joueurs qui ont marqué
+            <br> le stade et partagez vos souvenirs.
+          </p>
+
+          <a id="creer-equipe" href="/beaujoire-2/field"> Créez votre équipe </a>
+
+        </section>
+
+        </section>
+        <section id="final-slide" class="swiper-slide">
+          <div class="credits-box">
+            <h2 class="credits-title"> Crédits </h2>
+            <h4 class="credits-subtitle"> AGR </h4>
+              <p>
+                Vincent MARINIER - Maëlyse CHRISTODOULOS
+              </p>
+            <h4 class="credits-subtitle"> Polytech </h4>
+              <p>
+                Souha LOULOU - Hadil HELALI - Moncef BOURAMOUL - Séléna LE GAC - Héloïse LALANDE
+              </p> 
+            <h4 class="credits-subtitle"> EPJT </h4>  
+              <p>
+                Saskia JUIGNER DOUBINSKY - Edgar DUCREUX
+              </p>
+            <h4 class="credits-subtitle"> SciencesPo Rennes </h4> 
+              <p>
+                Daphné BRIONNE
+              </p> 
+          </div>
+
+          <footer id="bandeau">
+            <!-- Logo Hyblab -->
+            <a href="http://www.hyblab.fr/"><img id="hyblab" src="logo_hyblab.png" alt="Hyblab DataSport"></a>
+            <div class="logo-row">
+              <!-- Les autres logos -->
+              <a href="http://www.ouestmedialab.fr/"><img class="logo" src="logo_oml.png" alt="Ouest Médialab"></a>
+              <!-- Logo de votre porteur de projet -->
+              <a href="https://www.ouest-france.fr/" id="ouest-france-logo"><img class="logo-half"
+                  src="img/accueil/Logo-OUEST-FRANCE.jpg" alt="Logo Ouest France"></a>
+              <!-- Partenaires institutionnels -->
+              <a href="http://www.nantesmetropole.fr/"><img class="logo" class="institutionnel"
+                src="institutionnels/logo_nantesmetropole.png" alt="Nantes Métropole"></a>
+            </div>
+            <!-- Les organisateurs -->
+            <div class="logo-row">
+              <a href="http://www.agrnantes.fr"><img class="logo" id="agr" src="ecoles/logo_agr.png"
+                  alt="AGR école de l'image"></a>
+              <a href="https://epjt.fr/"><img class="logo" src="ecoles/logo_epjt.svg"
+                  alt="Ecole publique de journalisme de Tours"></a>
+              <a href="http://www.polytech.univ-nantes.fr/"><img class="logo" src="ecoles/logo_polytech.png"
+                  alt="Polytech Nantes"></a>
+              <a href="https://www.sciencespo-rennes.fr/"><img class="logo" src="ecoles/logo_sciencespo.svg"
+                  alt="SciencesPo"></a>
+            </div>
+            <div class="logo-row">
+              
+              
+            </div>
+
+            <!-- Logos CC et opensource -->
+            <div class="logo-row">
+              <img class="logo-half" id="cc" src="logo_cc.png" alt="Creative commons">
+              <img class="logo-half" id="opensource" src="logo_opensource.png" alt="Open source">
+              
+            </div>
+
+          </footer>
+        </section>
+      </main>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</body>
+
+</html>

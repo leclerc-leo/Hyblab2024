@@ -36,8 +36,8 @@ app_names.forEach(function (element, index, array) {
 // 	res.redirect("http://www.hyblab.fr/");
 // });
 
-// launch main server app
 
+// launch main server app
 //warning:  do not change the port, it will be automatically taken from env en dev and prod servers ...
 var port = "PORT" in process.env ? process.env.PORT : 8080;
 var server = app.listen(port, function () {

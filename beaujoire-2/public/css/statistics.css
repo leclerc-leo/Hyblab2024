@@ -1,0 +1,503 @@
+
+body{
+    background-color: black;
+    color: white;
+    overflow: hidden;   /* to avoid slider bugs on some browsers */
+    font-family: sans-serif;
+}
+
+#container {
+    position: fixed;
+    height: 100%;
+    padding: 0%;
+    background-color: var(--bg-green);
+    margin-left: calc((100vw - 100 * 3vh / 4) / 2);
+    width: calc(100 * 3vh / 4);
+    overflow: hidden;
+}
+
+
+/* the slides and the loader should fill the whole 9:16 zone */
+.swiper-wrapper section, #loader{
+    background-color: var(--green);
+    width: 100%;
+    height: 100%;
+}
+
+#return {
+    left : 5% ;
+    cursor: pointer;
+    z-index: 3;
+}
+
+ #partage {
+    font-family: 'Abolition';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    color: var(--yellow);
+    background-color: var(--bg-green);
+    border: solid 3px var(--yellow);
+    z-index: 3;
+    transition: all 0.5s ease-in-out ;
+
+}
+
+#partage {
+    text-transform: uppercase;
+    font-size: 0.30em;
+    padding: 0.3em;
+    width:10em;
+}
+
+#partage:hover{
+    cursor: pointer;
+    background-color: var(--yellow);
+    color: var(--green);
+}
+
+#share-svg {
+    padding-right: 0.5em;
+    padding-left: 0.4em ;
+}
+
+#logo {
+    position: absolute;
+    top: -4%;
+    left: 50%;
+    transform: translate(23%,-5%) rotate(-23deg);
+    width:50%;
+    z-index:1;
+}
+
+#field1 , #field2 {
+background-color: var(--bg-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height : 200% ;
+}
+
+
+#field-img {
+    width: 100%;
+    height: 100%;
+}
+
+.team-field-container {
+    position: relative;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    height: 60%;
+    width: 60%;
+    margin-top : 1% ;
+    margin-bottom : 5% ;
+}
+
+
+.field-player {
+    position: absolute;
+    width: 10%;
+    transform: translate(-50%, -50%);
+}
+
+.player-box {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+.field-jersey-img{
+    width:160%;
+}
+
+.majeur {
+    border: 3.5px solid var(--yellow);
+}
+/*** Players photos ***/
+
+.player-img {
+    height: 7vmin;
+    width: 7vmin;
+    border-radius :8px ;
+    display: block;
+    margin-left: 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.player-box p {
+    font-size : 20% ;
+    font-weight : 50;
+    line-height: 1;
+    font-family : 'Abolition';
+    color : white;
+    text-align: center;
+    padding-left : 25% ;
+}
+
+/*** Players photos ***/
+
+/* Postes spécifiques */
+#poste-1 { /* Gardien */
+    top: 87%;
+    left: 45%;
+    width: 13%;
+}
+
+#poste-2 { /* Arrière latéral droit */
+    top: 58%;
+    left: 6%;
+}
+
+#poste-3 { /* Arrière latéral gauche */
+    top: 58%;
+    left: 78%;
+}
+
+#poste-4 { /* Défenseur central 1 */
+    top: 70%;
+    left: 26%;
+}
+
+#poste-5 { /* Défenseur central 2 */
+    top: 70%;
+    left: 57%;
+}
+
+#poste-6 { /* Milieu défensif */
+    top: 47%;
+    left: 26%;
+}
+
+#poste-7 { /* Milieu gauche */
+    top: 35%;
+    left: 6%;
+}
+
+#poste-8 { /* Milieu offensif */
+    top: 47%;
+    left: 57%;
+}
+
+#poste-9 { /* Attaquant 1 */
+    top: 24%;
+    left: 26%;
+}
+
+#poste-10 { /* Milieu droit */
+    top: 35%;
+    left: 78%;
+}
+
+#poste-11 { /* Attaquant 2 */
+    top: 24%;
+    left: 57%;
+}
+
+#poste-12 { /* Sélectionneur */
+    width: 14%;
+    top: 8%;
+    left: 43%;
+}
+
+
+/* Styling for the position preview */
+.team-preview {
+    display: flex;
+    align-items: center;
+    position: relative; /* Make it a positioned container */
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: -2%;
+}
+
+/* Styling for the fixed light gray line */
+.team-line {
+    height: 1%;
+    background-color: rgba(211, 211, 211, 0.8);;
+    width: 68%; /* Take the full width of the position preview */
+    position: absolute;
+    margin-top: -5%;
+    margin-left: 17%;
+    margin-right: 10%;
+    border-radius : 5px ;
+}
+
+/* Styling for the yellow segment under the current position */
+.current-team-segment {
+    width: 35%;
+    height: 1%;
+    background-color: var(--yellow);
+    position: absolute;
+    margin-top: -5%;
+    transition: width 0.3s ease;
+    z-index: 1;
+    border-radius : 5px ;
+}
+
+#currentLine1 {
+    left: 15%;
+}
+
+#currentLine2 {
+    left: 52%;
+}
+/* Styling for the current, previous, and next positions */
+.header-preview-box {
+    flex: 1;
+    text-align: center;
+    color: var(--yellow);
+    font-family: 'Abolition';
+    font-size: 38%;
+    line-height: 3.5em;
+    height: 5%;
+    margin: 0 4%;
+    transition: background-color 0.3s ease;
+}
+
+.prev,
+.next {
+    color: rgba(211, 211, 211, 0.8);
+    font-size: 30%;
+    transition: transform 0.3s ease; /* Add smooth transition for position changes */
+}
+
+.prev.current,
+.next.current {
+    transform: scale(4); /* Example: Move to the left and slightly scale */
+}
+
+/* Styling for the footer */
+#footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    height: 12.5%;
+    max-height: 5em;
+    width: 100%;
+    gap: 0.3em;
+    background-color: var(--bg-green);
+}
+/* ---------- Important media queries for easy responsive content :-) ----------------- */
+/* Whatever the device used, the content will be displayed full width and height if      */
+/* the aspect ratio is between 3/4 and 9/16. If not it is locked to either 3/4 or 9/16  */
+
+/* When the aspect ratio is smaller that 3/4, display a 3/4 content */
+#container{
+    position: fixed; /* To set the size of the container to 100% of the visible viewport height AND for absolute positioning of child elements*/
+    height: 100%;   /* even on mobile devices with url or navigation bars */
+    margin-left: calc((100vw - 100 * 3vh / 4) / 2); /* Add black bands on left and right */
+    width: calc(100 * 3vh / 4); /* Force 3/4 aspect ratio */
+}
+
+@media screen and (max-aspect-ratio: 3 / 4) {
+p { margin: 0 ;}
+
+    .player-box p {
+        font-size : 20% ;
+        font-weight : 50;
+        line-height: 1;
+        font-family : 'Abolition';
+        color : white;
+        text-align: center;
+        padding-left : 0% ;
+    }
+
+
+    .team-field-container {
+        height: calc(100 * 3.5% / 5);
+        width: calc(100 * 3.5% / 5);
+        margin-top : calc(1.5 *3%) ;
+    }
+
+    .player-img {
+        height: 9vmin;
+        width: 9vmin;
+        border-radius :10px ;
+        display: block;
+        margin-left: 15px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .field-player {
+        position: absolute;
+        width: 15%;
+        transform: translate(-50%, -50%);
+    }
+}
+/* Fill the whole viewport when its aspect ratio is between 9/16 and 3/4 */
+@media screen and (max-aspect-ratio: 5/7) {
+    #container{
+        margin-left: 0; /* reset margin-left */
+        width: 100vw; /* content is full width (and full height because of the default rule for container height */
+    }
+
+    p {
+        margin: 0 ;
+        font-size: calc(100 * 0.3vw / 5);
+        color: var(--yellow);
+        text-align: center;
+    }
+
+    .player-box p {
+        font-size : 20% ;
+        font-weight : 50;
+        line-height: 1;
+        font-family : 'Abolition';
+        color : white;
+        text-align: center;
+        padding-left : 0% ;
+    }
+
+
+    .team-field-container {
+        height: calc(100 * 3.5% / 5);
+        width: calc(100 * 3.5% / 5);
+        margin-top : calc(1.5 *3%) ;
+    }
+
+    .player-img {
+        height: 9vmin;
+        width: 9vmin;
+        border-radius :10px ;
+        display: block;
+        margin-left: 10px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .field-player {
+        position: absolute;
+        width: 15%;
+        transform: translate(-50%, -50%);
+    }
+
+    /* Postes spécifiques */
+    #poste-1 { /* Gardien */
+        top: 87%;
+        left: 49%;
+        width: 14%;
+    }
+
+    #poste-2 { /* Arrière latéral droit */
+        top: 58%;
+        left: 12%;
+    }
+
+    #poste-3 { /* Arrière latéral gauche */
+        top: 58%;
+        left: 84%;
+    }
+
+    #poste-4 { /* Défenseur central 1 */
+        top: 70%;
+        left: 33%;
+    }
+
+    #poste-5 { /* Défenseur central 2 */
+        top: 70%;
+        left: 63%;
+    }
+
+    #poste-6 { /* Milieu défensif */
+        top: 47%;
+        left: 33%;
+    }
+
+    #poste-7 { /* Milieu gauche */
+        top: 35%;
+        left: 12%;
+    }
+
+    #poste-8 { /* Milieu offensif */
+        top: 47%;
+        left: 63%;
+    }
+
+    #poste-9 { /* Attaquant 1 */
+        top: 24%;
+        left: 32%;
+    }
+
+    #poste-10 { /* Milieu droit */
+        top: 35%;
+        left: 84%;
+    }
+
+    #poste-11 { /* Attaquant 2 */
+        top: 24%;
+        left: 64%;
+    }
+
+    #poste-12 { /* Sélectionneur */
+        width: 14%;
+        top: 8%;
+        left: 48%;
+    }
+
+    .majeur {
+        border: 4px solid var(--yellow);
+    }
+}
+
+/* The content is displayed at 9/16 If the aspect ratio is higher that 9/16  */
+@media screen and (max-aspect-ratio: 9/16) {
+    #container{
+        margin-left: 0; /* reset left margin */
+        width: 100vw;   /* content is full width */
+        margin-top: calc(-50 * 16vw / 9); /* move the content half the height to the top */
+        top:50%; /* then center it ! */
+        height: calc(100 * 16vw / 9); /* adjust height so that aspect ratio is 9/16 */
+    }
+
+    p {
+        margin: 0 ;
+        color: var(--yellow);
+        text-align: center;
+    }
+
+    .player-box p {
+        font-size : 20% ;
+        font-weight : 50;
+        line-height: 1;
+        font-family : 'Abolition';
+        color : white;
+        text-align: center;
+        padding-left : 0% ;
+    }
+
+
+    .team-field-container {
+        height: calc(100 * 4% / 5);
+        width: calc(100 * 4% / 5);
+        margin-top : calc(1.5 *3.5%) ;
+    }
+
+    .player-img {
+        height: 9vmin;
+        width: 9vmin;
+        border-radius :10px ;
+        display: block;
+        margin-left: 10px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .field-player {
+        position: absolute;
+        width: 15%;
+        transform: translate(-50%, -50%);
+    }
+
+    .majeur {
+        border: 3px solid var(--yellow);
+    }
+
+    }
+
