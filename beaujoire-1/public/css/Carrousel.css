@@ -1,0 +1,376 @@
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+.popup-content {
+  height: 100%;
+  font-family: "VotrePolice", sans-serif;
+  color: #ffffff;
+  text-align: center;
+  line-height: 1.6;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+#confirm-selection {
+  border: 2px solid var(--gb-52);
+  box-shadow: 3px 3px 0 var(--gb-52);
+  font-weight: 100;
+  color: var(--gb-51);
+  background: var(--gb-52);
+  font-family: "Bebas Neue", sans-serif;
+  border: none;
+  padding: 13px 20px;
+  font-size: 22px;
+  line-height: 24px;
+  transition: 0.3s;
+  cursor: pointer;
+  position: relative;
+  outline: none;
+  overflow: hidden;
+}
+
+:root {
+  --gb-51: #fadc00;
+  --gb-52: #1e1e28;
+}
+
+#popup-text {
+  color: white;
+  font-size: 38px;
+  text-align: center;
+  font-family: Industry;
+  font-weight: bolder;
+  padding-top: 15%;
+  background-color: #000;
+}
+
+.maillot-text {
+  color: #00a55a;
+  font-size: 60px;
+  text-align: center;
+  font-family: Industry;
+  font-weight: bolder;
+  line-height: 7px;
+}
+
+/* Assurez-vous que votre texte et vos boutons sont responsives */
+@media (max-width: 768px) {
+  .popup-content {
+    padding: 10px;
+  }
+
+  .btn {
+    padding: 8px 16px;
+  }
+}
+
+.carousel {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+
+.carousel-item {
+  min-width: 100%;
+  transition: ease 0.5s;
+}
+
+.carousel-item img {
+  max-width: 100%;
+}
+
+.items {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  user-select: none;
+  -webkit-user-select: none;
+  background-color: #fff;
+}
+
+.items .item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+  transition: all 300ms ease-in-out;
+  z-index: -1;
+  opacity: 0;
+}
+
+.item {
+  background-color: white;
+  padding: 10%;
+}
+
+.item img {
+  width: 85%;
+  height: 85%;
+  padding: 8%;
+}
+
+.item.active {
+  opacity: 1;
+  z-index: 99;
+  box-shadow: 0px 0px 105px -35px rgba(0, 0, 0, 0.75);
+}
+
+.item.prev {
+  z-index: 2;
+  opacity: 0.25;
+  width: 220px;
+  height: 220px;
+  transform: translate(-125%, -50%);
+}
+
+.item.next {
+  z-index: 2;
+  opacity: 0.25;
+  width: 220px;
+  height: 220px;
+  transform: translate(25%, -50%);
+}
+
+.items .button-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 275px;
+  z-index: 100;
+}
+
+.button-container .button {
+  color: #fff;
+  font-size: 32px;
+  cursor: pointer;
+  position: relative;
+  opacity: 0.75;
+  transition: all 300ms ease-in-out;
+  display: block;
+}
+
+.button-container .button:hover {
+  opacity: 1;
+}
+
+.button-container .button:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 1);
+  border-radius: 50%;
+  z-index: -99;
+}
+
+.button-container .button:nth-child(1) {
+  float: left;
+}
+
+.button-container .button:nth-child(2) {
+  float: right;
+}
+
+.item.selected {
+  border: 10px solid #317e3a;
+}
+
+.item:not(.active) .button-container .button {
+  display: none;
+}
+
+.fas {
+  color: #fadc00;
+}
+
+#confirm-selection {
+  position: absolute;
+  bottom: -270px;
+  left: 49%;
+  transform: translateX(-50%);
+}
+
+#return {
+  background-color: #1e1e28;
+  border: none;
+  border-radius: 50%;
+  width: 10.5vw;
+  height: 10.5vw;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 5px;
+  left: 10px;
+}
+
+.bottom-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 90%;
+  position: relative;
+  padding: 10px;
+  margin: 10px;
+}
+
+/************************** Styles pour le deuxième carrousel ************************************/
+
+#second-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+.second-popup-content {
+  height: 100%;
+  font-family: "VotrePolice", sans-serif;
+  color: #ffffff;
+  text-align: center;
+  line-height: 1.6;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+#second-popup-text {
+  color: white;
+  font-size: 38px;
+  text-align: center;
+  font-family: Industry;
+  font-weight: bolder;
+  padding-top: 12%;
+  background-color: #000;
+}
+
+/* Styles pour les éléments du deuxième carrousel (second-items) */
+.second-items {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  user-select: none;
+  -webkit-user-select: none;
+  background-color: #fff;
+}
+
+.second-items .second-item {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+  transition: all 300ms ease-in-out;
+  z-index: -1;
+  opacity: 0;
+}
+
+.second-item {
+  background-color: white;
+}
+
+.second-item img {
+  width: 100%;
+  height: 88%;
+  padding-top: 8%;
+  object-fit: contain;
+}
+
+.second-item.active {
+  opacity: 1;
+  z-index: 99;
+  box-shadow: 0px 0px 105px -35px rgba(0, 0, 0, 0.75);
+}
+
+.second-item.prev {
+  z-index: 2;
+  opacity: 0.25;
+  width: 220px;
+  height: 220px;
+  transform: translate(-125%, -50%);
+}
+
+.second-item.next {
+  z-index: 2;
+  opacity: 0.25;
+  width: 220px;
+  height: 220px;
+  transform: translate(25%, -50%);
+}
+
+.second-item.selected {
+  border: 10px solid #317e3a;
+}
+
+.second-items .button-container1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 275px;
+  z-index: 100;
+}
+
+.button-container1 .button {
+  color: #fff;
+  font-size: 32px;
+  cursor: pointer;
+  position: relative;
+  opacity: 0.75;
+  transition: all 300ms ease-in-out;
+  display: block;
+}
+
+.button-container1 .button:hover {
+  opacity: 1;
+}
+
+.button-container1 .button:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 1);
+  border-radius: 50%;
+  z-index: -99;
+}
+
+.button-container1 .button:nth-child(1) {
+  float: left;
+}
+
+.button-container1 .button:nth-child(2) {
+  float: right;
+}
+
+.second-item:not(.active) .button-container .button {
+  display: none;
+}

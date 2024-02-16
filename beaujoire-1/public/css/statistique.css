@@ -1,0 +1,182 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+@import url("style2.css");
+
+:root {
+  --gb-51: #fadc00;
+  --gb-52: #1e1e28;
+}
+
+.field > img {
+  visibility: hidden;
+}
+
+#entraineur {
+  padding: 0;
+  border-radius: 0;
+  background-color: transparent;
+  border: none;
+}
+
+#blason,
+#maillot {
+  position: relative;
+  border-radius: 50%;
+  background-color: #ffffff;
+  margin-top: 5%;
+  border: none;
+  box-shadow: 3px 3px 0 var(--gb-52);
+  aspect-ratio: 1;
+  overflow: hidden;
+  background-size: 69%;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 45px;
+  width: 67px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 85%;
+  height: 5.5%;
+  justify-content: space-between;
+  margin-top: 5%;
+}
+
+.buttons > button {
+  transform: translateY(50%);
+}
+
+#selec-title {
+  margin: 2% auto;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.player1-bar {
+  position: relative;
+  height: 100%;
+  width: 0;
+  background-color: #00a55a;
+  border-radius: 20px;
+  transform-origin: left center;
+  animation: 0.5s cubic-bezier(0.67, 1.61, 0.51, 0.92);
+}
+
+#statistiques {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#redac {
+  margin-left: 0;
+  transform: translateX(0);
+}
+
+.stat-player {
+  position: absolute;
+  display: flex;
+  height: 5px;
+  width: 30%;
+  background-color: white;
+  overflow: visible;
+  border-radius: 20px;
+}
+
+.player {
+  transform: translate(-50%, -63%) scale(0.8);
+}
+
+.vote-percentage {
+  position: absolute;
+  right: -180%;
+  bottom: -10%;
+  padding: 5px;
+  color: #00a55a; /* Texte vert */
+  font-size: 1.4em; /* Petite taille de police */
+  border-radius: 3px; /* Bords arrondis */
+  font-weight: bold;
+  line-height: 0.3;
+}
+
+.player-name {
+  position: absolute;
+  text-align: start;
+  white-space: nowrap;
+  top: 10%;
+  right: -105%;
+  font-size: 0.95em;
+}
+
+#arriere-droit-bar {
+  top: 32%;
+  left: 55%;
+}
+#defender-3-bar {
+  top: 47%;
+  left: 55%;
+}
+
+#defender-2-bar {
+  top: 62%;
+  left: 55%;
+}
+#arriere-gauche-bar {
+  top: 77%;
+  left: 55%;
+}
+#midfielder-3-bar {
+  top: 92%;
+  left: 55%;
+}
+#midfielder-lead-bar {
+  top: 17%;
+  left: 8%;
+}
+#midfielder-1-bar {
+  top: 32%;
+  left: 8%;
+}
+#ailier-droit-bar {
+  top: 47%;
+  left: 8%;
+}
+#attaquant-centre-bar {
+  top: 62%;
+  left: 8%;
+}
+#ailier-gauche-bar {
+  top: 77%;
+  left: 8%;
+}
+#goalkeeper-bar {
+  top: 92%;
+  left: 8%;
+}
+#entraineur-bar {
+  top: 17%;
+  left: 55%;
+}
+
+.capi {
+  position: absolute;
+  top: -24%;
+  left: -30%;
+  padding: 20%;
+  aspect-ratio: 1;
+  background: white;
+  border-radius: 50%;
+  color: #00a55a;
+  font-weight: bolder;
+  font-size: 1.4em;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
