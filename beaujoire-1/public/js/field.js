@@ -41,6 +41,11 @@ function initializePage() {
 				<img src="./${localStorage.getItem("cardJersey")}" alt="jersey" />
 				<p class="player-name">${playerName}</p>
 			`;
+			if (getPositionFromId(captain) === player.POSTE) {
+				console.log("Captain:", captain);
+				playerElement.classList.add("captain");
+				playerElement.innerHTML += `<div class="cap">c</div>`;
+			}
 		} else {
 			playerElement.textContent = playerName;
 		}
@@ -53,14 +58,6 @@ function initializePage() {
 					overflow / 2
 				}px)`;
 			}
-		}
-
-		if (captain === playerName) {
-			playerElement.classList.add("captain");
-			const cap = document.createElement("div");
-			cap.classList.add("cap");
-			cap.textContent = "c";
-			playerElement.appendChild(cap);
 		}
 
 		selectedPlayerId = null;
