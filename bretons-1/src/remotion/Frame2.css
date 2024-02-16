@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap');
+
+
+.frame2Container {
+    width: 100%; 
+    position: relative;
+    display: flex; 
+    flex-direction: column; 
+    height: auto; 
+}
+
+.titreFrame2 {
+    font-family: "Golos Text";
+    font-size: 80px; 
+    color: #25283D; 
+    height: 600px;
+    text-align: center;
+    padding-top: 150px;
+    font-weight: bold;
+}
+
+.rectangleYellowFrame2 {
+    width: 100%;
+    height: 300px;
+    flex-shrink: 0;
+    background: #FACD5F;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    left: -277vw;
+    transition: left 1s ease-in-out;
+}
+.containerFrame2{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 30px;
+
+}
+
+.appear {
+    left: 0 !important;
+}
+
+.numberCircleFrame2 {
+    width: 180px; 
+    height: auto; 
+    margin-top: 20px;
+}
+
+.infoFrame2 {
+    color: white;
+    font-family: "Golos Text";
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 25px;
+}
+
+.nameFrame2 {
+    font-size: 68px;
+    font-weight: 500;
+}
+
+.timeFrame2 {
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 30px;
+}
+
+.flagFrame2 img { 
+    width: 100px; 
+    position: relative;
+}
+
+.countryFrame2 {
+    position: absolute;
+    font-size: 45px;
+    font-style: normal;
+    font-weight: 400;
+    padding-top: 15px; 
+    margin-left: 10px; 
+}
+
+.rectangleBlueFrame2{
+    width: 90%;
+    height: 300px;
+    background: #5F64FA; 
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    left: -249vw;
+    transition: left 1s ease-in-out;
+}
+
+
+.numberCircleFrame_2_2 {
+    width: 170px; 
+    height: auto; 
+    margin-top: 20px;
+}
+
+.infoFrame2_2 {
+    color: white;
+    font-family: "Golos Text";
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 25px;
+}
+
+.name_2_Frame2 {
+    font-size: 60px;
+    font-weight: 500;
+}
+
+.time_2_Frame2 {
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 30px;
+}
+
+.flag_2_Frame2 img { 
+    margin-top: 10px;
+    width: 80px; 
+    position: relative;
+}
+
+.country_2_Frame2 {
+    position: absolute;
+    padding-top: 15px; 
+    font-size: 45px;
+    font-style: normal;
+    font-weight: 400;
+    margin-left: 10px; 
+}
+
+
+.rectangleRedFrame2{
+    width: 80%;
+    height: 300px;
+    flex-shrink: 0; 
+    background: #FA8C5F;
+    left: -222vw;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    transition: left 1s ease-in-out;
+}
+
+.infoFrame3_2 {
+    color : white;
+    font-family: "Golos Text";
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 25px;
+}
+
+.name_3_Frame2 {
+    font-size: 60px;
+    font-weight: 500;
+}
+
+.time_3_Frame2 {
+    font-size: 37px;
+    font-weight: 400;
+    line-height: 30px;
+}
+.flag_3_Frame2 {
+    padding-top: 10px;
+}
+.flag_3_Frame2 img { 
+    width: 70px; 
+    height: auto;
+}
+
+.numberCircle_3_Frame2 {
+    width: 150px; 
+    height: auto; 
+}
+
+.country_3_Frame2 {
+    position: absolute;
+    margin-top: 20px; 
+    font-size: 45px;
+    font-style: normal;
+    font-weight: 400;
+    margin-left: 15px; 
+}
+
+.highlight_ {
+    border: 12px solid #25283D; 
+}
+.color_{
+    color: #25283D;
+}
+
+.adaptflag_ img{
+    margin-top: 10px;
+    width: 80px; 
+    position: relative;
+}

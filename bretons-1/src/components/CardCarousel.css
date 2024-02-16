@@ -1,0 +1,126 @@
+.custom-card {
+    position: relative;
+  }
+ 
+.image-container {
+    position: relative;
+  }
+
+  .image-container::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 40%; 
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+    pointer-events: none;
+    border-radius: 2%;
+}
+
+.psanspadding{
+  margin-bottom: 0;
+}
+
+.custom-image{
+  width: 100%;
+}
+
+.image-container .custom-image {
+    width: 100%; 
+    height: auto;
+  }
+  
+  @media screen and (min-width: 368px) {
+    .image-container .custom-image {
+        max-width: 237px; /* Limitez la largeur maximale de l'image à 367 pixels */
+        width: auto; /* Ajustez la largeur automatiquement en fonction de la hauteur */
+    }
+    .Carousel {
+      max-width: 237px; /* Limitez la largeur maximale de l'image à 367 pixels */
+      width: auto; /* Ajustez la largeur automatiquement en fonction de la hauteur */
+      display: ruby;
+    }
+    .app {
+      max-width: 237px; /* Limitez la largeur maximale de l'image à 367 pixels */
+      width: auto; /* Ajustez la largeur automatiquement en fonction de la hauteur */
+    }
+}
+  .carousel_main .carousel-indicators [data-bs-target] {
+    width: 8px;
+    height: 8px;
+    bottom: -50px;
+    flex-shrink: 0;
+    width: 8px;
+    fill: #ffffff;
+    border-radius: 50%;
+    background-color: black;
+    filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.25));
+    display: ruby;
+  }
+  
+  .carousel_main .carousel-indicators .active {
+   background-color: #EB5059;
+   filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.25));
+  }
+  
+  .carousel_main .carousel-indicators{
+    bottom: -50px;
+    background-color: white;
+    border-radius: 10%;
+    filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.25));
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-bottom: 0;
+  }
+  
+.PlayButton{
+    position: absolute;
+    width: 71px; 
+    height: 71px; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -130%);
+    z-index:2;
+}
+
+  
+  .overlay-image {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 40px; 
+    height: 40px; 
+    z-index: 2; 
+  }
+  
+
+  .card_text {
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    width: 100%;
+    padding: 0px 0px 15px 10px ;
+    color: white;
+    z-index: 2;
+  }
+
+  .image-container .image-row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-shrink: 0;
+    z-index: 5;
+    position: relative;
+    bottom: 20px; 
+  }
+  
+  .favbutton {
+    position: relative;
+  }
+  
+  .BicycleLogo {
+    width: 43.868px;
+    height: 44.141px;
+  }
+
