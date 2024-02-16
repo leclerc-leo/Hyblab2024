@@ -156,6 +156,7 @@ h1{
     top: 22%;
     color: #292C5E;
     font-size: 0.4em;
+    font-style: italic;
 }
 .title-in{
     animation: titleApparition 2s ease-out;

@@ -60,6 +60,14 @@ swiper.on("slideChange", function () {
     resetMapColor();
     document.querySelector('path[data-no_slide_shadow="' + swiper.realIndex + '"]').style.fill = "#AA2E33";
     document.querySelector('path[data-no_slide="' + swiper.realIndex + '"]').style.fill = "#D74F50";
+    if(swiper.realIndex == 0){ // Si le quartier sélectionné est différent du quartier avec un index égal à 0 soit Villejean
+        console.log("disponible")
+        disponible();
+    }
+    else{
+        console.log("indisponible")
+        indisponible();
+    }
 });
 
 
@@ -88,6 +96,21 @@ document.querySelector("#see-quartier").addEventListener("click", function() {
     window.location.href = "/quartiers-1/quartiers";
 });
 
+//Bouton allons-y disponible
+function disponible(){
+    document.getElementById("see-quartier").style.background = "#D74F50";
+    document.getElementById("see-quartier").value = "Allons-y !"; 
+    document.getElementById("see-quartier").disabled = false;
+}
+
+// Bouton allons-y indisponible
+function indisponible(){
+    document.getElementById("see-quartier").style.background = "#7D7DB5";
+    document.getElementById("see-quartier").value = "Indisponible";
+    document.getElementById("see-quartier").disabled = true;     
+}
+
+// Code JS s'occupant de l'animation Lottie du Logo
 var animation = lottie.loadAnimation({ 
     container: document.getElementById('animation-logo'), 
     renderer: 'svg', 
