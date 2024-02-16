@@ -34,6 +34,7 @@ function initializePage() {
 	}
 	updatePlayerElement = function (playerElement, playerName) {
 		const player = playersData.find((player) => player.NOM === playerName);
+		const captain = localStorage.getItem("captain");
 		if (player.POSTE !== "ENTRAÎNEUR" && player.NUMÉRO !== undefined) {
 			playerElement.setAttribute("data-number", player.NUMÉRO);
 			playerElement.innerHTML = `
@@ -52,6 +53,14 @@ function initializePage() {
 					overflow / 2
 				}px)`;
 			}
+		}
+
+		if (captain === playerName) {
+			playerElement.classList.add("captain");
+			const cap = document.createElement("div");
+			cap.classList.add("cap");
+			cap.textContent = "c";
+			playerElement.appendChild(cap);
 		}
 
 		selectedPlayerId = null;
@@ -505,56 +514,61 @@ function showCarousel(id) {
 	}
 }
 
-function handleValidateButtonClick() {
+function handleValidateButtonClick(event) {
 	localStorage.setItem("statsSaved", "false");
-	const selectedPlayer = document.querySelector(".carousel-item.focused");
-	const selectedPlayerName =
-		selectedPlayer.querySelector("#name").textContent;
-	console.log(
-		`Selected player for position ${selectedPlayerId}: ${selectedPlayerName}`
-	);
-	//Add the player to the list of selected players
-	players[selectedPlayerId] = selectedPlayerName;
-	//Save the list of selected players to local storage
-	localStorage.setItem("players", JSON.stringify(players));
-	updatePlayerElement(
-		document.getElementById(selectedPlayerId),
-		selectedPlayerName
-	);
+	const selectedPlayer = event.target.parentElement;
+	if (selectedPlayer) {
+		console.log("Selected player:", selectedPlayer);
+		const selectedPlayerName =
+			selectedPlayer.querySelector("#name").textContent;
+		console.log(
+			`Selected player for position ${selectedPlayerId}: ${selectedPlayerName}`
+		);
+		//Add the player to the list of selected players
+		players[selectedPlayerId] = selectedPlayerName;
+		//Save the list of selected players to local storage
+		localStorage.setItem("players", JSON.stringify(players));
+		updatePlayerElement(
+			document.getElementById(selectedPlayerId),
+			selectedPlayerName
+		);
+		//Hide the carousel
+		document.querySelectorAll(".carousel-item").forEach((item) => {
+			item.classList.remove("focused");
+			item.classList.remove("unfocused");
+		});
+		document.querySelector(".carousel-overlay").style.display = "none";
+		selectedPlayerId = null;
 
-	//Hide the carousel
-	document.querySelectorAll(".carousel-item").forEach((item) => {
-		item.classList.remove("focused");
-		item.classList.remove("unfocused");
-	});
-	document.querySelector(".carousel-overlay").style.display = "none";
-	selectedPlayerId = null;
-
-	if (areAllPlayersSelected()) {
-		console.log("Tous les joueurs ont été sélectionnés");
-		document.querySelector("#share").style.display = "flex";
-		document.getElementById("statistiques").style.display = "inline-block";
-		document.getElementById("redac").style =
-			"margin:0 ; transform: translateX(0)";
-		document.getElementById("capitaine").style.display = "inline-block";
-		document.getElementById("capitaine").style.animationName =
-			"cap-bar-down";
-		document.getElementById("capitaine").style.display = "inline-block";
-		document
-			.getElementById("capitaine")
-			.addEventListener("click", handleCaptainClick);
-		if (!isCaptainSelected) {
-			document.querySelector("#captain").style.display = "flex";
-			handleCaptainClick();
-		}
-		setTimeout(() => {
-			document.addEventListener("click", function () {
-				document.querySelector("#captain").style.display = "none";
-			});
+		if (areAllPlayersSelected()) {
+			console.log("Tous les joueurs ont été sélectionnés");
+			document.querySelector("#share").style.display = "flex";
+			document.getElementById("statistiques").style.display =
+				"inline-block";
+			document.getElementById("redac").style =
+				"margin:0 ; transform: translateX(0)";
+			document.getElementById("capitaine").style.display = "inline-block";
+			document.getElementById("capitaine").style.animationName =
+				"cap-bar-down";
+			document.getElementById("capitaine").style.display = "inline-block";
+			document
+				.getElementById("capitaine")
+				.addEventListener("click", handleCaptainClick);
+			if (!isCaptainSelected) {
+				document.querySelector("#captain").style.display = "flex";
+				handleCaptainClick();
+			}
 			setTimeout(() => {
-				document.querySelector("#captain").style.display = "none";
-			}, 5000);
-		}, 1000);
+				document.addEventListener("click", function () {
+					document.querySelector("#captain").style.display = "none";
+				});
+				setTimeout(() => {
+					document.querySelector("#captain").style.display = "none";
+				}, 5000);
+			}, 1000);
+		}
+	} else {
+		console.log("Player Element not found: ", selectedPlayer);
 	}
 }
 
@@ -899,16 +913,12 @@ function createCarouselItem(player) {
 	});
 	carouselItem
 		.querySelector("#validate-button")
-		.addEventListener("click", () => {
-			handleValidateButtonClick();
-		});
+		.addEventListener("click", handleValidateButtonClick);
 	const back_card = carouselItem.querySelector(".back-card");
 	const imgCard = back_card.querySelector("img");
 	imgCard.onload = function () {
 		const imgWidth = imgCard.width;
 		const imgHeight = imgCard.height;
-		console.log("Image width:", imgWidth);
-		console.log("Image height:", imgHeight);
 		const backText = carouselItem.querySelector(".fun-container");
 		backText.style.width = `${imgWidth}px`;
 		backText.style.height = `${imgHeight}px`;
@@ -1261,14 +1271,12 @@ function createCompareCarouselItem(player) {
 		c_player.querySelector(
 			"img"
 		).src = `img/cartes/${comparePlayer.CARTE}.webp`;
+		c_player.querySelector("#name").textContent = comparePlayer.NOM;
 		c_player.querySelector("#validate-button").style.visibility = "visible";
 		c_player
 			.querySelector("#validate-button")
-			.addEventListener("click", () => {
-				updatePlayerElement(
-					document.getElementById(selectedPlayerId),
-					comparePlayer.NOM
-				);
+			.addEventListener("click", (event) => {
+				handleValidateButtonClick(event);
 				document.querySelector(".compare-overlay").style.display =
 					"none";
 				document.querySelector("#compare-carousel").style.display =
