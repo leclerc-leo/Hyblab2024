@@ -45,6 +45,8 @@ h1{
     animation-fill-mode: forwards;
     animation-delay: 3s;*/
 }
+
+/*Animation du logo dans le chargement*/
 @keyframes logoloader{
     0%{
         height: 120%;
@@ -101,6 +103,7 @@ h1{
     opacity: 0;
 }
 
+/*Animation du décor dans le chargement qui apparait*/
 @keyframes spawnloader {
     0%{
         opacity: 0;
@@ -247,7 +250,7 @@ h1{
     scale: 0.6 0.55;
 }
 
-
+/*Animations des nuages*/
 @keyframes animCloud1 {
     0% {
         left: 20%;
