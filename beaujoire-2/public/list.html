@@ -1,0 +1,51 @@
+<!-- list.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Player List</title>
+  <link rel="icon" href="../favicon.ico" type="image/ico">
+
+  <!-- CSS files -->
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/list.css">
+ <link rel="stylesheet" href="css/players.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+</head>
+<body>
+  <div id="container">
+    <div class="player-swiper-container">
+      <div class="swiper-wrapper">
+        <script>
+                  for (let i = 1; i <= 12; i++) {
+                    document.write(`
+                      <div class="swiper-slide" id="slide${i}">
+                        <div class="position-preview" id="positionPreview${i}"></div>
+                        <div class="current-position-segment"></div>
+                        <div class="position-line"></div>
+                        <div class="player-list" id="playerList${i}">
+                          <!-- Player boxes for list ${i} will be dynamically added here -->
+                        </div>
+                      </div>
+                    `);
+                  }
+        </script>
+      </div>
+    </div>
+
+    <div class="fixed-footer">
+      <div class="background-paper"></div>
+      <a href="/beaujoire-2/field" id="retour">Retour au terrain!</a>
+    </div>
+
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="js/global.js"></script>
+  <script src="js/list.js"></script>
+</body>
+</html>

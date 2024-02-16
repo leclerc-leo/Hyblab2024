@@ -1,0 +1,338 @@
+body{
+    background-color: black;
+    color: white;
+    overflow: hidden;   /* to avoid slider bugs on some browsers */
+    font-family: sans-serif;
+}
+
+/* Swiper slider. Need to fill the container */
+#mySwiper{
+    width: 100%;
+    height:100%;
+    position: absolute;
+}
+
+/* yellow navigation bullets */
+.swiper-pagination-bullet {
+    background-color: white !important;
+    border: solid 1px black;
+    height: 10px;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: var(--yellow) !important;
+    border-color: transparent;
+}
+
+/* the slides and the loader should fill the whole 9:16 zone */
+.swiper-wrapper section, #loader{
+    background-color: var(--green);
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Most of the elements in this demo are absolute positioned with percentages */
+#first-slide header{
+    width: 100%;
+    bottom: 27%;
+    position: absolute;
+    z-index: 2;
+    text-align: center;
+    text-transform: uppercase;
+    color:white;
+    font-family: 'Abolition';
+}
+    #titre{
+        font-size: 0.8em;
+        position: relative;
+        z-index: 2;
+        margin-bottom: -0.2em;
+    }
+
+    #ecu{
+        position: absolute;
+        top:0.8em;
+        left: 1em;
+        height: 0.35em;
+        -webkit-transform: rotate(-15deg);
+        -moz-transform: rotate(-15deg);
+        -ms-transform: rotate(-15deg);
+        -o-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+    }
+
+    #sous-titre{
+        font-size: 1.6em;
+        z-index: 2;
+        margin-bottom: -0.50em;
+    }
+
+    #accroche {
+        position: relative;
+        font-size: 0.5em;
+        z-index: 4;
+        margin-top: 2em;
+    }
+        #anim-40{
+            position: absolute;
+            right:1.85em;
+            top: -53%;
+            height: 3em;
+            display: none;
+        }
+        #img-40 {
+            position: absolute;
+            height : 1.5em;
+            right : 2em;
+            top : -16%;
+            display: none;
+        }
+
+    #separateur {
+        margin-bottom: 0.1em;
+        width: 70%;
+    }
+
+#logo-principal{
+    text-align: center;
+    width: 100%;
+    height: 70%;
+    margin-top:calc(-7.5% * 9 / 16 ); /* margins are relative to the element width... :-( */
+    position: absolute;
+    z-index: 1;
+    cursor: pointer;
+}
+
+#acceuil_papier{
+    position: absolute;
+    z-index: 1;
+    width:100%;
+    bottom:0;
+    height: 33%;
+    transform: scale(2);
+}
+
+#accueil_logo {
+    position: absolute;
+    z-index: 3;
+    top:60%;
+    left: 17%;
+    height: 12%;
+}
+
+
+#chapo {
+    font-family: 'Neue Haas Unica';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width:76%;
+    position: relative;
+    font-size: 0.22em;
+    z-index: 2;
+    top:76%;
+    color:white;
+    text-align: center;
+    margin: 0 12%;
+}
+
+#creer-equipe{
+    font-family: 'Abolition';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 70%;
+    height: 7%;
+    top: 80%;
+    border-radius: 30px;
+    color: var(--yellow);
+    text-transform: uppercase;
+    text-decoration: none;
+    background-color: transparent;
+    border: solid 3px var(--yellow);
+    font-size: 0.35em;
+    margin:0 15%;
+    cursor: pointer;
+    z-index: 3;
+    transition: all 0.5s ease-in-out ;
+}
+
+#creer-equipe:hover{
+    background-color: var(--yellow);
+    color: var(--green);
+}
+
+#second-slide header{
+    position:relative;
+    width: 100%;
+    top:5%;
+    font-size: 0.3em;
+    text-align: center;
+    color: black;
+    text-transform: uppercase;
+}
+
+main > section{
+    /*background-image: url('../img/background.svg');*/
+    background-size: 100% auto; /* background is full width and height is proportional to width */
+    background-position: bottom; /* background is bottom aligned */
+}
+
+/* ---------- Positioning of logos on the last slide -------------------- */
+/* here we have a contraint on the height of the logos (not the width)     */
+/* so we cannot use % and use em (which are proportional to the size of the */
+/* slide because of body's font size rule at the end of this CSS           */
+
+
+
+.credits-box{
+    display: flex;
+    flex-direction: column;
+    z-index: 99;
+    text-align: center;
+    color:var(--green);
+    background-color: white;
+    width:100%;
+    gap:0.1em;
+    padding-top: 10px;
+}
+
+    .credits-title{
+        font-size: 0.6em;
+        text-transform: uppercase;
+        font-family: 'Abolition';
+        
+    }
+    .credits-subtitle {
+        font-size: 0.4em;
+        text-transform: uppercase;
+        font-family: 'Abolition';
+    }
+
+    .credits-box p {
+        font-size: 0.18em;
+        color: var(--green);
+        text-align:center;
+    }
+
+    @media only screen and (max-width: 500px) {
+        .credits-box p {
+            margin: 0;
+        }
+    }
+
+#bandeau {
+    width:100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: white;
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:0.1em;
+}
+
+#bandeau > *  {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+    #hyblab {
+        height: 0.8em;
+    }
+
+.logo {
+    height: 0.5em;
+}
+
+.logo-half {
+    max-width:3em;
+    height: 0.7em;
+}
+
+.logo-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* ---------- Important media queries for easy responsive content :-) ----------------- */
+/* Whatever the device used, the content will be displayed full width and height if      */
+/* the aspect ratio is between 3/4 and 9/16. If not it is locked to either 3/4 or 9/16  */
+
+/* When the aspect ratio is smaller that 3/4, display a 3/4 content */
+#container{
+    position: fixed; /* To set the size of the container to 100% of the visible viewport height AND for absolute positioning of child elements*/ 
+    height: 100%;   /* even on mobile devices with url or navigation bars */
+    margin-left: calc((100vw - 100 * 3vh / 4) / 2); /* Add black bands on left and right */
+    width: calc(100 * 3vh / 4); /* Force 3/4 aspect ratio */
+}
+
+/* We set a default font size here. It will be the base for all other font sizes */
+/* Here the font size is proportional to content width */
+body{
+    font-size: calc(15vh * 3 / 4);
+}
+
+/* Fill the whole viewport when its aspect ratio is between 9/16 and 3/4 */
+@media screen and (max-aspect-ratio: 3/4) {
+    #container{
+        margin-left: 0; /* reset margin-left */
+        width: 100vw; /* content is full width (and full height because of the default rule for container height */
+    }
+
+    /* We set a default font size here. It will be the base for all other font sizes */
+    /* Here the font size is proportional to content width */
+    body{
+        font-size: 15vw;
+    }
+
+    p{
+        margin: 0.8em;
+        font-size: 5vw;
+        color: black;
+        text-align: justify;
+    }
+
+    i{
+        font-size: 6.5vw;
+    }
+}
+
+/* The content is displayed at 9/16 If the aspect ratio is higher that 9/16  */ 
+@media screen and (max-aspect-ratio: 9/16) {
+    #container{
+        margin-left: 0; /* reset left margin */
+        width: 100vw;   /* content is full width */
+        margin-top: calc(-50 * 16vw / 9); /* move the content half the height to the top */
+        top:50%; /* then center it ! */
+        height: calc(100 * 16vw / 9); /* adjust height so that aspect ratio is 9/16 */
+    }
+
+    /* We set a default font size here. It will be the base for all other font sizes */
+    /* Here the font size is proportional to content width */
+    body{
+        font-size: 15vw;
+    }
+
+    p{
+        margin: 0.8em;
+        font-size: 5vw;
+        color: black;
+        text-align: justify;
+    }
+
+    i{
+        font-size: 6.5vw;
+    }
+}
+
+
