@@ -7,8 +7,6 @@ function openNav() {
   sidenav.classList.add("active");
   //Gère pour que l'animation de départ ne se relance pas si on lance le menu burger
   window.sessionStorage.setItem("first-anim","faux");
-  console.log("coucou")
-
 }
 
 /* Set the width of the side navigation to 0 */

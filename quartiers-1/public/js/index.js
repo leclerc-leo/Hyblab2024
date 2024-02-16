@@ -1,5 +1,23 @@
 "use strict";
 
+// Liste des quartiers implémentés 
+// true = disponible
+// false = indisponible
+let quartier_dispo = {
+    "villejean": true,
+    "st_martin": false,
+    "maurepas": false,
+    "bourg_eveque": false,
+    "cleunay": false,
+    "centre": false,
+    "thabor": false,
+    "jeanne_darc": false,
+    "sud_gare": false,
+    "francisco": false,
+    "brequigny": false,
+    "le_blosne": false
+}
+
 // Wait for the content to preload and display 1st slide
 // Here we simulate a loading time of one second
 setTimeout(() => {
@@ -60,12 +78,12 @@ swiper.on("slideChange", function () {
     resetMapColor();
     document.querySelector('path[data-no_slide_shadow="' + swiper.realIndex + '"]').style.fill = "#AA2E33";
     document.querySelector('path[data-no_slide="' + swiper.realIndex + '"]').style.fill = "#D74F50";
-    if(swiper.realIndex == 0){ // Si le quartier sélectionné est différent du quartier avec un index égal à 0 soit Villejean
-        console.log("disponible")
+
+    // Si le quartier sélectionné est différent du quartier avec un index égal à 0 soit Villejean
+    if(quartier_dispo[document.querySelector('path[data-no_slide="' + swiper.realIndex + '"]').id]){
         disponible();
     }
     else{
-        console.log("indisponible")
         indisponible();
     }
 });

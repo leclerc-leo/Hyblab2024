@@ -1,5 +1,23 @@
 "use strict";
 
+// Liste des quartiers implémentés 
+// true = disponible
+// false = indisponible
+let quartier_dispo = {
+    "villejean": true,
+    "st_martin": false,
+    "maurepas": false,
+    "bourg_eveque": false,
+    "cleunay": false,
+    "centre": false,
+    "thabor": false,
+    "jeanne_darc": false,
+    "sud_gare": false,
+    "francisco": false,
+    "brequigny": false,
+    "le_blosne": false
+}
+
 // Fonction pour scroller automatiquement en bas de la conversation de manière lisse
 function scrollSmoothlyToBottom() {
     let div = $("#villejean-conversation");
@@ -11,14 +29,16 @@ function scrollSmoothlyToBottom() {
 
 // Fonction principale pour traiter les bulles
 function treatBubble(bubbleJson) {
+    // On ajoute du temps en fonction de la taille et du type de la bulle
     if (lastBubble["type"] == "choice" || lastBubble["type"] == "topicChoice") {
         time += 2000;
     } else {
         time += 2100*lastBubble["content"].length;
     }
 
-    canChange = false;
+    canChange = false; // On bloque la possibilité de changer de thème pendant l'ajout des bulles
 
+    // On traite la bulle dans bonne fonction en fonction de son type
     setTimeout(() => { 
         if (bubbleJson["type"] == "bubble") {
             addBubble(bubbleJson["speaker"], bubbleJson["content"]);
@@ -37,7 +57,7 @@ function treatBubble(bubbleJson) {
         }
 
         if (bubbleJson["type"] != "bubble") {
-            canChange = true;
+            canChange = true; // ON débloque la possibilité de changer de thème
         }
     }, time);
 }
@@ -47,7 +67,7 @@ function addBubble(speaker, contents) {
     let container;
     let bubble;
     let i = 0;
-    let conv_dico = {
+    let conv_dico = { // "Dictionnaire" pour remplacer toutes les balises dans les bulles du JSON
         "${user_name}": user_name,
         "${quartier}": quartier_dico[quartier],
         "${lieu}": data["Lieux"][nextTopic],
@@ -61,6 +81,7 @@ function addBubble(speaker, contents) {
         "${lien_portrait_end}": "</a>"
     }
 
+    // Cas des bulles utilisateur
     if (speaker == "user") {
         container = '<div class="rp_user"><p class="user_name">'+ user_name +'</p><ul></ul></div>';
         conversation.append(container);
@@ -73,20 +94,20 @@ function addBubble(speaker, contents) {
                 }
 
                 bubble = '<li class="cont_user anime_user">' + content + '</li>';
-                list.innerHTML += bubble;
+                list.innerHTML += bubble; // Ajout de l'élément HTML
 
                 setTimeout(() => { 
                     var element = document.querySelector(".anime_user");
-                    element.classList.remove("anime_user");
+                    element.classList.remove("anime_user"); // On enlève la classe d'animation pour éviter les bugs d'animation
                 }, 2000 );
 
                 scrollSmoothlyToBottom();
             }, 2100*i);
             i++;
         });
-
+    // Cas des bulles guide
     } else {
-        container = '<div class="rp_guide"><p class="name_guide">Guide</p><ul></ul></div>';
+        container = '<div class="rp_guide"><p class="name_guide">Stéphane</p><ul></ul></div>';
         conversation.append(container);
         let list = document.querySelector(".conversation div:last-of-type ul:last-of-type");
 
@@ -97,12 +118,12 @@ function addBubble(speaker, contents) {
                 }
 
                 bubble = '<li class="cont_guide anime_guide">' + content + '</li>';
-                list.innerHTML += bubble;
+                list.innerHTML += bubble;// Ajout de l'élément HTML
                 scrollSmoothlyToBottom();
 
                 setTimeout(() => { 
                     var element = document.querySelector(".anime_guide");
-                    element.classList.remove("anime_guide");
+                    element.classList.remove("anime_guide"); // On enlève la classe d'animation pour éviter les bugs d'animation
                 }, 2000);
 
             }, 2100*i);
@@ -111,7 +132,7 @@ function addBubble(speaker, contents) {
     }
 }
 
-// Fonction pour ajouter la bulle de nom
+// Fonction pour ajouter la bulle de demande de nom
 function addNameBubble(bubbleJson) {
     let choiceBubblesContent = '<div class="choices anime_bottom"><label for="username_input">' + bubbleJson["choicesLabel"][0] + '<input type="text" id="username_input" class="input" name="username_input" required minlength="2" maxlength="20" size="10" onkeydown="saveUsername(event)"/> ! </label></div>';
     let placeholder = '<div class="choices-placeholder"><label for="placeholder_input">' + bubbleJson["choicesLabel"][0] + '<input type="text" id="placeholder_input" class="input" name="username_input" required minlength="2" maxlength="20" size="10" onkeydown="saveUsername(event)"/> ! </label></div>';
@@ -121,7 +142,7 @@ function addNameBubble(bubbleJson) {
 
     scrollSmoothlyToBottom();
     time = 0;
-    saveConversation();
+    saveConversation(); // On sauvegarde la conversation
 }
 
 // Fonction activée lorsque le nom est saisi
@@ -129,15 +150,17 @@ function saveUsername(event){
     if (event.key === 'Enter' && document.querySelector(".conversation #username_input").value.length > 0) {
         user_name = document.querySelector(".conversation #username_input").value;
 
-        // remove all choices
+        // On supprime les éléments de saisi de nom
         let choiceBubbles = $('.choices');
         choiceBubbles.remove();
         let choicePlaceholder = $('.choices-placeholder');
         choicePlaceholder.remove();
 
+        // On ajoute la bulle de réponse
         addBubble(lastBubble["speaker"], lastBubble["content"]);
         scrollSmoothlyToBottom();
 
+        // On continue le déroulé de la conversation
         conversationUnfold(lastBubble["next"][0]);
     }
 }
@@ -154,28 +177,31 @@ function addChoiceBubble(bubbleJson) {
     choiceBubblesContent += '</div>';
     placeholder += '</div>';
 
+    // On ajoute les éléments HTML
     conversation.append(placeholder);
     conversation.append(choiceBubblesContent);
 
     scrollSmoothlyToBottom();
     time = 0;
-    saveConversation();
+    saveConversation(); // On sauvegarde la conversation
 }
 
 // Fonction activée lorsque le choix est fait
 function choiceSelected(btnChoiceSelected){
     let textChoice = btnChoiceSelected.textContent || bouton.innerText; // get text content of the choiceBubble selected
 
-    // remove all choices
+    // On supprime les éléments de choix
     let choiceBubbles = $('.choices');
     choiceBubbles.remove();
     let choicePlaceholder = $('.choices-placeholder');
     choicePlaceholder.remove();
     
+    // On ajoute la bulle de réponse
     addBubble("user", [lastBubble["content"][lastBubble["choicesLabel"].indexOf(textChoice)]]);
     scrollSmoothlyToBottom();
 
-    conversationUnfold(lastBubble["next"][lastBubble["choicesLabel"].indexOf(textChoice)]);
+    // On continue le déroulé de la conversation
+    conversationUnfold(lastBubble["next"][lastBubble["choicesLabel"].indexOf(textChoice)]); 
 }
 
 // Fonction pour ajouter la bulle de choix de thème
@@ -194,12 +220,13 @@ function addTopicBubble(bubbleJson) {
     choiceBubblesContent += '</div>';
     placeholder += '</div>';
 
+    // Ajout des éléments HTML
     conversation.append(placeholder);
     conversation.append(choiceBubblesContent);
 
     scrollSmoothlyToBottom();
     time = 0;
-    saveConversation();
+    saveConversation(); // On sauvegarde la conversation
 }
 
 // Fonction activée lorsque le choix de thème est fait
@@ -208,14 +235,17 @@ function topicSelected(btntopicSelected){
 
     nextTopic = textChoice.toLowerCase();
 
+    // On supprimer les éléments de choix
     let choiceBubbles = $('.choices');
     choiceBubbles.remove();
     let choicePlaceholder = $('.choices-placeholder');
     choicePlaceholder.remove();
 
+    // On ajoute la bulle de réponse
     addBubble("user", [lastBubble["content"][lastBubble["choicesLabel"].indexOf(textChoice)]]);
     scrollSmoothlyToBottom();
 
+    // On continue le déroulé de la conversation
     conversationUnfold(lastBubble["next"][lastBubble["choicesLabel"].indexOf(textChoice)]);
 }
 
@@ -231,29 +261,30 @@ function addQuitBubble(bubbleJson) {
     choiceBubblesContent += '</div>';
     placeholder += '</div>';
 
+    // Ajout des éléments HTML
     conversation.append(placeholder);
     conversation.append(choiceBubblesContent);
 
     scrollSmoothlyToBottom();
     time = 0;
-    saveConversation();
+    saveConversation(); // On sauvegarde la conversation
 }
 
 // Fonction activée lorsque on change de thème
 function changeTopic() {
-    time = 0;
-    lastBubble = {"content": []};
-    topic = nextTopic;
+    time = 0; // On réinitialise le temps
+    lastBubble = {"content": []}; // On réinitialise la bulle précédente
+    topic = nextTopic; // On change le thème
 
-    conversation.empty();
-    backgroundTransition();
-    titleTransition();
+    conversation.empty(); // On vide la conversation
+    backgroundTransition(); // On fait défiler l'image de fond
+    titleTransition(); // On fait défiler le titre du thème
     setTimeout(() => { 
-        conversationUnfold("Debut");
+        conversationUnfold("Debut"); // Après 1 seconde on poursuit la conversation
     }, 1000);
 }
 
-// Sauvegarde de la conversation dans le cache
+// Sauvegarde de la conversation dans le cache du navigateur
 function saveConversation() {
     save.user_name = user_name;
     save.quartier = quartier;
@@ -305,20 +336,21 @@ async function reloadConversation() {
         console.log("Reloaded ");
 }
 
-// Fonction pour lire le json et traiter les bulles à partir d'une certaine bulle
+// Fonction pour lire le json contenant les dialogues et qui traite les bulles à partir de la valeur apssée en paramètre
 async function conversationUnfold(nextID) {
+    // On récupère la conversation dans le bon fichier JSON
     let resp  = await fetch('./data/' + quartier.toLowerCase() + '/' + topic.toLowerCase() + '.json')
     data = await resp.json();
 
     time = 0;
     let i = 0;
     let loopBreak = false;
-    while (i < 10 && !loopBreak) {
+    while (i < 100 && !loopBreak) { // On limite la boucle à 100 pour éviter de faire planter le navigateur en cas de boucle non désirée
         if (nextID === "Fin") {
-            loopBreak = true;
+            loopBreak = true; // On met fin à la boucle lorsqu'on arrive à la dernière bulle intitulée "Fin"
         } else {
-            treatBubble(data[nextID]);
-            lastBubble = data[nextID];
+            treatBubble(data[nextID]); // On traite la prochaine bulle
+            lastBubble = data[nextID]; // On sauvegarde la bulle qui servira de bulle précédente
 
             // Si la bulle qu'on vient d'ajouter est un choix ou entrer le nom, on arrête
             if (data[nextID]["type"] === "nom" || data[nextID]["type"] === "choice" || data[nextID]["type"] === "topicChoice") { 
@@ -329,23 +361,6 @@ async function conversationUnfold(nextID) {
         }
         i++;
     }
-}
-// Liste des quartiers implémentés 
-// true = disponible
-// false = indisponible
-let quartier_dispo = {
-    "villejean": true,
-    "st_martin": false,
-    "maurepas": false,
-    "bourg_eveque": false,
-    "cleunay": false,
-    "centre": false,
-    "thabor": false,
-    "jeanne_darc": false,
-    "sud_gare": false,
-    "francisco": false,
-    "brequigny": false,
-    "le_blosne": false
 }
 
 // Correspondance entre le nom de code et le vrai nom des thèmes
@@ -399,7 +414,7 @@ if (user_name == null) {
     start = "Bienvenue1";
 }
 
-// Si le quartier n'est pas encore implémenté
+// Si le quartier n'est pas encore implémenté (ce cas ne devrait plus arrivé car le bouton est maintenant bloqué pour les quartiers indisponible)
 if (quartier_dispo[quartier] === false || quartier == undefined) {
     quartier = "autres";
     start = "Debut";
@@ -413,7 +428,7 @@ if (quartier_dispo[quartier] === false || quartier == undefined) {
     console.log("Indisponible");
 }
 
-// Ajout du fond animé et du titre bienvenue si c'est la première fois qu'on vient
+// Ajout du fond animé et du titre bienvenue si c'est la première fois que l'utilisateur arrive
 if (sessionStorage.getItem("saveExist") === null) {
     const new_img = document.createElement("div");
     new_img.id = "background-animation";
@@ -451,7 +466,6 @@ setTimeout(() => {
     } else {
         reloadConversation();
     }
-    console.log(sessionStorage.getItem("save") == null, !quartier_dispo[quartier])
     guide_coucou_animation.stop();
     guide_coucou_animation.play();
 }, 1000);

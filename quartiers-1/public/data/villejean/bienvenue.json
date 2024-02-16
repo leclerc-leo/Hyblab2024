@@ -3,7 +3,7 @@
         "speaker": "guide",
         "type": "bubble",
         "choicesLabel": [],
-        "content": ["Bienvenue à ${quartier} !", "Je serai ton guide pendant tout ton séjour à Rennes."],
+        "content": ["Bienvenue à ${quartier} !", "Moi c'est Stéphane ! Je serai ton guide pendant tout ton séjour à Rennes."],
         "next": ["EntrerNom"]
     },
 
