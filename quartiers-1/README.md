@@ -2,19 +2,22 @@
 
 Porteur de projet :
 
-Sujet :
+Sujet : quartiers 1
 
-Nom d'équipe :
+Nom d'équipe : 
 
 Participants : 
 
-- AGR :
+- AGR : Louna Foucaud; Maëva Martineau 
 
-- EPJT :
 
-- Polytech :  
+- EPJT : Juliette Huvet
 
-- SciencesPo : 
+- Polytech : Maxime Hocquet; Théotim Mayeur; Zhehao Dai; Gaspard Bodvin; Adrien Paulin
+
+
+- SciencesPo : Camille Debaud; Romain Blanchard
+
 
 
 

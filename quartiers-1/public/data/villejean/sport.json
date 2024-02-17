@@ -1,0 +1,154 @@
+{
+    "Debut": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Voici le stade Robert-Poirier ! C’est le stade d’athlétisme flambant neuf du quartier, inauguré en 2015, avec l’objectif, selon la ville de Rennes, d’offrir un équipement de pointe permettant d’accueillir des athlètes professionnels, amateurs et scolaires","${image_begin}sport.jpg${image_end}","Mais dis-moi, je te sens un peu inquièt.e ?"],
+        "next": ["Choix1"]
+    },
+
+    "Choix1": {
+        "speaker": "user",
+        "type": "choice",
+        "choicesLabel": ["Pas du tout", "Y a-t-il des équipements et des clubs ?","Je ne fais pas de sport"],
+        "content": ["Non, je ne suis pas inquièt.e 🤷","Il n’y a pas assez d’équipements et de clubs.","Je n’aime pas trop le sport mais qui sait, je pourrais changer d’avis… 😉"],
+        "next": ["ReponseChoix11", "ReponseChoix12","ReponseChoix13"]
+    },
+
+    "ReponseChoix11": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Parfait ! Laisse-moi donc te présenter les infrastructures du quartier.","Le stade Robert-Poirier 🏟️ dispose d’un anneau de 200 m avec virages relevés, où l’on peut pratiquer le sprint sur 60 m, le saut en hauteur, en longueur, le triple saut, la perche, le lancer de poids.","D’ailleurs, sais-tu quelle certification il a reçu en 2020 ?"],
+        "next": ["Choix2"]
+    },
+    
+    "ReponseChoix12": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Je comprends.","Mais le quartier de Villejean possède des infrastructures sportives de bonne qualité. Le stade Robert-Poirier 🏟️ dispose d’un anneau de 200 m avec virages relevés, où l’on peut pratiquer le sprint sur 60 m, le saut en hauteur, en longueur, le triple saut, la perche, le lancer de poids.","D’ailleurs, sais-tu quelle certification il a reçu en 2020 ?"],
+        "next": ["Choix2"]
+    },
+
+    "ReponseChoix13": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Quand tu auras vu les infrastructures, nul doute que tu changeras d’avis 😉","Commençons par le stade Robert-Poirier 🏟️.","Il dispose d’un anneau de 200 m avec virages relevés, où l’on peut pratiquer le sprint sur 60 m, le saut en hauteur, en longueur, le triple saut, la perche, le lancer de poids…","D’ailleurs, sais-tu quelle certification il a reçu en 2020 ?"],
+        "next": ["Choix2"]
+    },
+
+    "Choix2": {
+        "speaker": "user",
+        "type": "choice",
+        "choicesLabel": ["Architecture contemporaine","Centre de préparation aux JO 2024","HQE Infrastructures Durables"],
+        "content": ["Architecture contemporaine remarquable ?","Centre de préparation aux JO 2024 ?","HQE Infrastructures Durables ?"],
+        "next": ["Reponse21","Reponse22","Reponse21"]
+    },
+
+    "Reponse21": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Tu y étais presque…","Il a été labellisé Centre de préparation aux Jeux de Paris 2024.","Cela signifie que des athlètes internationaux peuvent s’y entraîner pour les Jeux Olympiques 🏆🥇.","C’est donc une infrastructure de haut niveau !"],
+        "next": ["Choix3"]
+    },
+
+    "Reponse22": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Exact !","Il a été labellisé Centre de préparation aux Jeux de Paris 2024.","Cela signifie que des athlètes internationaux peuvent s’y entraîner pour les Jeux Olympiques 🏆🥇.","C’est donc une infrastructure de haut niveau !"],
+        "next": ["Choix3"]
+    },
+
+    "Choix3": {
+        "speaker": "user",
+        "type": "choice",
+        "choicesLabel": ["L’athlétisme, c’est pas trop mon truc","Super ça !"],
+        "content": ["L’athlétisme, c’est pas trop mon truc.","Super ça !"],
+        "next": ["Reponse31","Reponse32"]
+    },
+
+    "Reponse31": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Ne t’inquiète pas, moi non plus, l’athlétisme, c’est pas trop mon truc. Mais ça tombe bien, à Villejean, tu peux pratiquer plein d’autres sports.","À ton avis, combien y a-t-il d’associations sportives dans le quartier ?"],
+        "next": ["Choix4"]
+    },
+
+    "Reponse32": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Et si tu cherches un club de sport pour démarrer ta nouvelle passion 🏈⚽, tu as l’embarras du choix.","À ton avis, combien y a-t-il d’associations sportives dans le quartier ?"],
+        "next": ["Choix4"]
+    },
+
+    "Choix4": {
+        "speaker": "user",
+        "type": "choice",
+        "choicesLabel": ["67","75","86"],
+        "content": ["67","75","86"],
+        "next": ["Reponse41","Reponse42","Reponse42"]
+    },
+
+    "Reponse41": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Bonne réponse !","Et au-delà de la pratique sportive, certains ont fait de l’intégration l’une de leurs missions. Parmi eux, il y a le Melting Potes, un club de football ⚽ qui intègre les jeunes du quartier par le sport.","Si tu veux t’entraîner avec eux, c’est par ici !","${video_begin}https://www.youtube.com/embed/4wR5ubwNarE?si=bT3NZbn262FIpfp2&start=379&end=486&controls=0${video_end}","D'ailleurs, tu peux retrouver tous les reportages ${lien_video_begin}ici${lien_video_end}."],
+        "next": ["QuestionFin"]
+    },
+
+    "Reponse42": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Mauvaise réponse ! Il y en a 67.","Et au-delà de la pratique sportive, certains ont fait de l’intégration l’une de leurs missions. Parmi eux, il y a le Melting Potes, un club de football ⚽ qui intègre les jeunes du quartier par le sport.","Si tu veux t’entraîner avec eux, c’est par ici !","${video_begin}https://www.youtube.com/embed/4wR5ubwNarE?si=bT3NZbn262FIpfp2&start=379&end=486&controls=0${video_end}","D'ailleurs, tu peux retrouver tous les reportages ${lien_video_begin}ici${lien_video_end}."],
+        "next": ["QuestionFin"]
+    },
+
+    "QuestionFin": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Et voilà ! Souhaites-tu découvrir une autre thématique ?"],
+        "next": ["ChoixTheme"]
+    },
+    
+    "ChoixTheme": {
+        "speaker": "user",
+        "type": "topicChoice",
+        "choicesLabel": ["Portrait", "Culture", "Habitat", "Sport", "Education", "Commerce"],
+        "content": ["Les portraits de ${quartier}.", "La culture à ${quartier}.", "L'habitat à ${quartier}.", "Le sport à ${quartier}.", "L'éducation à ${quartier}.", "Les commerces à ${quartier}."],
+        "next": ["GoLieu", "GoLieu", "GoLieu", "GoLieu", "GoLieu", "GoLieu"]
+    },
+
+    "GoLieu": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Parfait ! Allez viens je t’emmène ${lieu}."],
+        "next": ["Quitter"]
+    },
+
+    "Quitter": {
+        "speaker": "user",
+        "type": "quit",
+        "choicesLabel": ["Aller ${lieu}"],
+        "content": [],
+        "next": ["Fin"]
+    },
+
+    "Lieux": {
+        "portrait": "à la maison de quartier de Villejean",
+        "culture": "au centre Avicenne",
+        "habitat": "à la tour Bourbonnais",
+        "sport": "au stade Robert-Poirier",
+        "education": "à Rosa Parks",
+        "commerce": "au marché de Villejean"
+    }
+}
