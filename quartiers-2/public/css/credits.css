@@ -1,0 +1,223 @@
+
+/* base de la page */
+
+*{
+    padding:0;
+    margin:0;
+}
+
+#container{
+    background-color: #F8E8DB;
+}
+
+main{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+body{
+    font-size: calc(15vh * 3 / 4);
+}
+#creditfoot{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+/*le titre*/
+#titre{
+    margin-top: 4vh;
+    font-size: 0.3em;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2.5vh;
+    color: black;
+    top: 0;
+    left: 25%;
+    right: 25%;
+    z-index: 10;
+}
+
+/*la page de crédit qui compte le porteur et les personnes*/
+#credit{
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+/*le porteur de projet avec l'image et le nom de la personne*/
+#porteur_projet{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1vh;
+}
+
+#porteur_projet .nom{
+    padding-top: 6px;
+    font-size: 18%;
+    font-weight: bold;
+}
+
+#porteur_projet .photo{
+    width: 20%;
+    height: auto;
+    object-fit: cover;
+}
+#porteur_projet .ecole{
+    text-align: center;
+    font-size: 15%;
+    padding-top: 6px;
+    font-weight: normal;
+    color: black;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*lien linkedin*/
+#porteur_projet a{
+    text-decoration: none;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/*les personnes avec les images et les noms, il s'adapte à la taille de l'écran*/
+#personnes{
+    display: grid;
+    grid-template : auto / 1fr 1fr 1fr;
+    width: 100%;
+    height: 100%;
+}
+
+/*chaque personne à une boite avec son nom et son image*/
+.personne {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1vh;
+}
+
+.personne .photo{
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+}
+
+#personnes .nom{
+    text-align: center;
+    font-size: 17%;
+    padding-top: 6px;
+    font-weight: bold;
+}
+#personnes .ecole{
+    text-align: center;
+    font-size: 15%;
+    padding-top: 6px;
+    font-weight: normal;
+    color: black;
+
+}
+
+/*lien linkedin*/
+.personne a{
+    text-decoration: none;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/*footer*/
+#bandeau {
+    width:100%;
+    bottom: 0;
+    background-color: #F8E8DB;
+    font-size: 20%;
+}
+
+#bandeau li{
+    list-style-type: none;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0.5em;
+}
+
+#bandeau img{
+    height: 2.5em;
+}
+
+#bandeau #hyblab{
+    margin: 1em auto;
+    height: 3em;
+    display: block;
+}
+
+#bandeau #cc, #bandeau #opensource
+{
+    height: 1em;
+}
+
+#bandeau .stacked{
+    display:block;
+}
+
+#bandeau ul{
+    text-align: center;
+    padding: 0 0;
+    margin: 0.5em auto;
+}
+
+#bandeau .institutionnel
+{
+    height: 2em;
+}
+
+/* Fill the whole viewport when its aspect ratio is between 9/16 and 3/4 */
+@media screen and (max-aspect-ratio: 3/4) {
+    #container{
+        margin-left: 0; /* reset margin-left */
+        width: 100vw; /* content is full width (and full height because of the default rule for container height */
+    }
+
+    /* We set a default font size here. It will be the base for all other font sizes */
+    /* Here the font size is proportional to content width */
+    body{
+        font-size: 15vw;
+    }
+}
+
+/* The content is displayed at 9/16 If the aspect ratio is higher that 9/16  */
+@media screen and (max-aspect-ratio: 9/16) {
+    #container{
+        margin-left: 0; /* reset left margin */
+        width: 100vw;   /* content is full width */
+        margin-top: calc(-50 * 16vw / 9); /* move the content half the height to the top */
+        top:50%; /* then center it ! */
+        height: calc(100 * 16vw / 9); /* adjust height so that aspect ratio is 9/16 */
+    }
+
+    /* We set a default font size here. It will be the base for all other font sizes */
+    /* Here the font size is proportional to content width */
+    body{
+        font-size: 15vw;
+    }
+}
+
+body{
+    color: black;
+    overflow: hidden;   /* to avoid slider bugs on some browsers */
+    font-family: sans-serif;
+}

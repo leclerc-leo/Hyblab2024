@@ -1,0 +1,236 @@
+/* à supprimer et mettre dans un fichier css commun à toutes les pages */
+
+.content{
+    z-index: 500;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #F8E8DB;
+}
+
+/* code propre à la page */
+.name-person{
+    font-size: 0.75em;
+    width: 100%;
+    font-weight: lighter;
+    text-align: center;
+    color: black;
+    margin-top: 2%;
+    margin-right: 5%;
+    font-family: 'AlwaysInMyHeart','Montserrat', sans-serif;
+}
+
+.name-devanture {
+    margin-bottom: 5%;
+    font-size: 0.3em;
+    font-weight: 650;
+    text-align: center;
+    color: black;
+    font-family: 'Roboto Thin','Montserrat', sans-serif;
+}
+
+
+.head-person{
+    margin-top: 5%;
+    width: 40%;
+    height: auto;
+}
+
+/* audio */
+.audio-div{
+    margin-top: 5%;
+    width: 80%;
+    height: auto;
+}
+
+.illu-initiative{
+    width: 100%;
+}
+
+.text-initiative{
+    color: black;
+    font-size: 0.3em;
+    width: 80%;
+    margin: 4%;
+}
+
+.question{
+    color: black;
+    font-size: 0.2em;
+    display: flex;
+    flex-direction: column;
+    margin: 8.5%;
+}
+
+.question p{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.question-buttons{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5%;
+}
+
+.question-buttons img{
+    width: 40%;
+    height: auto;
+}
+
+/* map motion */
+.map-motion{
+    width: 70%;
+    height: auto;
+    margin-top: 5%;
+    border: 2px solid black;
+}
+
+/* boutons */
+.link-buttons{
+    color: black;
+    font-size: 0.2em;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    cursor: pointer;
+}
+
+.link-buttons-img{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5%;
+}
+
+.link-buttons-img a {
+    width: 40%;
+    height: auto;
+}
+
+.link-buttons-img img{
+    width: 100%;
+    height: auto;
+}
+
+/*nav buttons*/
+.nav-buttons{
+    display: flex;
+    cursor: pointer;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+.nav-buttons .right-arrow{
+    width: 10%;
+    margin-right: 15%;
+    margin-left: 2%;
+}
+.nav-buttons .left-arrow{
+    width: 10%;
+    margin-left: 15%;
+    margin-right: 2%;
+}
+
+.question-buttons div  {
+    height: auto;
+    width: 30%;
+    cursor: pointer;
+    z-index: 6000;
+    position: relative;
+}
+.question-buttons div::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+
+.previous, .next {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 50%;
+    height: auto;
+}
+
+.previous{
+    justify-content: start;
+}
+
+.next{
+    justify-content: end;
+}
+
+.hidden-previous{
+    visibility: hidden;
+    width: 50%;
+    cursor: none;
+}
+
+.next img{
+    right: 0.25em;
+    bottom: 0;
+    width: 25%;
+    margin: 2%;
+}
+
+.previous img{
+    left: 0.25em;
+    bottom: 0;
+    width: 25%;
+    margin: 2%;
+}
+
+.right-arrow {
+    transform: rotate(180deg);
+}
+
+.squared-text{
+    border: 2px solid black;
+    width: 85%;
+}
+
+.squared-text p{
+    color: black;
+}
+
+#first-text{
+    background-color: #4669AA;
+}
+
+#second-text{
+    background-color: #FFE178;
+}
+
+#first-text p {
+    color: white;
+}
+
+#third-text{
+    background-color:#AAC382;
+}
+
+.fourth-text{
+    background-color:#F0AAC8;
+}
+
+#fifth-text{
+    background-color:#4669AA;
+}
+
+#fifth-text p {
+    color: white;
+}
+
+#sixth-text{
+    background-color:#FFE178;
+}
+
+#seventh-text{
+    background-color:#AAC382;
+}

@@ -1,20 +1,31 @@
 # Descriptif du projet
 
-Porteur de projet :
+Porteur de projet : Natacha ASTOR (TV Rennes)
 
-Sujet :
+Contexte/Sujet :
+Série de reportages TVR sur les différents quartiers de Rennes. 
+Notre sujet : quartier de Thabor Saint-Hélier. Volonté de montrer les points positifs des quartiers de Rennes.
 
-Nom d'équipe :
+Nom d'équipe : M Two
 
 Participants : 
 
 - AGR :
+  - Eloïse GUILLAUD
+  - Marine CHAUVREAU
 
 - EPJT :
+  - Arthur CHARLIER
 
-- Polytech :  
+- Polytech : 
+  - Quentin LAPOTRE (Chef de Projet)
+  - Manuel BENOIST
+  - Florentin ROY
+  - Valentin VINCENT
+  - Jianhui YAN
 
 - SciencesPo : 
+  - Adriana DAGBA
 
 
 

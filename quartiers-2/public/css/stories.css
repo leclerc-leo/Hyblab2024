@@ -1,0 +1,280 @@
+/* à supprimer et mettre dans un fichier css commun à toutes les pages */
+
+#container {
+    background-color: #F8E8DB;
+}
+
+main{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* code propre à la page */
+#main-title-stories {
+    margin-top: 4vh;
+    font-size: 0.3em;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2.5vh;
+    color: black;
+    position: absolute;
+    top: 0;
+    left: 25%;
+    right: 25%;
+    z-index: 5;
+}
+
+#mainSwiperHomeStories{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 0.5em;
+    height: 100% !important;
+    z-index: 6;
+}
+
+#mainSwiperHomeStories div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+#mainSwiperHomeStories .devanture{
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+}
+
+#mainSwiperHomeStories .swiper-slide{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+/* Swiper slider. Need to fill the container */
+#mySwiper, #swiperHomeStories{
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: inherit;
+}
+.swiper-wrapper{
+    width: 100%;
+}
+
+/* the slides and the loader should fill the whole 9:16 zone */
+.swiper-wrapper section{
+    width: 100%;
+    height: 100%;
+}
+.swiper-slide{
+    width: 100%;
+}
+.swiper-slide .devanture-slide{
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+/* personnage */
+.swiper-slide .devanture-slide .personnage{
+    height: 42%;
+    width: auto;
+    z-index: 2000;
+    position: absolute;
+    top: 7em;
+    padding-top: 10%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.swiper-slide .devanture-slide .fleche{
+    z-index: 100000;
+    position: absolute;
+    top: 3.5em;
+    width: 15%;
+    right: 13%;
+}
+
+#recap_button{
+    position: absolute;
+    bottom: 0;
+    z-index: 6;
+    margin-top: 5%;
+    width:100%;
+    background-color: #FCF3EC;
+    font-size: 20%;
+    border-top: 2px solid black;
+    cursor: pointer;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+    display: flex;
+    justify-content: center;
+}
+#recap_button div{
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+    padding: 3%;
+}
+#recap_button div img{
+    width: 10%;
+}
+#recap_button div p{
+    color: black;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    padding-bottom: 15px;
+    text-align: center;
+    font-size: 1.2em;
+    width: 60%;
+}
+
+
+#footerHome {
+    position: absolute;
+    bottom: 0;
+    z-index: 6;
+    margin-top: 5%;
+    width:100%;
+    font-size: 20%;
+    border-top: 2px solid black;
+    cursor: pointer;
+}
+
+
+#footerHome p{
+    color: black;
+    display: flex;
+    justify-content: center;
+}
+
+#footerHome p:first-child{
+    color: black;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#footerHome p:last-child{
+    color: black;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    padding-bottom: 15px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+}
+
+#swipe_invite_left{
+    position: absolute;
+    top: 45%;
+    left: 10px;
+    height: 8%;
+    width: 8%;
+    z-index: 6;
+    cursor: pointer;
+    /*
+    transition: opacity 0.5s ease-in-out;
+    */
+    animation: fadeIn 1s infinite alternate;
+}
+#swipe_invite_left img{
+    width: 100%;
+}
+
+#swipe_invite_right{
+    position: absolute;
+    top: 45%;
+    right: 10px;
+    height: 8%;
+    width: 8%;
+    z-index: 6;
+    cursor: pointer;
+    /*
+    transition: opacity 0.5s ease-in-out;
+    */
+    animation: fadeIn 1s infinite alternate;
+}
+
+#swipe_invite_right img{
+    width: 100%;
+    transform: rotate(180deg);
+}
+
+.black-title{
+    color:black; !important;
+}
+
+.white-title{
+    color:white; !important;
+}
+
+#mainSwiperHomeStories .swiper-slide h1{
+    position: absolute;
+    top: 4em;
+    margin-right: 1em;
+    margin-left: 1em;
+    font-size: 0.5em;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-weight: normal;
+    z-index: 3000;
+}
+
+#slide-credit{
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    color: black;
+    font-size: 0.5em;
+    height: 80% !important;
+    justify-content: space-around !important;
+    width: 100%;
+    margin-bottom: auto;
+}
+#slide-credit img{
+    width: 100%;
+    height: auto;
+}
+#slide-credit p{
+    margin-top: 3%;
+    margin-bottom: 3%;
+    font-size: 1em;
+    text-align: center;
+    width: 70%;
+}
+#credits_button{
+    width: 30%;
+}
+#slide-credit p:first-child{
+    margin-top: 5%;
+    margin-bottom: 2%;
+}
+.style-text{
+    text-align: center;
+    font-weight: 550;
+    font-family: 'AlwaysInMyHeart','Montserrat', sans-serif;
+    font-size: 1.7em !important;
+}
+@font-face {
+    font-family: 'AlwaysInMyHeart';
+    src: url('../font/AlwaysInMyHeart.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

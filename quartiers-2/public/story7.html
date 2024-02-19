@@ -1,0 +1,114 @@
+<!doctype html>
+
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <title>Hyblab 2023</title>
+</head>
+<body>
+    <!-- Le conteneur sert à verrouiller les proportions (aspect ratio) du contenu de la page (ici des slides) -->
+      <div class="content">
+
+          <img src="7-coeurs-resistants/img/joachim.gif" class="head-person" alt="Joachim">
+          <h1 class="name-person">Joachim</h1>
+          <h1 class="name-devanture">Cœurs résistants</h1>
+
+          <div class="squared-text" id="seventh-text">
+              <p class="text-initiative">
+                  Joachim Goater est co-président de Coeurs résistants, une association d’aide alimentaire. Celle-ci distribue 1450 repas chaque semaine que ce soit via les maraudes, directement dans les rues de Rennes, ou sur le Village alimentaire, situé au 4 rue du Bois Perrin et ouvert du lundi au samedi.
+              </p>
+          </div>
+
+          <div class="audio-player">
+              <audio>
+                  <source src="7-coeurs-resistants/audio/Coeurs-résistants-1.wav" type="audio/wav">
+              </audio>
+              <div class="controls">
+                  <!-- SVG for the play button -->
+                  <img class="playIcon" src="./img/boutons/play.svg" alt="Play">
+                  <!-- SVG for the pause button -->
+                  <img class="pauseIcon" src="./img/boutons/pause.svg" alt="Pause" style="display:none;">
+                  <input class="progressBar" type="range" min="0" max="100" value="0">
+              </div>
+              <div class="time-display">
+                  <span class="currentTime">00:00</span> <span> / </span> <span class="duration">00:25</span>
+              </div>
+          </div>
+
+          <p class="text-initiative">
+              Le local, ruelle Faux-Pont, ouvre également ses portes du lundi au jeudi de 14h30 à 18h pour proposer des repas à manger « sur le pouce » ou des activités.
+          </p>
+
+          <div class="audio-player">
+              <audio>
+                  <source src="7-coeurs-resistants/audio/Coeurs-résistants-2.wav" type="audio/wav">
+              </audio>
+              <div class="controls">
+                  <!-- SVG for the play button -->
+                  <img class="playIcon" src="./img/boutons/play.svg" alt="Play">
+                  <!-- SVG for the pause button -->
+                  <img class="pauseIcon" src="./img/boutons/pause.svg" alt="Pause" style="display:none;">
+                  <input class="progressBar" type="range" min="0" max="100" value="0">
+              </div>
+              <div class="time-display">
+                  <span class="currentTime">00:00</span> <span> / </span> <span class="duration">00:20</span>
+              </div>
+          </div>
+
+          <p class="text-initiative">
+              « On a tous besoin de manger, on aime bien en général manger et on peut créer du lien autour de ce besoin-là » souligne Joachim Goater. Si cette idée vous parait juste, l’association est toujours à la recherche de nouveaux bénévoles ou de dons !
+          </p>
+
+          <div class="audio-player">
+              <audio>
+                  <source src="7-coeurs-resistants/audio/Coeurs-résistants-3.wav" type="audio/wav">
+              </audio>
+              <div class="controls">
+                  <!-- SVG for the play button -->
+                  <img class="playIcon" src="./img/boutons/play.svg" alt="Play">
+                  <!-- SVG for the pause button -->
+                  <img class="pauseIcon" src="./img/boutons/pause.svg" alt="Pause" style="display:none;">
+                  <input class="progressBar" type="range" min="0" max="100" value="0">
+              </div>
+              <div class="time-display">
+                  <span class="currentTime">00:00</span> <span> / </span> <span class="duration">00:08</span>
+              </div>
+          </div>
+
+
+          <!-- question finale -->
+          <div class="question">
+              <p>Connaissais-tu ce lieu / personne ?</p>
+              <div class="question-buttons">
+                <div class="noButton"><object data="./img/boutons/bouton_non.svg" type="image/svg+xml">X</object></div>
+                <div class="yesButton"><object data="./img/boutons/bouton_oui.svg" type="image/svg+xml">X</object></div>
+              </div>
+          </div>
+
+          <!-- motion vidéo qui tourne en boucle -->
+          <video class="map-motion" preload="auto" playsinline loop muted autoplay data-setup="{}">
+              <source src="7-coeurs-resistants/video/zoom_coeurs_resistants.mp4" type="video/mp4">
+          </video>
+
+          <div class="link-buttons">
+              <div class="link-buttons-img">
+                  <a target="_blank" href="https://www.google.com/maps/place/Village+Alimentaire/@48.1156095,-1.6478996,18z/data=!4m15!1m8!3m7!1s0x480edefbd4d6f49b:0xe3b932316c28a922!2s4+Rue+du+Bois+Perrin,+35700+Rennes!3b1!8m2!3d48.1156374!4d-1.6477877!16s%2Fg%2F11cpfl8nwp!3m5!1s0x480edf087cc3b215:0xc6c301d11212395d!8m2!3d48.1151959!4d-1.6468584!16s%2Fg%2F11rf0qgq5w?authuser=0&entry=ttu">
+                      <img class="lienMaps" src="img/boutons/bouton_lien_google_map.svg" alt="lienMaps">
+                  </a>
+                  <a href="https://www.coeurs-resistants.org">
+                      <img class="lienSite" src="img/boutons/bouton_lien_site.svg" alt="lienSite">
+                  </a>
+              </div>
+          </div>
+
+          <!-- boutons swipe -->
+          <div class="nav-buttons">
+              <div class="previous">
+                  <img src="img/boutons/bouton_retour.svg" alt="right button" class="left-arrow">
+                  <img src="6-association-st-helier-village/img/nicolas-head.svg" alt="Nicolas">
+              </div>
+          </div>
+      </div>
+</body>
+</html>

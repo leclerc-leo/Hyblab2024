@@ -1,0 +1,125 @@
+<!doctype html>
+
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <title>Hyblab 2023</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/loadingio/loading.css@v2.0.0/dist/loading.css" />
+  <link rel="stylesheet" href="css/stories.css" />
+  <link rel="stylesheet" href="css/audio.css">
+  <link rel="stylesheet" href="css/story.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="js/stories.js" defer></script>
+
+</head>
+<body>
+    <!-- Le conteneur sert à verrouiller les proportions (aspect ratio) du contenu de la page (ici des slides) -->
+    <section id="loader">
+      <div id="loader-img" class="ld ld-ring ld-cycle"></div>
+      <p id="loader-text">Veuillez patienter...</p>
+    </section>
+      <!-- bouton retour -->
+      <a id="back_button"><img src="img/boutons/bouton_retour.svg" alt="Retour"></a>
+      <main>
+          <a id="swipe_invite_left"><img src="img/boutons/swipe-bouton.svg" alt="Swipe invite"></a>
+          <a id="swipe_invite_right"><img src="img/boutons/swipe-bouton.svg" alt="Swipe invite"></a>
+          <div id="swiperHomeStories" class="swiper">
+          <!-- le main est aussi le conteneur des différents slides (contenus à chaque fois dans des sections-->
+          <main id="mainSwiperHomeStories" class ="swiper-wrapper">
+              <section class="swiper-slide">
+                <div class="devanture-slide">
+                    <img src="img/fleche-blanc.svg" alt="" class="fleche">
+                    <h1 class="white-title"><b>Bonjour, je suis Claude,</b> <br>si tu veux en savoir plus sur la librairie La Commune<br>clique sur l’entrée </h1>
+                  <img src="1-la-commune/img/devanture-commune.svg" alt="story1" class="devanture">
+                    <img src="1-la-commune/img/claude-personnage.svg" alt="Claude debout" class="personnage story">
+                </div>
+              </section>
+              <section class="swiper-slide">
+                <div class="devanture-slide">
+                    <img src="img/fleche-noir.svg" alt="" class="fleche">
+                    <h1 class="black-title"><b>Bonjour, je suis Frédéric,</b> <br>si tu veux en savoir plus sur les Moulins de Rennes<br>clique sur l’entrée</h1>
+                    <img src="2-les-moulins-de-rennes/img/devanture-moulins.svg" alt="story2" class="devanture">
+                    <img src="2-les-moulins-de-rennes/img/fred-personnage.svg" alt="Fred debout" class="personnage story">
+                </div>
+              </section>
+              <section class="swiper-slide">
+                  <div class="devanture-slide">
+                      <img src="img/fleche-noir.svg" alt="" class="fleche">
+                      <h1 class="black-title"><b>Bonjour, je suis Marlène,</b> <br>si tu veux en savoir plus sur les Bavardes<br>clique sur l’entrée</h1>
+                      <img src="3-restaurant-les-bavardes/img/devanture-les-bavardes.svg" alt="story3" class="devanture">
+                      <img src="3-restaurant-les-bavardes/img/marlène-personnage.svg" alt="Marlène debout" class="personnage story">
+                  </div>
+              </section>
+                <section class="swiper-slide">
+                    <div class="devanture-slide">
+                        <img src="img/fleche-noir.svg" alt="" class="fleche">
+                        <h1 class="black-title"><b>Bonjour, je suis Marie,</b> <br>si tu veux en savoir plus sur l'association Pari-Rennes<br>clique sur l’entrée</h1>
+                        <img src="4-pari-rennes/img/devanture-pari-rennes.svg" alt="story4" class="devanture">
+                        <img src="4-pari-rennes/img/marie-personnage.svg" alt="Marie debout" class="personnage story">
+                    </div>
+                </section>
+                <section class="swiper-slide">
+                    <div class="devanture-slide">
+                        <img src="img/fleche-blanc.svg" alt="" class="fleche">
+                        <h1 class="white-title"><b>Bonjour, je suis Christophe,</b> <br>si tu veux en savoir plus sur l'association Garden Partie<br>clique sur l’entrée</h1>
+                        <img src="5-association-garden-partie/img/devanture-garden-partie.svg" alt="story5" class="devanture">
+                        <img src="5-association-garden-partie/img/christophe-personnage.svg" alt="Christophe debout" class="personnage story">
+                    </div>
+                </section>
+              <section class="swiper-slide">
+                  <div class="devanture-slide">
+                      <img src="img/fleche-noir.svg" alt="" class="fleche">
+                      <h1 class="black-title"><b>Bonjour, je suis Nicolas,</b> <br>si tu veux en savoir plus sur l'association Saint-Héllier village<br>clique sur l’entrée</h1>
+                      <img src="6-association-st-helier-village/img/devanture-st-helier.svg" alt="story6" class="devanture">
+                      <img src="6-association-st-helier-village/img/nicolas-personnage.svg" alt="Nicolas debout" class="personnage story">
+                  </div>
+              </section>
+              <section class="swiper-slide">
+                  <div class="devanture-slide">
+                      <img src="img/fleche-blanc.svg" alt="" class="fleche">
+                      <h1 class="white-title"><b>Bonjour, je suis Joachim,</b> <br>si tu veux en savoir plus sur l'association Coeurs Résistants<br>clique sur l’entrée</h1>
+                      <img src="7-coeurs-resistants/img/devanture-coeurs-resistants.svg" alt="story7" class="devanture">
+                      <img src="7-coeurs-resistants/img/joachim-personnage.svg" alt="Joachim debout" class="personnage story">
+                  </div>
+              </section>
+              <section class="swiper-slide" id="slide-credit">
+                    <img src="./img/illustration-final.svg">
+                <p class="style-text">Tu es arrivé au bout de la rue !</p>
+                <p>Si tu as aimé ces rencontres, tu peux découvrir les auteurs de ces histoires ci-dessous.</p>
+                    <article id="credits_button">
+                        <img src="img/boutons/credits.svg" alt="Accès à la page crédits">
+                    </article>
+              </section>
+          </main>
+        </div>
+
+        <div id="mySwiper" class="swiper">
+          <!-- le main est aussi le conteneur des différents slides (contenus à chaque fois dans des sections-->
+          <main class = "swiper-wrapper">
+              <section id="first-slide" class="swiper-slide"></section>
+              <section id="second-slide" class="swiper-slide"></section>
+              <section id="third-slide" class="swiper-slide"></section>
+              <section id="fourth-slide" class="swiper-slide"></section>
+              <section id="fifth-slide" class="swiper-slide"></section>
+              <section id="sixth-slide" class="swiper-slide"></section>
+              <section id="seventh-slide" class="swiper-slide"></section>
+          </main>
+        </div>
+        <!-- bouton "acces a page recap" -->
+        <div id="recap_button">
+          <div>
+            <img src="img/boutons/loupe.svg" alt="Accès à la page récapitulative">
+            <p>Découvre les autres personnes du quartier</p>
+          </div>
+        </div>
+        <footer style="display: none" id="footerHome">
+          <p>Crédits</p>
+          <p>© 2024, au(x) Coeur(s) du quartier. We love our users !</p>
+        </footer>
+      </main>
+</body>
+</html>
