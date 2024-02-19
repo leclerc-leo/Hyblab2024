@@ -3,17 +3,23 @@
 
 // Load usefull expressjs and nodejs objects / modules
 const express = require('express');
+const history = require('connect-history-api-fallback');
 const path = require('path');
 
 // Create our application
 const app = express();
 
-// Load and register our REST API
-const api = require('./api/api');
-app.use('/api', api);
-
 // Minimum routing: serve static content from the html directory
+
+// Utiliser connect-history-api-fallback pour gérer les réécritures d'URL
+app.use(history());
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Gestion de la route pour toutes les autres requêtes
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
 app.use(express.static(path.join(__dirname, '../__common-logos__')));
 
 // You can then add whatever routing code you need

@@ -1,0 +1,520 @@
+body {
+  background-color: black;
+  color: white;
+  overflow: hidden;
+  /* to avoid slider bugs on some browsers */
+  font-family: sans-serif;
+  font-size: calc(15vh * 3 / 4);
+}
+
+/* When the aspect ratio is smaller that 3/4, display a 3/4 content */
+#container {
+  position: fixed;
+  /* To set the size of the container to 100% of the visible viewport height AND for absolute positioning of child elements*/
+  height: 100%;
+  /* even on mobile devices with url or navigation bars */
+  margin-left: calc((100vw - 100 * 3vh / 4) / 2);
+  /* Add black bands on left and right */
+  width: calc(100 * 3vh / 4);
+  /* Force 3/4 aspect ratio */
+  background-color: var(--bg-green);
+
+  overflow: hidden;
+}
+
+
+.header {
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  /* Use space-between to move items to the edges */
+  align-items: center;
+  z-index: 5;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  background-color: white;
+}
+  .title {
+    padding: 0.1em;
+    width: 2em;
+  }
+
+
+#page-content {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  position: relative;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+#page-content::-webkit-scrollbar {
+  width: 0;
+}
+
+
+.content {
+  position: relative;
+  padding-top: 4%;
+  padding-left: 8%;
+  z-index: 2;
+  margin-bottom: 25%;
+  background-color: white;
+  /*
+  background: url("../img/archives/LINE2.svg") no-repeat 15% 0%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    */
+  
+}
+
+.content > * {
+  position: relative;
+  z-index:1;
+}
+
+.line {
+  position: absolute;
+  top: 5%;
+  left: 20%;
+  z-index:2;
+}
+
+.line>img {
+  width: 130%;
+}
+
+
+.content-1 {
+  width: 80%;
+}
+
+.content-1 img {
+  position: relative;
+  left: 2%;
+  width: 110%;
+  z-index: 3;
+}
+
+.content-2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.content-2-subtitle {
+  position: absolute;
+  left: 0.2em;
+
+}
+.hidden-first {
+  display: none;
+
+}
+
+.content-2 img {
+  width: 45%;
+  padding: 5%;
+}
+
+h4 {
+  font-family: 'Abolition';
+  font-size: 0.5em;
+  color: black;
+  text-align: center;
+  z-index: 2;
+}
+
+p {
+  font-family: 'Neue Haas Unica';
+  color: black;
+  font-size: 0.2em;
+  text-align: center;
+  margin: 2%;
+}
+
+h2 {
+  position: absolute;
+  font-family: 'Abolition';
+  font-size: 100%;
+  color: var(--bg-green);
+  z-index: 2;
+
+}
+
+.content-3 {
+  margin-top: -2.2em;
+}
+
+  .content-3 h2 {
+    position: relative;
+    left: 75%;
+    top: 2em;
+  }
+
+  .content-3 #img-3 {
+    position: relative;
+    width: 70%;
+    left : -9%
+  }
+
+  .content-3 #img-4 {
+    position: relative;
+    right:-40%;
+    width: 60%;
+    margin-top: -1.5em;
+  }
+
+
+.content-4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.content-4>h2 {
+  position: absolute;
+  top:-1em;
+  left:0;
+}
+
+.content-4-subtitle {
+  background-color: white;
+  padding: 0.2em;
+}
+
+
+.players {
+  background-color: white;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: relative;
+  width:100%;
+  right: 5%;
+}
+  .player{
+    width:30%;
+  }
+
+  .info-player {
+    padding-left: 10px;
+  }
+
+  .player img {
+    width: 100%;
+  }
+
+  .player h4 {
+    font-size: 0.35em;
+    text-align: center;
+  }
+
+.content-5 {
+  position: relative;
+}
+
+  .content-5 img {
+    width: 90%;
+    position: relative;
+  }
+
+  .content-5-subtitle {
+    position: relative;
+    margin-top: -0.3em;
+    width: 85%;
+  }
+
+  .content-5-subtitle h4 {
+    text-align: right;
+  }
+
+  .content-5-subtitle p {
+    font-size: 0.2em;
+    text-align: right;
+  }
+
+.content-6 h2 {
+  position: relative;
+}
+
+  .content-6 img {
+    width: 100%;
+    position: relative;
+  }
+
+  .content-6 h4 {
+    position: relative;
+    text-align: left;
+  }
+
+  .content-6 p {
+    position: relative;
+    text-align: left;
+    max-width: 90%;
+    margin-left:0;
+  }
+
+
+.content-7 {
+  position: relative;
+}
+  .content-7 h2 {
+    position: absolute;
+    top:0;
+    right: 0;
+  }
+
+  .content-7 img {
+    width:80%;
+  }
+
+
+  .content-7 h2 {
+    position: relative;
+  }
+
+  .content-7-subtitle {
+    width: 80%;
+    overflow: hidden;
+  }
+    .content-7 h4 {
+      text-align: left;
+    }
+
+    .content-7 p {
+      text-align: left;
+      margin-left: 0;
+    }
+
+  /* Styling for the footer */
+  .fixed-footer{
+    text-align: center;
+    position: relative; 
+    margin-top: 6%;
+    height:35%;
+    margin-left: -9%;
+  }
+  .background-paper{
+    background-image: url('../img/Footer_papier.svg');
+    background-size: cover;
+    transform: scale(1.1);
+    position: absolute;
+    right: inherit;
+    width: 100%;
+    height: 100%;
+    transform-origin: top;
+    z-index: -1;
+  }
+
+  .return-field {
+    display: inline-block;
+    background-color: var(--bg-green);
+    padding: 0.625em 1.25em;
+    border: 0.188em solid var(--yellow);
+    text-decoration: none;
+    color: var(--yellow);
+    font-family: "Abolition";
+    font-size: 35%;
+    border-radius: 1.25em;
+    width: 45%;
+    margin-top: 13%;
+  }
+
+/* Fill the whole viewport when its aspect ratio is between 9/16 and 3/4 */
+@media screen and (max-aspect-ratio: 3/4) {
+  #container {
+    margin-left: 0;
+    /* reset margin-left */
+    width: 100vw;
+    /* content is full width (and full height because of the default rule for container height */
+    overflow: hidden;
+  }
+
+
+  h2 {
+    font-size: 90%;
+  }
+
+}
+
+@media screen and (max-aspect-ratio: 3/4) {
+  h2 {
+    font-size: 0.8em;
+  }
+
+
+  h4 {
+    font-size: 0.4em;
+  }
+
+  p {
+    font-size: 0.2em;
+  }
+}
+
+/* The content is displayed at 9/16 If the aspect ratio is higher that 9/16  */
+@media screen and (max-aspect-ratio: 9/16) {
+}
+
+@media only screen and (max-width: 1400px) {
+  .hidden-first {
+    display: block !important; 
+  }
+
+  .content-2-subtitle {
+    display: none;
+  }
+
+  .content-3 h2{
+    display: none;
+  }
+
+  .player h4 {
+    font-size:0.25em;
+  }
+
+  .player p{
+    font-size: 0.15em;
+  }
+
+  .content-4 {
+    margin-bottom: 5%;;
+  }
+
+  .content-4 h2 {
+    top:0;
+  }
+
+  .content-5-subtitle p{
+    font-size: 0.15em;;
+  }
+
+}
+
+
+@media only screen and (max-width: 1100px) {
+  h2 {
+    font-size: 0.6em;
+  }
+  .content-2-subtitle {
+    top:0.5em
+  }
+  
+  h4{
+    font-size: 0.3em;
+  }
+  p {
+    font-size: 0.15em;
+  }
+
+  .content-4 h2 {
+    top:-1em;
+  }
+
+}
+
+@media only screen and (max-width: 1000px) {
+  .content{
+    margin-bottom: 40%;
+  }
+
+  .return-field {
+    margin-top: 10%;
+    font-size: 25%;
+    padding: 0.5em 1em;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+
+  .content{
+    margin-bottom: 30%;
+  }
+
+  h2 {
+    font-size: 0.4em;
+  }
+
+  h4 {
+    font-size:0.3em !important;
+  }
+
+  p {
+    font-size: 0.15em !important;
+  }
+
+  .content-2-subtitle{
+    top:auto;
+    bottom: -2.5em;
+  }
+
+}
+
+@media only screen and (max-width: 800px) {
+  .title{
+    width : 1.5em;
+  }
+
+  .content{
+    margin-bottom: 30%;
+  }
+
+  .players {
+    width : 110%;
+  }
+
+  .info-player {
+    padding: 0
+  }
+  
+}
+
+@media only screen and (max-width: 675px) {
+
+  .content{
+    margin-bottom: 20%;
+  }
+  .content-2-subtitle {
+    bottom: -0.5em;
+    left: -0.5em;
+  }
+
+  .content-7 img {
+    width : 60%;
+  }
+
+  .player h4 {
+    font-size:0.15em;
+  }
+
+  .content-4 h2 {
+    top:0;
+  }
+  .player-name {
+    display: block;
+    width:100%;
+  }
+
+}
+
+@media only screen and (max-width: 575px) {
+  .return-field {
+    margin-top: 10%;
+    font-size: 20%;
+    padding: 0.5em 1em;
+  }
+
+
+}
+
+@media only screen and (max-width: 500px) {
+  .content-2-subtitle {
+    bottom: -2.5em;
+  }
+
+}

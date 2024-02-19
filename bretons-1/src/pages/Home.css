@@ -1,0 +1,73 @@
+.main_app .app {
+  max-width: 450px;
+  width: 80%;
+  height: auto;
+  border-radius: 5%;
+  padding: 0;
+}
+
+@media screen and (min-width: 368px) {
+  .main_app .app {
+    max-width: 237px; /* Limitez la largeur maximale de l'image à 367 pixels */
+    width: auto; /* Ajustez la largeur automatiquement en fonction de la hauteur */
+  }
+}
+@media (max-height: 700px) {
+  .main_app .app {
+    width: 65%;
+  }
+}
+
+.app h1 {
+  color: #333;
+}
+
+.main .container {
+ text-align: unset;
+}
+
+.main_app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vw;
+}
+.head{
+  text-align: center;
+  width: 100%;
+}
+
+.ratio .container{
+  --bs-gutter-x: 0;
+}
+.main .ratio {
+  position: initial; 
+}
+
+.head img {
+  width: 113.7px;
+  height: 49.1px;
+  flex-shrink: 0;
+}
+
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  color: #fff;
+}
+
+
+.carousel-caption h3 {
+  font-size: 1.5em;
+}
+
+
+.carousel-caption p {
+  font-size: 1em;
+}
+
+.app .carousel{
+  margin-top: 0px;
+}
+
+

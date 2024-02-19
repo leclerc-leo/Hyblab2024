@@ -1,0 +1,186 @@
+{
+    "Debut": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Connais-tu  le Centre Culturel Avicenne et son importance dans la communauté ?"],
+        "next": ["Choix1"]
+    },
+
+    "Choix1": {
+        "speaker": "user",
+        "type": "choice",
+        "choicesLabel": ["Oui","Non"],
+        "content": ["Oui, je suis familier.ère du lieu !","Non, je ne le connais pas !"],
+        "next": ["ReponseChoix11", "ReponseChoix12"]
+    },
+
+    "ReponseChoix11": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Un petit rappel ne te fera pas de mal ! 😜","Le Centre Culturel Avicenne est un lieu emblématique au cœur de Villejean. C'est un espace dédié à la promotion de la culture arabe, de la tolérance et du dialogue interreligieux.","${image_begin}interculte.jpg${image_end}","Tu y trouveras des opportunités pour enrichir ton esprit et t’engager avec la communauté.","Es-tu familier.ère avec l'origine du nom \"Avicenne\" et son importance dans l'histoire ? 📙"],
+        "next": ["Choix2"]
+    },
+    
+    "ReponseChoix12": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Le Centre Culturel Avicenne est un lieu emblématique au cœur de Villejean. C'est un espace dédié à la promotion de la culture arabe, de la tolérance et du dialogue interreligieux.","${image_begin}interculte.jpg${image_end}","Tu y trouveras des opportunités pour enrichir ton esprit et t’engager avec la communauté.","Es-tu familier.ère avec l'origine du nom \"Avicenne\" et son importance dans l'histoire ? 📙"],
+        "next": ["Choix2"]
+    },
+
+    "Choix2": {
+        "speaker": "user",
+        "type": "choice",
+        "choicesLabel": ["Oui","Non"],
+        "content": ["Oui, je connais l'histoire d'Avicenne. 🙋","Non, j'aimerais en savoir plus."],
+        "next": ["Reponse21","Reponse22"]
+    },
+
+    "Reponse21": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["${image_begin}mr_avicenne.png${image_end}","Excellent ! Alors tu sais probablement qu'Avicenne, également connu sous le nom d'Ibn Sina, était un éminent savant persan du Moyen Âge. Sa contribution à divers domaines tels que la médecine, la philosophie, et les sciences a eu un impact immense sur le monde."],
+        "next": ["Reponse3"]
+    },
+
+    "Reponse22": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["${image_begin}mr_avicenne.png${image_end}","Avicenne, également connu sous le nom d'Ibn Sina, était un éminent savant persan du Moyen Âge, né en 980. Il fut l'une des sommités intellectuelles du monde médiéval, un polymathe dont les contributions ont eu un impact majeur dans de nombreux domaines.","Avicenne était célèbre pour sa prodigieuse érudition et sa capacité à écrire sur une grande variété de sujets. 😇"],
+        "next": ["Reponse3"]
+    },
+
+    "Reponse3": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Connais-tu le nom du célèbre livre d'Avicenne qui a été traduit en latin et est devenu une référence majeure en Europe ? 🤓"],
+        "next": ["Choix4"]
+    },
+
+    "Choix4": {
+        "speaker": "user",
+        "type": "choice",
+        "choicesLabel": ["Le Canon de la médecine ⚕️","Les Contes d'Avicenne","La Philosophie d'Avicenne"],
+        "content": ["Le Canon de la médecine ⚕️","Les Contes d'Avicenne","La Philosophie d'Avicenne"],
+        "next": ["Reponse41","Reponse42","Reponse43"]
+    },
+
+    "Reponse41": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Ding ding ding ! Tu as tout bon ! 🎉 Le Canon de la médecine était un incontournable.","Allez, une dernière question pour savoir si tu as bien suivi : Quelles sont les activités principales proposées au Centre Culturel Avicenne ?"],
+        "next": ["Choix5"]
+    },
+
+    "Reponse42": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Haha, j'imagine bien des contes sur les exploits d'Avicenne !","Mais la bonne réponse était \"Le Canon de la médecine\" !","Allez, une dernière question pour savoir si tu as bien suivi : Quelles sont les activités principales proposées au Centre Culturel Avicenne ?"],
+        "next": ["Choix5"]
+    },
+
+    "Reponse43": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Pas tout à fait, mais c'était une bonne tentative !","Mais la bonne réponse était \"Le Canon de la médecine\" !","Allez, une dernière question pour savoir si tu as bien suivi : Quelles sont les activités principales proposées au Centre Culturel Avicenne ?"],
+        "next": ["Choix5"]
+    },
+
+    "Choix5": {
+        "speaker": "user",
+        "type": "choice",
+        "choicesLabel": ["Des débats sur des sujets variés","Des ateliers artistiques","Des soirées karaoké"],
+        "content": ["Des débats sur des sujets variés, des échanges culturels et interreligieux.","Des ateliers artistiques.","Des soirées karaoké."],
+        "next": ["Reponse51","Reponse52","Reponse53"]
+    },
+
+    "Reponse51": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Bingo ! 🪅 Le Centre Culturel Avicenne est le lieu parfait pour explorer de nouveaux sujets et en apprendre plus sur son prochain.","C'est l'occasion pour les participants de se réunir autour d'une tasse de thé et de discuter de sujets variés, allant de la société à la culture en passant par la politique. ☕️","C'est une belle opportunité de rencontrer de nouvelles personnes, d'élargir ses horizons et de partager ses points de vue sur des questions qui nous touchent tous. 🫂"],
+        "next": ["Reponse6"]
+    },
+
+    "Reponse52": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Le centre culturel avicennes ne propose pas directement des cours d’art, mais des cours de langues. L’écriture arabe, c’est tout un style !","C'est aussi le lieu parfait pour explorer de nouveaux sujets et en apprendre plus sur son prochain.","C'est l'occasion pour les participants de se réunir autour d'une tasse de thé et de discuter de sujets variés, allant de la société à la culture en passant par la politique. ☕️","C'est une belle opportunité de rencontrer de nouvelles personnes, d'élargir ses horizons et de partager ses points de vue sur des questions qui nous touchent tous. 🫂"],
+        "next": ["Reponse6"]
+    },
+
+    "Reponse53": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Hmm, pas sûr qu'Avicenne aurait apprécié le karaoké, mais c'est une idée amusante !","Le Centre Culturel Avicenne est le lieu parfait pour explorer de nouveaux sujets et en apprendre plus sur son prochain.","C'est l'occasion pour les participants de se réunir autour d'une tasse de thé et de discuter de sujets variés, allant de la société à la culture en passant par la politique. ☕️","C'est une belle opportunité de rencontrer de nouvelles personnes, d'élargir ses horizons et de partager ses points de vue sur des questions qui nous touchent tous. 🫂"],
+        "next": ["Reponse6"]
+    },
+    
+    "Reponse6": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Si tu veux en savoir plus sur le centre Avicenne, c'est ici :","${video_begin}https://www.youtube.com/embed/4wR5ubwNarE?si=bT3NZbn262FIpfp2&start=296&end=378&controls=0${video_end}","D'ailleurs, tu peux retrouver tous les reportages ${lien_video_begin}ici${lien_video_end}."],
+        "next": ["Reponse7"]
+    },
+
+    "Reponse7": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Félicitations, tu en as appris des choses, hein ? Si tu veux en savoir encore plus ou si tu as d'autres questions, n'hésite pas à me le dire ! ❣️"],
+        "next": ["QuestionFin"]
+    },
+
+    "QuestionFin": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Souhaites-tu découvrir une autre thématique ?"],
+        "next": ["ChoixTheme"]
+    },
+    
+    "ChoixTheme": {
+        "speaker": "user",
+        "type": "topicChoice",
+        "choicesLabel": ["Portrait", "Culture", "Habitat", "Sport", "Education", "Commerce"],
+        "content": ["Les portraits de ${quartier}.", "La culture à ${quartier}.", "L'habitat à ${quartier}.", "Le sport à ${quartier}.", "L'éducation à ${quartier}.", "Les commerces à ${quartier}."],
+        "next": ["GoLieu", "GoLieu", "GoLieu", "GoLieu", "GoLieu", "GoLieu"]
+    },
+
+    "GoLieu": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Parfait ! Allez viens je t’emmène ${lieu}."],
+        "next": ["Quitter"]
+    },
+
+    "Quitter": {
+        "speaker": "user",
+        "type": "quit",
+        "choicesLabel": ["Aller ${lieu}"],
+        "content": [],
+        "next": ["Fin"]
+    },
+
+    "Lieux": {
+        "portrait": "à la maison de quartier de Villejean",
+        "culture": "au centre Avicenne",
+        "habitat": "à la tour Bourbonnais",
+        "sport": "au stade Robert-Poirier",
+        "education": "au collège Rosa Parks",
+        "commerce": "au marché de Villejean"
+    }
+}

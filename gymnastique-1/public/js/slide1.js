@@ -1,40 +1,41 @@
 "use strict";
 
 // async init function (because of the awaits on fetches)
-const initSlide1 = async function(){
-  // Get logo element
-  const logo = document.querySelector('#logo-hyblab');
+const initSlideIntro = async function () {
+  const titre = document.querySelector("#titre");
+  const sous_titre = document.querySelector("#sous-titre");
+  const texte1 = document.querySelector("#texte1");
+  const down_arrow = document.querySelector("#down-arrow");
+  const bag = document.querySelector("#bag");
 
-  // (Re)set initial scale of logo
-  logo.setAttribute('style', 'transform :scale(1);');
+  // get the data from our data/first-slide.json file
+  let response = await fetch("data/first-slide.json");
+  const data = await response.json();
 
-  // Animate hyblab logo and make shrink on click
+  /* set the title
+  titre.innerHTML = data.title;
+
+  // set the subtitle
+  sous_titre.innerHTML = data.soustitre;
+*/
+  // set the text
+  texte1.innerHTML = data.texte1;
+
   anime({
-    targets: '#logo-hyblab',
-    scale: 1.2,
-    easing: 'easeInOutQuad',
-    direction: 'alternate',
-    loop: true
+    targets: down_arrow,
+    translateY: [0, 25],
+    direction: "alternate",
+    loop: true,
+    easing: "easeInOutQuad",
+  });
+  anime({
+    targets: bag,
+    width: "95%",
+    top: "70%",
+    easing: "easeInOutQuad",
+    duration: 300,
   });
 
-  // Add click listener
-  logo.addEventListener('click', () => {
-    anime({
-        targets: '#logo-hyblab',
-        scale: 0
-      });
-    swiper.slideNext()
-  });
 
-  // Retrieve the partner's topic from our API
-  let response = await fetch('api/topic');
-  const data1 = await response.json();
-
-  // Get some dummy data
-  response = await fetch('data/dummy.json');
-  const data2 = await response.json();
-
-  // Update the DOM to insert topic and data
-  const footer = document.querySelector('footer p');
-  footer.textContent = `Our topic is "${data1.topic}" and here is "${data2.message}" retrieved on the server.`;
+  down_arrow.addEventListener("click", function () {swiper.slideTo(1);})
 };

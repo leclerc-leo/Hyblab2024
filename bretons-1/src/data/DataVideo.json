@@ -1,0 +1,29 @@
+[
+    {
+      "Type": "Victoire",
+      "page 1 (Ouverture)": "(Nom Prénom sportif.ve) décroche (Médaillé.é Or, Argent, Bronze) + discipline : Julie Bresset décroche l'or (Attention \"or\" en minuscule).",
+      "page 2 (Tableau des temps)": "1. (Prénom, Nom) + (Résultat) + (Drapeau pays) ; 2. idem ; 3. idem",
+      "Page 3 (Écran fiche identité)": "La fiche identité de (Prénom, Nom)",
+      "Page 4 (Fiche identité)": "(Date de naissance) + (Ville de naissance sur la carte) + (Club) + (Palmarès)",
+      "(Page 4 : suite)": "Prouesse ! (Gentilé) remporte la première médaille d'or française en VTT féminin (Cas de Julie Bresset)",
+      "Page 5": "(Prénom Nom) apporte la (nombre de médaille) au clan français"
+    },
+    {
+      "Type": "Qualification",
+      "page 1 (Ouverture)": "(Prénom Nom sportif.ve) qualifé.e en (étape supérieure) + discipline : Laëtitia Le Corguillé qualifiée en finale",
+      "page 2 (Tableau des temps)": "(Prénom, Nom) + Résultat + (Drapeau pays) --> En BMX 4 premiers athlètes se qualifient pour la manche suivante.",
+      "Page 3 (Écran fiche identité)": "La fiche identité de (Prénom, Nom)",
+      "Page 4 (Fiche identité)": "(Date de naissance) + (Ville de naissance sur la carte) + (Club) + (Palmarès)",
+      "(Page 4 : suite)": "...",
+      "Page 5": "... Rien"
+    },
+    {
+      "Type": "Elimination",
+      "page 1 (Ouverture)": "(Prénom, Nom du sportif.ve) non qualifié.e pour (étape supérieure) + discipline :  Marie Bolou non qualifié.e pour la finale",
+      "page 2 (Tableau des temps)": "(Résultat athlète) + (Résultats concurrents)",
+      "Page 3 (Écran fiche identité)": "La fiche identité de (Prénom, Nom)",
+      "Page 4 (Fiche identité)": "(Date de naissance) + (Ville de naissance sur la carte) + (Club) + (Palmarès)",
+      "(Page 4 : suite)": "...",
+      "Page 5": "... Rien"
+    }
+  ]

@@ -1,0 +1,210 @@
+{
+    "Debut": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Nous voici devant la tour Bourbonnais 🏘️, à seulement quelques mètres de la station de métro JF Kennedy !","${image_begin}habitat.jpg${image_end}","Oh je te sens inquiet.e, que se passe-t-il ?"],
+        "next": ["Choix1"]
+    },
+
+    "Choix1": {
+        "speaker": "user",
+        "type": "choice",
+        "choicesLabel": ["Les tours sont insalubres","Les tours sont anciennes","Ai-je une chance de trouver un logement avec piscine ?"],
+        "content": ["Et bien, pour être honnête, on m’a dit que les tours du quartier étaient plutôt insalubres… avec des problèmes d’infiltration, de parasites, de champignons et surtout d’isolation phonique.","Je ne suis pas très convaincue à l’idée de vivre dans des tours plutôt anciennes.","Ai-je une chance de trouver un logement avec piscine ?"],
+        "next": ["ReponseChoix11", "ReponseChoix11","ReponseChoix12"]
+    },
+
+    "ReponseChoix11": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Effectivement, les tours du quartier sont vieilles de plusieurs décennies et ont clairement besoin de rénovation.","C’est d’ailleurs l’objectif du programme de renouvellement urbain signé par la municipalité à l’horizon 2025-2026."],
+        "next": ["Choix2"]
+    },
+    
+    "ReponseChoix12": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Mmh… ce n’est pas garanti.","Par contre, la municipalité a signé un programme de renouvellement urbain à l’horizon 2025-2026. Donc pas de piscine mais un logement rénové pour sûr !"],
+        "next": ["Choix2"]
+    },
+
+    "Choix2": {
+        "speaker": "user",
+        "type": "choice",
+        "choicesLabel": ["Ok, tu marques un point 😉","Programme de renouvellement urbain ?"],
+        "content": ["Ok, tu marques un point 😉","Programme de renouvellement urbain ? C’est-à-dire ?"],
+        "next": ["Reponse21","Reponse22"]
+    },
+
+    "Reponse21": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Je vise toujours dans le mille héhé !","Pour t’en dire un peu plus, la ville de Rennes et ses partenaires vont engager à partir de 2024-2025 un ensemble d’actions ciblées sur la dalle Kennedy et ses abords.","L’idée étant d’améliorer sa qualité urbaine. Au total, ce sont 1600 logements qui seront concernés par des réhabilitations dans le quartier."],
+        "next": ["Choix3"]
+    },
+
+    "Reponse22": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Eh bien la ville de Rennes et ses partenaires vont engager à partir de 2024-2025 un ensemble d’actions ciblées sur la dalle Kennedy et ses abords","L’idée étant d’améliorer sa qualité urbaine. Au total, ce sont 1600 logements qui seront concernés par des réhabilitations dans le quartier."],
+        "next": ["Choix3"]
+    },
+ 
+    "Choix3": {
+        "speaker": "user",
+        "type": "choice",
+        "choicesLabel": ["Je vois"],
+        "content": ["Je vois, mais le temps des travaux 🚧, où sont les habitant.es ?"],
+        "next": ["Reponse3"]
+    },
+
+    "Reponse3": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["En attendant que les travaux de la tour soient faits, les habitant.es sont relogé.es dans un appartement adapté.","Une fois l'immeuble refait, ils auront deux options : rester dans le logement de substitution ou retourner dans l'autre. 👍"],
+        "next": ["Choix4"]
+    },
+
+    "Choix4": {
+        "speaker": "user",
+        "type": "choice",
+        "choicesLabel": ["Ça reste encore un peu instable comme situation"],
+        "content": ["Ça reste encore un peu instable comme situation."],
+        "next": ["Reponse4"]
+    },
+
+    "Reponse4": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["C’est sûr, mais niveau budget 💸, habiter Villejean reste intéressant.","À combien évaluerais-tu un loyer mensuel pour un appartement de 30 m² à Villejean ?"],
+        "next": ["Choix5"]
+    },
+
+    "Choix5": {
+        "speaker": "user",
+        "type": "choice",
+        "choicesLabel": ["490€","460€","410€"],
+        "content": ["490€","460€","410€"],
+        "next": ["Reponse51","Reponse52","Reponse51"]
+    },
+
+    "Reponse51": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Et non, c’est 460€ par mois approximativement selon Ouest-France Immobilier.","Pour te donner une idée, pour une surface similaire, le loyer dans le centre de Rennes s’élève à 550€ par mois…"],
+        "next": ["Choix6"]
+    },
+
+    "Reponse52": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Oui, c'est bien 460€ par mois approximativement selon Ouest-France Immobilier.","Pour te donner une idée, pour une surface similaire, le loyer dans le centre de Rennes s’élève à 550€ par mois…"],
+        "next": ["Choix6"]
+    },
+
+    "Choix6": {
+        "speaker": "user",
+        "type": "choice",
+        "choicesLabel": ["Mais niveau sécurité, on est pas au top !","Ok, n’en dites pas plus, j’achète tout de suite !"],
+        "content": ["Oui, mais le centre de Rennes est moins touché par la délinquance, le trafic de drogue, etc… La sécurité, ça n’a pas de prix","Ok, n’en dites pas plus, j’achète tout de suite !"],
+        "next": ["Reponse61","Reponse62"]
+    },
+
+    "Reponse61": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Et bien détrompe-toi ! Les apparences sont parfois trompeuses.","Effectivement, Villejean est souvent présenté comme un lieu de trafic de drogue ou de délinquance 😇. C'est un fait.","Mais il n’est pas le quartier le plus dangereux, loin de là. Selon les dernières études, le centre de Rennes bat tous les records."],
+        "next": ["Choix7"]
+    },
+
+    "Reponse62": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Génial, tu m’en vois ravie !","D’ailleurs, si je peux me permettre, il n’est pas plus dangereux de vivre à Villejean que dans le centre-ville…","Selon les dernières études concernant la délinquance, Rennes centre bat tous les records."],
+        "next": ["Choix7"]
+    },
+
+    "Choix7": {
+        "speaker": "user",
+        "type": "choice",
+        "choicesLabel": ["Comment ça se fait ?"],
+        "content": ["Comment ça se fait ?"],
+        "next": ["Reponse7"]
+    },
+
+    "Reponse7": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Eh bien, le centre de Rennes concentre l’activité nocturne et l’ensemble des commerces.","Bon après, il ne faut pas non plus dire qu’il ne se passe rien à Villejean.","Seulement, les chiffres l’affichent… Alors que le centre de Rennes concentre 19% des faits constatés de délinquance, Villejean n’en représente que 9."],
+        "next": ["Choix8"]
+    },
+
+    "Choix8": {
+        "speaker": "user",
+        "type": "choice",
+        "choicesLabel": ["D'accord, je vois…"],
+        "content": ["D'accord, je vois…"],
+        "next": ["Reponse8"]
+    },
+
+    "Reponse8": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Et en plus, le quartier est très dynamique avec les universités qui s’y trouvent 🎓.","Comme Rennes 2 ou l’école de commerce Rennes School of Business aussi ! D’ailleurs, les 18-24 ans constituent plus de 30% de la population du quartier.","Bon, je te laisse réfléchir à tout ça ! En attendant, si tu le souhaites, un logement t’attend ici… 😉"],
+        "next": ["QuestionFin"]
+    },
+
+    "QuestionFin": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Et voilà ! Souhaites-tu découvrir une autre thématique ?"],
+        "next": ["ChoixTheme"]
+    },
+
+    "ChoixTheme": {
+        "speaker": "user",
+        "type": "topicChoice",
+        "choicesLabel": ["Portrait", "Culture", "Habitat", "Sport", "Education", "Commerce"],
+        "content": ["Les portraits de ${quartier}.", "La culture à ${quartier}.", "L'habitat à ${quartier}.", "Le sport à ${quartier}.", "L'éducation à ${quartier}.", "Les commerces à ${quartier}."],
+        "next": ["GoLieu", "GoLieu", "GoLieu", "GoLieu", "GoLieu", "GoLieu"]
+    },
+
+    "GoLieu": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Parfait ! Allez viens je t’emmène ${lieu}"],
+        "next": ["Quitter"]
+    },
+
+    "Quitter": {
+        "speaker": "user",
+        "type": "quit",
+        "choicesLabel": ["Aller ${lieu}."],
+        "content": [],
+        "next": ["Fin"]
+    },
+
+    "Lieux": {
+        "portrait": "à la maison de quartier de Villejean",
+        "culture": "au centre Avicenne",
+        "habitat": "à la tour Bourbonnais",
+        "sport": "au stade Robert-Poirier",
+        "education": "au collège Rosa Parks",
+        "commerce": "au marché de Villejean"
+    }
+}

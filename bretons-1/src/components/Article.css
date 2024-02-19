@@ -1,0 +1,72 @@
+.article-container {
+  font-family: 'Arial', sans-serif;
+  margin: 20px;
+  padding: 20px;
+  position: relative;
+  z-index: 10;
+}
+  
+  .article-title {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: #545454;
+  }
+  
+  .article-subtitle {
+    color: #757575;
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  
+  .article-content {
+    font-size: 20px;
+    color: #666; /* Even lighter text for the content */
+    line-height: 1.6; /* More readable line spacing */
+  }
+  
+  .article-image {
+    width: 50%; /* Responsive image width */
+    height: auto; /* Maintain aspect ratio */
+    margin-top: 20px; /* Space between text and image */
+    border-radius: 10px; /* Rounded corners for the image */
+  }
+  .Lastline{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+  }
+
+  .inversedColor{
+      filter: invert(100%) grayscale(100%); 
+  }
+
+  .GuilleVerte{
+    margin-top: 10px;
+    position: absolute;
+    z-index: 0;
+  }
+  
+  .GuilleVerteinversed {
+    position: absolute;
+    z-index: -1;
+    transform: rotate(180deg);
+    right: 25%;
+    transform-origin: top right;
+}
+
+.BicycleLogoArticle{
+  height: 15px;
+  width: auto;
+  margin-left: 10px;
+}
+
+.subtitle{
+  margin-top: 5px;
+  display: flex;
+}
+.back{
+  border-radius: 6px;
+  background-color: #ffffff;
+}

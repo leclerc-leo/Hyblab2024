@@ -1,0 +1,145 @@
+
+
+/*body{
+  font-size: 8vw;
+  color: #fff;
+}*/
+
+/*.swiper-wrapper{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+
+  background-color: var(--bg-green);
+}*/
+
+.bio-player{
+  width: 85%;
+  margin: 0.28em auto;
+  text-align: center;
+  border: 3px solid var(--yellow);
+  border-radius: 8px;
+}
+
+.background-text{
+  position: relative;
+  z-index: -1;
+  height: 0;
+  font-size: 165%;
+  width: 100%;
+  line-height: 0.9em;
+  color: var(--green);
+  font-family: "Abolition";
+}
+
+.avatar{
+  width: 4.4em;
+  margin-top: 0.36em;
+  object-fit: contain;
+}
+
+.fullname, .infos p {
+  font-family: "Abolition";
+  color: white;
+}
+
+.overlay-firstname{
+  position: relative;
+  height: 0;
+  bottom: 1.17em;
+  font-size: 1.3em;
+}
+
+.lastname{
+  position: relative;
+  bottom: 0.25em;
+  font-size: 1.1em; 
+}
+
+.display-bio{
+  position: relative;
+  z-index: 2;
+  height: 0;
+  left: 2.6em;
+  bottom: 2.4em;
+}
+
+.display-bio img{
+  width: 0.5em;
+  margin-right: 4%;
+  margin-bottom: 10%;
+}
+
+.icons{
+  background-color: var(--green);
+}
+
+.icons > * {
+  display: inline-block;
+  width: 20%;
+}
+
+.infos img{
+  height: 0.5em;
+  object-fit: contain;
+}
+
+.infos p{
+  font-size: 0.33em;
+  margin: inherit;
+  text-align: inherit;
+  color: white;
+}
+
+.flags > img{
+  display: block;
+  margin: 0 auto;
+  width: 0.5em;
+  height: inherit;
+}
+
+.like > img{
+  width: 1.35em;
+}
+
+.icons-text{
+  padding: 0.6rem;
+  text-align: left;
+  font-size: 0.27em;
+  font-family: "Neue Haas Unica";
+  color: white;
+}
+
+/* Fill the whole viewport when its aspect ratio is between 9/16 and 3/4 */
+/*
+@media screen and (max-aspect-ratio: 3/4) {
+  #container{
+      margin-left: 0; 
+      width: 100vw; 
+  }
+
+  body{
+      font-size: 15vw;
+  }
+
+  .infos p{
+    font-size: 0.36em;
+  }
+}*/
+
+/* The content is displayed at 9/16 If the aspect ratio is higher that 9/16  */ 
+/*@media screen and (max-aspect-ratio: 9/16) {
+  #container{
+      margin-left: 0; 
+      width: 100vw;   
+      margin-top: calc(-50 * 16vw / 9); 
+      top:50%; 
+      height: calc(100 * 16vw / 9);
+      position: absolute;
+  }
+
+  body{
+      font-size: 15vw;
+  }
+}*/
+

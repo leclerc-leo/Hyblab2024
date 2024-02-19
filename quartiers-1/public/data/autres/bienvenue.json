@@ -1,0 +1,13 @@
+{
+    "Debut": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Ce quartier n'est malheureusement pas disponible."],
+        "next": ["Fin"]
+    },
+
+    "Lieux": {
+        "aucun": "aucun"
+    }
+}

@@ -1,0 +1,154 @@
+{
+    "Debut": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Nous voici devant Rosa Parks, l’unique collège du quartier 🏫.", "${image_begin}education.jpg${image_end}","L’établissement accueille une section internationale britannique, une section bilingue anglais-arabe, une section sportive athlétisme ainsi que des sections ULIS et SEGPA.","Dis-moi, quelle est ta préoccupation concernant la scolarité ? As-tu des enfants ?"],
+        "next": ["Choix1"]
+    },
+
+    "Choix1": {
+        "speaker": "user",
+        "type": "choice",
+        "choicesLabel": ["J’ai des enfants", "Je n’ai pas d’enfant"],
+        "content": ["J’aimerais inscrire mon fils en cinquième mais j’ai un peu peur. J’ai vu que l’indice de position sociale de l’établissement était le plus faible du département… Je ne me vois pas trop inscrire mon enfant dans le collège le plus défavorisé de l’Ille et Vilaine.", "Je n’ai pas d’enfant mais si jamais j’ai envie d’en avoir un, je veux être sûr.e qu’il/elle puisse aller à l’école dans le quartier…"],
+        "next": ["ReponseChoix11", "ReponseChoix12"]
+    },
+
+    "ReponseChoix11": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Je comprends mais ne t’inquiète pas. Depuis 2022, le quartier de Villejean est passé Cité éducative.","Ce dispositif a pour objectif de participer à la prise en charge éducative des jeunes dès 3 ans et ce jusqu’à 25 ans. Et Rosa Parks en fait partie !"],
+        "next": ["Choix2"]
+    },
+    
+    "ReponseChoix12": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Je comprends. Et bien pour te rassurer, le quartier de Villejean est passé en 2022 : Cité éducative.","Ce dispositif a pour objectif de participer à la prise en charge éducative des jeunes dès 3 ans et ce jusqu’à 25 ans."],
+        "next": ["Choix2"]
+    },
+
+    "Choix2": {
+        "speaker": "user",
+        "type": "choice",
+        "choicesLabel": ["Mais trop génial ça !","Je ne comprends pas","Mouais"],
+        "content": ["Mais trop génial ça !","Je ne comprends pas trop. Qu’est-ce que cela veut dire ?","Mouais, il en faudra plus pour me convaincre."],
+        "next": ["Reponse2A","Reponse2B","Reponse2C"]
+    },
+
+    "Reponse2A": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Oui, je suis d'accord, le label Cité éducative ouvre droit à des moyens supplémentaires, financiers et humains au quartier.","L'objectif étant, avec 400 000 euros 🤑 de dotation par an, de prendre en charge les enfants et jeunes du quartier de Villejean."],
+        "next": ["Choix3"]
+    },
+
+    "Reponse2B": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Concrètement, le label Cité éducative ouvre droit à des moyens supplémentaires, financiers et humains au quartier.","L'objectif étant, avec 400 000 euros 🤑 de dotation par an, de prendre en charge les enfants et jeunes du quartier de Villejean."],
+        "next": ["Choix3"]
+    },
+
+    "Reponse2C": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Le label Cité éducative ce n'est pas rien, celui-ci ouvre droit à des moyens supplémentaires, financiers et humains au quartier.","L'objectif étant, avec 400 000 euros 🤑 de dotation par an, de prendre en charge les enfants et jeunes du quartier de Villejean."],
+        "next": ["Choix3"]
+    },
+
+    "Choix3": {
+        "speaker": "user",
+        "type": "choice",
+        "choicesLabel": ["Mmh, je vois"],
+        "content": ["Mmh, je vois."],
+        "next": ["Reponse3"]
+    },
+
+    "Reponse3": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["En plus, si ton enfant en a besoin, des associations d’aide aux devoirs viennent compléter l’aide financière de l’État.","Selon toi, il en existe combien dans le quartier ?"],
+        "next": ["Choix4"]
+    },
+
+    "Choix4": {
+        "speaker": "user",
+        "type": "choice",
+        "choicesLabel": ["1","3","5"],
+        "content": ["1","3","5"],
+        "next": ["Reponse41","Reponse41","Reponse42"]
+    },
+
+    "Reponse41": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Et non, c'est plus, il en existe 5 ! Comme l’association Mosaïque par exemple, qui depuis 2003, s’est lancée dans l’aide aux devoirs.","D’ailleurs, en 2023, ils ont aidé onze élèves à obtenir leur brevet des collèges 🧑‍🎓.","Bon je ne t’en dis pas plus, Natacha le raconte mieux que moi !","${video_begin}https://www.youtube.com/embed/4wR5ubwNarE?si=bT3NZbn262FIpfp2&start=43&end=191&controls=0${video_end}","D'ailleurs, tu peux retrouver tous les reportages ${lien_video_begin}ici${lien_video_end}."],
+        "next": ["Reponse5"]
+    },
+
+    "Reponse42": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Et oui, il en existe plein ! Comme l’association Mosaïque par exemple, qui depuis 2003, s’est lancée dans l’aide aux devoirs.","D’ailleurs, en 2023, ils ont aidé onze élèves à obtenir leur brevet des collèges 🧑‍🎓.","Bon je ne t’en dis pas plus, Natacha le raconte mieux que moi !","${video_begin}https://www.youtube.com/embed/4wR5ubwNarE?si=bT3NZbn262FIpfp2&start=43&end=191&controls=0${video_end}","D'ailleurs, tu peux retrouver tous les reportages ${lien_video_begin}ici${lien_video_end}."],
+        "next": ["Reponse5"]
+    },
+
+    "Reponse5": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Quand il grandira, il pourra aller au lycée Victor-et-Hélène Basch.","Ou même, si tu as un autre enfant, il existe plusieurs établissements primaires comme les groupes scolaires Andrée Chedid ou Jean Moulin, l’école Guyenne, Picardie ou encore, l’école privée Saint Jean Bosco. 🧑‍💻"],
+        "next": ["QuestionFin"]
+    },
+
+    "QuestionFin": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Et voilà ! Souhaites-tu découvrir une autre thématique ?"],
+        "next": ["ChoixTheme"]
+    },
+    
+    "ChoixTheme": {
+        "speaker": "user",
+        "type": "topicChoice",
+        "choicesLabel": ["Portrait", "Culture", "Habitat", "Sport", "Education", "Commerce"],
+        "content": ["Les portraits de ${quartier}.", "La culture à ${quartier}.", "L'habitat à ${quartier}.", "Le sport à ${quartier}.", "L'éducation à ${quartier}.", "Les commerces à ${quartier}."],
+        "next": ["GoLieu", "GoLieu", "GoLieu", "GoLieu", "GoLieu", "GoLieu"]
+    },
+
+    "GoLieu": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Parfait ! Allez viens je t’emmène ${lieu}."],
+        "next": ["Quitter"]
+    },
+
+    "Quitter": {
+        "speaker": "user",
+        "type": "quit",
+        "choicesLabel": ["Aller ${lieu}"],
+        "content": [],
+        "next": ["Fin"]
+    },
+
+    "Lieux": {
+        "portrait": "à la maison de quartier de Villejean",
+        "culture": "au centre Avicenne",
+        "habitat": "à la tour Bourbonnais",
+        "sport": "au stade Robert-Poirier",
+        "education": "au collège Rosa Parks",
+        "commerce": "au marché de Villejean"
+    }
+}

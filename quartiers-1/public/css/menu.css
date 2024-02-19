@@ -1,0 +1,160 @@
+/* Burger Menu */
+/* Sidenav menu */
+
+#mySidenav {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    left: -100%;
+    padding-top: 24%;
+    background-color: #FBEFEB;
+    transition: left 0.5s ease;
+    overflow-y: scroll;
+}
+
+#mySidenav p {
+    color: #292C5E;
+    font-size: 0.25em;
+    text-indent: 3%;
+    padding: 2%;
+}
+
+#mySidenav h1{
+    position: absolute;
+    top: 15px;
+    width: 100%;
+    z-index: -1;
+    text-align: center;
+    font-size: 0.6em;
+    color: #31356B;
+}
+
+/* Sidenav menu links */
+#mySidenav button {
+    padding: 8px 8px 8px 4%;
+    font-size: 0.5em;
+    font-family: 'nexa';
+    font-weight: 600;
+    color: #292C5E;
+    transition: 0.3s;
+    background: none;
+    border: none;
+}
+#mySidenav a{
+    text-decoration: none;
+    font-size: 0.5em;
+    font-family: 'nexa';
+    font-weight: 600;
+    color: #292C5E;
+    transition: 0.3s;
+}
+
+#mySidenav button:hover,#mySidenav a:hover{
+    color: #111;
+}
+
+#mySidenav ul{
+    list-style-type: none;
+    margin-bottom: 20%;
+}
+
+#mySidenav li{
+    margin: 1% 0 1% 1%;
+    color: #7D7DB5;
+    display: flex;
+    align-items: baseline;
+    text-indent: 20px;
+}
+
+#mySidenav li::before {
+    content: "●";
+    color: #7D7DB5;
+    font-size: 0.4em;
+}
+
+#mySidenav hr{
+    height: 2px;
+    background-color: #292C5E;
+    border: none;
+}
+/* Active class */
+#mySidenav.active {
+    left: 0;
+}
+
+/* last ul */
+#mySidenavlastul{
+    list-style-type: none;
+    padding-bottom: 40%;
+}
+
+#mySidenavlastul li::before{
+    color: transparent;
+}
+
+#mySidenavlastul a{
+    padding-top: 8px;
+    padding-bottom: 8px;;
+}
+/* Close btn */
+#closeBtn {
+    content:'';
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 8%;
+    height: 5%;
+    background: none;
+    border: none;
+}
+
+#closeBtn::before,
+#closeBtn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  height: 8%;
+  background-color: #31356B;
+}
+
+#closeBtn::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+#closeBtn::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+/* Open btn */
+#openBtn {
+    position: absolute;
+    z-index: 2;
+    left: 15px;
+    top: 15px;
+    background: none;
+    border: none;
+    width: 8%;
+    aspect-ratio: 1;
+    animation: translateButtonFromLeft 2s;
+}
+@keyframes translateButtonFromLeft {
+    from {
+        transform: translateX(-150%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* burger */
+.burger-icon span {
+    display: block;
+    width: 80%;
+    height: 11%;
+    background-color: #292C5E;
+    margin: 15% 0;
+}
+

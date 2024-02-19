@@ -1,0 +1,146 @@
+{
+    "Debut": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Bienvenue à la maison de quartier de Villejean ! Chaque semaine se réunissent des dizaines d’associations en ce lieu, c’est un endroit fort de la vie du quartier !","${image_begin}association.jpg${image_end}","Ça te dirait d’y participer ? 🎉"],
+        "next": ["Choix1"]
+    },
+
+    "Choix1": {
+        "speaker": "user",
+        "type": "choice",
+        "choicesLabel": ["Oui grave !","Ça dépend de ce qu’ils proposent"],
+        "content": ["Oui grave !","Ça dépend de ce qu’ils proposent."],
+        "next": ["ReponseChoix11", "ReponseChoix12"]
+    },
+
+    "ReponseChoix11": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Alors tu devrais trouver ton bonheur ici grâce à toutes sortes d’activités et événements pour les jeunes et les moins jeunes.","On y trouve des spectacles, des concerts, de la gym douce, et même une association de mosaïque Bretagne Maroc !"],
+        "next": ["Reponse2"]
+    },
+    
+    "ReponseChoix12": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Eh bien toutes sortes d’activités et événements pour les jeunes et les moins jeunes. On y trouve des spectacles, des concerts, de la gym douce, et même une association de mosaïque Bretagne Maroc !"],
+        "next": ["Reponse2"]
+    },
+
+    "Reponse2": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Tu sais combien d’associations dénombre la maison de quartier de Villejean ?"],
+        "next": ["Choix2"]
+    },
+
+    "Choix2": {
+        "speaker": "user",
+        "type": "choice",
+        "choicesLabel": ["Moins de 50","Entre 50 et 70","Plus de 70"],
+        "content": ["Moins de 50","Entre 50 et 70","Plus de 70"],
+        "next": ["Reponse21","Reponse22","Reponse23"]
+    },
+
+    "Reponse21": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["C'est plus ! Il y a entre 50 et 70 associations inscrites à la maison de quartier, mais si nous comptons, les associations partenaires, et les associations qui viennent régulièrement pour des événements il y en a beaucoup plus.","La maison de quartier de Villejean à la plus grande capacité d’accueil de Bretagne avec une salle de spectacle, et des troupes de théâtre en résidence régulièrement."],
+        "next": ["Reponse3"]
+    },
+
+    "Reponse22": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["C’est proche ! Même s'il y a entre 50 et 70 associations inscrites à la maison de quartier, si nous comptons, les associations partenaires, et les associations qui viennent régulièrement pour des événements il y en a beaucoup plus !","La maison de quartier de Villejean à la plus grande capacité d’accueil de Bretagne avec une salle de spectacle, et des troupes de théâtre en résidence régulièrement."],
+        "next": ["Reponse3"]
+    },
+
+    "Reponse23": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["C’est exacte ! Même s'il y a entre 50 et 70 associations inscrites à la maison de quartier, si nous comptons, les associations partenaires, et les associations qui viennent régulièrement pour des événements il y en a beaucoup plus !","La maison de quartier de Villejean a la plus grande capacité d’accueil de Bretagne avec une salle de spectacle, et des troupes de théâtre en résidence régulièrement."],
+        "next": ["Reponse3"]
+    },
+
+    "Reponse3": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Une des associations omniprésente de la maison de quartier de Villejean est le collectif Kuné! Si tu veux en apprendre plus sur celui-ci et t'immerger dans la vie de quartier, je te propose de regarder cette vidéo :","${video_begin}https://www.youtube.com/embed/4wR5ubwNarE?si=bT3NZbn262FIpfp2&start=43&end=191&controls=0${video_end}","D'ailleurs, tu peux retrouver tous les reportages ${lien_video_begin}ici${lien_video_end}."],
+        "next": ["Reponse4"]
+    },
+
+    "Reponse4": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Sais-tu qui est à l’origine du collectif Kuné ?"],
+        "next": ["Choix5"]
+    },
+
+    "Choix5": {
+        "speaker": "user",
+        "type": "choice",
+        "choicesLabel": ["Bien sûr !","Je ne sais pas"],
+        "content": ["Bien sûr, c’est une figure emblématique du quartier !","Je ne sais pas qui en est à l’origine mais j’ai hâte de savoir."],
+        "next": ["Reponse5","Reponse5"]
+    },
+
+    "Reponse5": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["C’est Régine Komokoli qui a créé le collectif Kuné : Faire ensemble à Villejean, qui est un réseau d’auto-défense pour lutter contre les violences faites aux femmes.","Régine est conseillère départementale déléguée à la protection maternelle et infantile, à la petite enfance et à la parentalité d'Ille-et-Vilaine.","${image_begin}reginekomokoli.jpg${image_end}","Pour en savoir plus, c'est ${lien_portrait_begin}ici${lien_portrait_end}."],
+        "next": ["QuestionFin"]
+    },
+
+    "QuestionFin": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Et voilà ! Souhaites-tu découvrir une autre thématique ?"],
+        "next": ["ChoixTheme"]
+    },
+
+    "ChoixTheme": {
+        "speaker": "user",
+        "type": "topicChoice",
+        "choicesLabel": ["Portrait", "Culture", "Habitat", "Sport", "Education", "Commerce"],
+        "content": ["Les portraits de ${quartier}.", "La culture à ${quartier}.", "L'habitat à ${quartier}.", "Le sport à ${quartier}.", "L'éducation à ${quartier}.", "Les commerces à ${quartier}."],
+        "next": ["GoLieu", "GoLieu", "GoLieu", "GoLieu", "GoLieu", "GoLieu"]
+    },
+
+    "GoLieu": {
+        "speaker": "guide",
+        "type": "bubble",
+        "choicesLabel": [],
+        "content": ["Parfait ! Allez viens je t’emmène ${lieu}."],
+        "next": ["Quitter"]
+    },
+
+    "Quitter": {
+        "speaker": "user",
+        "type": "quit",
+        "choicesLabel": ["Aller ${lieu}"],
+        "content": [],
+        "next": ["Fin"]
+    },
+
+    "Lieux": {
+        "portrait": "à la maison de quartier de Villejean",
+        "culture": "au centre Avicenne",
+        "habitat": "à la tour Bourbonnais",
+        "sport": "au stade Robert-Poirier",
+        "education": "au collège Rosa Parks",
+        "commerce": "au marché de Villejean"
+    }
+}

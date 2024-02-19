@@ -1,0 +1,161 @@
+.frame6-image {
+    color: #333;
+    background-color: gray;
+    padding: 20px;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    z-index: 0;
+    position: absolute;
+  }
+
+  .identity {
+    position: absolute;
+    top: 10.5%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 3em;
+    white-space: nowrap;
+    font-size: 130px;
+    font-weight: bold;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .identity-name {
+    position: absolute;
+    top: 18.5%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5em;
+    color: #fff;
+    font-size: 90px;
+    width: 920px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .bols {
+    width: 35%;
+    height: auto;
+    z-index: 10;
+    top: 30%;
+    left: 8.2%;
+    position: absolute;
+  }
+
+  .athlete-frame5 {
+    top: 26.9%;
+    left: 50%;
+    width: 518px;
+    height: 485px;
+    z-index: 20;
+    position: absolute;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    object-fit: cover;
+  }
+
+  .fun-fact {
+    position: absolute;
+    top: 55%;
+    left: 92.5%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    color: #000;
+    text-align: left;
+    font-size: 50px;
+    font-weight: bold;
+  }
+
+  .fun-fact-texte {
+    position: absolute;
+    top: 65.5%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    width: 480px; 
+    height: 320px;
+    color: #000;
+    text-align: left;
+    font-size: 38px;
+  }
+
+  .record {
+    position: absolute;
+    top: 62.5%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    width: 80%; 
+    color: #000;
+    text-align: left;
+    font-size: 40px;
+    font-weight: bold;
+  }
+
+  .record-texte {
+    position: absolute;
+    top: 68.7%;
+    left: 26%;
+    transform: translate(-50%, -50%);
+    width: 450px; 
+    height: 180px;
+    color: #000;
+    text-align: left;
+    font-size: 35px;
+  }
+
+  .age-frame5 {
+    position: absolute;
+    text-align: center;
+    top: 32%;
+    left: 15%;
+    width: 240px;
+    font-size: 40px;
+    font-family: "Golos Text";
+    transform: rotate(6deg);
+    z-index: 12;
+  }
+
+  .taille-frame5 {
+    position: absolute;
+    top: 37%;
+    left: 17.5%;
+    width: 200px;
+    font-size: 70px;
+    font-family: "Golos Text";
+    transform: rotate(-7deg);
+    z-index: 12;
+    text-align: center;
+  }
+
+  .sport-frame5 {
+    position: absolute;
+    top: 44.5%;
+    left: 14.5%;
+    width: 226px;
+    font-size: 50px;
+    text-align: center;
+    font-family: "Golos Text";
+    transform: rotate(4deg);
+    z-index: 12;
+  }
+
+  .sport-image {
+    position: absolute;
+    top: 50.5%;
+    left: 20%;
+    width: 120px;
+    height: auto;
+    text-align: center;
+    z-index: 12;
+  }
+
+  .pointeur {
+    position: absolute;
+    width: 70px;
+    z-index: 20;
+  }
+

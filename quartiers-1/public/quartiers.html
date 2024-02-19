@@ -1,0 +1,87 @@
+<!doctype html>
+
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>Hyblab 2023</title>
+    <link rel="stylesheet" href="css/quartiers.css"> 
+    <link rel="stylesheet" href="css/menu.css"> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/loadingio/loading.css@v2.0.0/dist/loading.css">
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'> <!-- Police Google -->
+    <link href="https://fonts.cdnfonts.com/css/nexa-bold" rel="stylesheet"> <!-- Police Nexa -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.8/lottie.min.js"></script> 
+    <script src="js/quartiers.js" defer></script>
+    <script src="js/conversation.js" defer></script>
+    <script src="js/menu.js" defer></script>
+    <script src="js/quartiers_animations.js" defer></script>
+</head>
+<body>
+    <div id="container">
+            
+        <section id="quartier">
+
+            <div id="mySidenav" class="sidenav">
+                <div id="mySidenav-header">
+                    <button id="closeBtn" onclick="closeNav()"></button>
+                    <h1 class="quartier-titre">Villejean</h1>
+                </div>
+                <p class="undefinedElement">Accès direct aux thématiques</p>
+                <ul class="undefinedElement">
+                    <!-- # should be replaced by url later -->
+                    <hr />
+                    <li><button class="topicButton" data-topic="portrait" onclick="">Portrait d'habitant</button></li>
+                    <hr />
+                    <li><button class="topicButton" data-topic="culture" onclick="">Culture</button></li>
+                    <hr />
+                    <li><button class="topicButton" data-topic="habitat" onclick="">Habitat</button></li>
+                    <hr />
+                    <li><button class="topicButton" data-topic="sport" onclick="">Sport</button></li>
+                    <hr />
+                    <li><button class="topicButton" data-topic="education" onclick="">Education</button></li>
+                    <hr />
+                    <li><button class="topicButton" data-topic="commerce" onclick="">Commerces</button></li>
+                    <hr />
+                </ul>
+                <ul id="mySidenavlastul">
+                    <hr />
+                    <li class="undefinedElement"><a href="./reportages">Tous les Reportages</a></li>
+                    <hr />
+                    <li><a href="./">Carte des quartiers</a></li>
+                    <hr />
+                    <li class="undefinedElement"><a href="#" onclick="goToCredits();">Crédits</a></li>
+                    <hr />
+                </ul>
+            </div>
+
+            <div class="drawing">
+                <h1 class="quartier-titre">Villejean</h1>
+                <div class="background-container">
+                    <!--<div class="" id="background-animation"></div>-->
+                </div>
+
+                <!-- create burger icon by span -->
+                <button id="openBtn" onclick="openNav()">
+                    <span class="burger-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                </button>
+            </div>
+
+            <div id="guide-chemin">
+                <div class="guide" id="guide-coucou"></div>
+                <div class="guide empty" id="guide-walk"></div>
+            </div>
+
+            <div id="villejean-conversation" class="conversation"></div>
+
+            <!--<input type="button" value="Test" class="navigation-button test">-->
+        </section>
+            
+    </div>
+</body>
+</html>

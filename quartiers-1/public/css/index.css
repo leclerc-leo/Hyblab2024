@@ -1,0 +1,524 @@
+/* ------- Important ! Please at least keep the last part of this CSS ----------- */
+/* ------- that adapts content width and height so that aspect ratio  ----------- */
+/* ------- is kept between 9/16 a,d 3/4 (portait orientation)         ----------- */
+
+/* Normalize margin and padding to ease elements positioning */
+*{
+    padding:0;
+    margin:0;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+body{
+    background-color: black;
+    color: #292C5E;
+    overflow: hidden;   /* to avoid slider bugs on some browsers */
+    font-family: 'Inter', sans-serif;
+}
+h1{
+    font-family: 'Nexa', sans-serif;
+    color: #FFFFFF;
+    
+}
+
+/* -------------- Loader --------------*/
+#loader{
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    background-color: #FBEFEB;
+}
+
+#animation-logo{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    height: 120%;
+    width: 120%;
+    animation: logoloader 1s ease-out 3s forwards;
+    /*animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 3s;*/
+}
+
+/*Animation du logo dans le chargement*/
+@keyframes logoloader{
+    0%{
+        height: 120%;
+        width: 120%;
+        top: 45%;
+    }
+
+    100%{
+        height: 110%;
+        width: 110%;
+        top: 20%;
+    }
+}
+
+/* -------------- End of Loader --------------*/
+
+/* -------------- Accueil --------------*/
+
+#accueil{
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+    background-color: #FBEFEB;
+}
+
+#accueil .p_container{
+    position: absolute;
+    opacity: 0;
+    width: 55%;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    animation: spawnloader 2s linear 3s;
+    animation-fill-mode: forwards;
+    
+}
+#accueil p{
+    font-weight: 700;
+    text-align :center;
+    line-height:100%;
+    font-size: 30%;
+    margin-top: 15%;
+    font-family: 'Nexa', sans-serif;
+    color: #292C5E;
+}
+
+#accueil_dessin{
+    position: absolute;
+    width: 100%;
+    bottom: 10%;
+    animation: spawnloader 2s linear 5s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+/*Animation du décor dans le chargement qui apparait*/
+@keyframes spawnloader {
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 100%;
+    }
+    
+}
+
+/* -------------- End of Accueil --------------*/
+
+/* -------------- Tuto --------------*/
+#tuto{
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    opacity: 1;
+    text-align: center;
+}
+
+.tuto-text{
+    position: absolute;
+    font-size: 28%;
+    color: #292C5E;
+
+}
+#tuto-map{
+    left: 25%;
+    top: 20%;
+    transform: translateX(-50%) translateY(-50%);
+}
+#tuto-swipe{
+    right: 20%;
+    top: 66%;
+    transform: translateX(50%) translateY(-50%);
+}
+#tuto-button{
+    left: 19%;
+    bottom: 13%;
+    transform: translateX(-50%) translateY(50%);
+}
+
+.tuto-fleche{
+    position: absolute;
+    width: 18%;
+    height: auto;
+}
+#tuto-map-fleche{
+    left: 22%;
+    top: 30%;
+    transform: translateX(-50%) translateY(-50%) rotate(20deg);
+}
+#tuto-swipe-fleche{
+    right: 23%;
+    bottom: 26%;
+    transform: translateX(50%) translateY(50%) scaleX(-1) rotate(20deg);
+}
+#tuto-button-fleche{
+    left: 24%;
+    bottom: 6%;
+    transform: translateX(-50%) translateY(50%) rotate(-15deg);
+}
+/* -------------- End of Tuto --------------*/
+
+/* -------------- Map --------------*/
+#map{
+    width: 100%;
+    height:60%;
+    background-color: #FBEFEB;
+}
+
+#logo-map{
+    position: absolute;
+    height: 12%;
+    width: auto;
+    top: 2%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+#map svg{
+    position: relative;
+    top: 30%;
+    height: 70%;
+    width: auto;
+    left: 50%;
+    transform: translateX(-50%);
+}
+/* -------------- End of Map --------------*/
+
+/* -------------- Nuage --------------*/
+
+.nuage{
+    z-index: 0;
+    position: absolute;
+    width: 20%;
+}
+
+#nuage1{   
+    animation: animCloud1 30s ease-in-out infinite;
+    bottom: 87%;
+    transform: rotate3d(0, 1, 0, 180deg);
+    scale: 0.6 0.5;
+}
+
+#nuage2{
+    animation: animCloud2 30s ease-in-out infinite;
+    bottom: 79%;
+    scale: 0.7 0.7;
+}
+
+#nuage3{
+    animation: animCloud3 30s ease-in-out infinite;
+    bottom: 33%;
+    scale: 0.6 0.55;
+    z-index: 2;
+}
+
+#nuage4{
+    animation: animCloud4 20s ease-in-out infinite, spawnloader 2s linear 3s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    bottom: 25%;
+    scale: 0.5 0.5;
+}
+
+#nuage5{
+    animation: animCloud5 20s ease-in-out infinite, spawnloader 2s linear 3s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    bottom: 25%;
+    scale: 0.5 0.55;
+}
+
+#nuage6{
+    animation: animCloud6 20s ease-in-out infinite, spawnloader 2s linear 3s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    bottom: 32%;
+    scale: 0.6 0.55;
+}
+
+/*Animations des nuages*/
+@keyframes animCloud1 {
+    0% {
+        left: 20%;
+    }
+    50% {
+        left: 35%;
+    }
+    100%{
+        left: 20%
+    }
+}
+
+@keyframes animCloud2 {
+    0% {
+        left: 10%;
+    }
+
+    50%{
+        left: 25%;
+    }
+
+    100% {
+        left: 10%;
+    }
+}
+
+@keyframes animCloud3 {
+    0% {
+        left: 80%;
+    }
+
+    50%{
+        left: 65%;
+    }
+
+    100% {
+        left: 80%;
+    }
+}
+
+@keyframes animCloud4 {
+    0% {
+        left: 80%;
+    }
+
+    50%{
+        left: 70%;
+    }
+
+    100% {
+        left: 80%;
+    }
+}
+
+@keyframes animCloud5 {
+    0% {
+        left: 20%;
+    }
+
+    50%{
+        left: 30%;
+    }
+
+    100% {
+        left: 20%;
+    }
+}
+
+@keyframes animCloud6 {
+    0% {
+        left: 5%;
+    }
+
+    50%{
+        left: 15%;
+    }
+
+    100% {
+        left: 5%;
+    }
+}
+
+
+/* -------------- End of Nuage --------------*/
+
+/* -------------- Quartier Preview --------------*/
+#quartier-nom{
+    color:#292C5E;
+    width: 75%;
+    padding: 13%;
+    position: absolute;
+    font-weight: 700;
+}
+
+#quartiers-swiper{
+    width: 100%;
+    height: 40%;
+}
+
+.quartier-preview{
+    width: 100%;
+    height: 100%;
+    background-color: #FBEFEB;
+}
+
+.quartier-preview h1{
+    position: relative;
+    width: 100%;
+    top: 36%;
+    transform: translateY(-50%);
+    text-align: center;
+    font-size: 30%;
+    z-index: 1;
+    pointer-events: none; 
+}
+
+.quartier-preview svg{
+    position: relative;
+    height: 60%;
+    width: auto;
+    top: -5%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#jeanne_darc svg{
+    top: -22%;
+}
+#bourg_eveque svg{
+    top: -10%;
+}
+
+.navigation-button{
+    position: absolute;
+    top: 36%;
+    z-index: 2;
+    width: 20px;
+    height: 20px;
+    border-bottom: 4px solid;
+    border-right: 4px solid;
+    color: #292C5E;
+    cursor: pointer;
+    animation: jumpInfinite 1.5s infinite;
+    -webkit-tap-highlight-color: transparent;
+}
+#previous{
+    left: 12%;
+    transform: translateY(-50%) translateX(-50%) rotate(135deg);
+    animation: animArrowLeft 2s ease-in-out infinite;
+}
+#next{
+    right: 12%;
+    transform: translateY(-50%) translateX(50%) rotateZ(-45deg);
+    animation: animArrowRight 2s ease-in-out infinite;
+}
+
+@keyframes animArrowLeft{
+    0%{
+        left: 11%
+    }
+
+    50%{
+        left: 13%;
+    }
+
+    100%{
+        left:11%;
+    }
+}
+
+@keyframes animArrowRight{
+    0%{
+        right: 11%;
+    }
+
+    50%{
+        right: 13%;
+    }
+
+    100%{
+        right:11%;
+    }
+}
+
+
+
+#see-quartier{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 6%;
+    z-index: 2;
+    padding: 0% 7%;
+    padding-top: 1%;
+    border-radius: 20px;
+    border: none;
+    background: #D74F50;
+    color: #FFFFFF;
+    font-family: 'Nexa', sans-serif;
+    font-size: 30%;
+    font-weight: 700;
+}
+
+#tuto-open{
+    position: absolute;
+    right: 10%;
+    top: 3%;
+    width: 10%;
+    aspect-ratio: 1;
+    z-index: 2;
+    background: #E69973;
+    border-radius: 100%;
+    color: #FFFFFF;
+    font-family: 'Nexa', sans-serif;
+    font-size: 40%;
+    font-weight: 700;
+    border: none;
+    padding-top: 2%;
+}
+
+/* -------------- End of Quartier Preview --------------*/
+
+
+/* ---------- Important media queries for easy responsive content :-) ----------------- */
+/* Whatever the device used, the content will be displayed full width and height if      */
+/* the aspect ratio is between 3/4 and 9/16. If not it is locked to either 3/4 or 9/16  */
+
+/* When the aspect ratio is smaller that 3/4, display a 3/4 content */
+#container{
+    position: fixed; /* To set the size of the container to 100% of the visible viewport height AND for absolute positioning of child elements*/ 
+    height: 100%;   /* even on mobile devices with url or navigation bars */
+    margin-left: calc((100vw - 100 * 3vh / 4) / 2); /* Add black bands on left and right */
+    width: calc(100 * 3vh / 4); /* Force 3/4 aspect ratio */
+    overflow: hidden;
+}
+
+/* We set a default font size here. It will be the base for all other font sizes */
+/* Here the font size is proportional to content width */
+body{
+    font-size: calc(15vh * 3 / 4);
+}
+
+/* Fill the whole viewport when its aspect ratio is between 9/16 and 3/4 */
+@media screen and (max-aspect-ratio: 3/4) {
+    #container{
+        margin-left: 0; /* reset margin-left */
+        width: 100vw; /* content is full width (and full height because of the default rule for container height */
+    }
+
+    /* We set a default font size here. It will be the base for all other font sizes */
+    /* Here the font size is proportional to content width */
+    body{
+        font-size: 15vw;
+    }
+}
+
+/* The content is displayed at 9/18 If the aspect ratio is higher that 9/18  */ 
+@media screen and (max-aspect-ratio: 9/18) {
+    #container{
+        margin-left: 0; /* reset left margin */
+        width: 100vw;   /* content is full width */
+        margin-top: calc(-50 * 18vw / 9); /* move the content half the height to the top */
+        top:50%; /* then center it ! */
+        height: calc(100 * 18vw / 9); /* adjust height so that aspect ratio is 9/16 */
+    }
+
+    /* We set a default font size here. It will be the base for all other font sizes */
+    /* Here the font size is proportional to content width */
+    body{
+        font-size: 15vw;
+    }
+}

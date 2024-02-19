@@ -1,0 +1,58 @@
+.burger-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.burger-icon {
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 3px 0;
+  transition: 0.4s;
+}
+
+.burger-icon.open .bar:nth-child(1) {
+  transform: rotate(-45deg) translate(-2px, 5px);
+}
+
+.burger-icon.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-icon.open .bar:nth-child(3) {
+  transform: rotate(45deg) translate(-7px, -10px);
+}
+
+.menu {
+  position: absolute;
+  top: 60px;
+  right: 0px;
+  background-color: rgba(var(--bs-tertiary-bg-rgb),var(--bs-bg-opacity))!important;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0 0 0 10%;
+  text-align: right;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.menu .LogoFav{
+  width: 15px;
+  height: 20px;
+  flex-shrink: 0;
+  padding-left: 5px;
+  filter: brightness(20%);
+}
