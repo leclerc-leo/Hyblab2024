@@ -15,7 +15,7 @@ const initAccueil = function(){
       opacity: 0, // Rendre l'élément transparent
       easing: 'easeInOutQuad', // Utilisez une fonction d'atténuation pour une animation plus agréable
       complete: function(anim) {
-        fetch('/quartiers-2/stories.html')
+        fetch('stories.html')
           .then(res => res.text())
           .then(html => {
             loader.style.display = 'block';

@@ -8,7 +8,7 @@ interface ShareButtonProps {
 const ShareButton: React.FC<ShareButtonProps> = ({ onShareClick }) => (
   <img
     className="ShareLogo"
-    src="/bretons-1/img/Share_logo.svg" 
+    src="img/Share_logo.svg" 
     alt="Share"
     onClick={onShareClick}
   />
@@ -28,7 +28,7 @@ const ShareMenu: React.FC<ShareMenuProps> = ({ id, title }) => {
 
   const shareText = `Vibrez avec ${title} aux JO ! 🏅🔥 #JO2024 #BretagneFière`;
   const encodedShareText = encodeURIComponent(shareText);
-  const videoPlayerUrl = `https://hyblab.polytech.univ-nantes.fr/bretons-1/VideoPlayer/${id}`;
+  const videoPlayerUrl = `https://hyblab.polytech.univ-nantes.fr/VideoPlayer/${id}`;
   const twitterShareLink = `https://twitter.com/intent/tweet?url=${videoPlayerUrl}&text=${encodedShareText}`;
   const facebookShareLink = `https://www.facebook.com/sharer/sharer.php?u=${videoPlayerUrl}`;
 

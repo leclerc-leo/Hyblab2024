@@ -111,7 +111,7 @@ document.querySelector("#see-quartier").addEventListener("click", function() {
     sessionStorage.setItem("quartier", document.querySelector('path[data-no_slide="' + swiper.realIndex + '"]').id);
     sessionStorage.setItem("topic", "bienvenue");
 
-    window.location.href = "/quartiers-1/quartiers";
+    window.location.href = "quartiers";
 });
 
 //Bouton allons-y disponible
@@ -139,5 +139,5 @@ var animation = lottie.loadAnimation({
 
  function goToCredits() {
     sessionStorage.setItem("comeFrom", "index");
-    window.location.href = "/quartiers-1/credits";
+    window.location.href = "credits";
 }

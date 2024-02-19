@@ -32,14 +32,14 @@ export const Frame7: React.FC<{ athlete: string,Sexe:string,epreuve:string, podi
       };
     const getFlagSrc = (pays: string) => {
         switch (pays) {
-            case 'France': return '/bretons-1/img/fr.svg';
-            case 'Allemand': return '/bretons-1/img/allemagne.svg';
-            case 'Etat-Unis': return '/bretons-1/img/USA.svg';
-            case 'Angleterre': return '/bretons-1/img/Angleterre.svg';
-            case 'Danemark': return '/bretons-1/img/Danemark.svg';
-            case 'Pays-Bas': return '/bretons-1/img/Pays-Bas.svg';
-            case 'Suede': return '/bretons-1/img/Suede.svg';
-            case 'Nouvelle-Zélande': return '/bretons-1/img/Nouvelle-zélande.svg';
+            case 'France': return 'img/fr.svg';
+            case 'Allemand': return 'img/allemagne.svg';
+            case 'Etat-Unis': return 'img/USA.svg';
+            case 'Angleterre': return 'img/Angleterre.svg';
+            case 'Danemark': return 'img/Danemark.svg';
+            case 'Pays-Bas': return 'img/Pays-Bas.svg';
+            case 'Suede': return 'img/Suede.svg';
+            case 'Nouvelle-Zélande': return 'img/Nouvelle-zélande.svg';
             default: return '';
         }
     };
@@ -79,13 +79,13 @@ export const Frame7: React.FC<{ athlete: string,Sexe:string,epreuve:string, podi
                                         </div>
                                     </div>
                                     {gain === "" && entry.Nom === athlete && (
-                                        <img className='QualifieBW' src={`/bretons-1/img/EliminateBW.svg`} alt='Eliminate' />
+                                        <img className='QualifieBW' src={`img/EliminateBW.svg`} alt='Eliminate' />
                                     )}
                                     {gain === "Qualifie" && entry.Nom === athlete && (
-                                        <img className='QualifieBW' src={`/bretons-1/img/QualifieBW.svg`} alt='Qualifie' />
+                                        <img className='QualifieBW' src={`img/QualifieBW.svg`} alt='Qualifie' />
                                     )}
                                     {entry.Nom !== athlete && (
-                                        <img className='QualifieBW' src='/bretons-1/img/QualifieBW.svg' alt='Qualification' />
+                                        <img className='QualifieBW' src='img/QualifieBW.svg' alt='Qualification' />
                                     )}
                                 </div>
                             </div>

@@ -11,14 +11,14 @@ const CreditPage = () => {
                     </div>
                     <div className="credit-container">
                         <div className="credit-logos">
-                            <img src="/bretons-1/img/logos/logo-hyblab.png" alt="Logo hyblab" />
-                            <img src="/bretons-1/img/logos/logo-telegramme.png" alt="Logo Télégramme" />
-                            <img src="/bretons-1/img/logos/logo-ouestmedia.png" alt="Logo ouestmedia" />
-                            <img src="/bretons-1/img/logos/logo-polytech.png" alt="Logo polytech" />
-                            <img src="/bretons-1/img/logos/logo-agr.png" alt="Logo agr" />
-                            <img src="/bretons-1/img/logos/logo-journalistetours.png" alt="Logo journalistetours" />
-                            <img src="/bretons-1/img/logos/logo-sciencespo.png" alt="Logo sciencespo" />
-                            <img src="/bretons-1/img/logos/CcOSI.png" alt="Logo CC OSI" />
+                            <img src="img/logos/logo-hyblab.png" alt="Logo hyblab" />
+                            <img src="img/logos/logo-telegramme.png" alt="Logo Télégramme" />
+                            <img src="img/logos/logo-ouestmedia.png" alt="Logo ouestmedia" />
+                            <img src="img/logos/logo-polytech.png" alt="Logo polytech" />
+                            <img src="img/logos/logo-agr.png" alt="Logo agr" />
+                            <img src="img/logos/logo-journalistetours.png" alt="Logo journalistetours" />
+                            <img src="img/logos/logo-sciencespo.png" alt="Logo sciencespo" />
+                            <img src="img/logos/CcOSI.png" alt="Logo CC OSI" />
                         </div>
                     </div>
                     {/* our names */}

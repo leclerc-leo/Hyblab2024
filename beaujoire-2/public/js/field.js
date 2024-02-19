@@ -39,8 +39,8 @@ function checkVotes() {
     statisticsButton.classList.remove("disabled");
     archivesButton.classList.add("enabled");
     statisticsButton.classList.add("enabled");
-    archivesButton.href = "/beaujoire-2/archives";
-    statisticsButton.href = "/beaujoire-2/statistics";
+    archivesButton.href = "archives";
+    statisticsButton.href = "statistics";
   } else {
     archivesButton.classList.remove("enabled");
     statisticsButton.classList.remove("enabled");
@@ -175,7 +175,7 @@ document.getElementById('statistiques').addEventListener('click', () => {
   // Access the sessionToken passed from the server
   if (globals.checkAllVotes(globals.tabVotes) && !(globals.shown)){
     globals.saveVotes(globals.sessionToken, globals.tabVotes);
-    window.location.href = '/beaujoire-2/statistics';
+    window.location.href = 'statistics';
   }
 })
 /************* Finalize votes  **************/

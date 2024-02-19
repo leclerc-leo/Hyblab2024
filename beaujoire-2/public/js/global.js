@@ -15,7 +15,7 @@ globals.setShown = function(value){
 // Function to retrieve the session token from cookies
 globals.getSessionToken = async function() {
     try {
-        const response = await fetch('/beaujoire-2/api/get-session-token');
+        const response = await fetch('api/get-session-token');
         const data = await response.json();
         return data.sessionToken;
     } catch (error) {
@@ -51,7 +51,7 @@ globals.updateVotes = function(votes){
 
 globals.getPlayersByPosition  = async function(positionId) {
     try {
-        const response = await fetch(`/beaujoire-2/api/players/${positionId}`);
+        const response = await fetch(`api/players/${positionId}`);
         const data = await response.json();
         return data.players;
     } catch (error) {
@@ -66,7 +66,7 @@ globals.getPlayersById = async function(playerId) {
 
     do {
         try {
-            const response = await fetch(`/beaujoire-2/api/player/${playerId}`);
+            const response = await fetch(`api/player/${playerId}`);
             const data = await response.json();
 
             if (Object.keys(data.player).length !== 0) {
@@ -91,7 +91,7 @@ globals.getPlayersById = async function(playerId) {
 
 globals.saveVotes = async function(token, votes) {
     try {
-        const response = await fetch('/beaujoire-2/api/votes/saveVotes', {
+        const response = await fetch('api/votes/saveVotes', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -112,7 +112,7 @@ globals.saveVotes = async function(token, votes) {
 
 globals.getPlayerStats = async function(playerId, positionId) {
     try {
-        const response = await fetch(`/beaujoire-2/api/stats/${playerId}/${positionId}`);
+        const response = await fetch(`api/stats/${playerId}/${positionId}`);
         const data = await response.json();
         return data.player;
     } catch (error) {
@@ -123,7 +123,7 @@ globals.getPlayerStats = async function(playerId, positionId) {
 
 globals.getTopPlayer = async function (positionId) {
     try {
-        const response = await fetch(`/beaujoire-2/api/top/${positionId}`);
+        const response = await fetch(`api/top/${positionId}`);
         const data = await response.json();
 
         if (data.success) {

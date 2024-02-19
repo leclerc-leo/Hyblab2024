@@ -153,7 +153,7 @@ const homeStories = function () {
     // get recap button
     let recap = document.querySelector('#recap_button');
     recap.addEventListener('click', () => {
-      fetch('/quartiers-2/recap.html')
+      fetch('recap.html')
         .then(res => res.text())
         .then(html => {
           loader.style.display = 'block';
@@ -178,7 +178,7 @@ const homeStories = function () {
           // on enlève le loader
           retour = document.querySelector('#back_button');
           retour.addEventListener('click', () => {
-            fetch('/quartiers-2/stories.html')
+            fetch('stories.html')
               .then(res => res.text())
               .then(html => {
                 loader.style.opacity = '1';
@@ -238,7 +238,7 @@ const homeStories = function () {
     /* a factoriser */
     let credits = document.querySelector('#credits_button');
     credits.addEventListener('click', () => {
-      fetch('/quartiers-2/credits.html')
+      fetch('credits.html')
         .then(res => res.text())
         .then(html => {
           loader.style.display = 'block';
@@ -262,7 +262,7 @@ const homeStories = function () {
           // on enlève le loader
           retour = document.querySelector('#back_button');
           retour.addEventListener('click', () => {
-            fetch('/quartiers-2/stories.html')
+            fetch('stories.html')
               .then(res => res.text())
               .then(html => {
                 loader.style.opacity = '1';
@@ -305,7 +305,7 @@ const homeStories = function () {
       let slideIndex = i - 1;
 
       let story = stories[slideIndex]
-      let address = "/quartiers-2/story" + i + ".html";
+      let address = "story" + i + ".html";
 
       // on remplit la slide avec le fetch
       fetch(address)

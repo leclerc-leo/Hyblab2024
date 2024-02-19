@@ -22,7 +22,7 @@ const Article: React.FC<ArticleProps> = ({ id, title, subtitle, content }) => {
   }, [id]);
 
   const handleBackClick = () => {
-    navigate('/bretons-1')
+    navigate('/')
   };
 
   const handleFavoriteClick = () => {
@@ -36,15 +36,15 @@ const Article: React.FC<ArticleProps> = ({ id, title, subtitle, content }) => {
   };
   return (
     <>
-      <img className='GuilleVerte' src='/bretons-1/img/Logo_Guille_vert.svg'></img>
+      <img className='GuilleVerte' src='img/Logo_Guille_vert.svg'></img>
       <div className="article-container">
         <h1 className="article-title">{title}</h1>
         <div className='subtitle'>
           <h2 className="article-subtitle">{subtitle}</h2>
-          <img className="BicycleLogoArticle" src={`/bretons-1/img/${subtitle}.svg`} />
+          <img className="BicycleLogoArticle" src={`img/${subtitle}.svg`} />
         </div>
         <p className="article-content">{content}</p>
-        <img className='GuilleVerteinversed' src='/bretons-1/img/Logo_Guille_vert.svg'></img>
+        <img className='GuilleVerteinversed' src='img/Logo_Guille_vert.svg'></img>
         <div className='Lastline'>
           <button className='back' onClick={() => handleBackClick()}>Retour</button>
           <div className='inversedColor'>

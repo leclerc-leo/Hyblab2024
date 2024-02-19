@@ -31,7 +31,7 @@ const FavoriteButton: React.FC<FavoriteButtonProps> = ({ isFavorited, onClick}) 
   return (
     <button onClick={handleButtonClick} style={buttonStyle}>
       <img
-        src={buttonClicked ? "/bretons-1/img/Save_Yellow.svg" : "/bretons-1/img/Save_logo.svg"}
+        src={buttonClicked ? "img/Save_Yellow.svg" : "img/Save_logo.svg"}
         alt="Save"
         style={imgStyle}
       />

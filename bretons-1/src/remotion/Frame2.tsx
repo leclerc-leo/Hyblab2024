@@ -23,13 +23,13 @@ import { Podium } from '../components/type';
     }, []);
     const getFlagSrc = (pays: string) => {
         switch (pays) {
-            case 'France': return '/bretons-1/img/fr.svg';
-            case 'Allemagne': return '/bretons-1/img/allemagne.svg';
-            case 'États-Unis': return '/bretons-1/img/USA.svg';
-            case 'Angleterre': return '/bretons-1/img/Angleterre.svg';
-            case 'Danemark': return '/bretons-1/img/Danemark.svg';
-            case 'Pays-Bas': return '/bretons-1/img/Pays-Bas.svg';
-            case 'Suede': return '/bretons-1/img/Suede.svg';
+            case 'France': return 'img/fr.svg';
+            case 'Allemagne': return 'img/allemagne.svg';
+            case 'États-Unis': return 'img/USA.svg';
+            case 'Angleterre': return 'img/Angleterre.svg';
+            case 'Danemark': return 'img/Danemark.svg';
+            case 'Pays-Bas': return 'img/Pays-Bas.svg';
+            case 'Suede': return 'img/Suede.svg';
             default: return ''; // Drapeau par défault
           }
     };
@@ -37,17 +37,17 @@ import { Podium } from '../components/type';
     const getPlace = (Place: string, Nom:string) => {
         if (Nom == athlete){
           switch (Place) {
-            case '1': return '/bretons-1/img/top1_b.svg';
-            case '2': return '/bretons-1/img/top2_b.svg';
-            case '3': return '/bretons-1/img/top3_b.svg';
+            case '1': return 'img/top1_b.svg';
+            case '2': return 'img/top2_b.svg';
+            case '3': return 'img/top3_b.svg';
             default: return '';
           }
         }
         else{
         switch (Place) {
-            case '1': return '/bretons-1/img/top1_w.svg';
-            case '2': return '/bretons-1/img/top2_w.svg';
-            case '3': return '/bretons-1/img/top3_w.svg';
+            case '1': return 'img/top1_w.svg';
+            case '2': return 'img/top2_w.svg';
+            case '3': return 'img/top3_w.svg';
             default: return '';
           }
         }

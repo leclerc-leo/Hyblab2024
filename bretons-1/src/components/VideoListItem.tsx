@@ -81,7 +81,7 @@ const FavoriteVideosManager: React.FC<FavoriteVideosManagerProps> = ({ videoId }
 function VideoListItem({ video }: VideoListItemProps) {
   const navigate = useNavigate();
   const handlePlayClick = (id: string) => {
-    navigate('/bretons-1/VideoPlayer/'+id);
+    navigate('VideoPlayer/'+id);
   };
   return (
     <div className="video-list-item" onClick={() => handlePlayClick(video.id)}>

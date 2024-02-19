@@ -61,7 +61,7 @@ export const Frame4: React.FC<{ Gentilé: string, gain: string, Epreuve: string,
         if (letter == "_") {
           if (stopImage != "") {
             var image = document.createElement("img");
-            image.src = "/bretons-1/img/" + stopImage;
+            image.src = "img/" + stopImage;
             image.style.width = "110px";
             setTimeout(function () {
               elem?.appendChild(image);
@@ -87,7 +87,7 @@ export const Frame4: React.FC<{ Gentilé: string, gain: string, Epreuve: string,
   }, []);
   return (
     <div>
-      <img className='containerimage LogoJaune'  src='/bretons-1/img/logoFrame2Jaune.svg'></img>
+      <img className='containerimage LogoJaune'  src='img/logoFrame2Jaune.svg'></img>
       <div className='containerText_f4'>
         {gain === 'Qualifie' ? (
           <>
@@ -108,7 +108,7 @@ export const Frame4: React.FC<{ Gentilé: string, gain: string, Epreuve: string,
         )}
         <p className='animatedtext'> en {Epreuve} {getSexe(sexe)} {getImage(Sport)}</p>
       </div>
-      <img className='LogoRed' src='/bretons-1/img/logoFrame2Red.svg'></img>
+      <img className='LogoRed' src='img/logoFrame2Red.svg'></img>
     </div>
   );
 

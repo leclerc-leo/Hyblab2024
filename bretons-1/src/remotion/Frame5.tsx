@@ -35,18 +35,18 @@ export const Frame5: React.FC<{ nom: string, age: string, sexe: string, sport: s
 
   return (
     <div className="container-frame5">
-      <img src='/bretons-1/img/frame5.png' className="frame6-image"></img>
+      <img src='img/frame5.png' className="frame6-image"></img>
       <div className="identity">Mais qui est</div>
       <div className="identity-name">{nom} ?</div>
       <div className="record">Palmarès</div>
       <div className="record-texte">{record}</div>
-      <img src='/bretons-1/img/BolBreton.svg' className="bols"></img>
+      <img src='img/BolBreton.svg' className="bols"></img>
       <img src={photo} style={{ objectFit: 'cover', objectPosition: imagePosition }} className="athlete-frame5" />
       <div className="infos-perso">
         <div className="age-frame5">{age}</div>
         <div className="taille-frame5">{sexe}</div>
         <div className="sport-frame5">{sport}</div>
-        <img src={`/bretons-1/img/${sport}.svg`} className="sport-image"></img>
+        <img src={`img/${sport}.svg`} className="sport-image"></img>
       </div>
       {nom === "Marie Bolou" ? (
         <>
@@ -59,7 +59,7 @@ export const Frame5: React.FC<{ nom: string, age: string, sexe: string, sport: s
           <div className="fun-fact-texte">{fun_fact}</div>
         </>
       )}
-      <img src='/bretons-1/img/Pointeur.png' style={imageStyle} className="pointeur"></img>
+      <img src='img/Pointeur.png' style={imageStyle} className="pointeur"></img>
     </div>
   );
 };

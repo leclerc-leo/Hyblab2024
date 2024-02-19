@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
   async function getPlayersByPosition(positionId) {
     console.log(positionId);
     try {
-      const response = await fetch(`/beaujoire-2/api/players/${positionId}`);
+      const response = await fetch(`api/players/${positionId}`);
       const data = await response.json();
       return data.players;
     } catch (error) {

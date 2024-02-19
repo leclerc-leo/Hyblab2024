@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import videoPath from '/img/animation/annimation crèpe_1.mp4';
+import videoPath from '/img/animation/annimation crepe_1.mp4';
 import Svg from '../assets/img/Compteur.svg';
 import './Frame6.css';
 

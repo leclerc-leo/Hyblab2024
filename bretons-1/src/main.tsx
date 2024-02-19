@@ -10,7 +10,7 @@ const root = createRoot(rootElement!);
 
 root.render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/nantes2024/bretons-1/">
       <App />
     </BrowserRouter>
   </StrictMode>

@@ -31,6 +31,6 @@ document.querySelectorAll(".topicButton").forEach(button => {
         sessionStorage.removeItem("saveExist");
 
 
-        window.location.href = "/quartiers-1/quartiers";
+        window.location.href = "quartiers";
     });
 });

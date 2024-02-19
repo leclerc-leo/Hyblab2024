@@ -1,11 +1,16 @@
 import { useState } from 'react';
 import './BurgerMenu.css';
+import { useNavigate } from 'react-router-dom';
 
 const BurgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+  const navigate = useNavigate();
+  const handleLogoClick = () => {
+    navigate('/')
   };
 
   return (
@@ -18,9 +23,9 @@ const BurgerMenu = () => {
 
       {isOpen && (
         <div className="menu">
-          <a href="/bretons-1">Accueil </a>
-          <a href="/bretons-1/MySave">Ma Sélection<img className="LogoFav"src="/bretons-1/img/Save_Yellow.svg"/></a>
-          <a href="/bretons-1/Credits">Crédits</a>
+          <div onClick={() => handleLogoClick()}>Accueil </div>
+          <a href="MySave">Ma Sélection<img className="LogoFav"src="img/Save_Yellow.svg"/></a>
+          <a href="Credits">Crédits</a>
         </div>
       )}
     </div>

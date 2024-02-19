@@ -67,7 +67,7 @@ function CardCarousel({ video }: VideoListItemProps) {
   };
 
   const handlePlayClick = (id: string) => {
-    navigate('/bretons-1/VideoPlayer/'+id);
+    navigate('VideoPlayer/'+id);
   };
 
   const handleFavoriteClick = () => {
@@ -92,7 +92,7 @@ function CardCarousel({ video }: VideoListItemProps) {
         <div className="image-row" style={{ zIndex: 5 }}>
           <img
             className="BicycleLogo"
-            src={`/bretons-1/img/${video.sport}.svg`}
+            src={`img/${video.sport}.svg`}
             alt="Logo"
             onClick={() => handleImageClick('BicycleLogo')}
           />
@@ -106,13 +106,13 @@ function CardCarousel({ video }: VideoListItemProps) {
       </div>
       <img
         className="PlayButton"
-        src="/bretons-1/img/Play_button.svg"
+        src="img/Play_button.svg"
         alt="PlayButton"
         onClick={() => handlePlayClick(video.id)}
       />
       <img
         className={`overlay-image ${isFavorited ? 'saveyellow' : ''}`}
-        src={video.gain === "" ? "/bretons-1/img/Eliminate.svg" : `/bretons-1/img/${video.gain}.svg`}
+        src={video.gain === "" ? "img/Eliminate.svg" : `img/${video.gain}.svg`}
         alt="Overlay"
         style={{ zIndex: 2 }}
       />

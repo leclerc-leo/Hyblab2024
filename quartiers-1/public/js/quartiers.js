@@ -67,5 +67,5 @@ function titleTransition() {
 function goToCredits() {
     sessionStorage.setItem("comeFrom", "quartiers");
 
-    window.location.href = "/quartiers-1/credits";
+    window.location.href = "credits";
 }
