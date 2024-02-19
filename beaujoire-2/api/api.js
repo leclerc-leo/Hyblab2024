@@ -2,7 +2,7 @@
 
 const app = require( 'express' )();
 const path = require('path');
-const dataUtils = require('../public/data/dbutils')
+const dataUtils = require('./data/dbutils')
 
 // Sample endpoint that sends the partner's name
 app.get('/topic', function ( req, res ) {
@@ -21,7 +21,7 @@ app.get('/allplayers', function (req, res) {
             console.error(err.message);
             res.status(500).json({ error: 'Internal Server Error' });
         } else {
-            console.log('all votes retrieved successfully.');
+            //console.log('all votes retrieved successfully.');
             res.status(200).json({ success: true, 'players' : players });
         }
     });
@@ -45,7 +45,7 @@ app.get('/player/:playerId', function (req, res) {
             console.error('Error in selectPlayer:', err);
             res.status(500).json({ error: 'Internal Server Error' });
         } else {
-            console.log('Player Content:', playerContent);
+            //console.log('Player Content:', playerContent);
             res.json({ 'player': playerContent });
         }
     });
@@ -63,7 +63,7 @@ app.post('/votes/saveVotes', function (req, res) {
             console.error(err.message);
             res.status(500).json({ error: 'Internal Server Error' });
         } else {
-            console.log('Votes saved successfully.');
+            //console.log('Votes saved successfully.');
             res.status(200).json({ success: true });
         }
     });
@@ -75,7 +75,7 @@ app.get('/votes', function (req, res) {
             console.error(err.message);
             res.status(500).json({ error: 'Internal Server Error' });
         } else {
-            console.log('all votes retrieved successfully.');
+            //console.log('all votes retrieved successfully.');
             res.status(200).json({ success: true, 'votes' : votes });
         }
     });
@@ -90,7 +90,7 @@ app.get('/stats/:playerId/:positionId', function (req, res) {
             console.error(err.message);
             res.status(500).json({ error: 'Internal Server Error' });
         } else {
-            console.log('Player stats retrieved successfully.');
+            //console.log('Player stats retrieved successfully.');
             res.status(200).json({ success: true, 'player' : playerStats });
         }
     });
@@ -105,7 +105,7 @@ app.get('/stats/ratio/:playerId/:positionId', function (req, res) {
             console.error(err.message);
             res.status(500).json({ error: 'Internal Server Error' });
         } else {
-            console.log('Player ratio retrieved successfully.');
+            //console.log('Player ratio retrieved successfully.');
             res.status(200).json({ success: true, 'playerRatio' : ratio });
         }
     });
@@ -119,7 +119,7 @@ app.get('/top/:positionId', (req, res) => {
             console.error(err.message);
             res.status(500).json({ error: 'Internal Server Error' });
         } else {
-            console.log('Top player retrieved successfully.');
+            //console.log('Top player retrieved successfully.');
             res.status(200).json({ success: true, 'topPlayer' : topPlayer });
         }
     });

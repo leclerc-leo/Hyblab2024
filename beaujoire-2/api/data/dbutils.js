@@ -13,7 +13,7 @@ dataUtils.selectPlayers = function (callback) {
             console.error(err.message);
             callback(err, null);
         } else {
-            console.log('selectPlayers(): \n', rows, '\n\n');
+            //console.log('selectPlayers(): \n', rows, '\n\n');
             callback(null, rows);
         }
     });
@@ -47,7 +47,7 @@ dataUtils.selectPlayer = function(idPlayer, callback) {
             console.error(err.message);
             callback(err, null);
         } else {
-            console.log('selectPlayer(idPlayer = ' + idPlayer + '): \n', rows, '\n\n');
+            //console.log('selectPlayer(idPlayer = ' + idPlayer + '): \n', rows, '\n\n');
             callback(null,rows);
         }
     });
@@ -82,7 +82,7 @@ dataUtils.vote = function (token, votes, callback) {
             console.error(err.message);
             callback(err);
         } else {
-            console.log('vote(token = ' + token + ', votes = ' + votes + '): success\n\n');
+            //console.log('vote(token = ' + token + ', votes = ' + votes + '): success\n\n');
             callback(null);
         }
     });
@@ -95,7 +95,7 @@ dataUtils.selectVotes = function (callback) {
             console.error(err.message);
             callback(err, null);
         } else {
-            console.log('selectVotes(): \n', rows, '\n\n');
+            //console.log('selectVotes(): \n', rows, '\n\n');
             callback(null, rows);
         }
     });
@@ -114,11 +114,11 @@ dataUtils.getStats = function (idPoste, idJoueur, callback) {
                 console.error('Error in getStats:', err.message);
                 callback(err, null);
             } else {
-                console.log(
-                    `getStats(idPoste = ${idPoste}, idJoueur = ${idJoueur}): \n`,
-                    rows,
-                    '\n\n'
-                );
+                //console.log(
+                //    `getStats(idPoste = ${idPoste}, idJoueur = ${idJoueur}): \n`,
+                //    rows,
+                //    '\n\n'
+                //);
                 callback(null, rows);
             }
         }
@@ -147,7 +147,7 @@ dataUtils.getPlayerStats = function(idJoueur, idPoste, callback) {
                 console.error(err.message);
                 callback(err, null);
             } else {
-                console.log('getPlayerStats(idPoste = ' + idPoste + ', idJoueur = ' + idJoueur + '): \n', row, '\n\n');
+                //console.log('getPlayerStats(idPoste = ' + idPoste + ', idJoueur = ' + idJoueur + '): \n', row, '\n\n');
                 callback(null, row);
             }
         }
@@ -184,7 +184,7 @@ dataUtils.getTop = function (idPoste, callback) {
                 console.error('Error in getTop:', err.message);
                 callback(err, null);
             } else {
-                console.log('getTop(idPoste = ' + idPoste + '): \n', rows, '\n\n');
+                //console.log('getTop(idPoste = ' + idPoste + '): \n', rows, '\n\n');
                 // Return the first row or null if there are no rows
                 const topPlayer = rows.length > 0 ? rows[0] : null;
                 callback(null, topPlayer);

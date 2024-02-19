@@ -71,7 +71,7 @@ function insertPlayersFromJSON(jsonData) {
         });
 
         insertStmt.finalize(() => {
-            console.log(`Inserted ${insertedCount} players.`);
+            //console.log(`Inserted ${insertedCount} players.`);
             resolve(); // Resolve the promise once all players are inserted
         });
     });
@@ -254,14 +254,14 @@ db.serialize(async () => {
         const data = await util.promisify(fs.readFile)(jsonFilePath, 'utf8');
         const jsonData = JSON.parse(data);
         await insertPlayersFromJSON(jsonData);
-        console.log('Data inserted successfully.');
+        //console.log('Data inserted successfully.');
     } catch (error) {
         console.error(error.message);
     }
 
     db.all('SELECT * FROM Joueurs', (err, rows) => {
         if (err) console.error(err.message);
-        else console.log('Résultat de la sélection : ', rows)
+        //else console.log('Résultat de la sélection : ', rows)
     });
 })
 

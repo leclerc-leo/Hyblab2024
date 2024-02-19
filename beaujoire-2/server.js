@@ -14,7 +14,7 @@ const app = express();
 app.use(cookieParser());
 app.use(bodyParser.json());
 
-let db = require('./public/data/dbutils.js');
+let db = require('./api/data/dbutils.js');
 /*
 db.selectPlayer(65);
 db.vote("test", [2, 2, 2, 1, 1, 2, 2, 1, 4, 3, 1, 2]);
