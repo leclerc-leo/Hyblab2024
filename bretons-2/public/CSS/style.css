@@ -1,0 +1,380 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Antonio', sans-serif;
+    line-height : 90%;
+    scrollbar-width: none;
+}
+
+body {
+    background-color: black;
+    overflow: hidden;
+}
+
+#phone {
+    background-color: white;
+    position: fixed;
+    height: 100%;
+    margin-left: calc((100vw - 100 * 3vh / 5) / 2);
+    width: calc(100 * 3vh / 5);
+}
+
+nav {
+    background-color: #E20917;
+    height: 10%;
+}
+
+#menu-modal{
+    position: absolute;
+    width: 7vh;
+    height: 10%;
+    padding-left: 2rem;
+    cursor: pointer;
+}
+
+nav img {
+    height: 100%;
+    width: 100%;
+    color: white;
+}
+
+#blank {
+    height: 85%;
+    /* width: 100%; */
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+#retour {
+    position: absolute;
+    left: 5%;
+    z-index: 3;
+    width: 5vh;
+    cursor: pointer;
+    top:12.5%;
+}
+
+#divTitle {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 4%;
+}
+
+.title {
+    width: 50%;
+    text-align: center;
+    font-family: 'Antonio', sans-serif;
+    font-size: 6vh;
+    font-weight: 400;
+}
+#titleActualite {
+    width: 60%;
+    text-align: center;
+    padding-left: 8vw;
+    font-family: 'Antonio', sans-serif;
+    font-size: 6vh;
+    font-weight: 400;
+}
+
+iframe {
+    z-index: -1;
+    padding-top: 20%;
+    width: 100%;
+    height: 80%;
+}
+
+footer {
+    position : absolute;
+    background-color: #E209174D;
+    height: 8%;
+    width: 100%;
+    font-size: xx-small;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper {
+  width: 100%;
+  height:100%;
+  position: absolute;
+}
+
+#titleHome {
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+}
+
+/* #modal{
+} */
+
+.modal{
+    position: fixed;
+    height: 100%;
+    margin-left: calc((100vw - 100 * 3vh / 5) / 2);
+    width: calc(100 * 3vh / 5)!important;
+}
+
+.modal-dialog{
+    margin:0!important;
+    max-width: 65% !important;
+    width: 75%!important;
+    height: 50%;
+}
+
+.modal-content{
+    height: 100%;
+    font-weight: 600;
+}
+
+.modal-body{
+    background-color: #FFCE42;
+    padding: 0!important;  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; 
+}
+
+#modal-header{
+    padding-top: 0;
+    padding-left: 4vw;
+    padding-right: 4vw;
+    padding-bottom: 4vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+#retour-modal{
+    cursor: pointer;
+}
+
+.modal-activite{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top : 2vh;
+    padding-left : 1vw;
+    padding-bottom : 2vh;
+    margin-bottom:2vh;
+    background-color: white;
+}
+#actu, #credits {
+    cursor: pointer;
+}
+
+.fade-out {
+    transition: opacity 1s ease; 
+}
+
+/* Styles pour le modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background-color: rgba(0, 0, 0, 0.9); Fond semi-transparent */
+  }
+  
+/* Style carousel page sport */
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-button-next {
+    padding-right: 5vw!important;
+    color: rgba(20, 20, 86, 0.8)!important;
+    
+}
+
+.swiper-button-prev {
+    padding-left: 5vw!important;
+    color: rgba(20, 20, 86, 0.8)!important;
+}
+
+.mySwiper {
+    height: 50%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* margin-right: 5%; */
+
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide:nth-child(2n) {
+    width: 40%;
+  }
+
+  .swiper-slide:nth-child(3n) {
+    width: 20%;
+  }
+
+ .pagin{
+    position: unset !important;
+ }
+
+.swiper-slide div {
+    /* Assurez-vous que la div interne n'introduit pas de marges ou de largeurs indésirables */
+    margin: 0;
+    width: 100%;
+    /* background-color: rgba(255, 206, 66, 0.6);  */
+}
+
+.swiper-slide video {
+    display: block;
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+  }
+
+button:focus,
+button:active {
+    outline: none;
+}
+
+#divTitleAthlete {
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 4%;
+}
+
+.ele_fleche {
+    width: 8vw;
+    transform: rotate(70deg);
+    /* z-index: 2; */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: -8%;
+    margin-left: 10%;
+}
+
+.ele_sardine {
+    width: 8vw;
+    transform: rotate(17deg);
+    /* z-index: 2; */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: -5%;
+    /* margin-left: 65%; */
+}
+
+.nom_div_pg_at {
+    display: flex;
+    text-align: center;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 80px;
+}
+
+.img_div_pg_at {
+    text-align: center;
+    width: 100%;
+}
+
+.img_at_pg_at {
+    width: 70%;
+    margin: 0 auto;
+}
+
+#bioAthlete {
+    line-height: 5vh;
+}
+
+.text_pg_at {
+    width: 80%;
+    margin-top: 25px;
+    margin-left: 15%;
+    margin-right: 10%;
+    font-size: 200%;
+}
+
+.text2_pg_at {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* margin-bottom: 30px; */
+    font-weight: bold;
+    margin-top: 5vh;
+    /* margin-left: 150px; */
+    font-size: 200%;
+}
+
+.text3_pg_at {
+    margin-bottom: 30px;
+    margin-top: 80px;
+    text-align: center;
+    font-size: 200%;
+    margin-left: 10%;
+    margin-right: 10%;
+    line-height: 1.5;
+}
+
+.box_p_c {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60vw;
+    font-weight: bold;
+}
+
+.next-athlete-div {
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    background-color: #141456;
+    color: white;
+    width: 80%;
+    height: 80%;
+    font-size: 43px;
+    margin-left: 25%;
+    width: 500px;
+    height: 60px;
+    margin-top: 100px;
+    padding-top: 8px;
+    transform: translateY(-80%);
+}
+
+
+.joueurword {
+    display: flex;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 15%;
+    font-size: 300%;
+}
+
+.img_cidrebolee {
+    width: 10vw;
+    margin-left: 10vw;
+    /* margin-top: 1vh; */
+}
+
+/* page crédit */
+
+.credswiper {
+    overflow-y : hidden;
+
+}
+
+.petitpoint {
+    position: absolute!important;
+}
