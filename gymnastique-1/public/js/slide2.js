@@ -118,8 +118,8 @@ const initSlide2 = async function (popupId, objectId) {
       if (objData.text && Array.isArray(objData.text)) {
         objData.text.forEach((paragraphText, index) => {
           const paragraph = document.createElement("p");
+          paragraph.innerHTML = paragraphText;
           paragraph.classList.add("text-obj");
-          paragraph.textContent = paragraphText;
           paragraph.setAttribute("id", `${objectId}-p${index}`);
           textContainer.appendChild(paragraph);
         });

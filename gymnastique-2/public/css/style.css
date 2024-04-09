@@ -176,6 +176,10 @@ header > * {
     margin: 0 10px;
 }
 
+.category-page > p a{
+    color: inherit;
+}
+
 .hidden{
     display: none;
     visibility: hidden;
@@ -331,6 +335,11 @@ svg.image-histoire, svg.image-jo{
 .image-titre{
     max-width: 40%;
 }
+
+#palmares-page p a{
+    color:inherit;
+}
+
 #palmares-page .smaller{
     height: calc(6vh + 8px) !important;
 }

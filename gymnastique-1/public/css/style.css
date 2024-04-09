@@ -196,6 +196,10 @@ main > section {
 }
 
 /* ---------- Second slide -------------------- */
+#second-slide .popup-content p a{
+  color: inherit;
+}
+
 #second-slide header,
 #second-slide header {
   text-align: center;
@@ -265,7 +269,7 @@ main > section {
     position: absolute;
     width: 85%;
     transform: translateX(-50%);
-    display: flex;
+    /*display: flex;*/
     font-size: 25%;
     color: #386f9c;
     z-index: 3;
@@ -400,7 +404,7 @@ main > section {
     position: absolute;
     width: 85%;
     transform: translateX(-50%);
-    display: flex;
+    /*display: flex;*/
     font-size: 20%;
     color: #386f9c;
     z-index: 3;
